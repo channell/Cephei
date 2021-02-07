@@ -49,7 +49,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).AtmLevel
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Clone
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -121,7 +121,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Data
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -157,7 +157,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Data_
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -193,7 +193,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Dates
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -229,7 +229,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Dates_
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -265,7 +265,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Discounts
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Discounts
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -325,7 +325,7 @@ module InterpolatedSmileSectionFunction =
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedSmileSection 
+                let builder (current : ICell) = (Fun.InterpolatedSmileSection 
                                                             _timeToExpiry.cell 
                                                             _strikes.cell 
                                                             _stdDevHandles.cell 
@@ -410,7 +410,7 @@ module InterpolatedSmileSectionFunction =
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedSmileSection1 
+                let builder (current : ICell) = (Fun.InterpolatedSmileSection1 
                                                             _timeToExpiry.cell 
                                                             _strikes.cell 
                                                             _stdDevs.cell 
@@ -498,7 +498,7 @@ module InterpolatedSmileSectionFunction =
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedSmileSection2 
+                let builder (current : ICell) = (Fun.InterpolatedSmileSection2 
                                                             _d.cell 
                                                             _strikes.cell 
                                                             _stdDevHandles.cell 
@@ -586,7 +586,7 @@ module InterpolatedSmileSectionFunction =
                 let _referenceDate = Helper.toDefault<Date> referenceDate "referenceDate" null
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedSmileSection3 
+                let builder (current : ICell) = (Fun.InterpolatedSmileSection3 
                                                             _d.cell 
                                                             _strikes.cell 
                                                             _stdDevs.cell 
@@ -647,7 +647,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Interpolation_
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
@@ -683,7 +683,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Interpolator_
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
@@ -719,7 +719,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).MaxDate
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -755,7 +755,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).MaxDate_
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -791,7 +791,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).MaxStrike
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -827,7 +827,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).MinStrike
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -863,7 +863,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Nodes
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
@@ -899,7 +899,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).SetupInterpolation
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedSmileSection) (l:string) = o.ToString() :> obj
 
@@ -935,7 +935,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Times
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -971,7 +971,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Times_
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -1007,7 +1007,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Update
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : InterpolatedSmileSection) (l:string) = o.ToString() :> obj
 
@@ -1043,7 +1043,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).DayCounter
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -1088,7 +1088,7 @@ module InterpolatedSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Density
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Density
                                                             _strike.cell 
                                                             _discount.cell 
                                                             _gap.cell 
@@ -1145,7 +1145,7 @@ module InterpolatedSmileSectionFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).DigitalOptionPrice
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).DigitalOptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
@@ -1193,7 +1193,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).ExerciseDate
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1229,7 +1229,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).ExerciseTime
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1274,7 +1274,7 @@ module InterpolatedSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).OptionPrice
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).OptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
@@ -1319,7 +1319,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).ReferenceDate
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1355,7 +1355,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Shift
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1394,7 +1394,7 @@ module InterpolatedSmileSectionFunction =
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Variance
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Variance
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1439,7 +1439,7 @@ module InterpolatedSmileSectionFunction =
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Vega
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Vega
                                                             _strike.cell 
                                                             _discount.cell 
                                                        ) :> ICell
@@ -1490,7 +1490,7 @@ module InterpolatedSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Volatility
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 
                                                             _shift.cell 
@@ -1538,7 +1538,7 @@ module InterpolatedSmileSectionFunction =
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Volatility1
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Volatility1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1577,7 +1577,7 @@ module InterpolatedSmileSectionFunction =
             try
 
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).VolatilityType
+                let builder (current : ICell) = ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 

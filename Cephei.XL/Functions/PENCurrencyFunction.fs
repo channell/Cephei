@@ -46,7 +46,7 @@ module PENCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.PENCurrency ()
+                let builder (current : ICell) = (Fun.PENCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PENCurrency>) l
 
@@ -80,7 +80,7 @@ module PENCurrencyFunction =
             try
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).Code
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module PENCurrencyFunction =
             try
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).Empty
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module PENCurrencyFunction =
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).Equals
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module PENCurrencyFunction =
             try
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).Format
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module PENCurrencyFunction =
             try
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module PENCurrencyFunction =
             try
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module PENCurrencyFunction =
             try
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).Name
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module PENCurrencyFunction =
             try
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).NumericCode
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module PENCurrencyFunction =
             try
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).Rounding
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module PENCurrencyFunction =
             try
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).Symbol
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module PENCurrencyFunction =
             try
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).ToString
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module PENCurrencyFunction =
             try
 
                 let _PENCurrency = Helper.toCell<PENCurrency> pencurrency "PENCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PENCurrencyModel.Cast _PENCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((PENCurrencyModel.Cast _PENCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

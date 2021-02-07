@@ -49,7 +49,7 @@ module SimpleCashFlowFunction =
             try
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Amount
+                let builder (current : ICell) = ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module SimpleCashFlowFunction =
             try
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Date
+                let builder (current : ICell) = ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -127,7 +127,7 @@ module SimpleCashFlowFunction =
                 let _amount = Helper.toCell<double> amount "amount" 
                 let _date = Helper.toCell<Date> date "date" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SimpleCashFlow 
+                let builder (current : ICell) = (Fun.SimpleCashFlow 
                                                             _amount.cell 
                                                             _date.cell 
                                                             _evaluationDate.cell
@@ -173,7 +173,7 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).CompareTo
+                let builder (current : ICell) = ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -215,7 +215,7 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Equals
+                let builder (current : ICell) = ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -254,7 +254,7 @@ module SimpleCashFlowFunction =
             try
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).ExCouponDate
+                let builder (current : ICell) = ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -296,7 +296,7 @@ module SimpleCashFlowFunction =
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).HasOccurred
+                let builder (current : ICell) = ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -341,7 +341,7 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).TradingExCoupon
+                let builder (current : ICell) = ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -383,7 +383,7 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Accept
+                let builder (current : ICell) = ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : SimpleCashFlow) (l:string) = o.ToString() :> obj
@@ -425,7 +425,7 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).RegisterWith
+                let builder (current : ICell) = ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SimpleCashFlow) (l:string) = o.ToString() :> obj
@@ -467,7 +467,7 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).UnregisterWith
+                let builder (current : ICell) = ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SimpleCashFlow) (l:string) = o.ToString() :> obj

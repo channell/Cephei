@@ -52,7 +52,7 @@ module UpRoundingFunction =
 
                 let _precision = Helper.toCell<int> precision "precision" 
                 let _digit = Helper.toCell<int> digit "digit" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.UpRounding1 
+                let builder (current : ICell) = (Fun.UpRounding1 
                                                             _precision.cell 
                                                             _digit.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module UpRoundingFunction =
             try
 
                 let _precision = Helper.toCell<int> precision "precision" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.UpRounding
+                let builder (current : ICell) = (Fun.UpRounding
                                                             _precision.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<UpRounding>) l
@@ -129,7 +129,7 @@ module UpRoundingFunction =
             try
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
-                let builder (current : ICell) = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Digit
+                let builder (current : ICell) = ((UpRoundingModel.Cast _UpRounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -165,7 +165,7 @@ module UpRoundingFunction =
             try
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
-                let builder (current : ICell) = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).GetType
+                let builder (current : ICell) = ((UpRoundingModel.Cast _UpRounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -201,7 +201,7 @@ module UpRoundingFunction =
             try
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
-                let builder (current : ICell) = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Precision
+                let builder (current : ICell) = ((UpRoundingModel.Cast _UpRounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -240,7 +240,7 @@ module UpRoundingFunction =
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder (current : ICell) = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Round
+                let builder (current : ICell) = ((UpRoundingModel.Cast _UpRounding.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

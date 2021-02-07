@@ -49,7 +49,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).BusinessDayConvention
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -88,7 +88,7 @@ module IborIndexFunction =
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).Clone
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).Clone
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -127,7 +127,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).EndOfMonth
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -172,7 +172,7 @@ module IborIndexFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).ForecastFixing1
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
@@ -220,7 +220,7 @@ module IborIndexFunction =
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).ForecastFixing
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -259,7 +259,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).ForwardingTermStructure
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -319,7 +319,7 @@ module IborIndexFunction =
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.IborIndex1
+                let builder (current : ICell) = (Fun.IborIndex1
                                                             _familyName.cell 
                                                             _tenor.cell 
                                                             _settlementDays.cell 
@@ -377,7 +377,7 @@ module IborIndexFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.IborIndex ()
+                let builder (current : ICell) = (Fun.IborIndex ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
@@ -414,7 +414,7 @@ module IborIndexFunction =
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).MaturityDate
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -453,7 +453,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).Currency
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -489,7 +489,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).DayCounter
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -525,7 +525,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).FamilyName
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -567,7 +567,7 @@ module IborIndexFunction =
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).Fixing
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -609,7 +609,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).FixingCalendar
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -648,7 +648,7 @@ module IborIndexFunction =
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).FixingDate
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -687,7 +687,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).FixingDays
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -726,7 +726,7 @@ module IborIndexFunction =
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).IsValidFixingDate
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -765,7 +765,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).Name
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -804,7 +804,7 @@ module IborIndexFunction =
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).PastFixing
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -843,7 +843,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).Tenor
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -879,7 +879,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).Update
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).Update
                                                        ) :> ICell
                 let format (o : IborIndex) (l:string) = o.ToString() :> obj
 
@@ -918,7 +918,7 @@ module IborIndexFunction =
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).ValueDate
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -966,7 +966,7 @@ module IborIndexFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).AddFixing
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1020,7 +1020,7 @@ module IborIndexFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).AddFixings
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1071,7 +1071,7 @@ module IborIndexFunction =
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).AddFixings1
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -1113,7 +1113,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).AllowsNativeFixings
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1149,7 +1149,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).ClearFixings
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : IborIndex) (l:string) = o.ToString() :> obj
 
@@ -1188,7 +1188,7 @@ module IborIndexFunction =
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).RegisterWith
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : IborIndex) (l:string) = o.ToString() :> obj
@@ -1227,7 +1227,7 @@ module IborIndexFunction =
             try
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).TimeSeries
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1266,7 +1266,7 @@ module IborIndexFunction =
 
                 let _IborIndex = Helper.toCell<IborIndex> iborindex "IborIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IborIndexModel.Cast _IborIndex.cell).UnregisterWith
+                let builder (current : ICell) = ((IborIndexModel.Cast _IborIndex.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : IborIndex) (l:string) = o.ToString() :> obj

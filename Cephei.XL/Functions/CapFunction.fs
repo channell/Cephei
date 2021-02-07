@@ -58,7 +58,7 @@ module CapFunction =
                 let _exerciseRates = Helper.toCell<Generic.List<double>> exerciseRates "exerciseRates" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Cap 
+                let builder (current : ICell) = (Fun.Cap 
                                                             _floatingLeg.cell 
                                                             _exerciseRates.cell 
                                                             _pricingEngine.cell 
@@ -107,7 +107,7 @@ module CapFunction =
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
                 let _discountCurve = Helper.toCell<YieldTermStructure> discountCurve "discountCurve" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).AtmRate
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).AtmRate
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -146,7 +146,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).CapRates
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).CapRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -182,7 +182,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).FloatingLeg
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -218,7 +218,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).FloorRates
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).FloorRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -254,7 +254,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).GetType
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).GetType
                                                        ) :> ICell
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
 
@@ -317,7 +317,7 @@ module CapFunction =
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _displacement = Helper.toCell<double> displacement "displacement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).ImpliedVolatility
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _guess.cell 
@@ -395,7 +395,7 @@ module CapFunction =
                 let _guess = Helper.toCell<double> guess "guess" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).ImpliedVolatility1
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).ImpliedVolatility1
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _guess.cell 
@@ -446,7 +446,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).IsExpired
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).LastFloatingRateCoupon
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).LastFloatingRateCoupon
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
 
@@ -518,7 +518,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).MaturityDate
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -557,7 +557,7 @@ module CapFunction =
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).Optionlet
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).Optionlet
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloor>) l
@@ -596,7 +596,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).StartDate
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -632,7 +632,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).CASH
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -668,7 +668,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).ErrorEstimate
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -704,7 +704,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).NPV
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -743,7 +743,7 @@ module CapFunction =
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).Result
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -785,7 +785,7 @@ module CapFunction =
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).SetPricingEngine
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Cap) (l:string) = o.ToString() :> obj
@@ -824,7 +824,7 @@ module CapFunction =
             try
 
                 let _Cap = Helper.toCell<Cap> cap "Cap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapModel.Cast _Cap.cell).ValuationDate
+                let builder (current : ICell) = ((CapModel.Cast _Cap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

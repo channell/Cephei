@@ -58,7 +58,7 @@ module SABRFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _xEnd = Helper.toCell<int> xEnd "xEnd" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SABRModel.Cast _SABR.cell).Interpolate
+                let builder (current : ICell) = ((SABRModel.Cast _SABR.cell).Interpolate
                                                             _xBegin.cell 
                                                             _xEnd.cell 
                                                             _yBegin.cell 
@@ -157,7 +157,7 @@ module SABRFunction =
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let _volatilityType = Helper.toDefault<VolatilityType> volatilityType "volatilityType" VolatilityType.ShiftedLognormal
                 let _approximationModel = Helper.toDefault<SabrApproximationModel> approximationModel "approximationModel" SabrApproximationModel.Hagan2002
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SABR 
+                let builder (current : ICell) = (Fun.SABR 
                                                             _t.cell 
                                                             _forward.cell 
                                                             _alpha.cell 

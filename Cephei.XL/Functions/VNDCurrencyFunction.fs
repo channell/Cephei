@@ -46,7 +46,7 @@ module VNDCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.VNDCurrency ()
+                let builder (current : ICell) = (Fun.VNDCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VNDCurrency>) l
 
@@ -80,7 +80,7 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Code
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Empty
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module VNDCurrencyFunction =
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Equals
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Format
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Name
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).NumericCode
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Rounding
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Symbol
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).ToString
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((VNDCurrencyModel.Cast _VNDCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

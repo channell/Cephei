@@ -61,7 +61,7 @@ module BachelierSwaptionEngineFunction =
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierSwaptionEngine 
+                let builder (current : ICell) = (Fun.BachelierSwaptionEngine 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -122,7 +122,7 @@ module BachelierSwaptionEngineFunction =
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierSwaptionEngine2 
+                let builder (current : ICell) = (Fun.BachelierSwaptionEngine2 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -180,7 +180,7 @@ module BachelierSwaptionEngineFunction =
                 let _vol = Helper.toHandle<SwaptionVolatilityStructure> vol "vol" 
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierSwaptionEngine1
+                let builder (current : ICell) = (Fun.BachelierSwaptionEngine1
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _model.cell 
@@ -227,7 +227,7 @@ module BachelierSwaptionEngineFunction =
             try
 
                 let _BachelierSwaptionEngine = Helper.toCell<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BachelierSwaptionEngineModel.Cast _BachelierSwaptionEngine.cell).TermStructure
+                let builder (current : ICell) = ((BachelierSwaptionEngineModel.Cast _BachelierSwaptionEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -263,7 +263,7 @@ module BachelierSwaptionEngineFunction =
             try
 
                 let _BachelierSwaptionEngine = Helper.toCell<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BachelierSwaptionEngineModel.Cast _BachelierSwaptionEngine.cell).Volatility
+                let builder (current : ICell) = ((BachelierSwaptionEngineModel.Cast _BachelierSwaptionEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 

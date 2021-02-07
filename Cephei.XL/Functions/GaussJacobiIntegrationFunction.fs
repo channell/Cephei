@@ -55,7 +55,7 @@ module GaussJacobiIntegrationFunction =
                 let _n = Helper.toCell<int> n "n" 
                 let _alpha = Helper.toCell<double> alpha "alpha" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussJacobiIntegration 
+                let builder (current : ICell) = (Fun.GaussJacobiIntegration 
                                                             _n.cell 
                                                             _alpha.cell 
                                                             _beta.cell 
@@ -98,7 +98,7 @@ module GaussJacobiIntegrationFunction =
             try
 
                 let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Order
+                let builder (current : ICell) = ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -137,7 +137,7 @@ module GaussJacobiIntegrationFunction =
 
                 let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Value
+                let builder (current : ICell) = ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -176,7 +176,7 @@ module GaussJacobiIntegrationFunction =
             try
 
                 let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Weights
+                let builder (current : ICell) = ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -212,7 +212,7 @@ module GaussJacobiIntegrationFunction =
             try
 
                 let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).X
+                let builder (current : ICell) = ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

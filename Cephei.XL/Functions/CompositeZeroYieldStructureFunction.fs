@@ -49,7 +49,7 @@ module CompositeZeroYieldStructureFunction =
             try
 
                 let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).Calendar
+                let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -97,7 +97,7 @@ module CompositeZeroYieldStructureFunction =
                 let _f = Helper.toCell<Func<double,double,double>> f "f" 
                 let _comp = Helper.toDefault<Compounding> comp "comp" Compounding.Continuous
                 let _freq = Helper.toDefault<Frequency> freq "freq" Frequency.NoFrequency
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CompositeZeroYieldStructure 
+                let builder (current : ICell) = (Fun.CompositeZeroYieldStructure 
                                                             _h1.cell 
                                                             _h2.cell 
                                                             _f.cell 
@@ -146,7 +146,7 @@ module CompositeZeroYieldStructureFunction =
             try
 
                 let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).DayCounter
+                let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -182,7 +182,7 @@ module CompositeZeroYieldStructureFunction =
             try
 
                 let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).MaxDate
+                let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -218,7 +218,7 @@ module CompositeZeroYieldStructureFunction =
             try
 
                 let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).MaxTime
+                let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -254,7 +254,7 @@ module CompositeZeroYieldStructureFunction =
             try
 
                 let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).ReferenceDate
+                let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -290,7 +290,7 @@ module CompositeZeroYieldStructureFunction =
             try
 
                 let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).SettlementDays
+                let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -326,7 +326,7 @@ module CompositeZeroYieldStructureFunction =
             try
 
                 let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).Update
+                let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).Update
                                                        ) :> ICell
                 let format (o : CompositeZeroYieldStructure) (l:string) = o.ToString() :> obj
 

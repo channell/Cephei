@@ -55,7 +55,7 @@ module ForwardRateFunction =
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).DiscountImpl
+                let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module ForwardRateFunction =
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).ForwardImpl
+                let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -157,7 +157,7 @@ module ForwardRateFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).Guess
+                let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).Guess
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -208,7 +208,7 @@ module ForwardRateFunction =
 
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).InitialDate
+                let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -250,7 +250,7 @@ module ForwardRateFunction =
 
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).InitialValue
+                let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -289,7 +289,7 @@ module ForwardRateFunction =
             try
 
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).MaxIterations
+                let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -337,7 +337,7 @@ module ForwardRateFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).MaxValueAfter
+                let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -397,7 +397,7 @@ module ForwardRateFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).MinValueAfter
+                let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -454,7 +454,7 @@ module ForwardRateFunction =
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).UpdateGuess
+                let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).UpdateGuess
                                                             _data.cell 
                                                             _forward.cell 
                                                             _i.cell 
@@ -505,7 +505,7 @@ module ForwardRateFunction =
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).ZeroYieldImpl
+                let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell

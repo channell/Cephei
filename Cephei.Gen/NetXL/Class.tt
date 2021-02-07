@@ -138,13 +138,13 @@ module <#= NetClass.Name #>Function =
         if (m.Name == NetClass.Name)
         {
 #>
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.<#= NetClass.Name + (version > 0 ? version.ToString() : "") #> 
+                let builder (current : ICell) = (Fun.<#= NetClass.Name + (version > 0 ? version.ToString() : "") #> 
 <#
         }
         else
         {
 #>
-                let builder (current : ICell) = withMnemonic mnemonic ((_<#= NetClass.Name #>.cell :?> <#= NetClass.Name #>Model).<#= m.CapFSName #>
+                let builder (current : ICell) = ((_<#= NetClass.Name #>.cell :?> <#= NetClass.Name #>Model).<#= m.CapFSName #>
 <#
         }
         foreach (var pam in m.Parameters)

@@ -52,7 +52,7 @@ module FloorTruncationFunction =
 
                 let _precision = Helper.toCell<int> precision "precision" 
                 let _digit = Helper.toCell<int> digit "digit" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FloorTruncation 
+                let builder (current : ICell) = (Fun.FloorTruncation 
                                                             _precision.cell 
                                                             _digit.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module FloorTruncationFunction =
             try
 
                 let _precision = Helper.toCell<int> precision "precision" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FloorTruncation1 
+                let builder (current : ICell) = (Fun.FloorTruncation1 
                                                             _precision.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloorTruncation>) l
@@ -129,7 +129,7 @@ module FloorTruncationFunction =
             try
 
                 let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorTruncationModel.Cast _FloorTruncation.cell).Digit
+                let builder (current : ICell) = ((FloorTruncationModel.Cast _FloorTruncation.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -165,7 +165,7 @@ module FloorTruncationFunction =
             try
 
                 let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorTruncationModel.Cast _FloorTruncation.cell).GetType
+                let builder (current : ICell) = ((FloorTruncationModel.Cast _FloorTruncation.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -201,7 +201,7 @@ module FloorTruncationFunction =
             try
 
                 let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorTruncationModel.Cast _FloorTruncation.cell).Precision
+                let builder (current : ICell) = ((FloorTruncationModel.Cast _FloorTruncation.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -240,7 +240,7 @@ module FloorTruncationFunction =
 
                 let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorTruncationModel.Cast _FloorTruncation.cell).Round
+                let builder (current : ICell) = ((FloorTruncationModel.Cast _FloorTruncation.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

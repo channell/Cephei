@@ -46,7 +46,7 @@ module RONCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.RONCurrency ()
+                let builder (current : ICell) = (Fun.RONCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RONCurrency>) l
 
@@ -80,7 +80,7 @@ module RONCurrencyFunction =
             try
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).Code
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module RONCurrencyFunction =
             try
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).Empty
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module RONCurrencyFunction =
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).Equals
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module RONCurrencyFunction =
             try
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).Format
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module RONCurrencyFunction =
             try
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module RONCurrencyFunction =
             try
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module RONCurrencyFunction =
             try
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).Name
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module RONCurrencyFunction =
             try
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).NumericCode
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module RONCurrencyFunction =
             try
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).Rounding
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module RONCurrencyFunction =
             try
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).Symbol
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module RONCurrencyFunction =
             try
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).ToString
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module RONCurrencyFunction =
             try
 
                 let _RONCurrency = Helper.toCell<RONCurrency> roncurrency "RONCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RONCurrencyModel.Cast _RONCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((RONCurrencyModel.Cast _RONCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

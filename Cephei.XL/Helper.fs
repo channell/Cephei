@@ -73,11 +73,11 @@ module Helper =
                     }
                 elif cv.ValueIs<'T>() then 
                     if cv :? IDateDependant then
-                        { cell = withMnemonic cv.Mnemonic (trivDate (fun () -> (cv.Box :?> 'T)) (cv :?> IDateDependant))
+                        { cell = castDate<'T> cv (cv :?> IDateDependant)
                         ; source = "_" + s
                         }
                     else
-                        { cell = withMnemonic cv.Mnemonic (triv cv.Mutex (fun () -> (cv.Box :?> 'T)))
+                        { cell = cast<'T> cv
                         ; source = "_" + s
                         }
                 elif typeof<'T> = typeof<Date> then 

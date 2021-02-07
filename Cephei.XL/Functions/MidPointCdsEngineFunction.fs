@@ -62,7 +62,7 @@ module MidPointCdsEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MidPointCdsEngine 
+                let builder (current : ICell) = (Fun.MidPointCdsEngine 
                                                             _probability.cell 
                                                             _recoveryRate.cell 
                                                             _discountCurve.cell 

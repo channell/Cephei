@@ -55,7 +55,7 @@ module EventSetFunction =
                 let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
                 let _eventsStart = Helper.toCell<Date> eventsStart "eventsStart" 
                 let _eventsEnd = Helper.toCell<Date> eventsEnd "eventsEnd" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.EventSet 
+                let builder (current : ICell) = (Fun.EventSet 
                                                             _events.cell 
                                                             _eventsStart.cell 
                                                             _eventsEnd.cell 
@@ -104,7 +104,7 @@ module EventSetFunction =
                 let _EventSet = Helper.toCell<EventSet> eventset "EventSet"  
                 let _start = Helper.toCell<Date> start "start" 
                 let _End = Helper.toCell<Date> End "End" 
-                let builder (current : ICell) = withMnemonic mnemonic ((EventSetModel.Cast _EventSet.cell).NewSimulation
+                let builder (current : ICell) = ((EventSetModel.Cast _EventSet.cell).NewSimulation
                                                             _start.cell 
                                                             _End.cell 
                                                        ) :> ICell

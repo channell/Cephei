@@ -52,7 +52,7 @@ module FdmMesherIntegralFunction =
 
                 let _mesher = Helper.toCell<FdmMesherComposite> mesher "mesher" 
                 let _integrator1d = Helper.toCell<Func<Vector,Vector,double>> integrator1d "integrator1d" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmMesherIntegral 
+                let builder (current : ICell) = (Fun.FdmMesherIntegral 
                                                             _mesher.cell 
                                                             _integrator1d.cell 
                                                        ) :> ICell
@@ -95,7 +95,7 @@ module FdmMesherIntegralFunction =
 
                 let _FdmMesherIntegral = Helper.toCell<FdmMesherIntegral> fdmmesherintegral "FdmMesherIntegral"  
                 let _f = Helper.toCell<Vector> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmMesherIntegralModel.Cast _FdmMesherIntegral.cell).Integrate
+                let builder (current : ICell) = ((FdmMesherIntegralModel.Cast _FdmMesherIntegral.cell).Integrate
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

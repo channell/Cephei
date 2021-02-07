@@ -55,7 +55,7 @@ module StepConditionSetFunction =
                 let _StepConditionSet = Helper.toCell<StepConditionSet> stepconditionset "StepConditionSet"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StepConditionSetModel.Cast _StepConditionSet.cell).ApplyTo
+                let builder (current : ICell) = ((StepConditionSetModel.Cast _StepConditionSet.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell

@@ -56,7 +56,7 @@ module LfmSwaptionEngineFunction =
                 let _model = Helper.toCell<LiborForwardModel> model "model" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LfmSwaptionEngine 
+                let builder (current : ICell) = (Fun.LfmSwaptionEngine 
                                                             _model.cell 
                                                             _discountCurve.cell 
                                                             _evaluationDate.cell
@@ -103,7 +103,7 @@ module LfmSwaptionEngineFunction =
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).SetModel
+                let builder (current : ICell) = ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -145,7 +145,7 @@ module LfmSwaptionEngineFunction =
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).RegisterWith
+                let builder (current : ICell) = ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -184,7 +184,7 @@ module LfmSwaptionEngineFunction =
             try
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).Reset
+                let builder (current : ICell) = ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
@@ -223,7 +223,7 @@ module LfmSwaptionEngineFunction =
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).UnregisterWith
+                let builder (current : ICell) = ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -262,7 +262,7 @@ module LfmSwaptionEngineFunction =
             try
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).Update
+                let builder (current : ICell) = ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 

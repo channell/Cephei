@@ -58,7 +58,7 @@ module CoxRossRubinsteinFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CoxRossRubinstein1 
+                let builder (current : ICell) = (Fun.CoxRossRubinstein1 
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -101,7 +101,7 @@ module CoxRossRubinsteinFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CoxRossRubinstein ()
+                let builder (current : ICell) = (Fun.CoxRossRubinstein ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CoxRossRubinstein>) l
 
@@ -147,7 +147,7 @@ module CoxRossRubinsteinFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Factory
+                let builder (current : ICell) = ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Factory
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -204,7 +204,7 @@ module CoxRossRubinsteinFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Probability
+                let builder (current : ICell) = ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Probability
                                                             _x.cell 
                                                             _y.cell 
                                                             _branch.cell 
@@ -255,7 +255,7 @@ module CoxRossRubinsteinFunction =
                 let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Underlying
+                let builder (current : ICell) = ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
@@ -306,7 +306,7 @@ module CoxRossRubinsteinFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Descendant
+                let builder (current : ICell) = ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
@@ -354,7 +354,7 @@ module CoxRossRubinsteinFunction =
 
                 let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Size
+                let builder (current : ICell) = ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -393,7 +393,7 @@ module CoxRossRubinsteinFunction =
             try
 
                 let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Columns
+                let builder (current : ICell) = ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

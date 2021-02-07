@@ -55,7 +55,7 @@ module BlackCallableFixedRateBondEngineFunction =
                 let _fwdYieldVol = Helper.toHandle<Quote> fwdYieldVol "fwdYieldVol" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCallableFixedRateBondEngine 
+                let builder (current : ICell) = (Fun.BlackCallableFixedRateBondEngine 
                                                             _fwdYieldVol.cell 
                                                             _discountCurve.cell 
                                                             _evaluationDate.cell
@@ -104,7 +104,7 @@ module BlackCallableFixedRateBondEngineFunction =
                 let _yieldVolStructure = Helper.toHandle<CallableBondVolatilityStructure> yieldVolStructure "yieldVolStructure" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCallableFixedRateBondEngine1 
+                let builder (current : ICell) = (Fun.BlackCallableFixedRateBondEngine1 
                                                             _yieldVolStructure.cell 
                                                             _discountCurve.cell 
                                                             _evaluationDate.cell

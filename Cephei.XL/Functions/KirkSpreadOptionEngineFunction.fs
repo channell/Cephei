@@ -59,7 +59,7 @@ module KirkSpreadOptionEngineFunction =
                 let _process2 = Helper.toCell<BlackProcess> process2 "process2" 
                 let _correlation = Helper.toHandle<Quote> correlation "correlation" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.KirkSpreadOptionEngine 
+                let builder (current : ICell) = (Fun.KirkSpreadOptionEngine 
                                                             _process1.cell 
                                                             _process2.cell 
                                                             _correlation.cell 

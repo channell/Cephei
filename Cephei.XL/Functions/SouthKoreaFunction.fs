@@ -74,7 +74,7 @@ module SouthKoreaFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SouthKorea ()
+                let builder (current : ICell) = (Fun.SouthKorea ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SouthKorea>) l
 
@@ -108,7 +108,7 @@ module SouthKoreaFunction =
             try
 
                 let _m = Helper.toCell<SouthKorea.Market> m "m" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SouthKorea1 
+                let builder (current : ICell) = (Fun.SouthKorea1 
                                                             _m.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SouthKorea>) l
@@ -145,7 +145,7 @@ module SouthKoreaFunction =
             try
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).AddedHolidays
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -184,7 +184,7 @@ module SouthKoreaFunction =
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).AddHoliday
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : SouthKorea) (l:string) = o.ToString() :> obj
@@ -229,7 +229,7 @@ module SouthKoreaFunction =
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).Adjust
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -286,7 +286,7 @@ module SouthKoreaFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).Advance1
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -349,7 +349,7 @@ module SouthKoreaFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).Advance
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -409,7 +409,7 @@ module SouthKoreaFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).BusinessDaysBetween
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -457,7 +457,7 @@ module SouthKoreaFunction =
             try
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).Calendar
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -493,7 +493,7 @@ module SouthKoreaFunction =
             try
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).Empty
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -532,7 +532,7 @@ module SouthKoreaFunction =
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).EndOfMonth
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -574,7 +574,7 @@ module SouthKoreaFunction =
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).Equals
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -616,7 +616,7 @@ module SouthKoreaFunction =
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).IsBusinessDay
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -658,7 +658,7 @@ module SouthKoreaFunction =
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).IsEndOfMonth
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -700,7 +700,7 @@ module SouthKoreaFunction =
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).IsHoliday
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -742,7 +742,7 @@ module SouthKoreaFunction =
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).IsWeekend
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -783,7 +783,7 @@ module SouthKoreaFunction =
             try
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).Name
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -819,7 +819,7 @@ module SouthKoreaFunction =
             try
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).RemovedHolidays
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -858,7 +858,7 @@ module SouthKoreaFunction =
 
                 let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SouthKoreaModel.Cast _SouthKorea.cell).RemoveHoliday
+                let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : SouthKorea) (l:string) = o.ToString() :> obj

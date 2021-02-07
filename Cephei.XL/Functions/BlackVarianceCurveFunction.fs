@@ -61,7 +61,7 @@ module BlackVarianceCurveFunction =
                 let _blackVolCurve = Helper.toCell<Generic.List<double>> blackVolCurve "blackVolCurve" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _forceMonotoneVariance = Helper.toCell<bool> forceMonotoneVariance "forceMonotoneVariance" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackVarianceCurve 
+                let builder (current : ICell) = (Fun.BlackVarianceCurve 
                                                             _referenceDate.cell 
                                                             _dates.cell 
                                                             _blackVolCurve.cell 
@@ -110,7 +110,7 @@ module BlackVarianceCurveFunction =
             try
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).DayCounter
+                let builder (current : ICell) = ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -146,7 +146,7 @@ module BlackVarianceCurveFunction =
             try
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MaxDate
+                let builder (current : ICell) = ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -182,7 +182,7 @@ module BlackVarianceCurveFunction =
             try
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MaxStrike
+                let builder (current : ICell) = ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -218,7 +218,7 @@ module BlackVarianceCurveFunction =
             try
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MinStrike
+                let builder (current : ICell) = ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -255,7 +255,7 @@ module BlackVarianceCurveFunction =
             try
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).SetInterpolation
+                let builder (current : ICell) = ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).SetInterpolation
                                                        ) :> ICell
                 let format (o : BlackVarianceCurve) (l:string) = o.ToString() :> obj
 
@@ -296,7 +296,7 @@ module BlackVarianceCurveFunction =
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
                 let _i = Helper.toCell<Interpolator> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).SetInterpolation1
+                let builder (current : ICell) = ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).SetInterpolation1
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : BlackVarianceCurve) (l:string) = o.ToString() :> obj

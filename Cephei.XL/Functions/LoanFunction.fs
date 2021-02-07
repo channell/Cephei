@@ -49,7 +49,7 @@ module LoanFunction =
             try
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).IsExpired
+                let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -91,7 +91,7 @@ module LoanFunction =
                 let _legs = Helper.toCell<int> legs "legs" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Loan 
+                let builder (current : ICell) = (Fun.Loan 
                                                             _legs.cell 
                                                             _pricingEngine.cell 
                                                             _evaluationDate.cell 
@@ -134,7 +134,7 @@ module LoanFunction =
             try
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).CASH
+                let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -170,7 +170,7 @@ module LoanFunction =
             try
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).ErrorEstimate
+                let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -206,7 +206,7 @@ module LoanFunction =
             try
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).NPV
+                let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -245,7 +245,7 @@ module LoanFunction =
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).Result
+                let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -287,7 +287,7 @@ module LoanFunction =
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).SetPricingEngine
+                let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Loan) (l:string) = o.ToString() :> obj
@@ -326,7 +326,7 @@ module LoanFunction =
             try
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).ValuationDate
+                let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

@@ -58,7 +58,7 @@ module SpreadOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SpreadOption 
+                let builder (current : ICell) = (Fun.SpreadOption 
                                                             _payoff.cell 
                                                             _exercise.cell 
                                                             _pricingEngine.cell 
@@ -104,7 +104,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Delta
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -140,7 +140,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).DividendRho
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -176,7 +176,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Gamma
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -212,7 +212,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).IsExpired
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -248,7 +248,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Rho
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -284,7 +284,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Theta
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -320,7 +320,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Vega
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -356,7 +356,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Exercise
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -392,7 +392,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Payoff
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -428,7 +428,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).CASH
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -464,7 +464,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).ErrorEstimate
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -500,7 +500,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).NPV
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -539,7 +539,7 @@ module SpreadOptionFunction =
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Result
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -581,7 +581,7 @@ module SpreadOptionFunction =
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).SetPricingEngine
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : SpreadOption) (l:string) = o.ToString() :> obj
@@ -620,7 +620,7 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).ValuationDate
+                let builder (current : ICell) = ((SpreadOptionModel.Cast _SpreadOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

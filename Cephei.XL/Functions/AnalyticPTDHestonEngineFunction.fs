@@ -58,7 +58,7 @@ module AnalyticPTDHestonEngineFunction =
                 let _relTolerance = Helper.toCell<double> relTolerance "relTolerance" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticPTDHestonEngine 
+                let builder (current : ICell) = (Fun.AnalyticPTDHestonEngine 
                                                             _model.cell 
                                                             _relTolerance.cell 
                                                             _maxEvaluations.cell 
@@ -110,7 +110,7 @@ module AnalyticPTDHestonEngineFunction =
                 let _model = Helper.toCell<PiecewiseTimeDependentHestonModel> model "model" 
                 let _integrationOrder = Helper.toDefault<int> integrationOrder "integrationOrder" 144
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticPTDHestonEngine1 
+                let builder (current : ICell) = (Fun.AnalyticPTDHestonEngine1 
                                                             _model.cell 
                                                             _integrationOrder.cell 
                                                             _evaluationDate.cell
@@ -158,7 +158,7 @@ module AnalyticPTDHestonEngineFunction =
 
                 let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).SetModel
+                let builder (current : ICell) = ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
@@ -200,7 +200,7 @@ module AnalyticPTDHestonEngineFunction =
 
                 let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).RegisterWith
+                let builder (current : ICell) = ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
@@ -239,7 +239,7 @@ module AnalyticPTDHestonEngineFunction =
             try
 
                 let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).Reset
+                let builder (current : ICell) = ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 
@@ -278,7 +278,7 @@ module AnalyticPTDHestonEngineFunction =
 
                 let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).UnregisterWith
+                let builder (current : ICell) = ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
@@ -317,7 +317,7 @@ module AnalyticPTDHestonEngineFunction =
             try
 
                 let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).Update
+                let builder (current : ICell) = ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 

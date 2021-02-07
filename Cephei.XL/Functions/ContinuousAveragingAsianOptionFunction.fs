@@ -61,7 +61,7 @@ module ContinuousAveragingAsianOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ContinuousAveragingAsianOption 
+                let builder (current : ICell) = (Fun.ContinuousAveragingAsianOption 
                                                             _averageType.cell 
                                                             _payoff.cell 
                                                             _exercise.cell 
@@ -110,7 +110,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Delta
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -146,7 +146,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).DeltaForward
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -182,7 +182,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).DividendRho
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -218,7 +218,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Elasticity
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -254,7 +254,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Gamma
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -290,7 +290,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).IsExpired
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -326,7 +326,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ItmCashProbability
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -362,7 +362,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Rho
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -398,7 +398,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).StrikeSensitivity
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -434,7 +434,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Theta
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -470,7 +470,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ThetaPerDay
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -506,7 +506,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Vega
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -542,7 +542,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Exercise
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -578,7 +578,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Payoff
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -614,7 +614,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).CASH
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -650,7 +650,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ErrorEstimate
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -686,7 +686,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).NPV
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -725,7 +725,7 @@ module ContinuousAveragingAsianOptionFunction =
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Result
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -767,7 +767,7 @@ module ContinuousAveragingAsianOptionFunction =
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).SetPricingEngine
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : ContinuousAveragingAsianOption) (l:string) = o.ToString() :> obj
@@ -806,7 +806,7 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ValuationDate
+                let builder (current : ICell) = ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

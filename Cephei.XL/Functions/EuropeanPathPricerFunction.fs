@@ -55,7 +55,7 @@ module EuropeanPathPricerFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.EuropeanPathPricer 
+                let builder (current : ICell) = (Fun.EuropeanPathPricer 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -101,7 +101,7 @@ module EuropeanPathPricerFunction =
 
                 let _EuropeanPathPricer = Helper.toCell<EuropeanPathPricer> europeanpathpricer "EuropeanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanPathPricerModel.Cast _EuropeanPathPricer.cell).Value
+                let builder (current : ICell) = ((EuropeanPathPricerModel.Cast _EuropeanPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

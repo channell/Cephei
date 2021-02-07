@@ -60,7 +60,7 @@ module NorwayFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Norway ()
+                let builder (current : ICell) = (Fun.Norway ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Norway>) l
 
@@ -94,7 +94,7 @@ module NorwayFunction =
             try
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).AddedHolidays
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -133,7 +133,7 @@ module NorwayFunction =
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).AddHoliday
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Norway) (l:string) = o.ToString() :> obj
@@ -178,7 +178,7 @@ module NorwayFunction =
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).Adjust
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -235,7 +235,7 @@ module NorwayFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).Advance1
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -298,7 +298,7 @@ module NorwayFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).Advance
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -358,7 +358,7 @@ module NorwayFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).BusinessDaysBetween
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -406,7 +406,7 @@ module NorwayFunction =
             try
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).Calendar
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -442,7 +442,7 @@ module NorwayFunction =
             try
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).Empty
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -481,7 +481,7 @@ module NorwayFunction =
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).EndOfMonth
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -523,7 +523,7 @@ module NorwayFunction =
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).Equals
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -565,7 +565,7 @@ module NorwayFunction =
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).IsBusinessDay
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -607,7 +607,7 @@ module NorwayFunction =
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).IsEndOfMonth
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -649,7 +649,7 @@ module NorwayFunction =
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).IsHoliday
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -691,7 +691,7 @@ module NorwayFunction =
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).IsWeekend
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -732,7 +732,7 @@ module NorwayFunction =
             try
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).Name
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -768,7 +768,7 @@ module NorwayFunction =
             try
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).RemovedHolidays
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -807,7 +807,7 @@ module NorwayFunction =
 
                 let _Norway = Helper.toCell<Norway> norway "Norway"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NorwayModel.Cast _Norway.cell).RemoveHoliday
+                let builder (current : ICell) = ((NorwayModel.Cast _Norway.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Norway) (l:string) = o.ToString() :> obj

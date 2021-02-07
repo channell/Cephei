@@ -82,7 +82,7 @@ module CmsSpreadCouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CmsSpreadCoupon 
+                let builder (current : ICell) = (Fun.CmsSpreadCoupon 
                                                             _paymentDate.cell 
                                                             _nominal.cell 
                                                             _startDate.cell 
@@ -149,7 +149,7 @@ module CmsSpreadCouponFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CmsSpreadCoupon1 ()
+                let builder (current : ICell) = (Fun.CmsSpreadCoupon1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CmsSpreadCoupon>) l
 
@@ -183,7 +183,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).SwapSpreadIndex
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).SwapSpreadIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapSpreadIndex>) l
 
@@ -222,7 +222,7 @@ module CmsSpreadCouponFunction =
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccruedAmount
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -261,7 +261,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AdjustedFixing
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -297,7 +297,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Amount
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -333,7 +333,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).ConvexityAdjustment
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -369,7 +369,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).DayCounter
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -441,7 +441,7 @@ module CmsSpreadCouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Factory
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Factory
                                                             _nominal.cell 
                                                             _paymentDate.cell 
                                                             _startDate.cell 
@@ -513,7 +513,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).FixingDate
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -549,7 +549,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).FixingDays
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -585,7 +585,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Gearing
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -621,7 +621,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Index
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
@@ -657,7 +657,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).IndexFixing
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -693,7 +693,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).IsInArrears
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -732,7 +732,7 @@ module CmsSpreadCouponFunction =
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Price
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Price
                                                             _yts.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -771,7 +771,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Pricer
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
@@ -807,7 +807,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Rate
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -846,7 +846,7 @@ module CmsSpreadCouponFunction =
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).SetPricer
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : CmsSpreadCoupon) (l:string) = o.ToString() :> obj
@@ -885,7 +885,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Spread
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -921,7 +921,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Update
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : CmsSpreadCoupon) (l:string) = o.ToString() :> obj
 
@@ -957,7 +957,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccrualDays
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -993,7 +993,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccrualEndDate
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1029,7 +1029,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccrualPeriod
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1065,7 +1065,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccrualStartDate
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1104,7 +1104,7 @@ module CmsSpreadCouponFunction =
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccruedDays
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1146,7 +1146,7 @@ module CmsSpreadCouponFunction =
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccruedPeriod
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1185,7 +1185,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Date
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1221,7 +1221,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).ExCouponDate
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1257,7 +1257,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Nominal
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1293,7 +1293,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).ReferencePeriodEnd
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1329,7 +1329,7 @@ module CmsSpreadCouponFunction =
             try
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).ReferencePeriodStart
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1368,7 +1368,7 @@ module CmsSpreadCouponFunction =
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).CompareTo
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1410,7 +1410,7 @@ module CmsSpreadCouponFunction =
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Equals
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1455,7 +1455,7 @@ module CmsSpreadCouponFunction =
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).HasOccurred
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -1500,7 +1500,7 @@ module CmsSpreadCouponFunction =
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).TradingExCoupon
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1542,7 +1542,7 @@ module CmsSpreadCouponFunction =
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Accept
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : CmsSpreadCoupon) (l:string) = o.ToString() :> obj
@@ -1584,7 +1584,7 @@ module CmsSpreadCouponFunction =
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).RegisterWith
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CmsSpreadCoupon) (l:string) = o.ToString() :> obj
@@ -1626,7 +1626,7 @@ module CmsSpreadCouponFunction =
 
                 let _CmsSpreadCoupon = Helper.toCell<CmsSpreadCoupon> cmsspreadcoupon "CmsSpreadCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).UnregisterWith
+                let builder (current : ICell) = ((CmsSpreadCouponModel.Cast _CmsSpreadCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CmsSpreadCoupon) (l:string) = o.ToString() :> obj

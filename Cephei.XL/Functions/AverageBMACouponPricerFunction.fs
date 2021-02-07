@@ -52,7 +52,7 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).CapletPrice
+                let builder (current : ICell) = ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).CapletPrice
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).CapletRate
+                let builder (current : ICell) = ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).CapletRate
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -136,7 +136,7 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).FloorletPrice
+                let builder (current : ICell) = ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).FloorletPrice
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -178,7 +178,7 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).FloorletRate
+                let builder (current : ICell) = ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).FloorletRate
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -220,7 +220,7 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).Initialize
+                let builder (current : ICell) = ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
                 let format (o : AverageBMACouponPricer) (l:string) = o.ToString() :> obj
@@ -259,7 +259,7 @@ module AverageBMACouponPricerFunction =
             try
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).SwapletPrice
+                let builder (current : ICell) = ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -295,7 +295,7 @@ module AverageBMACouponPricerFunction =
             try
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).SwapletRate
+                let builder (current : ICell) = ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -334,7 +334,7 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).RegisterWith
+                let builder (current : ICell) = ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AverageBMACouponPricer) (l:string) = o.ToString() :> obj
@@ -376,7 +376,7 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).UnregisterWith
+                let builder (current : ICell) = ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AverageBMACouponPricer) (l:string) = o.ToString() :> obj
@@ -415,7 +415,7 @@ module AverageBMACouponPricerFunction =
             try
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).Update
+                let builder (current : ICell) = ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).Update
                                                        ) :> ICell
                 let format (o : AverageBMACouponPricer) (l:string) = o.ToString() :> obj
 

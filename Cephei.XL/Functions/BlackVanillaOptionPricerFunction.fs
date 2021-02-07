@@ -61,7 +61,7 @@ module BlackVanillaOptionPricerFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _volatilityStructure = Helper.toCell<SwaptionVolatilityStructure> volatilityStructure "volatilityStructure" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackVanillaOptionPricer 
+                let builder (current : ICell) = (Fun.BlackVanillaOptionPricer 
                                                             _forwardValue.cell 
                                                             _expiryDate.cell 
                                                             _swapTenor.cell 
@@ -119,7 +119,7 @@ module BlackVanillaOptionPricerFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _optionType = Helper.toCell<Option.Type> optionType "optionType" 
                 let _deflator = Helper.toCell<double> deflator "deflator" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVanillaOptionPricerModel.Cast _BlackVanillaOptionPricer.cell).Value
+                let builder (current : ICell) = ((BlackVanillaOptionPricerModel.Cast _BlackVanillaOptionPricer.cell).Value
                                                             _strike.cell 
                                                             _optionType.cell 
                                                             _deflator.cell 

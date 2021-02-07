@@ -46,7 +46,7 @@ module OneDayCounterFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.OneDayCounter ()
+                let builder (current : ICell) = (Fun.OneDayCounter ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OneDayCounter>) l
 
@@ -86,7 +86,7 @@ module OneDayCounterFunction =
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).DayCount
+                let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
@@ -128,7 +128,7 @@ module OneDayCounterFunction =
             try
 
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
-                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).DayCounter
+                let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -164,7 +164,7 @@ module OneDayCounterFunction =
             try
 
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
-                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).Empty
+                let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -203,7 +203,7 @@ module OneDayCounterFunction =
 
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).Equals
+                let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -242,7 +242,7 @@ module OneDayCounterFunction =
             try
 
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
-                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).Name
+                let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -278,7 +278,7 @@ module OneDayCounterFunction =
             try
 
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
-                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).ToString
+                let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -326,7 +326,7 @@ module OneDayCounterFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).YearFraction
+                let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refPeriodStart.cell 
@@ -380,7 +380,7 @@ module OneDayCounterFunction =
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).YearFraction1
+                let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell

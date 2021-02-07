@@ -49,7 +49,7 @@ module InverseCumulativeRngFunction =
             try
 
                 let _uniformGenerator = Helper.toCell<'RNG> uniformGenerator "uniformGenerator" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseCumulativeRng 
+                let builder (current : ICell) = (Fun.InverseCumulativeRng 
                                                             _uniformGenerator.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseCumulativeRng>) l
@@ -86,7 +86,7 @@ module InverseCumulativeRngFunction =
             try
 
                 let _InverseCumulativeRng = Helper.toCell<InverseCumulativeRng> inversecumulativerng "InverseCumulativeRng"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InverseCumulativeRngModel.Cast _InverseCumulativeRng.cell).Next
+                let builder (current : ICell) = ((InverseCumulativeRngModel.Cast _InverseCumulativeRng.cell).Next
                                                        ) :> ICell
                 let format (o : Sample<double>) (l:string) = o.ToString() :> obj
 

@@ -55,7 +55,7 @@ module FdmZeroInnerValueFunction =
                 let _FdmZeroInnerValue = Helper.toCell<FdmZeroInnerValue> fdmzeroinnervalue "FdmZeroInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmZeroInnerValueModel.Cast _FdmZeroInnerValue.cell).AvgInnerValue
+                let builder (current : ICell) = ((FdmZeroInnerValueModel.Cast _FdmZeroInnerValue.cell).AvgInnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module FdmZeroInnerValueFunction =
                 let _FdmZeroInnerValue = Helper.toCell<FdmZeroInnerValue> fdmzeroinnervalue "FdmZeroInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmZeroInnerValueModel.Cast _FdmZeroInnerValue.cell).InnerValue
+                let builder (current : ICell) = ((FdmZeroInnerValueModel.Cast _FdmZeroInnerValue.cell).InnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell

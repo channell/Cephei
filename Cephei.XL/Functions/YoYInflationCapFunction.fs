@@ -58,7 +58,7 @@ module YoYInflationCapFunction =
                 let _exerciseRates = Helper.toCell<Generic.List<double>> exerciseRates "exerciseRates" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.YoYInflationCap 
+                let builder (current : ICell) = (Fun.YoYInflationCap 
                                                             _yoyLeg.cell 
                                                             _exerciseRates.cell 
                                                             _pricingEngine.cell 
@@ -107,7 +107,7 @@ module YoYInflationCapFunction =
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
                 let _discountCurve = Helper.toCell<YieldTermStructure> discountCurve "discountCurve" 
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).AtmRate
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).AtmRate
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -146,7 +146,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).CapRates
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).CapRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -182,7 +182,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).FloorRates
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).FloorRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -239,7 +239,7 @@ module YoYInflationCapFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).ImpliedVolatility
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).ImpliedVolatility
                                                             _price.cell 
                                                             _yoyCurve.cell 
                                                             _guess.cell 
@@ -296,7 +296,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).IsExpired
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -332,7 +332,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).LastYoYInflationCoupon
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).LastYoYInflationCoupon
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationCoupon>) l
 
@@ -368,7 +368,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).MaturityDate
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -407,7 +407,7 @@ module YoYInflationCapFunction =
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).Optionlet
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).Optionlet
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationCapFloor>) l
@@ -446,7 +446,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).StartDate
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -482,7 +482,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).Type
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).Type
                                                        ) :> ICell
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
 
@@ -518,7 +518,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).YoyLeg
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).YoyLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -554,7 +554,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).CASH
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -590,7 +590,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).ErrorEstimate
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -626,7 +626,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).NPV
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -665,7 +665,7 @@ module YoYInflationCapFunction =
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).Result
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -707,7 +707,7 @@ module YoYInflationCapFunction =
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).SetPricingEngine
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationCap) (l:string) = o.ToString() :> obj
@@ -746,7 +746,7 @@ module YoYInflationCapFunction =
             try
 
                 let _YoYInflationCap = Helper.toCell<YoYInflationCap> yoyinflationcap "YoYInflationCap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapModel.Cast _YoYInflationCap.cell).ValuationDate
+                let builder (current : ICell) = ((YoYInflationCapModel.Cast _YoYInflationCap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

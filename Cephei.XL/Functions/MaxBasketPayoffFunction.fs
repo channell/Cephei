@@ -52,7 +52,7 @@ module MaxBasketPayoffFunction =
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Accumulate
+                let builder (current : ICell) = ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Accumulate
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -91,7 +91,7 @@ module MaxBasketPayoffFunction =
             try
 
                 let _p = Helper.toCell<Payoff> p "p" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MaxBasketPayoff 
+                let builder (current : ICell) = (Fun.MaxBasketPayoff 
                                                             _p.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MaxBasketPayoff>) l
@@ -128,7 +128,7 @@ module MaxBasketPayoffFunction =
             try
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).BasePayoff
+                let builder (current : ICell) = ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).BasePayoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -164,7 +164,7 @@ module MaxBasketPayoffFunction =
             try
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Description
+                let builder (current : ICell) = ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -200,7 +200,7 @@ module MaxBasketPayoffFunction =
             try
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Name
+                let builder (current : ICell) = ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -239,7 +239,7 @@ module MaxBasketPayoffFunction =
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Value1
+                let builder (current : ICell) = ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Value1
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -281,7 +281,7 @@ module MaxBasketPayoffFunction =
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Value
+                let builder (current : ICell) = ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -323,7 +323,7 @@ module MaxBasketPayoffFunction =
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Accept
+                let builder (current : ICell) = ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : MaxBasketPayoff) (l:string) = o.ToString() :> obj

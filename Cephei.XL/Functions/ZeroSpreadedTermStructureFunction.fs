@@ -49,7 +49,7 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).Calendar
+                let builder (current : ICell) = ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -85,7 +85,7 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).DayCounter
+                let builder (current : ICell) = ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -121,7 +121,7 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).MaxDate
+                let builder (current : ICell) = ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -157,7 +157,7 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).MaxTime
+                let builder (current : ICell) = ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -193,7 +193,7 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).ReferenceDate
+                let builder (current : ICell) = ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -229,7 +229,7 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).SettlementDays
+                let builder (current : ICell) = ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -280,7 +280,7 @@ module ZeroSpreadedTermStructureFunction =
                 let _freq = Helper.toDefault<Frequency> freq "freq" Frequency.NoFrequency
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ZeroSpreadedTermStructure 
+                let builder (current : ICell) = (Fun.ZeroSpreadedTermStructure 
                                                             _h.cell 
                                                             _spread.cell 
                                                             _comp.cell 

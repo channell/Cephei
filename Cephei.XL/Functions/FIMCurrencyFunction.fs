@@ -46,7 +46,7 @@ module FIMCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FIMCurrency ()
+                let builder (current : ICell) = (Fun.FIMCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FIMCurrency>) l
 
@@ -80,7 +80,7 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Code
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Empty
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module FIMCurrencyFunction =
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Equals
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Format
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Name
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).NumericCode
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Rounding
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Symbol
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).ToString
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((FIMCurrencyModel.Cast _FIMCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

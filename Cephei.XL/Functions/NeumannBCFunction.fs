@@ -52,7 +52,7 @@ module NeumannBCFunction =
 
                 let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
                 let _u = Helper.toCell<Vector> u "u" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyAfterApplying
+                let builder (current : ICell) = ((NeumannBCModel.Cast _NeumannBC.cell).ApplyAfterApplying
                                                             _u.cell 
                                                        ) :> ICell
                 let format (o : NeumannBC) (l:string) = o.ToString() :> obj
@@ -94,7 +94,7 @@ module NeumannBCFunction =
 
                 let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyAfterSolving
+                let builder (current : ICell) = ((NeumannBCModel.Cast _NeumannBC.cell).ApplyAfterSolving
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : NeumannBC) (l:string) = o.ToString() :> obj
@@ -136,7 +136,7 @@ module NeumannBCFunction =
 
                 let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
                 let _o = Helper.toCell<IOperator> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyBeforeApplying
+                let builder (current : ICell) = ((NeumannBCModel.Cast _NeumannBC.cell).ApplyBeforeApplying
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : NeumannBC) (l:string) = o.ToString() :> obj
@@ -181,7 +181,7 @@ module NeumannBCFunction =
                 let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
                 let _o = Helper.toCell<IOperator> o "o" 
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyBeforeSolving
+                let builder (current : ICell) = ((NeumannBCModel.Cast _NeumannBC.cell).ApplyBeforeSolving
                                                             _o.cell 
                                                             _rhs.cell 
                                                        ) :> ICell
@@ -226,7 +226,7 @@ module NeumannBCFunction =
 
                 let _value = Helper.toCell<double> value "value" 
                 let _side = Helper.toCell<BoundaryCondition<IOperator>.Side> side "side" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NeumannBC 
+                let builder (current : ICell) = (Fun.NeumannBC 
                                                             _value.cell 
                                                             _side.cell 
                                                        ) :> ICell
@@ -269,7 +269,7 @@ module NeumannBCFunction =
 
                 let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).SetTime
+                let builder (current : ICell) = ((NeumannBCModel.Cast _NeumannBC.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : NeumannBC) (l:string) = o.ToString() :> obj

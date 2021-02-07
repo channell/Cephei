@@ -49,7 +49,7 @@ module LongstaffSchwartzPathPricerFunction =
             try
 
                 let _LongstaffSchwartzPathPricer = Helper.toCell<LongstaffSchwartzPathPricer> longstaffschwartzpathpricer "LongstaffSchwartzPathPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LongstaffSchwartzPathPricerModel.Cast _LongstaffSchwartzPathPricer.cell).Calibrate
+                let builder (current : ICell) = ((LongstaffSchwartzPathPricerModel.Cast _LongstaffSchwartzPathPricer.cell).Calibrate
                                                        ) :> ICell
                 let format (o : LongstaffSchwartzPathPricer) (l:string) = o.ToString() :> obj
 
@@ -91,7 +91,7 @@ module LongstaffSchwartzPathPricerFunction =
                 let _times = Helper.toCell<TimeGrid> times "times" 
                 let _pathPricer = Helper.toCell<IEarlyExercisePathPricer<PathType,double>> pathPricer "pathPricer" 
                 let _termStructure = Helper.toCell<YieldTermStructure> termStructure "termStructure" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LongstaffSchwartzPathPricer 
+                let builder (current : ICell) = (Fun.LongstaffSchwartzPathPricer 
                                                             _times.cell 
                                                             _pathPricer.cell 
                                                             _termStructure.cell 
@@ -137,7 +137,7 @@ module LongstaffSchwartzPathPricerFunction =
 
                 let _LongstaffSchwartzPathPricer = Helper.toCell<LongstaffSchwartzPathPricer> longstaffschwartzpathpricer "LongstaffSchwartzPathPricer"  
                 let _path = Helper.toCell<'PathType> path "path" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LongstaffSchwartzPathPricerModel.Cast _LongstaffSchwartzPathPricer.cell).Value
+                let builder (current : ICell) = ((LongstaffSchwartzPathPricerModel.Cast _LongstaffSchwartzPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

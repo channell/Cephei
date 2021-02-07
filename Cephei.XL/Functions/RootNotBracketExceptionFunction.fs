@@ -52,7 +52,7 @@ module RootNotBracketExceptionFunction =
 
                 let _message = Helper.toCell<string> message "message" 
                 let _inner = Helper.toCell<Exception> inner "inner" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.RootNotBracketException 
+                let builder (current : ICell) = (Fun.RootNotBracketException 
                                                             _message.cell 
                                                             _inner.cell 
                                                        ) :> ICell
@@ -89,7 +89,7 @@ module RootNotBracketExceptionFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.RootNotBracketException1 
+                let builder (current : ICell) = (Fun.RootNotBracketException1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RootNotBracketException>) l
 
@@ -123,7 +123,7 @@ module RootNotBracketExceptionFunction =
             try
 
                 let _message = Helper.toCell<string> message "message" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.RootNotBracketException2 
+                let builder (current : ICell) = (Fun.RootNotBracketException2 
                                                             _message.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RootNotBracketException>) l

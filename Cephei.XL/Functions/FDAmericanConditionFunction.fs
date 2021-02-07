@@ -61,7 +61,7 @@ module FDAmericanConditionFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).Factory
+                let builder (current : ICell) = ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -118,7 +118,7 @@ module FDAmericanConditionFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDAmericanCondition 
+                let builder (current : ICell) = (Fun.FDAmericanCondition 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -161,7 +161,7 @@ module FDAmericanConditionFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDAmericanCondition1 
+                let builder (current : ICell) = (Fun.FDAmericanCondition1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDAmericanCondition>) l
 
@@ -199,7 +199,7 @@ module FDAmericanConditionFunction =
 
                 let _FDAmericanCondition = Helper.toCell<FDAmericanCondition> fdamericancondition "FDAmericanCondition"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).SetStepCondition
+                let builder (current : ICell) = ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (o : FDAmericanCondition) (l:string) = o.ToString() :> obj
@@ -238,7 +238,7 @@ module FDAmericanConditionFunction =
             try
 
                 let _FDAmericanCondition = Helper.toCell<FDAmericanCondition> fdamericancondition "FDAmericanCondition"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).EnsureStrikeInGrid
+                let builder (current : ICell) = ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDAmericanCondition) (l:string) = o.ToString() :> obj
 
@@ -274,7 +274,7 @@ module FDAmericanConditionFunction =
             try
 
                 let _FDAmericanCondition = Helper.toCell<FDAmericanCondition> fdamericancondition "FDAmericanCondition"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).GetResidualTime
+                let builder (current : ICell) = ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -310,7 +310,7 @@ module FDAmericanConditionFunction =
             try
 
                 let _FDAmericanCondition = Helper.toCell<FDAmericanCondition> fdamericancondition "FDAmericanCondition"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).Grid
+                let builder (current : ICell) = ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -346,7 +346,7 @@ module FDAmericanConditionFunction =
             try
 
                 let _FDAmericanCondition = Helper.toCell<FDAmericanCondition> fdamericancondition "FDAmericanCondition"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).IntrinsicValues_
+                let builder (current : ICell) = ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 

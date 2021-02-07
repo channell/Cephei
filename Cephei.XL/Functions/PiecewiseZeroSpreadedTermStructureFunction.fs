@@ -67,7 +67,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.NoFrequency
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.PiecewiseZeroSpreadedTermStructure 
+                let builder (current : ICell) = (Fun.PiecewiseZeroSpreadedTermStructure 
                                                             _h.cell 
                                                             _spreads.cell 
                                                             _dates.cell 
@@ -122,7 +122,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).Calendar
+                let builder (current : ICell) = ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -158,7 +158,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).DayCounter
+                let builder (current : ICell) = ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -194,7 +194,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).MaxDate
+                let builder (current : ICell) = ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -230,7 +230,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).ReferenceDate
+                let builder (current : ICell) = ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -266,7 +266,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).SettlementDays
+                let builder (current : ICell) = ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

@@ -61,7 +61,7 @@ module NewZealandFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NewZealand ()
+                let builder (current : ICell) = (Fun.NewZealand ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NewZealand>) l
 
@@ -95,7 +95,7 @@ module NewZealandFunction =
             try
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).AddedHolidays
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -134,7 +134,7 @@ module NewZealandFunction =
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).AddHoliday
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : NewZealand) (l:string) = o.ToString() :> obj
@@ -179,7 +179,7 @@ module NewZealandFunction =
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).Adjust
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -236,7 +236,7 @@ module NewZealandFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).Advance1
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -299,7 +299,7 @@ module NewZealandFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).Advance
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -359,7 +359,7 @@ module NewZealandFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).BusinessDaysBetween
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -407,7 +407,7 @@ module NewZealandFunction =
             try
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).Calendar
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -443,7 +443,7 @@ module NewZealandFunction =
             try
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).Empty
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module NewZealandFunction =
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).EndOfMonth
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -524,7 +524,7 @@ module NewZealandFunction =
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).Equals
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -566,7 +566,7 @@ module NewZealandFunction =
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).IsBusinessDay
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -608,7 +608,7 @@ module NewZealandFunction =
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).IsEndOfMonth
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -650,7 +650,7 @@ module NewZealandFunction =
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).IsHoliday
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -692,7 +692,7 @@ module NewZealandFunction =
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).IsWeekend
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -733,7 +733,7 @@ module NewZealandFunction =
             try
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).Name
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -769,7 +769,7 @@ module NewZealandFunction =
             try
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).RemovedHolidays
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -808,7 +808,7 @@ module NewZealandFunction =
 
                 let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NewZealandModel.Cast _NewZealand.cell).RemoveHoliday
+                let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : NewZealand) (l:string) = o.ToString() :> obj

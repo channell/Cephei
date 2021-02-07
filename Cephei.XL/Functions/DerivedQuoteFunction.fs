@@ -52,7 +52,7 @@ module DerivedQuoteFunction =
 
                 let _element = Helper.toHandle<Quote> element "element" 
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DerivedQuote 
+                let builder (current : ICell) = (Fun.DerivedQuote 
                                                             _element.cell 
                                                             _f.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module DerivedQuoteFunction =
             try
 
                 let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).IsValid
+                let builder (current : ICell) = ((DerivedQuoteModel.Cast _DerivedQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -128,7 +128,7 @@ module DerivedQuoteFunction =
             try
 
                 let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).Update
+                let builder (current : ICell) = ((DerivedQuoteModel.Cast _DerivedQuote.cell).Update
                                                        ) :> ICell
                 let format (o : DerivedQuote) (l:string) = o.ToString() :> obj
 
@@ -164,7 +164,7 @@ module DerivedQuoteFunction =
             try
 
                 let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).Value
+                let builder (current : ICell) = ((DerivedQuoteModel.Cast _DerivedQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -203,7 +203,7 @@ module DerivedQuoteFunction =
 
                 let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).RegisterWith
+                let builder (current : ICell) = ((DerivedQuoteModel.Cast _DerivedQuote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DerivedQuote) (l:string) = o.ToString() :> obj
@@ -245,7 +245,7 @@ module DerivedQuoteFunction =
 
                 let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).UnregisterWith
+                let builder (current : ICell) = ((DerivedQuoteModel.Cast _DerivedQuote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DerivedQuote) (l:string) = o.ToString() :> obj

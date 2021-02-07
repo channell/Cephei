@@ -91,7 +91,7 @@ module ConvertibleFloatingRateBondFunction =
                 let _redemption = Helper.toDefault<double> redemption "redemption" 100.0
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConvertibleFloatingRateBond 
+                let builder (current : ICell) = (Fun.ConvertibleFloatingRateBond 
                                                             _exercise.cell 
                                                             _conversionRatio.cell 
                                                             _dividends.cell 
@@ -170,7 +170,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Callability
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Callability
                                                        ) :> ICell
                 let format (o : CallabilitySchedule) (l:string) = o.ToString() :> obj
 
@@ -206,7 +206,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).ConversionRatio
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).ConversionRatio
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -242,7 +242,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).CreditSpread
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).CreditSpread
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -278,7 +278,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Dividends
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Dividends
                                                        ) :> ICell
                 let format (o : DividendSchedule) (l:string) = o.ToString() :> obj
 
@@ -317,7 +317,7 @@ module ConvertibleFloatingRateBondFunction =
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).AccruedAmount
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -356,7 +356,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Calendar
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -392,7 +392,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Cashflows
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -428,7 +428,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).CleanPrice
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -479,7 +479,7 @@ module ConvertibleFloatingRateBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).CleanPrice1
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -545,7 +545,7 @@ module ConvertibleFloatingRateBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).DirtyPrice1
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -596,7 +596,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).DirtyPrice
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -632,7 +632,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).IsExpired
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -668,7 +668,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).IssueDate
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -707,7 +707,7 @@ module ConvertibleFloatingRateBondFunction =
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).IsTradable
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -746,7 +746,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).MaturityDate
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -785,7 +785,7 @@ module ConvertibleFloatingRateBondFunction =
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).NextCashFlowDate
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -827,7 +827,7 @@ module ConvertibleFloatingRateBondFunction =
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).NextCouponRate
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -869,7 +869,7 @@ module ConvertibleFloatingRateBondFunction =
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Notional
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Notional
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -908,7 +908,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Notionals
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -947,7 +947,7 @@ module ConvertibleFloatingRateBondFunction =
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).PreviousCashFlowDate
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -989,7 +989,7 @@ module ConvertibleFloatingRateBondFunction =
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).PreviousCouponRate
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1028,7 +1028,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Redemption
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
@@ -1064,7 +1064,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Redemptions
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -1103,7 +1103,7 @@ module ConvertibleFloatingRateBondFunction =
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).SettlementDate
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1142,7 +1142,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).SettlementDays
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1181,7 +1181,7 @@ module ConvertibleFloatingRateBondFunction =
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).SettlementValue
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1220,7 +1220,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).SettlementValue1
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1256,7 +1256,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).StartDate
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1313,7 +1313,7 @@ module ConvertibleFloatingRateBondFunction =
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Yield1
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1385,7 +1385,7 @@ module ConvertibleFloatingRateBondFunction =
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Yield
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Yield
                                                             _dc.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1436,7 +1436,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).CASH
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1472,7 +1472,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).ErrorEstimate
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1508,7 +1508,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).NPV
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1547,7 +1547,7 @@ module ConvertibleFloatingRateBondFunction =
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Result
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -1589,7 +1589,7 @@ module ConvertibleFloatingRateBondFunction =
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).SetPricingEngine
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : ConvertibleFloatingRateBond) (l:string) = o.ToString() :> obj
@@ -1628,7 +1628,7 @@ module ConvertibleFloatingRateBondFunction =
             try
 
                 let _ConvertibleFloatingRateBond = Helper.toCell<ConvertibleFloatingRateBond> convertiblefloatingratebond "ConvertibleFloatingRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).ValuationDate
+                let builder (current : ICell) = ((ConvertibleFloatingRateBondModel.Cast _ConvertibleFloatingRateBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

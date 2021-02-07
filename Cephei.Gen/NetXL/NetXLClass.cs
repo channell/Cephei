@@ -456,7 +456,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("                let builder (current : ICell) = withMnemonic mnemonic (Fun.");
+            this.Write("                let builder (current : ICell) = (Fun.");
             
             #line 141 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name + (version > 0 ? version.ToString() : "")));
@@ -474,7 +474,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("                let builder (current : ICell) = withMnemonic mnemonic ((_");
+            this.Write("                let builder (current : ICell) = ((_");
             
             #line 147 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));

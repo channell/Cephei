@@ -49,7 +49,7 @@ module MonomialFctFunction =
             try
 
                 let _order = Helper.toCell<int> order "order" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MonomialFct 
+                let builder (current : ICell) = (Fun.MonomialFct 
                                                             _order.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MonomialFct>) l
@@ -89,7 +89,7 @@ module MonomialFctFunction =
 
                 let _MonomialFct = Helper.toCell<MonomialFct> monomialfct "MonomialFct"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MonomialFctModel.Cast _MonomialFct.cell).Value
+                let builder (current : ICell) = ((MonomialFctModel.Cast _MonomialFct.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

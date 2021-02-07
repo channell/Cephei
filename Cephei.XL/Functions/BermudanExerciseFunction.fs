@@ -49,7 +49,7 @@ module BermudanExerciseFunction =
             try
 
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BermudanExercise 
+                let builder (current : ICell) = (Fun.BermudanExercise 
                                                             _dates.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BermudanExercise>) l
@@ -89,7 +89,7 @@ module BermudanExerciseFunction =
 
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BermudanExercise1 
+                let builder (current : ICell) = (Fun.BermudanExercise1 
                                                             _dates.cell 
                                                             _payoffAtExpiry.cell 
                                                        ) :> ICell
@@ -129,7 +129,7 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).PayoffAtExpiry
+                let builder (current : ICell) = ((BermudanExerciseModel.Cast _BermudanExercise.cell).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -168,7 +168,7 @@ module BermudanExerciseFunction =
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Date
+                let builder (current : ICell) = ((BermudanExerciseModel.Cast _BermudanExercise.cell).Date
                                                             _index.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -207,7 +207,7 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Dates
+                let builder (current : ICell) = ((BermudanExerciseModel.Cast _BermudanExercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -243,7 +243,7 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).LastDate
+                let builder (current : ICell) = ((BermudanExerciseModel.Cast _BermudanExercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -279,7 +279,7 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Type
+                let builder (current : ICell) = ((BermudanExerciseModel.Cast _BermudanExercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 

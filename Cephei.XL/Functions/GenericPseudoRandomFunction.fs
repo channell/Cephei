@@ -49,7 +49,7 @@ module GenericPseudoRandomFunction =
             try
 
                 let _GenericPseudoRandom = Helper.toCell<GenericPseudoRandom> genericpseudorandom "GenericPseudoRandom"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GenericPseudoRandomModel.Cast _GenericPseudoRandom.cell).AllowsErrorEstimate
+                let builder (current : ICell) = ((GenericPseudoRandomModel.Cast _GenericPseudoRandom.cell).AllowsErrorEstimate
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -91,7 +91,7 @@ module GenericPseudoRandomFunction =
                 let _GenericPseudoRandom = Helper.toCell<GenericPseudoRandom> genericpseudorandom "GenericPseudoRandom"  
                 let _dimension = Helper.toCell<int> dimension "dimension" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GenericPseudoRandomModel.Cast _GenericPseudoRandom.cell).Make_sequence_generator
+                let builder (current : ICell) = ((GenericPseudoRandomModel.Cast _GenericPseudoRandom.cell).Make_sequence_generator
                                                             _dimension.cell 
                                                             _seed.cell 
                                                        ) :> ICell

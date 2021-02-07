@@ -49,7 +49,7 @@ module AmericanConditionFunction =
             try
 
                 let _intrinsicValues = Helper.toCell<Vector> intrinsicValues "intrinsicValues" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmericanCondition1 
+                let builder (current : ICell) = (Fun.AmericanCondition1 
                                                             _intrinsicValues.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AmericanCondition>) l
@@ -89,7 +89,7 @@ module AmericanConditionFunction =
 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmericanCondition
+                let builder (current : ICell) = (Fun.AmericanCondition
                                                             _Type.cell 
                                                             _strike.cell 
                                                        ) :> ICell
@@ -135,7 +135,7 @@ module AmericanConditionFunction =
                 let _AmericanCondition = Helper.toCell<AmericanCondition> americancondition "AmericanCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmericanConditionModel.Cast _AmericanCondition.cell).ApplyTo
+                let builder (current : ICell) = ((AmericanConditionModel.Cast _AmericanCondition.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell

@@ -49,7 +49,7 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).AssetNumber
+                let builder (current : ICell) = ((MultiPathModel.Cast _MultiPath.cell).AssetNumber
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).Clone
+                let builder (current : ICell) = ((MultiPathModel.Cast _MultiPath.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -121,7 +121,7 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).Length
+                let builder (current : ICell) = ((MultiPathModel.Cast _MultiPath.cell).Length
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -157,7 +157,7 @@ module MultiPathFunction =
             try
 
                 let _multiPath = Helper.toCell<Generic.List<Path>> multiPath "multiPath" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MultiPath2 
+                let builder (current : ICell) = (Fun.MultiPath2 
                                                             _multiPath.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MultiPath>) l
@@ -197,7 +197,7 @@ module MultiPathFunction =
 
                 let _nAsset = Helper.toCell<int> nAsset "nAsset" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MultiPath
+                let builder (current : ICell) = (Fun.MultiPath
                                                             _nAsset.cell 
                                                             _timeGrid.cell 
                                                        ) :> ICell
@@ -234,7 +234,7 @@ module MultiPathFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MultiPath1 ()
+                let builder (current : ICell) = (Fun.MultiPath1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MultiPath>) l
 
@@ -268,7 +268,7 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).PathSize
+                let builder (current : ICell) = ((MultiPathModel.Cast _MultiPath.cell).PathSize
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -307,7 +307,7 @@ module MultiPathFunction =
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).This
+                let builder (current : ICell) = ((MultiPathModel.Cast _MultiPath.cell).This
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Path) (l:string) = o.ToString() :> obj

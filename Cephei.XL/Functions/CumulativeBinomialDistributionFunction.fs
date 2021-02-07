@@ -52,7 +52,7 @@ module CumulativeBinomialDistributionFunction =
 
                 let _p = Helper.toCell<double> p "p" 
                 let _n = Helper.toCell<int> n "n" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CumulativeBinomialDistribution 
+                let builder (current : ICell) = (Fun.CumulativeBinomialDistribution 
                                                             _p.cell 
                                                             _n.cell 
                                                        ) :> ICell
@@ -95,7 +95,7 @@ module CumulativeBinomialDistributionFunction =
 
                 let _CumulativeBinomialDistribution = Helper.toCell<CumulativeBinomialDistribution> cumulativebinomialdistribution "CumulativeBinomialDistribution"  
                 let _k = Helper.toCell<int64> k "k" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CumulativeBinomialDistributionModel.Cast _CumulativeBinomialDistribution.cell).Value
+                let builder (current : ICell) = ((CumulativeBinomialDistributionModel.Cast _CumulativeBinomialDistribution.cell).Value
                                                             _k.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

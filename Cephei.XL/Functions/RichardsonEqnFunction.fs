@@ -61,7 +61,7 @@ module RichardsonEqnFunction =
                 let _fs = Helper.toCell<double> fs "fs" 
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.RichardsonEqn 
+                let builder (current : ICell) = (Fun.RichardsonEqn 
                                                             _fh.cell 
                                                             _ft.cell 
                                                             _fs.cell 
@@ -113,7 +113,7 @@ module RichardsonEqnFunction =
 
                 let _RichardsonEqn = Helper.toCell<RichardsonEqn> richardsoneqn "RichardsonEqn"  
                 let _k = Helper.toCell<double> k "k" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RichardsonEqnModel.Cast _RichardsonEqn.cell).Value
+                let builder (current : ICell) = ((RichardsonEqnModel.Cast _RichardsonEqn.cell).Value
                                                             _k.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -155,7 +155,7 @@ module RichardsonEqnFunction =
 
                 let _RichardsonEqn = Helper.toCell<RichardsonEqn> richardsoneqn "RichardsonEqn"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RichardsonEqnModel.Cast _RichardsonEqn.cell).Derivative
+                let builder (current : ICell) = ((RichardsonEqnModel.Cast _RichardsonEqn.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

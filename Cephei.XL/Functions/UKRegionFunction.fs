@@ -46,7 +46,7 @@ module UKRegionFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.UKRegion ()
+                let builder (current : ICell) = (Fun.UKRegion ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<UKRegion>) l
 
@@ -80,7 +80,7 @@ module UKRegionFunction =
             try
 
                 let _UKRegion = Helper.toCell<UKRegion> ukregion "UKRegion"  
-                let builder (current : ICell) = withMnemonic mnemonic ((UKRegionModel.Cast _UKRegion.cell).Code
+                let builder (current : ICell) = ((UKRegionModel.Cast _UKRegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -119,7 +119,7 @@ module UKRegionFunction =
 
                 let _UKRegion = Helper.toCell<UKRegion> ukregion "UKRegion"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((UKRegionModel.Cast _UKRegion.cell).Equals
+                let builder (current : ICell) = ((UKRegionModel.Cast _UKRegion.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -158,7 +158,7 @@ module UKRegionFunction =
             try
 
                 let _UKRegion = Helper.toCell<UKRegion> ukregion "UKRegion"  
-                let builder (current : ICell) = withMnemonic mnemonic ((UKRegionModel.Cast _UKRegion.cell).Name
+                let builder (current : ICell) = ((UKRegionModel.Cast _UKRegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 

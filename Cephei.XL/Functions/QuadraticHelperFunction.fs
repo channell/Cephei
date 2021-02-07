@@ -49,7 +49,7 @@ module QuadraticHelperFunction =
             try
 
                 let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).FNext
+                let builder (current : ICell) = ((QuadraticHelperModel.Cast _QuadraticHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -88,7 +88,7 @@ module QuadraticHelperFunction =
 
                 let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).Primitive
+                let builder (current : ICell) = ((QuadraticHelperModel.Cast _QuadraticHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -142,7 +142,7 @@ module QuadraticHelperFunction =
                 let _fNext = Helper.toCell<double> fNext "fNext" 
                 let _fAverage = Helper.toCell<double> fAverage "fAverage" 
                 let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.QuadraticHelper 
+                let builder (current : ICell) = (Fun.QuadraticHelper 
                                                             _xPrev.cell 
                                                             _xNext.cell 
                                                             _fPrev.cell 
@@ -197,7 +197,7 @@ module QuadraticHelperFunction =
 
                 let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).Value
+                let builder (current : ICell) = ((QuadraticHelperModel.Cast _QuadraticHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

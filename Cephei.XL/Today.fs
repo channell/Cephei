@@ -84,17 +84,7 @@ module Today =
                 let _reference = Helper.toCell<double> reference "reference" 
                 let _lapse = Helper.toCell<double> lapse "lapse" 
 
-                let builder (current : ICell) = 
-                    if current = null then 
-                        withMnemonic mnemonic (new Delay<double> (_reference.cell, _lapse.cell)) :> ICell
-                    else
-                        let source = current :?> Delay<double>
-                        if (not (source.Reference = _reference.cell) || not (source.Lapse = _lapse.cell)) && source.Parent :? Model  then
-                            source.Reference <- _reference.cell
-                            source.Lapse <- _lapse.cell
-                            Cell.Relink (source.GetFunction(), source.Parent :?> Model) |> ignore
-                        current
-
+                let builder (current : ICell) = (new Delay<double> (_reference.cell, _lapse.cell)) :> ICell
                 let format (i : double) (l:string) = i :> obj
 
                 let source () = Helper.sourceFold "Fun.Delay" 

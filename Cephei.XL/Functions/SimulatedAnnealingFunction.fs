@@ -55,7 +55,7 @@ module SimulatedAnnealingFunction =
                 let _SimulatedAnnealing = Helper.toCell<SimulatedAnnealing> simulatedannealing "SimulatedAnnealing"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SimulatedAnnealingModel.Cast _SimulatedAnnealing.cell).Minimize
+                let builder (current : ICell) = ((SimulatedAnnealingModel.Cast _SimulatedAnnealing.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell
@@ -109,7 +109,7 @@ module SimulatedAnnealingFunction =
                 let _K = Helper.toCell<int> K "K" 
                 let _alpha = Helper.toCell<double> alpha "alpha" 
                 let _rng = Helper.toDefault<'RNG> rng "rng" default(RNG)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SimulatedAnnealing 
+                let builder (current : ICell) = (Fun.SimulatedAnnealing 
                                                             _lambda.cell 
                                                             _T0.cell 
                                                             _K.cell 
@@ -170,7 +170,7 @@ module SimulatedAnnealingFunction =
                 let _epsilon = Helper.toCell<double> epsilon "epsilon" 
                 let _m = Helper.toCell<int> m "m" 
                 let _rng = Helper.toDefault<'RNG> rng "rng" default(RNG)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SimulatedAnnealing1 
+                let builder (current : ICell) = (Fun.SimulatedAnnealing1 
                                                             _lambda.cell 
                                                             _T0.cell 
                                                             _epsilon.cell 

@@ -56,7 +56,7 @@ module FdmBlackScholesOpFunction =
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Add
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -102,7 +102,7 @@ module FdmBlackScholesOpFunction =
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Apply
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Apply
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -147,7 +147,7 @@ module FdmBlackScholesOpFunction =
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _direction = Helper.toDefault<int> direction "direction" 0
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Apply_direction
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Apply_direction
                                                             _direction.cell 
                                                             _r.cell 
                                                        ) :> ICell
@@ -192,7 +192,7 @@ module FdmBlackScholesOpFunction =
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Apply_mixed
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Apply_mixed
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -234,7 +234,7 @@ module FdmBlackScholesOpFunction =
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).ApplyTo
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -273,7 +273,7 @@ module FdmBlackScholesOpFunction =
             try
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Clone
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -327,7 +327,7 @@ module FdmBlackScholesOpFunction =
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
                 let _direction = Helper.toDefault<int> direction "direction" 0
                 let _quantoHelper = Helper.toDefault<FdmQuantoHelper> quantoHelper "quantoHelper" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmBlackScholesOp 
+                let builder (current : ICell) = (Fun.FdmBlackScholesOp 
                                                             _mesher.cell 
                                                             _bsProcess.cell 
                                                             _strike.cell 
@@ -385,7 +385,7 @@ module FdmBlackScholesOpFunction =
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Identity
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
@@ -424,7 +424,7 @@ module FdmBlackScholesOpFunction =
             try
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).IsTimeDependent
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -466,7 +466,7 @@ module FdmBlackScholesOpFunction =
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _a = Helper.toCell<double> a "a" 
                 let _D = Helper.toCell<IOperator> D "D" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Multiply
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Multiply
                                                             _a.cell 
                                                             _D.cell 
                                                        ) :> ICell
@@ -514,7 +514,7 @@ module FdmBlackScholesOpFunction =
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _r = Helper.toCell<Vector> r "r" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Preconditioner
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Preconditioner
                                                             _r.cell 
                                                             _dt.cell 
                                                        ) :> ICell
@@ -562,7 +562,7 @@ module FdmBlackScholesOpFunction =
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).SetTime1
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).SetTime1
                                                             _t1.cell 
                                                             _t2.cell 
                                                        ) :> ICell
@@ -607,7 +607,7 @@ module FdmBlackScholesOpFunction =
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).SetTime
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : FdmBlackScholesOp) (l:string) = o.ToString() :> obj
@@ -646,7 +646,7 @@ module FdmBlackScholesOpFunction =
             try
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Size
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -691,7 +691,7 @@ module FdmBlackScholesOpFunction =
                 let _direction = Helper.toDefault<int> direction "direction" 0
                 let _r = Helper.toCell<Vector> r "r" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Solve_splitting
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Solve_splitting
                                                             _direction.cell 
                                                             _r.cell 
                                                             _dt.cell 
@@ -739,7 +739,7 @@ module FdmBlackScholesOpFunction =
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).SolveFor
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -784,7 +784,7 @@ module FdmBlackScholesOpFunction =
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Subtract
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -826,7 +826,7 @@ module FdmBlackScholesOpFunction =
             try
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).ToMatrixDecomp
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).ToMatrixDecomp
                                                        ) :> ICell
                 let format (i : Generic.List<SparseMatrix>) (l : string) = Helper.Range.fromList i l
 
@@ -862,7 +862,7 @@ module FdmBlackScholesOpFunction =
             try
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).ToMatrix
+                let builder (current : ICell) = ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).ToMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
 

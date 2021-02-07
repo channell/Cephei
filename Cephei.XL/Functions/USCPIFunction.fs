@@ -52,7 +52,7 @@ module USCPIFunction =
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
                 let _ts = Helper.toHandle<ZeroInflationTermStructure> ts "ts" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.USCPI1 
+                let builder (current : ICell) = (Fun.USCPI1 
                                                             _interpolated.cell 
                                                             _ts.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module USCPIFunction =
             try
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.USCPI 
+                let builder (current : ICell) = (Fun.USCPI 
                                                             _interpolated.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<USCPI>) l
@@ -132,7 +132,7 @@ module USCPIFunction =
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
                 let _h = Helper.toHandle<ZeroInflationTermStructure> h "h" 
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).Clone
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
@@ -177,7 +177,7 @@ module USCPIFunction =
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
                 let _aFixingDate = Helper.toCell<Date> aFixingDate "aFixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).Fixing
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).Fixing
                                                             _aFixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -219,7 +219,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).ZeroInflationTermStructure
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).ZeroInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
 
@@ -264,7 +264,7 @@ module USCPIFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).AddFixing
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
@@ -310,7 +310,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).AvailabilityLag
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -346,7 +346,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).Currency
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -382,7 +382,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).FamilyName
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -418,7 +418,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).FixingCalendar
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -454,7 +454,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).Frequency
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
@@ -490,7 +490,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).Interpolated
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -529,7 +529,7 @@ module USCPIFunction =
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).IsValidFixingDate
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -568,7 +568,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).Name
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -604,7 +604,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).Region
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
@@ -640,7 +640,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).Revised
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -676,7 +676,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).Update
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).Update
                                                        ) :> ICell
                 let format (o : USCPI) (l:string) = o.ToString() :> obj
 
@@ -721,7 +721,7 @@ module USCPIFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).AddFixings
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -772,7 +772,7 @@ module USCPIFunction =
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).AddFixings1
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -814,7 +814,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).AllowsNativeFixings
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -850,7 +850,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).ClearFixings
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : USCPI) (l:string) = o.ToString() :> obj
 
@@ -889,7 +889,7 @@ module USCPIFunction =
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).RegisterWith
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : USCPI) (l:string) = o.ToString() :> obj
@@ -928,7 +928,7 @@ module USCPIFunction =
             try
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).TimeSeries
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -967,7 +967,7 @@ module USCPIFunction =
 
                 let _USCPI = Helper.toCell<USCPI> uscpi "USCPI"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((USCPIModel.Cast _USCPI.cell).UnregisterWith
+                let builder (current : ICell) = ((USCPIModel.Cast _USCPI.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : USCPI) (l:string) = o.ToString() :> obj

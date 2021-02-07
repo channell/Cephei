@@ -54,11 +54,11 @@ type BondPricerModel
     let _schedule0 = Fun.Schedule (value (new Date(int (38426)))) (value (new Date(int (40421)))) _Semiannual (triv null (fun () -> _USGovi.Value :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value BusinessDayConvention.Unadjusted) (value DateGeneration.Rule.Backward) (value false) (value (null :> QLNet.Date)) (value (null :> QLNet.Date)) _todaysDate
     let _schedule3 = Fun.Schedule (value (new Date(int (37575)))) (value (new Date(int (43327)))) _Semiannual (triv null (fun () -> _USGovi.Value :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value BusinessDayConvention.Unadjusted) (value DateGeneration.Rule.Backward) (value false) (value (null :> QLNet.Date)) (value (null :> QLNet.Date)) _todaysDate
     let _schedule1 = Fun.Schedule (value (new Date(int (38518)))) (value (new Date(int (40786)))) _Semiannual (triv null (fun () -> _USGovi.Value :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value BusinessDayConvention.Unadjusted) (value DateGeneration.Rule.Backward) (value false) (value (null :> QLNet.Date)) (value (null :> QLNet.Date)) _todaysDate
-    let _bondhelper2 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes2.Cell.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule2 _couponRate2  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38898)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
-    let _bondhelper1 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes1.Cell.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule1 _couponRate1  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38518)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
-    let _bondhelper4 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes4.Cell.Box :?> QLNet.Quote))) _settlementDays (value (100.0)) _schedule4 _couponRate4  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (31912)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
-    let _bondhelper3 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes3.Cell.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule3 _couponRate3  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (37575)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
-    let _bondhelper0 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes0.Cell.Box :?> QLNet.Quote))) _settlementDays (value (100.0)) _schedule0 _couponRate0  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38426)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
+    let _bondhelper2 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes2.Subject.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule2 _couponRate2  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38898)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
+    let _bondhelper1 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes1.Subject.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule1 _couponRate1  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38518)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
+    let _bondhelper4 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes4.Subject.Box :?> QLNet.Quote))) _settlementDays (value (100.0)) _schedule4 _couponRate4  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (31912)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
+    let _bondhelper3 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes3.Subject.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule3 _couponRate3  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (37575)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
+    let _bondhelper0 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes0.Subject.Box :?> QLNet.Quote))) _settlementDays (value (100.0)) _schedule0 _couponRate0  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38426)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
     let _zc3mPeriod = Fun.Period (value (Convert.ToInt32(3))) (value TimeUnit.Months)
     let _termStructureDayCounter = Fun.ActualActual1 (value ActualActual.Convention.ISDA) (value (null :> QLNet.Schedule))
     let _discount = Fun.Discount ()
@@ -122,7 +122,7 @@ module BondPricerModelFunction =
             try
                 let _settlementDate = Helper.toCell<QLNet.Date> settlementDate "settlementDate"
 
-                let builder (current : ICell) = withMnemonic mnemonic (new BondPricerModel
+                let builder (current : ICell) = (new BondPricerModel
                                                                         ( _settlementDate.cell)
 
                                                                       ) :> ICell
@@ -158,7 +158,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).Globals :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).Globals :> ICell
             let format (o : Cephei.Models.GlobalsModel) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".Globals")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -186,7 +186,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).redemption :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).redemption :> ICell
             let format (o : System.Double) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".redemption")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -214,7 +214,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).Semiannual :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).Semiannual :> ICell
             let format (o : QLNet.Period) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".Semiannual")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -242,7 +242,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).zc3mRate :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).zc3mRate :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".zc3mRate")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -270,7 +270,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).zc1yRate :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).zc1yRate :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".zc1yRate")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -298,7 +298,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).zc6mRate :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).zc6mRate :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".zc6mRate")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -326,7 +326,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).tolerance :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).tolerance :> ICell
             let format (o : System.Double) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".tolerance")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -354,7 +354,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).zc6m :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).zc6m :> ICell
             let format (o : QLNet.DepositRateHelper) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".zc6m")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -382,7 +382,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).zc1y :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).zc1y :> ICell
             let format (o : QLNet.DepositRateHelper) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".zc1y")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -410,7 +410,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).zc3m :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).zc3m :> ICell
             let format (o : QLNet.DepositRateHelper) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".zc3m")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -438,7 +438,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).couponRate3 :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).couponRate3 :> ICell
             let format (o : System.Double) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".couponRate3")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -466,7 +466,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).couponRate1 :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).couponRate1 :> ICell
             let format (o : System.Double) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".couponRate1")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -494,7 +494,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).couponRate4 :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).couponRate4 :> ICell
             let format (o : System.Double) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".couponRate4")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -522,7 +522,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).couponRate0 :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).couponRate0 :> ICell
             let format (o : System.Double) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".couponRate0")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -550,7 +550,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).marketQuotes0 :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).marketQuotes0 :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".marketQuotes0")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -578,7 +578,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).marketQuotes4 :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).marketQuotes4 :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".marketQuotes4")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -606,7 +606,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).marketQuotes1 :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).marketQuotes1 :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".marketQuotes1")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -634,7 +634,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).marketQuotes3 :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).marketQuotes3 :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".marketQuotes3")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -662,7 +662,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).marketQuotes2 :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).marketQuotes2 :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".marketQuotes2")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -690,7 +690,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).couponRate2 :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).couponRate2 :> ICell
             let format (o : System.Double) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".couponRate2")
             let hash = Helper.hashFold [| _BondPricer.cell |]
@@ -718,7 +718,7 @@ module BondPricerModelFunction =
             try
 
             let _BondPricer = Helper.toModel<BondPricerModel,  IPricingEngine> BondPricer "BondPricer"  
-            let builder (current : ICell) = withMnemonic mnemonic (_BondPricer.cell :?> BondPricerModel).bondEngine :> ICell
+            let builder (current : ICell) = (_BondPricer.cell :?> BondPricerModel).bondEngine :> ICell
             let format (o : QLNet.DiscountingBondEngine) (l:string) = Model.genericFormat o
             let source () = (_BondPricer.source + ".bondEngine")
             let hash = Helper.hashFold [| _BondPricer.cell |]

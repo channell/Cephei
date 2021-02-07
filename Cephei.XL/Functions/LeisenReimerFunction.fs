@@ -61,7 +61,7 @@ module LeisenReimerFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LeisenReimerModel.Cast _LeisenReimer.cell).Factory
+                let builder (current : ICell) = ((LeisenReimerModel.Cast _LeisenReimer.cell).Factory
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -118,7 +118,7 @@ module LeisenReimerFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LeisenReimer 
+                let builder (current : ICell) = (Fun.LeisenReimer 
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -161,7 +161,7 @@ module LeisenReimerFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LeisenReimer1 ()
+                let builder (current : ICell) = (Fun.LeisenReimer1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LeisenReimer>) l
 
@@ -204,7 +204,7 @@ module LeisenReimerFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LeisenReimerModel.Cast _LeisenReimer.cell).Probability
+                let builder (current : ICell) = ((LeisenReimerModel.Cast _LeisenReimer.cell).Probability
                                                             _i.cell 
                                                             _j.cell 
                                                             _branch.cell 
@@ -255,7 +255,7 @@ module LeisenReimerFunction =
                 let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LeisenReimerModel.Cast _LeisenReimer.cell).Underlying
+                let builder (current : ICell) = ((LeisenReimerModel.Cast _LeisenReimer.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
@@ -306,7 +306,7 @@ module LeisenReimerFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LeisenReimerModel.Cast _LeisenReimer.cell).Descendant
+                let builder (current : ICell) = ((LeisenReimerModel.Cast _LeisenReimer.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
@@ -354,7 +354,7 @@ module LeisenReimerFunction =
 
                 let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LeisenReimerModel.Cast _LeisenReimer.cell).Size
+                let builder (current : ICell) = ((LeisenReimerModel.Cast _LeisenReimer.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -393,7 +393,7 @@ module LeisenReimerFunction =
             try
 
                 let _LeisenReimer = Helper.toCell<LeisenReimer> leisenreimer "LeisenReimer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LeisenReimerModel.Cast _LeisenReimer.cell).Columns
+                let builder (current : ICell) = ((LeisenReimerModel.Cast _LeisenReimer.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

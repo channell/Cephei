@@ -55,7 +55,7 @@ module BootstrapErrorFunction =
                 let _curve = Helper.toCell<'T> curve "curve" 
                 let _helper = Helper.toCell<BootstrapHelper<'U>> helper "helper" 
                 let _segment = Helper.toCell<int> segment "segment" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BootstrapError 
+                let builder (current : ICell) = (Fun.BootstrapError 
                                                             _curve.cell 
                                                             _helper.cell 
                                                             _segment.cell 
@@ -101,7 +101,7 @@ module BootstrapErrorFunction =
 
                 let _BootstrapError = Helper.toCell<BootstrapError> bootstraperror "BootstrapError"  
                 let _guess = Helper.toCell<double> guess "guess" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapErrorModel.Cast _BootstrapError.cell).Value
+                let builder (current : ICell) = ((BootstrapErrorModel.Cast _BootstrapError.cell).Value
                                                             _guess.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -143,7 +143,7 @@ module BootstrapErrorFunction =
 
                 let _BootstrapError = Helper.toCell<BootstrapError> bootstraperror "BootstrapError"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapErrorModel.Cast _BootstrapError.cell).Derivative
+                let builder (current : ICell) = ((BootstrapErrorModel.Cast _BootstrapError.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

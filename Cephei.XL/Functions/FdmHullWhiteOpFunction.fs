@@ -56,7 +56,7 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Add
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -102,7 +102,7 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -147,7 +147,7 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _direction = Helper.toCell<int> direction "direction" 
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply_direction
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply_direction
                                                             _direction.cell 
                                                             _r.cell 
                                                        ) :> ICell
@@ -192,7 +192,7 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply_mixed
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply_mixed
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -234,7 +234,7 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ApplyTo
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -273,7 +273,7 @@ module FdmHullWhiteOpFunction =
             try
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Clone
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -315,7 +315,7 @@ module FdmHullWhiteOpFunction =
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let _model = Helper.toCell<HullWhite> model "model" 
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmHullWhiteOp 
+                let builder (current : ICell) = (Fun.FdmHullWhiteOp 
                                                             _mesher.cell 
                                                             _model.cell 
                                                             _direction.cell 
@@ -361,7 +361,7 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Identity
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
@@ -400,7 +400,7 @@ module FdmHullWhiteOpFunction =
             try
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).IsTimeDependent
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -442,7 +442,7 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _a = Helper.toCell<double> a "a" 
                 let _D = Helper.toCell<IOperator> D "D" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Multiply
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Multiply
                                                             _a.cell 
                                                             _D.cell 
                                                        ) :> ICell
@@ -490,7 +490,7 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _r = Helper.toCell<Vector> r "r" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Preconditioner
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Preconditioner
                                                             _r.cell 
                                                             _s.cell 
                                                        ) :> ICell
@@ -538,7 +538,7 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SetTime
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SetTime
                                                             _t1.cell 
                                                             _t2.cell 
                                                        ) :> ICell
@@ -583,7 +583,7 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SetTime1
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SetTime1
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : FdmHullWhiteOp) (l:string) = o.ToString() :> obj
@@ -622,7 +622,7 @@ module FdmHullWhiteOpFunction =
             try
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Size
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -667,7 +667,7 @@ module FdmHullWhiteOpFunction =
                 let _direction = Helper.toCell<int> direction "direction" 
                 let _r = Helper.toCell<Vector> r "r" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Solve_splitting
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Solve_splitting
                                                             _direction.cell 
                                                             _r.cell 
                                                             _s.cell 
@@ -715,7 +715,7 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SolveFor
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -760,7 +760,7 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Subtract
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -802,7 +802,7 @@ module FdmHullWhiteOpFunction =
             try
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ToMatrixDecomp
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ToMatrixDecomp
                                                        ) :> ICell
                 let format (i : Generic.List<SparseMatrix>) (l : string) = Helper.Range.fromList i l
 
@@ -838,7 +838,7 @@ module FdmHullWhiteOpFunction =
             try
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ToMatrix
+                let builder (current : ICell) = ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ToMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
 

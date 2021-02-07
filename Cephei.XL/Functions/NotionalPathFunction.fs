@@ -55,7 +55,7 @@ module NotionalPathFunction =
                 let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
                 let _date = Helper.toCell<Date> date "date" 
                 let _newRate = Helper.toCell<double> newRate "newRate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).AddReduction
+                let builder (current : ICell) = ((NotionalPathModel.Cast _NotionalPath.cell).AddReduction
                                                             _date.cell 
                                                             _newRate.cell 
                                                        ) :> ICell
@@ -97,7 +97,7 @@ module NotionalPathFunction =
             try
 
                 let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).Loss
+                let builder (current : ICell) = ((NotionalPathModel.Cast _NotionalPath.cell).Loss
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -130,7 +130,7 @@ module NotionalPathFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NotionalPath ()
+                let builder (current : ICell) = (Fun.NotionalPath ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NotionalPath>) l
 
@@ -167,7 +167,7 @@ module NotionalPathFunction =
 
                 let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).NotionalRate
+                let builder (current : ICell) = ((NotionalPathModel.Cast _NotionalPath.cell).NotionalRate
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -206,7 +206,7 @@ module NotionalPathFunction =
             try
 
                 let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).Reset
+                let builder (current : ICell) = ((NotionalPathModel.Cast _NotionalPath.cell).Reset
                                                        ) :> ICell
                 let format (o : NotionalPath) (l:string) = o.ToString() :> obj
 

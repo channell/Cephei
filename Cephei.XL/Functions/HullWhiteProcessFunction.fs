@@ -49,7 +49,7 @@ module HullWhiteProcessFunction =
             try
 
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).A
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -88,7 +88,7 @@ module HullWhiteProcessFunction =
 
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Alpha
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Alpha
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -133,7 +133,7 @@ module HullWhiteProcessFunction =
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Diffusion
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -181,7 +181,7 @@ module HullWhiteProcessFunction =
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Drift
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -232,7 +232,7 @@ module HullWhiteProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Expectation
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -283,7 +283,7 @@ module HullWhiteProcessFunction =
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let _a = Helper.toCell<double> a "a" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.HullWhiteProcess 
+                let builder (current : ICell) = (Fun.HullWhiteProcess 
                                                             _h.cell 
                                                             _a.cell 
                                                             _sigma.cell 
@@ -326,7 +326,7 @@ module HullWhiteProcessFunction =
             try
 
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Sigma
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -371,7 +371,7 @@ module HullWhiteProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).StdDeviation
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -425,7 +425,7 @@ module HullWhiteProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Variance
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Variance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -470,7 +470,7 @@ module HullWhiteProcessFunction =
             try
 
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).X0
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -512,7 +512,7 @@ module HullWhiteProcessFunction =
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Apply1
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Apply1
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
@@ -560,7 +560,7 @@ module HullWhiteProcessFunction =
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dx = Helper.toCell<double> dx "dx" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Apply
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Apply
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
@@ -614,7 +614,7 @@ module HullWhiteProcessFunction =
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<Vector> dw "dw" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Evolve
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -674,7 +674,7 @@ module HullWhiteProcessFunction =
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<double> dw "dw" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Evolve1
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Evolve1
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -722,7 +722,7 @@ module HullWhiteProcessFunction =
             try
 
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).InitialValues
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -758,7 +758,7 @@ module HullWhiteProcessFunction =
             try
 
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Size
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -803,7 +803,7 @@ module HullWhiteProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Covariance
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -848,7 +848,7 @@ module HullWhiteProcessFunction =
             try
 
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Factors
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -887,7 +887,7 @@ module HullWhiteProcessFunction =
 
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).RegisterWith
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : HullWhiteProcess) (l:string) = o.ToString() :> obj
@@ -929,7 +929,7 @@ module HullWhiteProcessFunction =
 
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Time
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Time
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -971,7 +971,7 @@ module HullWhiteProcessFunction =
 
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).UnregisterWith
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : HullWhiteProcess) (l:string) = o.ToString() :> obj
@@ -1010,7 +1010,7 @@ module HullWhiteProcessFunction =
             try
 
                 let _HullWhiteProcess = Helper.toCell<HullWhiteProcess> hullwhiteprocess "HullWhiteProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Update
+                let builder (current : ICell) = ((HullWhiteProcessModel.Cast _HullWhiteProcess.cell).Update
                                                        ) :> ICell
                 let format (o : HullWhiteProcess) (l:string) = o.ToString() :> obj
 

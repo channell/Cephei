@@ -58,7 +58,7 @@ module IntegrandFunction =
                 let _s0 = Helper.toCell<double> s0 "s0" 
                 let _drift = Helper.toCell<double> drift "drift" 
                 let _variance = Helper.toCell<double> variance "variance" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Integrand 
+                let builder (current : ICell) = (Fun.Integrand 
                                                             _payoff.cell 
                                                             _s0.cell 
                                                             _drift.cell 
@@ -107,7 +107,7 @@ module IntegrandFunction =
 
                 let _Integrand = Helper.toCell<Integrand> integrand "Integrand"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IntegrandModel.Cast _Integrand.cell).Value
+                let builder (current : ICell) = ((IntegrandModel.Cast _Integrand.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -56,7 +56,7 @@ module WulinYongDoubleBarrierEngineFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _series = Helper.toDefault<int> series "series" 5
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.WulinYongDoubleBarrierEngine 
+                let builder (current : ICell) = (Fun.WulinYongDoubleBarrierEngine 
                                                             _Process.cell 
                                                             _series.cell 
                                                             _evaluationDate.cell

@@ -55,7 +55,7 @@ module SoftCallabilityFunction =
                 let _price = Helper.toCell<Callability.Price> price "price" 
                 let _date = Helper.toCell<Date> date "date" 
                 let _trigger = Helper.toCell<double> trigger "trigger" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SoftCallability 
+                let builder (current : ICell) = (Fun.SoftCallability 
                                                             _price.cell 
                                                             _date.cell 
                                                             _trigger.cell 
@@ -98,7 +98,7 @@ module SoftCallabilityFunction =
             try
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Trigger
+                let builder (current : ICell) = ((SoftCallabilityModel.Cast _SoftCallability.cell).Trigger
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -134,7 +134,7 @@ module SoftCallabilityFunction =
             try
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Date
+                let builder (current : ICell) = ((SoftCallabilityModel.Cast _SoftCallability.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -170,7 +170,7 @@ module SoftCallabilityFunction =
             try
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Price
+                let builder (current : ICell) = ((SoftCallabilityModel.Cast _SoftCallability.cell).Price
                                                        ) :> ICell
                 let format (o : Callability.Price) (l:string) = o.ToString() :> obj
 
@@ -206,7 +206,7 @@ module SoftCallabilityFunction =
             try
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Type
+                let builder (current : ICell) = ((SoftCallabilityModel.Cast _SoftCallability.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -245,7 +245,7 @@ module SoftCallabilityFunction =
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Accept
+                let builder (current : ICell) = ((SoftCallabilityModel.Cast _SoftCallability.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : SoftCallability) (l:string) = o.ToString() :> obj
@@ -290,7 +290,7 @@ module SoftCallabilityFunction =
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).HasOccurred
+                let builder (current : ICell) = ((SoftCallabilityModel.Cast _SoftCallability.cell).HasOccurred
                                                             _d.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -335,7 +335,7 @@ module SoftCallabilityFunction =
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).RegisterWith
+                let builder (current : ICell) = ((SoftCallabilityModel.Cast _SoftCallability.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SoftCallability) (l:string) = o.ToString() :> obj
@@ -377,7 +377,7 @@ module SoftCallabilityFunction =
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).UnregisterWith
+                let builder (current : ICell) = ((SoftCallabilityModel.Cast _SoftCallability.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SoftCallability) (l:string) = o.ToString() :> obj

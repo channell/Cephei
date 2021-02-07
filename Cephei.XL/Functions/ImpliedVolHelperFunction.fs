@@ -52,7 +52,7 @@ module ImpliedVolHelperFunction =
 
                 let _ImpliedVolHelper = Helper.toCell<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedVolHelperModel.Cast _ImpliedVolHelper.cell).Derivative
+                let builder (current : ICell) = ((ImpliedVolHelperModel.Cast _ImpliedVolHelper.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -106,7 +106,7 @@ module ImpliedVolHelperFunction =
                 let _displacement = Helper.toCell<double> displacement "displacement" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ImpliedVolHelper 
+                let builder (current : ICell) = (Fun.ImpliedVolHelper 
                                                             _cap.cell 
                                                             _discountCurve.cell 
                                                             _targetValue.cell 
@@ -161,7 +161,7 @@ module ImpliedVolHelperFunction =
 
                 let _ImpliedVolHelper = Helper.toCell<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedVolHelperModel.Cast _ImpliedVolHelper.cell).Value
+                let builder (current : ICell) = ((ImpliedVolHelperModel.Cast _ImpliedVolHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

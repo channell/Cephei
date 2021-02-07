@@ -65,7 +65,7 @@ module IntegralCdsEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.IntegralCdsEngine 
+                let builder (current : ICell) = (Fun.IntegralCdsEngine 
                                                             _step.cell 
                                                             _probability.cell 
                                                             _recoveryRate.cell 

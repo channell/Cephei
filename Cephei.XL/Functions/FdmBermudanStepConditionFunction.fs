@@ -55,7 +55,7 @@ module FdmBermudanStepConditionFunction =
                 let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ApplyTo
+                let builder (current : ICell) = ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -97,7 +97,7 @@ module FdmBermudanStepConditionFunction =
             try
 
                 let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ExerciseTimes
+                let builder (current : ICell) = ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ExerciseTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -145,7 +145,7 @@ module FdmBermudanStepConditionFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let _calculator = Helper.toCell<FdmInnerValueCalculator> calculator "calculator" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmBermudanStepCondition 
+                let builder (current : ICell) = (Fun.FdmBermudanStepCondition 
                                                             _exerciseDates.cell 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 

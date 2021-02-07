@@ -52,7 +52,7 @@ module PSACurveFunction =
 
                 let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PSACurveModel.Cast _PSACurve.cell).GetCPR
+                let builder (current : ICell) = ((PSACurveModel.Cast _PSACurve.cell).GetCPR
                                                             _valDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module PSACurveFunction =
 
                 let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PSACurveModel.Cast _PSACurve.cell).GetSMM
+                let builder (current : ICell) = ((PSACurveModel.Cast _PSACurve.cell).GetSMM
                                                             _valDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -136,7 +136,7 @@ module PSACurveFunction =
 
                 let _startdate = Helper.toCell<Date> startdate "startdate" 
                 let _multiplier = Helper.toCell<double> multiplier "multiplier" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.PSACurve 
+                let builder (current : ICell) = (Fun.PSACurve 
                                                             _startdate.cell 
                                                             _multiplier.cell 
                                                        ) :> ICell
@@ -176,7 +176,7 @@ module PSACurveFunction =
             try
 
                 let _startdate = Helper.toCell<Date> startdate "startdate" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.PSACurve1 
+                let builder (current : ICell) = (Fun.PSACurve1 
                                                             _startdate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PSACurve>) l

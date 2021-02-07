@@ -58,7 +58,7 @@ module SVIFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _xEnd = Helper.toCell<int> xEnd "xEnd" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SVIModel.Cast _SVI.cell).Interpolate
+                let builder (current : ICell) = ((SVIModel.Cast _SVI.cell).Interpolate
                                                             _xBegin.cell 
                                                             _xEnd.cell 
                                                             _yBegin.cell 
@@ -157,7 +157,7 @@ module SVIFunction =
                 let _useMaxError = Helper.toDefault<bool> useMaxError "useMaxError" false
                 let _maxGuesses = Helper.toDefault<int> maxGuesses "maxGuesses" 50
                 let _addParams = Helper.toDefault<Generic.List<Nullable<double>>> addParams "addParams" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SVI 
+                let builder (current : ICell) = (Fun.SVI 
                                                             _t.cell 
                                                             _forward.cell 
                                                             _a.cell 

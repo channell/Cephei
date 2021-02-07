@@ -61,7 +61,7 @@ module JarrowRuddFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Factory
+                let builder (current : ICell) = ((JarrowRuddModel.Cast _JarrowRudd.cell).Factory
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -118,7 +118,7 @@ module JarrowRuddFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.JarrowRudd1 
+                let builder (current : ICell) = (Fun.JarrowRudd1 
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -161,7 +161,7 @@ module JarrowRuddFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.JarrowRudd ()
+                let builder (current : ICell) = (Fun.JarrowRudd ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<JarrowRudd>) l
 
@@ -204,7 +204,7 @@ module JarrowRuddFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _z = Helper.toCell<int> z "z" 
-                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Probability
+                let builder (current : ICell) = ((JarrowRuddModel.Cast _JarrowRudd.cell).Probability
                                                             _x.cell 
                                                             _y.cell 
                                                             _z.cell 
@@ -255,7 +255,7 @@ module JarrowRuddFunction =
                 let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Underlying
+                let builder (current : ICell) = ((JarrowRuddModel.Cast _JarrowRudd.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
@@ -306,7 +306,7 @@ module JarrowRuddFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Descendant
+                let builder (current : ICell) = ((JarrowRuddModel.Cast _JarrowRudd.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
@@ -354,7 +354,7 @@ module JarrowRuddFunction =
 
                 let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Size
+                let builder (current : ICell) = ((JarrowRuddModel.Cast _JarrowRudd.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -393,7 +393,7 @@ module JarrowRuddFunction =
             try
 
                 let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
-                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Columns
+                let builder (current : ICell) = ((JarrowRuddModel.Cast _JarrowRudd.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

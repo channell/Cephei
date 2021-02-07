@@ -49,7 +49,7 @@ module WeakEventSourceFunction =
             try
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
-                let builder (current : ICell) = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Clear
+                let builder (current : ICell) = ((WeakEventSourceModel.Cast _WeakEventSource.cell).Clear
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module WeakEventSourceFunction =
             try
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
-                let builder (current : ICell) = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Raise
+                let builder (current : ICell) = ((WeakEventSourceModel.Cast _WeakEventSource.cell).Raise
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
@@ -124,7 +124,7 @@ module WeakEventSourceFunction =
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Subscribe
+                let builder (current : ICell) = ((WeakEventSourceModel.Cast _WeakEventSource.cell).Subscribe
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
@@ -166,7 +166,7 @@ module WeakEventSourceFunction =
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Unsubscribe
+                let builder (current : ICell) = ((WeakEventSourceModel.Cast _WeakEventSource.cell).Unsubscribe
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
@@ -202,7 +202,7 @@ module WeakEventSourceFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.WeakEventSource ()
+                let builder (current : ICell) = (Fun.WeakEventSource ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<WeakEventSource>) l
 

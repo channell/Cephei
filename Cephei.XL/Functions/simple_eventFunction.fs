@@ -49,7 +49,7 @@ module simple_eventFunction =
             try
 
                 let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
-                let builder (current : ICell) = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).Date
+                let builder (current : ICell) = ((simple_eventModel.Cast _simple_event.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -88,7 +88,7 @@ module simple_eventFunction =
 
                 let _date = Helper.toCell<Date> date "date" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.simple_event 
+                let builder (current : ICell) = (Fun.simple_event 
                                                             _date.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell
@@ -131,7 +131,7 @@ module simple_eventFunction =
 
                 let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).Accept
+                let builder (current : ICell) = ((simple_eventModel.Cast _simple_event.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : simple_event) (l:string) = o.ToString() :> obj
@@ -176,7 +176,7 @@ module simple_eventFunction =
                 let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder (current : ICell) = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).HasOccurred
+                let builder (current : ICell) = ((simple_eventModel.Cast _simple_event.cell).HasOccurred
                                                             _d.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -221,7 +221,7 @@ module simple_eventFunction =
 
                 let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).RegisterWith
+                let builder (current : ICell) = ((simple_eventModel.Cast _simple_event.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : simple_event) (l:string) = o.ToString() :> obj
@@ -263,7 +263,7 @@ module simple_eventFunction =
 
                 let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).UnregisterWith
+                let builder (current : ICell) = ((simple_eventModel.Cast _simple_event.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : simple_event) (l:string) = o.ToString() :> obj

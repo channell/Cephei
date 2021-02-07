@@ -55,7 +55,7 @@ module TimeSeriesFunction =
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _key = Helper.toCell<Date> key "key" 
                 let _value = Helper.toCell<'T> value "value" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Add
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).Add
                                                             _key.cell 
                                                             _value.cell 
                                                        ) :> ICell
@@ -100,7 +100,7 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Add1
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).Add1
                                                             _item.cell 
                                                        ) :> ICell
                 let format (o : TimeSeries) (l:string) = o.ToString() :> obj
@@ -139,7 +139,7 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Clear
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).Clear
                                                        ) :> ICell
                 let format (o : TimeSeries) (l:string) = o.ToString() :> obj
 
@@ -178,7 +178,7 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Contains
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).Contains
                                                             _item.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -220,7 +220,7 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _key = Helper.toCell<Date> key "key" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).ContainsKey
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).ContainsKey
                                                             _key.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -265,7 +265,7 @@ module TimeSeriesFunction =
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _array = Helper.toCell<Generic.KeyValuePair<Date,T>[]> array "array" 
                 let _arrayIndex = Helper.toCell<int> arrayIndex "arrayIndex" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).CopyTo
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).CopyTo
                                                             _array.cell 
                                                             _arrayIndex.cell 
                                                        ) :> ICell
@@ -307,7 +307,7 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Count
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).Count
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -343,7 +343,7 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).GetEnumerator
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).GetEnumerator
                                                        ) :> ICell
                 let format (o : IEnumerator<Generic.KeyValuePair<Date,T>>) (l:string) = o.ToString() :> obj
 
@@ -379,7 +379,7 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).IsReadOnly
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).IsReadOnly
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -415,7 +415,7 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Keys
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).Keys
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ICollection<Date>>) l
 
@@ -454,7 +454,7 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Remove
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).Remove
                                                             _item.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -496,7 +496,7 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _key = Helper.toCell<Date> key "key" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Remove1
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).Remove1
                                                             _key.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -538,7 +538,7 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _key = Helper.toCell<Date> key "key" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).This
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).This
                                                             _key.cell 
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
@@ -577,7 +577,7 @@ module TimeSeriesFunction =
             try
 
                 let _size = Helper.toCell<int> size "size" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeSeries 
+                let builder (current : ICell) = (Fun.TimeSeries 
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeSeries>) l
@@ -611,7 +611,7 @@ module TimeSeriesFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeSeries1 
+                let builder (current : ICell) = (Fun.TimeSeries1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeSeries>) l
 
@@ -651,7 +651,7 @@ module TimeSeriesFunction =
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _key = Helper.toCell<Date> key "key" 
                 let _value = Helper.toCell<'T> value "value" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).TryGetValue
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).TryGetValue
                                                             _key.cell 
                                                             _value.cell 
                                                        ) :> ICell
@@ -693,7 +693,7 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Values
+                let builder (current : ICell) = ((TimeSeriesModel.Cast _TimeSeries.cell).Values
                                                        ) :> ICell
                 let format (o : ICollection<T>) (l:string) = o.ToString() :> obj
 

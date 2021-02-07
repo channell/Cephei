@@ -52,7 +52,7 @@ module GenericTimeSetterFunction =
 
                 let _grid = Helper.toCell<Vector> grid "grid" 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GenericTimeSetter 
+                let builder (current : ICell) = (Fun.GenericTimeSetter 
                                                             _grid.cell 
                                                             _Process.cell 
                                                        ) :> ICell
@@ -98,7 +98,7 @@ module GenericTimeSetterFunction =
                 let _GenericTimeSetter = Helper.toCell<GenericTimeSetter> generictimesetter "GenericTimeSetter"  
                 let _t = Helper.toCell<double> t "t" 
                 let _L = Helper.toCell<IOperator> L "L" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GenericTimeSetterModel.Cast _GenericTimeSetter.cell).SetTime
+                let builder (current : ICell) = ((GenericTimeSetterModel.Cast _GenericTimeSetter.cell).SetTime
                                                             _t.cell 
                                                             _L.cell 
                                                        ) :> ICell

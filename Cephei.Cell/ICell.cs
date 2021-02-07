@@ -162,7 +162,17 @@ namespace Cephei.Cell
     /// </summary>
     public interface ICellModel 
     {
-        ICell Cell { get; }
+        ICell Subject { get; }
+
+        /// <summary>
+        /// When a cell that is the subject of a model is moved to another model, continue to capture the events
+        /// </summary>
+        /// <param name="eventType"></param>
+        /// <param name="root"></param>
+        /// <param name="sender"></param>
+        /// <param name="epoch"></param>
+        /// <param name="session"></param>
+        void MigratedParentOnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session);
     }
 
 
@@ -385,6 +395,12 @@ namespace Cephei.Cell
             {
                 var o = f.GetValue(func);
                 fd.Add(f.Name, o);
+                /*
+                if (o is ICell c)
+                {
+                    l.AddLast(c);
+                }
+                */
             }
 
             var method = func.GetType().GetMethod("Invoke");
@@ -420,7 +436,7 @@ namespace Cephei.Cell
                             foreach (var x in ProfileObject(c.GetFunction()))
                                 l.AddLast(x);
                         }
-                        else
+                        else 
                             l.AddLast(c);
                     }
                 }
@@ -434,7 +450,7 @@ namespace Cephei.Cell
         /// <param name="func">function within cell</param>
         /// <param name="model">model that the functions cell is within </param>
         /// <param name="recursive">should this be a recursive relink </param>
-        public static bool Relink(object func, Model model)
+        public static bool Relink(object func, Model model, ICellEvent target)
         {
             var changed = false;
             var fields = func.GetType().GetFields();
@@ -444,10 +460,15 @@ namespace Cephei.Cell
                 var o = f.GetValue(func);
                 if (o is ICell c)
                 {
-                    if (c.Mnemonic != null && model.ContainsKey(c.Mnemonic))
+                    ICell n;
+                    if (c.Mnemonic != null && target is ICell tar && c.Mnemonic == tar.Mnemonic && model.TryGetValue(c.Mnemonic, out n))
                     {
-                        var n = model[c.Mnemonic];
-                        if (n != null && n != c && c.GetType().IsSubclassOf (n.GetType()))
+                        /*
+                        if (!(f.Name == "this" || f.Name == "@this") && n is ICellModel m)
+                        {
+                            n = m.Cell;
+                        }*/
+                        if (n != null && n != c && c.GetType().IsAssignableFrom(n.GetType()))
                         {
                             changed = true;
                             f.SetValue(func, n);

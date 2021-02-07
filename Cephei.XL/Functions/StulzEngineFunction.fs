@@ -59,7 +59,7 @@ module StulzEngineFunction =
                 let _process2 = Helper.toCell<GeneralizedBlackScholesProcess> process2 "process2" 
                 let _correlation = Helper.toCell<double> correlation "correlation" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.StulzEngine 
+                let builder (current : ICell) = (Fun.StulzEngine 
                                                             _process1.cell 
                                                             _process2.cell 
                                                             _correlation.cell 

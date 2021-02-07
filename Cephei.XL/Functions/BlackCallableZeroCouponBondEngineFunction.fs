@@ -55,7 +55,7 @@ module BlackCallableZeroCouponBondEngineFunction =
                 let _yieldVolStructure = Helper.toHandle<CallableBondVolatilityStructure> yieldVolStructure "yieldVolStructure" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCallableZeroCouponBondEngine 
+                let builder (current : ICell) = (Fun.BlackCallableZeroCouponBondEngine 
                                                             _yieldVolStructure.cell 
                                                             _discountCurve.cell 
                                                             _evaluationDate.cell
@@ -104,7 +104,7 @@ module BlackCallableZeroCouponBondEngineFunction =
                 let _fwdYieldVol = Helper.toHandle<Quote> fwdYieldVol "fwdYieldVol" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCallableZeroCouponBondEngine1 
+                let builder (current : ICell) = (Fun.BlackCallableZeroCouponBondEngine1 
                                                             _fwdYieldVol.cell 
                                                             _discountCurve.cell 
                                                             _evaluationDate.cell

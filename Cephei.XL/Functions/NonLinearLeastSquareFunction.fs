@@ -49,7 +49,7 @@ module NonLinearLeastSquareFunction =
             try
 
                 let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).ExitFlag
+                let builder (current : ICell) = ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).ExitFlag
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module NonLinearLeastSquareFunction =
             try
 
                 let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).LastValue
+                let builder (current : ICell) = ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).LastValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -124,7 +124,7 @@ module NonLinearLeastSquareFunction =
 
                 let _c = Helper.toCell<Constraint> c "c" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonLinearLeastSquare1 
+                let builder (current : ICell) = (Fun.NonLinearLeastSquare1 
                                                             _c.cell 
                                                             _accuracy.cell 
                                                        ) :> ICell
@@ -173,7 +173,7 @@ module NonLinearLeastSquareFunction =
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxiter = Helper.toCell<int> maxiter "maxiter" 
                 let _om = Helper.toCell<OptimizationMethod> om "om" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonLinearLeastSquare
+                let builder (current : ICell) = (Fun.NonLinearLeastSquare
                                                             _c.cell 
                                                             _accuracy.cell 
                                                             _maxiter.cell 
@@ -219,7 +219,7 @@ module NonLinearLeastSquareFunction =
             try
 
                 let _c = Helper.toCell<Constraint> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonLinearLeastSquare3
+                let builder (current : ICell) = (Fun.NonLinearLeastSquare3
                                                             _c.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NonLinearLeastSquare>) l
@@ -262,7 +262,7 @@ module NonLinearLeastSquareFunction =
                 let _c = Helper.toCell<Constraint> c "c" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxiter = Helper.toCell<int> maxiter "maxiter" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonLinearLeastSquare2
+                let builder (current : ICell) = (Fun.NonLinearLeastSquare2
                                                             _c.cell 
                                                             _accuracy.cell 
                                                             _maxiter.cell 
@@ -308,7 +308,7 @@ module NonLinearLeastSquareFunction =
 
                 let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
                 let _lsProblem = Helper.toCell<LeastSquareProblem> lsProblem "lsProblem" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).Perform
+                let builder (current : ICell) = ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).Perform
                                                             _lsProblem.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -347,7 +347,7 @@ module NonLinearLeastSquareFunction =
             try
 
                 let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).ResidualNorm
+                let builder (current : ICell) = ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).ResidualNorm
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -386,7 +386,7 @@ module NonLinearLeastSquareFunction =
 
                 let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
                 let _initialValue = Helper.toCell<Vector> initialValue "initialValue" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).SetInitialValue
+                let builder (current : ICell) = ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).SetInitialValue
                                                             _initialValue.cell 
                                                        ) :> ICell
                 let format (o : NonLinearLeastSquare) (l:string) = o.ToString() :> obj

@@ -64,7 +64,7 @@ module BackwardflatLinearFunction =
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _yEnd = Helper.toCell<int> yEnd "yEnd" 
                 let _z = Helper.toCell<Matrix> z "z" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearModel.Cast _BackwardflatLinear.cell).Interpolate
+                let builder (current : ICell) = ((BackwardflatLinearModel.Cast _BackwardflatLinear.cell).Interpolate
                                                             _xBegin.cell 
                                                             _xEnd.cell 
                                                             _yBegin.cell 

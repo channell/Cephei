@@ -71,7 +71,7 @@ module IsdaCdsEngineFunction =
                 let _accrualBias = Helper.toDefault<IsdaCdsEngine.AccrualBias> accrualBias "accrualBias" IsdaCdsEngine.AccrualBias.HalfDayBias
                 let _forwardsInCouponPeriod = Helper.toDefault<IsdaCdsEngine.ForwardsInCouponPeriod> forwardsInCouponPeriod "forwardsInCouponPeriod" IsdaCdsEngine.ForwardsInCouponPeriod.Piecewise
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.IsdaCdsEngine 
+                let builder (current : ICell) = (Fun.IsdaCdsEngine 
                                                             _probability.cell 
                                                             _recoveryRate.cell 
                                                             _discountCurve.cell 
@@ -129,7 +129,7 @@ module IsdaCdsEngineFunction =
             try
 
                 let _IsdaCdsEngine = Helper.toCell<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IsdaCdsEngineModel.Cast _IsdaCdsEngine.cell).IsdaCreditCurve
+                let builder (current : ICell) = ((IsdaCdsEngineModel.Cast _IsdaCdsEngine.cell).IsdaCreditCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<DefaultProbabilityTermStructure>>) l
 
@@ -165,7 +165,7 @@ module IsdaCdsEngineFunction =
             try
 
                 let _IsdaCdsEngine = Helper.toCell<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IsdaCdsEngineModel.Cast _IsdaCdsEngine.cell).IsdaRateCurve
+                let builder (current : ICell) = ((IsdaCdsEngineModel.Cast _IsdaCdsEngine.cell).IsdaRateCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 

@@ -82,7 +82,7 @@ module AssetSwapFunction =
                 let _payBondCoupon = Helper.toDefault<bool> payBondCoupon "payBondCoupon" false
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AssetSwap 
+                let builder (current : ICell) = (Fun.AssetSwap 
                                                             _parAssetSwap.cell 
                                                             _bond.cell 
                                                             _bondCleanPrice.cell 
@@ -179,7 +179,7 @@ module AssetSwapFunction =
                 let _parAssetSwap = Helper.toDefault<bool> parAssetSwap "parAssetSwap" true
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AssetSwap1 
+                let builder (current : ICell) = (Fun.AssetSwap1 
                                                             _payBondCoupon.cell 
                                                             _bond.cell 
                                                             _bondCleanPrice.cell 
@@ -243,7 +243,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).Bond
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Bond
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Bond>) l
 
@@ -279,7 +279,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).BondLeg
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).BondLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -315,7 +315,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).CleanPrice
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -351,7 +351,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).FairCleanPrice
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FairCleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -387,7 +387,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).FairNonParRepayment
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FairNonParRepayment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -423,7 +423,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).FairSpread
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FairSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -459,7 +459,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).FloatingLeg
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -495,7 +495,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).FloatingLegBPS
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FloatingLegBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -531,7 +531,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).FloatingLegNPV
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FloatingLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -567,7 +567,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).NonParRepayment
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).NonParRepayment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -603,7 +603,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).ParSwap
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).ParSwap
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -639,7 +639,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).PayBondCoupon
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).PayBondCoupon
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -675,7 +675,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).Spread
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -714,7 +714,7 @@ module AssetSwapFunction =
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).EndDiscounts
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).EndDiscounts
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -754,7 +754,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).Engine
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Engine
                                                        ) :> ICell
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
 
@@ -791,7 +791,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).IsExpired
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -830,7 +830,7 @@ module AssetSwapFunction =
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).Leg
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Leg
                                                             _j.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -872,7 +872,7 @@ module AssetSwapFunction =
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).LegBPS
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).LegBPS
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -914,7 +914,7 @@ module AssetSwapFunction =
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).LegNPV
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).LegNPV
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -953,7 +953,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).MaturityDate
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -989,7 +989,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).NpvDateDiscount
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -1028,7 +1028,7 @@ module AssetSwapFunction =
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).Payer
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Payer
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1067,7 +1067,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).StartDate
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1106,7 +1106,7 @@ module AssetSwapFunction =
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).StartDiscounts
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).StartDiscounts
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1145,7 +1145,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).CASH
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1181,7 +1181,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).ErrorEstimate
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1217,7 +1217,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).NPV
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1256,7 +1256,7 @@ module AssetSwapFunction =
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).Result
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -1298,7 +1298,7 @@ module AssetSwapFunction =
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).SetPricingEngine
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : AssetSwap) (l:string) = o.ToString() :> obj
@@ -1337,7 +1337,7 @@ module AssetSwapFunction =
             try
 
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).ValuationDate
+                let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

@@ -55,7 +55,7 @@ module DiscountingBasisSwapEngineFunction =
                 let _discountCurve1 = Helper.toHandle<YieldTermStructure> discountCurve1 "discountCurve1" 
                 let _discountCurve2 = Helper.toHandle<YieldTermStructure> discountCurve2 "discountCurve2" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscountingBasisSwapEngine 
+                let builder (current : ICell) = (Fun.DiscountingBasisSwapEngine 
                                                             _discountCurve1.cell 
                                                             _discountCurve2.cell 
                                                             _evaluationDate.cell

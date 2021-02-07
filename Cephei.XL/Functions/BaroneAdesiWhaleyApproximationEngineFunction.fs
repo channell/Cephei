@@ -52,7 +52,7 @@ module BaroneAdesiWhaleyApproximationEngineFunction =
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BaroneAdesiWhaleyApproximationEngine 
+                let builder (current : ICell) = (Fun.BaroneAdesiWhaleyApproximationEngine 
                                                             _Process.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell

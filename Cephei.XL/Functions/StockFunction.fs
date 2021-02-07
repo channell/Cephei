@@ -49,7 +49,7 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).IsExpired
+                let builder (current : ICell) = ((StockModel.Cast _Stock.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -91,7 +91,7 @@ module StockFunction =
                 let _quote = Helper.toHandle<Quote> quote "quote" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Stock 
+                let builder (current : ICell) = (Fun.Stock 
                                                             _quote.cell 
                                                             _pricingEngine.cell 
                                                             _evaluationDate.cell 
@@ -134,7 +134,7 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).CASH
+                let builder (current : ICell) = ((StockModel.Cast _Stock.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -170,7 +170,7 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).ErrorEstimate
+                let builder (current : ICell) = ((StockModel.Cast _Stock.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -206,7 +206,7 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).NPV
+                let builder (current : ICell) = ((StockModel.Cast _Stock.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -245,7 +245,7 @@ module StockFunction =
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).Result
+                let builder (current : ICell) = ((StockModel.Cast _Stock.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -287,7 +287,7 @@ module StockFunction =
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).SetPricingEngine
+                let builder (current : ICell) = ((StockModel.Cast _Stock.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Stock) (l:string) = o.ToString() :> obj
@@ -326,7 +326,7 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).ValuationDate
+                let builder (current : ICell) = ((StockModel.Cast _Stock.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

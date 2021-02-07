@@ -52,7 +52,7 @@ module PayoffFunction =
 
                 let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Accept
+                let builder (current : ICell) = ((PayoffModel.Cast _Payoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : Payoff) (l:string) = o.ToString() :> obj
@@ -91,7 +91,7 @@ module PayoffFunction =
             try
 
                 let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Description
+                let builder (current : ICell) = ((PayoffModel.Cast _Payoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -127,7 +127,7 @@ module PayoffFunction =
             try
 
                 let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Name
+                let builder (current : ICell) = ((PayoffModel.Cast _Payoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -166,7 +166,7 @@ module PayoffFunction =
 
                 let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Value
+                let builder (current : ICell) = ((PayoffModel.Cast _Payoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

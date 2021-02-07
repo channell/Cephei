@@ -55,7 +55,7 @@ module MonthlyYieldFinderFunction =
                 let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" 
                 let _cashflows = Helper.toCell<Generic.List<CashFlow>> cashflows "cashflows" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MonthlyYieldFinder 
+                let builder (current : ICell) = (Fun.MonthlyYieldFinder 
                                                             _faceAmount.cell 
                                                             _cashflows.cell 
                                                             _settlement.cell 
@@ -101,7 +101,7 @@ module MonthlyYieldFinderFunction =
 
                 let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Value
+                let builder (current : ICell) = ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Value
                                                             _Yield.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -143,7 +143,7 @@ module MonthlyYieldFinderFunction =
 
                 let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Derivative
+                let builder (current : ICell) = ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

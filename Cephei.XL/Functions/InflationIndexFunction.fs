@@ -58,7 +58,7 @@ module InflationIndexFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toDefault<bool> forceOverwrite "forceOverwrite" false
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AddFixing
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
@@ -104,7 +104,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AvailabilityLag
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -140,7 +140,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Currency
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -176,7 +176,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).FamilyName
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -218,7 +218,7 @@ module InflationIndexFunction =
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toDefault<bool> forecastTodaysFixing "forecastTodaysFixing" false
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Fixing
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -260,7 +260,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).FixingCalendar
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -296,7 +296,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Frequency
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
@@ -353,7 +353,7 @@ module InflationIndexFunction =
                 let _availabilitiyLag = Helper.toCell<Period> availabilitiyLag "availabilitiyLag" 
                 let _currency = Helper.toCell<Currency> currency "currency" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InflationIndex 
+                let builder (current : ICell) = (Fun.InflationIndex 
                                                             _familyName.cell 
                                                             _region.cell 
                                                             _revised.cell 
@@ -411,7 +411,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Interpolated
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -450,7 +450,7 @@ module InflationIndexFunction =
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).IsValidFixingDate
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -489,7 +489,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Name
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -525,7 +525,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Region
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
@@ -561,7 +561,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Revised
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -597,7 +597,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Update
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).Update
                                                        ) :> ICell
                 let format (o : InflationIndex) (l:string) = o.ToString() :> obj
 
@@ -642,7 +642,7 @@ module InflationIndexFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toDefault<bool> forceOverwrite "forceOverwrite" false
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AddFixings
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -693,7 +693,7 @@ module InflationIndexFunction =
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toDefault<bool> forceOverwrite "forceOverwrite" false
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AddFixings1
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -735,7 +735,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AllowsNativeFixings
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -771,7 +771,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).ClearFixings
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : InflationIndex) (l:string) = o.ToString() :> obj
 
@@ -810,7 +810,7 @@ module InflationIndexFunction =
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).RegisterWith
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : InflationIndex) (l:string) = o.ToString() :> obj
@@ -849,7 +849,7 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).TimeSeries
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -888,7 +888,7 @@ module InflationIndexFunction =
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).UnregisterWith
+                let builder (current : ICell) = ((InflationIndexModel.Cast _InflationIndex.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : InflationIndex) (l:string) = o.ToString() :> obj

@@ -49,7 +49,7 @@ module SavedSettingsFunction =
             try
 
                 let _SavedSettings = Helper.toCell<SavedSettings> savedsettings "SavedSettings"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SavedSettingsModel.Cast _SavedSettings.cell).Dispose
+                let builder (current : ICell) = ((SavedSettingsModel.Cast _SavedSettings.cell).Dispose
                                                        ) :> ICell
                 let format (o : SavedSettings) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module SavedSettingsFunction =
             try
 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SavedSettings 
+                let builder (current : ICell) = (Fun.SavedSettings 
                                                             _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SavedSettings>) l

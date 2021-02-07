@@ -49,7 +49,7 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).Cond
+                let builder (current : ICell) = ((SVDModel.Cast _SVD.cell).Cond
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).Norm2
+                let builder (current : ICell) = ((SVDModel.Cast _SVD.cell).Norm2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -121,7 +121,7 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).Rank
+                let builder (current : ICell) = ((SVDModel.Cast _SVD.cell).Rank
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -157,7 +157,7 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).S
+                let builder (current : ICell) = ((SVDModel.Cast _SVD.cell).S
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -193,7 +193,7 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).SingularValues
+                let builder (current : ICell) = ((SVDModel.Cast _SVD.cell).SingularValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -232,7 +232,7 @@ module SVDFunction =
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
                 let _b = Helper.toCell<Vector> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).SolveFor
+                let builder (current : ICell) = ((SVDModel.Cast _SVD.cell).SolveFor
                                                             _b.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -271,7 +271,7 @@ module SVDFunction =
             try
 
                 let _M = Helper.toCell<Matrix> M "M" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SVD 
+                let builder (current : ICell) = (Fun.SVD 
                                                             _M.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SVD>) l
@@ -308,7 +308,7 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).U
+                let builder (current : ICell) = ((SVDModel.Cast _SVD.cell).U
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -344,7 +344,7 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).V
+                let builder (current : ICell) = ((SVDModel.Cast _SVD.cell).V
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 

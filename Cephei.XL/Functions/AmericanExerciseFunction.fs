@@ -52,7 +52,7 @@ module AmericanExerciseFunction =
 
                 let _latest = Helper.toCell<Date> latest "latest" 
                 let _payoffAtExpiry = Helper.toDefault<bool> payoffAtExpiry "payoffAtExpiry" false
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmericanExercise 
+                let builder (current : ICell) = (Fun.AmericanExercise 
                                                             _latest.cell 
                                                             _payoffAtExpiry.cell 
                                                        ) :> ICell
@@ -98,7 +98,7 @@ module AmericanExerciseFunction =
                 let _earliestDate = Helper.toCell<Date> earliestDate "earliestDate" 
                 let _latestDate = Helper.toCell<Date> latestDate "latestDate" 
                 let _payoffAtExpiry = Helper.toDefault<bool> payoffAtExpiry "payoffAtExpiry" false
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmericanExercise1 
+                let builder (current : ICell) = (Fun.AmericanExercise1 
                                                             _earliestDate.cell 
                                                             _latestDate.cell 
                                                             _payoffAtExpiry.cell 
@@ -141,7 +141,7 @@ module AmericanExerciseFunction =
             try
 
                 let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmericanExerciseModel.Cast _AmericanExercise.cell).PayoffAtExpiry
+                let builder (current : ICell) = ((AmericanExerciseModel.Cast _AmericanExercise.cell).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -180,7 +180,7 @@ module AmericanExerciseFunction =
 
                 let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmericanExerciseModel.Cast _AmericanExercise.cell).Date
+                let builder (current : ICell) = ((AmericanExerciseModel.Cast _AmericanExercise.cell).Date
                                                             _index.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -219,7 +219,7 @@ module AmericanExerciseFunction =
             try
 
                 let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmericanExerciseModel.Cast _AmericanExercise.cell).Dates
+                let builder (current : ICell) = ((AmericanExerciseModel.Cast _AmericanExercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -255,7 +255,7 @@ module AmericanExerciseFunction =
             try
 
                 let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmericanExerciseModel.Cast _AmericanExercise.cell).LastDate
+                let builder (current : ICell) = ((AmericanExerciseModel.Cast _AmericanExercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -291,7 +291,7 @@ module AmericanExerciseFunction =
             try
 
                 let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmericanExerciseModel.Cast _AmericanExercise.cell).Type
+                let builder (current : ICell) = ((AmericanExerciseModel.Cast _AmericanExercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 

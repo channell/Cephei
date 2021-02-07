@@ -55,7 +55,7 @@ module GeometricAPOPathPricerFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GeometricAPOPathPricer 
+                let builder (current : ICell) = (Fun.GeometricAPOPathPricer 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -110,7 +110,7 @@ module GeometricAPOPathPricerFunction =
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _runningProduct = Helper.toCell<double> runningProduct "runningProduct" 
                 let _pastFixings = Helper.toCell<int> pastFixings "pastFixings" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GeometricAPOPathPricer2
+                let builder (current : ICell) = (Fun.GeometricAPOPathPricer2
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -168,7 +168,7 @@ module GeometricAPOPathPricerFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _runningProduct = Helper.toCell<double> runningProduct "runningProduct" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GeometricAPOPathPricer1
+                let builder (current : ICell) = (Fun.GeometricAPOPathPricer1
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -217,7 +217,7 @@ module GeometricAPOPathPricerFunction =
 
                 let _GeometricAPOPathPricer = Helper.toCell<GeometricAPOPathPricer> geometricapopathpricer "GeometricAPOPathPricer"  
                 let _path = Helper.toCell<Path> path "path" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GeometricAPOPathPricerModel.Cast _GeometricAPOPathPricer.cell).Value
+                let builder (current : ICell) = ((GeometricAPOPathPricerModel.Cast _GeometricAPOPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

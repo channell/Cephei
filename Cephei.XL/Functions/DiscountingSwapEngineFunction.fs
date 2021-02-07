@@ -62,7 +62,7 @@ module DiscountingSwapEngineFunction =
                 let _settlementDate = Helper.toDefault<Date> settlementDate "settlementDate" null
                 let _npvDate = Helper.toDefault<Date> npvDate "npvDate" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscountingSwapEngine 
+                let builder (current : ICell) = (Fun.DiscountingSwapEngine 
                                                             _discountCurve.cell 
                                                             _includeSettlementDateFlows.cell 
                                                             _settlementDate.cell 

@@ -64,7 +64,7 @@ module FordeHestonExpansionFunction =
                 let _v0 = Helper.toCell<double> v0 "v0" 
                 let _rho = Helper.toCell<double> rho "rho" 
                 let _term = Helper.toCell<double> term "term" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FordeHestonExpansion 
+                let builder (current : ICell) = (Fun.FordeHestonExpansion 
                                                             _kappa.cell 
                                                             _theta.cell 
                                                             _sigma.cell 
@@ -122,7 +122,7 @@ module FordeHestonExpansionFunction =
                 let _FordeHestonExpansion = Helper.toCell<FordeHestonExpansion> fordehestonexpansion "FordeHestonExpansion"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _forward = Helper.toCell<double> forward "forward" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FordeHestonExpansionModel.Cast _FordeHestonExpansion.cell).ImpliedVolatility
+                let builder (current : ICell) = ((FordeHestonExpansionModel.Cast _FordeHestonExpansion.cell).ImpliedVolatility
                                                             _strike.cell 
                                                             _forward.cell 
                                                        ) :> ICell

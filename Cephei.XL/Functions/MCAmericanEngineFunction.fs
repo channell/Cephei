@@ -86,7 +86,7 @@ module MCAmericanEngineFunction =
                 let _polynomType = Helper.toCell<LsmBasisSystem.PolynomType> polynomType "polynomType" 
                 let _nCalibrationSamples = Helper.toCell<int> nCalibrationSamples "nCalibrationSamples" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MCAmericanEngine 
+                let builder (current : ICell) = (Fun.MCAmericanEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _timeStepsPerYear.cell 

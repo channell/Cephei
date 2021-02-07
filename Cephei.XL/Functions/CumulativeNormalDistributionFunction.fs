@@ -52,7 +52,7 @@ module CumulativeNormalDistributionFunction =
 
                 let _average = Helper.toCell<double> average "average" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CumulativeNormalDistribution1 
+                let builder (current : ICell) = (Fun.CumulativeNormalDistribution1 
                                                             _average.cell 
                                                             _sigma.cell 
                                                        ) :> ICell
@@ -89,7 +89,7 @@ module CumulativeNormalDistributionFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CumulativeNormalDistribution ()
+                let builder (current : ICell) = (Fun.CumulativeNormalDistribution ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CumulativeNormalDistribution>) l
 
@@ -126,7 +126,7 @@ module CumulativeNormalDistributionFunction =
 
                 let _CumulativeNormalDistribution = Helper.toCell<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CumulativeNormalDistributionModel.Cast _CumulativeNormalDistribution.cell).Derivative
+                let builder (current : ICell) = ((CumulativeNormalDistributionModel.Cast _CumulativeNormalDistribution.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -168,7 +168,7 @@ module CumulativeNormalDistributionFunction =
 
                 let _CumulativeNormalDistribution = Helper.toCell<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution"  
                 let _z = Helper.toCell<double> z "z" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CumulativeNormalDistributionModel.Cast _CumulativeNormalDistribution.cell).Value
+                let builder (current : ICell) = ((CumulativeNormalDistributionModel.Cast _CumulativeNormalDistribution.cell).Value
                                                             _z.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

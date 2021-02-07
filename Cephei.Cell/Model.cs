@@ -9,6 +9,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Reflection;
+using System.Linq;
 
 namespace Cephei.Cell
 {
@@ -31,8 +32,12 @@ namespace Cephei.Cell
             }
             set
             {
-                if (_parent == null || _parent.Parent != value)
-                _parent = value;
+                if (_parent == null || _parent != value)
+                {
+                    if (_parent is ICellModel m && this == m.Subject)
+                        Change += m.MigratedParentOnChange;
+                    _parent = value;
+                }
             }
         }
 
@@ -76,17 +81,18 @@ namespace Cephei.Cell
         }
 
         public event CellChange Change;
+        public event CellChange Listen;
 
         public void Dispose()
         {
+            Change(CellEvent.Delete, this, this, DateTime.Now, null);
             Change = delegate { };
+            Listen = delegate { };
         }
 
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
-            if (sender == Parent)
-                return;
-            RaiseChange(eventType, root, this, epoch, session);
+            RaiseChange(eventType, root, null, epoch, session);
         }
         private ICell _mutex;
         public virtual ICell Mutex 
@@ -133,10 +139,16 @@ namespace Cephei.Cell
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void RaiseChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
-            if (Change != null)
+            if (sender == this) return;
+            if ((eventType & CellEvent.Logging) == CellEvent.Logging)
+            {
+                if (Listen != null)
+                    Listen(eventType, root, this, epoch, session);
+                if (Parent != null)
+                    Parent.OnChange(eventType | CellEvent.Logging, root, this, epoch, session);
+            }
+            else if (Change != null)
                 Change(eventType, root, this, epoch, session);
-            if (Parent != null)
-                Parent.OnChange(eventType, root,  this, epoch, session);
         }
 
         public Model(string mnemonic) : base()
@@ -295,7 +307,7 @@ namespace Cephei.Cell
             {
                 if (value.Parent == this)
                     value.Parent = null;
-                RaiseChange(CellEvent.Link, value, this, DateTime.Now, Session.Current);
+                RaiseChange(CellEvent.Link, value, null, DateTime.Now, Session.Current);
                 return true;
             }
             else
@@ -332,7 +344,7 @@ namespace Cephei.Cell
                 if (newValue != comparisonValue)
                 {
                     newValue.Parent = this;
-                    RaiseChange(CellEvent.Link, newValue, this, DateTime.Now, Session.Current);
+                    RaiseChange(CellEvent.Link, newValue, null, DateTime.Now, Session.Current);
                     return true;
                 }
                 else
@@ -391,10 +403,10 @@ namespace Cephei.Cell
                 ICell current;
                 if (TryGetValue(key, out current))
                 {
-                    if (value != current && value.GetType() != value.GetType() && !(value is IFast))
+                    if (value != current && current.GetType().IsAssignableFrom(value.GetType()))
                     {
                         base[key] = value;
-                        LinkedList<ICellEvent> dependants = new LinkedList<ICellEvent>(current.Dependants);
+                        var dependants = current.Dependants;
                         foreach (var c in dependants)
                         {
                             if (c != null && c != this)
@@ -403,7 +415,7 @@ namespace Cephei.Cell
                         foreach (var c in dependants)
                         {
                             if (this != c)
-                                c.OnChange(CellEvent.Link, this, this, DateTime.Now, null);
+                                c.OnChange(CellEvent.Link, current, this, DateTime.Now, null);
                         }
                     }
                 }
@@ -418,7 +430,6 @@ namespace Cephei.Cell
                 }
                 else
                 {
-                    value.OnChange(CellEvent.Delete, this, this, DateTime.Now, null);
                     base[key] = value;
                 }
             }
@@ -453,6 +464,9 @@ namespace Cephei.Cell
                 return new CellEmpty<T>(key);       // special case for forward declarartion
         }
 
+        /// <summary>
+        /// Bind mbmers of the model to the dictionar and set the mnemonic for the cell
+        /// </summary>
         public void Bind ()
         {
             var properties = this.GetType().GetProperties();

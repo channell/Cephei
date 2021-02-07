@@ -49,7 +49,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Callability
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).Callability
                                                        ) :> ICell
                 let format (o : CallabilitySchedule) (l:string) = o.ToString() :> obj
 
@@ -103,7 +103,7 @@ module CallableBondFunction =
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CleanPriceOAS
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).CleanPriceOAS
                                                             _oas.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -175,7 +175,7 @@ module CallableBondFunction =
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _bump = Helper.toDefault<double> bump "bump" 2e-4
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).EffectiveConvexity
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).EffectiveConvexity
                                                             _oas.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -247,7 +247,7 @@ module CallableBondFunction =
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _bump = Helper.toDefault<double> bump "bump" 2e-4
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).EffectiveDuration
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).EffectiveDuration
                                                             _oas.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -319,7 +319,7 @@ module CallableBondFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).ImpliedVolatility
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _accuracy.cell 
@@ -400,7 +400,7 @@ module CallableBondFunction =
                 let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-10
                 let _maxIterations = Helper.toDefault<int> maxIterations "maxIterations" 100
                 let _guess = Helper.toDefault<double> guess "guess" 0.0
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).OAS
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).OAS
                                                             _cleanPrice.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -466,7 +466,7 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).AccruedAmount
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -505,7 +505,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Calendar
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -541,7 +541,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Cashflows
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -577,7 +577,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CleanPrice
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -628,7 +628,7 @@ module CallableBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CleanPrice1
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -694,7 +694,7 @@ module CallableBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).DirtyPrice
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).DirtyPrice
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -745,7 +745,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).DirtyPrice1
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).DirtyPrice1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -781,7 +781,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).IsExpired
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -817,7 +817,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).IssueDate
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -856,7 +856,7 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).IsTradable
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -895,7 +895,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).MaturityDate
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -934,7 +934,7 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).NextCashFlowDate
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -976,7 +976,7 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).NextCouponRate
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1018,7 +1018,7 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Notional
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).Notional
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1057,7 +1057,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Notionals
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -1096,7 +1096,7 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).PreviousCashFlowDate
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1138,7 +1138,7 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).PreviousCouponRate
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1177,7 +1177,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Redemption
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
@@ -1213,7 +1213,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Redemptions
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -1252,7 +1252,7 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementDate
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1291,7 +1291,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementDays
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1330,7 +1330,7 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementValue
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1369,7 +1369,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementValue1
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1405,7 +1405,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).StartDate
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1462,7 +1462,7 @@ module CallableBondFunction =
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-10
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Yield
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).Yield
                                                             _cleanPrice.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1534,7 +1534,7 @@ module CallableBondFunction =
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-10
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Yield1
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).Yield1
                                                             _dc.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1585,7 +1585,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CASH
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1621,7 +1621,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).ErrorEstimate
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1657,7 +1657,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).NPV
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1696,7 +1696,7 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Result
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -1738,7 +1738,7 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SetPricingEngine
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CallableBond) (l:string) = o.ToString() :> obj
@@ -1777,7 +1777,7 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).ValuationDate
+                let builder (current : ICell) = ((CallableBondModel.Cast _CallableBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

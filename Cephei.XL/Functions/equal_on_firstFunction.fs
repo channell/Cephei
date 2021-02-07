@@ -56,7 +56,7 @@ module equal_on_firstFunction =
                 let _equal_on_first = Helper.toCell<equal_on_first> equal_on_first "equal_on_first"  
                 let _p1 = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> p1 "p1" 
                 let _p2 = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> p2 "p2" 
-                let builder (current : ICell) = withMnemonic mnemonic ((equal_on_firstModel.Cast _equal_on_first.cell).Equals
+                let builder (current : ICell) = ((equal_on_firstModel.Cast _equal_on_first.cell).Equals
                                                             _p1.cell 
                                                             _p2.cell 
                                                        ) :> ICell

@@ -49,7 +49,7 @@ module EuropeanExerciseFunction =
             try
 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.EuropeanExercise 
+                let builder (current : ICell) = (Fun.EuropeanExercise 
                                                             _date.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EuropeanExercise>) l
@@ -89,7 +89,7 @@ module EuropeanExerciseFunction =
 
                 let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Date
+                let builder (current : ICell) = ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Date
                                                             _index.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -128,7 +128,7 @@ module EuropeanExerciseFunction =
             try
 
                 let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Dates
+                let builder (current : ICell) = ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -164,7 +164,7 @@ module EuropeanExerciseFunction =
             try
 
                 let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).LastDate
+                let builder (current : ICell) = ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -200,7 +200,7 @@ module EuropeanExerciseFunction =
             try
 
                 let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Type
+                let builder (current : ICell) = ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 

@@ -52,7 +52,7 @@ module BjerksundStenslandApproximationEngineFunction =
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BjerksundStenslandApproximationEngine 
+                let builder (current : ICell) = (Fun.BjerksundStenslandApproximationEngine 
                                                             _Process.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell

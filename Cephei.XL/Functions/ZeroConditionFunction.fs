@@ -55,7 +55,7 @@ module ZeroConditionFunction =
                 let _ZeroCondition = Helper.toCell<ZeroCondition> zerocondition "ZeroCondition"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ZeroConditionModel.Cast _ZeroCondition.cell).ApplyTo
+                let builder (current : ICell) = ((ZeroConditionModel.Cast _ZeroCondition.cell).ApplyTo
                                                             _a.cell 
                                                             _t.cell 
                                                        ) :> ICell

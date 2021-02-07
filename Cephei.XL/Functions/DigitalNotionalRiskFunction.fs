@@ -52,7 +52,7 @@ module DigitalNotionalRiskFunction =
 
                 let _paymentOffset = Helper.toCell<EventPaymentOffset> paymentOffset "paymentOffset" 
                 let _threshold = Helper.toCell<double> threshold "threshold" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalNotionalRisk 
+                let builder (current : ICell) = (Fun.DigitalNotionalRisk 
                                                             _paymentOffset.cell 
                                                             _threshold.cell 
                                                        ) :> ICell
@@ -98,7 +98,7 @@ module DigitalNotionalRiskFunction =
                 let _DigitalNotionalRisk = Helper.toCell<DigitalNotionalRisk> digitalnotionalrisk "DigitalNotionalRisk"  
                 let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
                 let _path = Helper.toCell<NotionalPath> path "path" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalNotionalRiskModel.Cast _DigitalNotionalRisk.cell).UpdatePath
+                let builder (current : ICell) = ((DigitalNotionalRiskModel.Cast _DigitalNotionalRisk.cell).UpdatePath
                                                             _events.cell 
                                                             _path.cell 
                                                        ) :> ICell

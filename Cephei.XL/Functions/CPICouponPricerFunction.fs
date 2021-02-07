@@ -52,7 +52,7 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletPrice
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletRate
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -133,7 +133,7 @@ module CPICouponPricerFunction =
             try
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletVolatility
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<CPIVolatilitySurface>>) l
 
@@ -172,7 +172,7 @@ module CPICouponPricerFunction =
 
                 let _capletVol = Helper.toHandle<CPIVolatilitySurface> capletVol "capletVol" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CPICouponPricer 
+                let builder (current : ICell) = (Fun.CPICouponPricer 
                                                             _capletVol.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell
@@ -215,7 +215,7 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).FloorletPrice
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -257,7 +257,7 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).FloorletRate
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -299,7 +299,7 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _coupon = Helper.toCell<InflationCoupon> coupon "coupon" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).Initialize
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
@@ -341,7 +341,7 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _capletVol = Helper.toHandle<CPIVolatilitySurface> capletVol "capletVol" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SetCapletVolatility
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SetCapletVolatility
                                                             _capletVol.cell 
                                                        ) :> ICell
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
@@ -380,7 +380,7 @@ module CPICouponPricerFunction =
             try
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SwapletPrice
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -416,7 +416,7 @@ module CPICouponPricerFunction =
             try
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SwapletRate
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -455,7 +455,7 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).RegisterWith
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
@@ -497,7 +497,7 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).UnregisterWith
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
@@ -536,7 +536,7 @@ module CPICouponPricerFunction =
             try
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).Update
+                let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).Update
                                                        ) :> ICell
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
 

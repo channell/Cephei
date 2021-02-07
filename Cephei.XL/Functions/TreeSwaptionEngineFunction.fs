@@ -59,7 +59,7 @@ module TreeSwaptionEngineFunction =
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine 
+                let builder (current : ICell) = (Fun.TreeSwaptionEngine 
                                                             _model.cell 
                                                             _timeGrid.cell 
                                                             _termStructure.cell 
@@ -111,7 +111,7 @@ module TreeSwaptionEngineFunction =
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine1 
+                let builder (current : ICell) = (Fun.TreeSwaptionEngine1 
                                                             _model.cell 
                                                             _timeGrid.cell 
                                                             _evaluationDate.cell
@@ -163,7 +163,7 @@ module TreeSwaptionEngineFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine2 
+                let builder (current : ICell) = (Fun.TreeSwaptionEngine2 
                                                             _model.cell 
                                                             _timeSteps.cell 
                                                             _termStructure.cell 
@@ -215,7 +215,7 @@ module TreeSwaptionEngineFunction =
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine3 
+                let builder (current : ICell) = (Fun.TreeSwaptionEngine3 
                                                             _model.cell 
                                                             _timeSteps.cell 
                                                             _evaluationDate.cell
@@ -258,7 +258,7 @@ module TreeSwaptionEngineFunction =
             try
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).Update
+                let builder (current : ICell) = ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
 
@@ -298,7 +298,7 @@ module TreeSwaptionEngineFunction =
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).SetModel
+                let builder (current : ICell) = ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -340,7 +340,7 @@ module TreeSwaptionEngineFunction =
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).RegisterWith
+                let builder (current : ICell) = ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -379,7 +379,7 @@ module TreeSwaptionEngineFunction =
             try
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).Reset
+                let builder (current : ICell) = ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
 
@@ -418,7 +418,7 @@ module TreeSwaptionEngineFunction =
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).UnregisterWith
+                let builder (current : ICell) = ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj

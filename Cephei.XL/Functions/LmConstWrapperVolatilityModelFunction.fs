@@ -61,7 +61,7 @@ module LmConstWrapperVolatilityModelFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).IntegratedVariance
+                let builder (current : ICell) = ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).IntegratedVariance
                                                             _i.cell 
                                                             _j.cell 
                                                             _u.cell 
@@ -109,7 +109,7 @@ module LmConstWrapperVolatilityModelFunction =
             try
 
                 let _volaModel = Helper.toCell<LmVolatilityModel> volaModel "volaModel" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LmConstWrapperVolatilityModel 
+                let builder (current : ICell) = (Fun.LmConstWrapperVolatilityModel 
                                                             _volaModel.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmConstWrapperVolatilityModel>) l
@@ -155,7 +155,7 @@ module LmConstWrapperVolatilityModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Volatility
+                let builder (current : ICell) = ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Volatility
                                                             _i.cell 
                                                             _t.cell 
                                                             _x.cell 
@@ -206,7 +206,7 @@ module LmConstWrapperVolatilityModelFunction =
                 let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Volatility1
+                let builder (current : ICell) = ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Volatility1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -248,7 +248,7 @@ module LmConstWrapperVolatilityModelFunction =
             try
 
                 let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Parameters
+                let builder (current : ICell) = ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<Parameter>) (l : string) = Helper.Range.fromList i l
 
@@ -287,7 +287,7 @@ module LmConstWrapperVolatilityModelFunction =
 
                 let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).SetParams
+                let builder (current : ICell) = ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (o : LmConstWrapperVolatilityModel) (l:string) = o.ToString() :> obj
@@ -326,7 +326,7 @@ module LmConstWrapperVolatilityModelFunction =
             try
 
                 let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Size
+                let builder (current : ICell) = ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

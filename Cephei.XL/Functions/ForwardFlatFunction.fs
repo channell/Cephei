@@ -49,7 +49,7 @@ module ForwardFlatFunction =
             try
 
                 let _ForwardFlat = Helper.toCell<ForwardFlat> forwardflat "ForwardFlat"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardFlatModel.Cast _ForwardFlat.cell).Global
+                let builder (current : ICell) = ((ForwardFlatModel.Cast _ForwardFlat.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -94,7 +94,7 @@ module ForwardFlatFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardFlatModel.Cast _ForwardFlat.cell).Interpolate
+                let builder (current : ICell) = ((ForwardFlatModel.Cast _ForwardFlat.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -139,7 +139,7 @@ module ForwardFlatFunction =
             try
 
                 let _ForwardFlat = Helper.toCell<ForwardFlat> forwardflat "ForwardFlat"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ForwardFlatModel.Cast _ForwardFlat.cell).RequiredPoints
+                let builder (current : ICell) = ((ForwardFlatModel.Cast _ForwardFlat.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

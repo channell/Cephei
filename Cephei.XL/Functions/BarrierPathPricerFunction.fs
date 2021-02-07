@@ -70,7 +70,7 @@ module BarrierPathPricerFunction =
                 let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" 
                 let _diffProcess = Helper.toCell<StochasticProcess1D> diffProcess "diffProcess" 
                 let _sequenceGen = Helper.toCell<IRNG> sequenceGen "sequenceGen" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BarrierPathPricer 
+                let builder (current : ICell) = (Fun.BarrierPathPricer 
                                                             _barrierType.cell 
                                                             _barrier.cell 
                                                             _rebate.cell 
@@ -131,7 +131,7 @@ module BarrierPathPricerFunction =
 
                 let _BarrierPathPricer = Helper.toCell<BarrierPathPricer> barrierpathpricer "BarrierPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BarrierPathPricerModel.Cast _BarrierPathPricer.cell).Value
+                let builder (current : ICell) = ((BarrierPathPricerModel.Cast _BarrierPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -55,7 +55,7 @@ module BinomialConvertibleEngineFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BinomialConvertibleEngine 
+                let builder (current : ICell) = (Fun.BinomialConvertibleEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _evaluationDate.cell

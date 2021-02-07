@@ -49,7 +49,7 @@ module BootstrapHelperFunction =
             try
 
                 let _quote = Helper.toCell<double> quote "quote" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BootstrapHelper 
+                let builder (current : ICell) = (Fun.BootstrapHelper 
                                                             _quote.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BootstrapHelper>) l
@@ -83,7 +83,7 @@ module BootstrapHelperFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BootstrapHelper1 
+                let builder (current : ICell) = (Fun.BootstrapHelper1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BootstrapHelper>) l
 
@@ -117,7 +117,7 @@ module BootstrapHelperFunction =
             try
 
                 let _quote = Helper.toHandle<Quote> quote "quote" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BootstrapHelper2 
+                let builder (current : ICell) = (Fun.BootstrapHelper2 
                                                             _quote.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BootstrapHelper>) l
@@ -154,7 +154,7 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).EarliestDate
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -190,7 +190,7 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).ImpliedQuote
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -226,7 +226,7 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).LatestDate
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -262,7 +262,7 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).LatestRelevantDate
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -298,7 +298,7 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).MaturityDate
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -334,7 +334,7 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).PillarDate
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -370,7 +370,7 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).Quote
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -406,7 +406,7 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteError
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -442,7 +442,7 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteIsValid
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -478,7 +478,7 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteValue
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -517,7 +517,7 @@ module BootstrapHelperFunction =
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).RegisterWith
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
@@ -559,7 +559,7 @@ module BootstrapHelperFunction =
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
                 let _ts = Helper.toCell<'TS> ts "ts" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).SetTermStructure
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).SetTermStructure
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
@@ -601,7 +601,7 @@ module BootstrapHelperFunction =
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).UnregisterWith
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
@@ -640,7 +640,7 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).Update
+                let builder (current : ICell) = ((BootstrapHelperModel.Cast _BootstrapHelper.cell).Update
                                                        ) :> ICell
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
 

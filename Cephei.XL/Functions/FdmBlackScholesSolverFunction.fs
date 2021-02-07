@@ -52,7 +52,7 @@ module FdmBlackScholesSolverFunction =
 
                 let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).DeltaAt
+                let builder (current : ICell) = ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).DeltaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -109,7 +109,7 @@ module FdmBlackScholesSolverFunction =
                 let _localVol = Helper.toDefault<bool> localVol "localVol" false
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
                 let _quantoHelper = Helper.toHandle<FdmQuantoHelper> quantoHelper "quantoHelper" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmBlackScholesSolver 
+                let builder (current : ICell) = (Fun.FdmBlackScholesSolver 
                                                             _Process.cell 
                                                             _strike.cell 
                                                             _solverDesc.cell 
@@ -167,7 +167,7 @@ module FdmBlackScholesSolverFunction =
 
                 let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).GammaAt
+                let builder (current : ICell) = ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).GammaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -209,7 +209,7 @@ module FdmBlackScholesSolverFunction =
 
                 let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).ThetaAt
+                let builder (current : ICell) = ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).ThetaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -251,7 +251,7 @@ module FdmBlackScholesSolverFunction =
 
                 let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).ValueAt
+                let builder (current : ICell) = ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).ValueAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

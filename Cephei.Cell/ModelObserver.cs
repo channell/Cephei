@@ -19,7 +19,7 @@ namespace Cephei.Cell
             _source = source;
             _target = target;
 
-            source.Change += OnChange;
+            source.Listen += OnChange;
         }
 
         public void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
@@ -27,14 +27,17 @@ namespace Cephei.Cell
             switch (eventType)
             {
                 case CellEvent.Calculate:
+                case CellEvent.CalculateLogging:
                     _target.OnNext((ICell)root);
                     break;
 
                 case CellEvent.Delete:
+                case CellEvent.DeleteLogging:
                     _target.OnCompleted();
                     break;
 
                 case CellEvent.Error:
+                case CellEvent.ErrorLogging:
                     try
                     {
                         _target.OnNext((ICell)root);
@@ -51,7 +54,7 @@ namespace Cephei.Cell
 
         public void Dispose()
         {
-            _source.Change -= OnChange;
+            _source.Listen -= OnChange;
         }
         public ICell Parent 
         { 
@@ -75,7 +78,7 @@ namespace Cephei.Cell
             _source = source;
             _target = target;
 
-            source.Change += OnChange;
+            source.Listen += OnChange;
         }
 
         private void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
@@ -86,14 +89,17 @@ namespace Cephei.Cell
                 switch (eventType)
                 {
                     case CellEvent.Calculate:
+                    case CellEvent.CalculateLogging:
                         _target.OnNext(new KeyValuePair<string, T>(c.Mnemonic, c.Value));
                         break;
 
                     case CellEvent.Delete:
+                    case CellEvent.DeleteLogging:
                         _target.OnCompleted();
                         break;
 
                     case CellEvent.Error:
+                    case CellEvent.ErrorLogging:
                         try
                         {
                             _target.OnNext(new KeyValuePair<string, T>(c.Mnemonic, c.Value));
@@ -111,7 +117,7 @@ namespace Cephei.Cell
 
         public void Dispose()
         {
-            _source.Change -= OnChange;
+            _source.Listen -= OnChange;
         }
     }
 
@@ -125,7 +131,7 @@ namespace Cephei.Cell
             _source = source;
             _target = target;
 
-            source.Change += OnChange;
+            source.Listen += OnChange;
         }
 
         private void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
@@ -133,6 +139,7 @@ namespace Cephei.Cell
             switch (eventType)
             {
                 case CellEvent.Calculate:
+                case CellEvent.CalculateLogging:
                     var lastsession = Session.Current;
                     Session.Current = session;
                     ICell c = ((ICell)root).Parent;
@@ -147,10 +154,12 @@ namespace Cephei.Cell
                     break;
 
                 case CellEvent.Delete:
+                case CellEvent.DeleteLogging:
                     _target.OnCompleted();
                     break;
 
                 case CellEvent.Error:
+                case CellEvent.ErrorLogging:
                     try
                     {
                         c = ((ICell)sender).Parent;
@@ -187,7 +196,7 @@ namespace Cephei.Cell
             _source = source;
             _target = target;
 
-            source.Change += OnChange;
+            source.Listen += OnChange;
         }
 
         private void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
@@ -199,10 +208,16 @@ namespace Cephei.Cell
                 case CellEvent.JoinSession:
                 case CellEvent.Link:
                 case CellEvent.Calculate:
+                case CellEvent.InvalidateLogging:
+                case CellEvent.DeleteLogging:
+                case CellEvent.JoinSessionLogging:
+                case CellEvent.LinkLogging:
+                case CellEvent.CalculateLogging:
                     _target.OnNext(new Tuple<ISession, Model, CellEvent, ICell, DateTime>(session, _source, eventType, (ICell)root, epoch));
                     break;
 
                 case CellEvent.Error:
+                case CellEvent.ErrorLogging:
                     try
                     {
                         _target.OnNext(new Tuple<ISession, Model, CellEvent, ICell, DateTime>(session, _source, eventType, (ICell)root, epoch));
@@ -219,7 +234,7 @@ namespace Cephei.Cell
 
         public void Dispose()
         {
-            _source.Change -= OnChange;
+            _source.Listen -= OnChange;
         }
     }
 

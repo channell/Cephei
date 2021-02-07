@@ -61,7 +61,7 @@ module LmLinearExponentialVolatilityModelFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).IntegratedVariance
+                let builder (current : ICell) = ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).IntegratedVariance
                                                             _i.cell 
                                                             _j.cell 
                                                             _u.cell 
@@ -121,7 +121,7 @@ module LmLinearExponentialVolatilityModelFunction =
                 let _b = Helper.toCell<double> b "b" 
                 let _c = Helper.toCell<double> c "c" 
                 let _d = Helper.toCell<double> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LmLinearExponentialVolatilityModel 
+                let builder (current : ICell) = (Fun.LmLinearExponentialVolatilityModel 
                                                             _fixingTimes.cell 
                                                             _a.cell 
                                                             _b.cell 
@@ -179,7 +179,7 @@ module LmLinearExponentialVolatilityModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Volatility
+                let builder (current : ICell) = ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Volatility
                                                             _i.cell 
                                                             _t.cell 
                                                             _x.cell 
@@ -230,7 +230,7 @@ module LmLinearExponentialVolatilityModelFunction =
                 let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Volatility1
+                let builder (current : ICell) = ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Volatility1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -272,7 +272,7 @@ module LmLinearExponentialVolatilityModelFunction =
             try
 
                 let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Parameters
+                let builder (current : ICell) = ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<Parameter>) (l : string) = Helper.Range.fromList i l
 
@@ -311,7 +311,7 @@ module LmLinearExponentialVolatilityModelFunction =
 
                 let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).SetParams
+                let builder (current : ICell) = ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (o : LmLinearExponentialVolatilityModel) (l:string) = o.ToString() :> obj
@@ -350,7 +350,7 @@ module LmLinearExponentialVolatilityModelFunction =
             try
 
                 let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Size
+                let builder (current : ICell) = ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

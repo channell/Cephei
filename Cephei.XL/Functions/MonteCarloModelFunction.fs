@@ -52,7 +52,7 @@ module MonteCarloModelFunction =
 
                 let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel"  
                 let _samples = Helper.toCell<int> samples "samples" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MonteCarloModelModel.Cast _MonteCarloModel.cell).AddSamples
+                let builder (current : ICell) = ((MonteCarloModelModel.Cast _MonteCarloModel.cell).AddSamples
                                                             _samples.cell 
                                                        ) :> ICell
                 let format (o : MonteCarloModel) (l:string) = o.ToString() :> obj
@@ -109,7 +109,7 @@ module MonteCarloModelFunction =
                 let _cvPathPricer = Helper.toDefault<PathPricer<IPath>> cvPathPricer "cvPathPricer" null
                 let _cvOptionValue = Helper.toDefault<double> cvOptionValue "cvOptionValue" 0
                 let _cvPathGenerator = Helper.toDefault<IPathGenerator<IRNG>> cvPathGenerator "cvPathGenerator" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MonteCarloModel 
+                let builder (current : ICell) = (Fun.MonteCarloModel 
                                                             _pathGenerator.cell 
                                                             _pathPricer.cell 
                                                             _sampleAccumulator.cell 
@@ -164,7 +164,7 @@ module MonteCarloModelFunction =
             try
 
                 let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MonteCarloModelModel.Cast _MonteCarloModel.cell).SampleAccumulator
+                let builder (current : ICell) = ((MonteCarloModelModel.Cast _MonteCarloModel.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
 

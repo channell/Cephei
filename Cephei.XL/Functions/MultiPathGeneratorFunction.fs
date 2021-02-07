@@ -49,7 +49,7 @@ module MultiPathGeneratorFunction =
             try
 
                 let _MultiPathGenerator = Helper.toCell<MultiPathGenerator> multipathgenerator "MultiPathGenerator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathGeneratorModel.Cast _MultiPathGenerator.cell).Antithetic
+                let builder (current : ICell) = ((MultiPathGeneratorModel.Cast _MultiPathGenerator.cell).Antithetic
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
@@ -94,7 +94,7 @@ module MultiPathGeneratorFunction =
                 let _times = Helper.toCell<TimeGrid> times "times" 
                 let _generator = Helper.toCell<'GSG> generator "generator" 
                 let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MultiPathGenerator 
+                let builder (current : ICell) = (Fun.MultiPathGenerator 
                                                             _Process.cell 
                                                             _times.cell 
                                                             _generator.cell 
@@ -140,7 +140,7 @@ module MultiPathGeneratorFunction =
             try
 
                 let _MultiPathGenerator = Helper.toCell<MultiPathGenerator> multipathgenerator "MultiPathGenerator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathGeneratorModel.Cast _MultiPathGenerator.cell).Next
+                let builder (current : ICell) = ((MultiPathGeneratorModel.Cast _MultiPathGenerator.cell).Next
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 

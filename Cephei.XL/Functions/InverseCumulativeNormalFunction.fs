@@ -52,7 +52,7 @@ module InverseCumulativeNormalFunction =
 
                 let _average = Helper.toCell<double> average "average" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseCumulativeNormal1 
+                let builder (current : ICell) = (Fun.InverseCumulativeNormal1 
                                                             _average.cell 
                                                             _sigma.cell 
                                                        ) :> ICell
@@ -89,7 +89,7 @@ module InverseCumulativeNormalFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseCumulativeNormal ()
+                let builder (current : ICell) = (Fun.InverseCumulativeNormal ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseCumulativeNormal>) l
 
@@ -126,7 +126,7 @@ module InverseCumulativeNormalFunction =
 
                 let _InverseCumulativeNormal = Helper.toCell<InverseCumulativeNormal> inversecumulativenormal "InverseCumulativeNormal"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InverseCumulativeNormalModel.Cast _InverseCumulativeNormal.cell).Value
+                let builder (current : ICell) = ((InverseCumulativeNormalModel.Cast _InverseCumulativeNormal.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

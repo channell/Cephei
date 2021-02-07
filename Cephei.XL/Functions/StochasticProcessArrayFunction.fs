@@ -55,7 +55,7 @@ module StochasticProcessArrayFunction =
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Apply
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Apply
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
@@ -97,7 +97,7 @@ module StochasticProcessArrayFunction =
             try
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Correlation
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Correlation
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -142,7 +142,7 @@ module StochasticProcessArrayFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Covariance
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -193,7 +193,7 @@ module StochasticProcessArrayFunction =
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Diffusion
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -241,7 +241,7 @@ module StochasticProcessArrayFunction =
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Drift
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -295,7 +295,7 @@ module StochasticProcessArrayFunction =
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<Vector> dw "dw" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Evolve
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -352,7 +352,7 @@ module StochasticProcessArrayFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Expectation
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -397,7 +397,7 @@ module StochasticProcessArrayFunction =
             try
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).InitialValues
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -436,7 +436,7 @@ module StochasticProcessArrayFunction =
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Process
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Process
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<StochasticProcess1D>) l
@@ -475,7 +475,7 @@ module StochasticProcessArrayFunction =
             try
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Size
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -520,7 +520,7 @@ module StochasticProcessArrayFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).StdDeviation
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -568,7 +568,7 @@ module StochasticProcessArrayFunction =
 
                 let _processes = Helper.toCell<Generic.List<StochasticProcess1D>> processes "processes" 
                 let _correlation = Helper.toCell<Matrix> correlation "correlation" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.StochasticProcessArray 
+                let builder (current : ICell) = (Fun.StochasticProcessArray 
                                                             _processes.cell 
                                                             _correlation.cell 
                                                        ) :> ICell
@@ -611,7 +611,7 @@ module StochasticProcessArrayFunction =
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Time
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Time
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -650,7 +650,7 @@ module StochasticProcessArrayFunction =
             try
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Factors
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -689,7 +689,7 @@ module StochasticProcessArrayFunction =
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).RegisterWith
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : StochasticProcessArray) (l:string) = o.ToString() :> obj
@@ -731,7 +731,7 @@ module StochasticProcessArrayFunction =
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).UnregisterWith
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : StochasticProcessArray) (l:string) = o.ToString() :> obj
@@ -770,7 +770,7 @@ module StochasticProcessArrayFunction =
             try
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
-                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Update
+                let builder (current : ICell) = ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Update
                                                        ) :> ICell
                 let format (o : StochasticProcessArray) (l:string) = o.ToString() :> obj
 

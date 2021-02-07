@@ -52,7 +52,7 @@ module ExerciseFunction =
 
                 let _Exercise = Helper.toCell<Exercise> exercise "Exercise"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ExerciseModel.Cast _Exercise.cell).Date
+                let builder (current : ICell) = ((ExerciseModel.Cast _Exercise.cell).Date
                                                             _index.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -91,7 +91,7 @@ module ExerciseFunction =
             try
 
                 let _Exercise = Helper.toCell<Exercise> exercise "Exercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ExerciseModel.Cast _Exercise.cell).Dates
+                let builder (current : ICell) = ((ExerciseModel.Cast _Exercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -127,7 +127,7 @@ module ExerciseFunction =
             try
 
                 let _Type = Helper.toCell<Exercise.Type> Type "Type" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Exercise 
+                let builder (current : ICell) = (Fun.Exercise 
                                                             _Type.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -164,7 +164,7 @@ module ExerciseFunction =
             try
 
                 let _Exercise = Helper.toCell<Exercise> exercise "Exercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ExerciseModel.Cast _Exercise.cell).LastDate
+                let builder (current : ICell) = ((ExerciseModel.Cast _Exercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -200,7 +200,7 @@ module ExerciseFunction =
             try
 
                 let _Exercise = Helper.toCell<Exercise> exercise "Exercise"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ExerciseModel.Cast _Exercise.cell).Type
+                let builder (current : ICell) = ((ExerciseModel.Cast _Exercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 

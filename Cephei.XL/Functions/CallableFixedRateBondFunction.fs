@@ -79,7 +79,7 @@ module CallableFixedRateBondFunction =
                 let _putCallSchedule = Helper.toDefault<CallabilitySchedule> putCallSchedule "putCallSchedule" null
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CallableFixedRateBond 
+                let builder (current : ICell) = (Fun.CallableFixedRateBond 
                                                             _settlementDays.cell 
                                                             _faceAmount.cell 
                                                             _schedule.cell 
@@ -146,7 +146,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Callability
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Callability
                                                        ) :> ICell
                 let format (o : CallabilitySchedule) (l:string) = o.ToString() :> obj
 
@@ -200,7 +200,7 @@ module CallableFixedRateBondFunction =
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).CleanPriceOAS
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).CleanPriceOAS
                                                             _oas.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -272,7 +272,7 @@ module CallableFixedRateBondFunction =
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _bump = Helper.toCell<double> bump "bump" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).EffectiveConvexity
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).EffectiveConvexity
                                                             _oas.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -344,7 +344,7 @@ module CallableFixedRateBondFunction =
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _bump = Helper.toCell<double> bump "bump" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).EffectiveDuration
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).EffectiveDuration
                                                             _oas.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -416,7 +416,7 @@ module CallableFixedRateBondFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).ImpliedVolatility
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _accuracy.cell 
@@ -497,7 +497,7 @@ module CallableFixedRateBondFunction =
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxIterations = Helper.toCell<int> maxIterations "maxIterations" 
                 let _guess = Helper.toCell<double> guess "guess" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).OAS
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).OAS
                                                             _cleanPrice.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -563,7 +563,7 @@ module CallableFixedRateBondFunction =
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).AccruedAmount
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -602,7 +602,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Calendar
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -638,7 +638,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Cashflows
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -674,7 +674,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).CleanPrice
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -725,7 +725,7 @@ module CallableFixedRateBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).CleanPrice1
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -791,7 +791,7 @@ module CallableFixedRateBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).DirtyPrice1
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -842,7 +842,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).DirtyPrice
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -878,7 +878,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).IsExpired
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -914,7 +914,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).IssueDate
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -953,7 +953,7 @@ module CallableFixedRateBondFunction =
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).IsTradable
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -992,7 +992,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).MaturityDate
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1031,7 +1031,7 @@ module CallableFixedRateBondFunction =
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).NextCashFlowDate
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1073,7 +1073,7 @@ module CallableFixedRateBondFunction =
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).NextCouponRate
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1115,7 +1115,7 @@ module CallableFixedRateBondFunction =
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Notional
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Notional
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1154,7 +1154,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Notionals
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -1193,7 +1193,7 @@ module CallableFixedRateBondFunction =
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).PreviousCashFlowDate
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1235,7 +1235,7 @@ module CallableFixedRateBondFunction =
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).PreviousCouponRate
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1274,7 +1274,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Redemption
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
@@ -1310,7 +1310,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Redemptions
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -1349,7 +1349,7 @@ module CallableFixedRateBondFunction =
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).SettlementDate
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1388,7 +1388,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).SettlementDays
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1427,7 +1427,7 @@ module CallableFixedRateBondFunction =
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).SettlementValue
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1466,7 +1466,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).SettlementValue1
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1502,7 +1502,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).StartDate
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1559,7 +1559,7 @@ module CallableFixedRateBondFunction =
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Yield1
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1631,7 +1631,7 @@ module CallableFixedRateBondFunction =
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Yield
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Yield
                                                             _dc.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1682,7 +1682,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).CASH
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1718,7 +1718,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).ErrorEstimate
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1754,7 +1754,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).NPV
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1793,7 +1793,7 @@ module CallableFixedRateBondFunction =
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Result
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -1835,7 +1835,7 @@ module CallableFixedRateBondFunction =
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).SetPricingEngine
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CallableFixedRateBond) (l:string) = o.ToString() :> obj
@@ -1874,7 +1874,7 @@ module CallableFixedRateBondFunction =
             try
 
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).ValuationDate
+                let builder (current : ICell) = ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

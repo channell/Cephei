@@ -58,7 +58,7 @@ module NumericHaganPricerFunction =
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
                 let _integrand = Helper.toCell<ConundrumIntegrand.ConundrumIntegrand> integrand "integrand" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).Integrate
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).Integrate
                                                             _a.cell 
                                                             _b.cell 
                                                             _integrand.cell 
@@ -125,7 +125,7 @@ module NumericHaganPricerFunction =
                 let _precision = Helper.toDefault<double> precision "precision" 1.0e-6
                 let _hardUpperLimit = Helper.toDefault<double> hardUpperLimit "hardUpperLimit" Double.MaxValue
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NumericHaganPricer 
+                let builder (current : ICell) = (Fun.NumericHaganPricer 
                                                             _swaptionVol.cell 
                                                             _modelOfYieldCurve.cell 
                                                             _meanReversion.cell 
@@ -189,7 +189,7 @@ module NumericHaganPricerFunction =
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
                 let _integralValue = Helper.toCell<double> integralValue "integralValue" 
                 let _integrand = Helper.toCell<NumericHaganPricer.ConundrumIntegrand> integrand "integrand" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).RefineIntegration
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).RefineIntegration
                                                             _integralValue.cell 
                                                             _integrand.cell 
                                                        ) :> ICell
@@ -234,7 +234,7 @@ module NumericHaganPricerFunction =
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
                 let _stdDeviationsForUpperLimit = Helper.toCell<double> stdDeviationsForUpperLimit "stdDeviationsForUpperLimit" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).ResetUpperLimit
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).ResetUpperLimit
                                                             _stdDeviationsForUpperLimit.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -273,7 +273,7 @@ module NumericHaganPricerFunction =
             try
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).StdDeviations
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).StdDeviations
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -309,7 +309,7 @@ module NumericHaganPricerFunction =
             try
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).SwapletPrice
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -345,7 +345,7 @@ module NumericHaganPricerFunction =
             try
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).UpperLimit
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).UpperLimit
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -384,7 +384,7 @@ module NumericHaganPricerFunction =
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).CapletPrice
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -426,7 +426,7 @@ module NumericHaganPricerFunction =
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).CapletRate
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -468,7 +468,7 @@ module NumericHaganPricerFunction =
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).FloorletPrice
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -510,7 +510,7 @@ module NumericHaganPricerFunction =
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).FloorletRate
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -552,7 +552,7 @@ module NumericHaganPricerFunction =
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
                 let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).Initialize
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
@@ -591,7 +591,7 @@ module NumericHaganPricerFunction =
             try
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).MeanReversion
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).MeanReversion
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -630,7 +630,7 @@ module NumericHaganPricerFunction =
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
                 let _meanReversion = Helper.toHandle<Quote> meanReversion "meanReversion" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).SetMeanReversion
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).SetMeanReversion
                                                             _meanReversion.cell 
                                                        ) :> ICell
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
@@ -669,7 +669,7 @@ module NumericHaganPricerFunction =
             try
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).SwapletRate
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -708,7 +708,7 @@ module NumericHaganPricerFunction =
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
                 let _v = Helper.toHandle<SwaptionVolatilityStructure> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).SetSwaptionVolatility
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).SetSwaptionVolatility
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
@@ -747,7 +747,7 @@ module NumericHaganPricerFunction =
             try
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).SwaptionVolatility
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).SwaptionVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 
@@ -786,7 +786,7 @@ module NumericHaganPricerFunction =
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).RegisterWith
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
@@ -828,7 +828,7 @@ module NumericHaganPricerFunction =
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).UnregisterWith
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
@@ -867,7 +867,7 @@ module NumericHaganPricerFunction =
             try
 
                 let _NumericHaganPricer = Helper.toCell<NumericHaganPricer> numerichaganpricer "NumericHaganPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).Update
+                let builder (current : ICell) = ((NumericHaganPricerModel.Cast _NumericHaganPricer.cell).Update
                                                        ) :> ICell
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
 

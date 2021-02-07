@@ -49,7 +49,7 @@ module LogCubicFunction =
             try
 
                 let _LogCubic = Helper.toCell<LogCubic> logcubic "LogCubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LogCubicModel.Cast _LogCubic.cell).Global
+                let builder (current : ICell) = ((LogCubicModel.Cast _LogCubic.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -94,7 +94,7 @@ module LogCubicFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LogCubicModel.Cast _LogCubic.cell).Interpolate
+                let builder (current : ICell) = ((LogCubicModel.Cast _LogCubic.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -154,7 +154,7 @@ module LogCubicFunction =
                 let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" 
                 let _rightCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCondition "rightCondition" 
                 let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LogCubic 
+                let builder (current : ICell) = (Fun.LogCubic 
                                                             _da.cell 
                                                             _monotonic.cell 
                                                             _leftCondition.cell 
@@ -203,7 +203,7 @@ module LogCubicFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LogCubic1 ()
+                let builder (current : ICell) = (Fun.LogCubic1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LogCubic>) l
 
@@ -237,7 +237,7 @@ module LogCubicFunction =
             try
 
                 let _LogCubic = Helper.toCell<LogCubic> logcubic "LogCubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LogCubicModel.Cast _LogCubic.cell).RequiredPoints
+                let builder (current : ICell) = ((LogCubicModel.Cast _LogCubic.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

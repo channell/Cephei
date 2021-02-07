@@ -49,7 +49,7 @@ module LinearRegressionFunction =
             try
 
                 let _LinearRegression = Helper.toCell<LinearRegression> linearregression "LinearRegression"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LinearRegressionModel.Cast _LinearRegression.cell).Coefficients
+                let builder (current : ICell) = ((LinearRegressionModel.Cast _LinearRegression.cell).Coefficients
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -88,7 +88,7 @@ module LinearRegressionFunction =
 
                 let _x = Helper.toCell<Generic.List<double>> x "x" 
                 let _y = Helper.toCell<Generic.List<double>> y "y" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LinearRegression1
+                let builder (current : ICell) = (Fun.LinearRegression1
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -131,7 +131,7 @@ module LinearRegressionFunction =
 
                 let _x = Helper.toCell<Generic.List<Generic.List<double>>> x "x" 
                 let _y = Helper.toCell<Generic.List<double>> y "y" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LinearRegression
+                let builder (current : ICell) = (Fun.LinearRegression
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -171,7 +171,7 @@ module LinearRegressionFunction =
             try
 
                 let _LinearRegression = Helper.toCell<LinearRegression> linearregression "LinearRegression"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LinearRegressionModel.Cast _LinearRegression.cell).Residuals
+                let builder (current : ICell) = ((LinearRegressionModel.Cast _LinearRegression.cell).Residuals
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -207,7 +207,7 @@ module LinearRegressionFunction =
             try
 
                 let _LinearRegression = Helper.toCell<LinearRegression> linearregression "LinearRegression"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LinearRegressionModel.Cast _LinearRegression.cell).StandardErrors
+                let builder (current : ICell) = ((LinearRegressionModel.Cast _LinearRegression.cell).StandardErrors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

@@ -49,7 +49,7 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).FixedLeg
+                let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).FixedLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -109,7 +109,7 @@ module FixedLoanFunction =
                 let _paymentConvention = Helper.toNullable<BusinessDayConvention> paymentConvention "paymentConvention"
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FixedLoan 
+                let builder (current : ICell) = (Fun.FixedLoan 
                                                             _Type.cell 
                                                             _nominal.cell 
                                                             _fixedSchedule.cell 
@@ -170,7 +170,7 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).PrincipalLeg
+                let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).PrincipalLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -206,7 +206,7 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).IsExpired
+                let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -242,7 +242,7 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).CASH
+                let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -278,7 +278,7 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).ErrorEstimate
+                let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -314,7 +314,7 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).NPV
+                let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -353,7 +353,7 @@ module FixedLoanFunction =
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).Result
+                let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -395,7 +395,7 @@ module FixedLoanFunction =
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).SetPricingEngine
+                let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : FixedLoan) (l:string) = o.ToString() :> obj
@@ -434,7 +434,7 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).ValuationDate
+                let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

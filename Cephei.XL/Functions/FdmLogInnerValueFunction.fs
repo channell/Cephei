@@ -55,7 +55,7 @@ module FdmLogInnerValueFunction =
                 let _FdmLogInnerValue = Helper.toCell<FdmLogInnerValue> fdmloginnervalue "FdmLogInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmLogInnerValueModel.Cast _FdmLogInnerValue.cell).AvgInnerValue
+                let builder (current : ICell) = ((FdmLogInnerValueModel.Cast _FdmLogInnerValue.cell).AvgInnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module FdmLogInnerValueFunction =
                 let _payoff = Helper.toCell<Payoff> payoff "payoff" 
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmLogInnerValue 
+                let builder (current : ICell) = (Fun.FdmLogInnerValue 
                                                             _payoff.cell 
                                                             _mesher.cell 
                                                             _direction.cell 
@@ -152,7 +152,7 @@ module FdmLogInnerValueFunction =
                 let _FdmLogInnerValue = Helper.toCell<FdmLogInnerValue> fdmloginnervalue "FdmLogInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmLogInnerValueModel.Cast _FdmLogInnerValue.cell).InnerValue
+                let builder (current : ICell) = ((FdmLogInnerValueModel.Cast _FdmLogInnerValue.cell).InnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell

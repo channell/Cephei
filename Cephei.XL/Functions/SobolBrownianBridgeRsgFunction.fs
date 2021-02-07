@@ -49,7 +49,7 @@ module SobolBrownianBridgeRsgFunction =
             try
 
                 let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).Dimension
+                let builder (current : ICell) = ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -91,7 +91,7 @@ module SobolBrownianBridgeRsgFunction =
                 let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toDefault<uint64> seed "seed" 0UL
-                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).Factory
+                let builder (current : ICell) = ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
@@ -134,7 +134,7 @@ module SobolBrownianBridgeRsgFunction =
             try
 
                 let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).LastSequence
+                let builder (current : ICell) = ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -172,7 +172,7 @@ module SobolBrownianBridgeRsgFunction =
             try
 
                 let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).NextSequence
+                let builder (current : ICell) = ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -221,7 +221,7 @@ module SobolBrownianBridgeRsgFunction =
                 let _ordering = Helper.toDefault<SobolBrownianGenerator.Ordering> ordering "ordering" SobolBrownianGenerator.Ordering.Diagonal
                 let _seed = Helper.toDefault<uint64> seed "seed" 0UL
                 let _directionIntegers = Helper.toDefault<SobolRsg.DirectionIntegers> directionIntegers "directionIntegers" SobolRsg.DirectionIntegers.JoeKuoD7
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolBrownianBridgeRsg 
+                let builder (current : ICell) = (Fun.SobolBrownianBridgeRsg 
                                                             _factors.cell 
                                                             _steps.cell 
                                                             _ordering.cell 

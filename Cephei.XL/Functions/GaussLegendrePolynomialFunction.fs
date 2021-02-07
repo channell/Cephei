@@ -46,7 +46,7 @@ module GaussLegendrePolynomialFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussLegendrePolynomial 
+                let builder (current : ICell) = (Fun.GaussLegendrePolynomial 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussLegendrePolynomial>) l
 
@@ -83,7 +83,7 @@ module GaussLegendrePolynomialFunction =
 
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Alpha
+                let builder (current : ICell) = ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Alpha
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -125,7 +125,7 @@ module GaussLegendrePolynomialFunction =
 
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Beta
+                let builder (current : ICell) = ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Beta
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module GaussLegendrePolynomialFunction =
             try
 
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Mu_0
+                let builder (current : ICell) = ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -203,7 +203,7 @@ module GaussLegendrePolynomialFunction =
 
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).W
+                let builder (current : ICell) = ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).W
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -248,7 +248,7 @@ module GaussLegendrePolynomialFunction =
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Value
+                let builder (current : ICell) = ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Value
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -296,7 +296,7 @@ module GaussLegendrePolynomialFunction =
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).WeightedValue
+                let builder (current : ICell) = ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell

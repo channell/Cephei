@@ -49,7 +49,7 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Clone
+                let builder (current : ICell) = ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
@@ -85,7 +85,7 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Size
+                let builder (current : ICell) = ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -124,7 +124,7 @@ module SvenssonFittingFunction =
 
                 let _weights = Helper.toDefault<Vector> weights "weights" null
                 let _optimizationMethod = Helper.toDefault<OptimizationMethod> optimizationMethod "optimizationMethod" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SvenssonFitting 
+                let builder (current : ICell) = (Fun.SvenssonFitting 
                                                             _weights.cell 
                                                             _optimizationMethod.cell 
                                                        ) :> ICell
@@ -164,7 +164,7 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).ConstrainAtZero
+                let builder (current : ICell) = ((SvenssonFittingModel.Cast _SvenssonFitting.cell).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -206,7 +206,7 @@ module SvenssonFittingFunction =
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Discount
+                let builder (current : ICell) = ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Discount
                                                             _x.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -248,7 +248,7 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).MinimumCostValue
+                let builder (current : ICell) = ((SvenssonFittingModel.Cast _SvenssonFitting.cell).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -284,7 +284,7 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).NumberOfIterations
+                let builder (current : ICell) = ((SvenssonFittingModel.Cast _SvenssonFitting.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -320,7 +320,7 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).OptimizationMethod
+                let builder (current : ICell) = ((SvenssonFittingModel.Cast _SvenssonFitting.cell).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
@@ -356,7 +356,7 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Solution
+                let builder (current : ICell) = ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -392,7 +392,7 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Weights
+                let builder (current : ICell) = ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

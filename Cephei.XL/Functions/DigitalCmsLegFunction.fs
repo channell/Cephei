@@ -52,7 +52,7 @@ module DigitalCmsLegFunction =
 
                 let _schedule = Helper.toCell<Schedule> schedule "schedule" 
                 let _index = Helper.toCell<SwapIndex> index "index" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalCmsLeg 
+                let builder (current : ICell) = (Fun.DigitalCmsLeg 
                                                             _schedule.cell 
                                                             _index.cell 
                                                        ) :> ICell
@@ -95,7 +95,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).InArrears1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).InArrears1
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -134,7 +134,7 @@ module DigitalCmsLegFunction =
             try
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).InArrears
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).InArrears
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
@@ -170,7 +170,7 @@ module DigitalCmsLegFunction =
             try
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).Value
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -206,7 +206,7 @@ module DigitalCmsLegFunction =
             try
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallATM
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallATM
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
@@ -245,7 +245,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallATM1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallATM1
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -287,7 +287,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _payoffs = Helper.toCell<Generic.List<double>> payoffs "payoffs" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallPayoffs1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallPayoffs1
                                                             _payoffs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -329,7 +329,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _payoff = Helper.toCell<double> payoff "payoff" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallPayoffs
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallPayoffs
                                                             _payoff.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -371,7 +371,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallStrikes1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallStrikes1
                                                             _strikes.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -413,7 +413,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallStrikes
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallStrikes
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -455,7 +455,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithFixingDays1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithFixingDays1
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -497,7 +497,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithFixingDays
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithFixingDays
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -539,7 +539,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithGearings
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithGearings
                                                             _gearings.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -581,7 +581,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithGearings1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithGearings1
                                                             _gearing.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -623,7 +623,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _Type = Helper.toCell<Position.Type> Type "Type" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithLongCallOption
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithLongCallOption
                                                             _Type.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -665,7 +665,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _Type = Helper.toCell<Position.Type> Type "Type" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithLongPutOption
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithLongPutOption
                                                             _Type.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -707,7 +707,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithNotionals1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -749,7 +749,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithNotionals
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -791,7 +791,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPaymentAdjustment
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -833,7 +833,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPaymentDayCounter
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -875,7 +875,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutATM
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutATM
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -914,7 +914,7 @@ module DigitalCmsLegFunction =
             try
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutATM1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutATM1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
@@ -953,7 +953,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _payoffs = Helper.toCell<Generic.List<double>> payoffs "payoffs" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutPayoffs
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutPayoffs
                                                             _payoffs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -995,7 +995,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _payoff = Helper.toCell<double> payoff "payoff" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutPayoffs1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutPayoffs1
                                                             _payoff.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -1037,7 +1037,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutStrikes
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutStrikes
                                                             _strikes.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -1079,7 +1079,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutStrikes1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutStrikes1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -1121,7 +1121,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _replication = Helper.toCell<DigitalReplication> replication "replication" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithReplication
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithReplication
                                                             _replication.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -1160,7 +1160,7 @@ module DigitalCmsLegFunction =
             try
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithReplication1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithReplication1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
@@ -1199,7 +1199,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithSpreads1
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithSpreads1
                                                             _spreads.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
@@ -1241,7 +1241,7 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithSpreads
+                let builder (current : ICell) = ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithSpreads
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l

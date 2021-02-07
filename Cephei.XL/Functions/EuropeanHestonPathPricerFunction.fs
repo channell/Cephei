@@ -55,7 +55,7 @@ module EuropeanHestonPathPricerFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.EuropeanHestonPathPricer 
+                let builder (current : ICell) = (Fun.EuropeanHestonPathPricer 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -101,7 +101,7 @@ module EuropeanHestonPathPricerFunction =
 
                 let _EuropeanHestonPathPricer = Helper.toCell<EuropeanHestonPathPricer> europeanhestonpathpricer "EuropeanHestonPathPricer"  
                 let _multiPath = Helper.toCell<IPath> multiPath "multiPath" 
-                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanHestonPathPricerModel.Cast _EuropeanHestonPathPricer.cell).Value
+                let builder (current : ICell) = ((EuropeanHestonPathPricerModel.Cast _EuropeanHestonPathPricer.cell).Value
                                                             _multiPath.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

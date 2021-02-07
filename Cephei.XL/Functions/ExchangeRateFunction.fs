@@ -52,7 +52,7 @@ module ExchangeRateFunction =
 
                 let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
                 let _amount = Helper.toCell<Money> amount "amount" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ExchangeRateModel.Cast _ExchangeRate.cell).Exchange
+                let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).Exchange
                                                             _amount.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Money>) l
@@ -97,7 +97,7 @@ module ExchangeRateFunction =
                 let _source = Helper.toCell<Currency> source "source" 
                 let _target = Helper.toCell<Currency> target "target" 
                 let _rate = Helper.toCell<double> rate "rate" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ExchangeRate 
+                let builder (current : ICell) = (Fun.ExchangeRate 
                                                             _source.cell 
                                                             _target.cell 
                                                             _rate.cell 
@@ -137,7 +137,7 @@ module ExchangeRateFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ExchangeRate1 ()
+                let builder (current : ICell) = (Fun.ExchangeRate1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ExchangeRate>) l
 
@@ -171,7 +171,7 @@ module ExchangeRateFunction =
             try
 
                 let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ExchangeRateModel.Cast _ExchangeRate.cell).HasValue
+                let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).HasValue
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -207,7 +207,7 @@ module ExchangeRateFunction =
             try
 
                 let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ExchangeRateModel.Cast _ExchangeRate.cell).Rate
+                let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -243,7 +243,7 @@ module ExchangeRateFunction =
             try
 
                 let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ExchangeRateModel.Cast _ExchangeRate.cell).Source
+                let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).Source
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -279,7 +279,7 @@ module ExchangeRateFunction =
             try
 
                 let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ExchangeRateModel.Cast _ExchangeRate.cell).Target
+                let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).Target
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -315,7 +315,7 @@ module ExchangeRateFunction =
             try
 
                 let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ExchangeRateModel.Cast _ExchangeRate.cell).Type
+                let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).Type
                                                        ) :> ICell
                 let format (o : ExchangeRate.Type) (l:string) = o.ToString() :> obj
 

@@ -52,7 +52,7 @@ module MinBasketPayoffFunction =
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Accumulate
+                let builder (current : ICell) = ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Accumulate
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -91,7 +91,7 @@ module MinBasketPayoffFunction =
             try
 
                 let _p = Helper.toCell<Payoff> p "p" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MinBasketPayoff 
+                let builder (current : ICell) = (Fun.MinBasketPayoff 
                                                             _p.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MinBasketPayoff>) l
@@ -128,7 +128,7 @@ module MinBasketPayoffFunction =
             try
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).BasePayoff
+                let builder (current : ICell) = ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).BasePayoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -164,7 +164,7 @@ module MinBasketPayoffFunction =
             try
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Description
+                let builder (current : ICell) = ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -200,7 +200,7 @@ module MinBasketPayoffFunction =
             try
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Name
+                let builder (current : ICell) = ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -239,7 +239,7 @@ module MinBasketPayoffFunction =
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Value1
+                let builder (current : ICell) = ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Value1
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -281,7 +281,7 @@ module MinBasketPayoffFunction =
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Value
+                let builder (current : ICell) = ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -323,7 +323,7 @@ module MinBasketPayoffFunction =
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Accept
+                let builder (current : ICell) = ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : MinBasketPayoff) (l:string) = o.ToString() :> obj

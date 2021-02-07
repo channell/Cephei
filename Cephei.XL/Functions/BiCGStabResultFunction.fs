@@ -55,7 +55,7 @@ module BiCGStabResultFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _e = Helper.toCell<double> e "e" 
                 let _xx = Helper.toCell<Vector> xx "xx" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BiCGStabResult 
+                let builder (current : ICell) = (Fun.BiCGStabResult 
                                                             _i.cell 
                                                             _e.cell 
                                                             _xx.cell 
@@ -98,7 +98,7 @@ module BiCGStabResultFunction =
             try
 
                 let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BiCGStabResultModel.Cast _BiCGStabResult.cell).Error
+                let builder (current : ICell) = ((BiCGStabResultModel.Cast _BiCGStabResult.cell).Error
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -134,7 +134,7 @@ module BiCGStabResultFunction =
             try
 
                 let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BiCGStabResultModel.Cast _BiCGStabResult.cell).Iterations
+                let builder (current : ICell) = ((BiCGStabResultModel.Cast _BiCGStabResult.cell).Iterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -170,7 +170,7 @@ module BiCGStabResultFunction =
             try
 
                 let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BiCGStabResultModel.Cast _BiCGStabResult.cell).X
+                let builder (current : ICell) = ((BiCGStabResultModel.Cast _BiCGStabResult.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

@@ -55,7 +55,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _payoff = Helper.toCell<CashOrNothingPayoff> payoff "payoff" 
                 let _arguments = Helper.toCell<DoubleBarrierOption.Arguments> arguments "arguments" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticDoubleBarrierBinaryEngineHelper 
+                let builder (current : ICell) = (Fun.AnalyticDoubleBarrierBinaryEngineHelper 
                                                             _Process.cell 
                                                             _payoff.cell 
                                                             _arguments.cell 
@@ -113,7 +113,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 
                 let _maxIteration = Helper.toDefault<int> maxIteration "maxIteration" 100
                 let _requiredConvergence = Helper.toDefault<double> requiredConvergence "requiredConvergence" 1e-8
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticDoubleBarrierBinaryEngineHelperModel.Cast _AnalyticDoubleBarrierBinaryEngineHelper.cell).PayoffAtExpiry
+                let builder (current : ICell) = ((AnalyticDoubleBarrierBinaryEngineHelperModel.Cast _AnalyticDoubleBarrierBinaryEngineHelper.cell).PayoffAtExpiry
                                                             _spot.cell 
                                                             _variance.cell 
                                                             _barrierType.cell 
@@ -179,7 +179,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 
                 let _maxIteration = Helper.toDefault<int> maxIteration "maxIteration" 100
                 let _requiredConvergence = Helper.toDefault<double> requiredConvergence "requiredConvergence" 1e-8
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticDoubleBarrierBinaryEngineHelperModel.Cast _AnalyticDoubleBarrierBinaryEngineHelper.cell).PayoffKIKO
+                let builder (current : ICell) = ((AnalyticDoubleBarrierBinaryEngineHelperModel.Cast _AnalyticDoubleBarrierBinaryEngineHelper.cell).PayoffKIKO
                                                             _spot.cell 
                                                             _variance.cell 
                                                             _barrierType.cell 

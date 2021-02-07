@@ -55,7 +55,7 @@ module ComboHelperFunction =
                 let _quadraticHelper = Helper.toCell<ISectionHelper> quadraticHelper "quadraticHelper" 
                 let _convMonoHelper = Helper.toCell<ISectionHelper> convMonoHelper "convMonoHelper" 
                 let _quadraticity = Helper.toCell<double> quadraticity "quadraticity" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ComboHelper 
+                let builder (current : ICell) = (Fun.ComboHelper 
                                                             _quadraticHelper.cell 
                                                             _convMonoHelper.cell 
                                                             _quadraticity.cell 
@@ -98,7 +98,7 @@ module ComboHelperFunction =
             try
 
                 let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).FNext
+                let builder (current : ICell) = ((ComboHelperModel.Cast _ComboHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -137,7 +137,7 @@ module ComboHelperFunction =
 
                 let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).Primitive
+                let builder (current : ICell) = ((ComboHelperModel.Cast _ComboHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -179,7 +179,7 @@ module ComboHelperFunction =
 
                 let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).Value
+                let builder (current : ICell) = ((ComboHelperModel.Cast _ComboHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

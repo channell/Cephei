@@ -52,7 +52,7 @@ module CapHelperFunction =
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
                 let _times = Helper.toCell<Generic.List<double>> times "times" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).AddTimesTo
+                let builder (current : ICell) = ((CapHelperModel.Cast _CapHelper.cell).AddTimesTo
                                                             _times.cell 
                                                        ) :> ICell
                 let format (o : CapHelper) (l:string) = o.ToString() :> obj
@@ -94,7 +94,7 @@ module CapHelperFunction =
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).BlackPrice
+                let builder (current : ICell) = ((CapHelperModel.Cast _CapHelper.cell).BlackPrice
                                                             _sigma.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -160,7 +160,7 @@ module CapHelperFunction =
                 let _errorType = Helper.toDefault<CalibrationHelper.CalibrationErrorType> errorType "errorType" CalibrationHelper.CalibrationErrorType.RelativePriceError
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapHelper 
+                let builder (current : ICell) = (Fun.CapHelper 
                                                             _length.cell 
                                                             _volatility.cell 
                                                             _index.cell 
@@ -224,7 +224,7 @@ module CapHelperFunction =
             try
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).ModelValue
+                let builder (current : ICell) = ((CapHelperModel.Cast _CapHelper.cell).ModelValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -260,7 +260,7 @@ module CapHelperFunction =
             try
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).CalibrationError
+                let builder (current : ICell) = ((CapHelperModel.Cast _CapHelper.cell).CalibrationError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -311,7 +311,7 @@ module CapHelperFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).ImpliedVolatility
+                let builder (current : ICell) = ((CapHelperModel.Cast _CapHelper.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _accuracy.cell 
                                                             _maxEvaluations.cell 
@@ -362,7 +362,7 @@ module CapHelperFunction =
             try
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).MarketValue
+                let builder (current : ICell) = ((CapHelperModel.Cast _CapHelper.cell).MarketValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -401,7 +401,7 @@ module CapHelperFunction =
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
                 let _engine = Helper.toCell<IPricingEngine> engine "engine" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).SetPricingEngine
+                let builder (current : ICell) = ((CapHelperModel.Cast _CapHelper.cell).SetPricingEngine
                                                             _engine.cell 
                                                        ) :> ICell
                 let format (o : CapHelper) (l:string) = o.ToString() :> obj
@@ -440,7 +440,7 @@ module CapHelperFunction =
             try
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).Volatility
+                let builder (current : ICell) = ((CapHelperModel.Cast _CapHelper.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -476,7 +476,7 @@ module CapHelperFunction =
             try
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).VolatilityType
+                let builder (current : ICell) = ((CapHelperModel.Cast _CapHelper.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 

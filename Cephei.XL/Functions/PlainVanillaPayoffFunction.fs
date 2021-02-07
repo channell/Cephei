@@ -49,7 +49,7 @@ module PlainVanillaPayoffFunction =
             try
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Name
+                let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -88,7 +88,7 @@ module PlainVanillaPayoffFunction =
 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.PlainVanillaPayoff 
+                let builder (current : ICell) = (Fun.PlainVanillaPayoff 
                                                             _Type.cell 
                                                             _strike.cell 
                                                        ) :> ICell
@@ -131,7 +131,7 @@ module PlainVanillaPayoffFunction =
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Value
+                let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -170,7 +170,7 @@ module PlainVanillaPayoffFunction =
             try
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Description
+                let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -206,7 +206,7 @@ module PlainVanillaPayoffFunction =
             try
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Strike
+                let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -242,7 +242,7 @@ module PlainVanillaPayoffFunction =
             try
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).OptionType
+                let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
@@ -281,7 +281,7 @@ module PlainVanillaPayoffFunction =
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Accept
+                let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : PlainVanillaPayoff) (l:string) = o.ToString() :> obj

@@ -46,7 +46,7 @@ module FranceRegionFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FranceRegion ()
+                let builder (current : ICell) = (Fun.FranceRegion ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FranceRegion>) l
 
@@ -80,7 +80,7 @@ module FranceRegionFunction =
             try
 
                 let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FranceRegionModel.Cast _FranceRegion.cell).Code
+                let builder (current : ICell) = ((FranceRegionModel.Cast _FranceRegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -119,7 +119,7 @@ module FranceRegionFunction =
 
                 let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FranceRegionModel.Cast _FranceRegion.cell).Equals
+                let builder (current : ICell) = ((FranceRegionModel.Cast _FranceRegion.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -158,7 +158,7 @@ module FranceRegionFunction =
             try
 
                 let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FranceRegionModel.Cast _FranceRegion.cell).Name
+                let builder (current : ICell) = ((FranceRegionModel.Cast _FranceRegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 

@@ -84,7 +84,7 @@ module GlobalsModelFunction =
             try
                 let _settlementDate = Helper.toCell<QLNet.Date> settlementDate "settlementDate"
 
-                let builder (current : ICell) = withMnemonic mnemonic (new GlobalsModel
+                let builder (current : ICell) = (new GlobalsModel
                                                                         ( _settlementDate.cell )
 
                                                                       ) :> ICell
@@ -120,7 +120,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).calendar :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).calendar :> ICell
             let format (o : QLNet.TARGET) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".calendar")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -148,7 +148,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).settlementDays :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).settlementDays :> ICell
             let format (o : System.Int32) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".settlementDays")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -176,7 +176,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).fixingDays :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).fixingDays :> ICell
             let format (o : System.Int32) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".fixingDays")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -204,7 +204,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).fixingDaysNeg :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).fixingDaysNeg :> ICell
             let format (o : System.Int32) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".fixingDaysNeg")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -232,7 +232,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).zcBondsDayCounter :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).zcBondsDayCounter :> ICell
             let format (o : QLNet.Actual365Fixed) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".zcBondsDayCounter")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -260,7 +260,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).USgovi :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).USgovi :> ICell
             let format (o : QLNet.UnitedStates) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".USgovi")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -288,7 +288,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).Semiannual :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).Semiannual :> ICell
             let format (o : QLNet.Period) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".Semiannual")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -316,7 +316,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).ActualActualBond :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).ActualActualBond :> ICell
             let format (o : QLNet.ActualActual) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".ActualActualBond")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -344,7 +344,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).depositDayCounter :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).depositDayCounter :> ICell
             let format (o : QLNet.Actual360) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".depositDayCounter")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -372,7 +372,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).loglinier :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).loglinier :> ICell
             let format (o : QLNet.LogLinear) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".loglinier")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -400,7 +400,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).discount :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).discount :> ICell
             let format (o : QLNet.Discount) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".discount")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -428,7 +428,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).termStructureDayCounter :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).termStructureDayCounter :> ICell
             let format (o : QLNet.ActualActual) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".termStructureDayCounter")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -456,7 +456,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).actual360 :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).actual360 :> ICell
             let format (o : QLNet.Actual360) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".actual360")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -484,7 +484,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).Quarterly :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).Quarterly :> ICell
             let format (o : QLNet.Period) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".Quarterly")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -512,7 +512,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).Adjusted :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).Adjusted :> ICell
             let format (o : QLNet.Date) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".Adjusted")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -540,7 +540,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).Actual365Fixed :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).Actual365Fixed :> ICell
             let format (o : QLNet.Actual365Fixed) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".Actual365Fixed")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -568,7 +568,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).todaysDate :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).todaysDate :> ICell
             let format (o : QLNet.Date) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".todaysDate")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -596,7 +596,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).forwardStart :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).forwardStart :> ICell
             let format (o : QLNet.Period) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".forwardStart")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -624,7 +624,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).swFloatingLegIndex :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).swFloatingLegIndex :> ICell
             let format (o : QLNet.Euribor6M) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".swFloatingLegIndex")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]
@@ -652,7 +652,7 @@ module GlobalsModelFunction =
             try
 
             let _GlobalsModel = Helper.toModel<GlobalsModel, Date> GlobalsModel "GlobalsModel"  
-            let builder (current : ICell) = withMnemonic mnemonic (_GlobalsModel.cell :?> GlobalsModel).swFixedLegDayCounter :> ICell
+            let builder (current : ICell) = (_GlobalsModel.cell :?> GlobalsModel).swFixedLegDayCounter :> ICell
             let format (o : QLNet.Thirty360) (l:string) = Model.genericFormat o
             let source () = (_GlobalsModel.source + ".swFixedLegDayCounter")
             let hash = Helper.hashFold [| _GlobalsModel.cell |]

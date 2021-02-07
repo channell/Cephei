@@ -52,7 +52,7 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Clone
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).Clone
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
@@ -97,7 +97,7 @@ module SwapIndexFunction =
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let _discounting = Helper.toHandle<YieldTermStructure> discounting "discounting" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Clone1
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).Clone1
                                                             _forwarding.cell 
                                                             _discounting.cell 
                                                        ) :> ICell
@@ -142,7 +142,7 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Clone2
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).Clone2
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
@@ -181,7 +181,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).DiscountingTermStructure
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).DiscountingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -217,7 +217,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ExogenousDiscount
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).ExogenousDiscount
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -253,7 +253,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixedLegConvention
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).FixedLegConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -289,7 +289,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixedLegTenor
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).FixedLegTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -328,7 +328,7 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ForecastFixing
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -367,7 +367,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ForwardingTermStructure
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -403,7 +403,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).IborIndex
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).IborIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
@@ -442,7 +442,7 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).MaturityDate
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -505,7 +505,7 @@ module SwapIndexFunction =
                 let _fixedLegConvention = Helper.toCell<BusinessDayConvention> fixedLegConvention "fixedLegConvention" 
                 let _fixedLegDayCounter = Helper.toCell<DayCounter> fixedLegDayCounter "fixedLegDayCounter" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapIndex1 
+                let builder (current : ICell) = (Fun.SwapIndex1 
                                                             _familyName.cell 
                                                             _tenor.cell 
                                                             _settlementDays.cell 
@@ -563,7 +563,7 @@ module SwapIndexFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapIndex2 ()
+                let builder (current : ICell) = (Fun.SwapIndex2 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
@@ -624,7 +624,7 @@ module SwapIndexFunction =
                 let _fixedLegDayCounter = Helper.toCell<DayCounter> fixedLegDayCounter "fixedLegDayCounter" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
                 let _discountingTermStructure = Helper.toHandle<YieldTermStructure> discountingTermStructure "discountingTermStructure" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapIndex
+                let builder (current : ICell) = (Fun.SwapIndex
                                                             _familyName.cell 
                                                             _tenor.cell 
                                                             _settlementDays.cell 
@@ -691,7 +691,7 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).UnderlyingSwap
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).UnderlyingSwap
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
@@ -730,7 +730,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Currency
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -766,7 +766,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).DayCounter
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -802,7 +802,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FamilyName
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -844,7 +844,7 @@ module SwapIndexFunction =
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Fixing
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -886,7 +886,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixingCalendar
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -925,7 +925,7 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixingDate
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -964,7 +964,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixingDays
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1003,7 +1003,7 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).IsValidFixingDate
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1042,7 +1042,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Name
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -1081,7 +1081,7 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).PastFixing
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1120,7 +1120,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Tenor
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -1156,7 +1156,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Update
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).Update
                                                        ) :> ICell
                 let format (o : SwapIndex) (l:string) = o.ToString() :> obj
 
@@ -1195,7 +1195,7 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ValueDate
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1243,7 +1243,7 @@ module SwapIndexFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AddFixing
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1297,7 +1297,7 @@ module SwapIndexFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AddFixings
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1348,7 +1348,7 @@ module SwapIndexFunction =
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AddFixings1
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -1390,7 +1390,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AllowsNativeFixings
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1426,7 +1426,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ClearFixings
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : SwapIndex) (l:string) = o.ToString() :> obj
 
@@ -1465,7 +1465,7 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).RegisterWith
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SwapIndex) (l:string) = o.ToString() :> obj
@@ -1504,7 +1504,7 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).TimeSeries
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1543,7 +1543,7 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).UnregisterWith
+                let builder (current : ICell) = ((SwapIndexModel.Cast _SwapIndex.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SwapIndex) (l:string) = o.ToString() :> obj

@@ -49,7 +49,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Clone
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Data
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -121,7 +121,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Data_
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -157,7 +157,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Dates
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -193,7 +193,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Dates_
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -229,7 +229,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Discounts
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Discounts
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -280,7 +280,7 @@ module InterpolatedDiscountCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve 
+                let builder (current : ICell) = (Fun.InterpolatedDiscountCurve 
                                                             _dates.cell 
                                                             _discounts.cell 
                                                             _dayCounter.cell 
@@ -341,7 +341,7 @@ module InterpolatedDiscountCurveFunction =
                 let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve1 
+                let builder (current : ICell) = (Fun.InterpolatedDiscountCurve1 
                                                             _dates.cell 
                                                             _discounts.cell 
                                                             _dayCounter.cell 
@@ -399,7 +399,7 @@ module InterpolatedDiscountCurveFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve2 
+                let builder (current : ICell) = (Fun.InterpolatedDiscountCurve2 
                                                             _dates.cell 
                                                             _discounts.cell 
                                                             _dayCounter.cell 
@@ -466,7 +466,7 @@ module InterpolatedDiscountCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve3 
+                let builder (current : ICell) = (Fun.InterpolatedDiscountCurve3 
                                                             _dates.cell 
                                                             _discounts.cell 
                                                             _dayCounter.cell 
@@ -536,7 +536,7 @@ module InterpolatedDiscountCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve4 
+                let builder (current : ICell) = (Fun.InterpolatedDiscountCurve4 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _dayCounter.cell 
@@ -600,7 +600,7 @@ module InterpolatedDiscountCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve5 
+                let builder (current : ICell) = (Fun.InterpolatedDiscountCurve5 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
                                                             _jumps.cell 
@@ -658,7 +658,7 @@ module InterpolatedDiscountCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve6 
+                let builder (current : ICell) = (Fun.InterpolatedDiscountCurve6 
                                                             _dayCounter.cell 
                                                             _jumps.cell 
                                                             _jumpDates.cell 
@@ -704,7 +704,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Interpolation_
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
@@ -740,7 +740,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Interpolator_
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
@@ -776,7 +776,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).MaxDate
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -812,7 +812,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).MaxDate_
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -848,7 +848,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Nodes
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
@@ -884,7 +884,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).SetupInterpolation
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedDiscountCurve) (l:string) = o.ToString() :> obj
 
@@ -920,7 +920,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Times
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -956,7 +956,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Times_
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -998,7 +998,7 @@ module InterpolatedDiscountCurveFunction =
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Discount
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Discount
                                                             _t.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -1046,7 +1046,7 @@ module InterpolatedDiscountCurveFunction =
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Discount1
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Discount1
                                                             _d.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -1106,7 +1106,7 @@ module InterpolatedDiscountCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ForwardRate
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ForwardRate
                                                             _d.cell 
                                                             _p.cell 
                                                             _dayCounter.cell 
@@ -1178,7 +1178,7 @@ module InterpolatedDiscountCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ForwardRate1
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ForwardRate1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _dayCounter.cell 
@@ -1247,7 +1247,7 @@ module InterpolatedDiscountCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ForwardRate2
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ForwardRate2
                                                             _t1.cell 
                                                             _t2.cell 
                                                             _comp.cell 
@@ -1298,7 +1298,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).JumpDates
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -1334,7 +1334,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).JumpTimes
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -1370,7 +1370,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Update
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Update
                                                        ) :> ICell
                 let format (o : InterpolatedDiscountCurve) (l:string) = o.ToString() :> obj
 
@@ -1421,7 +1421,7 @@ module InterpolatedDiscountCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ZeroRate
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ZeroRate
                                                             _d.cell 
                                                             _dayCounter.cell 
                                                             _comp.cell 
@@ -1484,7 +1484,7 @@ module InterpolatedDiscountCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ZeroRate1
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ZeroRate1
                                                             _t.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1532,7 +1532,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Calendar
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -1568,7 +1568,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).DayCounter
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -1604,7 +1604,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).MaxTime
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1640,7 +1640,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ReferenceDate
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1676,7 +1676,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).SettlementDays
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1715,7 +1715,7 @@ module InterpolatedDiscountCurveFunction =
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).TimeFromReference
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1754,7 +1754,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).AllowsExtrapolation
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1793,7 +1793,7 @@ module InterpolatedDiscountCurveFunction =
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).DisableExtrapolation
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedDiscountCurve) (l:string) = o.ToString() :> obj
@@ -1835,7 +1835,7 @@ module InterpolatedDiscountCurveFunction =
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).EnableExtrapolation
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedDiscountCurve) (l:string) = o.ToString() :> obj
@@ -1874,7 +1874,7 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Extrapolate
+                let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

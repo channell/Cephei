@@ -52,7 +52,7 @@ module BoundaryConditionSchemeHelperFunction =
 
                 let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyAfterApplying
+                let builder (current : ICell) = ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyAfterApplying
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : BoundaryConditionSchemeHelper) (l:string) = o.ToString() :> obj
@@ -94,7 +94,7 @@ module BoundaryConditionSchemeHelperFunction =
 
                 let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyAfterSolving
+                let builder (current : ICell) = ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyAfterSolving
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : BoundaryConditionSchemeHelper) (l:string) = o.ToString() :> obj
@@ -136,7 +136,7 @@ module BoundaryConditionSchemeHelperFunction =
 
                 let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _op = Helper.toCell<IOperator> op "op" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyBeforeApplying
+                let builder (current : ICell) = ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyBeforeApplying
                                                             _op.cell 
                                                        ) :> ICell
                 let format (o : BoundaryConditionSchemeHelper) (l:string) = o.ToString() :> obj
@@ -181,7 +181,7 @@ module BoundaryConditionSchemeHelperFunction =
                 let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _op = Helper.toCell<IOperator> op "op" 
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyBeforeSolving
+                let builder (current : ICell) = ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyBeforeSolving
                                                             _op.cell 
                                                             _a.cell 
                                                        ) :> ICell
@@ -223,7 +223,7 @@ module BoundaryConditionSchemeHelperFunction =
             try
 
                 let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BoundaryConditionSchemeHelper 
+                let builder (current : ICell) = (Fun.BoundaryConditionSchemeHelper 
                                                             _bcSet.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BoundaryConditionSchemeHelper>) l
@@ -263,7 +263,7 @@ module BoundaryConditionSchemeHelperFunction =
 
                 let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).SetTime
+                let builder (current : ICell) = ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : BoundaryConditionSchemeHelper) (l:string) = o.ToString() :> obj

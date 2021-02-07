@@ -55,7 +55,7 @@ module DefaultDensityFunction =
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).DiscountImpl
+                let builder (current : ICell) = ((DefaultDensityModel.Cast _DefaultDensity.cell).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module DefaultDensityFunction =
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).ForwardImpl
+                let builder (current : ICell) = ((DefaultDensityModel.Cast _DefaultDensity.cell).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -157,7 +157,7 @@ module DefaultDensityFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).Guess
+                let builder (current : ICell) = ((DefaultDensityModel.Cast _DefaultDensity.cell).Guess
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -208,7 +208,7 @@ module DefaultDensityFunction =
 
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
                 let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).InitialDate
+                let builder (current : ICell) = ((DefaultDensityModel.Cast _DefaultDensity.cell).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -250,7 +250,7 @@ module DefaultDensityFunction =
 
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
                 let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).InitialValue
+                let builder (current : ICell) = ((DefaultDensityModel.Cast _DefaultDensity.cell).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -289,7 +289,7 @@ module DefaultDensityFunction =
             try
 
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).MaxIterations
+                let builder (current : ICell) = ((DefaultDensityModel.Cast _DefaultDensity.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -337,7 +337,7 @@ module DefaultDensityFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).MaxValueAfter
+                let builder (current : ICell) = ((DefaultDensityModel.Cast _DefaultDensity.cell).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -397,7 +397,7 @@ module DefaultDensityFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).MinValueAfter
+                let builder (current : ICell) = ((DefaultDensityModel.Cast _DefaultDensity.cell).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -454,7 +454,7 @@ module DefaultDensityFunction =
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _density = Helper.toCell<double> density "density" 
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).UpdateGuess
+                let builder (current : ICell) = ((DefaultDensityModel.Cast _DefaultDensity.cell).UpdateGuess
                                                             _data.cell 
                                                             _density.cell 
                                                             _i.cell 
@@ -505,7 +505,7 @@ module DefaultDensityFunction =
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).ZeroYieldImpl
+                let builder (current : ICell) = ((DefaultDensityModel.Cast _DefaultDensity.cell).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell

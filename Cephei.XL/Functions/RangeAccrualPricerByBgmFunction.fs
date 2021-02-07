@@ -61,7 +61,7 @@ module RangeAccrualPricerByBgmFunction =
                 let _smilesOnPayment = Helper.toCell<SmileSection> smilesOnPayment "smilesOnPayment" 
                 let _withSmile = Helper.toCell<bool> withSmile "withSmile" 
                 let _byCallSpread = Helper.toCell<bool> byCallSpread "byCallSpread" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.RangeAccrualPricerByBgm 
+                let builder (current : ICell) = (Fun.RangeAccrualPricerByBgm 
                                                             _correlation.cell 
                                                             _smilesOnExpiry.cell 
                                                             _smilesOnPayment.cell 
@@ -110,7 +110,7 @@ module RangeAccrualPricerByBgmFunction =
             try
 
                 let _RangeAccrualPricerByBgm = Helper.toCell<RangeAccrualPricerByBgm> rangeaccrualpricerbybgm "RangeAccrualPricerByBgm"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).SwapletPrice
+                let builder (current : ICell) = ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -149,7 +149,7 @@ module RangeAccrualPricerByBgmFunction =
 
                 let _RangeAccrualPricerByBgm = Helper.toCell<RangeAccrualPricerByBgm> rangeaccrualpricerbybgm "RangeAccrualPricerByBgm"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).CapletPrice
+                let builder (current : ICell) = ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -191,7 +191,7 @@ module RangeAccrualPricerByBgmFunction =
 
                 let _RangeAccrualPricerByBgm = Helper.toCell<RangeAccrualPricerByBgm> rangeaccrualpricerbybgm "RangeAccrualPricerByBgm"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).CapletRate
+                let builder (current : ICell) = ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -233,7 +233,7 @@ module RangeAccrualPricerByBgmFunction =
 
                 let _RangeAccrualPricerByBgm = Helper.toCell<RangeAccrualPricerByBgm> rangeaccrualpricerbybgm "RangeAccrualPricerByBgm"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).FloorletPrice
+                let builder (current : ICell) = ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -275,7 +275,7 @@ module RangeAccrualPricerByBgmFunction =
 
                 let _RangeAccrualPricerByBgm = Helper.toCell<RangeAccrualPricerByBgm> rangeaccrualpricerbybgm "RangeAccrualPricerByBgm"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).FloorletRate
+                let builder (current : ICell) = ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -317,7 +317,7 @@ module RangeAccrualPricerByBgmFunction =
 
                 let _RangeAccrualPricerByBgm = Helper.toCell<RangeAccrualPricerByBgm> rangeaccrualpricerbybgm "RangeAccrualPricerByBgm"  
                 let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).Initialize
+                let builder (current : ICell) = ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
                 let format (o : RangeAccrualPricerByBgm) (l:string) = o.ToString() :> obj
@@ -356,7 +356,7 @@ module RangeAccrualPricerByBgmFunction =
             try
 
                 let _RangeAccrualPricerByBgm = Helper.toCell<RangeAccrualPricerByBgm> rangeaccrualpricerbybgm "RangeAccrualPricerByBgm"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).SwapletRate
+                let builder (current : ICell) = ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -395,7 +395,7 @@ module RangeAccrualPricerByBgmFunction =
 
                 let _RangeAccrualPricerByBgm = Helper.toCell<RangeAccrualPricerByBgm> rangeaccrualpricerbybgm "RangeAccrualPricerByBgm"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).RegisterWith
+                let builder (current : ICell) = ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RangeAccrualPricerByBgm) (l:string) = o.ToString() :> obj
@@ -437,7 +437,7 @@ module RangeAccrualPricerByBgmFunction =
 
                 let _RangeAccrualPricerByBgm = Helper.toCell<RangeAccrualPricerByBgm> rangeaccrualpricerbybgm "RangeAccrualPricerByBgm"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).UnregisterWith
+                let builder (current : ICell) = ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RangeAccrualPricerByBgm) (l:string) = o.ToString() :> obj
@@ -476,7 +476,7 @@ module RangeAccrualPricerByBgmFunction =
             try
 
                 let _RangeAccrualPricerByBgm = Helper.toCell<RangeAccrualPricerByBgm> rangeaccrualpricerbybgm "RangeAccrualPricerByBgm"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).Update
+                let builder (current : ICell) = ((RangeAccrualPricerByBgmModel.Cast _RangeAccrualPricerByBgm.cell).Update
                                                        ) :> ICell
                 let format (o : RangeAccrualPricerByBgm) (l:string) = o.ToString() :> obj
 

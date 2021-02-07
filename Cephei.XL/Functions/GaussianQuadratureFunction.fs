@@ -52,7 +52,7 @@ module GaussianQuadratureFunction =
 
                 let _n = Helper.toCell<int> n "n" 
                 let _orthPoly = Helper.toCell<GaussianOrthogonalPolynomial> orthPoly "orthPoly" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussianQuadrature 
+                let builder (current : ICell) = (Fun.GaussianQuadrature 
                                                             _n.cell 
                                                             _orthPoly.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module GaussianQuadratureFunction =
             try
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Order
+                let builder (current : ICell) = ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -131,7 +131,7 @@ module GaussianQuadratureFunction =
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Value
+                let builder (current : ICell) = ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -170,7 +170,7 @@ module GaussianQuadratureFunction =
             try
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Weights
+                let builder (current : ICell) = ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -206,7 +206,7 @@ module GaussianQuadratureFunction =
             try
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).X
+                let builder (current : ICell) = ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

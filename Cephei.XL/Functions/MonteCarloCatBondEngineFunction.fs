@@ -50,7 +50,7 @@ module MonteCarloCatBondEngineFunction =
             try
 
                 let _MonteCarloCatBondEngine = Helper.toCell<MonteCarloCatBondEngine> montecarlocatbondengine "MonteCarloCatBondEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MonteCarloCatBondEngineModel.Cast _MonteCarloCatBondEngine.cell).DiscountCurve
+                let builder (current : ICell) = ((MonteCarloCatBondEngineModel.Cast _MonteCarloCatBondEngine.cell).DiscountCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -95,7 +95,7 @@ module MonteCarloCatBondEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MonteCarloCatBondEngine 
+                let builder (current : ICell) = (Fun.MonteCarloCatBondEngine 
                                                             _catRisk.cell 
                                                             _discountCurve.cell 
                                                             _includeSettlementDateFlows.cell 

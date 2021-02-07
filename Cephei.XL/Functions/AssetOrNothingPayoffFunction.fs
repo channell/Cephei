@@ -52,7 +52,7 @@ module AssetOrNothingPayoffFunction =
 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AssetOrNothingPayoff 
+                let builder (current : ICell) = (Fun.AssetOrNothingPayoff 
                                                             _Type.cell 
                                                             _strike.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module AssetOrNothingPayoffFunction =
             try
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Name
+                let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -131,7 +131,7 @@ module AssetOrNothingPayoffFunction =
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Value
+                let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -170,7 +170,7 @@ module AssetOrNothingPayoffFunction =
             try
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Description
+                let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -206,7 +206,7 @@ module AssetOrNothingPayoffFunction =
             try
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Strike
+                let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -242,7 +242,7 @@ module AssetOrNothingPayoffFunction =
             try
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).OptionType
+                let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
@@ -281,7 +281,7 @@ module AssetOrNothingPayoffFunction =
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Accept
+                let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : AssetOrNothingPayoff) (l:string) = o.ToString() :> obj

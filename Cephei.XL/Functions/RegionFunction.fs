@@ -49,7 +49,7 @@ module RegionFunction =
             try
 
                 let _Region = Helper.toCell<Region> region "Region"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RegionModel.Cast _Region.cell).Code
+                let builder (current : ICell) = ((RegionModel.Cast _Region.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -88,7 +88,7 @@ module RegionFunction =
 
                 let _Region = Helper.toCell<Region> region "Region"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RegionModel.Cast _Region.cell).Equals
+                let builder (current : ICell) = ((RegionModel.Cast _Region.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -127,7 +127,7 @@ module RegionFunction =
             try
 
                 let _Region = Helper.toCell<Region> region "Region"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RegionModel.Cast _Region.cell).Name
+                let builder (current : ICell) = ((RegionModel.Cast _Region.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 

@@ -49,7 +49,7 @@ module PairFunction =
             try
 
                 let _Pair = Helper.toCell<Pair> pair "Pair"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PairModel.Cast _Pair.cell).First
+                let builder (current : ICell) = ((PairModel.Cast _Pair.cell).First
                                                        ) :> ICell
                 let format (o : TFirst) (l:string) = o.ToString() :> obj
 
@@ -88,7 +88,7 @@ module PairFunction =
 
                 let _first = Helper.toCell<'TFirst> first "first" 
                 let _second = Helper.toCell<'TSecond> second "second" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Pair 
+                let builder (current : ICell) = (Fun.Pair 
                                                             _first.cell 
                                                             _second.cell 
                                                        ) :> ICell
@@ -125,7 +125,7 @@ module PairFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Pair1 
+                let builder (current : ICell) = (Fun.Pair1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Pair>) l
 
@@ -159,7 +159,7 @@ module PairFunction =
             try
 
                 let _Pair = Helper.toCell<Pair> pair "Pair"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PairModel.Cast _Pair.cell).Second
+                let builder (current : ICell) = ((PairModel.Cast _Pair.cell).Second
                                                        ) :> ICell
                 let format (o : TSecond) (l:string) = o.ToString() :> obj
 
@@ -201,7 +201,7 @@ module PairFunction =
                 let _Pair = Helper.toCell<Pair> pair "Pair"  
                 let _first = Helper.toCell<'TFirst> first "first" 
                 let _second = Helper.toCell<'TSecond> second "second" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PairModel.Cast _Pair.cell).Set
+                let builder (current : ICell) = ((PairModel.Cast _Pair.cell).Set
                                                             _first.cell 
                                                             _second.cell 
                                                        ) :> ICell

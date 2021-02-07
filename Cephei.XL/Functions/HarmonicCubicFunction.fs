@@ -55,7 +55,7 @@ module HarmonicCubicFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.HarmonicCubic 
+                let builder (current : ICell) = (Fun.HarmonicCubic 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -98,7 +98,7 @@ module HarmonicCubicFunction =
             try
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).ACoefficients
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -134,7 +134,7 @@ module HarmonicCubicFunction =
             try
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).BCoefficients
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -170,7 +170,7 @@ module HarmonicCubicFunction =
             try
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).CCoefficients
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -212,7 +212,7 @@ module HarmonicCubicFunction =
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Derivative
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module HarmonicCubicFunction =
             try
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Empty
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -296,7 +296,7 @@ module HarmonicCubicFunction =
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Primitive
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -344,7 +344,7 @@ module HarmonicCubicFunction =
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).SecondDerivative
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -386,7 +386,7 @@ module HarmonicCubicFunction =
             try
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Update
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Update
                                                        ) :> ICell
                 let format (o : HarmonicCubic) (l:string) = o.ToString() :> obj
 
@@ -428,7 +428,7 @@ module HarmonicCubicFunction =
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Value1
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -473,7 +473,7 @@ module HarmonicCubicFunction =
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Value
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -512,7 +512,7 @@ module HarmonicCubicFunction =
             try
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).XMax
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -548,7 +548,7 @@ module HarmonicCubicFunction =
             try
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).XMin
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -584,7 +584,7 @@ module HarmonicCubicFunction =
             try
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).AllowsExtrapolation
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -623,7 +623,7 @@ module HarmonicCubicFunction =
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).DisableExtrapolation
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : HarmonicCubic) (l:string) = o.ToString() :> obj
@@ -665,7 +665,7 @@ module HarmonicCubicFunction =
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).EnableExtrapolation
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : HarmonicCubic) (l:string) = o.ToString() :> obj
@@ -704,7 +704,7 @@ module HarmonicCubicFunction =
             try
 
                 let _HarmonicCubic = Helper.toCell<HarmonicCubic> harmoniccubic "HarmonicCubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Extrapolate
+                let builder (current : ICell) = ((HarmonicCubicModel.Cast _HarmonicCubic.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

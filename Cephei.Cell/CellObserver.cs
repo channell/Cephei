@@ -42,6 +42,7 @@ namespace Cephei.Cell
             switch (eventType)
             {
                 case CellEvent.Calculate:
+                case CellEvent.CalculateLogging:
                     if (root is ICell c && c.State == CellState.Error)
                         _target.OnError(((ICell)root).Error);
                     else
@@ -49,15 +50,18 @@ namespace Cephei.Cell
                     break;
 
                 case CellEvent.Delete:
+                case CellEvent.DeleteLogging:
                     _target.OnCompleted();
                     break;
 
                 case CellEvent.Error:
+                case CellEvent.ErrorLogging:
                     if (root is ICell)
                         _target.OnError(((ICell)root).Error);
                     break;
                 case CellEvent.Link:
-                        if (_source.Parent != null && _source.Parent is Model)
+                case CellEvent.LinkLogging:
+                    if (_source.Parent != null && _source.Parent is Model)
                     {
                         var source = ((Model)_source.Parent)[_source.Mnemonic] as Generic.ICell<T>;
                         if (source != null)
@@ -119,6 +123,7 @@ namespace Cephei.Cell
             switch (eventType)
             {
                 case CellEvent.Calculate:
+                case CellEvent.CalculateLogging:
                     var lastsession = Session.Current;
                     Session.Current = session;
                     _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string,T>>(session, new KeyValuePair<string,T>(_source.Mnemonic, _source.Value)));
@@ -126,10 +131,12 @@ namespace Cephei.Cell
                     break;
 
                 case CellEvent.Delete:
+                case CellEvent.DeleteLogging:
                     _target.OnCompleted();
                     break;
 
                 case CellEvent.Error:
+                case CellEvent.ErrorLogging:
                     if (root is ICell)
                         _target.OnError(((ICell)root).Error);
                     break;
@@ -189,10 +196,16 @@ namespace Cephei.Cell
                 case CellEvent.JoinSession:
                 case CellEvent.Link:
                 case CellEvent.Calculate:
+                case CellEvent.InvalidateLogging:
+                case CellEvent.DeleteLogging:
+                case CellEvent.JoinSessionLogging:
+                case CellEvent.LinkLogging:
+                case CellEvent.CalculateLogging:
                     _target.OnNext(new Tuple<ISession, Generic.ICell<T>, CellEvent, ICell, DateTime>(session, _source, eventType, ((ICell)sender), epoch));
                     break;
 
                 case CellEvent.Error:
+                case CellEvent.ErrorLogging:
                     if (root is ICell)
                         _target.OnError(((ICell)root).Error);
                     break;

@@ -55,7 +55,7 @@ module MonotonicParabolicFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MonotonicParabolic 
+                let builder (current : ICell) = (Fun.MonotonicParabolic 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -98,7 +98,7 @@ module MonotonicParabolicFunction =
             try
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).ACoefficients
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -134,7 +134,7 @@ module MonotonicParabolicFunction =
             try
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).BCoefficients
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -170,7 +170,7 @@ module MonotonicParabolicFunction =
             try
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).CCoefficients
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -212,7 +212,7 @@ module MonotonicParabolicFunction =
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Derivative
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module MonotonicParabolicFunction =
             try
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Empty
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -296,7 +296,7 @@ module MonotonicParabolicFunction =
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Primitive
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -344,7 +344,7 @@ module MonotonicParabolicFunction =
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).SecondDerivative
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -386,7 +386,7 @@ module MonotonicParabolicFunction =
             try
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Update
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Update
                                                        ) :> ICell
                 let format (o : MonotonicParabolic) (l:string) = o.ToString() :> obj
 
@@ -428,7 +428,7 @@ module MonotonicParabolicFunction =
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Value1
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -473,7 +473,7 @@ module MonotonicParabolicFunction =
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Value
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -512,7 +512,7 @@ module MonotonicParabolicFunction =
             try
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).XMax
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -548,7 +548,7 @@ module MonotonicParabolicFunction =
             try
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).XMin
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -584,7 +584,7 @@ module MonotonicParabolicFunction =
             try
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).AllowsExtrapolation
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -623,7 +623,7 @@ module MonotonicParabolicFunction =
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).DisableExtrapolation
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : MonotonicParabolic) (l:string) = o.ToString() :> obj
@@ -665,7 +665,7 @@ module MonotonicParabolicFunction =
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).EnableExtrapolation
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : MonotonicParabolic) (l:string) = o.ToString() :> obj
@@ -704,7 +704,7 @@ module MonotonicParabolicFunction =
             try
 
                 let _MonotonicParabolic = Helper.toCell<MonotonicParabolic> monotonicparabolic "MonotonicParabolic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Extrapolate
+                let builder (current : ICell) = ((MonotonicParabolicModel.Cast _MonotonicParabolic.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

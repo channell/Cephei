@@ -58,7 +58,7 @@ module BlackConstantVolFunction =
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackConstantVol 
+                let builder (current : ICell) = (Fun.BlackConstantVol 
                                                             _settlementDays.cell 
                                                             _cal.cell 
                                                             _volatility.cell 
@@ -113,7 +113,7 @@ module BlackConstantVolFunction =
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _volatility = Helper.toCell<double> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackConstantVol1 
+                let builder (current : ICell) = (Fun.BlackConstantVol1 
                                                             _settlementDays.cell 
                                                             _cal.cell 
                                                             _volatility.cell 
@@ -168,7 +168,7 @@ module BlackConstantVolFunction =
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackConstantVol2 
+                let builder (current : ICell) = (Fun.BlackConstantVol2 
                                                             _referenceDate.cell 
                                                             _cal.cell 
                                                             _volatility.cell 
@@ -223,7 +223,7 @@ module BlackConstantVolFunction =
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _volatility = Helper.toCell<double> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackConstantVol3 
+                let builder (current : ICell) = (Fun.BlackConstantVol3 
                                                             _referenceDate.cell 
                                                             _cal.cell 
                                                             _volatility.cell 
@@ -269,7 +269,7 @@ module BlackConstantVolFunction =
             try
 
                 let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxDate
+                let builder (current : ICell) = ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -305,7 +305,7 @@ module BlackConstantVolFunction =
             try
 
                 let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxStrike
+                let builder (current : ICell) = ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -341,7 +341,7 @@ module BlackConstantVolFunction =
             try
 
                 let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MinStrike
+                let builder (current : ICell) = ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

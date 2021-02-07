@@ -61,7 +61,7 @@ module LmExponentialCorrelationModelFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Correlation
+                let builder (current : ICell) = ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Correlation
                                                             _i.cell 
                                                             _j.cell 
                                                             _t.cell 
@@ -115,7 +115,7 @@ module LmExponentialCorrelationModelFunction =
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Correlation1
+                let builder (current : ICell) = ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Correlation1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -157,7 +157,7 @@ module LmExponentialCorrelationModelFunction =
             try
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).IsTimeIndependent
+                let builder (current : ICell) = ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).IsTimeIndependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -196,7 +196,7 @@ module LmExponentialCorrelationModelFunction =
 
                 let _size = Helper.toCell<int> size "size" 
                 let _rho = Helper.toCell<double> rho "rho" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LmExponentialCorrelationModel 
+                let builder (current : ICell) = (Fun.LmExponentialCorrelationModel 
                                                             _size.cell 
                                                             _rho.cell 
                                                        ) :> ICell
@@ -242,7 +242,7 @@ module LmExponentialCorrelationModelFunction =
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).PseudoSqrt
+                let builder (current : ICell) = ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).PseudoSqrt
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -284,7 +284,7 @@ module LmExponentialCorrelationModelFunction =
             try
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Factors
+                let builder (current : ICell) = ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -320,7 +320,7 @@ module LmExponentialCorrelationModelFunction =
             try
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Parameters
+                let builder (current : ICell) = ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<Parameter>) (l : string) = Helper.Range.fromList i l
 
@@ -359,7 +359,7 @@ module LmExponentialCorrelationModelFunction =
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).SetParams
+                let builder (current : ICell) = ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (o : LmExponentialCorrelationModel) (l:string) = o.ToString() :> obj
@@ -398,7 +398,7 @@ module LmExponentialCorrelationModelFunction =
             try
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Size
+                let builder (current : ICell) = ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

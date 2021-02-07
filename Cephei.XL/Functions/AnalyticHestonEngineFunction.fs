@@ -58,7 +58,7 @@ module AnalyticHestonEngineFunction =
                 let _cpxLog = Helper.toCell<ComplexLogFormula> cpxLog "cpxLog" 
                 let _integration = Helper.toCell<Integration.Integration> integration "integration" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticHestonEngine 
+                let builder (current : ICell) = (Fun.AnalyticHestonEngine 
                                                             _model.cell 
                                                             _cpxLog.cell 
                                                             _integration.cell 
@@ -110,7 +110,7 @@ module AnalyticHestonEngineFunction =
                 let _model = Helper.toCell<HestonModel> model "model" 
                 let _integrationOrder = Helper.toDefault<int> integrationOrder "integrationOrder" 144
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticHestonEngine1 
+                let builder (current : ICell) = (Fun.AnalyticHestonEngine1 
                                                             _model.cell 
                                                             _integrationOrder.cell 
                                                             _evaluationDate.cell
@@ -162,7 +162,7 @@ module AnalyticHestonEngineFunction =
                 let _relTolerance = Helper.toCell<double> relTolerance "relTolerance" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticHestonEngine
+                let builder (current : ICell) = (Fun.AnalyticHestonEngine
                                                             _model.cell 
                                                             _relTolerance.cell 
                                                             _maxEvaluations.cell 
@@ -208,7 +208,7 @@ module AnalyticHestonEngineFunction =
             try
 
                 let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).NumberOfEvaluations
+                let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -248,7 +248,7 @@ module AnalyticHestonEngineFunction =
 
                 let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).SetModel
+                let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : AnalyticHestonEngine) (l:string) = o.ToString() :> obj
@@ -291,7 +291,7 @@ module AnalyticHestonEngineFunction =
 
                 let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).RegisterWith
+                let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticHestonEngine) (l:string) = o.ToString() :> obj
@@ -330,7 +330,7 @@ module AnalyticHestonEngineFunction =
             try
 
                 let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).Reset
+                let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticHestonEngine) (l:string) = o.ToString() :> obj
 
@@ -369,7 +369,7 @@ module AnalyticHestonEngineFunction =
 
                 let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).UnregisterWith
+                let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticHestonEngine) (l:string) = o.ToString() :> obj
@@ -408,7 +408,7 @@ module AnalyticHestonEngineFunction =
             try
 
                 let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).Update
+                let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticHestonEngine) (l:string) = o.ToString() :> obj
 

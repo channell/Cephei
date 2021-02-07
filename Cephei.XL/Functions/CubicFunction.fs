@@ -64,7 +64,7 @@ module CubicFunction =
                 let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" 
                 let _rightCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCondition "rightCondition" 
                 let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Cubic 
+                let builder (current : ICell) = (Fun.Cubic 
                                                             _da.cell 
                                                             _monotonic.cell 
                                                             _leftCondition.cell 
@@ -113,7 +113,7 @@ module CubicFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Cubic1 ()
+                let builder (current : ICell) = (Fun.Cubic1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Cubic>) l
 
@@ -147,7 +147,7 @@ module CubicFunction =
             try
 
                 let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).Global
+                let builder (current : ICell) = ((CubicModel.Cast _Cubic.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -192,7 +192,7 @@ module CubicFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).Interpolate
+                let builder (current : ICell) = ((CubicModel.Cast _Cubic.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -237,7 +237,7 @@ module CubicFunction =
             try
 
                 let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).RequiredPoints
+                let builder (current : ICell) = ((CubicModel.Cast _Cubic.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

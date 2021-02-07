@@ -91,7 +91,7 @@ module AmortizingCmsRateBondFunction =
                 let _issueDate = Helper.toDefault<Date> issueDate "issueDate" null
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmortizingCmsRateBond 
+                let builder (current : ICell) = (Fun.AmortizingCmsRateBond 
                                                             _settlementDays.cell 
                                                             _notionals.cell 
                                                             _schedule.cell 
@@ -173,7 +173,7 @@ module AmortizingCmsRateBondFunction =
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).AccruedAmount
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -212,7 +212,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Calendar
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -248,7 +248,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Cashflows
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -284,7 +284,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).CleanPrice
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -335,7 +335,7 @@ module AmortizingCmsRateBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).CleanPrice1
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -401,7 +401,7 @@ module AmortizingCmsRateBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).DirtyPrice1
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -452,7 +452,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).DirtyPrice
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -488,7 +488,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).IsExpired
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -524,7 +524,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).IssueDate
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -563,7 +563,7 @@ module AmortizingCmsRateBondFunction =
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).IsTradable
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -602,7 +602,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).MaturityDate
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -641,7 +641,7 @@ module AmortizingCmsRateBondFunction =
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).NextCashFlowDate
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -683,7 +683,7 @@ module AmortizingCmsRateBondFunction =
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).NextCouponRate
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -725,7 +725,7 @@ module AmortizingCmsRateBondFunction =
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Notional
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Notional
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -764,7 +764,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Notionals
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -803,7 +803,7 @@ module AmortizingCmsRateBondFunction =
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).PreviousCashFlowDate
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -845,7 +845,7 @@ module AmortizingCmsRateBondFunction =
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).PreviousCouponRate
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -884,7 +884,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Redemption
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
@@ -920,7 +920,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Redemptions
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -959,7 +959,7 @@ module AmortizingCmsRateBondFunction =
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).SettlementDate
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -998,7 +998,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).SettlementDays
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1037,7 +1037,7 @@ module AmortizingCmsRateBondFunction =
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).SettlementValue
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1076,7 +1076,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).SettlementValue1
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1112,7 +1112,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).StartDate
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1169,7 +1169,7 @@ module AmortizingCmsRateBondFunction =
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Yield1
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1241,7 +1241,7 @@ module AmortizingCmsRateBondFunction =
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Yield
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Yield
                                                             _dc.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1292,7 +1292,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).CASH
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1328,7 +1328,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).ErrorEstimate
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1364,7 +1364,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).NPV
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1403,7 +1403,7 @@ module AmortizingCmsRateBondFunction =
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Result
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -1445,7 +1445,7 @@ module AmortizingCmsRateBondFunction =
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).SetPricingEngine
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : AmortizingCmsRateBond) (l:string) = o.ToString() :> obj
@@ -1484,7 +1484,7 @@ module AmortizingCmsRateBondFunction =
             try
 
                 let _AmortizingCmsRateBond = Helper.toCell<AmortizingCmsRateBond> amortizingcmsratebond "AmortizingCmsRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).ValuationDate
+                let builder (current : ICell) = ((AmortizingCmsRateBondModel.Cast _AmortizingCmsRateBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

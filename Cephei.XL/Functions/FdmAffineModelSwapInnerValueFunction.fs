@@ -55,7 +55,7 @@ module FdmAffineModelSwapInnerValueFunction =
                 let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).AvgInnerValue
+                let builder (current : ICell) = ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).AvgInnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -112,7 +112,7 @@ module FdmAffineModelSwapInnerValueFunction =
                 let _exerciseDates = Helper.toCell<Dictionary<double,Date>> exerciseDates "exerciseDates" 
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmAffineModelSwapInnerValue 
+                let builder (current : ICell) = (Fun.FdmAffineModelSwapInnerValue 
                                                             _disModel.cell 
                                                             _fwdModel.cell 
                                                             _swap.cell 
@@ -173,7 +173,7 @@ module FdmAffineModelSwapInnerValueFunction =
                 let _model = Helper.toCell<'ModelType> model "model" 
                 let _t = Helper.toCell<double> t "t" 
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).GetState
+                let builder (current : ICell) = ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).GetState
                                                             _model.cell 
                                                             _t.cell 
                                                             _iter.cell 
@@ -224,7 +224,7 @@ module FdmAffineModelSwapInnerValueFunction =
                 let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).InnerValue
+                let builder (current : ICell) = ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).InnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell

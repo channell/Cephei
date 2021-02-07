@@ -53,7 +53,7 @@ module LocalBootstrapFunction =
 
                 let _localisation = Helper.toCell<int> localisation "localisation" 
                 let _forcePositive = Helper.toCell<bool> forcePositive "forcePositive" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalBootstrap 
+                let builder (current : ICell) = (Fun.LocalBootstrap 
                                                             _localisation.cell 
                                                             _forcePositive.cell 
                                                        ) :> ICell
@@ -90,7 +90,7 @@ module LocalBootstrapFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalBootstrap1 
+                let builder (current : ICell) = (Fun.LocalBootstrap1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LocalBootstrap>) l
 
@@ -127,7 +127,7 @@ module LocalBootstrapFunction =
 
                 let _LocalBootstrap = Helper.toCell<LocalBootstrap> localbootstrap "LocalBootstrap"  
                 let _ts = Helper.toCell<'T> ts "ts" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalBootstrapModel.Cast _LocalBootstrap.cell).Setup
+                let builder (current : ICell) = ((LocalBootstrapModel.Cast _LocalBootstrap.cell).Setup
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (o : LocalBootstrap) (l:string) = o.ToString() :> obj

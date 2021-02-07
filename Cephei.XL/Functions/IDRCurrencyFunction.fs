@@ -46,7 +46,7 @@ module IDRCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.IDRCurrency ()
+                let builder (current : ICell) = (Fun.IDRCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IDRCurrency>) l
 
@@ -80,7 +80,7 @@ module IDRCurrencyFunction =
             try
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).Code
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module IDRCurrencyFunction =
             try
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).Empty
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module IDRCurrencyFunction =
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).Equals
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module IDRCurrencyFunction =
             try
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).Format
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module IDRCurrencyFunction =
             try
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module IDRCurrencyFunction =
             try
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module IDRCurrencyFunction =
             try
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).Name
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module IDRCurrencyFunction =
             try
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).NumericCode
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module IDRCurrencyFunction =
             try
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).Rounding
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module IDRCurrencyFunction =
             try
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).Symbol
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module IDRCurrencyFunction =
             try
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).ToString
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module IDRCurrencyFunction =
             try
 
                 let _IDRCurrency = Helper.toCell<IDRCurrency> idrcurrency "IDRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((IDRCurrencyModel.Cast _IDRCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((IDRCurrencyModel.Cast _IDRCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

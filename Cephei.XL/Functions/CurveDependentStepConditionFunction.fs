@@ -55,7 +55,7 @@ module CurveDependentStepConditionFunction =
                 let _CurveDependentStepCondition = Helper.toCell<CurveDependentStepCondition> curvedependentstepcondition "CurveDependentStepCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CurveDependentStepConditionModel.Cast _CurveDependentStepCondition.cell).ApplyTo
+                let builder (current : ICell) = ((CurveDependentStepConditionModel.Cast _CurveDependentStepCondition.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell

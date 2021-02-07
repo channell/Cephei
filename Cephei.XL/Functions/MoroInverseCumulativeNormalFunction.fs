@@ -52,7 +52,7 @@ module MoroInverseCumulativeNormalFunction =
 
                 let _average = Helper.toCell<double> average "average" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MoroInverseCumulativeNormal 
+                let builder (current : ICell) = (Fun.MoroInverseCumulativeNormal 
                                                             _average.cell 
                                                             _sigma.cell 
                                                        ) :> ICell
@@ -95,7 +95,7 @@ module MoroInverseCumulativeNormalFunction =
 
                 let _MoroInverseCumulativeNormal = Helper.toCell<MoroInverseCumulativeNormal> moroinversecumulativenormal "MoroInverseCumulativeNormal"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MoroInverseCumulativeNormalModel.Cast _MoroInverseCumulativeNormal.cell).Value
+                let builder (current : ICell) = ((MoroInverseCumulativeNormalModel.Cast _MoroInverseCumulativeNormal.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

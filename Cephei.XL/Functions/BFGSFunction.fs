@@ -49,7 +49,7 @@ module BFGSFunction =
             try
 
                 let _lineSearch = Helper.toDefault<LineSearch> lineSearch "lineSearch" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BFGS 
+                let builder (current : ICell) = (Fun.BFGS 
                                                             _lineSearch.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BFGS>) l
@@ -92,7 +92,7 @@ module BFGSFunction =
                 let _BFGS = Helper.toCell<BFGS> bfgs "BFGS"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BFGSModel.Cast _BFGS.cell).Minimize
+                let builder (current : ICell) = ((BFGSModel.Cast _BFGS.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell

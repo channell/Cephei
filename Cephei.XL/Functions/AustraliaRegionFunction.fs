@@ -46,7 +46,7 @@ module AustraliaRegionFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AustraliaRegion ()
+                let builder (current : ICell) = (Fun.AustraliaRegion ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AustraliaRegion>) l
 
@@ -80,7 +80,7 @@ module AustraliaRegionFunction =
             try
 
                 let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Code
+                let builder (current : ICell) = ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -119,7 +119,7 @@ module AustraliaRegionFunction =
 
                 let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Equals
+                let builder (current : ICell) = ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -158,7 +158,7 @@ module AustraliaRegionFunction =
             try
 
                 let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Name
+                let builder (current : ICell) = ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 

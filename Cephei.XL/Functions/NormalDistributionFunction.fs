@@ -52,7 +52,7 @@ module NormalDistributionFunction =
 
                 let _NormalDistribution = Helper.toCell<NormalDistribution> normaldistribution "NormalDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NormalDistributionModel.Cast _NormalDistribution.cell).Derivative
+                let builder (current : ICell) = ((NormalDistributionModel.Cast _NormalDistribution.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module NormalDistributionFunction =
 
                 let _average = Helper.toCell<double> average "average" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NormalDistribution1 
+                let builder (current : ICell) = (Fun.NormalDistribution1 
                                                             _average.cell 
                                                             _sigma.cell 
                                                        ) :> ICell
@@ -131,7 +131,7 @@ module NormalDistributionFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NormalDistribution ()
+                let builder (current : ICell) = (Fun.NormalDistribution ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NormalDistribution>) l
 
@@ -168,7 +168,7 @@ module NormalDistributionFunction =
 
                 let _NormalDistribution = Helper.toCell<NormalDistribution> normaldistribution "NormalDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NormalDistributionModel.Cast _NormalDistribution.cell).Value
+                let builder (current : ICell) = ((NormalDistributionModel.Cast _NormalDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -52,7 +52,7 @@ module SwaptionHelperFunction =
 
                 let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
                 let _times = Helper.toCell<Generic.List<double>> times "times" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwaptionHelperModel.Cast _SwaptionHelper.cell).AddTimesTo
+                let builder (current : ICell) = ((SwaptionHelperModel.Cast _SwaptionHelper.cell).AddTimesTo
                                                             _times.cell 
                                                        ) :> ICell
                 let format (o : SwaptionHelper) (l:string) = o.ToString() :> obj
@@ -94,7 +94,7 @@ module SwaptionHelperFunction =
 
                 let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwaptionHelperModel.Cast _SwaptionHelper.cell).BlackPrice
+                let builder (current : ICell) = ((SwaptionHelperModel.Cast _SwaptionHelper.cell).BlackPrice
                                                             _sigma.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -133,7 +133,7 @@ module SwaptionHelperFunction =
             try
 
                 let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwaptionHelperModel.Cast _SwaptionHelper.cell).ModelValue
+                let builder (current : ICell) = ((SwaptionHelperModel.Cast _SwaptionHelper.cell).ModelValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -169,7 +169,7 @@ module SwaptionHelperFunction =
             try
 
                 let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwaptionHelperModel.Cast _SwaptionHelper.cell).Swaption
+                let builder (current : ICell) = ((SwaptionHelperModel.Cast _SwaptionHelper.cell).Swaption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Swaption>) l
 
@@ -247,7 +247,7 @@ module SwaptionHelperFunction =
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwaptionHelper 
+                let builder (current : ICell) = (Fun.SwaptionHelper 
                                                             _maturity.cell 
                                                             _length.cell 
                                                             _volatility.cell 
@@ -368,7 +368,7 @@ module SwaptionHelperFunction =
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwaptionHelper1 
+                let builder (current : ICell) = (Fun.SwaptionHelper1 
                                                             _exerciseDate.cell 
                                                             _endDate.cell 
                                                             _volatility.cell 
@@ -489,7 +489,7 @@ module SwaptionHelperFunction =
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwaptionHelper2 
+                let builder (current : ICell) = (Fun.SwaptionHelper2 
                                                             _exerciseDate.cell 
                                                             _length.cell 
                                                             _volatility.cell 
@@ -568,7 +568,7 @@ module SwaptionHelperFunction =
             try
 
                 let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwaptionHelperModel.Cast _SwaptionHelper.cell).UnderlyingSwap
+                let builder (current : ICell) = ((SwaptionHelperModel.Cast _SwaptionHelper.cell).UnderlyingSwap
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
 
@@ -604,7 +604,7 @@ module SwaptionHelperFunction =
             try
 
                 let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwaptionHelperModel.Cast _SwaptionHelper.cell).CalibrationError
+                let builder (current : ICell) = ((SwaptionHelperModel.Cast _SwaptionHelper.cell).CalibrationError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -655,7 +655,7 @@ module SwaptionHelperFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwaptionHelperModel.Cast _SwaptionHelper.cell).ImpliedVolatility
+                let builder (current : ICell) = ((SwaptionHelperModel.Cast _SwaptionHelper.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _accuracy.cell 
                                                             _maxEvaluations.cell 
@@ -706,7 +706,7 @@ module SwaptionHelperFunction =
             try
 
                 let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwaptionHelperModel.Cast _SwaptionHelper.cell).MarketValue
+                let builder (current : ICell) = ((SwaptionHelperModel.Cast _SwaptionHelper.cell).MarketValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -745,7 +745,7 @@ module SwaptionHelperFunction =
 
                 let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
                 let _engine = Helper.toCell<IPricingEngine> engine "engine" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwaptionHelperModel.Cast _SwaptionHelper.cell).SetPricingEngine
+                let builder (current : ICell) = ((SwaptionHelperModel.Cast _SwaptionHelper.cell).SetPricingEngine
                                                             _engine.cell 
                                                        ) :> ICell
                 let format (o : SwaptionHelper) (l:string) = o.ToString() :> obj
@@ -784,7 +784,7 @@ module SwaptionHelperFunction =
             try
 
                 let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwaptionHelperModel.Cast _SwaptionHelper.cell).Volatility
+                let builder (current : ICell) = ((SwaptionHelperModel.Cast _SwaptionHelper.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -820,7 +820,7 @@ module SwaptionHelperFunction =
             try
 
                 let _SwaptionHelper = Helper.toCell<SwaptionHelper> swaptionhelper "SwaptionHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwaptionHelperModel.Cast _SwaptionHelper.cell).VolatilityType
+                let builder (current : ICell) = ((SwaptionHelperModel.Cast _SwaptionHelper.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 

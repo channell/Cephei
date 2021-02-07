@@ -52,7 +52,7 @@ module ProjectionFunction =
 
                 let _Projection = Helper.toCell<Projection> projection "Projection"  
                 let _projectedParameters = Helper.toCell<Vector> projectedParameters "projectedParameters" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ProjectionModel.Cast _Projection.cell).Include
+                let builder (current : ICell) = ((ProjectionModel.Cast _Projection.cell).Include
                                                             _projectedParameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -94,7 +94,7 @@ module ProjectionFunction =
 
                 let _Projection = Helper.toCell<Projection> projection "Projection"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ProjectionModel.Cast _Projection.cell).Project
+                let builder (current : ICell) = ((ProjectionModel.Cast _Projection.cell).Project
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -136,7 +136,7 @@ module ProjectionFunction =
 
                 let _parameterValues = Helper.toCell<Vector> parameterValues "parameterValues" 
                 let _fixParameters = Helper.toDefault<Generic.List<bool>> fixParameters "fixParameters" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Projection 
+                let builder (current : ICell) = (Fun.Projection 
                                                             _parameterValues.cell 
                                                             _fixParameters.cell 
                                                        ) :> ICell

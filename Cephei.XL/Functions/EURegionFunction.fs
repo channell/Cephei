@@ -46,7 +46,7 @@ module EURegionFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.EURegion ()
+                let builder (current : ICell) = (Fun.EURegion ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EURegion>) l
 
@@ -80,7 +80,7 @@ module EURegionFunction =
             try
 
                 let _EURegion = Helper.toCell<EURegion> euregion "EURegion"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EURegionModel.Cast _EURegion.cell).Code
+                let builder (current : ICell) = ((EURegionModel.Cast _EURegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -119,7 +119,7 @@ module EURegionFunction =
 
                 let _EURegion = Helper.toCell<EURegion> euregion "EURegion"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((EURegionModel.Cast _EURegion.cell).Equals
+                let builder (current : ICell) = ((EURegionModel.Cast _EURegion.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -158,7 +158,7 @@ module EURegionFunction =
             try
 
                 let _EURegion = Helper.toCell<EURegion> euregion "EURegion"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EURegionModel.Cast _EURegion.cell).Name
+                let builder (current : ICell) = ((EURegionModel.Cast _EURegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 

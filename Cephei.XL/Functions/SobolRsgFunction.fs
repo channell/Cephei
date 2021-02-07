@@ -49,7 +49,7 @@ module SobolRsgFunction =
             try
 
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).Dimension
+                let builder (current : ICell) = ((SobolRsgModel.Cast _SobolRsg.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -91,7 +91,7 @@ module SobolRsgFunction =
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).Factory
+                let builder (current : ICell) = ((SobolRsgModel.Cast _SobolRsg.cell).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
@@ -134,7 +134,7 @@ module SobolRsgFunction =
             try
 
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).LastSequence
+                let builder (current : ICell) = ((SobolRsgModel.Cast _SobolRsg.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -171,7 +171,7 @@ module SobolRsgFunction =
             try
 
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).NextInt32Sequence
+                let builder (current : ICell) = ((SobolRsgModel.Cast _SobolRsg.cell).NextInt32Sequence
                                                        ) :> ICell
                 let format (i : Generic.List<uint64>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -208,7 +208,7 @@ module SobolRsgFunction =
             try
 
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).NextSequence
+                let builder (current : ICell) = ((SobolRsgModel.Cast _SobolRsg.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -248,7 +248,7 @@ module SobolRsgFunction =
 
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
                 let _skip = Helper.toCell<uint64> skip "skip" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).SkipTo
+                let builder (current : ICell) = ((SobolRsgModel.Cast _SobolRsg.cell).SkipTo
                                                             _skip.cell 
                                                        ) :> ICell
                 let format (o : SobolRsg) (l:string) = o.ToString() :> obj
@@ -293,7 +293,7 @@ module SobolRsgFunction =
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
                 let _directionIntegers = Helper.toCell<SobolRsg.DirectionIntegers> directionIntegers "directionIntegers" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolRsg2 
+                let builder (current : ICell) = (Fun.SobolRsg2 
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                             _directionIntegers.cell 
@@ -339,7 +339,7 @@ module SobolRsgFunction =
 
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolRsg3
+                let builder (current : ICell) = (Fun.SobolRsg3
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
@@ -379,7 +379,7 @@ module SobolRsgFunction =
             try
 
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolRsg
+                let builder (current : ICell) = (Fun.SobolRsg
                                                             _dimensionality.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SobolRsg>) l
@@ -413,7 +413,7 @@ module SobolRsgFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolRsg1 ()
+                let builder (current : ICell) = (Fun.SobolRsg1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SobolRsg>) l
 

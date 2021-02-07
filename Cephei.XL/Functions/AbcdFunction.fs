@@ -79,7 +79,7 @@ module AbcdFunction =
                 let _vegaWeighted = Helper.toDefault<bool> vegaWeighted "vegaWeighted" false
                 let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _optMethod = Helper.toDefault<OptimizationMethod> optMethod "optMethod" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Abcd 
+                let builder (current : ICell) = (Fun.Abcd 
                                                             _a.cell 
                                                             _b.cell 
                                                             _c.cell 
@@ -146,7 +146,7 @@ module AbcdFunction =
             try
 
                 let _Abcd = Helper.toCell<Abcd> abcd "Abcd"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdModel.Cast _Abcd.cell).Global
+                let builder (current : ICell) = ((AbcdModel.Cast _Abcd.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -191,7 +191,7 @@ module AbcdFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdModel.Cast _Abcd.cell).Interpolate
+                let builder (current : ICell) = ((AbcdModel.Cast _Abcd.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 

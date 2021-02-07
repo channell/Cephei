@@ -46,7 +46,7 @@ module EEKCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.EEKCurrency ()
+                let builder (current : ICell) = (Fun.EEKCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EEKCurrency>) l
 
@@ -80,7 +80,7 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Code
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Empty
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module EEKCurrencyFunction =
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Equals
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Format
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Name
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).NumericCode
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Rounding
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Symbol
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).ToString
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((EEKCurrencyModel.Cast _EEKCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

@@ -64,7 +64,7 @@ module BinomialDoubleBarrierEngineFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _maxTimeSteps = Helper.toDefault<int> maxTimeSteps "maxTimeSteps" 0
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BinomialDoubleBarrierEngine 
+                let builder (current : ICell) = (Fun.BinomialDoubleBarrierEngine 
                                                             _getTree.cell 
                                                             _getAsset.cell 
                                                             _Process.cell 
@@ -127,7 +127,7 @@ module BinomialDoubleBarrierEngineFunction =
                 let _args = Helper.toCell<DoubleBarrierOption.Arguments> args "args" 
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
                 let _grid = Helper.toDefault<TimeGrid> grid "grid" null
-                let builder (current : ICell) = withMnemonic mnemonic ((BinomialDoubleBarrierEngineModel.Cast _BinomialDoubleBarrierEngine.cell).getAsset
+                let builder (current : ICell) = ((BinomialDoubleBarrierEngineModel.Cast _BinomialDoubleBarrierEngine.cell).getAsset
                                                             _args.cell 
                                                             _Process.cell 
                                                             _grid.cell 
@@ -186,7 +186,7 @@ module BinomialDoubleBarrierEngineFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BinomialDoubleBarrierEngineModel.Cast _BinomialDoubleBarrierEngine.cell).GetTree
+                let builder (current : ICell) = ((BinomialDoubleBarrierEngineModel.Cast _BinomialDoubleBarrierEngine.cell).GetTree
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 

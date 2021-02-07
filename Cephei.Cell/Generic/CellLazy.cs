@@ -156,7 +156,7 @@ namespace Cephei.Cell.Generic
                 _lastException = new CalculationException(e);
                 if (!taken) _spinLock.Enter(ref taken);
                 SetState(CellState.Error, ref taken);
-                RaiseChange(CellEvent.Error, this, this, epoch, null);
+                RaiseChange(CellEvent.Error, this, null, epoch, null);
 
                 throw;
             }
@@ -243,11 +243,11 @@ namespace Cephei.Cell.Generic
                         if (ses != null)
                         {
                             ses.SetValue<T>(this, value);
-                            RaiseChange(CellEvent.JoinSession, this, this, DateTime.Now, ses);
+                            RaiseChange(CellEvent.JoinSession, this, null, DateTime.Now, ses);
 
                         }
                         else
-                            RaiseChange(CellEvent.Calculate, this, this, _epoch, ses);
+                            RaiseChange(CellEvent.Calculate, this, null, _epoch, ses);
                     }
                 }
                 finally
@@ -304,7 +304,7 @@ namespace Cephei.Cell.Generic
         public void Dispose()
         {
             _disposd = true;
-            RaiseChange(CellEvent.Delete, this, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Delete, this, null, DateTime.Now, null);
 
             Change = delegate { };
         }
@@ -312,10 +312,11 @@ namespace Cephei.Cell.Generic
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void RaiseChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
+            if (sender == this) return;
             if (Change != null)
                 Change(eventType, root, this, epoch, session);
             if (Parent != null)
-                Parent.OnChange(eventType, root, this, epoch, session);
+                Parent.OnChange(eventType | CellEvent.Logging, root, this, epoch, session);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -480,14 +481,14 @@ namespace Cephei.Cell.Generic
                             break;
                         case CellEvent.Invalidate:
                             SetState(CellState.Dirty, ref taken);
-                            RaiseChange(eventType, root, this, epoch, session);
+                            RaiseChange(eventType, root, sender, epoch, session);
                             break;
 
                         case CellEvent.JoinSession:
                             session.Join(this);
                             _spinLock.Exit();
                             taken = false;
-                            RaiseChange(eventType, root, this, epoch, session);
+                            RaiseChange(eventType, root, sender, epoch, session);
                             break;
 
                         case CellEvent.Error:
@@ -497,11 +498,11 @@ namespace Cephei.Cell.Generic
                         case CellEvent.Link:
                             var changed = false;
                             if (Parent != null && Parent is Model m && _func != null)
-                                if (Cell.Relink(_func, m))
+                                if (Cell.Relink(_func, m, root))
                                     changed = true;
                             SetState(CellState.Dirty, ref taken);
                             if (changed)
-                                RaiseChange(eventType, root, this, epoch, session);
+                                RaiseChange(eventType, root, sender, epoch, session);
                             break;
 
                         case CellEvent.CyclicCheck:
@@ -510,7 +511,7 @@ namespace Cephei.Cell.Generic
                             if (root == this)
                                 throw new CyclicDependencyException();
                             else
-                                RaiseChange(eventType, root, this, epoch, session);
+                                RaiseChange(eventType, root, sender, epoch, session);
                             break;
 
                         default:
@@ -593,8 +594,8 @@ namespace Cephei.Cell.Generic
             }
             if (isCurrent)
             {
-                RaiseChange(CellEvent.CyclicCheck, this, this, DateTime.Now, null);
-                Task.Run(() => RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null));
+                RaiseChange(CellEvent.CyclicCheck, this, null, DateTime.Now, null);
+                Task.Run(() => RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null));
             }
         }
 
@@ -674,6 +675,7 @@ namespace Cephei.Cell.Generic
             return typeof(Base).IsAssignableFrom(typeof(T)) ||
                    typeof(T).IsSubclassOf(typeof(Base));
         }
+
         public CellState State => (CellState)_state;
         public Exception Error => _lastException;
     }

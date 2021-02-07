@@ -52,7 +52,7 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).LogGrid
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).LogGrid
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -91,7 +91,7 @@ module LogGridFunction =
             try
 
                 let _grid = Helper.toCell<Vector> grid "grid" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LogGrid 
+                let builder (current : ICell) = (Fun.LogGrid 
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LogGrid>) l
@@ -128,7 +128,7 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).LogGridArray
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).LogGridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -167,7 +167,7 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Dx
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).Dx
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -206,7 +206,7 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).DxArray
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).DxArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -245,7 +245,7 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Dxm
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).Dxm
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -284,7 +284,7 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).DxmArray
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).DxmArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -323,7 +323,7 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Dxp
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).Dxp
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -362,7 +362,7 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).DxpArray
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).DxpArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -401,7 +401,7 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Grid
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).Grid
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -440,7 +440,7 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).GridArray
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).GridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -476,7 +476,7 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Size
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -515,7 +515,7 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).TransformedGrid
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).TransformedGrid
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -554,7 +554,7 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).TransformedGridArray
+                let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).TransformedGridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

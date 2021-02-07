@@ -55,7 +55,7 @@ module ShoutConditionFunction =
                 let _ShoutCondition = Helper.toCell<ShoutCondition> shoutcondition "ShoutCondition"  
                 let _a = Helper.toCell<Vector> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ShoutConditionModel.Cast _ShoutCondition.cell).ApplyTo
+                let builder (current : ICell) = ((ShoutConditionModel.Cast _ShoutCondition.cell).ApplyTo
                                                             _a.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -106,7 +106,7 @@ module ShoutConditionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _resTime = Helper.toCell<double> resTime "resTime" 
                 let _rate = Helper.toCell<double> rate "rate" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ShoutCondition 
+                let builder (current : ICell) = (Fun.ShoutCondition 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _resTime.cell 
@@ -158,7 +158,7 @@ module ShoutConditionFunction =
                 let _intrinsicValues = Helper.toCell<Vector> intrinsicValues "intrinsicValues" 
                 let _resTime = Helper.toCell<double> resTime "resTime" 
                 let _rate = Helper.toCell<double> rate "rate" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ShoutCondition1 
+                let builder (current : ICell) = (Fun.ShoutCondition1 
                                                             _intrinsicValues.cell 
                                                             _resTime.cell 
                                                             _rate.cell 

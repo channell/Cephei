@@ -49,7 +49,7 @@ module LastFixingQuoteFunction =
             try
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).IsValid
+                let builder (current : ICell) = ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module LastFixingQuoteFunction =
             try
 
                 let _index = Helper.toCell<Index> index "index" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LastFixingQuote 
+                let builder (current : ICell) = (Fun.LastFixingQuote 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LastFixingQuote>) l
@@ -122,7 +122,7 @@ module LastFixingQuoteFunction =
             try
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).ReferenceDate
+                let builder (current : ICell) = ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -158,7 +158,7 @@ module LastFixingQuoteFunction =
             try
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).Update
+                let builder (current : ICell) = ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).Update
                                                        ) :> ICell
                 let format (o : LastFixingQuote) (l:string) = o.ToString() :> obj
 
@@ -194,7 +194,7 @@ module LastFixingQuoteFunction =
             try
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).Value
+                let builder (current : ICell) = ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -233,7 +233,7 @@ module LastFixingQuoteFunction =
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).RegisterWith
+                let builder (current : ICell) = ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LastFixingQuote) (l:string) = o.ToString() :> obj
@@ -275,7 +275,7 @@ module LastFixingQuoteFunction =
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).UnregisterWith
+                let builder (current : ICell) = ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LastFixingQuote) (l:string) = o.ToString() :> obj

@@ -50,7 +50,7 @@ module LinearLeastSquaresRegressionFunction =
             try
 
                 let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Coefficients
+                let builder (current : ICell) = ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Coefficients
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -88,7 +88,7 @@ module LinearLeastSquaresRegressionFunction =
             try
 
                 let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Error
+                let builder (current : ICell) = ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Error
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -131,7 +131,7 @@ module LinearLeastSquaresRegressionFunction =
                 let _x = Helper.toCell<Generic.List<double>> x "x" 
                 let _y = Helper.toCell<Generic.List<double>> y "y" 
                 let _v = Helper.toCell<Generic.List<Func<double,double>>> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LinearLeastSquaresRegression 
+                let builder (current : ICell) = (Fun.LinearLeastSquaresRegression 
                                                             _x.cell 
                                                             _y.cell 
                                                             _v.cell 
@@ -175,7 +175,7 @@ module LinearLeastSquaresRegressionFunction =
             try
 
                 let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Residuals
+                let builder (current : ICell) = ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Residuals
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -213,7 +213,7 @@ module LinearLeastSquaresRegressionFunction =
             try
 
                 let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).StandardErrors
+                let builder (current : ICell) = ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).StandardErrors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

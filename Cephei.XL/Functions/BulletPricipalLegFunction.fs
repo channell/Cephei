@@ -49,7 +49,7 @@ module BulletPricipalLegFunction =
             try
 
                 let _schedule = Helper.toCell<Schedule> schedule "schedule" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BulletPricipalLeg 
+                let builder (current : ICell) = (Fun.BulletPricipalLeg 
                                                             _schedule.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BulletPricipalLeg>) l
@@ -86,7 +86,7 @@ module BulletPricipalLegFunction =
             try
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).Value
+                let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -125,7 +125,7 @@ module BulletPricipalLegFunction =
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithNotionals
+                let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithNotionals
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
@@ -167,7 +167,7 @@ module BulletPricipalLegFunction =
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithNotionals1
+                let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithNotionals1
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
@@ -209,7 +209,7 @@ module BulletPricipalLegFunction =
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithPaymentAdjustment
+                let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
@@ -251,7 +251,7 @@ module BulletPricipalLegFunction =
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithPaymentDayCounter
+                let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
@@ -293,7 +293,7 @@ module BulletPricipalLegFunction =
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _sign = Helper.toCell<int> sign "sign" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithSign
+                let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithSign
                                                             _sign.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l

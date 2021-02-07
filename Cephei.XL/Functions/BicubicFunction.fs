@@ -64,7 +64,7 @@ module BicubicFunction =
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _ySize = Helper.toCell<int> ySize "ySize" 
                 let _zData = Helper.toCell<Matrix> zData "zData" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BicubicModel.Cast _Bicubic.cell).Interpolate
+                let builder (current : ICell) = ((BicubicModel.Cast _Bicubic.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 

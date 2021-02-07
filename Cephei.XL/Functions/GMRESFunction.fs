@@ -59,7 +59,7 @@ module GMRESFunction =
                 let _maxIter = Helper.toCell<int> maxIter "maxIter" 
                 let _relTol = Helper.toCell<double> relTol "relTol" 
                 let _preConditioner = Helper.toDefault<MatrixMult> preConditioner "preConditioner" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GMRES 
+                let builder (current : ICell) = (Fun.GMRES 
                                                             _A.cell 
                                                             _maxIter.cell 
                                                             _relTol.cell 
@@ -110,7 +110,7 @@ module GMRESFunction =
 
                 let _GMRES = Helper.toCell<GMRES> gmres "GMRES"  
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).MatrixMult
+                let builder (current : ICell) = ((GMRESModel.Cast _GMRES.cell).MatrixMult
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -156,7 +156,7 @@ module GMRESFunction =
                 let _GMRES = Helper.toCell<GMRES> gmres "GMRES"  
                 let _b = Helper.toCell<Vector> b "b" 
                 let _x0 = Helper.toDefault<Vector> x0 "x0" null
-                let builder (current : ICell) = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).Solve
+                let builder (current : ICell) = ((GMRESModel.Cast _GMRES.cell).Solve
                                                             _b.cell 
                                                             _x0.cell 
                                                        ) :> ICell
@@ -207,7 +207,7 @@ module GMRESFunction =
                 let _restart = Helper.toCell<int> restart "restart" 
                 let _b = Helper.toCell<Vector> b "b" 
                 let _x0 = Helper.toDefault<Vector> x0 "x0" null
-                let builder (current : ICell) = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).SolveWithRestart
+                let builder (current : ICell) = ((GMRESModel.Cast _GMRES.cell).SolveWithRestart
                                                             _restart.cell 
                                                             _b.cell 
                                                             _x0.cell 

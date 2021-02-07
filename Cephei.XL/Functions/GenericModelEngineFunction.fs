@@ -52,7 +52,7 @@ module GenericModelEngineFunction =
 
                 let _model = Helper.toCell<'ModelType> model "model" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GenericModelEngine 
+                let builder (current : ICell) = (Fun.GenericModelEngine 
                                                             _model.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell
@@ -97,7 +97,7 @@ module GenericModelEngineFunction =
 
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GenericModelEngine1 
+                let builder (current : ICell) = (Fun.GenericModelEngine1 
                                                             _model.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell
@@ -137,7 +137,7 @@ module GenericModelEngineFunction =
             try
 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GenericModelEngine2 
+                let builder (current : ICell) = (Fun.GenericModelEngine2 
                                                             _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GenericModelEngine>) l
@@ -178,7 +178,7 @@ module GenericModelEngineFunction =
 
                 let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
                 let _model = Helper.toHandle<'ModelTyp>> model "model" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).SetModel
+                let builder (current : ICell) = ((GenericModelEngineModel.Cast _GenericModelEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
@@ -221,7 +221,7 @@ module GenericModelEngineFunction =
 
                 let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).RegisterWith
+                let builder (current : ICell) = ((GenericModelEngineModel.Cast _GenericModelEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
@@ -260,7 +260,7 @@ module GenericModelEngineFunction =
             try
 
                 let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).Reset
+                let builder (current : ICell) = ((GenericModelEngineModel.Cast _GenericModelEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 
@@ -299,7 +299,7 @@ module GenericModelEngineFunction =
 
                 let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).UnregisterWith
+                let builder (current : ICell) = ((GenericModelEngineModel.Cast _GenericModelEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
@@ -338,7 +338,7 @@ module GenericModelEngineFunction =
             try
 
                 let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).Update
+                let builder (current : ICell) = ((GenericModelEngineModel.Cast _GenericModelEngine.cell).Update
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 

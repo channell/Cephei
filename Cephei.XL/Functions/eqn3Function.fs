@@ -55,7 +55,7 @@ module eqn3Function =
                 let _h = Helper.toCell<double> h "h" 
                 let _k = Helper.toCell<double> k "k" 
                 let _Asr = Helper.toCell<double> Asr "Asr" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.eqn3 
+                let builder (current : ICell) = (Fun.eqn3 
                                                             _h.cell 
                                                             _k.cell 
                                                             _Asr.cell 
@@ -101,7 +101,7 @@ module eqn3Function =
 
                 let _eqn3 = Helper.toCell<eqn3> eqn3 "eqn3"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((eqn3Model.Cast _eqn3.cell).Value
+                let builder (current : ICell) = ((eqn3Model.Cast _eqn3.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

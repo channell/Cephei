@@ -47,10 +47,12 @@ type ModelRTD () as this =
 
     override this.ConnectData (topic : ExcelRtdServer.Topic, topicInfo : IList<string>, newValues : bool byref) =
 
-        let mnemonic =  if topicInfo.[0].Contains("/") then topicInfo.[0].Substring(0,topicInfo.[0].IndexOf('/')) else topicInfo.[0]
+        let mnemonic = topicInfo.[0]
         let hc = topicInfo.[1]
 
+#if DEBUG
         System.Diagnostics.Debug.Print ("ModelRTD ConnectData " + mnemonic + " " + hc);
+#endif
 
         let dispatch () : unit = 
             try
@@ -77,7 +79,9 @@ type ModelRTD () as this =
         if  _topics.ContainsKey(topic) then 
             let mnemonic = _topics.[topic]
             if mnemonic = fst _lastMnemonic then _lastMnemonic <- ("","")
+#if DEBUG
             System.Diagnostics.Debug.Print ("ModelRTD DisconnectData " + mnemonic );
+#endif
             let dispatch () : unit = 
                 try
                     _topics.TryRemove (topic) |> ignore
@@ -197,8 +201,9 @@ type ValueRTD () as this =
         let mnemonic =  if topicInfo.[0].Contains("/") then topicInfo.[0].Substring(0,topicInfo.[0].IndexOf('/')) else topicInfo.[0]
         let layout = topicInfo.[1]
 
+#if DEBUG
         System.Diagnostics.Debug.Print ("ValueRTD ConnectData " + mnemonic + " " + layout);
-
+#endif
         let dispatch () : unit = 
             let kv = new KeyValuePair<string,string>(mnemonic, layout);
             let retry = kvp kv topic 
@@ -225,8 +230,9 @@ type ValueRTD () as this =
         
         let dispatch () : unit = 
             let kv = _topics.[topic]
+#if DEBUG
             System.Diagnostics.Debug.Print ("ValueRTD DisconnectData " + kv.Value);
-
+#endif
             _topics.TryRemove (topic) |> ignore
             let nl = _topicIndex.[kv] |> List.filter (fun t -> not (t = topic))
             if nl = [] then 

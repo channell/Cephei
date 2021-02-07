@@ -46,7 +46,7 @@ module NLGCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NLGCurrency ()
+                let builder (current : ICell) = (Fun.NLGCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NLGCurrency>) l
 
@@ -80,7 +80,7 @@ module NLGCurrencyFunction =
             try
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).Code
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module NLGCurrencyFunction =
             try
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).Empty
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module NLGCurrencyFunction =
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).Equals
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module NLGCurrencyFunction =
             try
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).Format
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module NLGCurrencyFunction =
             try
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module NLGCurrencyFunction =
             try
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module NLGCurrencyFunction =
             try
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).Name
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module NLGCurrencyFunction =
             try
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).NumericCode
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module NLGCurrencyFunction =
             try
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).Rounding
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module NLGCurrencyFunction =
             try
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).Symbol
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module NLGCurrencyFunction =
             try
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).ToString
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module NLGCurrencyFunction =
             try
 
                 let _NLGCurrency = Helper.toCell<NLGCurrency> nlgcurrency "NLGCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NLGCurrencyModel.Cast _NLGCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((NLGCurrencyModel.Cast _NLGCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

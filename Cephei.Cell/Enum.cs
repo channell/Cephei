@@ -55,7 +55,36 @@ namespace Cephei.Cell
 		/// <summary>
 		/// Check for cyclic dependancy
 		/// </summary>
-		CyclicCheck = 128
+		CyclicCheck = 128,
+
+		/// <summary>
+		/// Logging modifieer passed to prevent cyclic messages 
+		/// </summary>
+		Logging = 256,
+
+		/// <summary>
+		/// All states except logging
+		/// </summary>
+		NotLogging = 255,
+
+		/// <summary>
+		/// </summary>
+		InvalidateLogging = 2 + 256, 
+		/// <summary>
+		/// </summary>
+		CalculateLogging = 4 + 256, 
+		/// <summary>
+		/// </summary>
+		ErrorLogging = 8 + 256, 
+		/// <summary>
+		/// </summary>
+		LinkLogging = 16 + 256, 
+		/// <summary>
+		/// </summary>
+		DeleteLogging = 32 + 256, 
+		/// <summary>
+		/// </summary>
+		JoinSessionLogging = 64 + 256
 	}
 
 	/// <summary>

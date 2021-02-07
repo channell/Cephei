@@ -52,7 +52,7 @@ module InverseNonCentralChiSquareDistributionFunction =
 
                 let _df = Helper.toCell<double> df "df" 
                 let _ncp = Helper.toCell<double> ncp "ncp" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution 
+                let builder (current : ICell) = (Fun.InverseNonCentralChiSquareDistribution 
                                                             _df.cell 
                                                             _ncp.cell 
                                                        ) :> ICell
@@ -98,7 +98,7 @@ module InverseNonCentralChiSquareDistributionFunction =
                 let _df = Helper.toCell<double> df "df" 
                 let _ncp = Helper.toCell<double> ncp "ncp" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution1 
+                let builder (current : ICell) = (Fun.InverseNonCentralChiSquareDistribution1 
                                                             _df.cell 
                                                             _ncp.cell 
                                                             _maxEvaluations.cell 
@@ -150,7 +150,7 @@ module InverseNonCentralChiSquareDistributionFunction =
                 let _ncp = Helper.toCell<double> ncp "ncp" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution2 
+                let builder (current : ICell) = (Fun.InverseNonCentralChiSquareDistribution2 
                                                             _df.cell 
                                                             _ncp.cell 
                                                             _maxEvaluations.cell 
@@ -199,7 +199,7 @@ module InverseNonCentralChiSquareDistributionFunction =
 
                 let _InverseNonCentralChiSquareDistribution = Helper.toCell<InverseNonCentralChiSquareDistribution> inversenoncentralchisquaredistribution "InverseNonCentralChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InverseNonCentralChiSquareDistributionModel.Cast _InverseNonCentralChiSquareDistribution.cell).Value
+                let builder (current : ICell) = ((InverseNonCentralChiSquareDistributionModel.Cast _InverseNonCentralChiSquareDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

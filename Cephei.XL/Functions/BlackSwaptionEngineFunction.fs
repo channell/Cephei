@@ -64,7 +64,7 @@ module BlackSwaptionEngineFunction =
                 let _displacement = Helper.toNullable<double> displacement "displacement"
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel.DiscountCurve
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackSwaptionEngine2 
+                let builder (current : ICell) = (Fun.BlackSwaptionEngine2 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -128,7 +128,7 @@ module BlackSwaptionEngineFunction =
                 let _displacement = Helper.toNullable<double> displacement "displacement"
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel.DiscountCurve
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackSwaptionEngine
+                let builder (current : ICell) = (Fun.BlackSwaptionEngine
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _displacement.cell 
@@ -192,7 +192,7 @@ module BlackSwaptionEngineFunction =
                 let _displacement = Helper.toNullable<double> displacement "displacement"
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel.DiscountCurve
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackSwaptionEngine1
+                let builder (current : ICell) = (Fun.BlackSwaptionEngine1
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -245,7 +245,7 @@ module BlackSwaptionEngineFunction =
             try
 
                 let _BlackSwaptionEngine = Helper.toCell<BlackSwaptionEngine> blackswaptionengine "BlackSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackSwaptionEngineModel.Cast _BlackSwaptionEngine.cell).TermStructure
+                let builder (current : ICell) = ((BlackSwaptionEngineModel.Cast _BlackSwaptionEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -281,7 +281,7 @@ module BlackSwaptionEngineFunction =
             try
 
                 let _BlackSwaptionEngine = Helper.toCell<BlackSwaptionEngine> blackswaptionengine "BlackSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackSwaptionEngineModel.Cast _BlackSwaptionEngine.cell).Volatility
+                let builder (current : ICell) = ((BlackSwaptionEngineModel.Cast _BlackSwaptionEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 

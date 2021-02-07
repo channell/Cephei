@@ -49,7 +49,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).DayCounter
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -91,7 +91,7 @@ module LocalConstantVolFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _volatility = Helper.toCell<double> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalConstantVol2
+                let builder (current : ICell) = (Fun.LocalConstantVol2
                                                             _referenceDate.cell 
                                                             _volatility.cell 
                                                             _dc.cell 
@@ -140,7 +140,7 @@ module LocalConstantVolFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalConstantVol1 
+                let builder (current : ICell) = (Fun.LocalConstantVol1 
                                                             _referenceDate.cell 
                                                             _volatility.cell 
                                                             _dc.cell 
@@ -192,7 +192,7 @@ module LocalConstantVolFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _volatility = Helper.toCell<double> volatility "volatility" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalConstantVol3
+                let builder (current : ICell) = (Fun.LocalConstantVol3
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _volatility.cell 
@@ -247,7 +247,7 @@ module LocalConstantVolFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalConstantVol
+                let builder (current : ICell) = (Fun.LocalConstantVol
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _volatility.cell 
@@ -293,7 +293,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxDate
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -329,7 +329,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxStrike
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -365,7 +365,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MinStrike
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -410,7 +410,7 @@ module LocalConstantVolFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).LocalVol
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).LocalVol
                                                             _t.cell 
                                                             _underlyingLevel.cell 
                                                             _extrapolate.cell 
@@ -464,7 +464,7 @@ module LocalConstantVolFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).LocalVol1
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).LocalVol1
                                                             _d.cell 
                                                             _underlyingLevel.cell 
                                                             _extrapolate.cell 
@@ -509,7 +509,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).BusinessDayConvention
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -548,7 +548,7 @@ module LocalConstantVolFunction =
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).OptionDateFromTenor
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -587,7 +587,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Calendar
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -623,7 +623,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxTime
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -659,7 +659,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).ReferenceDate
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -695,7 +695,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).SettlementDays
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -734,7 +734,7 @@ module LocalConstantVolFunction =
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).TimeFromReference
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -773,7 +773,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Update
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Update
                                                        ) :> ICell
                 let format (o : LocalConstantVol) (l:string) = o.ToString() :> obj
 
@@ -809,7 +809,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).AllowsExtrapolation
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -848,7 +848,7 @@ module LocalConstantVolFunction =
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).DisableExtrapolation
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LocalConstantVol) (l:string) = o.ToString() :> obj
@@ -890,7 +890,7 @@ module LocalConstantVolFunction =
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).EnableExtrapolation
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LocalConstantVol) (l:string) = o.ToString() :> obj
@@ -929,7 +929,7 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Extrapolate
+                let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

@@ -49,7 +49,7 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Btps
+                let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Btps
                                                        ) :> ICell
                 let format (i : Generic.List<BTP>) (l : string) = Helper.Range.fromList i l
 
@@ -85,7 +85,7 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).CleanPriceQuotes
+                let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).CleanPriceQuotes
                                                        ) :> ICell
                 let format (i : Generic.List<Handle<Quote>>) (l : string) = Helper.Range.fromList i l
 
@@ -121,7 +121,7 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Outstanding
+                let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Outstanding
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -157,7 +157,7 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Outstandings
+                let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Outstandings
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -196,7 +196,7 @@ module RendistatoBasketFunction =
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).RegisterWith
+                let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RendistatoBasket) (l:string) = o.ToString() :> obj
@@ -241,7 +241,7 @@ module RendistatoBasketFunction =
                 let _btps = Helper.toCell<Generic.List<BTP>> btps "btps" 
                 let _outstandings = Helper.toCell<Generic.List<double>> outstandings "outstandings" 
                 let _cleanPriceQuotes = Helper.toCell<Generic.List<Handle<Quote>>> cleanPriceQuotes "cleanPriceQuotes" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.RendistatoBasket 
+                let builder (current : ICell) = (Fun.RendistatoBasket 
                                                             _btps.cell 
                                                             _outstandings.cell 
                                                             _cleanPriceQuotes.cell 
@@ -284,7 +284,7 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Size
+                let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -323,7 +323,7 @@ module RendistatoBasketFunction =
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).UnregisterWith
+                let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RendistatoBasket) (l:string) = o.ToString() :> obj
@@ -362,7 +362,7 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Update
+                let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Update
                                                        ) :> ICell
                 let format (o : RendistatoBasket) (l:string) = o.ToString() :> obj
 
@@ -398,7 +398,7 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Weights
+                let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Weights
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

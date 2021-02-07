@@ -58,7 +58,7 @@ module SABRWrapperFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _param = Helper.toNullabletList<double> param "param" 
                 let _addParams = Helper.toNullabletList<double> addParams "addParams" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SABRWrapper 
+                let builder (current : ICell) = (Fun.SABRWrapper 
                                                             _t.cell 
                                                             _forward.cell 
                                                             _param.cell 
@@ -107,7 +107,7 @@ module SABRWrapperFunction =
 
                 let _SABRWrapper = Helper.toCell<SABRWrapper> sabrwrapper "SABRWrapper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SABRWrapperModel.Cast _SABRWrapper.cell).Volatility
+                let builder (current : ICell) = ((SABRWrapperModel.Cast _SABRWrapper.cell).Volatility
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

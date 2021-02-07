@@ -55,7 +55,7 @@ module ProportionalNotionalRiskFunction =
                 let _paymentOffset = Helper.toCell<EventPaymentOffset> paymentOffset "paymentOffset" 
                 let _attachement = Helper.toCell<double> attachement "attachement" 
                 let _exhaustion = Helper.toCell<double> exhaustion "exhaustion" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ProportionalNotionalRisk 
+                let builder (current : ICell) = (Fun.ProportionalNotionalRisk 
                                                             _paymentOffset.cell 
                                                             _attachement.cell 
                                                             _exhaustion.cell 
@@ -104,7 +104,7 @@ module ProportionalNotionalRiskFunction =
                 let _ProportionalNotionalRisk = Helper.toCell<ProportionalNotionalRisk> proportionalnotionalrisk "ProportionalNotionalRisk"  
                 let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
                 let _path = Helper.toCell<NotionalPath> path "path" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ProportionalNotionalRiskModel.Cast _ProportionalNotionalRisk.cell).UpdatePath
+                let builder (current : ICell) = ((ProportionalNotionalRiskModel.Cast _ProportionalNotionalRisk.cell).UpdatePath
                                                             _events.cell 
                                                             _path.cell 
                                                        ) :> ICell

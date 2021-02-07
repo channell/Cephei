@@ -55,7 +55,7 @@ module CallabilityFunction =
                 let _price = Helper.toCell<Callability.Price> price "price" 
                 let _Type = Helper.toCell<Callability.Type> Type "Type" 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Callability 
+                let builder (current : ICell) = (Fun.Callability 
                                                             _price.cell 
                                                             _Type.cell 
                                                             _date.cell 
@@ -98,7 +98,7 @@ module CallabilityFunction =
             try
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Date
+                let builder (current : ICell) = ((CallabilityModel.Cast _Callability.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -134,7 +134,7 @@ module CallabilityFunction =
             try
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Price
+                let builder (current : ICell) = ((CallabilityModel.Cast _Callability.cell).Price
                                                        ) :> ICell
                 let format (o : Callability.Price) (l:string) = o.ToString() :> obj
 
@@ -170,7 +170,7 @@ module CallabilityFunction =
             try
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Type
+                let builder (current : ICell) = ((CallabilityModel.Cast _Callability.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -209,7 +209,7 @@ module CallabilityFunction =
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Accept
+                let builder (current : ICell) = ((CallabilityModel.Cast _Callability.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : Callability) (l:string) = o.ToString() :> obj
@@ -254,7 +254,7 @@ module CallabilityFunction =
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).HasOccurred
+                let builder (current : ICell) = ((CallabilityModel.Cast _Callability.cell).HasOccurred
                                                             _d.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -299,7 +299,7 @@ module CallabilityFunction =
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).RegisterWith
+                let builder (current : ICell) = ((CallabilityModel.Cast _Callability.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Callability) (l:string) = o.ToString() :> obj
@@ -341,7 +341,7 @@ module CallabilityFunction =
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).UnregisterWith
+                let builder (current : ICell) = ((CallabilityModel.Cast _Callability.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Callability) (l:string) = o.ToString() :> obj

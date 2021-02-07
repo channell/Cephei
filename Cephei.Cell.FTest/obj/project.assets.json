@@ -7231,11 +7231,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell.FTest\\Cephei.Cell.Test.fsproj",
+      "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell.FTest\\Cephei.Cell.Test.fsproj",
       "projectName": "Cephei.Cell.Test",
-      "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell.FTest\\Cephei.Cell.Test.fsproj",
+      "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell.FTest\\Cephei.Cell.Test.fsproj",
       "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell.FTest\\obj\\",
+      "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell.FTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -7257,8 +7257,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
-              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+            "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+              "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
             }
           }
         }

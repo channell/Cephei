@@ -64,7 +64,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
                 let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" 
                 let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackDeltaPremiumAdjustedMaxStrikeClass 
+                let builder (current : ICell) = (Fun.BlackDeltaPremiumAdjustedMaxStrikeClass 
                                                             _ot.cell 
                                                             _dt.cell 
                                                             _spot.cell 
@@ -119,7 +119,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
                 let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Value
+                let builder (current : ICell) = ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Value
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -161,7 +161,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
                 let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Derivative
+                let builder (current : ICell) = ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

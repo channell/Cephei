@@ -52,7 +52,7 @@ module LmFixedVolatilityModelFunction =
 
                 let _volatilities = Helper.toCell<Vector> volatilities "volatilities" 
                 let _startTimes = Helper.toCell<Generic.List<double>> startTimes "startTimes" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LmFixedVolatilityModel 
+                let builder (current : ICell) = (Fun.LmFixedVolatilityModel 
                                                             _volatilities.cell 
                                                             _startTimes.cell 
                                                        ) :> ICell
@@ -101,7 +101,7 @@ module LmFixedVolatilityModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Volatility
+                let builder (current : ICell) = ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Volatility
                                                             _i.cell 
                                                             _t.cell 
                                                             _x.cell 
@@ -152,7 +152,7 @@ module LmFixedVolatilityModelFunction =
                 let _LmFixedVolatilityModel = Helper.toCell<LmFixedVolatilityModel> lmfixedvolatilitymodel "LmFixedVolatilityModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Volatility1
+                let builder (current : ICell) = ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Volatility1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -206,7 +206,7 @@ module LmFixedVolatilityModelFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).IntegratedVariance
+                let builder (current : ICell) = ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).IntegratedVariance
                                                             _i.cell 
                                                             _j.cell 
                                                             _u.cell 
@@ -254,7 +254,7 @@ module LmFixedVolatilityModelFunction =
             try
 
                 let _LmFixedVolatilityModel = Helper.toCell<LmFixedVolatilityModel> lmfixedvolatilitymodel "LmFixedVolatilityModel"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Parameters
+                let builder (current : ICell) = ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<Parameter>) (l : string) = Helper.Range.fromList i l
 
@@ -293,7 +293,7 @@ module LmFixedVolatilityModelFunction =
 
                 let _LmFixedVolatilityModel = Helper.toCell<LmFixedVolatilityModel> lmfixedvolatilitymodel "LmFixedVolatilityModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).SetParams
+                let builder (current : ICell) = ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (o : LmFixedVolatilityModel) (l:string) = o.ToString() :> obj
@@ -332,7 +332,7 @@ module LmFixedVolatilityModelFunction =
             try
 
                 let _LmFixedVolatilityModel = Helper.toCell<LmFixedVolatilityModel> lmfixedvolatilitymodel "LmFixedVolatilityModel"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Size
+                let builder (current : ICell) = ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

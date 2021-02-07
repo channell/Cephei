@@ -50,7 +50,7 @@ module FDVanillaEngineFunction =
             try
 
                 let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).EnsureStrikeInGrid
+                let builder (current : ICell) = ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDVanillaEngine) (l:string) = o.ToString() :> obj
 
@@ -98,7 +98,7 @@ module FDVanillaEngineFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).Factory
+                let builder (current : ICell) = ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -146,7 +146,7 @@ module FDVanillaEngineFunction =
             try
 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDVanillaEngine1 
+                let builder (current : ICell) = (Fun.FDVanillaEngine1 
                                                             _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
@@ -195,7 +195,7 @@ module FDVanillaEngineFunction =
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDVanillaEngine
+                let builder (current : ICell) = (Fun.FDVanillaEngine
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -244,7 +244,7 @@ module FDVanillaEngineFunction =
             try
 
                 let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).GetResidualTime
+                let builder (current : ICell) = ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -280,7 +280,7 @@ module FDVanillaEngineFunction =
             try
 
                 let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).Grid
+                let builder (current : ICell) = ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -316,7 +316,7 @@ module FDVanillaEngineFunction =
             try
 
                 let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).IntrinsicValues_
+                let builder (current : ICell) = ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 

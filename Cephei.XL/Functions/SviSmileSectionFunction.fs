@@ -49,7 +49,7 @@ module SviSmileSectionFunction =
             try
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).AtmLevel
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module SviSmileSectionFunction =
             try
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).Init
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).Init
                                                        ) :> ICell
                 let format (o : SviSmileSection) (l:string) = o.ToString() :> obj
 
@@ -121,7 +121,7 @@ module SviSmileSectionFunction =
             try
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).MaxStrike
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -157,7 +157,7 @@ module SviSmileSectionFunction =
             try
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).MinStrike
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -202,7 +202,7 @@ module SviSmileSectionFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _sviParameters = Helper.toCell<Generic.List<double>> sviParameters "sviParameters" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SviSmileSection 
+                let builder (current : ICell) = (Fun.SviSmileSection 
                                                             _timeToExpiry.cell 
                                                             _forward.cell 
                                                             _sviParameters.cell 
@@ -260,7 +260,7 @@ module SviSmileSectionFunction =
                 let _sviParameters = Helper.toCell<Generic.List<double>> sviParameters "sviParameters" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SviSmileSection1 
+                let builder (current : ICell) = (Fun.SviSmileSection1 
                                                             _d.cell 
                                                             _forward.cell 
                                                             _sviParameters.cell 
@@ -309,7 +309,7 @@ module SviSmileSectionFunction =
             try
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).DayCounter
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -354,7 +354,7 @@ module SviSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).Density
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).Density
                                                             _strike.cell 
                                                             _discount.cell 
                                                             _gap.cell 
@@ -411,7 +411,7 @@ module SviSmileSectionFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).DigitalOptionPrice
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).DigitalOptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
@@ -459,7 +459,7 @@ module SviSmileSectionFunction =
             try
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).ExerciseDate
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -495,7 +495,7 @@ module SviSmileSectionFunction =
             try
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).ExerciseTime
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -540,7 +540,7 @@ module SviSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).OptionPrice
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).OptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
@@ -585,7 +585,7 @@ module SviSmileSectionFunction =
             try
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).ReferenceDate
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -621,7 +621,7 @@ module SviSmileSectionFunction =
             try
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).Shift
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -657,7 +657,7 @@ module SviSmileSectionFunction =
             try
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).Update
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : SviSmileSection) (l:string) = o.ToString() :> obj
 
@@ -696,7 +696,7 @@ module SviSmileSectionFunction =
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).Variance
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).Variance
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -741,7 +741,7 @@ module SviSmileSectionFunction =
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).Vega
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).Vega
                                                             _strike.cell 
                                                             _discount.cell 
                                                        ) :> ICell
@@ -792,7 +792,7 @@ module SviSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
                 let _shift = Helper.toCell<double> shift "shift" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).Volatility
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 
                                                             _shift.cell 
@@ -840,7 +840,7 @@ module SviSmileSectionFunction =
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).Volatility1
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).Volatility1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -879,7 +879,7 @@ module SviSmileSectionFunction =
             try
 
                 let _SviSmileSection = Helper.toCell<SviSmileSection> svismilesection "SviSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SviSmileSectionModel.Cast _SviSmileSection.cell).VolatilityType
+                let builder (current : ICell) = ((SviSmileSectionModel.Cast _SviSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 

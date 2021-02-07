@@ -79,7 +79,7 @@ module DigitalIborCouponFunction =
                 let _putDigitalPayoff = Helper.toNullable<double> putDigitalPayoff "putDigitalPayoff"
                 let _replication = Helper.toDefault<DigitalReplication> replication "replication" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalIborCoupon1 
+                let builder (current : ICell) = (Fun.DigitalIborCoupon1 
                                                             _underlying.cell 
                                                             _callStrike.cell 
                                                             _callPosition.cell 
@@ -146,7 +146,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalIborCoupon 
+                let builder (current : ICell) = (Fun.DigitalIborCoupon 
                                                             _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborCoupon>) l
@@ -213,7 +213,7 @@ module DigitalIborCouponFunction =
                 let _isPutATMIncluded = Helper.toDefault<bool> isPutATMIncluded "isPutATMIncluded" false
                 let _putDigitalPayoff = Helper.toNullable<double> putDigitalPayoff "putDigitalPayoff"
                 let _replication = Helper.toDefault<DigitalReplication> replication "replication" null
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Factory
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Factory
                                                             _underlying.cell 
                                                             _callStrike.cell 
                                                             _callPosition.cell 
@@ -279,7 +279,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).CallDigitalPayoff
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).CallDigitalPayoff
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -315,7 +315,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).CallOptionRate
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).CallOptionRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -351,7 +351,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).CallStrike
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).CallStrike
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -387,7 +387,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).ConvexityAdjustment
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -423,7 +423,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).HasCall
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).HasCall
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -459,7 +459,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).HasCollar
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).HasCollar
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -495,7 +495,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).HasPut
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).HasPut
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -531,7 +531,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).IsLongCall
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).IsLongCall
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -567,7 +567,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).IsLongPut
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).IsLongPut
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -603,7 +603,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).PutDigitalPayoff
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).PutDigitalPayoff
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -639,7 +639,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).PutOptionRate
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).PutOptionRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -675,7 +675,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).PutStrike
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).PutStrike
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -711,7 +711,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Rate
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -750,7 +750,7 @@ module DigitalIborCouponFunction =
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).SetPricer
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : DigitalIborCoupon) (l:string) = o.ToString() :> obj
@@ -789,7 +789,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Underlying
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Underlying
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
 
@@ -828,7 +828,7 @@ module DigitalIborCouponFunction =
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccruedAmount
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -867,7 +867,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AdjustedFixing
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -903,7 +903,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Amount
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -939,7 +939,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).DayCounter
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -975,7 +975,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).FixingDate
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1011,7 +1011,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).FixingDays
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1047,7 +1047,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Gearing
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1083,7 +1083,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Index
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
@@ -1119,7 +1119,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).IndexFixing
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1155,7 +1155,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).IsInArrears
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1194,7 +1194,7 @@ module DigitalIborCouponFunction =
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Price
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Price
                                                             _yts.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1233,7 +1233,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Pricer
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
@@ -1269,7 +1269,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Spread
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1305,7 +1305,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Update
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : DigitalIborCoupon) (l:string) = o.ToString() :> obj
 
@@ -1341,7 +1341,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccrualDays
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1377,7 +1377,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccrualEndDate
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1413,7 +1413,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccrualPeriod
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1449,7 +1449,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccrualStartDate
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1488,7 +1488,7 @@ module DigitalIborCouponFunction =
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccruedDays
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1530,7 +1530,7 @@ module DigitalIborCouponFunction =
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccruedPeriod
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1569,7 +1569,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Date
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1605,7 +1605,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).ExCouponDate
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1641,7 +1641,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Nominal
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1677,7 +1677,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).ReferencePeriodEnd
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1713,7 +1713,7 @@ module DigitalIborCouponFunction =
             try
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).ReferencePeriodStart
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1752,7 +1752,7 @@ module DigitalIborCouponFunction =
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).CompareTo
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1794,7 +1794,7 @@ module DigitalIborCouponFunction =
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Equals
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1839,7 +1839,7 @@ module DigitalIborCouponFunction =
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).HasOccurred
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -1884,7 +1884,7 @@ module DigitalIborCouponFunction =
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).TradingExCoupon
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1926,7 +1926,7 @@ module DigitalIborCouponFunction =
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Accept
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : DigitalIborCoupon) (l:string) = o.ToString() :> obj
@@ -1968,7 +1968,7 @@ module DigitalIborCouponFunction =
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).RegisterWith
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DigitalIborCoupon) (l:string) = o.ToString() :> obj
@@ -2010,7 +2010,7 @@ module DigitalIborCouponFunction =
 
                 let _DigitalIborCoupon = Helper.toCell<DigitalIborCoupon> digitaliborcoupon "DigitalIborCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).UnregisterWith
+                let builder (current : ICell) = ((DigitalIborCouponModel.Cast _DigitalIborCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DigitalIborCoupon) (l:string) = o.ToString() :> obj

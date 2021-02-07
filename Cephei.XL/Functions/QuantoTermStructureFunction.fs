@@ -49,7 +49,7 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).Calendar
+                let builder (current : ICell) = ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -85,7 +85,7 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).DayCounter
+                let builder (current : ICell) = ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -121,7 +121,7 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).MaxDate
+                let builder (current : ICell) = ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -181,7 +181,7 @@ module QuantoTermStructureFunction =
                 let _exchRateATMlevel = Helper.toCell<double> exchRateATMlevel "exchRateATMlevel" 
                 let _underlyingExchRateCorrelation = Helper.toCell<double> underlyingExchRateCorrelation "underlyingExchRateCorrelation" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.QuantoTermStructure 
+                let builder (current : ICell) = (Fun.QuantoTermStructure 
                                                             _underlyingDividendTS.cell 
                                                             _riskFreeTS.cell 
                                                             _foreignRiskFreeTS.cell 
@@ -242,7 +242,7 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).ReferenceDate
+                let builder (current : ICell) = ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -278,7 +278,7 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).SettlementDays
+                let builder (current : ICell) = ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

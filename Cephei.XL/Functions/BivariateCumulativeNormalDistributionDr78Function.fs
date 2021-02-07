@@ -49,7 +49,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
             try
 
                 let _rho = Helper.toCell<double> rho "rho" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BivariateCumulativeNormalDistributionDr78 
+                let builder (current : ICell) = (Fun.BivariateCumulativeNormalDistributionDr78 
                                                             _rho.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BivariateCumulativeNormalDistributionDr78>) l
@@ -92,7 +92,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
                 let _BivariateCumulativeNormalDistributionDr78 = Helper.toCell<BivariateCumulativeNormalDistributionDr78> bivariatecumulativenormaldistributiondr78 "BivariateCumulativeNormalDistributionDr78"  
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BivariateCumulativeNormalDistributionDr78Model.Cast _BivariateCumulativeNormalDistributionDr78.cell).Value
+                let builder (current : ICell) = ((BivariateCumulativeNormalDistributionDr78Model.Cast _BivariateCumulativeNormalDistributionDr78.cell).Value
                                                             _a.cell 
                                                             _b.cell 
                                                        ) :> ICell

@@ -49,7 +49,7 @@ module PathGeneratorFunction =
             try
 
                 let _PathGenerator = Helper.toCell<PathGenerator> pathgenerator "PathGenerator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PathGeneratorModel.Cast _PathGenerator.cell).Antithetic
+                let builder (current : ICell) = ((PathGeneratorModel.Cast _PathGenerator.cell).Antithetic
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
@@ -85,7 +85,7 @@ module PathGeneratorFunction =
             try
 
                 let _PathGenerator = Helper.toCell<PathGenerator> pathgenerator "PathGenerator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PathGeneratorModel.Cast _PathGenerator.cell).Next
+                let builder (current : ICell) = ((PathGeneratorModel.Cast _PathGenerator.cell).Next
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
@@ -133,7 +133,7 @@ module PathGeneratorFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _generator = Helper.toCell<'GSG> generator "generator" 
                 let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.PathGenerator 
+                let builder (current : ICell) = (Fun.PathGenerator 
                                                             _Process.cell 
                                                             _length.cell 
                                                             _timeSteps.cell 
@@ -191,7 +191,7 @@ module PathGeneratorFunction =
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let _generator = Helper.toCell<'GSG> generator "generator" 
                 let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.PathGenerator1 
+                let builder (current : ICell) = (Fun.PathGenerator1 
                                                             _Process.cell 
                                                             _timeGrid.cell 
                                                             _generator.cell 

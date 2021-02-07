@@ -55,7 +55,7 @@ module ConvexMonotoneFunction =
                 let _quadraticity = Helper.toCell<double> quadraticity "quadraticity" 
                 let _monotonicity = Helper.toCell<double> monotonicity "monotonicity" 
                 let _forcePositive = Helper.toCell<bool> forcePositive "forcePositive" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConvexMonotone 
+                let builder (current : ICell) = (Fun.ConvexMonotone 
                                                             _quadraticity.cell 
                                                             _monotonicity.cell 
                                                             _forcePositive.cell 
@@ -95,7 +95,7 @@ module ConvexMonotoneFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConvexMonotone1 ()
+                let builder (current : ICell) = (Fun.ConvexMonotone1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConvexMonotone>) l
 
@@ -129,7 +129,7 @@ module ConvexMonotoneFunction =
             try
 
                 let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).DataSizeAdjustment
+                let builder (current : ICell) = ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).DataSizeAdjustment
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -165,7 +165,7 @@ module ConvexMonotoneFunction =
             try
 
                 let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).Global
+                let builder (current : ICell) = ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -210,7 +210,7 @@ module ConvexMonotoneFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).Interpolate
+                let builder (current : ICell) = ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -273,7 +273,7 @@ module ConvexMonotoneFunction =
                 let _localisation = Helper.toCell<int> localisation "localisation" 
                 let _prevInterpolation = Helper.toCell<ConvexMonotoneInterpolation> prevInterpolation "prevInterpolation" 
                 let _finalSize = Helper.toCell<int> finalSize "finalSize" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).LocalInterpolate
+                let builder (current : ICell) = ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).LocalInterpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -327,7 +327,7 @@ module ConvexMonotoneFunction =
             try
 
                 let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).RequiredPoints
+                let builder (current : ICell) = ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

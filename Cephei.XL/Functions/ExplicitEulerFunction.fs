@@ -52,7 +52,7 @@ module ExplicitEulerFunction =
 
                 let _L = Helper.toCell<'Operator> L "L" 
                 let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ExplicitEuler 
+                let builder (current : ICell) = (Fun.ExplicitEuler 
                                                             _L.cell 
                                                             _bcs.cell 
                                                        ) :> ICell
@@ -89,7 +89,7 @@ module ExplicitEulerFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ExplicitEuler1 
+                let builder (current : ICell) = (Fun.ExplicitEuler1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ExplicitEuler>) l
 
@@ -126,7 +126,7 @@ module ExplicitEulerFunction =
 
                 let _ExplicitEuler = Helper.toCell<ExplicitEuler> expliciteuler "ExplicitEuler"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ExplicitEulerModel.Cast _ExplicitEuler.cell).SetStep
+                let builder (current : ICell) = ((ExplicitEulerModel.Cast _ExplicitEuler.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : ExplicitEuler) (l:string) = o.ToString() :> obj
@@ -174,7 +174,7 @@ module ExplicitEulerFunction =
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toCell<double> theta "theta" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ExplicitEulerModel.Cast _ExplicitEuler.cell).Step
+                let builder (current : ICell) = ((ExplicitEulerModel.Cast _ExplicitEuler.cell).Step
                                                             _o.cell 
                                                             _t.cell 
                                                             _theta.cell 

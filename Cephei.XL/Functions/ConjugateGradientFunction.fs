@@ -49,7 +49,7 @@ module ConjugateGradientFunction =
             try
 
                 let _lineSearch = Helper.toDefault<LineSearch> lineSearch "lineSearch" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConjugateGradient 
+                let builder (current : ICell) = (Fun.ConjugateGradient 
                                                             _lineSearch.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConjugateGradient>) l
@@ -92,7 +92,7 @@ module ConjugateGradientFunction =
                 let _ConjugateGradient = Helper.toCell<ConjugateGradient> conjugategradient "ConjugateGradient"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConjugateGradientModel.Cast _ConjugateGradient.cell).Minimize
+                let builder (current : ICell) = ((ConjugateGradientModel.Cast _ConjugateGradient.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell

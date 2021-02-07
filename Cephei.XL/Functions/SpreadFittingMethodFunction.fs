@@ -49,7 +49,7 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Clone
+                let builder (current : ICell) = ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
@@ -85,7 +85,7 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Size
+                let builder (current : ICell) = ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -124,7 +124,7 @@ module SpreadFittingMethodFunction =
 
                 let _Method = Helper.toCell<FittedBondDiscountCurve.FittingMethod> Method "Method" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SpreadFittingMethod 
+                let builder (current : ICell) = (Fun.SpreadFittingMethod 
                                                             _Method.cell 
                                                             _discountCurve.cell 
                                                        ) :> ICell
@@ -164,7 +164,7 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).ConstrainAtZero
+                let builder (current : ICell) = ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -206,7 +206,7 @@ module SpreadFittingMethodFunction =
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Discount
+                let builder (current : ICell) = ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Discount
                                                             _x.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -248,7 +248,7 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).MinimumCostValue
+                let builder (current : ICell) = ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -284,7 +284,7 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).NumberOfIterations
+                let builder (current : ICell) = ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -320,7 +320,7 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).OptimizationMethod
+                let builder (current : ICell) = ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
@@ -356,7 +356,7 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Solution
+                let builder (current : ICell) = ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -392,7 +392,7 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Weights
+                let builder (current : ICell) = ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

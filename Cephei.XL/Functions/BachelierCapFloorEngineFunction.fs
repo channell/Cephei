@@ -58,7 +58,7 @@ module BachelierCapFloorEngineFunction =
                 let _vol = Helper.toHandle<Quote> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierCapFloorEngine1 
+                let builder (current : ICell) = (Fun.BachelierCapFloorEngine1 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -113,7 +113,7 @@ module BachelierCapFloorEngineFunction =
                 let _vol = Helper.toCell<double> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierCapFloorEngine2
+                let builder (current : ICell) = (Fun.BachelierCapFloorEngine2
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -165,7 +165,7 @@ module BachelierCapFloorEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<OptionletVolatilityStructure> vol "vol" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierCapFloorEngine
+                let builder (current : ICell) = (Fun.BachelierCapFloorEngine
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _evaluationDate.cell
@@ -208,7 +208,7 @@ module BachelierCapFloorEngineFunction =
             try
 
                 let _BachelierCapFloorEngine = Helper.toCell<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BachelierCapFloorEngineModel.Cast _BachelierCapFloorEngine.cell).TermStructure
+                let builder (current : ICell) = ((BachelierCapFloorEngineModel.Cast _BachelierCapFloorEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -244,7 +244,7 @@ module BachelierCapFloorEngineFunction =
             try
 
                 let _BachelierCapFloorEngine = Helper.toCell<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BachelierCapFloorEngineModel.Cast _BachelierCapFloorEngine.cell).Volatility
+                let builder (current : ICell) = ((BachelierCapFloorEngineModel.Cast _BachelierCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<OptionletVolatilityStructure>>) l
 

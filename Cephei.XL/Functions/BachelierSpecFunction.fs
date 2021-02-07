@@ -46,7 +46,7 @@ module BachelierSpecFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierSpec ()
+                let builder (current : ICell) = (Fun.BachelierSpec ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierSpec>) l
 
@@ -80,7 +80,7 @@ module BachelierSpecFunction =
             try
 
                 let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Type
+                let builder (current : ICell) = ((BachelierSpecModel.Cast _BachelierSpec.cell).Type
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
@@ -134,7 +134,7 @@ module BachelierSpecFunction =
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder (current : ICell) = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Value
+                let builder (current : ICell) = ((BachelierSpecModel.Cast _BachelierSpec.cell).Value
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _atmForward.cell 
@@ -206,7 +206,7 @@ module BachelierSpecFunction =
                 let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder (current : ICell) = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Vega
+                let builder (current : ICell) = ((BachelierSpecModel.Cast _BachelierSpec.cell).Vega
                                                             _strike.cell 
                                                             _atmForward.cell 
                                                             _stdDev.cell 

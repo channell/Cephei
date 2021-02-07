@@ -61,7 +61,7 @@ module NumericalDifferentiationFunction =
                 let _stepSize = Helper.toCell<double> stepSize "stepSize" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _scheme = Helper.toCell<NumericalDifferentiation.Scheme> scheme "scheme" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NumericalDifferentiation 
+                let builder (current : ICell) = (Fun.NumericalDifferentiation 
                                                             _f.cell 
                                                             _orderOfDerivative.cell 
                                                             _stepSize.cell 
@@ -116,7 +116,7 @@ module NumericalDifferentiationFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _orderOfDerivative = Helper.toCell<int> orderOfDerivative "orderOfDerivative" 
                 let _x_offsets = Helper.toCell<Vector> x_offsets "x_offsets" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NumericalDifferentiation1 
+                let builder (current : ICell) = (Fun.NumericalDifferentiation1 
                                                             _f.cell 
                                                             _orderOfDerivative.cell 
                                                             _x_offsets.cell 
@@ -159,7 +159,7 @@ module NumericalDifferentiationFunction =
             try
 
                 let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Offsets
+                let builder (current : ICell) = ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Offsets
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -198,7 +198,7 @@ module NumericalDifferentiationFunction =
 
                 let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Value
+                let builder (current : ICell) = ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -237,7 +237,7 @@ module NumericalDifferentiationFunction =
             try
 
                 let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Weights
+                let builder (current : ICell) = ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

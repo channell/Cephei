@@ -67,7 +67,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
                 let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _delta = Helper.toCell<double> delta "delta" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackDeltaPremiumAdjustedSolverClass 
+                let builder (current : ICell) = (Fun.BlackDeltaPremiumAdjustedSolverClass 
                                                             _ot.cell 
                                                             _dt.cell 
                                                             _spot.cell 
@@ -125,7 +125,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
 
                 let _BlackDeltaPremiumAdjustedSolverClass = Helper.toCell<BlackDeltaPremiumAdjustedSolverClass> blackdeltapremiumadjustedsolverclass "BlackDeltaPremiumAdjustedSolverClass"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Value
+                let builder (current : ICell) = ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Value
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -167,7 +167,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
 
                 let _BlackDeltaPremiumAdjustedSolverClass = Helper.toCell<BlackDeltaPremiumAdjustedSolverClass> blackdeltapremiumadjustedsolverclass "BlackDeltaPremiumAdjustedSolverClass"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Derivative
+                let builder (current : ICell) = ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

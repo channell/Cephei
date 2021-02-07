@@ -49,14 +49,14 @@ type Sheet1
     let _couponRates3 = (new List<double>([| Convert.ToDouble(0.04000)|]))
     let _schedule3 = Fun.Schedule (value (new Date(int (37575)))) (value (new Date(int (43327)))) _Semiannual (triv null (fun () -> _USgovi.Value :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value BusinessDayConvention.Unadjusted) (value DateGeneration.Rule.Backward) (value false) (value (null :> QLNet.Date)) (value (null :> QLNet.Date)) _todaysDate
     let _schedule0 = Fun.Schedule (value (new Date(int (38426)))) (value (new Date(int (40421)))) _Semiannual (triv null (fun () -> _USgovi.Value :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value BusinessDayConvention.Unadjusted) (value DateGeneration.Rule.Backward) (value false) (value (null :> QLNet.Date)) (value (null :> QLNet.Date)) _todaysDate
-    let _zc3m = Fun.DepositRateHelper (triv null (fun () -> toHandle (_zc3mRate.Cell.Box :?> QLNet.Quote))) _zc3mPeriod _fixingDays (triv null (fun () -> _calendar.Value :> QLNet.Calendar)) (value BusinessDayConvention.ModifiedFollowing) (value true) (triv null (fun () -> _zcBondsDayCounter.Value :> QLNet.DayCounter)) _todaysDate
-    let _zc6m = Fun.DepositRateHelper (triv null (fun () -> toHandle (_zc6mRate.Cell.Box :?> QLNet.Quote))) _zc6mPeriod _fixingDays (triv null (fun () -> _calendar.Value :> QLNet.Calendar)) (value BusinessDayConvention.ModifiedFollowing) (value true) (triv null (fun () -> _zcBondsDayCounter.Value :> QLNet.DayCounter)) _todaysDate
-    let _bondhelper2 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes2.Cell.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule2 _couponRates2  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38898)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
-    let _bondhelper1 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes1.Cell.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule1 (_couponRates1 :> ICell<Generic.List<double>>) (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38518)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
-    let _bondhelper4 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes4.Cell.Box :?> QLNet.Quote))) _settlementDays (value (100.0)) _schedule4 (_couponRates4 :> ICell<Generic.List<double>>) (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (31912)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
-    let _bondhelper3 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes3.Cell.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule3 (_couponRates3 :> ICell<Generic.List<double>>) (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (37575)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
-    let _bondhelper0 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes0.Cell.Box :?> QLNet.Quote))) _settlementDays (value (100.0)) _schedule0 (_couponRates0 :> ICell<Generic.List<double>>) (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38426)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
-    let _zc1y = Fun.DepositRateHelper (triv null (fun () -> toHandle (_zc1yRate.Cell.Box :?> QLNet.Quote))) _zc1yPeriod _fixingDays (triv null (fun () -> _calendar.Value :> QLNet.Calendar)) (value BusinessDayConvention.ModifiedFollowing) (value true) (triv null (fun () -> _zcBondsDayCounter.Value :> QLNet.DayCounter)) _todaysDate
+    let _zc3m = Fun.DepositRateHelper (triv null (fun () -> toHandle (_zc3mRate.Subject.Box :?> QLNet.Quote))) _zc3mPeriod _fixingDays (triv null (fun () -> _calendar.Value :> QLNet.Calendar)) (value BusinessDayConvention.ModifiedFollowing) (value true) (triv null (fun () -> _zcBondsDayCounter.Value :> QLNet.DayCounter)) _todaysDate
+    let _zc6m = Fun.DepositRateHelper (triv null (fun () -> toHandle (_zc6mRate.Subject.Box :?> QLNet.Quote))) _zc6mPeriod _fixingDays (triv null (fun () -> _calendar.Value :> QLNet.Calendar)) (value BusinessDayConvention.ModifiedFollowing) (value true) (triv null (fun () -> _zcBondsDayCounter.Value :> QLNet.DayCounter)) _todaysDate
+    let _bondhelper2 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes2.Subject.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule2 _couponRates2  (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38898)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
+    let _bondhelper1 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes1.Subject.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule1 (_couponRates1 :> ICell<Generic.List<double>>) (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38518)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
+    let _bondhelper4 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes4.Subject.Box :?> QLNet.Quote))) _settlementDays (value (100.0)) _schedule4 (_couponRates4 :> ICell<Generic.List<double>>) (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (31912)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
+    let _bondhelper3 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes3.Subject.Box :?>  QLNet.Quote))) _settlementDays (value (100.0)) _schedule3 (_couponRates3 :> ICell<Generic.List<double>>) (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (37575)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
+    let _bondhelper0 = Fun.FixedRateBondHelper (triv null (fun () -> toHandle (_marketQuotes0.Subject.Box :?> QLNet.Quote))) _settlementDays (value (100.0)) _schedule0 (_couponRates0 :> ICell<Generic.List<double>>) (triv null (fun () -> _ActualActualBond.Value :> QLNet.DayCounter)) (value BusinessDayConvention.Unadjusted) _redemption (value (new Date(int (38426)))) (value (null :> QLNet.Calendar)) (value (null :> QLNet.Period)) (value (null :> QLNet.Calendar)) (value BusinessDayConvention.Unadjusted) (value false) (value true)
+    let _zc1y = Fun.DepositRateHelper (triv null (fun () -> toHandle (_zc1yRate.Subject.Box :?> QLNet.Quote))) _zc1yPeriod _fixingDays (triv null (fun () -> _calendar.Value :> QLNet.Calendar)) (value BusinessDayConvention.ModifiedFollowing) (value true) (triv null (fun () -> _zcBondsDayCounter.Value :> QLNet.DayCounter)) _todaysDate
     let _termStructureDayCounter = Fun.ActualActual1 (value ActualActual.Convention.ISDA) (value (null :> QLNet.Schedule))
     let _discount = Fun.Discount ()
     let _tolerance = (value (Convert.ToDouble(1E-15)))
@@ -146,7 +146,7 @@ module Sheet1Function =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (new Sheet1
+                let builder (current : ICell) = (new Sheet1
 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> Sheet1) l
@@ -179,7 +179,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).calendar) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).calendar) :> ICell
             let format (o : QLNet.TARGET) (l:string) = o.Helper.Range.fromModel (i :?> calendar) l
             let source () = (_Sheet1.source + ".calendar")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -207,7 +207,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).settlementDate) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).settlementDate) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> settlementDate) l
             let source () = (_Sheet1.source + ".settlementDate")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -235,7 +235,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).fixingDaysNeg) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).fixingDaysNeg) :> ICell
             let format (o : System.Int32) (l:string) = o.Helper.Range.fromModel (i :?> fixingDaysNeg) l
             let source () = (_Sheet1.source + ".fixingDaysNeg")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -263,7 +263,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).todaysDate) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).todaysDate) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> todaysDate) l
             let source () = (_Sheet1.source + ".todaysDate")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -291,7 +291,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).USgovi) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).USgovi) :> ICell
             let format (o : QLNet.UnitedStates) (l:string) = o.Helper.Range.fromModel (i :?> USgovi) l
             let source () = (_Sheet1.source + ".USgovi")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -319,7 +319,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).Semiannual) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).Semiannual) :> ICell
             let format (o : QLNet.Period) (l:string) = o.Helper.Range.fromModel (i :?> Semiannual) l
             let source () = (_Sheet1.source + ".Semiannual")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -347,7 +347,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).settlementDays) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).settlementDays) :> ICell
             let format (o : System.Int32) (l:string) = o.Helper.Range.fromModel (i :?> settlementDays) l
             let source () = (_Sheet1.source + ".settlementDays")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -375,7 +375,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).redemption) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).redemption) :> ICell
             let format (o : System.Double) (l:string) = o.Helper.Range.fromModel (i :?> redemption) l
             let source () = (_Sheet1.source + ".redemption")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -403,7 +403,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).ActualActualBond) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).ActualActualBond) :> ICell
             let format (o : QLNet.ActualActual) (l:string) = o.Helper.Range.fromModel (i :?> ActualActualBond) l
             let source () = (_Sheet1.source + ".ActualActualBond")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -431,7 +431,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zcBondsDayCounter) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zcBondsDayCounter) :> ICell
             let format (o : QLNet.Actual365Fixed) (l:string) = o.Helper.Range.fromModel (i :?> zcBondsDayCounter) l
             let source () = (_Sheet1.source + ".zcBondsDayCounter")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -459,7 +459,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).fixingDays) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).fixingDays) :> ICell
             let format (o : System.Int32) (l:string) = o.Helper.Range.fromModel (i :?> fixingDays) l
             let source () = (_Sheet1.source + ".fixingDays")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -487,7 +487,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).couponRates4) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).couponRates4) :> ICell
             let format (o : System.Collections.Generic.List`1[System.Double]) (l:string) = o.Helper.Range.fromModel (i :?> couponRates4) l
             let source () = (_Sheet1.source + ".couponRates4")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -515,7 +515,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc6mRate) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc6mRate) :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = o.Helper.Range.fromModel (i :?> zc6mRate) l
             let source () = (_Sheet1.source + ".zc6mRate")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -543,7 +543,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).couponRates1) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).couponRates1) :> ICell
             let format (o : System.Collections.Generic.List`1[System.Double]) (l:string) = o.Helper.Range.fromModel (i :?> couponRates1) l
             let source () = (_Sheet1.source + ".couponRates1")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -571,7 +571,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc3mRate) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc3mRate) :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = o.Helper.Range.fromModel (i :?> zc3mRate) l
             let source () = (_Sheet1.source + ".zc3mRate")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -599,7 +599,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).couponRates2) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).couponRates2) :> ICell
             let format (o : System.Collections.Generic.List`1[System.Double]) (l:string) = o.Helper.Range.fromModel (i :?> couponRates2) l
             let source () = (_Sheet1.source + ".couponRates2")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -627,7 +627,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).couponRates0) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).couponRates0) :> ICell
             let format (o : System.Collections.Generic.List`1[System.Double]) (l:string) = o.Helper.Range.fromModel (i :?> couponRates0) l
             let source () = (_Sheet1.source + ".couponRates0")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -655,7 +655,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).settlementDateAdjusted) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).settlementDateAdjusted) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> settlementDateAdjusted) l
             let source () = (_Sheet1.source + ".settlementDateAdjusted")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -683,7 +683,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc1yRate) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc1yRate) :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = o.Helper.Range.fromModel (i :?> zc1yRate) l
             let source () = (_Sheet1.source + ".zc1yRate")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -711,7 +711,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc6mPeriod) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc6mPeriod) :> ICell
             let format (o : QLNet.Period) (l:string) = o.Helper.Range.fromModel (i :?> zc6mPeriod) l
             let source () = (_Sheet1.source + ".zc6mPeriod")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -739,7 +739,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).marketQuotes0) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).marketQuotes0) :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = o.Helper.Range.fromModel (i :?> marketQuotes0) l
             let source () = (_Sheet1.source + ".marketQuotes0")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -767,7 +767,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).marketQuotes4) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).marketQuotes4) :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = o.Helper.Range.fromModel (i :?> marketQuotes4) l
             let source () = (_Sheet1.source + ".marketQuotes4")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -795,7 +795,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).schedule4) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).schedule4) :> ICell
             let format (o : QLNet.Schedule) (l:string) = o.Helper.Range.fromModel (i :?> schedule4) l
             let source () = (_Sheet1.source + ".schedule4")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -823,7 +823,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).marketQuotes2) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).marketQuotes2) :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = o.Helper.Range.fromModel (i :?> marketQuotes2) l
             let source () = (_Sheet1.source + ".marketQuotes2")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -851,7 +851,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).marketQuotes3) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).marketQuotes3) :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = o.Helper.Range.fromModel (i :?> marketQuotes3) l
             let source () = (_Sheet1.source + ".marketQuotes3")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -879,7 +879,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc3mPeriod) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc3mPeriod) :> ICell
             let format (o : QLNet.Period) (l:string) = o.Helper.Range.fromModel (i :?> zc3mPeriod) l
             let source () = (_Sheet1.source + ".zc3mPeriod")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -907,7 +907,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).schedule2) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).schedule2) :> ICell
             let format (o : QLNet.Schedule) (l:string) = o.Helper.Range.fromModel (i :?> schedule2) l
             let source () = (_Sheet1.source + ".schedule2")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -935,7 +935,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).schedule1) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).schedule1) :> ICell
             let format (o : QLNet.Schedule) (l:string) = o.Helper.Range.fromModel (i :?> schedule1) l
             let source () = (_Sheet1.source + ".schedule1")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -963,7 +963,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc1yPeriod) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc1yPeriod) :> ICell
             let format (o : QLNet.Period) (l:string) = o.Helper.Range.fromModel (i :?> zc1yPeriod) l
             let source () = (_Sheet1.source + ".zc1yPeriod")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -991,7 +991,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).marketQuotes1) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).marketQuotes1) :> ICell
             let format (o : QLNet.SimpleQuote) (l:string) = o.Helper.Range.fromModel (i :?> marketQuotes1) l
             let source () = (_Sheet1.source + ".marketQuotes1")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1019,7 +1019,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).couponRates3) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).couponRates3) :> ICell
             let format (o : System.Collections.Generic.List`1[System.Double]) (l:string) = o.Helper.Range.fromModel (i :?> couponRates3) l
             let source () = (_Sheet1.source + ".couponRates3")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1047,7 +1047,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).schedule3) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).schedule3) :> ICell
             let format (o : QLNet.Schedule) (l:string) = o.Helper.Range.fromModel (i :?> schedule3) l
             let source () = (_Sheet1.source + ".schedule3")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1075,7 +1075,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).schedule0) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).schedule0) :> ICell
             let format (o : QLNet.Schedule) (l:string) = o.Helper.Range.fromModel (i :?> schedule0) l
             let source () = (_Sheet1.source + ".schedule0")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1103,7 +1103,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc3m) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc3m) :> ICell
             let format (o : QLNet.DepositRateHelper) (l:string) = o.Helper.Range.fromModel (i :?> zc3m) l
             let source () = (_Sheet1.source + ".zc3m")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1131,7 +1131,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc6m) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc6m) :> ICell
             let format (o : QLNet.DepositRateHelper) (l:string) = o.Helper.Range.fromModel (i :?> zc6m) l
             let source () = (_Sheet1.source + ".zc6m")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1159,7 +1159,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper2) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper2) :> ICell
             let format (o : QLNet.FixedRateBondHelper) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper2) l
             let source () = (_Sheet1.source + ".bondhelper2")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1187,7 +1187,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper1) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper1) :> ICell
             let format (o : QLNet.FixedRateBondHelper) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper1) l
             let source () = (_Sheet1.source + ".bondhelper1")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1215,7 +1215,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper4) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper4) :> ICell
             let format (o : QLNet.FixedRateBondHelper) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper4) l
             let source () = (_Sheet1.source + ".bondhelper4")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1243,7 +1243,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper3) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper3) :> ICell
             let format (o : QLNet.FixedRateBondHelper) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper3) l
             let source () = (_Sheet1.source + ".bondhelper3")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1271,7 +1271,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper0) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper0) :> ICell
             let format (o : QLNet.FixedRateBondHelper) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper0) l
             let source () = (_Sheet1.source + ".bondhelper0")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1299,7 +1299,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc1y) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc1y) :> ICell
             let format (o : QLNet.DepositRateHelper) (l:string) = o.Helper.Range.fromModel (i :?> zc1y) l
             let source () = (_Sheet1.source + ".zc1y")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1327,7 +1327,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).termStructureDayCounter) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).termStructureDayCounter) :> ICell
             let format (o : QLNet.ActualActual) (l:string) = o.Helper.Range.fromModel (i :?> termStructureDayCounter) l
             let source () = (_Sheet1.source + ".termStructureDayCounter")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1355,7 +1355,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).discount) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).discount) :> ICell
             let format (o : QLNet.Discount) (l:string) = o.Helper.Range.fromModel (i :?> discount) l
             let source () = (_Sheet1.source + ".discount")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1383,7 +1383,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).tolerance) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).tolerance) :> ICell
             let format (o : System.Double) (l:string) = o.Helper.Range.fromModel (i :?> tolerance) l
             let source () = (_Sheet1.source + ".tolerance")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1411,7 +1411,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondInstruments1) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondInstruments1) :> ICell
             let format (o : System.Collections.Generic.List`1[QLNet.RateHelper]) (l:string) = o.Helper.Range.fromModel (i :?> bondInstruments1) l
             let source () = (_Sheet1.source + ".bondInstruments1")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1439,7 +1439,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).loglinier) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).loglinier) :> ICell
             let format (o : QLNet.LogLinear) (l:string) = o.Helper.Range.fromModel (i :?> loglinier) l
             let source () = (_Sheet1.source + ".loglinier")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1467,7 +1467,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondDiscountingTermStructure) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondDiscountingTermStructure) :> ICell
             let format (o : Cephei.QLNetHelper.PiecewiseYieldCurve) (l:string) = o.Helper.Range.fromModel (i :?> bondDiscountingTermStructure) l
             let source () = (_Sheet1.source + ".bondDiscountingTermStructure")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1495,7 +1495,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).ZeroSettlementDate) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).ZeroSettlementDate) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> ZeroSettlementDate) l
             let source () = (_Sheet1.source + ".ZeroSettlementDate")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1523,7 +1523,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).ZeroIssueDate) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).ZeroIssueDate) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> ZeroIssueDate) l
             let source () = (_Sheet1.source + ".ZeroIssueDate")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1551,7 +1551,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).faceAmount) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).faceAmount) :> ICell
             let format (o : System.Double) (l:string) = o.Helper.Range.fromModel (i :?> faceAmount) l
             let source () = (_Sheet1.source + ".faceAmount")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1579,7 +1579,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).RemptionAmount) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).RemptionAmount) :> ICell
             let format (o : System.Double) (l:string) = o.Helper.Range.fromModel (i :?> RemptionAmount) l
             let source () = (_Sheet1.source + ".RemptionAmount")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1607,7 +1607,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondEngine) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondEngine) :> ICell
             let format (o : QLNet.DiscountingBondEngine) (l:string) = o.Helper.Range.fromModel (i :?> bondEngine) l
             let source () = (_Sheet1.source + ".bondEngine")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1635,7 +1635,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).swFloatingLegIndex) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).swFloatingLegIndex) :> ICell
             let format (o : QLNet.Euribor6M) (l:string) = o.Helper.Range.fromModel (i :?> swFloatingLegIndex) l
             let source () = (_Sheet1.source + ".swFloatingLegIndex")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1663,7 +1663,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper4ld) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper4ld) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper4ld) l
             let source () = (_Sheet1.source + ".bondhelper4ld")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1691,7 +1691,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc3mld) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc3mld) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> zc3mld) l
             let source () = (_Sheet1.source + ".zc3mld")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1719,7 +1719,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).todaysDateSer) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).todaysDateSer) :> ICell
             let format (o : System.Int32) (l:string) = o.Helper.Range.fromModel (i :?> todaysDateSer) l
             let source () = (_Sheet1.source + ".todaysDateSer")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1747,7 +1747,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).swFixedLegDayCounter) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).swFixedLegDayCounter) :> ICell
             let format (o : QLNet.Thirty360) (l:string) = o.Helper.Range.fromModel (i :?> swFixedLegDayCounter) l
             let source () = (_Sheet1.source + ".swFixedLegDayCounter")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1775,7 +1775,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).Actual365Fixed) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).Actual365Fixed) :> ICell
             let format (o : QLNet.Actual365Fixed) (l:string) = o.Helper.Range.fromModel (i :?> Actual365Fixed) l
             let source () = (_Sheet1.source + ".Actual365Fixed")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1803,7 +1803,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper2u) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper2u) :> ICell
             let format (o : QLNet.FixedRateBondHelper) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper2u) l
             let source () = (_Sheet1.source + ".bondhelper2u")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1831,7 +1831,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper3u) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper3u) :> ICell
             let format (o : QLNet.FixedRateBondHelper) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper3u) l
             let source () = (_Sheet1.source + ".bondhelper3u")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1859,7 +1859,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper4u) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper4u) :> ICell
             let format (o : QLNet.FixedRateBondHelper) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper4u) l
             let source () = (_Sheet1.source + ".bondhelper4u")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1887,7 +1887,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper0u) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper0u) :> ICell
             let format (o : QLNet.FixedRateBondHelper) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper0u) l
             let source () = (_Sheet1.source + ".bondhelper0u")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1915,7 +1915,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc1yld) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc1yld) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> zc1yld) l
             let source () = (_Sheet1.source + ".zc1yld")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1943,7 +1943,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper1u) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper1u) :> ICell
             let format (o : QLNet.FixedRateBondHelper) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper1u) l
             let source () = (_Sheet1.source + ".bondhelper1u")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1971,7 +1971,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc3mq) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc3mq) :> ICell
             let format (o : System.Double) (l:string) = o.Helper.Range.fromModel (i :?> zc3mq) l
             let source () = (_Sheet1.source + ".zc3mq")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -1999,7 +1999,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).settlementDateAdjustedSer) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).settlementDateAdjustedSer) :> ICell
             let format (o : System.Int32) (l:string) = o.Helper.Range.fromModel (i :?> settlementDateAdjustedSer) l
             let source () = (_Sheet1.source + ".settlementDateAdjustedSer")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -2027,7 +2027,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc1yq) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc1yq) :> ICell
             let format (o : System.Double) (l:string) = o.Helper.Range.fromModel (i :?> zc1yq) l
             let source () = (_Sheet1.source + ".zc1yq")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -2055,7 +2055,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).depositDayCounter) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).depositDayCounter) :> ICell
             let format (o : QLNet.Actual360) (l:string) = o.Helper.Range.fromModel (i :?> depositDayCounter) l
             let source () = (_Sheet1.source + ".depositDayCounter")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -2083,7 +2083,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper2ld) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper2ld) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper2ld) l
             let source () = (_Sheet1.source + ".bondhelper2ld")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -2111,7 +2111,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).actual360) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).actual360) :> ICell
             let format (o : QLNet.Actual360) (l:string) = o.Helper.Range.fromModel (i :?> actual360) l
             let source () = (_Sheet1.source + ".actual360")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -2139,7 +2139,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).Quarterly) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).Quarterly) :> ICell
             let format (o : QLNet.Period) (l:string) = o.Helper.Range.fromModel (i :?> Quarterly) l
             let source () = (_Sheet1.source + ".Quarterly")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -2167,7 +2167,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc6mld) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc6mld) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> zc6mld) l
             let source () = (_Sheet1.source + ".zc6mld")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -2195,7 +2195,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).zc6mq) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).zc6mq) :> ICell
             let format (o : System.Double) (l:string) = o.Helper.Range.fromModel (i :?> zc6mq) l
             let source () = (_Sheet1.source + ".zc6mq")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -2223,7 +2223,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper0ld) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper0ld) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper0ld) l
             let source () = (_Sheet1.source + ".bondhelper0ld")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -2251,7 +2251,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper1ld) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper1ld) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper1ld) l
             let source () = (_Sheet1.source + ".bondhelper1ld")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -2279,7 +2279,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).forwardStart) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).forwardStart) :> ICell
             let format (o : QLNet.Period) (l:string) = o.Helper.Range.fromModel (i :?> forwardStart) l
             let source () = (_Sheet1.source + ".forwardStart")
             let hash = Helper.hashFold [| _Sheet1.cell |]
@@ -2307,7 +2307,7 @@ module Sheet1Function =
             try
 
             let _Sheet1 = Helper.toCell<Sheet1> Sheet1 "Sheet1"  
-            let builder (current : ICell) = withMnemonic mnemonic (_Sheet1.cell :> Sheet1).bondhelper3ld) :> ICell
+            let builder (current : ICell) = (_Sheet1.cell :> Sheet1).bondhelper3ld) :> ICell
             let format (o : QLNet.Date) (l:string) = o.Helper.Range.fromModel (i :?> bondhelper3ld) l
             let source () = (_Sheet1.source + ".bondhelper3ld")
             let hash = Helper.hashFold [| _Sheet1.cell |]

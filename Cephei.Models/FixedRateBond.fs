@@ -102,7 +102,7 @@ module FixedRateBondModelFunction =
                 let _RateCoupon = Helper.toCell<Generic.List<System.Double>> RateCoupon "RateCoupon"
                 let _BondPricer = Helper.toCell<QLNet.IPricingEngine> BondPricer "BondPricer"
 
-                let builder (current : ICell) = withMnemonic mnemonic (new FixedRateBondModel
+                let builder (current : ICell) = (new FixedRateBondModel
                                                                         ( _RefDate.cell
                                                                         , _IssueDate.cell
                                                                         , _SettlementDate.cell
@@ -136,8 +136,8 @@ module FixedRateBondModelFunction =
                     ; source = source 
                     ; hash = hash
                     } :?> string
-                        with
-                        | _ as e ->  "#" + e.Message
+            with
+                | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
 
@@ -153,7 +153,7 @@ module FixedRateBondModelFunction =
             try
 
             let _FixedRateBond = Helper.toModel<FixedRateBondModel, FixedRateBond> FixedRateBond "FixedRateBond"  
-            let builder (current : ICell) = withMnemonic mnemonic (_FixedRateBond.cell :?> FixedRateBondModel).Semiannual :> ICell
+            let builder (current : ICell) = (_FixedRateBond.cell :?> FixedRateBondModel).Semiannual :> ICell
             let format (o : QLNet.Period) (l:string) = Model.genericFormat o
             let source () = (_FixedRateBond.source + ".Semiannual")
             let hash = Helper.hashFold [| _FixedRateBond.cell |]
@@ -181,7 +181,7 @@ module FixedRateBondModelFunction =
             try
 
             let _FixedRateBond = Helper.toModel<FixedRateBondModel, FixedRateBond> FixedRateBond "FixedRateBond"  
-            let builder (current : ICell) = withMnemonic mnemonic (_FixedRateBond.cell :?> FixedRateBondModel).faceAmount :> ICell
+            let builder (current : ICell) = (_FixedRateBond.cell :?> FixedRateBondModel).faceAmount :> ICell
             let format (o : System.Double) (l:string) = Model.genericFormat o
             let source () = (_FixedRateBond.source + ".faceAmount")
             let hash = Helper.hashFold [| _FixedRateBond.cell |]
@@ -209,7 +209,7 @@ module FixedRateBondModelFunction =
             try
 
             let _FixedRateBond = Helper.toModel<FixedRateBondModel, FixedRateBond> FixedRateBond "FixedRateBond"  
-            let builder (current : ICell) = withMnemonic mnemonic (_FixedRateBond.cell :?> FixedRateBondModel).FixedRateBond :> ICell
+            let builder (current : ICell) = (_FixedRateBond.cell :?> FixedRateBondModel).FixedRateBond :> ICell
             let format (o : QLNet.FixedRateBond) (l:string) = Model.genericFormat o
             let source () = (_FixedRateBond.source + ".FixedRateBond")
             let hash = Helper.hashFold [| _FixedRateBond.cell |]
@@ -237,7 +237,7 @@ module FixedRateBondModelFunction =
             try
 
             let _FixedRateBond = Helper.toModel<FixedRateBondModel, FixedRateBond> FixedRateBond "FixedRateBond"  
-            let builder (current : ICell) = withMnemonic mnemonic (_FixedRateBond.cell :?> FixedRateBondModel).NPV :> ICell
+            let builder (current : ICell) = (_FixedRateBond.cell :?> FixedRateBondModel).NPV :> ICell
             let format (o : System.Double) (l:string) = Model.genericFormat o
             let source () = (_FixedRateBond.source + ".NPV")
             let hash = Helper.hashFold [| _FixedRateBond.cell |]
@@ -265,7 +265,7 @@ module FixedRateBondModelFunction =
             try
 
             let _FixedRateBond = Helper.toModel<FixedRateBondModel, FixedRateBond> FixedRateBond "FixedRateBond"  
-            let builder (current : ICell) = withMnemonic mnemonic (_FixedRateBond.cell :?> FixedRateBondModel).Accruedcoupon :> ICell
+            let builder (current : ICell) = (_FixedRateBond.cell :?> FixedRateBondModel).Accruedcoupon :> ICell
             let format (o : System.Double) (l:string) = Model.genericFormat o
             let source () = (_FixedRateBond.source + ".Accruedcoupon")
             let hash = Helper.hashFold [| _FixedRateBond.cell |]
@@ -293,7 +293,7 @@ module FixedRateBondModelFunction =
             try
 
                 let _FixedRateBond = Helper.toModel<FixedRateBondModel, FixedRateBond> FixedRateBond "FixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic (_FixedRateBond.cell :?> FixedRateBondModel).Yield :> ICell
+                let builder (current : ICell) = (_FixedRateBond.cell :?> FixedRateBondModel).Yield :> ICell
                 let format (o : System.Double) (l:string) = Model.genericFormat o
                 let source () = (_FixedRateBond.source + ".Yield")
                 let hash = Helper.hashFold [| _FixedRateBond.cell |]
@@ -321,7 +321,7 @@ module FixedRateBondModelFunction =
             try
 
                 let _FixedRateBond = Helper.toModel<FixedRateBondModel, FixedRateBond> FixedRateBond "FixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic (_FixedRateBond.cell :?> FixedRateBondModel).Previouscoupon :> ICell
+                let builder (current : ICell) = (_FixedRateBond.cell :?> FixedRateBondModel).Previouscoupon :> ICell
                 let format (o : System.Double) (l:string) = Model.genericFormat o
                 let source () = (_FixedRateBond.source + ".Previouscoupon")
                 let hash = Helper.hashFold [| _FixedRateBond.cell |]
@@ -349,7 +349,7 @@ module FixedRateBondModelFunction =
             try
 
                 let _FixedRateBond = Helper.toModel<FixedRateBondModel, FixedRateBond> FixedRateBond "FixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic (_FixedRateBond.cell :?> FixedRateBondModel).Nextcoupon :> ICell
+                let builder (current : ICell) = (_FixedRateBond.cell :?> FixedRateBondModel).Nextcoupon :> ICell
                 let format (o : System.Double) (l:string) = Model.genericFormat o
                 let source () = (_FixedRateBond.source + ".Nextcoupon")
                 let hash = Helper.hashFold [| _FixedRateBond.cell |]
@@ -377,7 +377,7 @@ module FixedRateBondModelFunction =
             try
 
                 let _FixedRateBond = Helper.toModel<FixedRateBondModel, FixedRateBond> FixedRateBond "FixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic (_FixedRateBond.cell :?> FixedRateBondModel).DirtyPrice :> ICell
+                let builder (current : ICell) = (_FixedRateBond.cell :?> FixedRateBondModel).DirtyPrice :> ICell
                 let format (o : System.Double) (l:string) = Model.genericFormat o
                 let source () = (_FixedRateBond.source + ".DirtyPrice")
                 let hash = Helper.hashFold [| _FixedRateBond.cell |]
@@ -405,7 +405,7 @@ module FixedRateBondModelFunction =
             try
 
                 let _FixedRateBond = Helper.toModel<FixedRateBondModel, FixedRateBond> FixedRateBond "FixedRateBond"  
-                let builder (current : ICell) = withMnemonic mnemonic (_FixedRateBond.cell :?> FixedRateBondModel).CleanPrice :> ICell
+                let builder (current : ICell) = (_FixedRateBond.cell :?> FixedRateBondModel).CleanPrice :> ICell
                 let format (o : System.Double) (l:string) = Model.genericFormat o
                 let source () = (_FixedRateBond.source + ".CleanPrice")
                 let hash = Helper.hashFold [| _FixedRateBond.cell |]

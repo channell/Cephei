@@ -56,7 +56,7 @@ module SobolBrownianGeneratorFactoryFunction =
                 let _SobolBrownianGeneratorFactory = Helper.toCell<SobolBrownianGeneratorFactory> sobolbrowniangeneratorfactory "SobolBrownianGeneratorFactory"  
                 let _factors = Helper.toCell<int> factors "factors" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianGeneratorFactoryModel.Cast _SobolBrownianGeneratorFactory.cell).Create
+                let builder (current : ICell) = ((SobolBrownianGeneratorFactoryModel.Cast _SobolBrownianGeneratorFactory.cell).Create
                                                             _factors.cell 
                                                             _steps.cell 
                                                        ) :> ICell
@@ -105,7 +105,7 @@ module SobolBrownianGeneratorFactoryFunction =
                 let _ordering = Helper.toCell<SobolBrownianGenerator.Ordering> ordering "ordering" 
                 let _seed = Helper.toDefault<uint64> seed "seed" 0UL
                 let _integers = Helper.toDefault<SobolRsg.DirectionIntegers> integers "integers" SobolRsg.DirectionIntegers.Jaeckel
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolBrownianGeneratorFactory 
+                let builder (current : ICell) = (Fun.SobolBrownianGeneratorFactory 
                                                             _ordering.cell 
                                                             _seed.cell 
                                                             _integers.cell 

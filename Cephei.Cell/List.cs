@@ -153,7 +153,7 @@ namespace Cephei.Cell
         {
             _list.Add(item);
             item.Notify(this);
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null);
         }
 
         public void Clear()
@@ -184,14 +184,14 @@ namespace Cephei.Cell
         public void Insert(int index, ICell<T> item)
         {
             _list.Insert(index, withNotify(item));
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null);
         }
 
         public bool Remove(ICell<T> item)
         {
             if (_list.Remove(item))
             {
-                RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+                RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null);
                 return true;
             }
             else
@@ -201,7 +201,7 @@ namespace Cephei.Cell
         public void RemoveAt(int index)
         {
             _list.RemoveAt(index);
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -244,7 +244,7 @@ namespace Cephei.Cell
 
                 _cache = value;
                 if (changed)
-                    RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+                    RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null);
             }
         }
         public FSharpFunc<Unit, System.Collections.Generic.List<T>> Function
@@ -288,15 +288,16 @@ namespace Cephei.Cell
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void RaiseChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
+            if (sender == this) return;
             if (Change != null)
                 Change(eventType, root, this, epoch, session);
             if (Parent != null)
-                Parent.OnChange(eventType, root, this, epoch, session);
+                Parent.OnChange(eventType | CellEvent.Logging, root, this, epoch, session);
         }
 
         public void Dispose()
         {
-            RaiseChange(CellEvent.Delete, this, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Delete, this, null, DateTime.Now, null);
 
         }
 
@@ -323,7 +324,7 @@ namespace Cephei.Cell
                     foreach (var v in l)
                         _cache.Add(v.Value);
                 }
-                RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+                RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null);
             }
         }
 
@@ -334,7 +335,7 @@ namespace Cephei.Cell
 
         public void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
-            RaiseChange(eventType, this, this, DateTime.Now, null);
+            RaiseChange(eventType, this, null, DateTime.Now, null);
 
         }
 
@@ -405,14 +406,14 @@ namespace Cephei.Cell
         {
             _list.Add(withNotify(Cell.CreateValue(item)));
             if (_cache != null) _cache.Add(item);
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null);
         }
 
         void ICollection<T>.Clear()
         {
             _list.Clear();
             _cache = null;
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null);
         }
 
         bool ICollection<T>.Contains(T item)
@@ -440,7 +441,7 @@ namespace Cephei.Cell
             _list.Insert(index, withNotify(Cell.CreateValue(item)));
             Value.Insert(index, item);
             if (_cache != null) _cache.Insert(index, item);
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null);
         }
         bool ICollection<T>.Remove(T item)
         {
@@ -465,7 +466,7 @@ namespace Cephei.Cell
             {
                 _list = value;
                 _cache = null;
-                RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+                RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null);
             }
         }
         FSharpFunc<Unit, System.Collections.Generic.List<ICell<T>>> ICell<System.Collections.Generic.List<ICell<T>>>.Function { get => null; set { } }
@@ -482,7 +483,7 @@ namespace Cephei.Cell
         {
             _list = value;
             _cache = null;
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, null, DateTime.Now, null);
         }
 
         IDisposable IObservable<System.Collections.Generic.List<ICell<T>>>.Subscribe(IObserver<System.Collections.Generic.List<ICell<T>>> observer)

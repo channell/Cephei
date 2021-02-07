@@ -49,7 +49,7 @@ module ClosestRoundingFunction =
             try
 
                 let _precision = Helper.toCell<int> precision "precision" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ClosestRounding 
+                let builder (current : ICell) = (Fun.ClosestRounding 
                                                             _precision.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ClosestRounding>) l
@@ -89,7 +89,7 @@ module ClosestRoundingFunction =
 
                 let _precision = Helper.toCell<int> precision "precision" 
                 let _digit = Helper.toCell<int> digit "digit" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ClosestRounding1 
+                let builder (current : ICell) = (Fun.ClosestRounding1 
                                                             _precision.cell 
                                                             _digit.cell 
                                                        ) :> ICell
@@ -129,7 +129,7 @@ module ClosestRoundingFunction =
             try
 
                 let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ClosestRoundingModel.Cast _ClosestRounding.cell).Digit
+                let builder (current : ICell) = ((ClosestRoundingModel.Cast _ClosestRounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -165,7 +165,7 @@ module ClosestRoundingFunction =
             try
 
                 let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ClosestRoundingModel.Cast _ClosestRounding.cell).GetType
+                let builder (current : ICell) = ((ClosestRoundingModel.Cast _ClosestRounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -201,7 +201,7 @@ module ClosestRoundingFunction =
             try
 
                 let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ClosestRoundingModel.Cast _ClosestRounding.cell).Precision
+                let builder (current : ICell) = ((ClosestRoundingModel.Cast _ClosestRounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -240,7 +240,7 @@ module ClosestRoundingFunction =
 
                 let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ClosestRoundingModel.Cast _ClosestRounding.cell).Round
+                let builder (current : ICell) = ((ClosestRoundingModel.Cast _ClosestRounding.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

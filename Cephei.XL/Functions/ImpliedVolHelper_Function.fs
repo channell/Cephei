@@ -52,7 +52,7 @@ module ImpliedVolHelper_Function =
 
                 let _ImpliedVolHelper_ = Helper.toCell<ImpliedVolHelper_> impliedvolhelper_ "ImpliedVolHelper_"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedVolHelper_Model.Cast _ImpliedVolHelper_.cell).Derivative
+                let builder (current : ICell) = ((ImpliedVolHelper_Model.Cast _ImpliedVolHelper_.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -103,7 +103,7 @@ module ImpliedVolHelper_Function =
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _displacement = Helper.toNullable<double> displacement "displacement"
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ImpliedVolHelper_ 
+                let builder (current : ICell) = (Fun.ImpliedVolHelper_ 
                                                             _swaption.cell 
                                                             _discountCurve.cell 
                                                             _targetValue.cell 
@@ -155,7 +155,7 @@ module ImpliedVolHelper_Function =
 
                 let _ImpliedVolHelper_ = Helper.toCell<ImpliedVolHelper_> impliedvolhelper_ "ImpliedVolHelper_"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedVolHelper_Model.Cast _ImpliedVolHelper_.cell).Value
+                let builder (current : ICell) = ((ImpliedVolHelper_Model.Cast _ImpliedVolHelper_.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

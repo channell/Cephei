@@ -49,7 +49,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallDigitalPayoff
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallDigitalPayoff
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallOptionRate
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallOptionRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -121,7 +121,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallStrike
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallStrike
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -157,7 +157,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ConvexityAdjustment
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -223,7 +223,7 @@ module DigitalCouponFunction =
                 let _putDigitalPayoff = Helper.toNullable<double> putDigitalPayoff "putDigitalPayoff"
                 let _replication = Helper.toDefault<DigitalReplication> replication "replication" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalCoupon 
+                let builder (current : ICell) = (Fun.DigitalCoupon 
                                                             _underlying.cell 
                                                             _callStrike.cell 
                                                             _callPosition.cell 
@@ -290,7 +290,7 @@ module DigitalCouponFunction =
             try
 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalCoupon1 
+                let builder (current : ICell) = (Fun.DigitalCoupon1 
                                                             _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCoupon>) l
@@ -357,7 +357,7 @@ module DigitalCouponFunction =
                 let _isPutATMIncluded = Helper.toDefault<bool> isPutATMIncluded "isPutATMIncluded" false
                 let _putDigitalPayoff = Helper.toNullable<double> putDigitalPayoff "putDigitalPayoff"
                 let _replication = Helper.toDefault<DigitalReplication> replication "replication" null
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Factory
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Factory
                                                             _underlying.cell 
                                                             _callStrike.cell 
                                                             _callPosition.cell 
@@ -423,7 +423,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasCall
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasCall
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -459,7 +459,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasCollar
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasCollar
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -495,7 +495,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasPut
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasPut
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -531,7 +531,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsLongCall
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsLongCall
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -567,7 +567,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsLongPut
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsLongPut
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -603,7 +603,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutDigitalPayoff
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutDigitalPayoff
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -639,7 +639,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutOptionRate
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutOptionRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -675,7 +675,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutStrike
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutStrike
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -711,7 +711,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Rate
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -750,7 +750,7 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).SetPricer
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : DigitalCoupon) (l:string) = o.ToString() :> obj
@@ -789,7 +789,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Underlying
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Underlying
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
 
@@ -828,7 +828,7 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedAmount
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -867,7 +867,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AdjustedFixing
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -903,7 +903,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Amount
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -939,7 +939,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).DayCounter
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -975,7 +975,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).FixingDate
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1011,7 +1011,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).FixingDays
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1047,7 +1047,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Gearing
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1083,7 +1083,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Index
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
@@ -1119,7 +1119,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IndexFixing
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1155,7 +1155,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsInArrears
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1194,7 +1194,7 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Price
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Price
                                                             _yts.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1233,7 +1233,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Pricer
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
@@ -1269,7 +1269,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Spread
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1305,7 +1305,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Update
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : DigitalCoupon) (l:string) = o.ToString() :> obj
 
@@ -1341,7 +1341,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualDays
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1377,7 +1377,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualEndDate
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1413,7 +1413,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualPeriod
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1449,7 +1449,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualStartDate
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1488,7 +1488,7 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedDays
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1530,7 +1530,7 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedPeriod
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1569,7 +1569,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Date
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1605,7 +1605,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ExCouponDate
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1641,7 +1641,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Nominal
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1677,7 +1677,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ReferencePeriodEnd
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1713,7 +1713,7 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ReferencePeriodStart
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1752,7 +1752,7 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CompareTo
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1794,7 +1794,7 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Equals
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1839,7 +1839,7 @@ module DigitalCouponFunction =
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasOccurred
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -1884,7 +1884,7 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).TradingExCoupon
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1926,7 +1926,7 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Accept
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : DigitalCoupon) (l:string) = o.ToString() :> obj
@@ -1968,7 +1968,7 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).RegisterWith
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DigitalCoupon) (l:string) = o.ToString() :> obj
@@ -2010,7 +2010,7 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).UnregisterWith
+                let builder (current : ICell) = ((DigitalCouponModel.Cast _DigitalCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DigitalCoupon) (l:string) = o.ToString() :> obj

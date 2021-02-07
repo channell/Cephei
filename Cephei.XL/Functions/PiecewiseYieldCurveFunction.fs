@@ -50,7 +50,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Accuracy_
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Accuracy_
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -86,7 +86,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Clone
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -122,7 +122,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Data
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -158,7 +158,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Data_
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -194,7 +194,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Dates
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
 
@@ -230,7 +230,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Dates_
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
 
@@ -272,7 +272,7 @@ module PiecewiseYieldCurveFunction =
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).DiscountImpl
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -320,7 +320,7 @@ module PiecewiseYieldCurveFunction =
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ForwardImpl
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -374,7 +374,7 @@ module PiecewiseYieldCurveFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _first = Helper.toCell<int> first "first" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Guess
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Guess
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -422,7 +422,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).InitialDate1
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).InitialDate1
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -461,7 +461,7 @@ module PiecewiseYieldCurveFunction =
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).InitialDate
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -503,7 +503,7 @@ module PiecewiseYieldCurveFunction =
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).InitialValue1
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).InitialValue1
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -542,7 +542,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).InitialValue
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).InitialValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -578,7 +578,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Instruments_
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Instruments_
                                                        ) :> ICell
                 let format (i : Cephei.Cell.List<BootstrapHelper<YieldTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -614,7 +614,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Interpolation_
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
@@ -650,7 +650,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Interpolator_
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
@@ -686,7 +686,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MaxDate
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -722,7 +722,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MaxDate_
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -758,7 +758,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MaxIterations
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -806,7 +806,7 @@ module PiecewiseYieldCurveFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _first = Helper.toCell<int> first "first" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MaxValueAfter
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -866,7 +866,7 @@ module PiecewiseYieldCurveFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _first = Helper.toCell<int> first "first" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MinValueAfter
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -914,7 +914,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Moving_
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Moving_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -950,7 +950,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Nodes
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Generic.Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
@@ -1008,7 +1008,7 @@ module PiecewiseYieldCurveFunction =
                 let _accuracy = Helper.toCell<double> accuracy "accuracy"
                 let _i = Helper.toCell<IInterpolationFactory> interpolator "interpolator"
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.PiecewiseYieldCurve
+                let builder (current : ICell) = (Fun.PiecewiseYieldCurve
                                                             _traits.cell
                                                             _referenceDate.cell
                                                             _instruments.cell
@@ -1072,7 +1072,7 @@ module PiecewiseYieldCurveFunction =
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _helper = Helper.toCell<BootstrapHelper<YieldTermStructure>> helper "helper" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).RegisterWith
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).RegisterWith
                                                             _helper.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
@@ -1114,7 +1114,7 @@ module PiecewiseYieldCurveFunction =
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _helper = Helper.toCell<BootstrapHelper<YieldTermStructure>> helper "helper" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).SetTermStructure
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).SetTermStructure
                                                             _helper.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
@@ -1153,7 +1153,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).SetupInterpolation
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
 
@@ -1189,7 +1189,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Times
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -1225,7 +1225,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Times_
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -1261,7 +1261,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Traits_
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Traits_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ITraits<YieldTermStructure>>) l
 
@@ -1306,7 +1306,7 @@ module PiecewiseYieldCurveFunction =
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).UpdateGuess
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).UpdateGuess
                                                             _data.cell 
                                                             _discount.cell 
                                                             _i.cell 
@@ -1357,7 +1357,7 @@ module PiecewiseYieldCurveFunction =
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ZeroYieldImpl
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -1405,7 +1405,7 @@ module PiecewiseYieldCurveFunction =
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Discount
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Discount
                                                             _t.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -1453,7 +1453,7 @@ module PiecewiseYieldCurveFunction =
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Discount1
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Discount1
                                                             _d.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -1513,7 +1513,7 @@ module PiecewiseYieldCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ForwardRate
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ForwardRate
                                                             _d.cell 
                                                             _p.cell 
                                                             _dayCounter.cell 
@@ -1585,7 +1585,7 @@ module PiecewiseYieldCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ForwardRate1
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ForwardRate1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _dayCounter.cell 
@@ -1654,7 +1654,7 @@ module PiecewiseYieldCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ForwardRate2
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ForwardRate2
                                                             _t1.cell 
                                                             _t2.cell 
                                                             _comp.cell 
@@ -1705,7 +1705,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).JumpDates
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
 
@@ -1741,7 +1741,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).JumpTimes
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -1777,7 +1777,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Update
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Update
                                                        ) :> ICell
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
 
@@ -1828,7 +1828,7 @@ module PiecewiseYieldCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ZeroRate1
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ZeroRate1
                                                             _d.cell 
                                                             _dayCounter.cell 
                                                             _comp.cell 
@@ -1891,7 +1891,7 @@ module PiecewiseYieldCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ZeroRate
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ZeroRate
                                                             _t.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1939,7 +1939,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Calendar
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -1975,7 +1975,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).DayCounter
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -2011,7 +2011,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MaxTime
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -2047,7 +2047,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ReferenceDate
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -2083,7 +2083,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).SettlementDays
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -2122,7 +2122,7 @@ module PiecewiseYieldCurveFunction =
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).TimeFromReference
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -2161,7 +2161,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).AllowsExtrapolation
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -2200,7 +2200,7 @@ module PiecewiseYieldCurveFunction =
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).DisableExtrapolation
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
@@ -2242,7 +2242,7 @@ module PiecewiseYieldCurveFunction =
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).EnableExtrapolation
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
@@ -2281,7 +2281,7 @@ module PiecewiseYieldCurveFunction =
             try
 
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Extrapolate
+                let builder (current : ICell) = ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

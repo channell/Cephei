@@ -52,7 +52,7 @@ module NonCentralCumulativeChiSquareSankaranApproxFunction =
 
                 let _df = Helper.toCell<double> df "df" 
                 let _ncp = Helper.toCell<double> ncp "ncp" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonCentralCumulativeChiSquareSankaranApprox 
+                let builder (current : ICell) = (Fun.NonCentralCumulativeChiSquareSankaranApprox 
                                                             _df.cell 
                                                             _ncp.cell 
                                                        ) :> ICell

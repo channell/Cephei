@@ -64,7 +64,7 @@ module KernelInterpolation2DFunction =
                 let _ySize = Helper.toCell<int> ySize "ySize" 
                 let _zData = Helper.toCell<Matrix> zData "zData" 
                 let _kernel = Helper.toCell<IKernelFunction> kernel "kernel" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.KernelInterpolation2D 
+                let builder (current : ICell) = (Fun.KernelInterpolation2D 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -122,7 +122,7 @@ module KernelInterpolation2DFunction =
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).IsInRange
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).IsInRange
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -167,7 +167,7 @@ module KernelInterpolation2DFunction =
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).LocateX
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).LocateX
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -209,7 +209,7 @@ module KernelInterpolation2DFunction =
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
                 let _y = Helper.toCell<double> y "y" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).LocateY
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).LocateY
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -248,7 +248,7 @@ module KernelInterpolation2DFunction =
             try
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).Update
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).Update
                                                        ) :> ICell
                 let format (o : KernelInterpolation2D) (l:string) = o.ToString() :> obj
 
@@ -290,7 +290,7 @@ module KernelInterpolation2DFunction =
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).Value1
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).Value1
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -341,7 +341,7 @@ module KernelInterpolation2DFunction =
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).Value
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).Value
                                                             _x.cell 
                                                             _y.cell 
                                                             _allowExtrapolation.cell 
@@ -386,7 +386,7 @@ module KernelInterpolation2DFunction =
             try
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).XMax
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -422,7 +422,7 @@ module KernelInterpolation2DFunction =
             try
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).XMin
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -458,7 +458,7 @@ module KernelInterpolation2DFunction =
             try
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).XValues
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).XValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -494,7 +494,7 @@ module KernelInterpolation2DFunction =
             try
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).YMax
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).YMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -530,7 +530,7 @@ module KernelInterpolation2DFunction =
             try
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).YMin
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).YMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -566,7 +566,7 @@ module KernelInterpolation2DFunction =
             try
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).YValues
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).YValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -602,7 +602,7 @@ module KernelInterpolation2DFunction =
             try
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).ZData
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).ZData
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -638,7 +638,7 @@ module KernelInterpolation2DFunction =
             try
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).AllowsExtrapolation
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -677,7 +677,7 @@ module KernelInterpolation2DFunction =
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).DisableExtrapolation
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : KernelInterpolation2D) (l:string) = o.ToString() :> obj
@@ -719,7 +719,7 @@ module KernelInterpolation2DFunction =
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).EnableExtrapolation
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : KernelInterpolation2D) (l:string) = o.ToString() :> obj
@@ -758,7 +758,7 @@ module KernelInterpolation2DFunction =
             try
 
                 let _KernelInterpolation2D = Helper.toCell<KernelInterpolation2D> kernelinterpolation2d "KernelInterpolation2D"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).Extrapolate
+                let builder (current : ICell) = ((KernelInterpolation2DModel.Cast _KernelInterpolation2D.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

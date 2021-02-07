@@ -52,7 +52,7 @@ module AnalyticContinuousFloatingLookbackEngineFunction =
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticContinuousFloatingLookbackEngine 
+                let builder (current : ICell) = (Fun.AnalyticContinuousFloatingLookbackEngine 
                                                             _Process.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell

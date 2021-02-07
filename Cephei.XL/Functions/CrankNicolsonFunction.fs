@@ -52,7 +52,7 @@ module CrankNicolsonFunction =
 
                 let _L = Helper.toCell<'Operator> L "L" 
                 let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CrankNicolson 
+                let builder (current : ICell) = (Fun.CrankNicolson 
                                                             _L.cell 
                                                             _bcs.cell 
                                                        ) :> ICell
@@ -89,7 +89,7 @@ module CrankNicolsonFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CrankNicolson1 
+                let builder (current : ICell) = (Fun.CrankNicolson1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CrankNicolson>) l
 
@@ -132,7 +132,7 @@ module CrankNicolsonFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalFields = Helper.toDefault<Object[]> additionalFields "additionalFields" null
-                let builder (current : ICell) = withMnemonic mnemonic ((CrankNicolsonModel.Cast _CrankNicolson.cell).Factory
+                let builder (current : ICell) = ((CrankNicolsonModel.Cast _CrankNicolson.cell).Factory
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _additionalFields.cell 
@@ -180,7 +180,7 @@ module CrankNicolsonFunction =
 
                 let _CrankNicolson = Helper.toCell<CrankNicolson> cranknicolson "CrankNicolson"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CrankNicolsonModel.Cast _CrankNicolson.cell).SetStep
+                let builder (current : ICell) = ((CrankNicolsonModel.Cast _CrankNicolson.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : CrankNicolson) (l:string) = o.ToString() :> obj
@@ -228,7 +228,7 @@ module CrankNicolsonFunction =
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toCell<double> theta "theta" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CrankNicolsonModel.Cast _CrankNicolson.cell).Step
+                let builder (current : ICell) = ((CrankNicolsonModel.Cast _CrankNicolson.cell).Step
                                                             _o.cell 
                                                             _t.cell 
                                                             _theta.cell 

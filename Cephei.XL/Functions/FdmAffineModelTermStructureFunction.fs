@@ -67,7 +67,7 @@ module FdmAffineModelTermStructureFunction =
                 let _modelReferenceDate = Helper.toCell<Date> modelReferenceDate "modelReferenceDate" 
                 let _model = Helper.toCell<IAffineModel> model "model" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmAffineModelTermStructure 
+                let builder (current : ICell) = (Fun.FdmAffineModelTermStructure 
                                                             _r.cell 
                                                             _cal.cell 
                                                             _dayCounter.cell 
@@ -122,7 +122,7 @@ module FdmAffineModelTermStructureFunction =
             try
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).MaxDate
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -161,7 +161,7 @@ module FdmAffineModelTermStructureFunction =
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).SetVariable
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).SetVariable
                                                             _r.cell 
                                                        ) :> ICell
                 let format (o : FdmAffineModelTermStructure) (l:string) = o.ToString() :> obj
@@ -206,7 +206,7 @@ module FdmAffineModelTermStructureFunction =
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).Discount
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).Discount
                                                             _t.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module FdmAffineModelTermStructureFunction =
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).Discount1
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).Discount1
                                                             _d.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -314,7 +314,7 @@ module FdmAffineModelTermStructureFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ForwardRate
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ForwardRate
                                                             _d.cell 
                                                             _p.cell 
                                                             _dayCounter.cell 
@@ -386,7 +386,7 @@ module FdmAffineModelTermStructureFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ForwardRate1
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ForwardRate1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _dayCounter.cell 
@@ -455,7 +455,7 @@ module FdmAffineModelTermStructureFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ForwardRate2
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ForwardRate2
                                                             _t1.cell 
                                                             _t2.cell 
                                                             _comp.cell 
@@ -506,7 +506,7 @@ module FdmAffineModelTermStructureFunction =
             try
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).JumpDates
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -542,7 +542,7 @@ module FdmAffineModelTermStructureFunction =
             try
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).JumpTimes
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -578,7 +578,7 @@ module FdmAffineModelTermStructureFunction =
             try
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).Update
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).Update
                                                        ) :> ICell
                 let format (o : FdmAffineModelTermStructure) (l:string) = o.ToString() :> obj
 
@@ -629,7 +629,7 @@ module FdmAffineModelTermStructureFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ZeroRate1
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ZeroRate1
                                                             _d.cell 
                                                             _dayCounter.cell 
                                                             _comp.cell 
@@ -692,7 +692,7 @@ module FdmAffineModelTermStructureFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ZeroRate
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ZeroRate
                                                             _t.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -740,7 +740,7 @@ module FdmAffineModelTermStructureFunction =
             try
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).Calendar
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -776,7 +776,7 @@ module FdmAffineModelTermStructureFunction =
             try
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).DayCounter
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -812,7 +812,7 @@ module FdmAffineModelTermStructureFunction =
             try
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).MaxTime
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -848,7 +848,7 @@ module FdmAffineModelTermStructureFunction =
             try
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ReferenceDate
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -884,7 +884,7 @@ module FdmAffineModelTermStructureFunction =
             try
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).SettlementDays
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -923,7 +923,7 @@ module FdmAffineModelTermStructureFunction =
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).TimeFromReference
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -962,7 +962,7 @@ module FdmAffineModelTermStructureFunction =
             try
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).AllowsExtrapolation
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1001,7 +1001,7 @@ module FdmAffineModelTermStructureFunction =
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).DisableExtrapolation
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : FdmAffineModelTermStructure) (l:string) = o.ToString() :> obj
@@ -1043,7 +1043,7 @@ module FdmAffineModelTermStructureFunction =
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).EnableExtrapolation
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : FdmAffineModelTermStructure) (l:string) = o.ToString() :> obj
@@ -1082,7 +1082,7 @@ module FdmAffineModelTermStructureFunction =
             try
 
                 let _FdmAffineModelTermStructure = Helper.toCell<FdmAffineModelTermStructure> fdmaffinemodeltermstructure "FdmAffineModelTermStructure"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).Extrapolate
+                let builder (current : ICell) = ((FdmAffineModelTermStructureModel.Cast _FdmAffineModelTermStructure.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

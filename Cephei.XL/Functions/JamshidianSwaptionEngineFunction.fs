@@ -53,7 +53,7 @@ module JamshidianSwaptionEngineFunction =
 
                 let _model = Helper.toCell<OneFactorAffineModel> model "model" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.JamshidianSwaptionEngine 
+                let builder (current : ICell) = (Fun.JamshidianSwaptionEngine 
                                                             _model.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell
@@ -99,7 +99,7 @@ module JamshidianSwaptionEngineFunction =
                 let _model = Helper.toCell<OneFactorAffineModel> model "model" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.JamshidianSwaptionEngine1 
+                let builder (current : ICell) = (Fun.JamshidianSwaptionEngine1 
                                                             _model.cell 
                                                             _termStructure.cell 
                                                             _evaluationDate.cell
@@ -146,7 +146,7 @@ module JamshidianSwaptionEngineFunction =
 
                 let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder (current : ICell) = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).SetModel
+                let builder (current : ICell) = ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -188,7 +188,7 @@ module JamshidianSwaptionEngineFunction =
 
                 let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).RegisterWith
+                let builder (current : ICell) = ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -227,7 +227,7 @@ module JamshidianSwaptionEngineFunction =
             try
 
                 let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).Reset
+                let builder (current : ICell) = ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 
@@ -266,7 +266,7 @@ module JamshidianSwaptionEngineFunction =
 
                 let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).UnregisterWith
+                let builder (current : ICell) = ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -305,7 +305,7 @@ module JamshidianSwaptionEngineFunction =
             try
 
                 let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).Update
+                let builder (current : ICell) = ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 

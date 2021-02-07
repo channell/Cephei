@@ -58,7 +58,7 @@ module AnalyticBSMHullWhiteEngineFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _model = Helper.toCell<HullWhite> model "model" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticBSMHullWhiteEngine 
+                let builder (current : ICell) = (Fun.AnalyticBSMHullWhiteEngine 
                                                             _equityShortRateCorrelation.cell 
                                                             _Process.cell 
                                                             _model.cell 
@@ -107,7 +107,7 @@ module AnalyticBSMHullWhiteEngineFunction =
 
                 let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
                 let _model = Helper.toHandle<HullWhite> model "model" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).SetModel
+                let builder (current : ICell) = ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
@@ -149,7 +149,7 @@ module AnalyticBSMHullWhiteEngineFunction =
 
                 let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).RegisterWith
+                let builder (current : ICell) = ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
@@ -188,7 +188,7 @@ module AnalyticBSMHullWhiteEngineFunction =
             try
 
                 let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).Reset
+                let builder (current : ICell) = ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 
@@ -227,7 +227,7 @@ module AnalyticBSMHullWhiteEngineFunction =
 
                 let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).UnregisterWith
+                let builder (current : ICell) = ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
@@ -266,7 +266,7 @@ module AnalyticBSMHullWhiteEngineFunction =
             try
 
                 let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).Update
+                let builder (current : ICell) = ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 

@@ -58,7 +58,7 @@ module SVIWrapperFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _param = Helper.toNullabletList<double> param "param" 
                 let _addParams = Helper.toNullabletList<double> addParams "addParams" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SVIWrapper 
+                let builder (current : ICell) = (Fun.SVIWrapper 
                                                             _t.cell 
                                                             _forward.cell 
                                                             _param.cell 
@@ -107,7 +107,7 @@ module SVIWrapperFunction =
 
                 let _SVIWrapper = Helper.toCell<SVIWrapper> sviwrapper "SVIWrapper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SVIWrapperModel.Cast _SVIWrapper.cell).Volatility
+                let builder (current : ICell) = ((SVIWrapperModel.Cast _SVIWrapper.cell).Volatility
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

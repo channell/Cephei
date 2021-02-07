@@ -49,7 +49,7 @@ module TqrEigenDecompositionFunction =
             try
 
                 let _TqrEigenDecomposition = Helper.toCell<TqrEigenDecomposition> tqreigendecomposition "TqrEigenDecomposition"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Eigenvalues
+                let builder (current : ICell) = ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Eigenvalues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -85,7 +85,7 @@ module TqrEigenDecompositionFunction =
             try
 
                 let _TqrEigenDecomposition = Helper.toCell<TqrEigenDecomposition> tqreigendecomposition "TqrEigenDecomposition"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Eigenvectors
+                let builder (current : ICell) = ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Eigenvectors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -121,7 +121,7 @@ module TqrEigenDecompositionFunction =
             try
 
                 let _TqrEigenDecomposition = Helper.toCell<TqrEigenDecomposition> tqreigendecomposition "TqrEigenDecomposition"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Iterations
+                let builder (current : ICell) = ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Iterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -166,7 +166,7 @@ module TqrEigenDecompositionFunction =
                 let _sub = Helper.toCell<Vector> sub "sub" 
                 let _calc = Helper.toDefault<TqrEigenDecomposition.EigenVectorCalculation> calc "calc" TqrEigenDecomposition.EigenVectorCalculation.WithEigenVector
                 let _strategy = Helper.toDefault<TqrEigenDecomposition.ShiftStrategy> strategy "strategy" TqrEigenDecomposition.ShiftStrategy.CloseEigenValue
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TqrEigenDecomposition 
+                let builder (current : ICell) = (Fun.TqrEigenDecomposition 
                                                             _diag.cell 
                                                             _sub.cell 
                                                             _calc.cell 

@@ -49,7 +49,7 @@ module SuperSharePayoffFunction =
             try
 
                 let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).CashPayoff
+                let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).CashPayoff
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module SuperSharePayoffFunction =
             try
 
                 let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Description
+                let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -121,7 +121,7 @@ module SuperSharePayoffFunction =
             try
 
                 let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Name
+                let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -157,7 +157,7 @@ module SuperSharePayoffFunction =
             try
 
                 let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).SecondStrike
+                let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).SecondStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -199,7 +199,7 @@ module SuperSharePayoffFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _secondStrike = Helper.toCell<double> secondStrike "secondStrike" 
                 let _cashPayoff = Helper.toCell<double> cashPayoff "cashPayoff" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SuperSharePayoff 
+                let builder (current : ICell) = (Fun.SuperSharePayoff 
                                                             _strike.cell 
                                                             _secondStrike.cell 
                                                             _cashPayoff.cell 
@@ -245,7 +245,7 @@ module SuperSharePayoffFunction =
 
                 let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Value
+                let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -284,7 +284,7 @@ module SuperSharePayoffFunction =
             try
 
                 let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Strike
+                let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -320,7 +320,7 @@ module SuperSharePayoffFunction =
             try
 
                 let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).OptionType
+                let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
@@ -359,7 +359,7 @@ module SuperSharePayoffFunction =
 
                 let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Accept
+                let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : SuperSharePayoff) (l:string) = o.ToString() :> obj

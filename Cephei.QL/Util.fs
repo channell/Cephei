@@ -40,6 +40,17 @@ type DateDependantTrivial<'T> (f : unit -> 'T, d : ICell<Date>) =
     interface IDateDependant with
         member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d        
 
+type DateDependantCast<'T> (c : ICell, d : ICell<Date>) =
+
+    inherit CellCast<'T> (c)
+
+    let _cast = c
+
+    let mutable _evaluationDate = d
+
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d  
+        
 module Util = 
     // Summary: create a value that notifies other cells when the value changes
     [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
@@ -75,6 +86,12 @@ module Util =
 
     let trivDate (f : unit -> 'f) (d : IDateDependant) = 
         new DateDependantTrivial<'f> (f, d.EvaluationDate) :> ICell<'f>
+
+    let cast<'t> (c : ICell) = 
+        new CellCast<'t> (c)
+
+    let castDate<'t> (c : ICell) (d : IDateDependant)  = 
+        new DateDependantCast<'t> (c, d.EvaluationDate)
 
     // Summary: variant of lazy evaluation where the value is claculated on a background thread
     let future (f : unit -> 'f) = 
@@ -162,6 +179,4 @@ type Delay<'t> (reference : ICell<'t>, lapse : ICell<double>) as this =
     do this.Bind(_value)
 
     member this.Value = _value
-    member this.Reference with get () = _reference and set v = _reference <- v
-    member this.Lapse with get () = _lapse and set v = _lapse <- v
     member this.Span with get () = _span and set v = _span <- v

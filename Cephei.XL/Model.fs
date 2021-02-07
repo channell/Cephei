@@ -122,7 +122,7 @@ module public  Model =
                     c
             _state.Value.Rtd.TryRemove (s) |> ignore
             cell.Mnemonic <- sub.mnemonic
-            if (not (current = null)) && cell.GetType() = current.GetType() then
+            if (not (current = null)) && cell.GetType() = current.GetType() && not (current :? ICellModel) then
                 current.Merge(cell, _state.Value.Model)
                 _state.Value.Source.[sub.mnemonic] <- sub.source()
 
@@ -130,7 +130,9 @@ module public  Model =
                 _state.Value.Model.[sub.mnemonic] <- cell
                 _state.Value.Source.[sub.mnemonic] <- sub.source()
                 _state.Value.Subscriber.[sub.mnemonic] <- sub.subscriber
-                if not (current = null) then current.Dispose() 
+                if not (current = null) then 
+                    current.Dispose() 
+                cell.OnChange(CellEvent.Calculate, cell, cell, DateTime.Now, null)
 
     // Register a functor to create a cell if requried
     let specify (spec : spec) : obj =
@@ -212,7 +214,7 @@ module public  Model =
 
         let depens = 
             _state.Value.Model
-            |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i)
+            // |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Subject) else i)
             |> Seq.map (fun i -> (i.Key, (deps i.Value)))
             |> Seq.toList
             |> List.sortBy (fun i -> (fst i).ToUpper())
@@ -249,7 +251,7 @@ module public  Model =
                 let isSubject = 
                     not (cell.Parent = null) &&
                     cell.Parent :? ICellModel &&
-                    (cell.Parent :?> ICellModel).Cell = cell
+                    (cell.Parent :?> ICellModel).Subject = cell
                 cell.Dependants 
                 |> Seq.filter (fun i -> i :? ICell) 
                 |> Seq.map (fun i -> i :?> ICell) 
@@ -259,7 +261,7 @@ module public  Model =
                 |> (fun t ->  if isSubject then (modelDepth (cell.Parent :?> Model)) + t else t) 
 
             model 
-            |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i) 
+            |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Subject) else i) 
             |> Seq.map (fun i -> (i.Value, depth i.Value)) 
             |> Seq.toArray 
             |> Array.sortBy (fun (c,d) -> (d,c.Mnemonic))
@@ -383,7 +385,7 @@ module public  Model =
         if not (Model.IsInFunctionWizard()) then
             try
                 let _{0} = Helper.toModel<{3}, obj> {0} \"{0}\"  
-                let builder (current : ICell) = withMnemonic mnemonic (_{0}.cell :?> {3}).{1} :> ICell
+                let builder (current : ICell) = (_{0}.cell :?> {3}).{1} :> ICell
                 let format (o : {2}) (l:string) = Model.genericFormat o
                 let source () = (_{0}.source + \".{1}\")
                 let hash = Helper.hashFold [| _{0}.cell |]
@@ -442,7 +444,7 @@ module {10}Function =
         if not (Model.IsInFunctionWizard()) then
             try
 {5}
-                let builder (current : ICell) = withMnemonic mnemonic (new {10}
+                let builder (current : ICell) = (new {10}
 {6}
                                                                       ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> {10}) l

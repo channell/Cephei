@@ -46,7 +46,7 @@ module BYRCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BYRCurrency ()
+                let builder (current : ICell) = (Fun.BYRCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BYRCurrency>) l
 
@@ -80,7 +80,7 @@ module BYRCurrencyFunction =
             try
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).Code
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module BYRCurrencyFunction =
             try
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).Empty
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module BYRCurrencyFunction =
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).Equals
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module BYRCurrencyFunction =
             try
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).Format
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module BYRCurrencyFunction =
             try
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module BYRCurrencyFunction =
             try
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module BYRCurrencyFunction =
             try
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).Name
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module BYRCurrencyFunction =
             try
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).NumericCode
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module BYRCurrencyFunction =
             try
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).Rounding
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module BYRCurrencyFunction =
             try
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).Symbol
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module BYRCurrencyFunction =
             try
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).ToString
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module BYRCurrencyFunction =
             try
 
                 let _BYRCurrency = Helper.toCell<BYRCurrency> byrcurrency "BYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BYRCurrencyModel.Cast _BYRCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((BYRCurrencyModel.Cast _BYRCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

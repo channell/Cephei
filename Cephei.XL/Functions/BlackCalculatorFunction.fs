@@ -49,7 +49,7 @@ module BlackCalculatorFunction =
             try
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).Alpha
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).Alpha
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module BlackCalculatorFunction =
             try
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).Beta
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).Beta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -130,7 +130,7 @@ module BlackCalculatorFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCalculator 
+                let builder (current : ICell) = (Fun.BlackCalculator 
                                                             _payoff.cell 
                                                             _forward.cell 
                                                             _stdDev.cell 
@@ -179,7 +179,7 @@ module BlackCalculatorFunction =
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
                 let _spot = Helper.toCell<double> spot "spot" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).Delta
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).Delta
                                                             _spot.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -218,7 +218,7 @@ module BlackCalculatorFunction =
             try
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).DeltaForward
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -257,7 +257,7 @@ module BlackCalculatorFunction =
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).DividendRho
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).DividendRho
                                                             _maturity.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -299,7 +299,7 @@ module BlackCalculatorFunction =
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
                 let _spot = Helper.toCell<double> spot "spot" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).Elasticity
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).Elasticity
                                                             _spot.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -338,7 +338,7 @@ module BlackCalculatorFunction =
             try
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).ElasticityForward
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).ElasticityForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -377,7 +377,7 @@ module BlackCalculatorFunction =
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
                 let _spot = Helper.toCell<double> spot "spot" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).Gamma
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).Gamma
                                                             _spot.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -416,7 +416,7 @@ module BlackCalculatorFunction =
             try
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).GammaForward
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).GammaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -452,7 +452,7 @@ module BlackCalculatorFunction =
             try
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).ItmAssetProbability
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).ItmAssetProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -488,7 +488,7 @@ module BlackCalculatorFunction =
             try
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).ItmCashProbability
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -527,7 +527,7 @@ module BlackCalculatorFunction =
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).Rho
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).Rho
                                                             _maturity.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -566,7 +566,7 @@ module BlackCalculatorFunction =
             try
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).StrikeSensitivity
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -608,7 +608,7 @@ module BlackCalculatorFunction =
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
                 let _spot = Helper.toCell<double> spot "spot" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).Theta
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).Theta
                                                             _spot.cell 
                                                             _maturity.cell 
                                                        ) :> ICell
@@ -656,7 +656,7 @@ module BlackCalculatorFunction =
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
                 let _spot = Helper.toCell<double> spot "spot" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).ThetaPerDay
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).ThetaPerDay
                                                             _spot.cell 
                                                             _maturity.cell 
                                                        ) :> ICell
@@ -698,7 +698,7 @@ module BlackCalculatorFunction =
             try
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).Value
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -737,7 +737,7 @@ module BlackCalculatorFunction =
 
                 let _BlackCalculator = Helper.toCell<BlackCalculator> blackcalculator "BlackCalculator"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackCalculatorModel.Cast _BlackCalculator.cell).Vega
+                let builder (current : ICell) = ((BlackCalculatorModel.Cast _BlackCalculator.cell).Vega
                                                             _maturity.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

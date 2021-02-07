@@ -46,7 +46,7 @@ module TRYCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TRYCurrency ()
+                let builder (current : ICell) = (Fun.TRYCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TRYCurrency>) l
 
@@ -80,7 +80,7 @@ module TRYCurrencyFunction =
             try
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).Code
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module TRYCurrencyFunction =
             try
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).Empty
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module TRYCurrencyFunction =
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).Equals
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module TRYCurrencyFunction =
             try
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).Format
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module TRYCurrencyFunction =
             try
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module TRYCurrencyFunction =
             try
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module TRYCurrencyFunction =
             try
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).Name
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module TRYCurrencyFunction =
             try
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).NumericCode
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module TRYCurrencyFunction =
             try
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).Rounding
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module TRYCurrencyFunction =
             try
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).Symbol
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module TRYCurrencyFunction =
             try
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).ToString
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module TRYCurrencyFunction =
             try
 
                 let _TRYCurrency = Helper.toCell<TRYCurrency> trycurrency "TRYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TRYCurrencyModel.Cast _TRYCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((TRYCurrencyModel.Cast _TRYCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

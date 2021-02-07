@@ -52,7 +52,7 @@ module NullEffectiveDateExceptionFunction =
 
                 let _message = Helper.toCell<string> message "message" 
                 let _inner = Helper.toCell<Exception> inner "inner" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NullEffectiveDateException 
+                let builder (current : ICell) = (Fun.NullEffectiveDateException 
                                                             _message.cell 
                                                             _inner.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module NullEffectiveDateExceptionFunction =
             try
 
                 let _message = Helper.toCell<string> message "message" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NullEffectiveDateException1 
+                let builder (current : ICell) = (Fun.NullEffectiveDateException1 
                                                             _message.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NullEffectiveDateException>) l
@@ -126,7 +126,7 @@ module NullEffectiveDateExceptionFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NullEffectiveDateException ()
+                let builder (current : ICell) = (Fun.NullEffectiveDateException ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NullEffectiveDateException>) l
 

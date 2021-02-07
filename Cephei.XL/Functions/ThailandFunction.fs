@@ -46,7 +46,7 @@ module ThailandFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Thailand ()
+                let builder (current : ICell) = (Fun.Thailand ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Thailand>) l
 
@@ -80,7 +80,7 @@ module ThailandFunction =
             try
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).AddedHolidays
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -119,7 +119,7 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).AddHoliday
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Thailand) (l:string) = o.ToString() :> obj
@@ -164,7 +164,7 @@ module ThailandFunction =
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Adjust
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -221,7 +221,7 @@ module ThailandFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Advance1
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -284,7 +284,7 @@ module ThailandFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Advance
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -344,7 +344,7 @@ module ThailandFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).BusinessDaysBetween
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -392,7 +392,7 @@ module ThailandFunction =
             try
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Calendar
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -428,7 +428,7 @@ module ThailandFunction =
             try
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Empty
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -467,7 +467,7 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).EndOfMonth
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -509,7 +509,7 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Equals
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -551,7 +551,7 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsBusinessDay
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -593,7 +593,7 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsEndOfMonth
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -635,7 +635,7 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsHoliday
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -677,7 +677,7 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsWeekend
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -718,7 +718,7 @@ module ThailandFunction =
             try
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Name
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -754,7 +754,7 @@ module ThailandFunction =
             try
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).RemovedHolidays
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -793,7 +793,7 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).RemoveHoliday
+                let builder (current : ICell) = ((ThailandModel.Cast _Thailand.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Thailand) (l:string) = o.ToString() :> obj

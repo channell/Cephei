@@ -52,7 +52,7 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _atmT = Helper.toCell<DeltaVolQuote.AtmType> atmT "atmT" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).AtmStrike
+                let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).AtmStrike
                                                             _atmT.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -106,7 +106,7 @@ module BlackDeltaCalculatorFunction =
                 let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" 
                 let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackDeltaCalculator 
+                let builder (current : ICell) = (Fun.BlackDeltaCalculator 
                                                             _ot.cell 
                                                             _dt.cell 
                                                             _spot.cell 
@@ -161,7 +161,7 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).CumD1
+                let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).CumD1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -203,7 +203,7 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).CumD2
+                let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).CumD2
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -245,7 +245,7 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).DeltaFromStrike
+                let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).DeltaFromStrike
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -287,7 +287,7 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).ND1
+                let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).ND1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -329,7 +329,7 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).ND2
+                let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).ND2
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -371,7 +371,7 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _dt = Helper.toCell<DeltaVolQuote.DeltaType> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).SetDeltaType
+                let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).SetDeltaType
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : BlackDeltaCalculator) (l:string) = o.ToString() :> obj
@@ -413,7 +413,7 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _ot = Helper.toCell<Option.Type> ot "ot" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).SetOptionType
+                let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).SetOptionType
                                                             _ot.cell 
                                                        ) :> ICell
                 let format (o : BlackDeltaCalculator) (l:string) = o.ToString() :> obj
@@ -455,7 +455,7 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _delta = Helper.toCell<double> delta "delta" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).StrikeFromDelta
+                let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).StrikeFromDelta
                                                             _delta.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

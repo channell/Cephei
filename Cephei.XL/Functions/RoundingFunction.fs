@@ -49,7 +49,7 @@ module RoundingFunction =
             try
 
                 let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RoundingModel.Cast _Rounding.cell).Digit
+                let builder (current : ICell) = ((RoundingModel.Cast _Rounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module RoundingFunction =
             try
 
                 let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RoundingModel.Cast _Rounding.cell).GetType
+                let builder (current : ICell) = ((RoundingModel.Cast _Rounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -121,7 +121,7 @@ module RoundingFunction =
             try
 
                 let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
-                let builder (current : ICell) = withMnemonic mnemonic ((RoundingModel.Cast _Rounding.cell).Precision
+                let builder (current : ICell) = ((RoundingModel.Cast _Rounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -160,7 +160,7 @@ module RoundingFunction =
 
                 let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder (current : ICell) = withMnemonic mnemonic ((RoundingModel.Cast _Rounding.cell).Round
+                let builder (current : ICell) = ((RoundingModel.Cast _Rounding.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -205,7 +205,7 @@ module RoundingFunction =
                 let _precision = Helper.toCell<int> precision "precision" 
                 let _Type = Helper.toCell<Rounding.Type> Type "Type" 
                 let _digit = Helper.toCell<int> digit "digit" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Rounding 
+                let builder (current : ICell) = (Fun.Rounding 
                                                             _precision.cell 
                                                             _Type.cell 
                                                             _digit.cell 
@@ -248,7 +248,7 @@ module RoundingFunction =
             try
 
                 let _precision = Helper.toCell<int> precision "precision" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Rounding3 
+                let builder (current : ICell) = (Fun.Rounding3 
                                                             _precision.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
@@ -288,7 +288,7 @@ module RoundingFunction =
 
                 let _precision = Helper.toCell<int> precision "precision" 
                 let _Type = Helper.toCell<Rounding.Type> Type "Type" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Rounding2 
+                let builder (current : ICell) = (Fun.Rounding2 
                                                             _precision.cell 
                                                             _Type.cell 
                                                        ) :> ICell
@@ -325,7 +325,7 @@ module RoundingFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Rounding1 ()
+                let builder (current : ICell) = (Fun.Rounding1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 

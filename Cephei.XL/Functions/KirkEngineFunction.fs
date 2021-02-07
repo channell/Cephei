@@ -59,7 +59,7 @@ module KirkEngineFunction =
                 let _process2 = Helper.toCell<BlackProcess> process2 "process2" 
                 let _correlation = Helper.toCell<double> correlation "correlation" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.KirkEngine 
+                let builder (current : ICell) = (Fun.KirkEngine 
                                                             _process1.cell 
                                                             _process2.cell 
                                                             _correlation.cell 

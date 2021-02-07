@@ -56,7 +56,7 @@ module HestonExpansionEngineFunction =
                 let _model = Helper.toCell<HestonModel> model "model" 
                 let _formula = Helper.toCell<HestonExpansionEngine.HestonExpansionFormula> formula "formula" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.HestonExpansionEngine 
+                let builder (current : ICell) = (Fun.HestonExpansionEngine 
                                                             _model.cell 
                                                             _formula.cell 
                                                             _evaluationDate.cell
@@ -103,7 +103,7 @@ module HestonExpansionEngineFunction =
 
                 let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).SetModel
+                let builder (current : ICell) = ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
@@ -145,7 +145,7 @@ module HestonExpansionEngineFunction =
 
                 let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).RegisterWith
+                let builder (current : ICell) = ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
@@ -184,7 +184,7 @@ module HestonExpansionEngineFunction =
             try
 
                 let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).Reset
+                let builder (current : ICell) = ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
 
@@ -223,7 +223,7 @@ module HestonExpansionEngineFunction =
 
                 let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).UnregisterWith
+                let builder (current : ICell) = ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
@@ -262,7 +262,7 @@ module HestonExpansionEngineFunction =
             try
 
                 let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).Update
+                let builder (current : ICell) = ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
 

@@ -49,7 +49,7 @@ module QuadraticMinHelperFunction =
             try
 
                 let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((QuadraticMinHelperModel.Cast _QuadraticMinHelper.cell).FNext
+                let builder (current : ICell) = ((QuadraticMinHelperModel.Cast _QuadraticMinHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -88,7 +88,7 @@ module QuadraticMinHelperFunction =
 
                 let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((QuadraticMinHelperModel.Cast _QuadraticMinHelper.cell).Primitive
+                let builder (current : ICell) = ((QuadraticMinHelperModel.Cast _QuadraticMinHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -142,7 +142,7 @@ module QuadraticMinHelperFunction =
                 let _fNext = Helper.toCell<double> fNext "fNext" 
                 let _fAverage = Helper.toCell<double> fAverage "fAverage" 
                 let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.QuadraticMinHelper 
+                let builder (current : ICell) = (Fun.QuadraticMinHelper 
                                                             _xPrev.cell 
                                                             _xNext.cell 
                                                             _fPrev.cell 
@@ -197,7 +197,7 @@ module QuadraticMinHelperFunction =
 
                 let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((QuadraticMinHelperModel.Cast _QuadraticMinHelper.cell).Value
+                let builder (current : ICell) = ((QuadraticMinHelperModel.Cast _QuadraticMinHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

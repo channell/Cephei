@@ -49,7 +49,7 @@ module InverseCumulativePoissonFunction =
             try
 
                 let _lambda = Helper.toCell<double> lambda "lambda" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseCumulativePoisson1 
+                let builder (current : ICell) = (Fun.InverseCumulativePoisson1 
                                                             _lambda.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseCumulativePoisson>) l
@@ -83,7 +83,7 @@ module InverseCumulativePoissonFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseCumulativePoisson () 
+                let builder (current : ICell) = (Fun.InverseCumulativePoisson () 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseCumulativePoisson>) l
 
@@ -120,7 +120,7 @@ module InverseCumulativePoissonFunction =
 
                 let _InverseCumulativePoisson = Helper.toCell<InverseCumulativePoisson> inversecumulativepoisson "InverseCumulativePoisson"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((InverseCumulativePoissonModel.Cast _InverseCumulativePoisson.cell).Value
+                let builder (current : ICell) = ((InverseCumulativePoissonModel.Cast _InverseCumulativePoisson.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

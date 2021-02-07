@@ -55,7 +55,7 @@ module HestonHullWhitePathPricerFunction =
                 let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" 
                 let _payoff = Helper.toCell<Payoff> payoff "payoff" 
                 let _Process = Helper.toCell<HybridHestonHullWhiteProcess> Process "Process" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.HestonHullWhitePathPricer 
+                let builder (current : ICell) = (Fun.HestonHullWhitePathPricer 
                                                             _exerciseTime.cell 
                                                             _payoff.cell 
                                                             _Process.cell 
@@ -101,7 +101,7 @@ module HestonHullWhitePathPricerFunction =
 
                 let _HestonHullWhitePathPricer = Helper.toCell<HestonHullWhitePathPricer> hestonhullwhitepathpricer "HestonHullWhitePathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder (current : ICell) = withMnemonic mnemonic ((HestonHullWhitePathPricerModel.Cast _HestonHullWhitePathPricer.cell).Value
+                let builder (current : ICell) = ((HestonHullWhitePathPricerModel.Cast _HestonHullWhitePathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

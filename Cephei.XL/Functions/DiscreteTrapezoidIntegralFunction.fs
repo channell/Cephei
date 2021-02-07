@@ -55,7 +55,7 @@ module DiscreteTrapezoidIntegralFunction =
                 let _DiscreteTrapezoidIntegral = Helper.toCell<DiscreteTrapezoidIntegral> discretetrapezoidintegral "DiscreteTrapezoidIntegral"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _f = Helper.toCell<Vector> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegralModel.Cast _DiscreteTrapezoidIntegral.cell).Value
+                let builder (current : ICell) = ((DiscreteTrapezoidIntegralModel.Cast _DiscreteTrapezoidIntegral.cell).Value
                                                             _x.cell 
                                                             _f.cell 
                                                        ) :> ICell

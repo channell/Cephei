@@ -49,7 +49,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Clone
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Data
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -121,7 +121,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Data_
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -157,7 +157,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Dates
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -193,7 +193,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Dates_
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -244,7 +244,7 @@ module InterpolatedZeroCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedZeroCurve 
+                let builder (current : ICell) = (Fun.InterpolatedZeroCurve 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _dayCounter.cell 
@@ -305,7 +305,7 @@ module InterpolatedZeroCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedZeroCurve1 
+                let builder (current : ICell) = (Fun.InterpolatedZeroCurve1 
                                                             _dayCounter.cell 
                                                             _jumps.cell 
                                                             _jumpDates.cell 
@@ -363,7 +363,7 @@ module InterpolatedZeroCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedZeroCurve2 
+                let builder (current : ICell) = (Fun.InterpolatedZeroCurve2 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
                                                             _jumps.cell 
@@ -430,7 +430,7 @@ module InterpolatedZeroCurveFunction =
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let _compounding = Helper.toDefault<Compounding> compounding "compounding" Compounding.Continuous
                 let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.Annual
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedZeroCurve3 
+                let builder (current : ICell) = (Fun.InterpolatedZeroCurve3 
                                                             _dates.cell 
                                                             _yields.cell 
                                                             _dayCounter.cell 
@@ -503,7 +503,7 @@ module InterpolatedZeroCurveFunction =
                 let _compounding = Helper.toDefault<Compounding> compounding "compounding" Compounding.Continuous
                 let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.Annual
                 let _refDate = Helper.toDefault<Date> refDate "refDate" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedZeroCurve4 
+                let builder (current : ICell) = (Fun.InterpolatedZeroCurve4 
                                                             _dates.cell 
                                                             _yields.cell 
                                                             _dayCounter.cell 
@@ -582,7 +582,7 @@ module InterpolatedZeroCurveFunction =
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let _compounding = Helper.toDefault<Compounding> compounding "compounding" Compounding.Continuous
                 let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.Annual
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedZeroCurve5 
+                let builder (current : ICell) = (Fun.InterpolatedZeroCurve5 
                                                             _dates.cell 
                                                             _yields.cell 
                                                             _dayCounter.cell 
@@ -643,7 +643,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Interpolation_
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
@@ -679,7 +679,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Interpolator_
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
@@ -715,7 +715,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).MaxDate
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -751,7 +751,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).MaxDate_
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -787,7 +787,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Nodes
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
@@ -823,7 +823,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).SetupInterpolation
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedZeroCurve) (l:string) = o.ToString() :> obj
 
@@ -859,7 +859,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Times
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -895,7 +895,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Times_
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -931,7 +931,7 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).ZeroRates
+                let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).ZeroRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

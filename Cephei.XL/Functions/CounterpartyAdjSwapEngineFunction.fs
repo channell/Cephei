@@ -74,7 +74,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
                 let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine 
+                let builder (current : ICell) = (Fun.CounterpartyAdjSwapEngine 
                                                             _discountCurve.cell 
                                                             _blackVol.cell 
                                                             _ctptyDTS.cell 
@@ -153,7 +153,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
                 let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine1 
+                let builder (current : ICell) = (Fun.CounterpartyAdjSwapEngine1 
                                                             _discountCurve.cell 
                                                             _blackVol.cell 
                                                             _ctptyDTS.cell 
@@ -232,7 +232,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
                 let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine2 
+                let builder (current : ICell) = (Fun.CounterpartyAdjSwapEngine2 
                                                             _discountCurve.cell 
                                                             _swaptionEngine.cell 
                                                             _ctptyDTS.cell 

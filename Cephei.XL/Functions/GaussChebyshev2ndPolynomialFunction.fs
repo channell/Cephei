@@ -46,7 +46,7 @@ module GaussChebyshev2ndPolynomialFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussChebyshev2ndPolynomial 
+                let builder (current : ICell) = (Fun.GaussChebyshev2ndPolynomial 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussChebyshev2ndPolynomial>) l
 
@@ -83,7 +83,7 @@ module GaussChebyshev2ndPolynomialFunction =
 
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Alpha
+                let builder (current : ICell) = ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Alpha
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -125,7 +125,7 @@ module GaussChebyshev2ndPolynomialFunction =
 
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Beta
+                let builder (current : ICell) = ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Beta
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module GaussChebyshev2ndPolynomialFunction =
             try
 
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Mu_0
+                let builder (current : ICell) = ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -203,7 +203,7 @@ module GaussChebyshev2ndPolynomialFunction =
 
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).W
+                let builder (current : ICell) = ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).W
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -248,7 +248,7 @@ module GaussChebyshev2ndPolynomialFunction =
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Value
+                let builder (current : ICell) = ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Value
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -296,7 +296,7 @@ module GaussChebyshev2ndPolynomialFunction =
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).WeightedValue
+                let builder (current : ICell) = ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell

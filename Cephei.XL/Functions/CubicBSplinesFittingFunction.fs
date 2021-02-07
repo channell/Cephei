@@ -55,7 +55,7 @@ module CubicBSplinesFittingFunction =
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).BasisFunction
+                let builder (current : ICell) = ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).BasisFunction
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -97,7 +97,7 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Clone
+                let builder (current : ICell) = ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
@@ -142,7 +142,7 @@ module CubicBSplinesFittingFunction =
                 let _constrainAtZero = Helper.toDefault<bool> constrainAtZero "constrainAtZero" true
                 let _weights = Helper.toDefault<Vector> weights "weights" null
                 let _optimizationMethod = Helper.toDefault<OptimizationMethod> optimizationMethod "optimizationMethod" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CubicBSplinesFitting 
+                let builder (current : ICell) = (Fun.CubicBSplinesFitting 
                                                             _knots.cell 
                                                             _constrainAtZero.cell 
                                                             _weights.cell 
@@ -188,7 +188,7 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Size
+                let builder (current : ICell) = ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -224,7 +224,7 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).ConstrainAtZero
+                let builder (current : ICell) = ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -266,7 +266,7 @@ module CubicBSplinesFittingFunction =
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Discount
+                let builder (current : ICell) = ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Discount
                                                             _x.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -308,7 +308,7 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).MinimumCostValue
+                let builder (current : ICell) = ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -344,7 +344,7 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).NumberOfIterations
+                let builder (current : ICell) = ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -380,7 +380,7 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).OptimizationMethod
+                let builder (current : ICell) = ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
@@ -416,7 +416,7 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Solution
+                let builder (current : ICell) = ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -452,7 +452,7 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Weights
+                let builder (current : ICell) = ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

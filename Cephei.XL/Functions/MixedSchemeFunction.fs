@@ -46,7 +46,7 @@ module MixedSchemeFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MixedScheme 
+                let builder (current : ICell) = (Fun.MixedScheme 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MixedScheme>) l
 
@@ -86,7 +86,7 @@ module MixedSchemeFunction =
                 let _L = Helper.toCell<'Operator> L "L" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MixedScheme1 
+                let builder (current : ICell) = (Fun.MixedScheme1 
                                                             _L.cell 
                                                             _theta.cell 
                                                             _bcs.cell 
@@ -132,7 +132,7 @@ module MixedSchemeFunction =
 
                 let _MixedScheme = Helper.toCell<MixedScheme> mixedscheme "MixedScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MixedSchemeModel.Cast _MixedScheme.cell).SetStep
+                let builder (current : ICell) = ((MixedSchemeModel.Cast _MixedScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : MixedScheme) (l:string) = o.ToString() :> obj
@@ -180,7 +180,7 @@ module MixedSchemeFunction =
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder (current : ICell) = withMnemonic mnemonic ((MixedSchemeModel.Cast _MixedScheme.cell).Step
+                let builder (current : ICell) = ((MixedSchemeModel.Cast _MixedScheme.cell).Step
                                                             _o.cell 
                                                             _t.cell 
                                                             _theta.cell 

@@ -58,7 +58,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
                 let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" 
                 let _exercise = Helper.toCell<AmericanExercise> exercise "exercise" 
                 let _arguments = Helper.toCell<BarrierOption.Arguments> arguments "arguments" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticBinaryBarrierEngine_helper 
+                let builder (current : ICell) = (Fun.AnalyticBinaryBarrierEngine_helper 
                                                             _Process.cell 
                                                             _payoff.cell 
                                                             _exercise.cell 
@@ -113,7 +113,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
                 let _spot = Helper.toCell<double> spot "spot" 
                 let _variance = Helper.toCell<double> variance "variance" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBinaryBarrierEngine_helperModel.Cast _AnalyticBinaryBarrierEngine_helper.cell).PayoffAtExpiry
+                let builder (current : ICell) = ((AnalyticBinaryBarrierEngine_helperModel.Cast _AnalyticBinaryBarrierEngine_helper.cell).PayoffAtExpiry
                                                             _spot.cell 
                                                             _variance.cell 
                                                             _discount.cell 

@@ -52,7 +52,7 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).ClosestIndex
+                let builder (current : ICell) = ((TimeGridModel.Cast _TimeGrid.cell).ClosestIndex
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).ClosestTime
+                let builder (current : ICell) = ((TimeGridModel.Cast _TimeGrid.cell).ClosestTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -136,7 +136,7 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Dt
+                let builder (current : ICell) = ((TimeGridModel.Cast _TimeGrid.cell).Dt
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -175,7 +175,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Empty
+                let builder (current : ICell) = ((TimeGridModel.Cast _TimeGrid.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -211,7 +211,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).First
+                let builder (current : ICell) = ((TimeGridModel.Cast _TimeGrid.cell).First
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -250,7 +250,7 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Index
+                let builder (current : ICell) = ((TimeGridModel.Cast _TimeGrid.cell).Index
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -289,7 +289,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Last
+                let builder (current : ICell) = ((TimeGridModel.Cast _TimeGrid.cell).Last
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -325,7 +325,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).MandatoryTimes
+                let builder (current : ICell) = ((TimeGridModel.Cast _TimeGrid.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -361,7 +361,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Size
+                let builder (current : ICell) = ((TimeGridModel.Cast _TimeGrid.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -400,7 +400,7 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).This
+                let builder (current : ICell) = ((TimeGridModel.Cast _TimeGrid.cell).This
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -445,7 +445,7 @@ module TimeGridFunction =
                 let _times = Helper.toCell<Generic.List<double>> times "times" 
                 let _offset = Helper.toCell<int> offset "offset" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeGrid3
+                let builder (current : ICell) = (Fun.TimeGrid3
                                                             _times.cell 
                                                             _offset.cell 
                                                             _steps.cell 
@@ -491,7 +491,7 @@ module TimeGridFunction =
 
                 let _times = Helper.toCell<Generic.List<double>> times "times" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeGrid2
+                let builder (current : ICell) = (Fun.TimeGrid2
                                                             _times.cell 
                                                             _steps.cell 
                                                        ) :> ICell
@@ -531,7 +531,7 @@ module TimeGridFunction =
             try
 
                 let _times = Helper.toCell<Generic.List<double>> times "times" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeGrid1
+                let builder (current : ICell) = (Fun.TimeGrid1
                                                             _times.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
@@ -571,7 +571,7 @@ module TimeGridFunction =
 
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeGrid
+                let builder (current : ICell) = (Fun.TimeGrid
                                                             _End.cell 
                                                             _steps.cell 
                                                        ) :> ICell
@@ -611,7 +611,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Times
+                let builder (current : ICell) = ((TimeGridModel.Cast _TimeGrid.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

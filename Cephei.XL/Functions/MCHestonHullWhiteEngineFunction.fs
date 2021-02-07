@@ -77,7 +77,7 @@ module MCHestonHullWhiteEngineFunction =
                 let _maxSamples = Helper.toNullable<int> maxSamples "maxSamples"
                 let _seed = Helper.toCell<uint64> seed "seed" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MCHestonHullWhiteEngine 
+                let builder (current : ICell) = (Fun.MCHestonHullWhiteEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _timeStepsPerYear.cell 

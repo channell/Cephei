@@ -58,7 +58,7 @@ module FlatHazardRateFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _hazardRate = Helper.toCell<double> hazardRate "hazardRate" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatHazardRate3 
+                let builder (current : ICell) = (Fun.FlatHazardRate3 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _hazardRate.cell 
@@ -113,7 +113,7 @@ module FlatHazardRateFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _hazardRate = Helper.toHandle<Quote> hazardRate "hazardRate" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatHazardRate
+                let builder (current : ICell) = (Fun.FlatHazardRate
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _hazardRate.cell 
@@ -165,7 +165,7 @@ module FlatHazardRateFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _hazardRate = Helper.toCell<double> hazardRate "hazardRate" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatHazardRate1
+                let builder (current : ICell) = (Fun.FlatHazardRate1
                                                             _referenceDate.cell 
                                                             _hazardRate.cell 
                                                             _dc.cell 
@@ -214,7 +214,7 @@ module FlatHazardRateFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _hazardRate = Helper.toHandle<Quote> hazardRate "hazardRate" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatHazardRate2
+                let builder (current : ICell) = (Fun.FlatHazardRate2
                                                             _referenceDate.cell 
                                                             _hazardRate.cell 
                                                             _dc.cell 
@@ -257,7 +257,7 @@ module FlatHazardRateFunction =
             try
 
                 let _FlatHazardRate = Helper.toCell<FlatHazardRate> flathazardrate "FlatHazardRate"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FlatHazardRateModel.Cast _FlatHazardRate.cell).MaxDate
+                let builder (current : ICell) = ((FlatHazardRateModel.Cast _FlatHazardRate.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

@@ -202,6 +202,7 @@ namespace Cephei.Cell.Generic
             return typeof(Base).IsAssignableFrom(typeof(T)) ||
                    typeof(T).IsSubclassOf(typeof(Base));
         }
+
         public CellState State => CellState.Clean;
         public Exception Error => null;
     }

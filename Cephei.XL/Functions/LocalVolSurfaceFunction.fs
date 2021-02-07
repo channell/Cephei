@@ -49,7 +49,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).DayCounter
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -94,7 +94,7 @@ module LocalVolSurfaceFunction =
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _dividendTS = Helper.toHandle<YieldTermStructure> dividendTS "dividendTS" 
                 let _underlying = Helper.toCell<double> underlying "underlying" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalVolSurface1 
+                let builder (current : ICell) = (Fun.LocalVolSurface1 
                                                             _blackTS.cell 
                                                             _riskFreeTS.cell 
                                                             _dividendTS.cell 
@@ -149,7 +149,7 @@ module LocalVolSurfaceFunction =
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _dividendTS = Helper.toHandle<YieldTermStructure> dividendTS "dividendTS" 
                 let _underlying = Helper.toHandle<Quote> underlying "underlying" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalVolSurface
+                let builder (current : ICell) = (Fun.LocalVolSurface
                                                             _blackTS.cell 
                                                             _riskFreeTS.cell 
                                                             _dividendTS.cell 
@@ -195,7 +195,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxDate
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -231,7 +231,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxStrike
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -267,7 +267,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MinStrike
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -303,7 +303,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).ReferenceDate
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -348,7 +348,7 @@ module LocalVolSurfaceFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).LocalVol
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).LocalVol
                                                             _t.cell 
                                                             _underlyingLevel.cell 
                                                             _extrapolate.cell 
@@ -402,7 +402,7 @@ module LocalVolSurfaceFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).LocalVol1
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).LocalVol1
                                                             _d.cell 
                                                             _underlyingLevel.cell 
                                                             _extrapolate.cell 
@@ -447,7 +447,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).BusinessDayConvention
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -486,7 +486,7 @@ module LocalVolSurfaceFunction =
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).OptionDateFromTenor
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -525,7 +525,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Calendar
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -561,7 +561,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxTime
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -597,7 +597,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).SettlementDays
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -636,7 +636,7 @@ module LocalVolSurfaceFunction =
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).TimeFromReference
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -675,7 +675,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Update
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Update
                                                        ) :> ICell
                 let format (o : LocalVolSurface) (l:string) = o.ToString() :> obj
 
@@ -711,7 +711,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).AllowsExtrapolation
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -750,7 +750,7 @@ module LocalVolSurfaceFunction =
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).DisableExtrapolation
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LocalVolSurface) (l:string) = o.ToString() :> obj
@@ -792,7 +792,7 @@ module LocalVolSurfaceFunction =
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).EnableExtrapolation
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LocalVolSurface) (l:string) = o.ToString() :> obj
@@ -831,7 +831,7 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Extrapolate
+                let builder (current : ICell) = ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

@@ -52,7 +52,7 @@ module CompositeConstraintFunction =
 
                 let _c1 = Helper.toCell<Constraint> c1 "c1" 
                 let _c2 = Helper.toCell<Constraint> c2 "c2" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CompositeConstraint 
+                let builder (current : ICell) = (Fun.CompositeConstraint 
                                                             _c1.cell 
                                                             _c2.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module CompositeConstraintFunction =
             try
 
                 let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeConstraintModel.Cast _CompositeConstraint.cell).Empty
+                let builder (current : ICell) = ((CompositeConstraintModel.Cast _CompositeConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -131,7 +131,7 @@ module CompositeConstraintFunction =
 
                 let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeConstraintModel.Cast _CompositeConstraint.cell).LowerBound
+                let builder (current : ICell) = ((CompositeConstraintModel.Cast _CompositeConstraint.cell).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -173,7 +173,7 @@ module CompositeConstraintFunction =
 
                 let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeConstraintModel.Cast _CompositeConstraint.cell).Test
+                let builder (current : ICell) = ((CompositeConstraintModel.Cast _CompositeConstraint.cell).Test
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -221,7 +221,7 @@ module CompositeConstraintFunction =
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeConstraintModel.Cast _CompositeConstraint.cell).Update
+                let builder (current : ICell) = ((CompositeConstraintModel.Cast _CompositeConstraint.cell).Update
                                                             _p.cell 
                                                             _direction.cell 
                                                             _beta.cell 
@@ -269,7 +269,7 @@ module CompositeConstraintFunction =
 
                 let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CompositeConstraintModel.Cast _CompositeConstraint.cell).UpperBound
+                let builder (current : ICell) = ((CompositeConstraintModel.Cast _CompositeConstraint.cell).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

@@ -61,7 +61,7 @@ module CollarFunction =
                 let _floorRates = Helper.toCell<Generic.List<double>> floorRates "floorRates" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Collar 
+                let builder (current : ICell) = (Fun.Collar 
                                                             _floatingLeg.cell 
                                                             _capRates.cell 
                                                             _floorRates.cell 
@@ -113,7 +113,7 @@ module CollarFunction =
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
                 let _discountCurve = Helper.toCell<YieldTermStructure> discountCurve "discountCurve" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).AtmRate
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).AtmRate
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -152,7 +152,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).CapRates
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).CapRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -188,7 +188,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).FloatingLeg
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -224,7 +224,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).FloorRates
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).FloorRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -260,7 +260,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).GetType
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).GetType
                                                        ) :> ICell
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
 
@@ -323,7 +323,7 @@ module CollarFunction =
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _displacement = Helper.toCell<double> displacement "displacement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).ImpliedVolatility
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _guess.cell 
@@ -401,7 +401,7 @@ module CollarFunction =
                 let _guess = Helper.toCell<double> guess "guess" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).ImpliedVolatility1
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).ImpliedVolatility1
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _guess.cell 
@@ -452,7 +452,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).IsExpired
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -488,7 +488,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).LastFloatingRateCoupon
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).LastFloatingRateCoupon
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
 
@@ -524,7 +524,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).MaturityDate
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -563,7 +563,7 @@ module CollarFunction =
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).Optionlet
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).Optionlet
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloor>) l
@@ -602,7 +602,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).StartDate
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -638,7 +638,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).CASH
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -674,7 +674,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).ErrorEstimate
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -710,7 +710,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).NPV
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -749,7 +749,7 @@ module CollarFunction =
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).Result
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -791,7 +791,7 @@ module CollarFunction =
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).SetPricingEngine
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Collar) (l:string) = o.ToString() :> obj
@@ -830,7 +830,7 @@ module CollarFunction =
             try
 
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).ValuationDate
+                let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

@@ -46,7 +46,7 @@ module LTLCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LTLCurrency ()
+                let builder (current : ICell) = (Fun.LTLCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LTLCurrency>) l
 
@@ -80,7 +80,7 @@ module LTLCurrencyFunction =
             try
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).Code
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module LTLCurrencyFunction =
             try
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).Empty
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module LTLCurrencyFunction =
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).Equals
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module LTLCurrencyFunction =
             try
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).Format
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module LTLCurrencyFunction =
             try
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module LTLCurrencyFunction =
             try
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module LTLCurrencyFunction =
             try
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).Name
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module LTLCurrencyFunction =
             try
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).NumericCode
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module LTLCurrencyFunction =
             try
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).Rounding
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module LTLCurrencyFunction =
             try
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).Symbol
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module LTLCurrencyFunction =
             try
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).ToString
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module LTLCurrencyFunction =
             try
 
                 let _LTLCurrency = Helper.toCell<LTLCurrency> ltlcurrency "LTLCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LTLCurrencyModel.Cast _LTLCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((LTLCurrencyModel.Cast _LTLCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

@@ -55,7 +55,7 @@ module DouglasSchemeFunction =
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
                 let _bcSet = Helper.toDefault<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DouglasScheme 
+                let builder (current : ICell) = (Fun.DouglasScheme 
                                                             _theta.cell 
                                                             _map.cell 
                                                             _bcSet.cell 
@@ -95,7 +95,7 @@ module DouglasSchemeFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DouglasScheme1 ()
+                let builder (current : ICell) = (Fun.DouglasScheme1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DouglasScheme>) l
 
@@ -138,7 +138,7 @@ module DouglasSchemeFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
-                let builder (current : ICell) = withMnemonic mnemonic ((DouglasSchemeModel.Cast _DouglasScheme.cell).Factory
+                let builder (current : ICell) = ((DouglasSchemeModel.Cast _DouglasScheme.cell).Factory
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _additionalInputs.cell 
@@ -186,7 +186,7 @@ module DouglasSchemeFunction =
 
                 let _DouglasScheme = Helper.toCell<DouglasScheme> douglasscheme "DouglasScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DouglasSchemeModel.Cast _DouglasScheme.cell).SetStep
+                let builder (current : ICell) = ((DouglasSchemeModel.Cast _DouglasScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : DouglasScheme) (l:string) = o.ToString() :> obj
@@ -234,7 +234,7 @@ module DouglasSchemeFunction =
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder (current : ICell) = withMnemonic mnemonic ((DouglasSchemeModel.Cast _DouglasScheme.cell).Step
+                let builder (current : ICell) = ((DouglasSchemeModel.Cast _DouglasScheme.cell).Step
                                                             _a.cell 
                                                             _t.cell 
                                                             _theta.cell 

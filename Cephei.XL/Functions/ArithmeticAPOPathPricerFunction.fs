@@ -55,7 +55,7 @@ module ArithmeticAPOPathPricerFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer 
+                let builder (current : ICell) = (Fun.ArithmeticAPOPathPricer 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -107,7 +107,7 @@ module ArithmeticAPOPathPricerFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _runningSum = Helper.toCell<double> runningSum "runningSum" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer1 
+                let builder (current : ICell) = (Fun.ArithmeticAPOPathPricer1 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -165,7 +165,7 @@ module ArithmeticAPOPathPricerFunction =
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _runningSum = Helper.toCell<double> runningSum "runningSum" 
                 let _pastFixings = Helper.toCell<int> pastFixings "pastFixings" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer2 
+                let builder (current : ICell) = (Fun.ArithmeticAPOPathPricer2 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -217,7 +217,7 @@ module ArithmeticAPOPathPricerFunction =
 
                 let _ArithmeticAPOPathPricer = Helper.toCell<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ArithmeticAPOPathPricerModel.Cast _ArithmeticAPOPathPricer.cell).Value
+                let builder (current : ICell) = ((ArithmeticAPOPathPricerModel.Cast _ArithmeticAPOPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -259,7 +259,7 @@ module ArithmeticAPOPathPricerFunction =
 
                 let _ArithmeticAPOPathPricer = Helper.toCell<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer"  
                 let _path = Helper.toCell<Path> path "path" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ArithmeticAPOPathPricerModel.Cast _ArithmeticAPOPathPricer.cell).Value1
+                let builder (current : ICell) = ((ArithmeticAPOPathPricerModel.Cast _ArithmeticAPOPathPricer.cell).Value1
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

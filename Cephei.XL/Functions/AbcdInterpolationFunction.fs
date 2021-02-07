@@ -49,7 +49,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).A
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).A
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -124,7 +124,7 @@ module AbcdInterpolationFunction =
                 let _vegaWeighted = Helper.toDefault<bool> vegaWeighted "vegaWeighted" false
                 let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _optMethod = Helper.toDefault<OptimizationMethod> optMethod "optMethod" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AbcdInterpolation 
+                let builder (current : ICell) = (Fun.AbcdInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -200,7 +200,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).B
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).B
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -236,7 +236,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).C
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).C
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -272,7 +272,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).D
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).D
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -308,7 +308,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).EndCriteria
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
@@ -353,7 +353,7 @@ module AbcdInterpolationFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).K
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).K
                                                             _t.cell 
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -398,7 +398,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).K1
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).K1
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -434,7 +434,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).MaxError
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).MaxError
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -470,7 +470,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).RmsError
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).RmsError
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -512,7 +512,7 @@ module AbcdInterpolationFunction =
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Derivative
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -554,7 +554,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Empty
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -596,7 +596,7 @@ module AbcdInterpolationFunction =
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Primitive
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -644,7 +644,7 @@ module AbcdInterpolationFunction =
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).SecondDerivative
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -686,7 +686,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Update
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : AbcdInterpolation) (l:string) = o.ToString() :> obj
 
@@ -729,7 +729,7 @@ module AbcdInterpolationFunction =
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Value
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Value
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -774,7 +774,7 @@ module AbcdInterpolationFunction =
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Value
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -813,7 +813,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).XMax
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -849,7 +849,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).XMin
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -885,7 +885,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).AllowsExtrapolation
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -924,7 +924,7 @@ module AbcdInterpolationFunction =
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _b = Helper.toCell<bool> b "b"
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).DisableExtrapolation
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : AbcdInterpolation) (l:string) = o.ToString() :> obj
@@ -966,7 +966,7 @@ module AbcdInterpolationFunction =
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _b = Helper.toCell<bool> b "b"
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).EnableExtrapolation
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : AbcdInterpolation) (l:string) = o.ToString() :> obj
@@ -1005,7 +1005,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Extrapolate
+                let builder (current : ICell) = ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

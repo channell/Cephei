@@ -49,7 +49,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Cap
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Cap
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -124,7 +124,7 @@ module CappedFlooredYoYInflationCouponFunction =
                 let _floor = Helper.toNullable<double> floor "floor"
                 let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CappedFlooredYoYInflationCoupon 
+                let builder (current : ICell) = (Fun.CappedFlooredYoYInflationCoupon 
                                                             _paymentDate.cell 
                                                             _nominal.cell 
                                                             _startDate.cell 
@@ -206,7 +206,7 @@ module CappedFlooredYoYInflationCouponFunction =
                 let _underlying = Helper.toCell<YoYInflationCoupon> underlying "underlying" 
                 let _cap = Helper.toNullable<double> cap "cap"
                 let _floor = Helper.toNullable<double> floor "floor"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CappedFlooredYoYInflationCoupon1 
+                let builder (current : ICell) = (Fun.CappedFlooredYoYInflationCoupon1 
                                                             _underlying.cell 
                                                             _cap.cell 
                                                             _floor.cell 
@@ -249,7 +249,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).EffectiveCap
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).EffectiveCap
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -285,7 +285,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).EffectiveFloor
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).EffectiveFloor
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -321,7 +321,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Floor
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Floor
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -357,7 +357,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IsCapped
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IsCapped
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -393,7 +393,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IsFloored
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IsFloored
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -429,7 +429,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Rate
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -468,7 +468,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _pricer = Helper.toCell<YoYInflationCouponPricer> pricer "pricer" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).SetPricer
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredYoYInflationCoupon) (l:string) = o.ToString() :> obj
@@ -507,7 +507,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AdjustedFixing
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -543,7 +543,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Gearing
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -579,7 +579,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Spread
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -615,7 +615,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).YoyIndex
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).YoyIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
@@ -654,7 +654,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedAmount
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -693,7 +693,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Amount
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -729,7 +729,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).DayCounter
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -765,7 +765,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).FixingDate
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -801,7 +801,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).FixingDays
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -837,7 +837,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Index
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationIndex>) l
 
@@ -873,7 +873,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IndexFixing
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -909,7 +909,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ObservationLag
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -948,7 +948,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _discountingCurve = Helper.toHandle<YieldTermStructure> discountingCurve "discountingCurve" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Price
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Price
                                                             _discountingCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -987,7 +987,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Pricer
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationCouponPricer>) l
 
@@ -1023,7 +1023,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Update
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : CappedFlooredYoYInflationCoupon) (l:string) = o.ToString() :> obj
 
@@ -1059,7 +1059,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualDays
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1095,7 +1095,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualEndDate
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1131,7 +1131,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualPeriod
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1167,7 +1167,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualStartDate
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1206,7 +1206,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedDays
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1248,7 +1248,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedPeriod
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1287,7 +1287,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Date
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1323,7 +1323,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ExCouponDate
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1359,7 +1359,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Nominal
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1395,7 +1395,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ReferencePeriodEnd
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1431,7 +1431,7 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ReferencePeriodStart
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1470,7 +1470,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).CompareTo
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1512,7 +1512,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Equals
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1557,7 +1557,7 @@ module CappedFlooredYoYInflationCouponFunction =
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).HasOccurred
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -1602,7 +1602,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).TradingExCoupon
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1644,7 +1644,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Accept
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredYoYInflationCoupon) (l:string) = o.ToString() :> obj
@@ -1686,7 +1686,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).RegisterWith
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredYoYInflationCoupon) (l:string) = o.ToString() :> obj
@@ -1728,7 +1728,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).UnregisterWith
+                let builder (current : ICell) = ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredYoYInflationCoupon) (l:string) = o.ToString() :> obj

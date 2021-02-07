@@ -67,7 +67,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ContinuousPartialFloatingLookbackOption 
+                let builder (current : ICell) = (Fun.ContinuousPartialFloatingLookbackOption 
                                                             _minmax.cell 
                                                             _lambda.cell 
                                                             _lookbackPeriodEnd.cell 
@@ -122,7 +122,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Delta
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -158,7 +158,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).DeltaForward
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -194,7 +194,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).DividendRho
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -230,7 +230,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Elasticity
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Gamma
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -302,7 +302,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).IsExpired
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).ItmCashProbability
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Rho
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -410,7 +410,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).StrikeSensitivity
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -446,7 +446,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Theta
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -482,7 +482,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).ThetaPerDay
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -518,7 +518,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Vega
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -554,7 +554,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Exercise
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -590,7 +590,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Payoff
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -626,7 +626,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).CASH
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -662,7 +662,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).ErrorEstimate
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -698,7 +698,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).NPV
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -737,7 +737,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Result
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -779,7 +779,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).SetPricingEngine
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : ContinuousPartialFloatingLookbackOption) (l:string) = o.ToString() :> obj
@@ -818,7 +818,7 @@ module ContinuousPartialFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousPartialFloatingLookbackOption = Helper.toCell<ContinuousPartialFloatingLookbackOption> continuouspartialfloatinglookbackoption "ContinuousPartialFloatingLookbackOption"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).ValuationDate
+                let builder (current : ICell) = ((ContinuousPartialFloatingLookbackOptionModel.Cast _ContinuousPartialFloatingLookbackOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

@@ -52,7 +52,7 @@ module DMinusFunction =
 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _h = Helper.toCell<double> h "h" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DMinus 
+                let builder (current : ICell) = (Fun.DMinus 
                                                             _gridPoints.cell 
                                                             _h.cell 
                                                        ) :> ICell
@@ -99,7 +99,7 @@ module DMinusFunction =
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).Add
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -145,7 +145,7 @@ module DMinusFunction =
 
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).ApplyTo
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -184,7 +184,7 @@ module DMinusFunction =
             try
 
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).Clone
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -220,7 +220,7 @@ module DMinusFunction =
             try
 
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).Diagonal
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -259,7 +259,7 @@ module DMinusFunction =
 
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).Identity
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
@@ -298,7 +298,7 @@ module DMinusFunction =
             try
 
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).IsTimeDependent
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -334,7 +334,7 @@ module DMinusFunction =
             try
 
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).LowerDiagonal
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -376,7 +376,7 @@ module DMinusFunction =
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
                 let _a = Helper.toCell<double> a "a" 
                 let _o = Helper.toCell<IOperator> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).Multiply
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).Multiply
                                                             _a.cell 
                                                             _o.cell 
                                                        ) :> ICell
@@ -424,7 +424,7 @@ module DMinusFunction =
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).SetFirstRow
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).SetFirstRow
                                                             _valB.cell 
                                                             _valC.cell 
                                                        ) :> ICell
@@ -472,7 +472,7 @@ module DMinusFunction =
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).SetLastRow
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).SetLastRow
                                                             _valA.cell 
                                                             _valB.cell 
                                                        ) :> ICell
@@ -526,7 +526,7 @@ module DMinusFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).SetMidRow
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).SetMidRow
                                                             _i.cell 
                                                             _valA.cell 
                                                             _valB.cell 
@@ -583,7 +583,7 @@ module DMinusFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).SetMidRows
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).SetMidRows
                                                             _valA.cell 
                                                             _valB.cell 
                                                             _valC.cell 
@@ -631,7 +631,7 @@ module DMinusFunction =
 
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).SetTime
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DMinus) (l:string) = o.ToString() :> obj
@@ -670,7 +670,7 @@ module DMinusFunction =
             try
 
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).Size
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -709,7 +709,7 @@ module DMinusFunction =
 
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).SolveFor
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -754,7 +754,7 @@ module DMinusFunction =
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let _tol = Helper.toCell<double> tol "tol" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).SOR
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).SOR
                                                             _rhs.cell 
                                                             _tol.cell 
                                                        ) :> ICell
@@ -802,7 +802,7 @@ module DMinusFunction =
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).Subtract
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -844,7 +844,7 @@ module DMinusFunction =
             try
 
                 let _DMinus = Helper.toCell<DMinus> dminus "DMinus"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DMinusModel.Cast _DMinus.cell).UpperDiagonal
+                let builder (current : ICell) = ((DMinusModel.Cast _DMinus.cell).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

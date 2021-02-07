@@ -46,7 +46,7 @@ module CNYCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CNYCurrency ()
+                let builder (current : ICell) = (Fun.CNYCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CNYCurrency>) l
 
@@ -80,7 +80,7 @@ module CNYCurrencyFunction =
             try
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).Code
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module CNYCurrencyFunction =
             try
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).Empty
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module CNYCurrencyFunction =
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).Equals
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module CNYCurrencyFunction =
             try
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).Format
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module CNYCurrencyFunction =
             try
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module CNYCurrencyFunction =
             try
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module CNYCurrencyFunction =
             try
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).Name
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module CNYCurrencyFunction =
             try
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).NumericCode
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module CNYCurrencyFunction =
             try
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).Rounding
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module CNYCurrencyFunction =
             try
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).Symbol
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module CNYCurrencyFunction =
             try
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).ToString
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module CNYCurrencyFunction =
             try
 
                 let _CNYCurrency = Helper.toCell<CNYCurrency> cnycurrency "CNYCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CNYCurrencyModel.Cast _CNYCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((CNYCurrencyModel.Cast _CNYCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

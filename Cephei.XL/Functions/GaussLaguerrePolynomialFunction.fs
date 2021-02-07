@@ -52,7 +52,7 @@ module GaussLaguerrePolynomialFunction =
 
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Alpha
+                let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Alpha
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module GaussLaguerrePolynomialFunction =
 
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Beta
+                let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Beta
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -133,7 +133,7 @@ module GaussLaguerrePolynomialFunction =
             try
 
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussLaguerrePolynomial1 
+                let builder (current : ICell) = (Fun.GaussLaguerrePolynomial1 
                                                             _s.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussLaguerrePolynomial>) l
@@ -167,7 +167,7 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussLaguerrePolynomial ()
+                let builder (current : ICell) = (Fun.GaussLaguerrePolynomial ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussLaguerrePolynomial>) l
 
@@ -201,7 +201,7 @@ module GaussLaguerrePolynomialFunction =
             try
 
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Mu_0
+                let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -240,7 +240,7 @@ module GaussLaguerrePolynomialFunction =
 
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).W
+                let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).W
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -285,7 +285,7 @@ module GaussLaguerrePolynomialFunction =
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Value
+                let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Value
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -333,7 +333,7 @@ module GaussLaguerrePolynomialFunction =
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).WeightedValue
+                let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell

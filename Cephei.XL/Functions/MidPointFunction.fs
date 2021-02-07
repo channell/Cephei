@@ -64,7 +64,7 @@ module MidPointFunction =
                 let _b = Helper.toCell<double> b "b" 
                 let _I = Helper.toCell<double> I "I" 
                 let _N = Helper.toCell<int> N "N" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MidPointModel.Cast _MidPoint.cell).Integrate
+                let builder (current : ICell) = ((MidPointModel.Cast _MidPoint.cell).Integrate
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 
@@ -115,7 +115,7 @@ module MidPointFunction =
             try
 
                 let _MidPoint = Helper.toCell<MidPoint> midpoint "MidPoint"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MidPointModel.Cast _MidPoint.cell).NbEvalutions
+                let builder (current : ICell) = ((MidPointModel.Cast _MidPoint.cell).NbEvalutions
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

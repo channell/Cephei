@@ -55,7 +55,7 @@ module AmericanPathPricerFunction =
                 let _payoff = Helper.toCell<Payoff> payoff "payoff" 
                 let _polynomOrder = Helper.toCell<int> polynomOrder "polynomOrder" 
                 let _polynomType = Helper.toCell<LsmBasisSystem.PolynomType> polynomType "polynomType" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmericanPathPricer 
+                let builder (current : ICell) = (Fun.AmericanPathPricer 
                                                             _payoff.cell 
                                                             _polynomOrder.cell 
                                                             _polynomType.cell 
@@ -98,7 +98,7 @@ module AmericanPathPricerFunction =
             try
 
                 let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).BasisSystem
+                let builder (current : ICell) = ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).BasisSystem
                                                        ) :> ICell
                 let format (i : Generic.List<Func<double,double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -140,7 +140,7 @@ module AmericanPathPricerFunction =
                 let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let _t = Helper.toCell<int> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).State
+                let builder (current : ICell) = ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).State
                                                             _path.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -188,7 +188,7 @@ module AmericanPathPricerFunction =
                 let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let _t = Helper.toCell<int> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).Value
+                let builder (current : ICell) = ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).Value
                                                             _path.cell 
                                                             _t.cell 
                                                        ) :> ICell

@@ -1,6 +1,7 @@
 ﻿using Microsoft.FSharp.Core;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 
@@ -12,12 +13,13 @@ namespace Cephei.Cell.Generic
     /// <typeparam name="T"></typeparam>
     public class Model<T> : Model , ICell<T>, ICellModel
     {
-        private ICell<T> _cell = null;
+        private ICell<T> _subject = null;
         private SpinLock _spinLock = new SpinLock(true);
+        /// summary: prevent recursive messages from Cell
+        private bool _notInSubject = true;
 
         public Model () : base ()
         {
-            _cell = new CellEmpty<T>();     // for forward references to this model that need to be migrated to during bind
         }
 
         public void Bind (ICell<T> cell)
@@ -31,50 +33,42 @@ namespace Cephei.Cell.Generic
                     if (taken)
                         break;
                     else
-                        Thread.Yield();
+                        Thread.Sleep (100);
                 }
                 if (cell is ITrivial t)
                 {
                     cell = (ICell<T>)t.ToCell();
                 }
-                if (!(_cell is ICellEmpty))
+
+                if (_subject != null)
                 {
-                    foreach (var c in _cell.Dependants)
+                    foreach (var e in _subject.Dependants)
                     {
-                        if (c is ICell e)
-                            if (!(c.Parent != null && c.Parent is ICellModel m && m == this))
-                                cell.Notify(e);
-                            else
-                                ModelNotify(e);
+                        if (e is ICell c)
+                            if (!(c.Parent != null && c.Parent is ICellModel m && m == this) && c != cell)
+                                cell.Notify(c);
                     }
-                    if (_cell is ICellEmpty)
+                    var cur = _subject;
+                    _subject = cell;
+                    _subject.Mnemonic = Mnemonic;
+                    _subject.Parent = this;
+                    _spinLock.Exit();
+                    taken = false;
+                    foreach (var c in this)
                     {
-                        _cell = cell;
-                        _cell.Mnemonic = Mnemonic;
-                        _cell.Parent = this;
-                    }
-                    else
-                    {
-                        _cell = cell;
-                        _cell.Mnemonic = Mnemonic;
-                        _cell.Parent = this;
-                        _spinLock.Exit();
-                        taken = false;
-                        foreach (var c in this)
+                        if (!(c.Value is ITrivial))
                         {
-                            if (!(c.Value is ITrivial))
-                            {
-                                c.Value.OnChange(CellEvent.Link, this, this, DateTime.Now, null);
-                            }
+                            c.Value.OnChange(CellEvent.Link, cur, this, DateTime.Now, null);
                         }
                     }
                 }
                 else
                 {
-                    if (cell != null)
+                    // no interest in model references, since the only references prior to bind are internal
+                    if (cell != null)       
                     {
-                        _cell = cell;
-                        _cell.Parent = this;
+                        _subject = cell;
+                        _subject.Parent = this;
                     }
                     Bind();
                 }
@@ -89,35 +83,37 @@ namespace Cephei.Cell.Generic
         {
             get
             {
-                if (_cell is ICellEmpty)
-                    return ModelDependants;
+                if (_subject != null)
+                    return ModelDependants
+                        .ToArray()
+                        .Union(_subject.Dependants.ToArray());
                 else
-                    return _cell.Dependants;
-        }
+                    return ModelDependants;
+            }
         }
 
         public override object Box
         {
             get
             {
-                return _cell.Box;
+                return _subject.Box;
             }
         }
 
         public override bool ValueIs<Base>()
         {
-            return _cell.ValueIs<Base>();
+            return _subject.ValueIs<Base>();
         }
 
         public override string Mnemonic
         {
             get
             {
-                return _cell.Mnemonic;
+                return _Mnemonic;
             }
             set
             {
-                _cell.Mnemonic = value;
+                if (_subject != null) _subject.Mnemonic = value;
                 _Mnemonic = value;
             }
         }
@@ -126,64 +122,64 @@ namespace Cephei.Cell.Generic
         {
             get
             {
-                return _cell.Value;
+                return _subject.Value;
             }
             set
             {
-                _cell.Value = value;
+                _subject.Value = value;
             }
         }
 
         public void OnCompleted()
         {
-            _cell.OnCompleted();    
+            _subject.OnCompleted();    
         }
 
         public void OnError(Exception error)
         {
-            _cell.OnError(error);
+            _subject.OnError(error);
         }
 
         public void OnNext(T value)
         {
-            _cell.OnNext(value);
+            _subject.OnNext(value);
         }
 
         public IDisposable Subscribe(IObserver<T> observer)
         {
-            return _cell.Subscribe(observer);
+            return _subject.Subscribe(observer);
         }
 
         public IDisposable Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<string, T>>> observer)
         {
-            return _cell.Subscribe(observer);
+            return _subject.Subscribe(observer);
         }
 
         public IDisposable Subscribe(IObserver<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>> observer)
         {
-            return _cell.Subscribe(observer);
+            return _subject.Subscribe(observer);
         }
         public FSharpFunc<Unit, T> Function
         {
             get
             {
-                return _cell.Function;
+                return _subject.Function;
             }
             set
             {
-                _cell.Function = value;
+                _subject.Function = value;
             }
         }
         public override object GetFunction()
         {
-            return _cell.GetFunction();
+            return _subject.GetFunction();
         }
 
-        public ICell Cell
+        public ICell Subject
         {
             get
             {
-                return _cell;
+                return _subject;
             }
         }
 
@@ -198,20 +194,19 @@ namespace Cephei.Cell.Generic
                     if (taken)
                         break;
                     else
-                        Thread.Yield();
+                        Thread.Sleep (100);
                 }
                 if (source != this)
                 {
-                    Parent = model.Parent;
                     if (source is ICellModel sm)
                     {
-                        _cell.Merge(sm.Cell, model);
-                        _cell.Parent = this;
+                        _subject.Parent = this;
+                        _subject.Merge(sm.Subject, model);
                     }
                     else
                     {
-                        _cell.Merge(source, model);
-                        _cell.Parent = this;
+                        _subject.Parent = this;
+                        _subject.Merge(source, model);
                     }
                 }
                 // handle update of current while this cell is being constructed
@@ -238,14 +233,10 @@ namespace Cephei.Cell.Generic
                     if (taken)
                         break;
                     else
-                        Thread.Yield();
+                        Thread.Sleep(100);
                 }
-
-                if (!(_cell is ICellEmpty) && !(listener.Parent != null && listener.Parent is ICellModel m && m == this))
-                    _cell.Notify(listener);
-                else
-                    ModelNotify(listener);
-            } 
+                ModelNotify(listener);
+            }
             finally
             {
                 if (taken) _spinLock.Exit();
@@ -263,32 +254,68 @@ namespace Cephei.Cell.Generic
                     if (taken)
                         break;
                     else
-                        Thread.Yield();
+                        Thread.Sleep(100);
                 }
-                if (_cell != null && _cell != this && !(listener.Parent != null && listener.Parent is ICellModel m && m == this))
-                    _cell.UnNotify(listener);
-                else
-                    ModelUnNotify(listener);
+                if (_subject != null)
+                    _subject.UnNotify(listener);
+                ModelUnNotify(listener);
             }
             finally
             {
                 if (taken) _spinLock.Exit();
             }
         }
+        public void MigratedParentOnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
+        {
+            OnChange((eventType | CellEvent.Logging), root, sender, epoch, session);
+        }
+
         public override void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
             if (sender == Parent)
                 return;
-            if (root != this && sender.Parent != this)
-                _cell.OnChange(eventType, root, this, epoch, session);
-            if (Parent != null)
-                Parent.OnChange(eventType, root, this, epoch, session);
+
+            if (_notInSubject)
+            {
+                if ((eventType & CellEvent.Logging) != CellEvent.Logging)
+                    base.OnChange(eventType, root, this, epoch, session);
+                else
+                {
+                    try
+                    {
+                        _notInSubject = false;
+                        if (sender == _subject)
+                            base.OnChange(eventType & CellEvent.NotLogging, root, this, epoch, session);
+                        else
+                            _subject.OnChange(eventType & CellEvent.NotLogging, root, this, epoch, session);
+                    }
+                    finally
+                    {
+                        _notInSubject = true;
+                    }
+                }
+
+                if (Parent != null)
+                    Parent.OnChange(eventType | CellEvent.Logging, root, this, epoch, session);
+            }
+            /*            if (sender == Parent)
+                            return;
+
+                        if ((eventType & CellEvent.Logging) != CellEvent.Logging)
+                            base.OnChange(eventType, root, this, epoch, session);
+
+                        if (Parent != null)
+                            Parent.OnChange(eventType | CellEvent.Logging, root, this, epoch, session);
+
+                        if (root != this && sender.Parent != this || sender == _subject)
+                            _subject.OnChange((eventType | CellEvent.MoldelSubject) ^ CellEvent.Logging, root, this, epoch, session);
+            */
         }
         public override CellState State
         {
             get
             {
-                return _cell.State;
+                return _subject.State;
             }
         }
 
@@ -296,7 +323,7 @@ namespace Cephei.Cell.Generic
         {
             get
             {
-                return _cell.Error;
+                return _subject.Error;
             }
         }
     }

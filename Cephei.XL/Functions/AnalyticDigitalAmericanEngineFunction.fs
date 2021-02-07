@@ -52,7 +52,7 @@ module AnalyticDigitalAmericanEngineFunction =
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticDigitalAmericanEngine 
+                let builder (current : ICell) = (Fun.AnalyticDigitalAmericanEngine 
                                                             _Process.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell
@@ -93,7 +93,7 @@ module AnalyticDigitalAmericanEngineFunction =
             try
 
                 let _AnalyticDigitalAmericanEngine = Helper.toCell<AnalyticDigitalAmericanEngine> analyticdigitalamericanengine "AnalyticDigitalAmericanEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticDigitalAmericanEngineModel.Cast _AnalyticDigitalAmericanEngine.cell).Knock_in
+                let builder (current : ICell) = ((AnalyticDigitalAmericanEngineModel.Cast _AnalyticDigitalAmericanEngine.cell).Knock_in
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

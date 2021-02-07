@@ -46,7 +46,7 @@ module ESPCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ESPCurrency ()
+                let builder (current : ICell) = (Fun.ESPCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ESPCurrency>) l
 
@@ -80,7 +80,7 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Code
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Empty
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module ESPCurrencyFunction =
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Equals
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Format
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Name
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).NumericCode
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Rounding
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Symbol
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).ToString
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((ESPCurrencyModel.Cast _ESPCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

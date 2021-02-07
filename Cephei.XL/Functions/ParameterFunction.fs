@@ -49,7 +49,7 @@ module ParameterFunction =
             try
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Constraint
+                let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
@@ -85,7 +85,7 @@ module ParameterFunction =
             try
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Implementation
+                let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Parameter.Impl) (l:string) = o.ToString() :> obj
 
@@ -118,7 +118,7 @@ module ParameterFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Parameter ()
+                let builder (current : ICell) = (Fun.Parameter ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Parameter>) l
 
@@ -152,7 +152,7 @@ module ParameterFunction =
             try
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Parameters
+                let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -194,7 +194,7 @@ module ParameterFunction =
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).SetParam
+                let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).SetParam
                                                             _i.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -236,7 +236,7 @@ module ParameterFunction =
             try
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Size
+                let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -275,7 +275,7 @@ module ParameterFunction =
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).TestParams
+                let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).TestParams
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -317,7 +317,7 @@ module ParameterFunction =
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Value
+                let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

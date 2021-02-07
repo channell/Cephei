@@ -46,7 +46,7 @@ module ActualActualFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ActualActual ()
+                let builder (current : ICell) = (Fun.ActualActual ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ActualActual>) l
 
@@ -83,7 +83,7 @@ module ActualActualFunction =
 
                 let _c = Helper.toCell<ActualActual.Convention> c "c" 
                 let _schedule = Helper.toDefault<Schedule> schedule "schedule" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ActualActual1 
+                let builder (current : ICell) = (Fun.ActualActual1 
                                                             _c.cell 
                                                             _schedule.cell 
                                                        ) :> ICell
@@ -129,7 +129,7 @@ module ActualActualFunction =
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).DayCount
+                let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
@@ -171,7 +171,7 @@ module ActualActualFunction =
             try
 
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).DayCounter
+                let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -207,7 +207,7 @@ module ActualActualFunction =
             try
 
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).Empty
+                let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -246,7 +246,7 @@ module ActualActualFunction =
 
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).Equals
+                let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -285,7 +285,7 @@ module ActualActualFunction =
             try
 
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).Name
+                let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -321,7 +321,7 @@ module ActualActualFunction =
             try
 
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).ToString
+                let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -369,7 +369,7 @@ module ActualActualFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).YearFraction
+                let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refPeriodStart.cell 
@@ -423,7 +423,7 @@ module ActualActualFunction =
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).YearFraction1
+                let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell

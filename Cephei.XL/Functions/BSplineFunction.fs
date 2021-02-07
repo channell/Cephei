@@ -55,7 +55,7 @@ module BSplineFunction =
                 let _p = Helper.toCell<int> p "p" 
                 let _n = Helper.toCell<int> n "n" 
                 let _knots = Helper.toCell<Generic.List<double>> knots "knots" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BSpline 
+                let builder (current : ICell) = (Fun.BSpline 
                                                             _p.cell 
                                                             _n.cell 
                                                             _knots.cell 
@@ -104,7 +104,7 @@ module BSplineFunction =
                 let _BSpline = Helper.toCell<BSpline> bspline "BSpline"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BSplineModel.Cast _BSpline.cell).Value
+                let builder (current : ICell) = ((BSplineModel.Cast _BSpline.cell).Value
                                                             _i.cell 
                                                             _x.cell 
                                                        ) :> ICell

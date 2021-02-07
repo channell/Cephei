@@ -71,7 +71,7 @@ module FdBlackScholesRebateEngineFunction =
                 let _localVol = Helper.toDefault<bool> localVol "localVol" false
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdBlackScholesRebateEngine 
+                let builder (current : ICell) = (Fun.FdBlackScholesRebateEngine 
                                                             _Process.cell 
                                                             _tGrid.cell 
                                                             _xGrid.cell 

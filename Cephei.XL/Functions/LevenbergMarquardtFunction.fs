@@ -62,7 +62,7 @@ module LevenbergMarquardtFunction =
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let _iflag = Helper.toCell<int> iflag "iflag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).Fcn
+                let builder (current : ICell) = ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).Fcn
                                                             _m.cell 
                                                             _n.cell 
                                                             _x.cell 
@@ -110,7 +110,7 @@ module LevenbergMarquardtFunction =
             try
 
                 let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
-                let builder (current : ICell) = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).GetInfo
+                let builder (current : ICell) = ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).GetInfo
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -158,7 +158,7 @@ module LevenbergMarquardtFunction =
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let _iflag = Helper.toCell<int> iflag "iflag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).JacFcn
+                let builder (current : ICell) = ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).JacFcn
                                                             _m.cell 
                                                             _n.cell 
                                                             _x.cell 
@@ -203,7 +203,7 @@ module LevenbergMarquardtFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LevenbergMarquardt ()
+                let builder (current : ICell) = (Fun.LevenbergMarquardt ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LevenbergMarquardt>) l
 
@@ -246,7 +246,7 @@ module LevenbergMarquardtFunction =
                 let _xtol = Helper.toCell<double> xtol "xtol" 
                 let _gtol = Helper.toCell<double> gtol "gtol" 
                 let _useCostFunctionsJacobian = Helper.toDefault<bool> useCostFunctionsJacobian "useCostFunctionsJacobian" false
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.LevenbergMarquardt1 
+                let builder (current : ICell) = (Fun.LevenbergMarquardt1 
                                                             _epsfcn.cell 
                                                             _xtol.cell 
                                                             _gtol.cell 
@@ -298,7 +298,7 @@ module LevenbergMarquardtFunction =
                 let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder (current : ICell) = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).Minimize
+                let builder (current : ICell) = ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell

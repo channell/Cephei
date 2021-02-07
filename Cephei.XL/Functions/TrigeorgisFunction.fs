@@ -61,7 +61,7 @@ module TrigeorgisFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Factory
+                let builder (current : ICell) = ((TrigeorgisModel.Cast _Trigeorgis.cell).Factory
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -118,7 +118,7 @@ module TrigeorgisFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Trigeorgis1 
+                let builder (current : ICell) = (Fun.Trigeorgis1 
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -161,7 +161,7 @@ module TrigeorgisFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Trigeorgis ()
+                let builder (current : ICell) = (Fun.Trigeorgis ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Trigeorgis>) l
 
@@ -204,7 +204,7 @@ module TrigeorgisFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Probability
+                let builder (current : ICell) = ((TrigeorgisModel.Cast _Trigeorgis.cell).Probability
                                                             _x.cell 
                                                             _y.cell 
                                                             _branch.cell 
@@ -255,7 +255,7 @@ module TrigeorgisFunction =
                 let _Trigeorgis = Helper.toCell<Trigeorgis> trigeorgis "Trigeorgis"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Underlying
+                let builder (current : ICell) = ((TrigeorgisModel.Cast _Trigeorgis.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
@@ -306,7 +306,7 @@ module TrigeorgisFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Descendant
+                let builder (current : ICell) = ((TrigeorgisModel.Cast _Trigeorgis.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
@@ -354,7 +354,7 @@ module TrigeorgisFunction =
 
                 let _Trigeorgis = Helper.toCell<Trigeorgis> trigeorgis "Trigeorgis"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Size
+                let builder (current : ICell) = ((TrigeorgisModel.Cast _Trigeorgis.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -393,7 +393,7 @@ module TrigeorgisFunction =
             try
 
                 let _Trigeorgis = Helper.toCell<Trigeorgis> trigeorgis "Trigeorgis"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Columns
+                let builder (current : ICell) = ((TrigeorgisModel.Cast _Trigeorgis.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

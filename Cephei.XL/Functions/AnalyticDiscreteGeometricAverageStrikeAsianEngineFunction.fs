@@ -52,7 +52,7 @@ module AnalyticDiscreteGeometricAverageStrikeAsianEngineFunction =
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticDiscreteGeometricAverageStrikeAsianEngine 
+                let builder (current : ICell) = (Fun.AnalyticDiscreteGeometricAverageStrikeAsianEngine 
                                                             _Process.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell

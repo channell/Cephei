@@ -58,7 +58,7 @@ module KernelInterpolationFunction =
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _kernel = Helper.toCell<IKernelFunction> kernel "kernel" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.KernelInterpolation 
+                let builder (current : ICell) = (Fun.KernelInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -110,7 +110,7 @@ module KernelInterpolationFunction =
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Derivative
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -152,7 +152,7 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Empty
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -194,7 +194,7 @@ module KernelInterpolationFunction =
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Primitive
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -242,7 +242,7 @@ module KernelInterpolationFunction =
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).SecondDerivative
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -284,7 +284,7 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Update
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : KernelInterpolation) (l:string) = o.ToString() :> obj
 
@@ -326,7 +326,7 @@ module KernelInterpolationFunction =
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Value1
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -371,7 +371,7 @@ module KernelInterpolationFunction =
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Value
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -410,7 +410,7 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).XMax
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -446,7 +446,7 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).XMin
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -482,7 +482,7 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).AllowsExtrapolation
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -521,7 +521,7 @@ module KernelInterpolationFunction =
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).DisableExtrapolation
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : KernelInterpolation) (l:string) = o.ToString() :> obj
@@ -563,7 +563,7 @@ module KernelInterpolationFunction =
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).EnableExtrapolation
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : KernelInterpolation) (l:string) = o.ToString() :> obj
@@ -602,7 +602,7 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Extrapolate
+                let builder (current : ICell) = ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

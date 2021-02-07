@@ -52,7 +52,7 @@ module NotTradableExceptionFunction =
 
                 let _message = Helper.toCell<string> message "message" 
                 let _inner = Helper.toCell<Exception> inner "inner" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NotTradableException 
+                let builder (current : ICell) = (Fun.NotTradableException 
                                                             _message.cell 
                                                             _inner.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module NotTradableExceptionFunction =
             try
 
                 let _message = Helper.toCell<string> message "message" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NotTradableException1 
+                let builder (current : ICell) = (Fun.NotTradableException1 
                                                             _message.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NotTradableException>) l
@@ -126,7 +126,7 @@ module NotTradableExceptionFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NotTradableException2 
+                let builder (current : ICell) = (Fun.NotTradableException2 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NotTradableException>) l
 

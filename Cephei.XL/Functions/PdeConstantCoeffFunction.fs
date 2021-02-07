@@ -55,7 +55,7 @@ module PdeConstantCoeffFunction =
                 let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Diffusion
+                let builder (current : ICell) = ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Diffusion
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module PdeConstantCoeffFunction =
                 let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Discount
+                let builder (current : ICell) = ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Discount
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -151,7 +151,7 @@ module PdeConstantCoeffFunction =
                 let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Drift
+                let builder (current : ICell) = ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Drift
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -196,7 +196,7 @@ module PdeConstantCoeffFunction =
 
                 let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Factory
+                let builder (current : ICell) = ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Factory
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeSecondOrderParabolic>) l
@@ -241,7 +241,7 @@ module PdeConstantCoeffFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.PdeConstantCoeff 
+                let builder (current : ICell) = (Fun.PdeConstantCoeff 
                                                             _Process.cell 
                                                             _t.cell 
                                                             _x.cell 
@@ -293,7 +293,7 @@ module PdeConstantCoeffFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _tg = Helper.toCell<TransformedGrid> tg "tg" 
                 let _L = Helper.toCell<TridiagonalOperator> L "L" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).GenerateOperator
+                let builder (current : ICell) = ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).GenerateOperator
                                                             _t.cell 
                                                             _tg.cell 
                                                             _L.cell 

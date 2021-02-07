@@ -49,7 +49,7 @@ module CumulativeGammaDistributionFunction =
             try
 
                 let _a = Helper.toCell<double> a "a" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CumulativeGammaDistribution 
+                let builder (current : ICell) = (Fun.CumulativeGammaDistribution 
                                                             _a.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CumulativeGammaDistribution>) l
@@ -89,7 +89,7 @@ module CumulativeGammaDistributionFunction =
 
                 let _CumulativeGammaDistribution = Helper.toCell<CumulativeGammaDistribution> cumulativegammadistribution "CumulativeGammaDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CumulativeGammaDistributionModel.Cast _CumulativeGammaDistribution.cell).Value
+                let builder (current : ICell) = ((CumulativeGammaDistributionModel.Cast _CumulativeGammaDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

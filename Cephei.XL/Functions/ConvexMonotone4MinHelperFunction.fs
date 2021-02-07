@@ -67,7 +67,7 @@ module ConvexMonotone4MinHelperFunction =
                 let _fAverage = Helper.toCell<double> fAverage "fAverage" 
                 let _eta4 = Helper.toCell<double> eta4 "eta4" 
                 let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConvexMonotone4MinHelper 
+                let builder (current : ICell) = (Fun.ConvexMonotone4MinHelper 
                                                             _xPrev.cell 
                                                             _xNext.cell 
                                                             _gPrev.cell 
@@ -125,7 +125,7 @@ module ConvexMonotone4MinHelperFunction =
 
                 let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotone4MinHelperModel.Cast _ConvexMonotone4MinHelper.cell).Primitive
+                let builder (current : ICell) = ((ConvexMonotone4MinHelperModel.Cast _ConvexMonotone4MinHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -167,7 +167,7 @@ module ConvexMonotone4MinHelperFunction =
 
                 let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotone4MinHelperModel.Cast _ConvexMonotone4MinHelper.cell).Value
+                let builder (current : ICell) = ((ConvexMonotone4MinHelperModel.Cast _ConvexMonotone4MinHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -206,7 +206,7 @@ module ConvexMonotone4MinHelperFunction =
             try
 
                 let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotone4MinHelperModel.Cast _ConvexMonotone4MinHelper.cell).FNext
+                let builder (current : ICell) = ((ConvexMonotone4MinHelperModel.Cast _ConvexMonotone4MinHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

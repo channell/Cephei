@@ -52,7 +52,7 @@ module InvalidPriceSignExceptionFunction =
 
                 let _message = Helper.toCell<string> message "message" 
                 let _inner = Helper.toCell<Exception> inner "inner" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InvalidPriceSignException 
+                let builder (current : ICell) = (Fun.InvalidPriceSignException 
                                                             _message.cell 
                                                             _inner.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module InvalidPriceSignExceptionFunction =
             try
 
                 let _message = Helper.toCell<string> message "message" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InvalidPriceSignException1 
+                let builder (current : ICell) = (Fun.InvalidPriceSignException1 
                                                             _message.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InvalidPriceSignException>) l
@@ -126,7 +126,7 @@ module InvalidPriceSignExceptionFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InvalidPriceSignException2 
+                let builder (current : ICell) = (Fun.InvalidPriceSignException2 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InvalidPriceSignException>) l
 

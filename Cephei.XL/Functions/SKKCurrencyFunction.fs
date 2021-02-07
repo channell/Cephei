@@ -46,7 +46,7 @@ module SKKCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SKKCurrency ()
+                let builder (current : ICell) = (Fun.SKKCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SKKCurrency>) l
 
@@ -80,7 +80,7 @@ module SKKCurrencyFunction =
             try
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).Code
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module SKKCurrencyFunction =
             try
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).Empty
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module SKKCurrencyFunction =
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).Equals
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module SKKCurrencyFunction =
             try
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).Format
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module SKKCurrencyFunction =
             try
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module SKKCurrencyFunction =
             try
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module SKKCurrencyFunction =
             try
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).Name
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module SKKCurrencyFunction =
             try
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).NumericCode
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module SKKCurrencyFunction =
             try
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).Rounding
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module SKKCurrencyFunction =
             try
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).Symbol
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module SKKCurrencyFunction =
             try
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).ToString
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module SKKCurrencyFunction =
             try
 
                 let _SKKCurrency = Helper.toCell<SKKCurrency> skkcurrency "SKKCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SKKCurrencyModel.Cast _SKKCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((SKKCurrencyModel.Cast _SKKCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

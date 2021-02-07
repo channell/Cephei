@@ -64,7 +64,7 @@ module BiasedBarrierPathPricerFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BiasedBarrierPathPricer 
+                let builder (current : ICell) = (Fun.BiasedBarrierPathPricer 
                                                             _barrierType.cell 
                                                             _barrier.cell 
                                                             _rebate.cell 
@@ -119,7 +119,7 @@ module BiasedBarrierPathPricerFunction =
 
                 let _BiasedBarrierPathPricer = Helper.toCell<BiasedBarrierPathPricer> biasedbarrierpathpricer "BiasedBarrierPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BiasedBarrierPathPricerModel.Cast _BiasedBarrierPathPricer.cell).Value
+                let builder (current : ICell) = ((BiasedBarrierPathPricerModel.Cast _BiasedBarrierPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

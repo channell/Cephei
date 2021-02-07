@@ -58,7 +58,7 @@ module GarmanKohlagenProcessFunction =
                 let _foreignRiskFreeTS = Helper.toHandle<YieldTermStructure> foreignRiskFreeTS "foreignRiskFreeTS" 
                 let _domesticRiskFreeTS = Helper.toHandle<YieldTermStructure> domesticRiskFreeTS "domesticRiskFreeTS" 
                 let _blackVolTS = Helper.toHandle<BlackVolTermStructure> blackVolTS "blackVolTS" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GarmanKohlagenProcess2 
+                let builder (current : ICell) = (Fun.GarmanKohlagenProcess2 
                                                             _x0.cell 
                                                             _foreignRiskFreeTS.cell 
                                                             _domesticRiskFreeTS.cell 
@@ -116,7 +116,7 @@ module GarmanKohlagenProcessFunction =
                 let _domesticRiskFreeTS = Helper.toHandle<YieldTermStructure> domesticRiskFreeTS "domesticRiskFreeTS" 
                 let _blackVolTS = Helper.toHandle<BlackVolTermStructure> blackVolTS "blackVolTS" 
                 let _d = Helper.toDefault<IDiscretization1D> d "d" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GarmanKohlagenProcess1 
+                let builder (current : ICell) = (Fun.GarmanKohlagenProcess1 
                                                             _x0.cell 
                                                             _foreignRiskFreeTS.cell 
                                                             _domesticRiskFreeTS.cell 
@@ -180,7 +180,7 @@ module GarmanKohlagenProcessFunction =
                 let _blackVolTS = Helper.toHandle<BlackVolTermStructure> blackVolTS "blackVolTS" 
                 let _localVolTS = Helper.toCell<RelinkableHandle<LocalVolTermStructure>> localVolTS "localVolTS" 
                 let _d = Helper.toDefault<IDiscretization1D> d "d" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GarmanKohlagenProcess
+                let builder (current : ICell) = (Fun.GarmanKohlagenProcess
                                                             _x0.cell 
                                                             _foreignRiskFreeTS.cell 
                                                             _domesticRiskFreeTS.cell 
@@ -238,7 +238,7 @@ module GarmanKohlagenProcessFunction =
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dx = Helper.toCell<double> dx "dx" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Apply
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Apply
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
@@ -280,7 +280,7 @@ module GarmanKohlagenProcessFunction =
             try
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).BlackVolatility
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).BlackVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<BlackVolTermStructure>>) l
 
@@ -322,7 +322,7 @@ module GarmanKohlagenProcessFunction =
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Diffusion
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -364,7 +364,7 @@ module GarmanKohlagenProcessFunction =
             try
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).DividendYield
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).DividendYield
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -406,7 +406,7 @@ module GarmanKohlagenProcessFunction =
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Drift
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -460,7 +460,7 @@ module GarmanKohlagenProcessFunction =
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<double> dw "dw" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Evolve
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -517,7 +517,7 @@ module GarmanKohlagenProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Expectation
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -562,7 +562,7 @@ module GarmanKohlagenProcessFunction =
             try
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).LocalVolatility
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).LocalVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<LocalVolTermStructure>>) l
 
@@ -598,7 +598,7 @@ module GarmanKohlagenProcessFunction =
             try
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).RiskFreeRate
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).RiskFreeRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -634,7 +634,7 @@ module GarmanKohlagenProcessFunction =
             try
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).StateVariable
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).StateVariable
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -679,7 +679,7 @@ module GarmanKohlagenProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).StdDeviation
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -727,7 +727,7 @@ module GarmanKohlagenProcessFunction =
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _d = Helper.toDefault<Date> d "d" null
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Time
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Time
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -766,7 +766,7 @@ module GarmanKohlagenProcessFunction =
             try
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Update
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Update
                                                        ) :> ICell
                 let format (o : GarmanKohlagenProcess) (l:string) = o.ToString() :> obj
 
@@ -811,7 +811,7 @@ module GarmanKohlagenProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Variance
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Variance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -856,7 +856,7 @@ module GarmanKohlagenProcessFunction =
             try
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).X0
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -892,7 +892,7 @@ module GarmanKohlagenProcessFunction =
             try
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).InitialValues
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -928,7 +928,7 @@ module GarmanKohlagenProcessFunction =
             try
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Size
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -973,7 +973,7 @@ module GarmanKohlagenProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Covariance
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -1018,7 +1018,7 @@ module GarmanKohlagenProcessFunction =
             try
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Factors
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1057,7 +1057,7 @@ module GarmanKohlagenProcessFunction =
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).RegisterWith
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GarmanKohlagenProcess) (l:string) = o.ToString() :> obj
@@ -1099,7 +1099,7 @@ module GarmanKohlagenProcessFunction =
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).UnregisterWith
+                let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GarmanKohlagenProcess) (l:string) = o.ToString() :> obj

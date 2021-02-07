@@ -64,7 +64,7 @@ module BinomialBarrierEngineFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _maxTimeSteps = Helper.toDefault<int> maxTimeSteps "maxTimeSteps" 0
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BinomialBarrierEngine 
+                let builder (current : ICell) = (Fun.BinomialBarrierEngine 
                                                             _getTree.cell 
                                                             _getAsset.cell 
                                                             _Process.cell 
@@ -127,7 +127,7 @@ module BinomialBarrierEngineFunction =
                 let _args = Helper.toCell<BarrierOption.Arguments> args "args" 
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
                 let _grid = Helper.toDefault<TimeGrid> grid "grid" null
-                let builder (current : ICell) = withMnemonic mnemonic ((BinomialBarrierEngineModel.Cast _BinomialBarrierEngine.cell).getAsset
+                let builder (current : ICell) = ((BinomialBarrierEngineModel.Cast _BinomialBarrierEngine.cell).getAsset
                                                             _args.cell 
                                                             _Process.cell 
                                                             _grid.cell 
@@ -186,7 +186,7 @@ module BinomialBarrierEngineFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BinomialBarrierEngineModel.Cast _BinomialBarrierEngine.cell).getTree
+                let builder (current : ICell) = ((BinomialBarrierEngineModel.Cast _BinomialBarrierEngine.cell).getTree
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 

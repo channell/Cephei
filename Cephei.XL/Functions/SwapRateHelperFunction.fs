@@ -49,7 +49,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).ForwardStart
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).ForwardStart
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -85,7 +85,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).ImpliedQuote
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -124,7 +124,7 @@ module SwapRateHelperFunction =
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).SetTermStructure
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : SwapRateHelper) (l:string) = o.ToString() :> obj
@@ -163,7 +163,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Spread
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -199,7 +199,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Swap
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Swap
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
 
@@ -274,7 +274,7 @@ module SwapRateHelperFunction =
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapRateHelper2 
+                let builder (current : ICell) = (Fun.SwapRateHelper2 
                                                             _rate.cell 
                                                             _tenor.cell 
                                                             _calendar.cell 
@@ -389,7 +389,7 @@ module SwapRateHelperFunction =
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapRateHelper
+                let builder (current : ICell) = (Fun.SwapRateHelper
                                                             _rate.cell 
                                                             _tenor.cell 
                                                             _calendar.cell 
@@ -486,7 +486,7 @@ module SwapRateHelperFunction =
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapRateHelper3
+                let builder (current : ICell) = (Fun.SwapRateHelper3
                                                             _rate.cell 
                                                             _swapIndex.cell 
                                                             _spread.cell 
@@ -565,7 +565,7 @@ module SwapRateHelperFunction =
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapRateHelper1
+                let builder (current : ICell) = (Fun.SwapRateHelper1
                                                             _rate.cell 
                                                             _swapIndex.cell 
                                                             _spread.cell 
@@ -623,7 +623,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Update
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : SwapRateHelper) (l:string) = o.ToString() :> obj
 
@@ -659,7 +659,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).EarliestDate
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -695,7 +695,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).LatestDate
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -731,7 +731,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).LatestRelevantDate
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -767,7 +767,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).MaturityDate
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -803,7 +803,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).PillarDate
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -839,7 +839,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Quote
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -875,7 +875,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).QuoteError
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -911,7 +911,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).QuoteIsValid
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -947,7 +947,7 @@ module SwapRateHelperFunction =
             try
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).QuoteValue
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -986,7 +986,7 @@ module SwapRateHelperFunction =
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).RegisterWith
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SwapRateHelper) (l:string) = o.ToString() :> obj
@@ -1028,7 +1028,7 @@ module SwapRateHelperFunction =
 
                 let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapRateHelperModel.Cast _SwapRateHelper.cell).UnregisterWith
+                let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SwapRateHelper) (l:string) = o.ToString() :> obj

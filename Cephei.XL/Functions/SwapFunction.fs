@@ -52,7 +52,7 @@ module SwapFunction =
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).EndDiscounts
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).EndDiscounts
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -91,7 +91,7 @@ module SwapFunction =
             try
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).Engine
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).Engine
                                                        ) :> ICell
                 let format (o : Swap.SwapEngine) (l:string) = o.ToString() :> obj
 
@@ -127,7 +127,7 @@ module SwapFunction =
             try
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).IsExpired
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -166,7 +166,7 @@ module SwapFunction =
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).Leg
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).Leg
                                                             _j.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -208,7 +208,7 @@ module SwapFunction =
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).LegBPS
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).LegBPS
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -250,7 +250,7 @@ module SwapFunction =
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).LegNPV
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).LegNPV
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -289,7 +289,7 @@ module SwapFunction =
             try
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).MaturityDate
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -325,7 +325,7 @@ module SwapFunction =
             try
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).NpvDateDiscount
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -364,7 +364,7 @@ module SwapFunction =
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).Payer
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).Payer
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -403,7 +403,7 @@ module SwapFunction =
             try
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).StartDate
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -442,7 +442,7 @@ module SwapFunction =
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).StartDiscounts
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).StartDiscounts
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -490,7 +490,7 @@ module SwapFunction =
                 let _payer = Helper.toCell<Generic.List<bool>> payer "payer" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Swap 
+                let builder (current : ICell) = (Fun.Swap 
                                                             _legs.cell 
                                                             _payer.cell 
                                                             _pricingEngine.cell 
@@ -545,7 +545,7 @@ module SwapFunction =
                 let _secondLeg = Helper.toCell<Generic.List<CashFlow>> secondLeg "secondLeg" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Swap1 
+                let builder (current : ICell) = (Fun.Swap1 
                                                             _firstLeg.cell 
                                                             _secondLeg.cell 
                                                             _pricingEngine.cell 
@@ -591,7 +591,7 @@ module SwapFunction =
             try
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).CASH
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -627,7 +627,7 @@ module SwapFunction =
             try
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).ErrorEstimate
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -663,7 +663,7 @@ module SwapFunction =
             try
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).NPV
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -702,7 +702,7 @@ module SwapFunction =
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).Result
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -744,7 +744,7 @@ module SwapFunction =
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).SetPricingEngine
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Swap) (l:string) = o.ToString() :> obj
@@ -783,7 +783,7 @@ module SwapFunction =
             try
 
                 let _Swap = Helper.toCell<Swap> swap "Swap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).ValuationDate
+                let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

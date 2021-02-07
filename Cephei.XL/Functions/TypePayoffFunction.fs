@@ -49,7 +49,7 @@ module TypePayoffFunction =
             try
 
                 let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Description
+                let builder (current : ICell) = ((TypePayoffModel.Cast _TypePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module TypePayoffFunction =
             try
 
                 let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).OptionType
+                let builder (current : ICell) = ((TypePayoffModel.Cast _TypePayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
@@ -121,7 +121,7 @@ module TypePayoffFunction =
             try
 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TypePayoff 
+                let builder (current : ICell) = (Fun.TypePayoff 
                                                             _Type.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TypePayoff>) l
@@ -161,7 +161,7 @@ module TypePayoffFunction =
 
                 let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Accept
+                let builder (current : ICell) = ((TypePayoffModel.Cast _TypePayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : TypePayoff) (l:string) = o.ToString() :> obj
@@ -200,7 +200,7 @@ module TypePayoffFunction =
             try
 
                 let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Name
+                let builder (current : ICell) = ((TypePayoffModel.Cast _TypePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -239,7 +239,7 @@ module TypePayoffFunction =
 
                 let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Value
+                let builder (current : ICell) = ((TypePayoffModel.Cast _TypePayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -46,7 +46,7 @@ module IterativeBootstrapFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.IterativeBootstrap 
+                let builder (current : ICell) = (Fun.IterativeBootstrap 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IterativeBootstrap>) l
 
@@ -83,7 +83,7 @@ module IterativeBootstrapFunction =
 
                 let _IterativeBootstrap = Helper.toCell<IterativeBootstrap> iterativebootstrap "IterativeBootstrap"  
                 let _ts = Helper.toCell<'T> ts "ts" 
-                let builder (current : ICell) = withMnemonic mnemonic ((IterativeBootstrapModel.Cast _IterativeBootstrap.cell).Setup
+                let builder (current : ICell) = ((IterativeBootstrapModel.Cast _IterativeBootstrap.cell).Setup
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (o : IterativeBootstrap) (l:string) = o.ToString() :> obj

@@ -58,7 +58,7 @@ module FdmBackwardSolverFunction =
                 let _bcSet = Helper.toCell<FdmBoundaryConditionSet> bcSet "bcSet" 
                 let _condition = Helper.toCell<FdmStepConditionComposite> condition "condition" 
                 let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmBackwardSolver 
+                let builder (current : ICell) = (Fun.FdmBackwardSolver 
                                                             _map.cell 
                                                             _bcSet.cell 
                                                             _condition.cell 
@@ -119,7 +119,7 @@ module FdmBackwardSolverFunction =
                 let _To = Helper.toCell<double> To "To" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _dampingSteps = Helper.toCell<int> dampingSteps "dampingSteps" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmBackwardSolverModel.Cast _FdmBackwardSolver.cell).Rollback
+                let builder (current : ICell) = ((FdmBackwardSolverModel.Cast _FdmBackwardSolver.cell).Rollback
                                                             _a.cell 
                                                             _from.cell 
                                                             _To.cell 

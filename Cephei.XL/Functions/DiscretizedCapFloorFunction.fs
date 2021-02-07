@@ -58,7 +58,7 @@ module DiscretizedCapFloorFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscretizedCapFloor 
+                let builder (current : ICell) = (Fun.DiscretizedCapFloor 
                                                             _args.cell 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
@@ -104,7 +104,7 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).MandatoryTimes
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -143,7 +143,7 @@ module DiscretizedCapFloorFunction =
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Reset
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Reset
                                                             _size.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
@@ -182,7 +182,7 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).AdjustValues
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
@@ -224,7 +224,7 @@ module DiscretizedCapFloorFunction =
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Initialize
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Initialize
                                                             _Method.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -266,7 +266,7 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Method
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
@@ -305,7 +305,7 @@ module DiscretizedCapFloorFunction =
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PartialRollback
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
@@ -344,7 +344,7 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PostAdjustValues
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
@@ -380,7 +380,7 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PreAdjustValues
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
@@ -416,7 +416,7 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PresentValue
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -455,7 +455,7 @@ module DiscretizedCapFloorFunction =
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Rollback
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Rollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
@@ -497,7 +497,7 @@ module DiscretizedCapFloorFunction =
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).SetTime
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
@@ -539,7 +539,7 @@ module DiscretizedCapFloorFunction =
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).SetValues
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).SetValues
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
@@ -578,7 +578,7 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Time
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -614,7 +614,7 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Values
+                let builder (current : ICell) = ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

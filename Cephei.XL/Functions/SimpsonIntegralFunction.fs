@@ -52,7 +52,7 @@ module SimpsonIntegralFunction =
 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxIterations = Helper.toCell<int> maxIterations "maxIterations" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SimpsonIntegral 
+                let builder (current : ICell) = (Fun.SimpsonIntegral 
                                                             _accuracy.cell 
                                                             _maxIterations.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module SimpsonIntegralFunction =
             try
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).AbsoluteAccuracy
+                let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -128,7 +128,7 @@ module SimpsonIntegralFunction =
             try
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).AbsoluteError
+                let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -164,7 +164,7 @@ module SimpsonIntegralFunction =
             try
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).IntegrationSuccess
+                let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -200,7 +200,7 @@ module SimpsonIntegralFunction =
             try
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).MaxEvaluations
+                let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -236,7 +236,7 @@ module SimpsonIntegralFunction =
             try
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).NumberOfEvaluations
+                let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -275,7 +275,7 @@ module SimpsonIntegralFunction =
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).SetAbsoluteAccuracy
+                let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (o : SimpsonIntegral) (l:string) = o.ToString() :> obj
@@ -317,7 +317,7 @@ module SimpsonIntegralFunction =
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).SetMaxEvaluations
+                let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (o : SimpsonIntegral) (l:string) = o.ToString() :> obj
@@ -365,7 +365,7 @@ module SimpsonIntegralFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).Value
+                let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).Value
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 

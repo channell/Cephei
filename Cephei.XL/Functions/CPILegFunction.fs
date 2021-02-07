@@ -58,7 +58,7 @@ module CPILegFunction =
                 let _index = Helper.toCell<ZeroInflationIndex> index "index" 
                 let _baseCPI = Helper.toCell<double> baseCPI "baseCPI" 
                 let _observationLag = Helper.toCell<Period> observationLag "observationLag" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CPILeg 
+                let builder (current : ICell) = (Fun.CPILeg 
                                                             _schedule.cell 
                                                             _index.cell 
                                                             _baseCPI.cell 
@@ -104,7 +104,7 @@ module CPILegFunction =
             try
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).Value
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -143,7 +143,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _cap = Helper.toNullabletList<double> cap "cap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithCaps1
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithCaps1
                                                             _cap.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -185,7 +185,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _cap = Helper.toCell<double> cap "cap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithCaps
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithCaps
                                                             _cap.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -236,7 +236,7 @@ module CPILegFunction =
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithExCouponPeriod
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithExCouponPeriod
                                                             _period.cell 
                                                             _cal.cell 
                                                             _convention.cell 
@@ -287,7 +287,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _fixedRates = Helper.toCell<Generic.List<double>> fixedRates "fixedRates" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithFixedRates1
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFixedRates1
                                                             _fixedRates.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -329,7 +329,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithFixedRates
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFixedRates
                                                             _fixedRate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -371,7 +371,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithFixingDays
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFixingDays
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -413,7 +413,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithFixingDays1
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFixingDays1
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -455,7 +455,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _floors = Helper.toNullabletList<double> floors "floors" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithFloors
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFloors
                                                             _floors.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -497,7 +497,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _floors = Helper.toCell<double> floors "floors" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithFloors1
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFloors1
                                                             _floors.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -539,7 +539,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _interp = Helper.toCell<InterpolationType> interp "interp" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithObservationInterpolation
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithObservationInterpolation
                                                             _interp.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -581,7 +581,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _cal = Helper.toCell<Calendar> cal "cal" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithPaymentCalendar
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithPaymentCalendar
                                                             _cal.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -623,7 +623,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithPaymentDayCounter
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -665,7 +665,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithSpreads
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithSpreads
                                                             _spreads.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -707,7 +707,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithSpreads1
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithSpreads1
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -749,7 +749,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithSubtractInflationNominal
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithSubtractInflationNominal
                                                             _growthOnly.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
@@ -791,7 +791,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithNotionals1
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
@@ -833,7 +833,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithNotionals
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
@@ -875,7 +875,7 @@ module CPILegFunction =
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithPaymentAdjustment
+                let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l

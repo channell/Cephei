@@ -52,7 +52,7 @@ module BinomialDistributionFunction =
 
                 let _p = Helper.toCell<double> p "p" 
                 let _n = Helper.toCell<int> n "n" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BinomialDistribution 
+                let builder (current : ICell) = (Fun.BinomialDistribution 
                                                             _p.cell 
                                                             _n.cell 
                                                        ) :> ICell
@@ -95,7 +95,7 @@ module BinomialDistributionFunction =
 
                 let _BinomialDistribution = Helper.toCell<BinomialDistribution> binomialdistribution "BinomialDistribution"  
                 let _k = Helper.toCell<int> k "k" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BinomialDistributionModel.Cast _BinomialDistribution.cell).Value
+                let builder (current : ICell) = ((BinomialDistributionModel.Cast _BinomialDistribution.cell).Value
                                                             _k.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

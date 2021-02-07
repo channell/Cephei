@@ -49,7 +49,7 @@ module SymmetricSchurDecompositionFunction =
             try
 
                 let _SymmetricSchurDecomposition = Helper.toCell<SymmetricSchurDecomposition> symmetricschurdecomposition "SymmetricSchurDecomposition"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SymmetricSchurDecompositionModel.Cast _SymmetricSchurDecomposition.cell).Eigenvalues
+                let builder (current : ICell) = ((SymmetricSchurDecompositionModel.Cast _SymmetricSchurDecomposition.cell).Eigenvalues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -85,7 +85,7 @@ module SymmetricSchurDecompositionFunction =
             try
 
                 let _SymmetricSchurDecomposition = Helper.toCell<SymmetricSchurDecomposition> symmetricschurdecomposition "SymmetricSchurDecomposition"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SymmetricSchurDecompositionModel.Cast _SymmetricSchurDecomposition.cell).Eigenvectors
+                let builder (current : ICell) = ((SymmetricSchurDecompositionModel.Cast _SymmetricSchurDecomposition.cell).Eigenvectors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -121,7 +121,7 @@ module SymmetricSchurDecompositionFunction =
             try
 
                 let _s = Helper.toCell<Matrix> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SymmetricSchurDecomposition 
+                let builder (current : ICell) = (Fun.SymmetricSchurDecomposition 
                                                             _s.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SymmetricSchurDecomposition>) l

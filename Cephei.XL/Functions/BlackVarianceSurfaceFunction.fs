@@ -70,7 +70,7 @@ module BlackVarianceSurfaceFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _lowerExtrapolation = Helper.toDefault<BlackVarianceSurface.Extrapolation> lowerExtrapolation "lowerExtrapolation" BlackVarianceSurface.Extrapolation.InterpolatorDefaultExtrapolation
                 let _upperExtrapolation = Helper.toDefault<BlackVarianceSurface.Extrapolation> upperExtrapolation "upperExtrapolation" BlackVarianceSurface.Extrapolation.InterpolatorDefaultExtrapolation
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackVarianceSurface 
+                let builder (current : ICell) = (Fun.BlackVarianceSurface 
                                                             _referenceDate.cell 
                                                             _calendar.cell 
                                                             _dates.cell 
@@ -125,7 +125,7 @@ module BlackVarianceSurfaceFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackVarianceSurface1 ()
+                let builder (current : ICell) = (Fun.BlackVarianceSurface1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackVarianceSurface>) l
 
@@ -159,7 +159,7 @@ module BlackVarianceSurfaceFunction =
             try
 
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).Dates
+                let builder (current : ICell) = ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -195,7 +195,7 @@ module BlackVarianceSurfaceFunction =
             try
 
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).DayCounter
+                let builder (current : ICell) = ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -231,7 +231,7 @@ module BlackVarianceSurfaceFunction =
             try
 
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).MaxDate
+                let builder (current : ICell) = ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -267,7 +267,7 @@ module BlackVarianceSurfaceFunction =
             try
 
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).MaxStrike
+                let builder (current : ICell) = ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -303,7 +303,7 @@ module BlackVarianceSurfaceFunction =
             try
 
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).MinStrike
+                let builder (current : ICell) = ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -343,7 +343,7 @@ module BlackVarianceSurfaceFunction =
 
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let _i = Helper.toCell<Interpolator> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).SetInterpolation
+                let builder (current : ICell) = ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).SetInterpolation
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : BlackVarianceSurface) (l:string) = o.ToString() :> obj
@@ -384,7 +384,7 @@ module BlackVarianceSurfaceFunction =
             try
 
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).SetInterpolation1
+                let builder (current : ICell) = ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).SetInterpolation1
                                                        ) :> ICell
                 let format (o : BlackVarianceSurface) (l:string) = o.ToString() :> obj
 
@@ -421,7 +421,7 @@ module BlackVarianceSurfaceFunction =
             try
 
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).Strikes
+                let builder (current : ICell) = ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).Strikes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -457,7 +457,7 @@ module BlackVarianceSurfaceFunction =
             try
 
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).Times
+                let builder (current : ICell) = ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -493,7 +493,7 @@ module BlackVarianceSurfaceFunction =
             try
 
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).Variances
+                let builder (current : ICell) = ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).Variances
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -529,7 +529,7 @@ module BlackVarianceSurfaceFunction =
             try
 
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
-                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).Volatilities
+                let builder (current : ICell) = ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).Volatilities
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 

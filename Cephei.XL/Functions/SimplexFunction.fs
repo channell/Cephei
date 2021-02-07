@@ -55,7 +55,7 @@ module SimplexFunction =
                 let _Simplex = Helper.toCell<Simplex> simplex "Simplex"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SimplexModel.Cast _Simplex.cell).Minimize
+                let builder (current : ICell) = ((SimplexModel.Cast _Simplex.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell
@@ -97,7 +97,7 @@ module SimplexFunction =
             try
 
                 let _lambda = Helper.toCell<double> lambda "lambda" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Simplex 
+                let builder (current : ICell) = (Fun.Simplex 
                                                             _lambda.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Simplex>) l

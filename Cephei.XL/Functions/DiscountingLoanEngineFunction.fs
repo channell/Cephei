@@ -50,7 +50,7 @@ module DiscountingLoanEngineFunction =
             try
 
                 let _DiscountingLoanEngine = Helper.toCell<DiscountingLoanEngine> discountingloanengine "DiscountingLoanEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscountingLoanEngineModel.Cast _DiscountingLoanEngine.cell).DiscountCurve
+                let builder (current : ICell) = ((DiscountingLoanEngineModel.Cast _DiscountingLoanEngine.cell).DiscountCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -92,7 +92,7 @@ module DiscountingLoanEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscountingLoanEngine 
+                let builder (current : ICell) = (Fun.DiscountingLoanEngine 
                                                             _discountCurve.cell 
                                                             _includeSettlementDateFlows.cell 
                                                             _evaluationDate.cell

@@ -54,7 +54,7 @@ module CeilingTruncationFunction =
 
                 let _precision = Helper.toCell<int> precision "precision" 
                 let _digit = Helper.toCell<int> digit "digit" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CeilingTruncation 
+                let builder (current : ICell) = (Fun.CeilingTruncation 
                                                             _precision.cell 
                                                             _digit.cell 
                                                        ) :> ICell
@@ -94,7 +94,7 @@ module CeilingTruncationFunction =
             try
 
                 let _precision = Helper.toCell<int> precision "precision" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CeilingTruncation1 
+                let builder (current : ICell) = (Fun.CeilingTruncation1 
                                                             _precision.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CeilingTruncation>) l
@@ -131,7 +131,7 @@ module CeilingTruncationFunction =
             try
 
                 let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Digit
+                let builder (current : ICell) = ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -167,7 +167,7 @@ module CeilingTruncationFunction =
             try
 
                 let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).GetType
+                let builder (current : ICell) = ((CeilingTruncationModel.Cast _CeilingTruncation.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -203,7 +203,7 @@ module CeilingTruncationFunction =
             try
 
                 let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Precision
+                let builder (current : ICell) = ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -242,7 +242,7 @@ module CeilingTruncationFunction =
 
                 let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Round
+                let builder (current : ICell) = ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

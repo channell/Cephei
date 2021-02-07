@@ -55,7 +55,7 @@ module PriceErrorFunction =
                 let _engine = Helper.toCell<IPricingEngine> engine "engine" 
                 let _vol = Helper.toCell<SimpleQuote> vol "vol" 
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.PriceError 
+                let builder (current : ICell) = (Fun.PriceError 
                                                             _engine.cell 
                                                             _vol.cell 
                                                             _targetValue.cell 
@@ -101,7 +101,7 @@ module PriceErrorFunction =
 
                 let _PriceError = Helper.toCell<PriceError> priceerror "PriceError"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PriceErrorModel.Cast _PriceError.cell).Value
+                let builder (current : ICell) = ((PriceErrorModel.Cast _PriceError.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -143,7 +143,7 @@ module PriceErrorFunction =
 
                 let _PriceError = Helper.toCell<PriceError> priceerror "PriceError"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((PriceErrorModel.Cast _PriceError.cell).Derivative
+                let builder (current : ICell) = ((PriceErrorModel.Cast _PriceError.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

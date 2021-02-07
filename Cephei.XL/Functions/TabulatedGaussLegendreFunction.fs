@@ -49,7 +49,7 @@ module TabulatedGaussLegendreFunction =
             try
 
                 let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order
+                let builder (current : ICell) = ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -88,7 +88,7 @@ module TabulatedGaussLegendreFunction =
 
                 let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
                 let _order = Helper.toCell<int> order "order" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order1
+                let builder (current : ICell) = ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order1
                                                             _order.cell 
                                                        ) :> ICell
                 let format (o : TabulatedGaussLegendre) (l:string) = o.ToString() :> obj
@@ -127,7 +127,7 @@ module TabulatedGaussLegendreFunction =
             try
 
                 let _n = Helper.toDefault<int> n "n" 20
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.TabulatedGaussLegendre 
+                let builder (current : ICell) = (Fun.TabulatedGaussLegendre 
                                                             _n.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TabulatedGaussLegendre>) l
@@ -167,7 +167,7 @@ module TabulatedGaussLegendreFunction =
 
                 let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Value
+                let builder (current : ICell) = ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

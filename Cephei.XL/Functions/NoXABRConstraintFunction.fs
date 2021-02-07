@@ -46,7 +46,7 @@ module NoXABRConstraintFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NoXABRConstraint ()
+                let builder (current : ICell) = (Fun.NoXABRConstraint ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NoXABRConstraint>) l
 
@@ -90,7 +90,7 @@ module NoXABRConstraintFunction =
                 let _costFunction = Helper.toCell<ProjectedCostFunction> costFunction "costFunction" 
                 let _coeff = Helper.toCell<XABRCoeffHolder<Model>> coeff "coeff" 
                 let _forward = Helper.toCell<double> forward "forward" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Config
+                let builder (current : ICell) = ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Config
                                                             _costFunction.cell 
                                                             _coeff.cell 
                                                             _forward.cell 
@@ -136,7 +136,7 @@ module NoXABRConstraintFunction =
             try
 
                 let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
-                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Empty
+                let builder (current : ICell) = ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -175,7 +175,7 @@ module NoXABRConstraintFunction =
 
                 let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).LowerBound
+                let builder (current : ICell) = ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -217,7 +217,7 @@ module NoXABRConstraintFunction =
 
                 let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Test
+                let builder (current : ICell) = ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Test
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -265,7 +265,7 @@ module NoXABRConstraintFunction =
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Update
+                let builder (current : ICell) = ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Update
                                                             _p.cell 
                                                             _direction.cell 
                                                             _beta.cell 
@@ -313,7 +313,7 @@ module NoXABRConstraintFunction =
 
                 let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).UpperBound
+                let builder (current : ICell) = ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

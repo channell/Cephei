@@ -46,7 +46,7 @@ module MYRCurrencyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.MYRCurrency ()
+                let builder (current : ICell) = (Fun.MYRCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MYRCurrency>) l
 
@@ -80,7 +80,7 @@ module MYRCurrencyFunction =
             try
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).Code
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module MYRCurrencyFunction =
             try
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).Empty
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module MYRCurrencyFunction =
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).Equals
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module MYRCurrencyFunction =
             try
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).Format
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module MYRCurrencyFunction =
             try
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module MYRCurrencyFunction =
             try
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).FractionSymbol
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module MYRCurrencyFunction =
             try
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).Name
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module MYRCurrencyFunction =
             try
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).NumericCode
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module MYRCurrencyFunction =
             try
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).Rounding
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module MYRCurrencyFunction =
             try
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).Symbol
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module MYRCurrencyFunction =
             try
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).ToString
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module MYRCurrencyFunction =
             try
 
                 let _MYRCurrency = Helper.toCell<MYRCurrency> myrcurrency "MYRCurrency"  
-                let builder (current : ICell) = withMnemonic mnemonic ((MYRCurrencyModel.Cast _MYRCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = ((MYRCurrencyModel.Cast _MYRCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

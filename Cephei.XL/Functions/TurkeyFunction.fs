@@ -56,7 +56,7 @@ module TurkeyFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Turkey ()
+                let builder (current : ICell) = (Fun.Turkey ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Turkey>) l
 
@@ -90,7 +90,7 @@ module TurkeyFunction =
             try
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).AddedHolidays
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -129,7 +129,7 @@ module TurkeyFunction =
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).AddHoliday
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Turkey) (l:string) = o.ToString() :> obj
@@ -174,7 +174,7 @@ module TurkeyFunction =
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).Adjust
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -231,7 +231,7 @@ module TurkeyFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).Advance1
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -294,7 +294,7 @@ module TurkeyFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).Advance
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -354,7 +354,7 @@ module TurkeyFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).BusinessDaysBetween
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -402,7 +402,7 @@ module TurkeyFunction =
             try
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).Calendar
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -438,7 +438,7 @@ module TurkeyFunction =
             try
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).Empty
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -477,7 +477,7 @@ module TurkeyFunction =
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).EndOfMonth
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -519,7 +519,7 @@ module TurkeyFunction =
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).Equals
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -561,7 +561,7 @@ module TurkeyFunction =
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).IsBusinessDay
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -603,7 +603,7 @@ module TurkeyFunction =
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).IsEndOfMonth
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -645,7 +645,7 @@ module TurkeyFunction =
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).IsHoliday
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -687,7 +687,7 @@ module TurkeyFunction =
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).IsWeekend
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -728,7 +728,7 @@ module TurkeyFunction =
             try
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).Name
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -764,7 +764,7 @@ module TurkeyFunction =
             try
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).RemovedHolidays
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
@@ -803,7 +803,7 @@ module TurkeyFunction =
 
                 let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder (current : ICell) = withMnemonic mnemonic ((TurkeyModel.Cast _Turkey.cell).RemoveHoliday
+                let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Turkey) (l:string) = o.ToString() :> obj

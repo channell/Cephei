@@ -49,7 +49,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FairRate
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FairRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FairSpread
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FairSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -121,7 +121,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedDayCount
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedDayCount
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -157,7 +157,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedLeg
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -193,7 +193,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedLegBPS
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedLegBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -229,7 +229,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedLegNPV
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -265,7 +265,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedRate
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -301,7 +301,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedSchedule
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedSchedule
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
@@ -337,7 +337,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FloatingDayCount
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FloatingDayCount
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -373,7 +373,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FloatingLeg
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -409,7 +409,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FloatingLegBPS
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FloatingLegBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -445,7 +445,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FloatingLegNPV
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FloatingLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -481,7 +481,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FloatingSchedule
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).FloatingSchedule
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
@@ -517,7 +517,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).IborIndex
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).IborIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
@@ -553,7 +553,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).Nominal
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -589,7 +589,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).Spread
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -625,7 +625,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).SwapType
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).SwapType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -694,7 +694,7 @@ module VanillaSwapFunction =
                 let _paymentConvention = Helper.toNullable<BusinessDayConvention> paymentConvention "paymentConvention"
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.VanillaSwap 
+                let builder (current : ICell) = (Fun.VanillaSwap 
                                                             _Type.cell 
                                                             _nominal.cell 
                                                             _fixedSchedule.cell 
@@ -767,7 +767,7 @@ module VanillaSwapFunction =
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).EndDiscounts
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).EndDiscounts
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -807,7 +807,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).Engine
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).Engine
                                                        ) :> ICell
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
 
@@ -844,7 +844,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).IsExpired
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -883,7 +883,7 @@ module VanillaSwapFunction =
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).Leg
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).Leg
                                                             _j.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -925,7 +925,7 @@ module VanillaSwapFunction =
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).LegBPS
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).LegBPS
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -967,7 +967,7 @@ module VanillaSwapFunction =
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).LegNPV
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).LegNPV
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1006,7 +1006,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).MaturityDate
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1042,7 +1042,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).NpvDateDiscount
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -1081,7 +1081,7 @@ module VanillaSwapFunction =
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).Payer
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).Payer
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1120,7 +1120,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).StartDate
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1159,7 +1159,7 @@ module VanillaSwapFunction =
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).StartDiscounts
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).StartDiscounts
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1198,7 +1198,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).CASH
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1234,7 +1234,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).ErrorEstimate
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1270,7 +1270,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).NPV
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1309,7 +1309,7 @@ module VanillaSwapFunction =
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).Result
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -1351,7 +1351,7 @@ module VanillaSwapFunction =
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).SetPricingEngine
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : VanillaSwap) (l:string) = o.ToString() :> obj
@@ -1390,7 +1390,7 @@ module VanillaSwapFunction =
             try
 
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
-                let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).ValuationDate
+                let builder (current : ICell) = ((VanillaSwapModel.Cast _VanillaSwap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

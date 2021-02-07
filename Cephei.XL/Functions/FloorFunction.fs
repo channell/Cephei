@@ -58,7 +58,7 @@ module FloorFunction =
                 let _exerciseRates = Helper.toCell<Generic.List<double>> exerciseRates "exerciseRates" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Floor 
+                let builder (current : ICell) = (Fun.Floor 
                                                             _floatingLeg.cell 
                                                             _exerciseRates.cell 
                                                             _pricingEngine.cell 
@@ -107,7 +107,7 @@ module FloorFunction =
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
                 let _discountCurve = Helper.toCell<YieldTermStructure> discountCurve "discountCurve" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).AtmRate
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).AtmRate
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -146,7 +146,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).CapRates
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).CapRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -182,7 +182,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).FloatingLeg
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
@@ -218,7 +218,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).FloorRates
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).FloorRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -254,7 +254,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).GetType
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).GetType
                                                        ) :> ICell
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
 
@@ -317,7 +317,7 @@ module FloorFunction =
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _displacement = Helper.toCell<double> displacement "displacement" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).ImpliedVolatility
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _guess.cell 
@@ -395,7 +395,7 @@ module FloorFunction =
                 let _guess = Helper.toCell<double> guess "guess" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).ImpliedVolatility1
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).ImpliedVolatility1
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _guess.cell 
@@ -446,7 +446,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).IsExpired
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).LastFloatingRateCoupon
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).LastFloatingRateCoupon
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
 
@@ -518,7 +518,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).MaturityDate
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -557,7 +557,7 @@ module FloorFunction =
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).Optionlet
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).Optionlet
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloor>) l
@@ -596,7 +596,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).StartDate
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -632,7 +632,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).CASH
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -668,7 +668,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).ErrorEstimate
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -704,7 +704,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).NPV
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -743,7 +743,7 @@ module FloorFunction =
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).Result
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -785,7 +785,7 @@ module FloorFunction =
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).SetPricingEngine
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Floor) (l:string) = o.ToString() :> obj
@@ -824,7 +824,7 @@ module FloorFunction =
             try
 
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).ValuationDate
+                let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

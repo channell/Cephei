@@ -46,7 +46,7 @@ module CraigSneydSchemeFunction =
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CraigSneydScheme1 ()
+                let builder (current : ICell) = (Fun.CraigSneydScheme1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CraigSneydScheme>) l
 
@@ -89,7 +89,7 @@ module CraigSneydSchemeFunction =
                 let _mu = Helper.toCell<double> mu "mu" 
                 let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
                 let _bcSet = Helper.toDefault<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CraigSneydScheme
+                let builder (current : ICell) = (Fun.CraigSneydScheme
                                                             _theta.cell 
                                                             _mu.cell 
                                                             _map.cell 
@@ -144,7 +144,7 @@ module CraigSneydSchemeFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
-                let builder (current : ICell) = withMnemonic mnemonic ((CraigSneydSchemeModel.Cast _CraigSneydScheme.cell).Factory
+                let builder (current : ICell) = ((CraigSneydSchemeModel.Cast _CraigSneydScheme.cell).Factory
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _additionalInputs.cell 
@@ -192,7 +192,7 @@ module CraigSneydSchemeFunction =
 
                 let _CraigSneydScheme = Helper.toCell<CraigSneydScheme> craigsneydscheme "CraigSneydScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CraigSneydSchemeModel.Cast _CraigSneydScheme.cell).SetStep
+                let builder (current : ICell) = ((CraigSneydSchemeModel.Cast _CraigSneydScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : CraigSneydScheme) (l:string) = o.ToString() :> obj
@@ -240,7 +240,7 @@ module CraigSneydSchemeFunction =
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder (current : ICell) = withMnemonic mnemonic ((CraigSneydSchemeModel.Cast _CraigSneydScheme.cell).Step
+                let builder (current : ICell) = ((CraigSneydSchemeModel.Cast _CraigSneydScheme.cell).Step
                                                             _a.cell 
                                                             _t.cell 
                                                             _theta.cell 

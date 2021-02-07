@@ -53,7 +53,7 @@ module InterpolatingCPICapFloorEngineFunction =
 
                 let _priceSurf = Helper.toHandle<CPICapFloorTermPriceSurface> priceSurf "priceSurf" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatingCPICapFloorEngine 
+                let builder (current : ICell) = (Fun.InterpolatingCPICapFloorEngine 
                                                             _priceSurf.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell
@@ -93,7 +93,7 @@ module InterpolatingCPICapFloorEngineFunction =
             try
 
                 let _InterpolatingCPICapFloorEngine = Helper.toCell<InterpolatingCPICapFloorEngine> interpolatingcpicapfloorengine "InterpolatingCPICapFloorEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatingCPICapFloorEngineModel.Cast _InterpolatingCPICapFloorEngine.cell).Name
+                let builder (current : ICell) = ((InterpolatingCPICapFloorEngineModel.Cast _InterpolatingCPICapFloorEngine.cell).Name
                                                        ) :> ICell
                 let format (o : String) (l:string) = o.ToString() :> obj
 

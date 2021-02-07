@@ -49,7 +49,7 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _evaluations = Helper.toCell<int> evaluations "evaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscreteTrapezoidIntegrator 
+                let builder (current : ICell) = (Fun.DiscreteTrapezoidIntegrator 
                                                             _evaluations.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscreteTrapezoidIntegrator>) l
@@ -86,7 +86,7 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).AbsoluteAccuracy
+                let builder (current : ICell) = ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -122,7 +122,7 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).AbsoluteError
+                let builder (current : ICell) = ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -158,7 +158,7 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).IntegrationSuccess
+                let builder (current : ICell) = ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -194,7 +194,7 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).MaxEvaluations
+                let builder (current : ICell) = ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -230,7 +230,7 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).NumberOfEvaluations
+                let builder (current : ICell) = ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -269,7 +269,7 @@ module DiscreteTrapezoidIntegratorFunction =
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).SetAbsoluteAccuracy
+                let builder (current : ICell) = ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (o : DiscreteTrapezoidIntegrator) (l:string) = o.ToString() :> obj
@@ -311,7 +311,7 @@ module DiscreteTrapezoidIntegratorFunction =
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).SetMaxEvaluations
+                let builder (current : ICell) = ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (o : DiscreteTrapezoidIntegrator) (l:string) = o.ToString() :> obj
@@ -359,7 +359,7 @@ module DiscreteTrapezoidIntegratorFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).Value
+                let builder (current : ICell) = ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).Value
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 

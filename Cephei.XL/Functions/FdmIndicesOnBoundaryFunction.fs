@@ -55,7 +55,7 @@ module FdmIndicesOnBoundaryFunction =
                 let _layout = Helper.toCell<FdmLinearOpLayout> layout "layout" 
                 let _direction = Helper.toCell<int> direction "direction" 
                 let _side = Helper.toCell<BoundaryCondition<FdmLinearOp>.Side> side "side" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmIndicesOnBoundary 
+                let builder (current : ICell) = (Fun.FdmIndicesOnBoundary 
                                                             _layout.cell 
                                                             _direction.cell 
                                                             _side.cell 
@@ -98,7 +98,7 @@ module FdmIndicesOnBoundaryFunction =
             try
 
                 let _FdmIndicesOnBoundary = Helper.toCell<FdmIndicesOnBoundary> fdmindicesonboundary "FdmIndicesOnBoundary"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmIndicesOnBoundaryModel.Cast _FdmIndicesOnBoundary.cell).GetIndices
+                let builder (current : ICell) = ((FdmIndicesOnBoundaryModel.Cast _FdmIndicesOnBoundary.cell).GetIndices
                                                        ) :> ICell
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

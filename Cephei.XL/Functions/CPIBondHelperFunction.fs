@@ -49,7 +49,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).CpiBond
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).CpiBond
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPIBond>) l
 
@@ -139,7 +139,7 @@ module CPIBondHelperFunction =
                 let _exCouponConvention = Helper.toDefault<BusinessDayConvention> exCouponConvention "exCouponConvention" BusinessDayConvention.Unadjusted
                 let _exCouponEndOfMonth = Helper.toDefault<bool> exCouponEndOfMonth "exCouponEndOfMonth" false
                 let _useCleanPrice = Helper.toDefault<bool> useCleanPrice "useCleanPrice" true
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CPIBondHelper 
+                let builder (current : ICell) = (Fun.CPIBondHelper 
                                                             _price.cell 
                                                             _settlementDays.cell 
                                                             _faceAmount.cell 
@@ -230,7 +230,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).Bond
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).Bond
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Bond>) l
 
@@ -266,7 +266,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).ImpliedQuote
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -305,7 +305,7 @@ module CPIBondHelperFunction =
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).SetTermStructure
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : CPIBondHelper) (l:string) = o.ToString() :> obj
@@ -344,7 +344,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).UseCleanPrice
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).UseCleanPrice
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -380,7 +380,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).EarliestDate
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -416,7 +416,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).LatestDate
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -452,7 +452,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).LatestRelevantDate
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -488,7 +488,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).MaturityDate
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -524,7 +524,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).PillarDate
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -560,7 +560,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).Quote
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -596,7 +596,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).QuoteError
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -632,7 +632,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).QuoteIsValid
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -668,7 +668,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).QuoteValue
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -707,7 +707,7 @@ module CPIBondHelperFunction =
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).RegisterWith
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPIBondHelper) (l:string) = o.ToString() :> obj
@@ -749,7 +749,7 @@ module CPIBondHelperFunction =
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).UnregisterWith
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPIBondHelper) (l:string) = o.ToString() :> obj
@@ -788,7 +788,7 @@ module CPIBondHelperFunction =
             try
 
                 let _CPIBondHelper = Helper.toCell<CPIBondHelper> cpibondhelper "CPIBondHelper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((CPIBondHelperModel.Cast _CPIBondHelper.cell).Update
+                let builder (current : ICell) = ((CPIBondHelperModel.Cast _CPIBondHelper.cell).Update
                                                        ) :> ICell
                 let format (o : CPIBondHelper) (l:string) = o.ToString() :> obj
 

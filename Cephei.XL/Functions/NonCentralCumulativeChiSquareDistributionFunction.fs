@@ -52,7 +52,7 @@ module NonCentralCumulativeChiSquareDistributionFunction =
 
                 let _df = Helper.toCell<double> df "df" 
                 let _ncp = Helper.toCell<double> ncp "ncp" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonCentralCumulativeChiSquareDistribution 
+                let builder (current : ICell) = (Fun.NonCentralCumulativeChiSquareDistribution 
                                                             _df.cell 
                                                             _ncp.cell 
                                                        ) :> ICell
@@ -95,7 +95,7 @@ module NonCentralCumulativeChiSquareDistributionFunction =
 
                 let _NonCentralCumulativeChiSquareDistribution = Helper.toCell<NonCentralCumulativeChiSquareDistribution> noncentralcumulativechisquaredistribution "NonCentralCumulativeChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((NonCentralCumulativeChiSquareDistributionModel.Cast _NonCentralCumulativeChiSquareDistribution.cell).Value
+                let builder (current : ICell) = ((NonCentralCumulativeChiSquareDistributionModel.Cast _NonCentralCumulativeChiSquareDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

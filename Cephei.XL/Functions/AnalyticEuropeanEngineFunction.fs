@@ -52,7 +52,7 @@ module AnalyticEuropeanEngineFunction =
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticEuropeanEngine 
+                let builder (current : ICell) = (Fun.AnalyticEuropeanEngine 
                                                             _Process.cell 
                                                             _evaluationDate.cell
                                                        ) :> ICell

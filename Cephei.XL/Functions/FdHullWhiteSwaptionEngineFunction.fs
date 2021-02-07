@@ -68,7 +68,7 @@ module FdHullWhiteSwaptionEngineFunction =
                 let _invEps = Helper.toDefault<double> invEps "invEps" 1e-5
                 let _schemeDesc = Helper.toDefault<FdmSchemeDesc> schemeDesc "schemeDesc" null
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdHullWhiteSwaptionEngine 
+                let builder (current : ICell) = (Fun.FdHullWhiteSwaptionEngine 
                                                             _model.cell 
                                                             _tGrid.cell 
                                                             _xGrid.cell 
@@ -127,7 +127,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
                 let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).SetModel
+                let builder (current : ICell) = ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -169,7 +169,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
                 let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).RegisterWith
+                let builder (current : ICell) = ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -208,7 +208,7 @@ module FdHullWhiteSwaptionEngineFunction =
             try
 
                 let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).Reset
+                let builder (current : ICell) = ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 
@@ -247,7 +247,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
                 let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).UnregisterWith
+                let builder (current : ICell) = ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -286,7 +286,7 @@ module FdHullWhiteSwaptionEngineFunction =
             try
 
                 let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
-                let builder (current : ICell) = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).Update
+                let builder (current : ICell) = ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 

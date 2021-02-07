@@ -61,7 +61,7 @@ module EventSetSimulationFunction =
                 let _eventsEnd = Helper.toCell<Date> eventsEnd "eventsEnd" 
                 let _start = Helper.toCell<Date> start "start" 
                 let _End = Helper.toCell<Date> End "End" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.EventSetSimulation 
+                let builder (current : ICell) = (Fun.EventSetSimulation 
                                                             _events.cell 
                                                             _eventsStart.cell 
                                                             _eventsEnd.cell 
@@ -113,7 +113,7 @@ module EventSetSimulationFunction =
 
                 let _EventSetSimulation = Helper.toCell<EventSetSimulation> eventsetsimulation "EventSetSimulation"  
                 let _path = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> path "path" 
-                let builder (current : ICell) = withMnemonic mnemonic ((EventSetSimulationModel.Cast _EventSetSimulation.cell).NextPath
+                let builder (current : ICell) = ((EventSetSimulationModel.Cast _EventSetSimulation.cell).NextPath
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

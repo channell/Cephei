@@ -52,7 +52,7 @@ module FdmHullWhiteSolverFunction =
 
                 let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).DeltaAt
+                let builder (current : ICell) = ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).DeltaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -97,7 +97,7 @@ module FdmHullWhiteSolverFunction =
                 let _model = Helper.toHandle<HullWhite> model "model" 
                 let _solverDesc = Helper.toCell<FdmSolverDesc> solverDesc "solverDesc" 
                 let _schemeDesc = Helper.toDefault<FdmSchemeDesc> schemeDesc "schemeDesc" null
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmHullWhiteSolver 
+                let builder (current : ICell) = (Fun.FdmHullWhiteSolver 
                                                             _model.cell 
                                                             _solverDesc.cell 
                                                             _schemeDesc.cell 
@@ -143,7 +143,7 @@ module FdmHullWhiteSolverFunction =
 
                 let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).GammaAt
+                let builder (current : ICell) = ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).GammaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -185,7 +185,7 @@ module FdmHullWhiteSolverFunction =
 
                 let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).ThetaAt
+                let builder (current : ICell) = ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).ThetaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -227,7 +227,7 @@ module FdmHullWhiteSolverFunction =
 
                 let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).ValueAt
+                let builder (current : ICell) = ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).ValueAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

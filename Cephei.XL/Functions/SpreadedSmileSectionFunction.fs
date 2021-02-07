@@ -49,7 +49,7 @@ module SpreadedSmileSectionFunction =
             try
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).AtmLevel
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module SpreadedSmileSectionFunction =
             try
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).DayCounter
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -121,7 +121,7 @@ module SpreadedSmileSectionFunction =
             try
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).ExerciseDate
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -157,7 +157,7 @@ module SpreadedSmileSectionFunction =
             try
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).ExerciseTime
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -193,7 +193,7 @@ module SpreadedSmileSectionFunction =
             try
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).MaxStrike
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -229,7 +229,7 @@ module SpreadedSmileSectionFunction =
             try
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).MinStrike
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -265,7 +265,7 @@ module SpreadedSmileSectionFunction =
             try
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).ReferenceDate
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -301,7 +301,7 @@ module SpreadedSmileSectionFunction =
             try
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Shift
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -343,7 +343,7 @@ module SpreadedSmileSectionFunction =
                 let _underlyingSection = Helper.toCell<SmileSection> underlyingSection "underlyingSection" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SpreadedSmileSection 
+                let builder (current : ICell) = (Fun.SpreadedSmileSection 
                                                             _underlyingSection.cell 
                                                             _spread.cell 
                                                             _evaluationDate.cell
@@ -386,7 +386,7 @@ module SpreadedSmileSectionFunction =
             try
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Update
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : SpreadedSmileSection) (l:string) = o.ToString() :> obj
 
@@ -422,7 +422,7 @@ module SpreadedSmileSectionFunction =
             try
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).VolatilityType
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
@@ -467,7 +467,7 @@ module SpreadedSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Density
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Density
                                                             _strike.cell 
                                                             _discount.cell 
                                                             _gap.cell 
@@ -524,7 +524,7 @@ module SpreadedSmileSectionFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).DigitalOptionPrice
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).DigitalOptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
@@ -581,7 +581,7 @@ module SpreadedSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).OptionPrice
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).OptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
@@ -629,7 +629,7 @@ module SpreadedSmileSectionFunction =
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Variance
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Variance
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -674,7 +674,7 @@ module SpreadedSmileSectionFunction =
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Vega
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Vega
                                                             _strike.cell 
                                                             _discount.cell 
                                                        ) :> ICell
@@ -725,7 +725,7 @@ module SpreadedSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
                 let _shift = Helper.toCell<double> shift "shift" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Volatility
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 
                                                             _shift.cell 
@@ -773,7 +773,7 @@ module SpreadedSmileSectionFunction =
 
                 let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Volatility1
+                let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Volatility1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

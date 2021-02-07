@@ -49,7 +49,7 @@ module SuperFundPayoffFunction =
             try
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Name
+                let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module SuperFundPayoffFunction =
             try
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).SecondStrike
+                let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).SecondStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -124,7 +124,7 @@ module SuperFundPayoffFunction =
 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _secondStrike = Helper.toCell<double> secondStrike "secondStrike" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.SuperFundPayoff 
+                let builder (current : ICell) = (Fun.SuperFundPayoff 
                                                             _strike.cell 
                                                             _secondStrike.cell 
                                                        ) :> ICell
@@ -167,7 +167,7 @@ module SuperFundPayoffFunction =
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Value
+                let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -206,7 +206,7 @@ module SuperFundPayoffFunction =
             try
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Description
+                let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -242,7 +242,7 @@ module SuperFundPayoffFunction =
             try
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Strike
+                let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -278,7 +278,7 @@ module SuperFundPayoffFunction =
             try
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).OptionType
+                let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
@@ -317,7 +317,7 @@ module SuperFundPayoffFunction =
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Accept
+                let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : SuperFundPayoff) (l:string) = o.ToString() :> obj

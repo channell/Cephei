@@ -49,7 +49,7 @@ module QuoteFunction =
             try
 
                 let _Quote = Helper.toCell<Quote> quote "Quote"  
-                let builder (current : ICell) = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).IsValid
+                let builder (current : ICell) = ((QuoteModel.Cast _Quote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -88,7 +88,7 @@ module QuoteFunction =
 
                 let _Quote = Helper.toCell<Quote> quote "Quote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).RegisterWith
+                let builder (current : ICell) = ((QuoteModel.Cast _Quote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Quote) (l:string) = o.ToString() :> obj
@@ -130,7 +130,7 @@ module QuoteFunction =
 
                 let _Quote = Helper.toCell<Quote> quote "Quote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder (current : ICell) = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).UnregisterWith
+                let builder (current : ICell) = ((QuoteModel.Cast _Quote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Quote) (l:string) = o.ToString() :> obj
@@ -169,7 +169,7 @@ module QuoteFunction =
             try
 
                 let _Quote = Helper.toCell<Quote> quote "Quote"  
-                let builder (current : ICell) = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).Value
+                let builder (current : ICell) = ((QuoteModel.Cast _Quote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

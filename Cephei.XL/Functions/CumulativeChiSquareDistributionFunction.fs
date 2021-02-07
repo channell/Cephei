@@ -49,7 +49,7 @@ module CumulativeChiSquareDistributionFunction =
             try
 
                 let _df = Helper.toCell<double> df "df" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CumulativeChiSquareDistribution 
+                let builder (current : ICell) = (Fun.CumulativeChiSquareDistribution 
                                                             _df.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CumulativeChiSquareDistribution>) l
@@ -89,7 +89,7 @@ module CumulativeChiSquareDistributionFunction =
 
                 let _CumulativeChiSquareDistribution = Helper.toCell<CumulativeChiSquareDistribution> cumulativechisquaredistribution "CumulativeChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((CumulativeChiSquareDistributionModel.Cast _CumulativeChiSquareDistribution.cell).Value
+                let builder (current : ICell) = ((CumulativeChiSquareDistributionModel.Cast _CumulativeChiSquareDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

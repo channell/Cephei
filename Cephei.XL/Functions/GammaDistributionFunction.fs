@@ -49,7 +49,7 @@ module GammaDistributionFunction =
             try
 
                 let _a = Helper.toCell<double> a "a" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GammaDistribution 
+                let builder (current : ICell) = (Fun.GammaDistribution 
                                                             _a.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GammaDistribution>) l
@@ -89,7 +89,7 @@ module GammaDistributionFunction =
 
                 let _GammaDistribution = Helper.toCell<GammaDistribution> gammadistribution "GammaDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GammaDistributionModel.Cast _GammaDistribution.cell).Value
+                let builder (current : ICell) = ((GammaDistributionModel.Cast _GammaDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

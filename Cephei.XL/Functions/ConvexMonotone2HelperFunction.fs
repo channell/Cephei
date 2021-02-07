@@ -67,7 +67,7 @@ module ConvexMonotone2HelperFunction =
                 let _fAverage = Helper.toCell<double> fAverage "fAverage" 
                 let _eta2 = Helper.toCell<double> eta2 "eta2" 
                 let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConvexMonotone2Helper 
+                let builder (current : ICell) = (Fun.ConvexMonotone2Helper 
                                                             _xPrev.cell 
                                                             _xNext.cell 
                                                             _gPrev.cell 
@@ -122,7 +122,7 @@ module ConvexMonotone2HelperFunction =
             try
 
                 let _ConvexMonotone2Helper = Helper.toCell<ConvexMonotone2Helper> convexmonotone2helper "ConvexMonotone2Helper"  
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotone2HelperModel.Cast _ConvexMonotone2Helper.cell).FNext
+                let builder (current : ICell) = ((ConvexMonotone2HelperModel.Cast _ConvexMonotone2Helper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -161,7 +161,7 @@ module ConvexMonotone2HelperFunction =
 
                 let _ConvexMonotone2Helper = Helper.toCell<ConvexMonotone2Helper> convexmonotone2helper "ConvexMonotone2Helper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotone2HelperModel.Cast _ConvexMonotone2Helper.cell).Primitive
+                let builder (current : ICell) = ((ConvexMonotone2HelperModel.Cast _ConvexMonotone2Helper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -203,7 +203,7 @@ module ConvexMonotone2HelperFunction =
 
                 let _ConvexMonotone2Helper = Helper.toCell<ConvexMonotone2Helper> convexmonotone2helper "ConvexMonotone2Helper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotone2HelperModel.Cast _ConvexMonotone2Helper.cell).Value
+                let builder (current : ICell) = ((ConvexMonotone2HelperModel.Cast _ConvexMonotone2Helper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

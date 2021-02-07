@@ -52,7 +52,7 @@ module GaussHermiteIntegrationFunction =
 
                 let _n = Helper.toCell<int> n "n" 
                 let _mu = Helper.toDefault<double> mu "mu" 0.0
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussHermiteIntegration 
+                let builder (current : ICell) = (Fun.GaussHermiteIntegration 
                                                             _n.cell 
                                                             _mu.cell 
                                                        ) :> ICell
@@ -92,7 +92,7 @@ module GaussHermiteIntegrationFunction =
             try
 
                 let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Order
+                let builder (current : ICell) = ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -131,7 +131,7 @@ module GaussHermiteIntegrationFunction =
 
                 let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Value
+                let builder (current : ICell) = ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -170,7 +170,7 @@ module GaussHermiteIntegrationFunction =
             try
 
                 let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Weights
+                let builder (current : ICell) = ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -206,7 +206,7 @@ module GaussHermiteIntegrationFunction =
             try
 
                 let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
-                let builder (current : ICell) = withMnemonic mnemonic ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).X
+                let builder (current : ICell) = ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
