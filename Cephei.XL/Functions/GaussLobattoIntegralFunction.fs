@@ -103,7 +103,7 @@ module GaussLobattoIntegralFunction =
 
             try
 
-                let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
+                let _GaussLobattoIntegral = Helper.toModelReference<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let builder (current : ICell) = ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -139,7 +139,7 @@ module GaussLobattoIntegralFunction =
 
             try
 
-                let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
+                let _GaussLobattoIntegral = Helper.toModelReference<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let builder (current : ICell) = ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -175,7 +175,7 @@ module GaussLobattoIntegralFunction =
 
             try
 
-                let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
+                let _GaussLobattoIntegral = Helper.toModelReference<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let builder (current : ICell) = ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -211,7 +211,7 @@ module GaussLobattoIntegralFunction =
 
             try
 
-                let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
+                let _GaussLobattoIntegral = Helper.toModelReference<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let builder (current : ICell) = ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -247,7 +247,7 @@ module GaussLobattoIntegralFunction =
 
             try
 
-                let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
+                let _GaussLobattoIntegral = Helper.toModelReference<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let builder (current : ICell) = ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -285,7 +285,7 @@ module GaussLobattoIntegralFunction =
 
             try
 
-                let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
+                let _GaussLobattoIntegral = Helper.toModelReference<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let builder (current : ICell) = ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
@@ -327,7 +327,7 @@ module GaussLobattoIntegralFunction =
 
             try
 
-                let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
+                let _GaussLobattoIntegral = Helper.toModelReference<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder (current : ICell) = ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
@@ -373,7 +373,7 @@ module GaussLobattoIntegralFunction =
 
             try
 
-                let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
+                let _GaussLobattoIntegral = Helper.toModelReference<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 

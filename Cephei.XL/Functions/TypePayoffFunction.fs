@@ -48,7 +48,7 @@ module TypePayoffFunction =
 
             try
 
-                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
+                let _TypePayoff = Helper.toModelReference<TypePayoff> typepayoff "TypePayoff"  
                 let builder (current : ICell) = ((TypePayoffModel.Cast _TypePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module TypePayoffFunction =
 
             try
 
-                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
+                let _TypePayoff = Helper.toModelReference<TypePayoff> typepayoff "TypePayoff"  
                 let builder (current : ICell) = ((TypePayoffModel.Cast _TypePayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -159,7 +159,7 @@ module TypePayoffFunction =
 
             try
 
-                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
+                let _TypePayoff = Helper.toModelReference<TypePayoff> typepayoff "TypePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((TypePayoffModel.Cast _TypePayoff.cell).Accept
                                                             _v.cell 
@@ -199,7 +199,7 @@ module TypePayoffFunction =
 
             try
 
-                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
+                let _TypePayoff = Helper.toModelReference<TypePayoff> typepayoff "TypePayoff"  
                 let builder (current : ICell) = ((TypePayoffModel.Cast _TypePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -237,7 +237,7 @@ module TypePayoffFunction =
 
             try
 
-                let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
+                let _TypePayoff = Helper.toModelReference<TypePayoff> typepayoff "TypePayoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((TypePayoffModel.Cast _TypePayoff.cell).Value
                                                             _price.cell 

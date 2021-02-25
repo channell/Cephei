@@ -56,7 +56,7 @@ module FDDividendEngineShiftScaleFunction =
 
             try
 
-                let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
+                let _FDDividendEngineShiftScale = Helper.toModelReference<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
@@ -171,7 +171,7 @@ module FDDividendEngineShiftScaleFunction =
 
             try
 
-                let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
+                let _FDDividendEngineShiftScale = Helper.toModelReference<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
@@ -226,7 +226,7 @@ module FDDividendEngineShiftScaleFunction =
 
             try
 
-                let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
+                let _FDDividendEngineShiftScale = Helper.toModelReference<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
                 let builder (current : ICell) = ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).SetStepCondition
                                                             _impl.cell 
@@ -266,7 +266,7 @@ module FDDividendEngineShiftScaleFunction =
 
             try
 
-                let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
+                let _FDDividendEngineShiftScale = Helper.toModelReference<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
                 let builder (current : ICell) = ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDDividendEngineShiftScale) (l:string) = o.ToString() :> obj
@@ -302,7 +302,7 @@ module FDDividendEngineShiftScaleFunction =
 
             try
 
-                let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
+                let _FDDividendEngineShiftScale = Helper.toModelReference<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
                 let builder (current : ICell) = ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -338,7 +338,7 @@ module FDDividendEngineShiftScaleFunction =
 
             try
 
-                let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
+                let _FDDividendEngineShiftScale = Helper.toModelReference<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
                 let builder (current : ICell) = ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -374,7 +374,7 @@ module FDDividendEngineShiftScaleFunction =
 
             try
 
-                let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
+                let _FDDividendEngineShiftScale = Helper.toModelReference<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
                 let builder (current : ICell) = ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l

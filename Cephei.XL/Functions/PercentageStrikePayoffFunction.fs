@@ -48,7 +48,7 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
+                let _PercentageStrikePayoff = Helper.toModelReference<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
                 let builder (current : ICell) = ((PercentageStrikePayoffModel.Cast _PercentageStrikePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -129,7 +129,7 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
+                let _PercentageStrikePayoff = Helper.toModelReference<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((PercentageStrikePayoffModel.Cast _PercentageStrikePayoff.cell).Value
                                                             _price.cell 
@@ -169,7 +169,7 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
+                let _PercentageStrikePayoff = Helper.toModelReference<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
                 let builder (current : ICell) = ((PercentageStrikePayoffModel.Cast _PercentageStrikePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -205,7 +205,7 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
+                let _PercentageStrikePayoff = Helper.toModelReference<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
                 let builder (current : ICell) = ((PercentageStrikePayoffModel.Cast _PercentageStrikePayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -241,7 +241,7 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
+                let _PercentageStrikePayoff = Helper.toModelReference<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
                 let builder (current : ICell) = ((PercentageStrikePayoffModel.Cast _PercentageStrikePayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -279,7 +279,7 @@ module PercentageStrikePayoffFunction =
 
             try
 
-                let _PercentageStrikePayoff = Helper.toCell<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
+                let _PercentageStrikePayoff = Helper.toModelReference<PercentageStrikePayoff> percentagestrikepayoff "PercentageStrikePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((PercentageStrikePayoffModel.Cast _PercentageStrikePayoff.cell).Accept
                                                             _v.cell 

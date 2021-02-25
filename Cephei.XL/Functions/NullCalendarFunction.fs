@@ -79,7 +79,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -117,7 +117,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).AddHoliday
                                                             _d.cell 
@@ -161,7 +161,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).Adjust
@@ -215,7 +215,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -279,7 +279,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -339,7 +339,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -391,7 +391,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -427,7 +427,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -465,7 +465,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).EndOfMonth
                                                             _d.cell 
@@ -507,7 +507,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).Equals
                                                             _o.cell 
@@ -549,7 +549,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).IsBusinessDay
                                                             _d.cell 
@@ -591,7 +591,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).IsEndOfMonth
                                                             _d.cell 
@@ -633,7 +633,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).IsHoliday
                                                             _d.cell 
@@ -675,7 +675,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).IsWeekend
                                                             _w.cell 
@@ -717,7 +717,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -753,7 +753,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -791,7 +791,7 @@ module NullCalendarFunction =
 
             try
 
-                let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
+                let _NullCalendar = Helper.toModelReference<NullCalendar> nullcalendar "NullCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NullCalendarModel.Cast _NullCalendar.cell).RemoveHoliday
                                                             _d.cell 

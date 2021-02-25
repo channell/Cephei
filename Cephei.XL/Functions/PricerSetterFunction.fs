@@ -93,7 +93,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<CappedFlooredCoupon> c "c" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit8
                                                             _c.cell 
@@ -135,7 +135,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit3
                                                             _o.cell 
@@ -177,7 +177,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<CashFlow> c "c" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit4
                                                             _c.cell 
@@ -219,7 +219,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<RangeAccrualFloatersCoupon> c "c" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit
                                                             _c.cell 
@@ -261,7 +261,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<FloatingRateCoupon> c "c" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit7
                                                             _c.cell 
@@ -303,7 +303,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<IborCoupon> c "c" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit9
                                                             _c.cell 
@@ -345,7 +345,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<DigitalIborCoupon> c "c" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit10
                                                             _c.cell 
@@ -387,7 +387,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<CappedFlooredIborCoupon> c "c" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit2
                                                             _c.cell 
@@ -429,7 +429,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<CmsCoupon> c "c" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit5
                                                             _c.cell 
@@ -471,7 +471,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<CappedFlooredCmsCoupon> c "c" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit11
                                                             _c.cell 
@@ -513,7 +513,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<DigitalCmsCoupon> c "c" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit1
                                                             _c.cell 
@@ -555,7 +555,7 @@ module PricerSetterFunction =
 
             try
 
-                let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
+                let _PricerSetter = Helper.toModelReference<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<Coupon> c "c" 
                 let builder (current : ICell) = ((PricerSetterModel.Cast _PricerSetter.cell).Visit6
                                                             _c.cell 

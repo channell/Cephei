@@ -48,7 +48,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -156,7 +156,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -192,7 +192,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -642,7 +642,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
@@ -678,7 +678,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
@@ -714,7 +714,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -750,7 +750,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -786,7 +786,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
@@ -822,7 +822,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedZeroCurve) (l:string) = o.ToString() :> obj
@@ -858,7 +858,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -894,7 +894,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -930,7 +930,7 @@ module InterpolatedZeroCurveFunction =
 
             try
 
-                let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
+                let _InterpolatedZeroCurve = Helper.toModelReference<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).ZeroRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

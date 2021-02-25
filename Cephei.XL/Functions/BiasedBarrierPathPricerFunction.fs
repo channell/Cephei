@@ -117,7 +117,7 @@ module BiasedBarrierPathPricerFunction =
 
             try
 
-                let _BiasedBarrierPathPricer = Helper.toCell<BiasedBarrierPathPricer> biasedbarrierpathpricer "BiasedBarrierPathPricer"  
+                let _BiasedBarrierPathPricer = Helper.toModelReference<BiasedBarrierPathPricer> biasedbarrierpathpricer "BiasedBarrierPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let builder (current : ICell) = ((BiasedBarrierPathPricerModel.Cast _BiasedBarrierPathPricer.cell).Value
                                                             _path.cell 

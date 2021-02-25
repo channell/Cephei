@@ -128,7 +128,7 @@ module BermudanExerciseFunction =
 
             try
 
-                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
+                let _BermudanExercise = Helper.toModelReference<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let builder (current : ICell) = ((BermudanExerciseModel.Cast _BermudanExercise.cell).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -166,7 +166,7 @@ module BermudanExerciseFunction =
 
             try
 
-                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
+                let _BermudanExercise = Helper.toModelReference<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((BermudanExerciseModel.Cast _BermudanExercise.cell).Date
                                                             _index.cell 
@@ -206,7 +206,7 @@ module BermudanExerciseFunction =
 
             try
 
-                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
+                let _BermudanExercise = Helper.toModelReference<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let builder (current : ICell) = ((BermudanExerciseModel.Cast _BermudanExercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -242,7 +242,7 @@ module BermudanExerciseFunction =
 
             try
 
-                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
+                let _BermudanExercise = Helper.toModelReference<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let builder (current : ICell) = ((BermudanExerciseModel.Cast _BermudanExercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -278,7 +278,7 @@ module BermudanExerciseFunction =
 
             try
 
-                let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
+                let _BermudanExercise = Helper.toModelReference<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let builder (current : ICell) = ((BermudanExerciseModel.Cast _BermudanExercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj

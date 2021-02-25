@@ -48,7 +48,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -176,7 +176,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -212,7 +212,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).C
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -248,7 +248,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Coefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -284,7 +284,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).D
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -324,7 +324,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DefiniteDerivativeCoefficients
@@ -372,7 +372,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DefiniteIntegral
@@ -420,7 +420,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DefiniteIntegralCoefficients
@@ -466,7 +466,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Derivative
                                                             _t.cell 
@@ -506,7 +506,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DerivativeCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -542,7 +542,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).LongTermValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -578,7 +578,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).MaximumLocation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -614,7 +614,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).MaximumValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -652,7 +652,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Primitive
                                                             _t.cell 
@@ -694,7 +694,7 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
+                let _AbcdMathFunction = Helper.toModelReference<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Value
                                                             _t.cell 

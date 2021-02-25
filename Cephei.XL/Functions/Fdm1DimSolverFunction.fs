@@ -50,7 +50,7 @@ module Fdm1DimSolverFunction =
 
             try
 
-                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
+                let _Fdm1DimSolver = Helper.toModelReference<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).DerivativeX
                                                             _x.cell 
@@ -92,7 +92,7 @@ module Fdm1DimSolverFunction =
 
             try
 
-                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
+                let _Fdm1DimSolver = Helper.toModelReference<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).DerivativeXX
                                                             _x.cell 
@@ -183,7 +183,7 @@ module Fdm1DimSolverFunction =
 
             try
 
-                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
+                let _Fdm1DimSolver = Helper.toModelReference<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).InterpolateAt
                                                             _x.cell 
@@ -225,7 +225,7 @@ module Fdm1DimSolverFunction =
 
             try
 
-                let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
+                let _Fdm1DimSolver = Helper.toModelReference<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).ThetaAt
                                                             _x.cell 

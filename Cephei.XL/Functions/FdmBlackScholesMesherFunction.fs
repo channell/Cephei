@@ -153,7 +153,7 @@ module FdmBlackScholesMesherFunction =
 
             try
 
-                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
+                let _FdmBlackScholesMesher = Helper.toModelReference<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Dminus
                                                             _index.cell 
@@ -195,7 +195,7 @@ module FdmBlackScholesMesherFunction =
 
             try
 
-                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
+                let _FdmBlackScholesMesher = Helper.toModelReference<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Dplus
                                                             _index.cell 
@@ -237,7 +237,7 @@ module FdmBlackScholesMesherFunction =
 
             try
 
-                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
+                let _FdmBlackScholesMesher = Helper.toModelReference<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Location
                                                             _index.cell 
@@ -277,7 +277,7 @@ module FdmBlackScholesMesherFunction =
 
             try
 
-                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
+                let _FdmBlackScholesMesher = Helper.toModelReference<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let builder (current : ICell) = ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -313,7 +313,7 @@ module FdmBlackScholesMesherFunction =
 
             try
 
-                let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
+                let _FdmBlackScholesMesher = Helper.toModelReference<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let builder (current : ICell) = ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

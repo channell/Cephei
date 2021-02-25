@@ -267,7 +267,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -303,7 +303,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -339,7 +339,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -375,7 +375,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -414,7 +414,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let _i = Helper.toDefault<Interpolator> i "i" default(Interpolator)
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).SetInterpolation
                                                             _i.cell 
@@ -461,7 +461,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let _t = Helper.toCell<double> t "t" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -515,7 +515,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -563,7 +563,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -601,7 +601,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let _p = Helper.toCell<Period> p "p" 
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).OptionDateFromTenor
                                                             _p.cell 
@@ -641,7 +641,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -677,7 +677,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -713,7 +713,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -749,7 +749,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -787,7 +787,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).TimeFromReference
                                                             _date.cell 
@@ -827,7 +827,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).Update
                                                        ) :> ICell
                 let format (o : FixedLocalVolSurface) (l:string) = o.ToString() :> obj
@@ -863,7 +863,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -901,7 +901,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).DisableExtrapolation
                                                             _b.cell 
@@ -943,7 +943,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).EnableExtrapolation
                                                             _b.cell 
@@ -983,7 +983,7 @@ module FixedLocalVolSurfaceFunction =
 
             try
 
-                let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
+                let _FixedLocalVolSurface = Helper.toModelReference<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
                 let builder (current : ICell) = ((FixedLocalVolSurfaceModel.Cast _FixedLocalVolSurface.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

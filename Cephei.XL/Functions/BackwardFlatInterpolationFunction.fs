@@ -101,7 +101,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Derivative
@@ -145,7 +145,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -185,7 +185,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Primitive
@@ -233,7 +233,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).SecondDerivative
@@ -277,7 +277,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : BackwardFlatInterpolation) (l:string) = o.ToString() :> obj
@@ -317,7 +317,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Value1
@@ -363,7 +363,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Value
                                                             _x.cell 
@@ -403,7 +403,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -439,7 +439,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -475,7 +475,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -513,7 +513,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
@@ -555,7 +555,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
@@ -595,7 +595,7 @@ module BackwardFlatInterpolationFunction =
 
             try
 
-                let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
+                let _BackwardFlatInterpolation = Helper.toModelReference<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let builder (current : ICell) = ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

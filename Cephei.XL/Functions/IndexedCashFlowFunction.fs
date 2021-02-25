@@ -48,7 +48,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -120,7 +120,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -156,7 +156,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -192,7 +192,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).GrowthOnly
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -228,7 +228,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Index>) l
@@ -337,7 +337,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Notional
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -375,7 +375,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).CompareTo
                                                             _cf.cell 
@@ -417,7 +417,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Equals
                                                             _cf.cell 
@@ -457,7 +457,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -497,7 +497,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).HasOccurred
@@ -543,7 +543,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -585,7 +585,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Accept
                                                             _v.cell 
@@ -627,7 +627,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).RegisterWith
                                                             _handler.cell 
@@ -669,7 +669,7 @@ module IndexedCashFlowFunction =
 
             try
 
-                let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
+                let _IndexedCashFlow = Helper.toModelReference<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).UnregisterWith
                                                             _handler.cell 

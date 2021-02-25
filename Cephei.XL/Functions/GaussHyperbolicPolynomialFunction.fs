@@ -50,7 +50,7 @@ module GaussHyperbolicPolynomialFunction =
 
             try
 
-                let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
+                let _GaussHyperbolicPolynomial = Helper.toModelReference<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Alpha
                                                             _i.cell 
@@ -92,7 +92,7 @@ module GaussHyperbolicPolynomialFunction =
 
             try
 
-                let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
+                let _GaussHyperbolicPolynomial = Helper.toModelReference<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Beta
                                                             _i.cell 
@@ -132,7 +132,7 @@ module GaussHyperbolicPolynomialFunction =
 
             try
 
-                let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
+                let _GaussHyperbolicPolynomial = Helper.toModelReference<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let builder (current : ICell) = ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -170,7 +170,7 @@ module GaussHyperbolicPolynomialFunction =
 
             try
 
-                let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
+                let _GaussHyperbolicPolynomial = Helper.toModelReference<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).W
                                                             _x.cell 
@@ -214,7 +214,7 @@ module GaussHyperbolicPolynomialFunction =
 
             try
 
-                let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
+                let _GaussHyperbolicPolynomial = Helper.toModelReference<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Value
@@ -262,7 +262,7 @@ module GaussHyperbolicPolynomialFunction =
 
             try
 
-                let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
+                let _GaussHyperbolicPolynomial = Helper.toModelReference<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).WeightedValue

@@ -126,7 +126,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _ActualActual = Helper.toModelReference<ActualActual> actualactual "ActualActual"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).DayCount
@@ -170,7 +170,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _ActualActual = Helper.toModelReference<ActualActual> actualactual "ActualActual"  
                 let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -206,7 +206,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _ActualActual = Helper.toModelReference<ActualActual> actualactual "ActualActual"  
                 let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -244,7 +244,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _ActualActual = Helper.toModelReference<ActualActual> actualactual "ActualActual"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).Equals
                                                             _o.cell 
@@ -284,7 +284,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _ActualActual = Helper.toModelReference<ActualActual> actualactual "ActualActual"  
                 let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -320,7 +320,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _ActualActual = Helper.toModelReference<ActualActual> actualactual "ActualActual"  
                 let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -364,7 +364,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _ActualActual = Helper.toModelReference<ActualActual> actualactual "ActualActual"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
@@ -420,7 +420,7 @@ module ActualActualFunction =
 
             try
 
-                let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
+                let _ActualActual = Helper.toModelReference<ActualActual> actualactual "ActualActual"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder (current : ICell) = ((ActualActualModel.Cast _ActualActual.cell).YearFraction1

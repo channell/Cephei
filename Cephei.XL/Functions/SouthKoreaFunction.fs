@@ -144,7 +144,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -182,7 +182,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).AddHoliday
                                                             _d.cell 
@@ -226,7 +226,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Adjust
@@ -280,7 +280,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -344,7 +344,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -404,7 +404,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -456,7 +456,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -492,7 +492,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -530,7 +530,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).EndOfMonth
                                                             _d.cell 
@@ -572,7 +572,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Equals
                                                             _o.cell 
@@ -614,7 +614,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).IsBusinessDay
                                                             _d.cell 
@@ -656,7 +656,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).IsEndOfMonth
                                                             _d.cell 
@@ -698,7 +698,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).IsHoliday
                                                             _d.cell 
@@ -740,7 +740,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).IsWeekend
                                                             _w.cell 
@@ -782,7 +782,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -818,7 +818,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -856,7 +856,7 @@ module SouthKoreaFunction =
 
             try
 
-                let _SouthKorea = Helper.toCell<SouthKorea> southkorea "SouthKorea"  
+                let _SouthKorea = Helper.toModelReference<SouthKorea> southkorea "SouthKorea"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SouthKoreaModel.Cast _SouthKorea.cell).RemoveHoliday
                                                             _d.cell 

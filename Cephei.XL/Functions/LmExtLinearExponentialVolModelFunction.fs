@@ -56,7 +56,7 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
+                let _LmExtLinearExponentialVolModel = Helper.toModelReference<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
@@ -173,7 +173,7 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
+                let _LmExtLinearExponentialVolModel = Helper.toModelReference<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
                 let builder (current : ICell) = ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Volatility1
@@ -223,7 +223,7 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
+                let _LmExtLinearExponentialVolModel = Helper.toModelReference<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
@@ -271,7 +271,7 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
+                let _LmExtLinearExponentialVolModel = Helper.toModelReference<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let builder (current : ICell) = ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<Parameter>) (l : string) = Helper.Range.fromList i l
@@ -309,7 +309,7 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
+                let _LmExtLinearExponentialVolModel = Helper.toModelReference<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
                 let builder (current : ICell) = ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).SetParams
                                                             _arguments.cell 
@@ -349,7 +349,7 @@ module LmExtLinearExponentialVolModelFunction =
 
             try
 
-                let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
+                let _LmExtLinearExponentialVolModel = Helper.toModelReference<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let builder (current : ICell) = ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

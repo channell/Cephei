@@ -93,7 +93,7 @@ module CumulativeBinomialDistributionFunction =
 
             try
 
-                let _CumulativeBinomialDistribution = Helper.toCell<CumulativeBinomialDistribution> cumulativebinomialdistribution "CumulativeBinomialDistribution"  
+                let _CumulativeBinomialDistribution = Helper.toModelReference<CumulativeBinomialDistribution> cumulativebinomialdistribution "CumulativeBinomialDistribution"  
                 let _k = Helper.toCell<int64> k "k" 
                 let builder (current : ICell) = ((CumulativeBinomialDistributionModel.Cast _CumulativeBinomialDistribution.cell).Value
                                                             _k.cell 

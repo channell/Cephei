@@ -157,7 +157,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Callability
                                                        ) :> ICell
                 let format (o : CallabilitySchedule) (l:string) = o.ToString() :> obj
@@ -193,7 +193,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).ConversionRatio
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -229,7 +229,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).CreditSpread
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -265,7 +265,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Dividends
                                                        ) :> ICell
                 let format (o : DividendSchedule) (l:string) = o.ToString() :> obj
@@ -303,7 +303,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).AccruedAmount
                                                             _settlement.cell 
@@ -343,7 +343,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -379,7 +379,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -415,7 +415,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -461,7 +461,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -527,7 +527,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -583,7 +583,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -619,7 +619,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -655,7 +655,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -693,7 +693,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).IsTradable
                                                             _d.cell 
@@ -733,7 +733,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -771,7 +771,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).NextCashFlowDate
                                                             _settlement.cell 
@@ -813,7 +813,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).NextCouponRate
                                                             _settlement.cell 
@@ -855,7 +855,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Notional
                                                             _d.cell 
@@ -895,7 +895,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -933,7 +933,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
@@ -975,7 +975,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).PreviousCouponRate
                                                             _settlement.cell 
@@ -1015,7 +1015,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -1051,7 +1051,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -1089,7 +1089,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementDate
                                                             _date.cell 
@@ -1129,7 +1129,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1167,7 +1167,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementValue
                                                             _cleanPrice.cell 
@@ -1207,7 +1207,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1243,7 +1243,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1293,7 +1293,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1367,7 +1367,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -1423,7 +1423,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1459,7 +1459,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1495,7 +1495,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1533,7 +1533,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Result
                                                             _tag.cell 
@@ -1575,7 +1575,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SetPricingEngine
                                                             _e.cell 
@@ -1615,7 +1615,7 @@ module ConvertibleFixedCouponBondFunction =
 
             try
 
-                let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
+                let _ConvertibleFixedCouponBond = Helper.toModelReference<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let builder (current : ICell) = ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

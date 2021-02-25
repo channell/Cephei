@@ -98,7 +98,7 @@ module YoYInflationBlackCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationBlackCapFloorEngine = Helper.toCell<YoYInflationBlackCapFloorEngine> yoyinflationblackcapfloorengine "YoYInflationBlackCapFloorEngine"  
+                let _YoYInflationBlackCapFloorEngine = Helper.toModelReference<YoYInflationBlackCapFloorEngine> yoyinflationblackcapfloorengine "YoYInflationBlackCapFloorEngine"  
                 let builder (current : ICell) = ((YoYInflationBlackCapFloorEngineModel.Cast _YoYInflationBlackCapFloorEngine.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
@@ -136,7 +136,7 @@ module YoYInflationBlackCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationBlackCapFloorEngine = Helper.toCell<YoYInflationBlackCapFloorEngine> yoyinflationblackcapfloorengine "YoYInflationBlackCapFloorEngine"  
+                let _YoYInflationBlackCapFloorEngine = Helper.toModelReference<YoYInflationBlackCapFloorEngine> yoyinflationblackcapfloorengine "YoYInflationBlackCapFloorEngine"  
                 let _vol = Helper.toHandle<YoYOptionletVolatilitySurface> vol "vol" 
                 let builder (current : ICell) = ((YoYInflationBlackCapFloorEngineModel.Cast _YoYInflationBlackCapFloorEngine.cell).SetVolatility
                                                             _vol.cell 
@@ -176,7 +176,7 @@ module YoYInflationBlackCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationBlackCapFloorEngine = Helper.toCell<YoYInflationBlackCapFloorEngine> yoyinflationblackcapfloorengine "YoYInflationBlackCapFloorEngine"  
+                let _YoYInflationBlackCapFloorEngine = Helper.toModelReference<YoYInflationBlackCapFloorEngine> yoyinflationblackcapfloorengine "YoYInflationBlackCapFloorEngine"  
                 let builder (current : ICell) = ((YoYInflationBlackCapFloorEngineModel.Cast _YoYInflationBlackCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l

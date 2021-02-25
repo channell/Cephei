@@ -50,7 +50,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let _obj = Helper.toCell<Object> obj "obj" 
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).CompareTo
                                                             _obj.cell 
@@ -390,7 +390,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).Day
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -426,7 +426,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).DayOfWeek
                                                        ) :> ICell
                 let format (o : DayOfWeek) (l:string) = o.ToString() :> obj
@@ -462,7 +462,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).DayOfYear
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -500,7 +500,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).Equals
                                                             _o.cell 
@@ -540,7 +540,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).FractionOfDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -576,7 +576,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).FractionOfSecond
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -612,7 +612,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).Hours
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -648,7 +648,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).Milliseconds
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -684,7 +684,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).Minutes
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -720,7 +720,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).Month
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -756,7 +756,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel1.Cast _Date.cell).Seconds
 
                                                        ) :> ICell
@@ -793,7 +793,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).SerialNumber
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -829,7 +829,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).ToLongDateString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -865,7 +865,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).ToShortDateString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -905,7 +905,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let _format = Helper.toCell<string> format "format" 
                 let _provider = Helper.toCell<IFormatProvider> provider "provider" 
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).ToString2 
@@ -951,7 +951,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let _format = Helper.toCell<string> format "format" 
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).ToString3
                                                             _format.cell 
@@ -993,7 +993,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let _provider = Helper.toCell<IFormatProvider> provider "provider" 
                 let builder (current : ICell) = ((DateModel1.Cast _Date.cell).ToString1
                                                             _provider.cell 
@@ -1034,7 +1034,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -1070,7 +1070,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).Weekday
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1107,7 +1107,7 @@ module DateFunction =
 
             try
 
-                let _Date = Helper.toCell<Date> date "Date"  
+                let _Date = Helper.toModelReference<Date> date "Date"  
                 let builder (current : ICell) = ((DateModel.Cast _Date.cell).Year
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

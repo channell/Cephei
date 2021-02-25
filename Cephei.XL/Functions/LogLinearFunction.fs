@@ -77,7 +77,7 @@ module LogLinearFunction =
 
             try
 
-                let _LogLinear = Helper.toCell<LogLinear> loglinear "LogLinear"  
+                let _LogLinear = Helper.toModelReference<LogLinear> loglinear "LogLinear"  
                 let builder (current : ICell) = ((LogLinearModel.Cast _LogLinear.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -119,7 +119,7 @@ module LogLinearFunction =
 
             try
 
-                let _LogLinear = Helper.toCell<LogLinear> loglinear "LogLinear"  
+                let _LogLinear = Helper.toModelReference<LogLinear> loglinear "LogLinear"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
@@ -167,7 +167,7 @@ module LogLinearFunction =
 
             try
 
-                let _LogLinear = Helper.toCell<LogLinear> loglinear "LogLinear"  
+                let _LogLinear = Helper.toModelReference<LogLinear> loglinear "LogLinear"  
                 let builder (current : ICell) = ((LogLinearModel.Cast _LogLinear.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

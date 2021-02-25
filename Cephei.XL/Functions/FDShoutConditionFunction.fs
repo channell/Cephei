@@ -56,7 +56,7 @@ module FDShoutConditionFunction =
 
             try
 
-                let _FDShoutCondition = Helper.toCell<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
+                let _FDShoutCondition = Helper.toModelReference<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
@@ -197,7 +197,7 @@ module FDShoutConditionFunction =
 
             try
 
-                let _FDShoutCondition = Helper.toCell<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
+                let _FDShoutCondition = Helper.toModelReference<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
                 let builder (current : ICell) = ((FDShoutConditionModel.Cast _FDShoutCondition.cell).SetStepCondition
                                                             _impl.cell 
@@ -237,7 +237,7 @@ module FDShoutConditionFunction =
 
             try
 
-                let _FDShoutCondition = Helper.toCell<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
+                let _FDShoutCondition = Helper.toModelReference<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
                 let builder (current : ICell) = ((FDShoutConditionModel.Cast _FDShoutCondition.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDShoutCondition) (l:string) = o.ToString() :> obj
@@ -273,7 +273,7 @@ module FDShoutConditionFunction =
 
             try
 
-                let _FDShoutCondition = Helper.toCell<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
+                let _FDShoutCondition = Helper.toModelReference<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
                 let builder (current : ICell) = ((FDShoutConditionModel.Cast _FDShoutCondition.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -309,7 +309,7 @@ module FDShoutConditionFunction =
 
             try
 
-                let _FDShoutCondition = Helper.toCell<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
+                let _FDShoutCondition = Helper.toModelReference<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
                 let builder (current : ICell) = ((FDShoutConditionModel.Cast _FDShoutCondition.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -345,7 +345,7 @@ module FDShoutConditionFunction =
 
             try
 
-                let _FDShoutCondition = Helper.toCell<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
+                let _FDShoutCondition = Helper.toModelReference<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
                 let builder (current : ICell) = ((FDShoutConditionModel.Cast _FDShoutCondition.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l

@@ -49,7 +49,7 @@ module YoYInflationCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationCapFloorEngine = Helper.toCell<YoYInflationCapFloorEngine> yoyinflationcapfloorengine "YoYInflationCapFloorEngine"  
+                let _YoYInflationCapFloorEngine = Helper.toModelReference<YoYInflationCapFloorEngine> yoyinflationcapfloorengine "YoYInflationCapFloorEngine"  
                 let builder (current : ICell) = ((YoYInflationCapFloorEngineModel.Cast _YoYInflationCapFloorEngine.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
@@ -87,7 +87,7 @@ module YoYInflationCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationCapFloorEngine = Helper.toCell<YoYInflationCapFloorEngine> yoyinflationcapfloorengine "YoYInflationCapFloorEngine"  
+                let _YoYInflationCapFloorEngine = Helper.toModelReference<YoYInflationCapFloorEngine> yoyinflationcapfloorengine "YoYInflationCapFloorEngine"  
                 let _vol = Helper.toHandle<YoYOptionletVolatilitySurface> vol "vol" 
                 let builder (current : ICell) = ((YoYInflationCapFloorEngineModel.Cast _YoYInflationCapFloorEngine.cell).SetVolatility
                                                             _vol.cell 
@@ -127,7 +127,7 @@ module YoYInflationCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationCapFloorEngine = Helper.toCell<YoYInflationCapFloorEngine> yoyinflationcapfloorengine "YoYInflationCapFloorEngine"  
+                let _YoYInflationCapFloorEngine = Helper.toModelReference<YoYInflationCapFloorEngine> yoyinflationcapfloorengine "YoYInflationCapFloorEngine"  
                 let builder (current : ICell) = ((YoYInflationCapFloorEngineModel.Cast _YoYInflationCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l

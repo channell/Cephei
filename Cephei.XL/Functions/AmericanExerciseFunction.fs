@@ -140,7 +140,7 @@ module AmericanExerciseFunction =
 
             try
 
-                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
+                let _AmericanExercise = Helper.toModelReference<AmericanExercise> americanexercise "AmericanExercise"  
                 let builder (current : ICell) = ((AmericanExerciseModel.Cast _AmericanExercise.cell).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -178,7 +178,7 @@ module AmericanExerciseFunction =
 
             try
 
-                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
+                let _AmericanExercise = Helper.toModelReference<AmericanExercise> americanexercise "AmericanExercise"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((AmericanExerciseModel.Cast _AmericanExercise.cell).Date
                                                             _index.cell 
@@ -218,7 +218,7 @@ module AmericanExerciseFunction =
 
             try
 
-                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
+                let _AmericanExercise = Helper.toModelReference<AmericanExercise> americanexercise "AmericanExercise"  
                 let builder (current : ICell) = ((AmericanExerciseModel.Cast _AmericanExercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -254,7 +254,7 @@ module AmericanExerciseFunction =
 
             try
 
-                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
+                let _AmericanExercise = Helper.toModelReference<AmericanExercise> americanexercise "AmericanExercise"  
                 let builder (current : ICell) = ((AmericanExerciseModel.Cast _AmericanExercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -290,7 +290,7 @@ module AmericanExerciseFunction =
 
             try
 
-                let _AmericanExercise = Helper.toCell<AmericanExercise> americanexercise "AmericanExercise"  
+                let _AmericanExercise = Helper.toModelReference<AmericanExercise> americanexercise "AmericanExercise"  
                 let builder (current : ICell) = ((AmericanExerciseModel.Cast _AmericanExercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj

@@ -79,7 +79,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -115,7 +115,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -153,7 +153,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).Equals
                                                             _o.cell 
@@ -193,7 +193,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -229,7 +229,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -265,7 +265,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -301,7 +301,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -337,7 +337,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -373,7 +373,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
@@ -409,7 +409,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -445,7 +445,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -481,7 +481,7 @@ module AUDCurrencyFunction =
 
             try
 
-                let _AUDCurrency = Helper.toCell<AUDCurrency> audcurrency "AUDCurrency"  
+                let _AUDCurrency = Helper.toModelReference<AUDCurrency> audcurrency "AUDCurrency"  
                 let builder (current : ICell) = ((AUDCurrencyModel.Cast _AUDCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l

@@ -99,7 +99,7 @@ module MonthlyYieldFinderFunction =
 
             try
 
-                let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
+                let _MonthlyYieldFinder = Helper.toModelReference<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let builder (current : ICell) = ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Value
                                                             _Yield.cell 
@@ -141,7 +141,7 @@ module MonthlyYieldFinderFunction =
 
             try
 
-                let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
+                let _MonthlyYieldFinder = Helper.toModelReference<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Derivative
                                                             _x.cell 

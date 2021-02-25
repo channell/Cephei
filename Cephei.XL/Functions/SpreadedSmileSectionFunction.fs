@@ -48,7 +48,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -120,7 +120,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -156,7 +156,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -264,7 +264,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -300,7 +300,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -385,7 +385,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : SpreadedSmileSection) (l:string) = o.ToString() :> obj
@@ -421,7 +421,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -463,7 +463,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
@@ -519,7 +519,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
@@ -577,7 +577,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
@@ -627,7 +627,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Variance
                                                             _strike.cell 
@@ -671,7 +671,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Vega
@@ -721,7 +721,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
                 let _shift = Helper.toCell<double> shift "shift" 
@@ -771,7 +771,7 @@ module SpreadedSmileSectionFunction =
 
             try
 
-                let _SpreadedSmileSection = Helper.toCell<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
+                let _SpreadedSmileSection = Helper.toModelReference<SpreadedSmileSection> spreadedsmilesection "SpreadedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((SpreadedSmileSectionModel.Cast _SpreadedSmileSection.cell).Volatility1
                                                             _strike.cell 

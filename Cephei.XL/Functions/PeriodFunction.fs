@@ -50,7 +50,7 @@ module PeriodFunction =
 
             try
 
-                let _Period = Helper.toCell<Period> period "Period"  
+                let _Period = Helper.toModelReference<Period> period "Period"  
                 let _obj = Helper.toCell<Object> obj "obj" 
                 let builder (current : ICell) = ((PeriodModel.Cast _Period.cell).CompareTo
                                                             _obj.cell 
@@ -92,7 +92,7 @@ module PeriodFunction =
 
             try
 
-                let _Period = Helper.toCell<Period> period "Period"  
+                let _Period = Helper.toModelReference<Period> period "Period"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((PeriodModel.Cast _Period.cell).Equals
                                                             _o.cell 
@@ -132,7 +132,7 @@ module PeriodFunction =
 
             try
 
-                let _Period = Helper.toCell<Period> period "Period"  
+                let _Period = Helper.toModelReference<Period> period "Period"  
                 let builder (current : ICell) = ((PeriodModel.Cast _Period.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -168,7 +168,7 @@ module PeriodFunction =
 
             try
 
-                let _Period = Helper.toCell<Period> period "Period"  
+                let _Period = Helper.toModelReference<Period> period "Period"  
                 let builder (current : ICell) = ((PeriodModel.Cast _Period.cell).Length
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -204,7 +204,7 @@ module PeriodFunction =
 
             try
 
-                let _Period = Helper.toCell<Period> period "Period"  
+                let _Period = Helper.toModelReference<Period> period "Period"  
                 let builder (current : ICell) = ((PeriodModel.Cast _Period.cell).Normalize
                                                        ) :> ICell
                 let format (o : Period) (l:string) = o.ToString() :> obj
@@ -388,7 +388,7 @@ module PeriodFunction =
 
             try
 
-                let _Period = Helper.toCell<Period> period "Period"  
+                let _Period = Helper.toModelReference<Period> period "Period"  
                 let builder (current : ICell) = ((PeriodModel.Cast _Period.cell).ToShortString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -424,7 +424,7 @@ module PeriodFunction =
 
             try
 
-                let _Period = Helper.toCell<Period> period "Period"  
+                let _Period = Helper.toModelReference<Period> period "Period"  
                 let builder (current : ICell) = ((PeriodModel.Cast _Period.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -460,7 +460,7 @@ module PeriodFunction =
 
             try
 
-                let _Period = Helper.toCell<Period> period "Period"  
+                let _Period = Helper.toModelReference<Period> period "Period"  
                 let builder (current : ICell) = ((PeriodModel.Cast _Period.cell).Units
                                                        ) :> ICell
                 let format (o : TimeUnit) (l:string) = o.ToString() :> obj

@@ -91,7 +91,7 @@ module BoundaryConstraintFunction =
 
             try
 
-                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
+                let _BoundaryConstraint = Helper.toModelReference<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
                 let builder (current : ICell) = ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -129,7 +129,7 @@ module BoundaryConstraintFunction =
 
             try
 
-                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
+                let _BoundaryConstraint = Helper.toModelReference<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).LowerBound
                                                             _parameters.cell 
@@ -171,7 +171,7 @@ module BoundaryConstraintFunction =
 
             try
 
-                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
+                let _BoundaryConstraint = Helper.toModelReference<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).Test
                                                             _p.cell 
@@ -217,7 +217,7 @@ module BoundaryConstraintFunction =
 
             try
 
-                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
+                let _BoundaryConstraint = Helper.toModelReference<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
@@ -267,7 +267,7 @@ module BoundaryConstraintFunction =
 
             try
 
-                let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
+                let _BoundaryConstraint = Helper.toModelReference<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).UpperBound
                                                             _parameters.cell 

@@ -50,7 +50,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).AccruedAmount
                                                             _d.cell 
@@ -90,7 +90,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -126,7 +126,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -162,7 +162,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -198,7 +198,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -234,7 +234,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationIndex>) l
@@ -270,7 +270,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -403,7 +403,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -441,7 +441,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _discountingCurve = Helper.toHandle<YieldTermStructure> discountingCurve "discountingCurve" 
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).Price
                                                             _discountingCurve.cell 
@@ -481,7 +481,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationCouponPricer>) l
@@ -517,7 +517,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -555,7 +555,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _pricer = Helper.toCell<InflationCouponPricer> pricer "pricer" 
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).SetPricer
                                                             _pricer.cell 
@@ -595,7 +595,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : InflationCoupon) (l:string) = o.ToString() :> obj
@@ -631,7 +631,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -667,7 +667,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -703,7 +703,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -739,7 +739,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -777,7 +777,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).AccruedDays
                                                             _d.cell 
@@ -819,7 +819,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).AccruedPeriod
                                                             _d.cell 
@@ -859,7 +859,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -895,7 +895,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -931,7 +931,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -967,7 +967,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1003,7 +1003,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1041,7 +1041,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).CompareTo
                                                             _cf.cell 
@@ -1083,7 +1083,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).Equals
                                                             _cf.cell 
@@ -1127,7 +1127,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).HasOccurred
@@ -1173,7 +1173,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -1215,7 +1215,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).Accept
                                                             _v.cell 
@@ -1257,7 +1257,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).RegisterWith
                                                             _handler.cell 
@@ -1299,7 +1299,7 @@ module InflationCouponFunction =
 
             try
 
-                let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
+                let _InflationCoupon = Helper.toModelReference<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((InflationCouponModel.Cast _InflationCoupon.cell).UnregisterWith
                                                             _handler.cell 

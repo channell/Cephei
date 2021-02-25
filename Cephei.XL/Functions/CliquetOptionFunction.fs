@@ -109,7 +109,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -145,7 +145,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -181,7 +181,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -217,7 +217,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -253,7 +253,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -289,7 +289,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -325,7 +325,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -361,7 +361,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -397,7 +397,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -433,7 +433,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -469,7 +469,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -505,7 +505,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -541,7 +541,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -577,7 +577,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -613,7 +613,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -649,7 +649,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -685,7 +685,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -723,7 +723,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).Result
                                                             _tag.cell 
@@ -765,7 +765,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).SetPricingEngine
                                                             _e.cell 
@@ -805,7 +805,7 @@ module CliquetOptionFunction =
 
             try
 
-                let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
+                let _CliquetOption = Helper.toModelReference<CliquetOption> cliquetoption "CliquetOption"  
                 let builder (current : ICell) = ((CliquetOptionModel.Cast _CliquetOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

@@ -50,7 +50,7 @@ module FixedDividendFunction =
 
             try
 
-                let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
+                let _FixedDividend = Helper.toModelReference<FixedDividend> fixeddividend "FixedDividend"  
                 let _d = Helper.toCell<double> d "d" 
                 let builder (current : ICell) = ((FixedDividendModel.Cast _FixedDividend.cell).Amount1
                                                             _d.cell 
@@ -90,7 +90,7 @@ module FixedDividendFunction =
 
             try
 
-                let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
+                let _FixedDividend = Helper.toModelReference<FixedDividend> fixeddividend "FixedDividend"  
                 let builder (current : ICell) = ((FixedDividendModel.Cast _FixedDividend.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -169,7 +169,7 @@ module FixedDividendFunction =
 
             try
 
-                let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
+                let _FixedDividend = Helper.toModelReference<FixedDividend> fixeddividend "FixedDividend"  
                 let builder (current : ICell) = ((FixedDividendModel.Cast _FixedDividend.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -207,7 +207,7 @@ module FixedDividendFunction =
 
             try
 
-                let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
+                let _FixedDividend = Helper.toModelReference<FixedDividend> fixeddividend "FixedDividend"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((FixedDividendModel.Cast _FixedDividend.cell).CompareTo
                                                             _cf.cell 
@@ -249,7 +249,7 @@ module FixedDividendFunction =
 
             try
 
-                let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
+                let _FixedDividend = Helper.toModelReference<FixedDividend> fixeddividend "FixedDividend"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((FixedDividendModel.Cast _FixedDividend.cell).Equals
                                                             _cf.cell 
@@ -289,7 +289,7 @@ module FixedDividendFunction =
 
             try
 
-                let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
+                let _FixedDividend = Helper.toModelReference<FixedDividend> fixeddividend "FixedDividend"  
                 let builder (current : ICell) = ((FixedDividendModel.Cast _FixedDividend.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -329,7 +329,7 @@ module FixedDividendFunction =
 
             try
 
-                let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
+                let _FixedDividend = Helper.toModelReference<FixedDividend> fixeddividend "FixedDividend"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((FixedDividendModel.Cast _FixedDividend.cell).HasOccurred
@@ -375,7 +375,7 @@ module FixedDividendFunction =
 
             try
 
-                let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
+                let _FixedDividend = Helper.toModelReference<FixedDividend> fixeddividend "FixedDividend"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((FixedDividendModel.Cast _FixedDividend.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -417,7 +417,7 @@ module FixedDividendFunction =
 
             try
 
-                let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
+                let _FixedDividend = Helper.toModelReference<FixedDividend> fixeddividend "FixedDividend"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((FixedDividendModel.Cast _FixedDividend.cell).Accept
                                                             _v.cell 
@@ -459,7 +459,7 @@ module FixedDividendFunction =
 
             try
 
-                let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
+                let _FixedDividend = Helper.toModelReference<FixedDividend> fixeddividend "FixedDividend"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FixedDividendModel.Cast _FixedDividend.cell).RegisterWith
                                                             _handler.cell 
@@ -501,7 +501,7 @@ module FixedDividendFunction =
 
             try
 
-                let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
+                let _FixedDividend = Helper.toModelReference<FixedDividend> fixeddividend "FixedDividend"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FixedDividendModel.Cast _FixedDividend.cell).UnregisterWith
                                                             _handler.cell 

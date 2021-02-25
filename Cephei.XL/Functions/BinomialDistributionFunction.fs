@@ -93,7 +93,7 @@ module BinomialDistributionFunction =
 
             try
 
-                let _BinomialDistribution = Helper.toCell<BinomialDistribution> binomialdistribution "BinomialDistribution"  
+                let _BinomialDistribution = Helper.toModelReference<BinomialDistribution> binomialdistribution "BinomialDistribution"  
                 let _k = Helper.toCell<int> k "k" 
                 let builder (current : ICell) = ((BinomialDistributionModel.Cast _BinomialDistribution.cell).Value
                                                             _k.cell 

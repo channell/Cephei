@@ -97,7 +97,7 @@ module AmericanPathPricerFunction =
 
             try
 
-                let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
+                let _AmericanPathPricer = Helper.toModelReference<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
                 let builder (current : ICell) = ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).BasisSystem
                                                        ) :> ICell
                 let format (i : Generic.List<Func<double,double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -137,7 +137,7 @@ module AmericanPathPricerFunction =
 
             try
 
-                let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
+                let _AmericanPathPricer = Helper.toModelReference<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let _t = Helper.toCell<int> t "t" 
                 let builder (current : ICell) = ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).State
@@ -185,7 +185,7 @@ module AmericanPathPricerFunction =
 
             try
 
-                let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
+                let _AmericanPathPricer = Helper.toModelReference<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let _t = Helper.toCell<int> t "t" 
                 let builder (current : ICell) = ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).Value

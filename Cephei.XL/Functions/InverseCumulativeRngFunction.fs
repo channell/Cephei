@@ -85,7 +85,7 @@ module InverseCumulativeRngFunction =
 
             try
 
-                let _InverseCumulativeRng = Helper.toCell<InverseCumulativeRng> inversecumulativerng "InverseCumulativeRng"  
+                let _InverseCumulativeRng = Helper.toModelReference<InverseCumulativeRng> inversecumulativerng "InverseCumulativeRng"  
                 let builder (current : ICell) = ((InverseCumulativeRngModel.Cast _InverseCumulativeRng.cell).Next
                                                        ) :> ICell
                 let format (o : Sample<double>) (l:string) = o.ToString() :> obj

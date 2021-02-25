@@ -54,7 +54,7 @@ module SABRFunction =
 
             try
 
-                let _SABR = Helper.toCell<SABR> sabr "SABR"  
+                let _SABR = Helper.toModelReference<SABR> sabr "SABR"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _xEnd = Helper.toCell<int> xEnd "xEnd" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 

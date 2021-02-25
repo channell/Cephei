@@ -91,7 +91,7 @@ module DigitalReplicationFunction =
 
             try
 
-                let _DigitalReplication = Helper.toCell<DigitalReplication> digitalreplication "DigitalReplication"  
+                let _DigitalReplication = Helper.toModelReference<DigitalReplication> digitalreplication "DigitalReplication"  
                 let builder (current : ICell) = ((DigitalReplicationModel.Cast _DigitalReplication.cell).Gap
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -127,7 +127,7 @@ module DigitalReplicationFunction =
 
             try
 
-                let _DigitalReplication = Helper.toCell<DigitalReplication> digitalreplication "DigitalReplication"  
+                let _DigitalReplication = Helper.toModelReference<DigitalReplication> digitalreplication "DigitalReplication"  
                 let builder (current : ICell) = ((DigitalReplicationModel.Cast _DigitalReplication.cell).ReplicationType
                                                        ) :> ICell
                 let format (o : Replication.Type) (l:string) = o.ToString() :> obj

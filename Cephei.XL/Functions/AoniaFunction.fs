@@ -87,7 +87,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).Clone
                                                             _h.cell 
@@ -127,7 +127,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -163,7 +163,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -205,7 +205,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
@@ -256,7 +256,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).ForecastFixing
                                                             _fixingDate.cell 
@@ -297,7 +297,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -335,7 +335,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).MaturityDate
                                                             _valueDate.cell 
@@ -375,7 +375,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -411,7 +411,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -447,7 +447,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -487,7 +487,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).Fixing
@@ -531,7 +531,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -569,7 +569,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).FixingDate
                                                             _valueDate.cell 
@@ -609,7 +609,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -647,7 +647,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -687,7 +687,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -725,7 +725,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).PastFixing
                                                             _fixingDate.cell 
@@ -765,7 +765,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -801,7 +801,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).Update
                                                        ) :> ICell
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
@@ -839,7 +839,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).ValueDate
                                                             _fixingDate.cell 
@@ -885,7 +885,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -939,7 +939,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -991,7 +991,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).AddFixings1
@@ -1035,7 +1035,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1071,7 +1071,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
@@ -1109,7 +1109,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).RegisterWith
                                                             _handler.cell 
@@ -1149,7 +1149,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1187,7 +1187,7 @@ module AoniaFunction =
 
             try
 
-                let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
+                let _Aonia = Helper.toModelReference<Aonia> aonia "Aonia"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AoniaModel.Cast _Aonia.cell).UnregisterWith
                                                             _handler.cell 

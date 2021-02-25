@@ -97,7 +97,7 @@ module GaussJacobiIntegrationFunction =
 
             try
 
-                let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
+                let _GaussJacobiIntegration = Helper.toModelReference<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
                 let builder (current : ICell) = ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -135,7 +135,7 @@ module GaussJacobiIntegrationFunction =
 
             try
 
-                let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
+                let _GaussJacobiIntegration = Helper.toModelReference<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder (current : ICell) = ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Value
                                                             _f.cell 
@@ -175,7 +175,7 @@ module GaussJacobiIntegrationFunction =
 
             try
 
-                let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
+                let _GaussJacobiIntegration = Helper.toModelReference<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
                 let builder (current : ICell) = ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -211,7 +211,7 @@ module GaussJacobiIntegrationFunction =
 
             try
 
-                let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
+                let _GaussJacobiIntegration = Helper.toModelReference<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
                 let builder (current : ICell) = ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

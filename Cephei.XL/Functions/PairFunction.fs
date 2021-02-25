@@ -48,7 +48,7 @@ module PairFunction =
 
             try
 
-                let _Pair = Helper.toCell<Pair> pair "Pair"  
+                let _Pair = Helper.toModelReference<Pair> pair "Pair"  
                 let builder (current : ICell) = ((PairModel.Cast _Pair.cell).First
                                                        ) :> ICell
                 let format (o : TFirst) (l:string) = o.ToString() :> obj
@@ -158,7 +158,7 @@ module PairFunction =
 
             try
 
-                let _Pair = Helper.toCell<Pair> pair "Pair"  
+                let _Pair = Helper.toModelReference<Pair> pair "Pair"  
                 let builder (current : ICell) = ((PairModel.Cast _Pair.cell).Second
                                                        ) :> ICell
                 let format (o : TSecond) (l:string) = o.ToString() :> obj
@@ -198,7 +198,7 @@ module PairFunction =
 
             try
 
-                let _Pair = Helper.toCell<Pair> pair "Pair"  
+                let _Pair = Helper.toModelReference<Pair> pair "Pair"  
                 let _first = Helper.toCell<'TFirst> first "first" 
                 let _second = Helper.toCell<'TSecond> second "second" 
                 let builder (current : ICell) = ((PairModel.Cast _Pair.cell).Set

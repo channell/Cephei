@@ -360,7 +360,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -398,7 +398,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).AddHoliday
                                                             _d.cell 
@@ -442,7 +442,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).Adjust
@@ -496,7 +496,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -560,7 +560,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -620,7 +620,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -672,7 +672,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -708,7 +708,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -746,7 +746,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).EndOfMonth
                                                             _d.cell 
@@ -788,7 +788,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).Equals
                                                             _o.cell 
@@ -830,7 +830,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).IsBusinessDay
                                                             _d.cell 
@@ -872,7 +872,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).IsEndOfMonth
                                                             _d.cell 
@@ -914,7 +914,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).IsHoliday
                                                             _d.cell 
@@ -956,7 +956,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).IsWeekend
                                                             _w.cell 
@@ -998,7 +998,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -1034,7 +1034,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -1072,7 +1072,7 @@ module JointCalendarFunction =
 
             try
 
-                let _JointCalendar = Helper.toCell<JointCalendar> jointcalendar "JointCalendar"  
+                let _JointCalendar = Helper.toModelReference<JointCalendar> jointcalendar "JointCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JointCalendarModel.Cast _JointCalendar.cell).RemoveHoliday
                                                             _d.cell 

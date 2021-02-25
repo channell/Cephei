@@ -52,7 +52,7 @@ module TsiveriotisFernandesLatticeFunction =
 
             try
 
-                let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
+                let _TsiveriotisFernandesLattice = Helper.toModelReference<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((TsiveriotisFernandesLatticeModel.Cast _TsiveriotisFernandesLattice.cell).PartialRollback
@@ -100,7 +100,7 @@ module TsiveriotisFernandesLatticeFunction =
 
             try
 
-                let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
+                let _TsiveriotisFernandesLattice = Helper.toModelReference<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((TsiveriotisFernandesLatticeModel.Cast _TsiveriotisFernandesLattice.cell).Rollback
@@ -158,7 +158,7 @@ module TsiveriotisFernandesLatticeFunction =
 
             try
 
-                let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
+                let _TsiveriotisFernandesLattice = Helper.toModelReference<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
                 let _i = Helper.toCell<int> i "i" 
                 let _values = Helper.toCell<Vector> values "values" 
                 let _conversionProbability = Helper.toCell<Vector> conversionProbability "conversionProbability" 

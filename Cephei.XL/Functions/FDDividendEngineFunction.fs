@@ -56,7 +56,7 @@ module FDDividendEngineFunction =
 
             try
 
-                let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
+                let _FDDividendEngine = Helper.toModelReference<FDDividendEngine> fddividendengine "FDDividendEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
@@ -214,7 +214,7 @@ module FDDividendEngineFunction =
 
             try
 
-                let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
+                let _FDDividendEngine = Helper.toModelReference<FDDividendEngine> fddividendengine "FDDividendEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
@@ -269,7 +269,7 @@ module FDDividendEngineFunction =
 
             try
 
-                let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
+                let _FDDividendEngine = Helper.toModelReference<FDDividendEngine> fddividendengine "FDDividendEngine"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
                 let builder (current : ICell) = ((FDDividendEngineModel.Cast _FDDividendEngine.cell).SetStepCondition
                                                             _impl.cell 
@@ -309,7 +309,7 @@ module FDDividendEngineFunction =
 
             try
 
-                let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
+                let _FDDividendEngine = Helper.toModelReference<FDDividendEngine> fddividendengine "FDDividendEngine"  
                 let builder (current : ICell) = ((FDDividendEngineModel.Cast _FDDividendEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDDividendEngine) (l:string) = o.ToString() :> obj
@@ -345,7 +345,7 @@ module FDDividendEngineFunction =
 
             try
 
-                let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
+                let _FDDividendEngine = Helper.toModelReference<FDDividendEngine> fddividendengine "FDDividendEngine"  
                 let builder (current : ICell) = ((FDDividendEngineModel.Cast _FDDividendEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -381,7 +381,7 @@ module FDDividendEngineFunction =
 
             try
 
-                let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
+                let _FDDividendEngine = Helper.toModelReference<FDDividendEngine> fddividendengine "FDDividendEngine"  
                 let builder (current : ICell) = ((FDDividendEngineModel.Cast _FDDividendEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -417,7 +417,7 @@ module FDDividendEngineFunction =
 
             try
 
-                let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
+                let _FDDividendEngine = Helper.toModelReference<FDDividendEngine> fddividendengine "FDDividendEngine"  
                 let builder (current : ICell) = ((FDDividendEngineModel.Cast _FDDividendEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l

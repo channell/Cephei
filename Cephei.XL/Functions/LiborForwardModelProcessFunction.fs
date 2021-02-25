@@ -48,7 +48,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).AccrualEndTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -84,7 +84,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).AccrualPeriod_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).AccrualStartTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -156,7 +156,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).AccrualStartTimes_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -196,7 +196,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).Apply
@@ -242,7 +242,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _amount = Helper.toCell<double> amount "amount" 
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).CashFlows
                                                             _amount.cell 
@@ -282,7 +282,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).CashFlows1
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -324,7 +324,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -372,7 +372,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).CovarParam
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LfmCovarianceParameterization>) l
@@ -412,7 +412,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).Diffusion
@@ -458,7 +458,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _rates = Helper.toCell<Generic.List<double>> rates "rates" 
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).DiscountBond
                                                             _rates.cell 
@@ -502,7 +502,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).Drift
@@ -554,7 +554,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -606,7 +606,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -642,7 +642,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).FixingDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -678,7 +678,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).FixingDates_
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -714,7 +714,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).FixingTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -750,7 +750,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).FixingTimes_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -786,7 +786,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -822,7 +822,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).Index_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -858,7 +858,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -894,7 +894,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).InitialValues_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -930,7 +930,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).LfmParam_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LfmCovarianceParameterization>) l
@@ -1073,7 +1073,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).NextIndexReset
                                                             _t.cell 
@@ -1115,7 +1115,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _param = Helper.toCell<LfmCovarianceParameterization> param "param" 
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).SetCovarParam
                                                             _param.cell 
@@ -1155,7 +1155,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1191,7 +1191,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).Size_
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1233,7 +1233,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -1283,7 +1283,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).RegisterWith
                                                             _handler.cell 
@@ -1329,7 +1329,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -1379,7 +1379,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).Time
                                                             _d.cell 
@@ -1421,7 +1421,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).UnregisterWith
                                                             _handler.cell 
@@ -1461,7 +1461,7 @@ module LiborForwardModelProcessFunction =
 
             try
 
-                let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
+                let _LiborForwardModelProcess = Helper.toModelReference<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).Update
                                                        ) :> ICell
                 let format (o : LiborForwardModelProcess) (l:string) = o.ToString() :> obj

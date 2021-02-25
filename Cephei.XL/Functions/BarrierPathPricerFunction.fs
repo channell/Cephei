@@ -129,7 +129,7 @@ module BarrierPathPricerFunction =
 
             try
 
-                let _BarrierPathPricer = Helper.toCell<BarrierPathPricer> barrierpathpricer "BarrierPathPricer"  
+                let _BarrierPathPricer = Helper.toModelReference<BarrierPathPricer> barrierpathpricer "BarrierPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let builder (current : ICell) = ((BarrierPathPricerModel.Cast _BarrierPathPricer.cell).Value
                                                             _path.cell 

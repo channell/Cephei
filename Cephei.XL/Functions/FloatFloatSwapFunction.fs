@@ -48,7 +48,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).CappedRate1
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -84,7 +84,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).CappedRate2
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).DayCount1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -156,7 +156,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).DayCount2
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -530,7 +530,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).FlooredRate1
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -566,7 +566,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).FlooredRate2
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -602,7 +602,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Gearing1
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -638,7 +638,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Gearing2
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -674,7 +674,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Index1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
@@ -710,7 +710,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Index2
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
@@ -746,7 +746,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Leg1
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -782,7 +782,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Leg2
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -818,7 +818,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Nominal1
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -854,7 +854,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Nominal2
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -890,7 +890,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).PaymentConvention1
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -926,7 +926,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).PaymentConvention2
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -962,7 +962,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Schedule1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
@@ -998,7 +998,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Schedule2
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
@@ -1034,7 +1034,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Spread1
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1070,7 +1070,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Spread2
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1106,7 +1106,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Type
                                                        ) :> ICell
                 let format (o : VanillaSwap.Type) (l:string) = o.ToString() :> obj
@@ -1144,7 +1144,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).EndDiscounts
                                                             _j.cell 
@@ -1185,7 +1185,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Engine
                                                        ) :> ICell
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
@@ -1222,7 +1222,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1260,7 +1260,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Leg
                                                             _j.cell 
@@ -1302,7 +1302,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).LegBPS
                                                             _j.cell 
@@ -1344,7 +1344,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).LegNPV
                                                             _j.cell 
@@ -1384,7 +1384,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1420,7 +1420,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1458,7 +1458,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Payer
                                                             _j.cell 
@@ -1498,7 +1498,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1536,7 +1536,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).StartDiscounts
                                                             _j.cell 
@@ -1576,7 +1576,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1612,7 +1612,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1648,7 +1648,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1686,7 +1686,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).Result
                                                             _tag.cell 
@@ -1728,7 +1728,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).SetPricingEngine
                                                             _e.cell 
@@ -1768,7 +1768,7 @@ module FloatFloatSwapFunction =
 
             try
 
-                let _FloatFloatSwap = Helper.toCell<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
+                let _FloatFloatSwap = Helper.toModelReference<FloatFloatSwap> floatfloatswap "FloatFloatSwap"  
                 let builder (current : ICell) = ((FloatFloatSwapModel.Cast _FloatFloatSwap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

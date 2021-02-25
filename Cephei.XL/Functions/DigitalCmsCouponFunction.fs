@@ -190,7 +190,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _underlying = Helper.toCell<CmsCoupon> underlying "underlying" 
                 let _callStrike = Helper.toNullable<double> callStrike "callStrike"
                 let _callPosition = Helper.toDefault<Position.Type> callPosition "callPosition" Position.Type.Long
@@ -266,7 +266,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).CallDigitalPayoff
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -302,7 +302,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).CallOptionRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -338,7 +338,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).CallStrike
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -374,7 +374,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -410,7 +410,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).HasCall
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -446,7 +446,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).HasCollar
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -482,7 +482,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).HasPut
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -518,7 +518,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).IsLongCall
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -554,7 +554,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).IsLongPut
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -590,7 +590,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).PutDigitalPayoff
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -626,7 +626,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).PutOptionRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -662,7 +662,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).PutStrike
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -698,7 +698,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -736,7 +736,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).SetPricer
                                                             _pricer.cell 
@@ -776,7 +776,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Underlying
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
@@ -814,7 +814,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).AccruedAmount
                                                             _d.cell 
@@ -854,7 +854,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -890,7 +890,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -926,7 +926,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -962,7 +962,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -998,7 +998,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1034,7 +1034,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1070,7 +1070,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
@@ -1106,7 +1106,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1142,7 +1142,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1180,7 +1180,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Price
                                                             _yts.cell 
@@ -1220,7 +1220,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
@@ -1256,7 +1256,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1292,7 +1292,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : DigitalCmsCoupon) (l:string) = o.ToString() :> obj
@@ -1328,7 +1328,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1364,7 +1364,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1400,7 +1400,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1436,7 +1436,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1474,7 +1474,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).AccruedDays
                                                             _d.cell 
@@ -1516,7 +1516,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).AccruedPeriod
                                                             _d.cell 
@@ -1556,7 +1556,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1592,7 +1592,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1628,7 +1628,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1664,7 +1664,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1700,7 +1700,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1738,7 +1738,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).CompareTo
                                                             _cf.cell 
@@ -1780,7 +1780,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Equals
                                                             _cf.cell 
@@ -1824,7 +1824,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).HasOccurred
@@ -1870,7 +1870,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -1912,7 +1912,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).Accept
                                                             _v.cell 
@@ -1954,7 +1954,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).RegisterWith
                                                             _handler.cell 
@@ -1996,7 +1996,7 @@ module DigitalCmsCouponFunction =
 
             try
 
-                let _DigitalCmsCoupon = Helper.toCell<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
+                let _DigitalCmsCoupon = Helper.toModelReference<DigitalCmsCoupon> digitalcmscoupon "DigitalCmsCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((DigitalCmsCouponModel.Cast _DigitalCmsCoupon.cell).UnregisterWith
                                                             _handler.cell 

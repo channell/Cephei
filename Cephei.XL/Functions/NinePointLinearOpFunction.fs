@@ -53,7 +53,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Add
@@ -100,7 +100,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _r = Helper.toCell<Vector> r "r" 
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Apply
                                                             _r.cell 
@@ -142,7 +142,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _v = Helper.toCell<Vector> v "v" 
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).ApplyTo
                                                             _v.cell 
@@ -182,7 +182,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -220,7 +220,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _size = Helper.toCell<int> size "size" 
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Identity
                                                             _size.cell 
@@ -260,7 +260,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -298,7 +298,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _r = Helper.toCell<Vector> r "r" 
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Mult
                                                             _r.cell 
@@ -342,7 +342,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _a = Helper.toCell<double> a "a" 
                 let _D = Helper.toCell<IOperator> D "D" 
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Multiply
@@ -474,7 +474,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).SetTime
                                                             _t.cell 
@@ -514,7 +514,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -552,7 +552,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).SolveFor
                                                             _rhs.cell 
@@ -596,7 +596,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Subtract
@@ -642,7 +642,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _m = Helper.toCell<NinePointLinearOp> m "m" 
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Swap
                                                             _m.cell 
@@ -682,7 +682,7 @@ module NinePointLinearOpFunction =
 
             try
 
-                let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
+                let _NinePointLinearOp = Helper.toModelReference<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let builder (current : ICell) = ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).ToMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l

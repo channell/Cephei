@@ -50,7 +50,7 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _BlackDeltaCalculator = Helper.toModelReference<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _atmT = Helper.toCell<DeltaVolQuote.AtmType> atmT "atmT" 
                 let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).AtmStrike
                                                             _atmT.cell 
@@ -159,7 +159,7 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _BlackDeltaCalculator = Helper.toModelReference<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).CumD1
                                                             _strike.cell 
@@ -201,7 +201,7 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _BlackDeltaCalculator = Helper.toModelReference<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).CumD2
                                                             _strike.cell 
@@ -243,7 +243,7 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _BlackDeltaCalculator = Helper.toModelReference<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).DeltaFromStrike
                                                             _strike.cell 
@@ -285,7 +285,7 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _BlackDeltaCalculator = Helper.toModelReference<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).ND1
                                                             _strike.cell 
@@ -327,7 +327,7 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _BlackDeltaCalculator = Helper.toModelReference<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).ND2
                                                             _strike.cell 
@@ -369,7 +369,7 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _BlackDeltaCalculator = Helper.toModelReference<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _dt = Helper.toCell<DeltaVolQuote.DeltaType> dt "dt" 
                 let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).SetDeltaType
                                                             _dt.cell 
@@ -411,7 +411,7 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _BlackDeltaCalculator = Helper.toModelReference<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _ot = Helper.toCell<Option.Type> ot "ot" 
                 let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).SetOptionType
                                                             _ot.cell 
@@ -453,7 +453,7 @@ module BlackDeltaCalculatorFunction =
 
             try
 
-                let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
+                let _BlackDeltaCalculator = Helper.toModelReference<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _delta = Helper.toCell<double> delta "delta" 
                 let builder (current : ICell) = ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).StrikeFromDelta
                                                             _delta.cell 

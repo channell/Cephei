@@ -56,7 +56,7 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _EulerDiscretization = Helper.toModelReference<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
@@ -116,7 +116,7 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _EulerDiscretization = Helper.toModelReference<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
@@ -176,7 +176,7 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _EulerDiscretization = Helper.toModelReference<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
@@ -236,7 +236,7 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _EulerDiscretization = Helper.toModelReference<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
@@ -296,7 +296,7 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _EulerDiscretization = Helper.toModelReference<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
@@ -356,7 +356,7 @@ module EulerDiscretizationFunction =
 
             try
 
-                let _EulerDiscretization = Helper.toCell<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
+                let _EulerDiscretization = Helper.toModelReference<EulerDiscretization> eulerdiscretization "EulerDiscretization"  
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 

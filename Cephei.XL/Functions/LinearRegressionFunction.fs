@@ -48,7 +48,7 @@ module LinearRegressionFunction =
 
             try
 
-                let _LinearRegression = Helper.toCell<LinearRegression> linearregression "LinearRegression"  
+                let _LinearRegression = Helper.toModelReference<LinearRegression> linearregression "LinearRegression"  
                 let builder (current : ICell) = ((LinearRegressionModel.Cast _LinearRegression.cell).Coefficients
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -170,7 +170,7 @@ module LinearRegressionFunction =
 
             try
 
-                let _LinearRegression = Helper.toCell<LinearRegression> linearregression "LinearRegression"  
+                let _LinearRegression = Helper.toModelReference<LinearRegression> linearregression "LinearRegression"  
                 let builder (current : ICell) = ((LinearRegressionModel.Cast _LinearRegression.cell).Residuals
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -206,7 +206,7 @@ module LinearRegressionFunction =
 
             try
 
-                let _LinearRegression = Helper.toCell<LinearRegression> linearregression "LinearRegression"  
+                let _LinearRegression = Helper.toModelReference<LinearRegression> linearregression "LinearRegression"  
                 let builder (current : ICell) = ((LinearRegressionModel.Cast _LinearRegression.cell).StandardErrors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

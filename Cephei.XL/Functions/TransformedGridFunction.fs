@@ -50,7 +50,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _TransformedGrid = Helper.toModelReference<TransformedGrid> transformedgrid "TransformedGrid"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((TransformedGridModel.Cast _TransformedGrid.cell).Dx
                                                             _i.cell 
@@ -90,7 +90,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _TransformedGrid = Helper.toModelReference<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder (current : ICell) = ((TransformedGridModel.Cast _TransformedGrid.cell).DxArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -128,7 +128,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _TransformedGrid = Helper.toModelReference<TransformedGrid> transformedgrid "TransformedGrid"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((TransformedGridModel.Cast _TransformedGrid.cell).Dxm
                                                             _i.cell 
@@ -168,7 +168,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _TransformedGrid = Helper.toModelReference<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder (current : ICell) = ((TransformedGridModel.Cast _TransformedGrid.cell).DxmArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -206,7 +206,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _TransformedGrid = Helper.toModelReference<TransformedGrid> transformedgrid "TransformedGrid"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((TransformedGridModel.Cast _TransformedGrid.cell).Dxp
                                                             _i.cell 
@@ -246,7 +246,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _TransformedGrid = Helper.toModelReference<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder (current : ICell) = ((TransformedGridModel.Cast _TransformedGrid.cell).DxpArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -284,7 +284,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _TransformedGrid = Helper.toModelReference<TransformedGrid> transformedgrid "TransformedGrid"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((TransformedGridModel.Cast _TransformedGrid.cell).Grid
                                                             _i.cell 
@@ -324,7 +324,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _TransformedGrid = Helper.toModelReference<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder (current : ICell) = ((TransformedGridModel.Cast _TransformedGrid.cell).GridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -360,7 +360,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _TransformedGrid = Helper.toModelReference<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder (current : ICell) = ((TransformedGridModel.Cast _TransformedGrid.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -398,7 +398,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _TransformedGrid = Helper.toModelReference<TransformedGrid> transformedgrid "TransformedGrid"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((TransformedGridModel.Cast _TransformedGrid.cell).TransformedGrid
                                                             _i.cell 
@@ -518,7 +518,7 @@ module TransformedGridFunction =
 
             try
 
-                let _TransformedGrid = Helper.toCell<TransformedGrid> transformedgrid "TransformedGrid"  
+                let _TransformedGrid = Helper.toModelReference<TransformedGrid> transformedgrid "TransformedGrid"  
                 let builder (current : ICell) = ((TransformedGridModel.Cast _TransformedGrid.cell).TransformedGridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

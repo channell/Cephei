@@ -115,7 +115,7 @@ module AmericanPayoffAtExpiryFunction =
 
             try
 
-                let _AmericanPayoffAtExpiry = Helper.toCell<AmericanPayoffAtExpiry> americanpayoffatexpiry "AmericanPayoffAtExpiry"  
+                let _AmericanPayoffAtExpiry = Helper.toModelReference<AmericanPayoffAtExpiry> americanpayoffatexpiry "AmericanPayoffAtExpiry"  
                 let builder (current : ICell) = ((AmericanPayoffAtExpiryModel.Cast _AmericanPayoffAtExpiry.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

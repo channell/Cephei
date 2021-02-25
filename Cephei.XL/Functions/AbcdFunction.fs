@@ -145,7 +145,7 @@ module AbcdFunction =
 
             try
 
-                let _Abcd = Helper.toCell<Abcd> abcd "Abcd"  
+                let _Abcd = Helper.toModelReference<Abcd> abcd "Abcd"  
                 let builder (current : ICell) = ((AbcdModel.Cast _Abcd.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -187,7 +187,7 @@ module AbcdFunction =
 
             try
 
-                let _Abcd = Helper.toCell<Abcd> abcd "Abcd"  
+                let _Abcd = Helper.toModelReference<Abcd> abcd "Abcd"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 

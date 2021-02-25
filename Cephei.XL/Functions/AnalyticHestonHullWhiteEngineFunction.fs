@@ -165,7 +165,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
+                let _AnalyticHestonHullWhiteEngine = Helper.toModelReference<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let builder (current : ICell) = ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
@@ -201,7 +201,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
+                let _AnalyticHestonHullWhiteEngine = Helper.toModelReference<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let builder (current : ICell) = ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -240,7 +240,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
+                let _AnalyticHestonHullWhiteEngine = Helper.toModelReference<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let builder (current : ICell) = ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).SetModel
                                                             _model.cell 
@@ -282,7 +282,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
+                let _AnalyticHestonHullWhiteEngine = Helper.toModelReference<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -322,7 +322,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
+                let _AnalyticHestonHullWhiteEngine = Helper.toModelReference<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let builder (current : ICell) = ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
@@ -360,7 +360,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
             try
 
-                let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
+                let _AnalyticHestonHullWhiteEngine = Helper.toModelReference<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).UnregisterWith
                                                             _handler.cell 

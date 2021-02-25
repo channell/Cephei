@@ -117,7 +117,7 @@ module AbcdSquaredFunction =
 
             try
 
-                let _AbcdSquared = Helper.toCell<AbcdSquared> abcdsquared "AbcdSquared"  
+                let _AbcdSquared = Helper.toModelReference<AbcdSquared> abcdsquared "AbcdSquared"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((AbcdSquaredModel.Cast _AbcdSquared.cell).Value
                                                             _t.cell 

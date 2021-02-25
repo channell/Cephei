@@ -49,7 +49,7 @@ module FDVanillaEngineFunction =
 
             try
 
-                let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
+                let _FDVanillaEngine = Helper.toModelReference<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
                 let builder (current : ICell) = ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDVanillaEngine) (l:string) = o.ToString() :> obj
@@ -93,7 +93,7 @@ module FDVanillaEngineFunction =
 
             try
 
-                let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
+                let _FDVanillaEngine = Helper.toModelReference<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
@@ -243,7 +243,7 @@ module FDVanillaEngineFunction =
 
             try
 
-                let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
+                let _FDVanillaEngine = Helper.toModelReference<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
                 let builder (current : ICell) = ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -279,7 +279,7 @@ module FDVanillaEngineFunction =
 
             try
 
-                let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
+                let _FDVanillaEngine = Helper.toModelReference<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
                 let builder (current : ICell) = ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -315,7 +315,7 @@ module FDVanillaEngineFunction =
 
             try
 
-                let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
+                let _FDVanillaEngine = Helper.toModelReference<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
                 let builder (current : ICell) = ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l

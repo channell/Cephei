@@ -52,7 +52,7 @@ module FdmAffineModelSwapInnerValueFunction =
 
             try
 
-                let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
+                let _FdmAffineModelSwapInnerValue = Helper.toModelReference<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).AvgInnerValue
@@ -169,7 +169,7 @@ module FdmAffineModelSwapInnerValueFunction =
 
             try
 
-                let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
+                let _FdmAffineModelSwapInnerValue = Helper.toModelReference<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
                 let _model = Helper.toCell<'ModelType> model "model" 
                 let _t = Helper.toCell<double> t "t" 
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
@@ -221,7 +221,7 @@ module FdmAffineModelSwapInnerValueFunction =
 
             try
 
-                let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
+                let _FdmAffineModelSwapInnerValue = Helper.toModelReference<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).InnerValue

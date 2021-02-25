@@ -52,7 +52,7 @@ module SimplexFunction =
 
             try
 
-                let _Simplex = Helper.toCell<Simplex> simplex "Simplex"  
+                let _Simplex = Helper.toModelReference<Simplex> simplex "Simplex"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder (current : ICell) = ((SimplexModel.Cast _Simplex.cell).Minimize

@@ -48,7 +48,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -84,7 +84,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -120,7 +120,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -156,7 +156,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).MaxSwapTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -228,7 +228,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -264,7 +264,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -300,7 +300,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -336,7 +336,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -415,7 +415,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -459,7 +459,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -519,7 +519,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -579,7 +579,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -639,7 +639,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -699,7 +699,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -759,7 +759,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -811,7 +811,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).MaxSwapLength
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -853,7 +853,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -907,7 +907,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -961,7 +961,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -1015,7 +1015,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -1069,7 +1069,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -1123,7 +1123,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -1177,7 +1177,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
@@ -1231,7 +1231,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extr = Helper.toCell<bool> extr "extr" 
@@ -1285,7 +1285,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
@@ -1337,7 +1337,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _start = Helper.toCell<Date> start "start" 
                 let _End = Helper.toCell<Date> End "End" 
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).SwapLength
@@ -1383,7 +1383,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).SwapLength1
                                                             _swapTenor.cell 
@@ -1431,7 +1431,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1491,7 +1491,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1551,7 +1551,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1611,7 +1611,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1671,7 +1671,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1731,7 +1731,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1783,7 +1783,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -1821,7 +1821,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _p = Helper.toCell<Period> p "p" 
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).OptionDateFromTenor
                                                             _p.cell 
@@ -1863,7 +1863,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).TimeFromReference
                                                             _date.cell 
@@ -1903,7 +1903,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).Update
                                                        ) :> ICell
                 let format (o : SpreadedSwaptionVolatility) (l:string) = o.ToString() :> obj
@@ -1939,7 +1939,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1977,7 +1977,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).DisableExtrapolation
                                                             _b.cell 
@@ -2019,7 +2019,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).EnableExtrapolation
                                                             _b.cell 
@@ -2059,7 +2059,7 @@ module SpreadedSwaptionVolatilityFunction =
 
             try
 
-                let _SpreadedSwaptionVolatility = Helper.toCell<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
+                let _SpreadedSwaptionVolatility = Helper.toModelReference<SpreadedSwaptionVolatility> spreadedswaptionvolatility "SpreadedSwaptionVolatility"  
                 let builder (current : ICell) = ((SpreadedSwaptionVolatilityModel.Cast _SpreadedSwaptionVolatility.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

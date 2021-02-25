@@ -139,7 +139,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -175,7 +175,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -211,7 +211,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).FixingDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -247,7 +247,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -283,7 +283,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).IndexFixings
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -321,7 +321,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccruedAmount
                                                             _d.cell 
@@ -361,7 +361,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -397,7 +397,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -433,7 +433,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -493,7 +493,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _nominal = Helper.toCell<double> nominal "nominal" 
                 let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
                 let _startDate = Helper.toCell<Date> startDate "startDate" 
@@ -577,7 +577,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -613,7 +613,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -649,7 +649,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
@@ -685,7 +685,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -723,7 +723,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Price
                                                             _yts.cell 
@@ -763,7 +763,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
@@ -799,7 +799,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -837,7 +837,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).SetPricer
                                                             _pricer.cell 
@@ -877,7 +877,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -913,7 +913,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Update
                                                        ) :> ICell
                 let format (o : AverageBMACoupon) (l:string) = o.ToString() :> obj
@@ -949,7 +949,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -985,7 +985,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1021,7 +1021,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1057,7 +1057,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1095,7 +1095,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccruedDays
                                                             _d.cell 
@@ -1137,7 +1137,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccruedPeriod
                                                             _d.cell 
@@ -1177,7 +1177,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1213,7 +1213,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1249,7 +1249,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1285,7 +1285,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1321,7 +1321,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1359,7 +1359,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).CompareTo
                                                             _cf.cell 
@@ -1401,7 +1401,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Equals
                                                             _cf.cell 
@@ -1445,7 +1445,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).HasOccurred
@@ -1491,7 +1491,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -1533,7 +1533,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Accept
                                                             _v.cell 
@@ -1575,7 +1575,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).RegisterWith
                                                             _handler.cell 
@@ -1617,7 +1617,7 @@ module AverageBMACouponFunction =
 
             try
 
-                let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
+                let _AverageBMACoupon = Helper.toModelReference<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).UnregisterWith
                                                             _handler.cell 

@@ -177,7 +177,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).AccruedAmount
                                                             _settlement.cell 
@@ -217,7 +217,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -253,7 +253,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -289,7 +289,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -335,7 +335,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -401,7 +401,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -457,7 +457,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -493,7 +493,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -529,7 +529,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -567,7 +567,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).IsTradable
                                                             _d.cell 
@@ -607,7 +607,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -645,7 +645,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).NextCashFlowDate
                                                             _settlement.cell 
@@ -687,7 +687,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).NextCouponRate
                                                             _settlement.cell 
@@ -729,7 +729,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).Notional
                                                             _d.cell 
@@ -769,7 +769,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -807,7 +807,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
@@ -849,7 +849,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).PreviousCouponRate
                                                             _settlement.cell 
@@ -889,7 +889,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -925,7 +925,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -963,7 +963,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).SettlementDate
                                                             _date.cell 
@@ -1003,7 +1003,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1041,7 +1041,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).SettlementValue
                                                             _cleanPrice.cell 
@@ -1081,7 +1081,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1117,7 +1117,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1167,7 +1167,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1241,7 +1241,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -1297,7 +1297,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1333,7 +1333,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1369,7 +1369,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1407,7 +1407,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).Result
                                                             _tag.cell 
@@ -1449,7 +1449,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).SetPricingEngine
                                                             _e.cell 
@@ -1489,7 +1489,7 @@ module CmsRateBondFunction =
 
             try
 
-                let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
+                let _CmsRateBond = Helper.toModelReference<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = ((CmsRateBondModel.Cast _CmsRateBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

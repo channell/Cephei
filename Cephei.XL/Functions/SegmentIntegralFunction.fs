@@ -85,7 +85,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
+                let _SegmentIntegral = Helper.toModelReference<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let builder (current : ICell) = ((SegmentIntegralModel.Cast _SegmentIntegral.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -121,7 +121,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
+                let _SegmentIntegral = Helper.toModelReference<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let builder (current : ICell) = ((SegmentIntegralModel.Cast _SegmentIntegral.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -157,7 +157,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
+                let _SegmentIntegral = Helper.toModelReference<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let builder (current : ICell) = ((SegmentIntegralModel.Cast _SegmentIntegral.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -193,7 +193,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
+                let _SegmentIntegral = Helper.toModelReference<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let builder (current : ICell) = ((SegmentIntegralModel.Cast _SegmentIntegral.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -229,7 +229,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
+                let _SegmentIntegral = Helper.toModelReference<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let builder (current : ICell) = ((SegmentIntegralModel.Cast _SegmentIntegral.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -267,7 +267,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
+                let _SegmentIntegral = Helper.toModelReference<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let builder (current : ICell) = ((SegmentIntegralModel.Cast _SegmentIntegral.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
@@ -309,7 +309,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
+                let _SegmentIntegral = Helper.toModelReference<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder (current : ICell) = ((SegmentIntegralModel.Cast _SegmentIntegral.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
@@ -355,7 +355,7 @@ module SegmentIntegralFunction =
 
             try
 
-                let _SegmentIntegral = Helper.toCell<SegmentIntegral> segmentintegral "SegmentIntegral"  
+                let _SegmentIntegral = Helper.toModelReference<SegmentIntegral> segmentintegral "SegmentIntegral"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 

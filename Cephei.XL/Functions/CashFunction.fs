@@ -115,7 +115,7 @@ module CashFunction =
 
             try
 
-                let _Cash = Helper.toCell<Cash> cash "Cash"  
+                let _Cash = Helper.toModelReference<Cash> cash "Cash"  
                 let builder (current : ICell) = ((CashModel.Cast _Cash.cell).PrincipalLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -151,7 +151,7 @@ module CashFunction =
 
             try
 
-                let _Cash = Helper.toCell<Cash> cash "Cash"  
+                let _Cash = Helper.toModelReference<Cash> cash "Cash"  
                 let builder (current : ICell) = ((CashModel.Cast _Cash.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -187,7 +187,7 @@ module CashFunction =
 
             try
 
-                let _Cash = Helper.toCell<Cash> cash "Cash"  
+                let _Cash = Helper.toModelReference<Cash> cash "Cash"  
                 let builder (current : ICell) = ((CashModel.Cast _Cash.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -223,7 +223,7 @@ module CashFunction =
 
             try
 
-                let _Cash = Helper.toCell<Cash> cash "Cash"  
+                let _Cash = Helper.toModelReference<Cash> cash "Cash"  
                 let builder (current : ICell) = ((CashModel.Cast _Cash.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -259,7 +259,7 @@ module CashFunction =
 
             try
 
-                let _Cash = Helper.toCell<Cash> cash "Cash"  
+                let _Cash = Helper.toModelReference<Cash> cash "Cash"  
                 let builder (current : ICell) = ((CashModel.Cast _Cash.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -297,7 +297,7 @@ module CashFunction =
 
             try
 
-                let _Cash = Helper.toCell<Cash> cash "Cash"  
+                let _Cash = Helper.toModelReference<Cash> cash "Cash"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((CashModel.Cast _Cash.cell).Result
                                                             _tag.cell 
@@ -339,7 +339,7 @@ module CashFunction =
 
             try
 
-                let _Cash = Helper.toCell<Cash> cash "Cash"  
+                let _Cash = Helper.toModelReference<Cash> cash "Cash"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((CashModel.Cast _Cash.cell).SetPricingEngine
                                                             _e.cell 
@@ -379,7 +379,7 @@ module CashFunction =
 
             try
 
-                let _Cash = Helper.toCell<Cash> cash "Cash"  
+                let _Cash = Helper.toModelReference<Cash> cash "Cash"  
                 let builder (current : ICell) = ((CashModel.Cast _Cash.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

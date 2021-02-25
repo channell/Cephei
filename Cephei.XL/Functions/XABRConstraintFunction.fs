@@ -55,7 +55,7 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
+                let _XABRConstraint = Helper.toModelReference<XABRConstraint> xabrconstraint "XABRConstraint"  
                 let _costFunction = Helper.toCell<ProjectedCostFunction> costFunction "costFunction" 
                 let _coeff = Helper.toCell<XABRCoeffHolder<Model>> coeff "coeff" 
                 let _forward = Helper.toCell<double> forward "forward" 
@@ -172,7 +172,7 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
+                let _XABRConstraint = Helper.toModelReference<XABRConstraint> xabrconstraint "XABRConstraint"  
                 let builder (current : ICell) = ((XABRConstraintModel.Cast _XABRConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -210,7 +210,7 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
+                let _XABRConstraint = Helper.toModelReference<XABRConstraint> xabrconstraint "XABRConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((XABRConstraintModel.Cast _XABRConstraint.cell).LowerBound
                                                             _parameters.cell 
@@ -252,7 +252,7 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
+                let _XABRConstraint = Helper.toModelReference<XABRConstraint> xabrconstraint "XABRConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((XABRConstraintModel.Cast _XABRConstraint.cell).Test
                                                             _p.cell 
@@ -298,7 +298,7 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
+                let _XABRConstraint = Helper.toModelReference<XABRConstraint> xabrconstraint "XABRConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
@@ -348,7 +348,7 @@ module XABRConstraintFunction =
 
             try
 
-                let _XABRConstraint = Helper.toCell<XABRConstraint> xabrconstraint "XABRConstraint"  
+                let _XABRConstraint = Helper.toModelReference<XABRConstraint> xabrconstraint "XABRConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((XABRConstraintModel.Cast _XABRConstraint.cell).UpperBound
                                                             _parameters.cell 

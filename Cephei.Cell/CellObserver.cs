@@ -1,7 +1,19 @@
 ﻿/*
- * Copyright Cepheis Ltd 2020 
- * All rights reserves
+ * Copyright(C) 2020 Cepheis Ltd(steve.channell@cepheis.com)
+ * All rights reserved
+ * 
+ * This file is part of Cephei Project https://github.com/channell/Cephei
+ * 
+ * Cephei is open source software, you can redistribute it and/or modify it
+ * under the terms of the Cephei license.  You should have received a
+ * copy of the license along with this program; if not, license is
+ * available at < https://github.com/channell/Cephei/LICENSE>.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the license for more details.
  */
+
 
 using Microsoft.FSharp.Core;
 using Serilog;
@@ -46,7 +58,17 @@ namespace Cephei.Cell
                     if (root is ICell c && c.State == CellState.Error)
                         _target.OnError(((ICell)root).Error);
                     else
-                        _target.OnNext(_source.Value);
+                        System.Threading.Tasks.Task.Run(() => 
+                        {
+                            try
+                            {
+                                _target.OnNext(_source.Value);
+                            }
+                            catch (Exception e)
+                            {
+                                Log.Error(e, e.Message);
+                            }
+                        });
                     break;
 
                 case CellEvent.Delete:
@@ -126,7 +148,17 @@ namespace Cephei.Cell
                 case CellEvent.CalculateLogging:
                     var lastsession = Session.Current;
                     Session.Current = session;
-                    _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string,T>>(session, new KeyValuePair<string,T>(_source.Mnemonic, _source.Value)));
+                    System.Threading.Tasks.Task.Run(() =>
+                    {
+                        try
+                        {
+                            _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string, T>>(session, new KeyValuePair<string, T>(_source.Mnemonic, _source.Value)));
+                        }
+                        catch (Exception e)
+                        {
+                            Log.Error(e, e.Message);
+                        }
+                    });
                     Session.Current = lastsession;
                     break;
 

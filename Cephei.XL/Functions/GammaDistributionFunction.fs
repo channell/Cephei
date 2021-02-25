@@ -87,7 +87,7 @@ module GammaDistributionFunction =
 
             try
 
-                let _GammaDistribution = Helper.toCell<GammaDistribution> gammadistribution "GammaDistribution"  
+                let _GammaDistribution = Helper.toModelReference<GammaDistribution> gammadistribution "GammaDistribution"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GammaDistributionModel.Cast _GammaDistribution.cell).Value
                                                             _x.cell 

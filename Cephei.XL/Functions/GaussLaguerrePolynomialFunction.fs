@@ -50,7 +50,7 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
+                let _GaussLaguerrePolynomial = Helper.toModelReference<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Alpha
                                                             _i.cell 
@@ -92,7 +92,7 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
+                let _GaussLaguerrePolynomial = Helper.toModelReference<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Beta
                                                             _i.cell 
@@ -200,7 +200,7 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
+                let _GaussLaguerrePolynomial = Helper.toModelReference<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -238,7 +238,7 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
+                let _GaussLaguerrePolynomial = Helper.toModelReference<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).W
                                                             _x.cell 
@@ -282,7 +282,7 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
+                let _GaussLaguerrePolynomial = Helper.toModelReference<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Value
@@ -330,7 +330,7 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
+                let _GaussLaguerrePolynomial = Helper.toModelReference<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).WeightedValue

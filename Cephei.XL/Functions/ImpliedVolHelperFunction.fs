@@ -50,7 +50,7 @@ module ImpliedVolHelperFunction =
 
             try
 
-                let _ImpliedVolHelper = Helper.toCell<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper"  
+                let _ImpliedVolHelper = Helper.toModelReference<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((ImpliedVolHelperModel.Cast _ImpliedVolHelper.cell).Derivative
                                                             _x.cell 
@@ -159,7 +159,7 @@ module ImpliedVolHelperFunction =
 
             try
 
-                let _ImpliedVolHelper = Helper.toCell<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper"  
+                let _ImpliedVolHelper = Helper.toModelReference<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((ImpliedVolHelperModel.Cast _ImpliedVolHelper.cell).Value
                                                             _x.cell 

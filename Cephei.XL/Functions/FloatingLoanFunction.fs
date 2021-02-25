@@ -48,7 +48,7 @@ module FloatingLoanFunction =
 
             try
 
-                let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
+                let _FloatingLoan = Helper.toModelReference<FloatingLoan> floatingloan "FloatingLoan"  
                 let builder (current : ICell) = ((FloatingLoanModel.Cast _FloatingLoan.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -175,7 +175,7 @@ module FloatingLoanFunction =
 
             try
 
-                let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
+                let _FloatingLoan = Helper.toModelReference<FloatingLoan> floatingloan "FloatingLoan"  
                 let builder (current : ICell) = ((FloatingLoanModel.Cast _FloatingLoan.cell).PrincipalLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -211,7 +211,7 @@ module FloatingLoanFunction =
 
             try
 
-                let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
+                let _FloatingLoan = Helper.toModelReference<FloatingLoan> floatingloan "FloatingLoan"  
                 let builder (current : ICell) = ((FloatingLoanModel.Cast _FloatingLoan.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -247,7 +247,7 @@ module FloatingLoanFunction =
 
             try
 
-                let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
+                let _FloatingLoan = Helper.toModelReference<FloatingLoan> floatingloan "FloatingLoan"  
                 let builder (current : ICell) = ((FloatingLoanModel.Cast _FloatingLoan.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -283,7 +283,7 @@ module FloatingLoanFunction =
 
             try
 
-                let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
+                let _FloatingLoan = Helper.toModelReference<FloatingLoan> floatingloan "FloatingLoan"  
                 let builder (current : ICell) = ((FloatingLoanModel.Cast _FloatingLoan.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -319,7 +319,7 @@ module FloatingLoanFunction =
 
             try
 
-                let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
+                let _FloatingLoan = Helper.toModelReference<FloatingLoan> floatingloan "FloatingLoan"  
                 let builder (current : ICell) = ((FloatingLoanModel.Cast _FloatingLoan.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -357,7 +357,7 @@ module FloatingLoanFunction =
 
             try
 
-                let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
+                let _FloatingLoan = Helper.toModelReference<FloatingLoan> floatingloan "FloatingLoan"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((FloatingLoanModel.Cast _FloatingLoan.cell).Result
                                                             _tag.cell 
@@ -399,7 +399,7 @@ module FloatingLoanFunction =
 
             try
 
-                let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
+                let _FloatingLoan = Helper.toModelReference<FloatingLoan> floatingloan "FloatingLoan"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((FloatingLoanModel.Cast _FloatingLoan.cell).SetPricingEngine
                                                             _e.cell 
@@ -439,7 +439,7 @@ module FloatingLoanFunction =
 
             try
 
-                let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
+                let _FloatingLoan = Helper.toModelReference<FloatingLoan> floatingloan "FloatingLoan"  
                 let builder (current : ICell) = ((FloatingLoanModel.Cast _FloatingLoan.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

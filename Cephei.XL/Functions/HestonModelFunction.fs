@@ -85,7 +85,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).Kappa
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -121,7 +121,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).Process
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HestonProcess>) l
@@ -157,7 +157,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -193,7 +193,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -229,7 +229,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -265,7 +265,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).V0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -313,7 +313,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
@@ -373,7 +373,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -409,7 +409,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -445,7 +445,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : HestonModel) (l:string) = o.ToString() :> obj
@@ -481,7 +481,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -519,7 +519,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).RegisterWith
                                                             _handler.cell 
@@ -561,7 +561,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).SetParams
                                                             _parameters.cell 
@@ -603,7 +603,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).UnregisterWith
                                                             _handler.cell 
@@ -643,7 +643,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).Update
                                                        ) :> ICell
                 let format (o : HestonModel) (l:string) = o.ToString() :> obj
@@ -683,7 +683,7 @@ module HestonModelFunction =
 
             try
 
-                let _HestonModel = Helper.toCell<HestonModel> hestonmodel "HestonModel"  
+                let _HestonModel = Helper.toModelReference<HestonModel> hestonmodel "HestonModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let builder (current : ICell) = ((HestonModelModel.Cast _HestonModel.cell).Value

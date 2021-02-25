@@ -130,7 +130,7 @@ module MixedSchemeFunction =
 
             try
 
-                let _MixedScheme = Helper.toCell<MixedScheme> mixedscheme "MixedScheme"  
+                let _MixedScheme = Helper.toModelReference<MixedScheme> mixedscheme "MixedScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
                 let builder (current : ICell) = ((MixedSchemeModel.Cast _MixedScheme.cell).SetStep
                                                             _dt.cell 
@@ -176,7 +176,7 @@ module MixedSchemeFunction =
 
             try
 
-                let _MixedScheme = Helper.toCell<MixedScheme> mixedscheme "MixedScheme"  
+                let _MixedScheme = Helper.toModelReference<MixedScheme> mixedscheme "MixedScheme"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0

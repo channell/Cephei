@@ -52,7 +52,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Apply
@@ -100,7 +100,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Diffusion
@@ -144,7 +144,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Discretization
                                                        ) :> ICell
                 let format (o : HestonProcess.Discretization) (l:string) = o.ToString() :> obj
@@ -184,7 +184,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Drift
@@ -228,7 +228,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Eta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -272,7 +272,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -324,7 +324,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).HestonProcess
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HestonProcess>) l
@@ -360,7 +360,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).HullWhiteProcess
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HullWhiteForwardProcess>) l
@@ -451,7 +451,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -491,7 +491,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Numeraire
@@ -535,7 +535,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -573,7 +573,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Time
                                                             _date.cell 
@@ -613,7 +613,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Update
                                                        ) :> ICell
                 let format (o : HybridHestonHullWhiteProcess) (l:string) = o.ToString() :> obj
@@ -655,7 +655,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -709,7 +709,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -757,7 +757,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -795,7 +795,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).RegisterWith
                                                             _handler.cell 
@@ -841,7 +841,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -891,7 +891,7 @@ module HybridHestonHullWhiteProcessFunction =
 
             try
 
-                let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
+                let _HybridHestonHullWhiteProcess = Helper.toModelReference<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).UnregisterWith
                                                             _handler.cell 

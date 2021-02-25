@@ -48,7 +48,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -141,7 +141,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _cap = Helper.toCell<double> cap "cap" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithCaps
                                                             _cap.cell 
@@ -183,7 +183,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _caps = Helper.toNullabletList<double> caps "caps" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithCaps1
                                                             _caps.cell 
@@ -225,7 +225,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithFixingDays1
                                                             _fixingDays.cell 
@@ -267,7 +267,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithFixingDays
                                                             _fixingDays.cell 
@@ -309,7 +309,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _floors = Helper.toNullabletList<double> floors "floors" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithFloors1
                                                             _floors.cell 
@@ -351,7 +351,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _floor = Helper.toCell<double> floor "floor" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithFloors
                                                             _floor.cell 
@@ -393,7 +393,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithGearings
                                                             _gearings.cell 
@@ -435,7 +435,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithGearings1
                                                             _gearing.cell 
@@ -477,7 +477,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
@@ -519,7 +519,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithSpreads
                                                             _spread.cell 
@@ -561,7 +561,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithSpreads1
                                                             _spreads.cell 
@@ -603,7 +603,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithNotionals1
                                                             _notionals.cell 
@@ -645,7 +645,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithNotionals
                                                             _notional.cell 
@@ -687,7 +687,7 @@ module yoyInflationLegFunction =
 
             try
 
-                let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
+                let _yoyInflationLeg = Helper.toModelReference<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder (current : ICell) = ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 

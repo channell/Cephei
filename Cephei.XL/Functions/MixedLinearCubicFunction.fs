@@ -48,7 +48,7 @@ module MixedLinearCubicFunction =
 
             try
 
-                let _MixedLinearCubic = Helper.toCell<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic"  
+                let _MixedLinearCubic = Helper.toModelReference<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic"  
                 let builder (current : ICell) = ((MixedLinearCubicModel.Cast _MixedLinearCubic.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -90,7 +90,7 @@ module MixedLinearCubicFunction =
 
             try
 
-                let _MixedLinearCubic = Helper.toCell<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic"  
+                let _MixedLinearCubic = Helper.toModelReference<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _xEnd = Helper.toCell<int> xEnd "xEnd" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
@@ -217,7 +217,7 @@ module MixedLinearCubicFunction =
 
             try
 
-                let _MixedLinearCubic = Helper.toCell<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic"  
+                let _MixedLinearCubic = Helper.toModelReference<MixedLinearCubic> mixedlinearcubic "MixedLinearCubic"  
                 let builder (current : ICell) = ((MixedLinearCubicModel.Cast _MixedLinearCubic.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

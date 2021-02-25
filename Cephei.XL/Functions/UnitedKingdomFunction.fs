@@ -152,7 +152,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -190,7 +190,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).AddHoliday
                                                             _d.cell 
@@ -234,7 +234,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Adjust
@@ -288,7 +288,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -352,7 +352,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -412,7 +412,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -464,7 +464,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -500,7 +500,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -538,7 +538,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).EndOfMonth
                                                             _d.cell 
@@ -580,7 +580,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Equals
                                                             _o.cell 
@@ -622,7 +622,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).IsBusinessDay
                                                             _d.cell 
@@ -664,7 +664,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).IsEndOfMonth
                                                             _d.cell 
@@ -706,7 +706,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).IsHoliday
                                                             _d.cell 
@@ -748,7 +748,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).IsWeekend
                                                             _w.cell 
@@ -790,7 +790,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -826,7 +826,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -864,7 +864,7 @@ module UnitedKingdomFunction =
 
             try
 
-                let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
+                let _UnitedKingdom = Helper.toModelReference<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((UnitedKingdomModel.Cast _UnitedKingdom.cell).RemoveHoliday
                                                             _d.cell 

@@ -137,7 +137,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _FDEngineAdapter = Helper.toModelReference<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).RegisterWith
                                                             _handler.cell 
@@ -177,7 +177,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _FDEngineAdapter = Helper.toModelReference<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder (current : ICell) = ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).Reset
                                                        ) :> ICell
                 let format (o : FDEngineAdapter) (l:string) = o.ToString() :> obj
@@ -215,7 +215,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _FDEngineAdapter = Helper.toModelReference<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).UnregisterWith
                                                             _handler.cell 
@@ -255,7 +255,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _FDEngineAdapter = Helper.toModelReference<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder (current : ICell) = ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).Update
                                                        ) :> ICell
                 let format (o : FDEngineAdapter) (l:string) = o.ToString() :> obj
@@ -291,7 +291,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _FDEngineAdapter = Helper.toModelReference<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder (current : ICell) = ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDEngineAdapter) (l:string) = o.ToString() :> obj
@@ -335,7 +335,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _FDEngineAdapter = Helper.toModelReference<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
@@ -387,7 +387,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _FDEngineAdapter = Helper.toModelReference<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder (current : ICell) = ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -423,7 +423,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _FDEngineAdapter = Helper.toModelReference<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder (current : ICell) = ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -459,7 +459,7 @@ module FDEngineAdapterFunction =
 
             try
 
-                let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
+                let _FDEngineAdapter = Helper.toModelReference<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let builder (current : ICell) = ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l

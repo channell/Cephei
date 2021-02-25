@@ -48,7 +48,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).BmaLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -84,7 +84,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).BmaLegBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).BmaLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -259,7 +259,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).FairLiborFraction
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -295,7 +295,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).FairLiborSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -331,7 +331,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).LiborFraction
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -367,7 +367,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).LiborLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -403,7 +403,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).LiborLegBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -439,7 +439,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).LiborLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -475,7 +475,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).LiborSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -511,7 +511,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -547,7 +547,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -585,7 +585,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).EndDiscounts
                                                             _j.cell 
@@ -626,7 +626,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).Engine
                                                        ) :> ICell
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
@@ -663,7 +663,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -701,7 +701,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).Leg
                                                             _j.cell 
@@ -743,7 +743,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).LegBPS
                                                             _j.cell 
@@ -785,7 +785,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).LegNPV
                                                             _j.cell 
@@ -825,7 +825,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -861,7 +861,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -899,7 +899,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).Payer
                                                             _j.cell 
@@ -939,7 +939,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -977,7 +977,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).StartDiscounts
                                                             _j.cell 
@@ -1017,7 +1017,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1053,7 +1053,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1089,7 +1089,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1127,7 +1127,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).Result
                                                             _tag.cell 
@@ -1169,7 +1169,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).SetPricingEngine
                                                             _e.cell 
@@ -1209,7 +1209,7 @@ module BMASwapFunction =
 
             try
 
-                let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
+                let _BMASwap = Helper.toModelReference<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = ((BMASwapModel.Cast _BMASwap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

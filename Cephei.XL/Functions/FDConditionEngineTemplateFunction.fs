@@ -136,7 +136,7 @@ module FDConditionEngineTemplateFunction =
 
             try
 
-                let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
+                let _FDConditionEngineTemplate = Helper.toModelReference<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
                 let builder (current : ICell) = ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).SetStepCondition
                                                             _impl.cell 
@@ -177,7 +177,7 @@ module FDConditionEngineTemplateFunction =
 
             try
 
-                let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
+                let _FDConditionEngineTemplate = Helper.toModelReference<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
                 let builder (current : ICell) = ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDConditionEngineTemplate) (l:string) = o.ToString() :> obj
@@ -221,7 +221,7 @@ module FDConditionEngineTemplateFunction =
 
             try
 
-                let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
+                let _FDConditionEngineTemplate = Helper.toModelReference<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
@@ -273,7 +273,7 @@ module FDConditionEngineTemplateFunction =
 
             try
 
-                let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
+                let _FDConditionEngineTemplate = Helper.toModelReference<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
                 let builder (current : ICell) = ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -309,7 +309,7 @@ module FDConditionEngineTemplateFunction =
 
             try
 
-                let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
+                let _FDConditionEngineTemplate = Helper.toModelReference<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
                 let builder (current : ICell) = ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -345,7 +345,7 @@ module FDConditionEngineTemplateFunction =
 
             try
 
-                let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
+                let _FDConditionEngineTemplate = Helper.toModelReference<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
                 let builder (current : ICell) = ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l

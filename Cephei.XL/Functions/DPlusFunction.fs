@@ -96,7 +96,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).Add
@@ -143,7 +143,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _v = Helper.toCell<Vector> v "v" 
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).ApplyTo
                                                             _v.cell 
@@ -183,7 +183,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -219,7 +219,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -257,7 +257,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _size = Helper.toCell<int> size "size" 
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).Identity
                                                             _size.cell 
@@ -297,7 +297,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -333,7 +333,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -373,7 +373,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _a = Helper.toCell<double> a "a" 
                 let _o = Helper.toCell<IOperator> o "o" 
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).Multiply
@@ -421,7 +421,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).SetFirstRow
@@ -469,7 +469,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).SetLastRow
@@ -521,7 +521,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _i = Helper.toCell<int> i "i" 
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
@@ -579,7 +579,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
@@ -629,7 +629,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).SetTime
                                                             _t.cell 
@@ -669,7 +669,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -707,7 +707,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).SolveFor
                                                             _rhs.cell 
@@ -751,7 +751,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let _tol = Helper.toCell<double> tol "tol" 
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).SOR
@@ -799,7 +799,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).Subtract
@@ -843,7 +843,7 @@ module DPlusFunction =
 
             try
 
-                let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
+                let _DPlus = Helper.toModelReference<DPlus> dplus "DPlus"  
                 let builder (current : ICell) = ((DPlusModel.Cast _DPlus.cell).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

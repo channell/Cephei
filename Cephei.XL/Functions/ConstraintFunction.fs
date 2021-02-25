@@ -116,7 +116,7 @@ module ConstraintFunction =
 
             try
 
-                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
+                let _Constraint = Helper.toModelReference<Constraint> constrainT "Constraint"  
                 let builder (current : ICell) = ((ConstraintModel.Cast _Constraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -154,7 +154,7 @@ module ConstraintFunction =
 
             try
 
-                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
+                let _Constraint = Helper.toModelReference<Constraint> constrainT "Constraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((ConstraintModel.Cast _Constraint.cell).LowerBound
                                                             _parameters.cell 
@@ -196,7 +196,7 @@ module ConstraintFunction =
 
             try
 
-                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
+                let _Constraint = Helper.toModelReference<Constraint> constrainT "Constraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((ConstraintModel.Cast _Constraint.cell).Test
                                                             _p.cell 
@@ -242,7 +242,7 @@ module ConstraintFunction =
 
             try
 
-                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
+                let _Constraint = Helper.toModelReference<Constraint> constrainT "Constraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
@@ -292,7 +292,7 @@ module ConstraintFunction =
 
             try
 
-                let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
+                let _Constraint = Helper.toModelReference<Constraint> constrainT "Constraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((ConstraintModel.Cast _Constraint.cell).UpperBound
                                                             _parameters.cell 

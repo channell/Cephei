@@ -99,7 +99,7 @@ module HestonHullWhitePathPricerFunction =
 
             try
 
-                let _HestonHullWhitePathPricer = Helper.toCell<HestonHullWhitePathPricer> hestonhullwhitepathpricer "HestonHullWhitePathPricer"  
+                let _HestonHullWhitePathPricer = Helper.toModelReference<HestonHullWhitePathPricer> hestonhullwhitepathpricer "HestonHullWhitePathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let builder (current : ICell) = ((HestonHullWhitePathPricerModel.Cast _HestonHullWhitePathPricer.cell).Value
                                                             _path.cell 

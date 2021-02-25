@@ -48,7 +48,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -156,7 +156,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -192,7 +192,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -228,7 +228,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Discounts
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -703,7 +703,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
@@ -739,7 +739,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
@@ -775,7 +775,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -811,7 +811,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -847,7 +847,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
@@ -883,7 +883,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedDiscountCurve) (l:string) = o.ToString() :> obj
@@ -919,7 +919,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -955,7 +955,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -995,7 +995,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Discount
@@ -1043,7 +1043,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Discount1
@@ -1099,7 +1099,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
@@ -1171,7 +1171,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
@@ -1241,7 +1241,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1297,7 +1297,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -1333,7 +1333,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1369,7 +1369,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Update
                                                        ) :> ICell
                 let format (o : InterpolatedDiscountCurve) (l:string) = o.ToString() :> obj
@@ -1415,7 +1415,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1479,7 +1479,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _t = Helper.toCell<double> t "t" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -1531,7 +1531,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -1567,7 +1567,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -1603,7 +1603,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1639,7 +1639,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1675,7 +1675,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1713,7 +1713,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).TimeFromReference
                                                             _date.cell 
@@ -1753,7 +1753,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1791,7 +1791,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).DisableExtrapolation
                                                             _b.cell 
@@ -1833,7 +1833,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).EnableExtrapolation
                                                             _b.cell 
@@ -1873,7 +1873,7 @@ module InterpolatedDiscountCurveFunction =
 
             try
 
-                let _InterpolatedDiscountCurve = Helper.toCell<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
+                let _InterpolatedDiscountCurve = Helper.toModelReference<InterpolatedDiscountCurve> interpolateddiscountcurve "InterpolatedDiscountCurve"  
                 let builder (current : ICell) = ((InterpolatedDiscountCurveModel.Cast _InterpolatedDiscountCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

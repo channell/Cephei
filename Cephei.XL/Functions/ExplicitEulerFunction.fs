@@ -124,7 +124,7 @@ module ExplicitEulerFunction =
 
             try
 
-                let _ExplicitEuler = Helper.toCell<ExplicitEuler> expliciteuler "ExplicitEuler"  
+                let _ExplicitEuler = Helper.toModelReference<ExplicitEuler> expliciteuler "ExplicitEuler"  
                 let _dt = Helper.toCell<double> dt "dt" 
                 let builder (current : ICell) = ((ExplicitEulerModel.Cast _ExplicitEuler.cell).SetStep
                                                             _dt.cell 
@@ -170,7 +170,7 @@ module ExplicitEulerFunction =
 
             try
 
-                let _ExplicitEuler = Helper.toCell<ExplicitEuler> expliciteuler "ExplicitEuler"  
+                let _ExplicitEuler = Helper.toModelReference<ExplicitEuler> expliciteuler "ExplicitEuler"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toCell<double> theta "theta" 

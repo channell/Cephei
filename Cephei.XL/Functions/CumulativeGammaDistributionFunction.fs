@@ -87,7 +87,7 @@ module CumulativeGammaDistributionFunction =
 
             try
 
-                let _CumulativeGammaDistribution = Helper.toCell<CumulativeGammaDistribution> cumulativegammadistribution "CumulativeGammaDistribution"  
+                let _CumulativeGammaDistribution = Helper.toModelReference<CumulativeGammaDistribution> cumulativegammadistribution "CumulativeGammaDistribution"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((CumulativeGammaDistributionModel.Cast _CumulativeGammaDistribution.cell).Value
                                                             _x.cell 

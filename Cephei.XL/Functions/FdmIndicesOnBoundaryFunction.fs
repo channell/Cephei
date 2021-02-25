@@ -97,7 +97,7 @@ module FdmIndicesOnBoundaryFunction =
 
             try
 
-                let _FdmIndicesOnBoundary = Helper.toCell<FdmIndicesOnBoundary> fdmindicesonboundary "FdmIndicesOnBoundary"  
+                let _FdmIndicesOnBoundary = Helper.toModelReference<FdmIndicesOnBoundary> fdmindicesonboundary "FdmIndicesOnBoundary"  
                 let builder (current : ICell) = ((FdmIndicesOnBoundaryModel.Cast _FdmIndicesOnBoundary.cell).GetIndices
                                                        ) :> ICell
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

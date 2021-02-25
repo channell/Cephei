@@ -52,7 +52,7 @@ module LPP3HestonExpansionFunction =
 
             try
 
-                let _LPP3HestonExpansion = Helper.toCell<LPP3HestonExpansion> lpp3hestonexpansion "LPP3HestonExpansion"  
+                let _LPP3HestonExpansion = Helper.toModelReference<LPP3HestonExpansion> lpp3hestonexpansion "LPP3HestonExpansion"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let builder (current : ICell) = ((LPP3HestonExpansionModel.Cast _LPP3HestonExpansion.cell).ImpliedVolatility

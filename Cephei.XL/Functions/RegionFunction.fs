@@ -48,7 +48,7 @@ module RegionFunction =
 
             try
 
-                let _Region = Helper.toCell<Region> region "Region"  
+                let _Region = Helper.toModelReference<Region> region "Region"  
                 let builder (current : ICell) = ((RegionModel.Cast _Region.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -86,7 +86,7 @@ module RegionFunction =
 
             try
 
-                let _Region = Helper.toCell<Region> region "Region"  
+                let _Region = Helper.toModelReference<Region> region "Region"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((RegionModel.Cast _Region.cell).Equals
                                                             _o.cell 
@@ -126,7 +126,7 @@ module RegionFunction =
 
             try
 
-                let _Region = Helper.toCell<Region> region "Region"  
+                let _Region = Helper.toModelReference<Region> region "Region"  
                 let builder (current : ICell) = ((RegionModel.Cast _Region.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj

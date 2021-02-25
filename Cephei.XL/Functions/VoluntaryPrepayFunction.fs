@@ -91,7 +91,7 @@ module VoluntaryPrepayFunction =
 
             try
 
-                let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
+                let _VoluntaryPrepay = Helper.toModelReference<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let builder (current : ICell) = ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -127,7 +127,7 @@ module VoluntaryPrepayFunction =
 
             try
 
-                let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
+                let _VoluntaryPrepay = Helper.toModelReference<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let builder (current : ICell) = ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -165,7 +165,7 @@ module VoluntaryPrepayFunction =
 
             try
 
-                let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
+                let _VoluntaryPrepay = Helper.toModelReference<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).CompareTo
                                                             _cf.cell 
@@ -207,7 +207,7 @@ module VoluntaryPrepayFunction =
 
             try
 
-                let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
+                let _VoluntaryPrepay = Helper.toModelReference<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Equals
                                                             _cf.cell 
@@ -247,7 +247,7 @@ module VoluntaryPrepayFunction =
 
             try
 
-                let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
+                let _VoluntaryPrepay = Helper.toModelReference<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let builder (current : ICell) = ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -287,7 +287,7 @@ module VoluntaryPrepayFunction =
 
             try
 
-                let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
+                let _VoluntaryPrepay = Helper.toModelReference<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).HasOccurred
@@ -333,7 +333,7 @@ module VoluntaryPrepayFunction =
 
             try
 
-                let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
+                let _VoluntaryPrepay = Helper.toModelReference<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -375,7 +375,7 @@ module VoluntaryPrepayFunction =
 
             try
 
-                let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
+                let _VoluntaryPrepay = Helper.toModelReference<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Accept
                                                             _v.cell 
@@ -417,7 +417,7 @@ module VoluntaryPrepayFunction =
 
             try
 
-                let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
+                let _VoluntaryPrepay = Helper.toModelReference<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).RegisterWith
                                                             _handler.cell 
@@ -459,7 +459,7 @@ module VoluntaryPrepayFunction =
 
             try
 
-                let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
+                let _VoluntaryPrepay = Helper.toModelReference<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).UnregisterWith
                                                             _handler.cell 

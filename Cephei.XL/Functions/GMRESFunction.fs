@@ -108,7 +108,7 @@ module GMRESFunction =
 
             try
 
-                let _GMRES = Helper.toCell<GMRES> gmres "GMRES"  
+                let _GMRES = Helper.toModelReference<GMRES> gmres "GMRES"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((GMRESModel.Cast _GMRES.cell).MatrixMult
                                                             _x.cell 
@@ -153,7 +153,7 @@ module GMRESFunction =
 
             try
 
-                let _GMRES = Helper.toCell<GMRES> gmres "GMRES"  
+                let _GMRES = Helper.toModelReference<GMRES> gmres "GMRES"  
                 let _b = Helper.toCell<Vector> b "b" 
                 let _x0 = Helper.toDefault<Vector> x0 "x0" null
                 let builder (current : ICell) = ((GMRESModel.Cast _GMRES.cell).Solve
@@ -203,7 +203,7 @@ module GMRESFunction =
 
             try
 
-                let _GMRES = Helper.toCell<GMRES> gmres "GMRES"  
+                let _GMRES = Helper.toModelReference<GMRES> gmres "GMRES"  
                 let _restart = Helper.toCell<int> restart "restart" 
                 let _b = Helper.toCell<Vector> b "b" 
                 let _x0 = Helper.toDefault<Vector> x0 "x0" null

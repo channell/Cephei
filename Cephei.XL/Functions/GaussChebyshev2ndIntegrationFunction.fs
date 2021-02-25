@@ -85,7 +85,7 @@ module GaussChebyshev2ndIntegrationFunction =
 
             try
 
-                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
+                let _GaussChebyshev2ndIntegration = Helper.toModelReference<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
                 let builder (current : ICell) = ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -123,7 +123,7 @@ module GaussChebyshev2ndIntegrationFunction =
 
             try
 
-                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
+                let _GaussChebyshev2ndIntegration = Helper.toModelReference<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder (current : ICell) = ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).Value
                                                             _f.cell 
@@ -163,7 +163,7 @@ module GaussChebyshev2ndIntegrationFunction =
 
             try
 
-                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
+                let _GaussChebyshev2ndIntegration = Helper.toModelReference<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
                 let builder (current : ICell) = ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -199,7 +199,7 @@ module GaussChebyshev2ndIntegrationFunction =
 
             try
 
-                let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
+                let _GaussChebyshev2ndIntegration = Helper.toModelReference<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
                 let builder (current : ICell) = ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

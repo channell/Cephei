@@ -91,7 +91,7 @@ module CompositeConstraintFunction =
 
             try
 
-                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
+                let _CompositeConstraint = Helper.toModelReference<CompositeConstraint> compositeconstraint "CompositeConstraint"  
                 let builder (current : ICell) = ((CompositeConstraintModel.Cast _CompositeConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -129,7 +129,7 @@ module CompositeConstraintFunction =
 
             try
 
-                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
+                let _CompositeConstraint = Helper.toModelReference<CompositeConstraint> compositeconstraint "CompositeConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((CompositeConstraintModel.Cast _CompositeConstraint.cell).LowerBound
                                                             _parameters.cell 
@@ -171,7 +171,7 @@ module CompositeConstraintFunction =
 
             try
 
-                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
+                let _CompositeConstraint = Helper.toModelReference<CompositeConstraint> compositeconstraint "CompositeConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((CompositeConstraintModel.Cast _CompositeConstraint.cell).Test
                                                             _p.cell 
@@ -217,7 +217,7 @@ module CompositeConstraintFunction =
 
             try
 
-                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
+                let _CompositeConstraint = Helper.toModelReference<CompositeConstraint> compositeconstraint "CompositeConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
@@ -267,7 +267,7 @@ module CompositeConstraintFunction =
 
             try
 
-                let _CompositeConstraint = Helper.toCell<CompositeConstraint> compositeconstraint "CompositeConstraint"  
+                let _CompositeConstraint = Helper.toModelReference<CompositeConstraint> compositeconstraint "CompositeConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((CompositeConstraintModel.Cast _CompositeConstraint.cell).UpperBound
                                                             _parameters.cell 

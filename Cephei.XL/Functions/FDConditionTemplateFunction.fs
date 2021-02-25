@@ -137,7 +137,7 @@ module FDConditionTemplateFunction =
 
             try
 
-                let _FDConditionTemplate = Helper.toCell<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
+                let _FDConditionTemplate = Helper.toModelReference<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
                 let builder (current : ICell) = ((FDConditionTemplateModel.Cast _FDConditionTemplate.cell).SetStepCondition
                                                             _impl.cell 
@@ -177,7 +177,7 @@ module FDConditionTemplateFunction =
 
             try
 
-                let _FDConditionTemplate = Helper.toCell<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
+                let _FDConditionTemplate = Helper.toModelReference<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
                 let builder (current : ICell) = ((FDConditionTemplateModel.Cast _FDConditionTemplate.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDConditionTemplate) (l:string) = o.ToString() :> obj
@@ -221,7 +221,7 @@ module FDConditionTemplateFunction =
 
             try
 
-                let _FDConditionTemplate = Helper.toCell<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
+                let _FDConditionTemplate = Helper.toModelReference<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
@@ -273,7 +273,7 @@ module FDConditionTemplateFunction =
 
             try
 
-                let _FDConditionTemplate = Helper.toCell<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
+                let _FDConditionTemplate = Helper.toModelReference<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
                 let builder (current : ICell) = ((FDConditionTemplateModel.Cast _FDConditionTemplate.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -309,7 +309,7 @@ module FDConditionTemplateFunction =
 
             try
 
-                let _FDConditionTemplate = Helper.toCell<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
+                let _FDConditionTemplate = Helper.toModelReference<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
                 let builder (current : ICell) = ((FDConditionTemplateModel.Cast _FDConditionTemplate.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -345,7 +345,7 @@ module FDConditionTemplateFunction =
 
             try
 
-                let _FDConditionTemplate = Helper.toCell<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
+                let _FDConditionTemplate = Helper.toModelReference<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
                 let builder (current : ICell) = ((FDConditionTemplateModel.Cast _FDConditionTemplate.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l

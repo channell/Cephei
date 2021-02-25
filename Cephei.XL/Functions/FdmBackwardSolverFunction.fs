@@ -113,7 +113,7 @@ module FdmBackwardSolverFunction =
 
             try
 
-                let _FdmBackwardSolver = Helper.toCell<FdmBackwardSolver> fdmbackwardsolver "FdmBackwardSolver"  
+                let _FdmBackwardSolver = Helper.toModelReference<FdmBackwardSolver> fdmbackwardsolver "FdmBackwardSolver"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _from = Helper.toCell<double> from "from" 
                 let _To = Helper.toCell<double> To "To" 

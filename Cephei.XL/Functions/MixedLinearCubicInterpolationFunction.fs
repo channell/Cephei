@@ -149,7 +149,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).Derivative
@@ -193,7 +193,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -233,7 +233,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).Primitive
@@ -281,7 +281,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).SecondDerivative
@@ -325,7 +325,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : MixedLinearCubicInterpolation) (l:string) = o.ToString() :> obj
@@ -365,7 +365,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).Value1
@@ -411,7 +411,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).Value
                                                             _x.cell 
@@ -451,7 +451,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -487,7 +487,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -523,7 +523,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -561,7 +561,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
@@ -603,7 +603,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
@@ -643,7 +643,7 @@ module MixedLinearCubicInterpolationFunction =
 
             try
 
-                let _MixedLinearCubicInterpolation = Helper.toCell<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
+                let _MixedLinearCubicInterpolation = Helper.toModelReference<MixedLinearCubicInterpolation> mixedlinearcubicinterpolation "MixedLinearCubicInterpolation"  
                 let builder (current : ICell) = ((MixedLinearCubicInterpolationModel.Cast _MixedLinearCubicInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

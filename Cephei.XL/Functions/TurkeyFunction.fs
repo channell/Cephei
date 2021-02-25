@@ -89,7 +89,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -127,7 +127,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).AddHoliday
                                                             _d.cell 
@@ -171,7 +171,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Adjust
@@ -225,7 +225,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -289,7 +289,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -349,7 +349,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -401,7 +401,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -437,7 +437,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -475,7 +475,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).EndOfMonth
                                                             _d.cell 
@@ -517,7 +517,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Equals
                                                             _o.cell 
@@ -559,7 +559,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).IsBusinessDay
                                                             _d.cell 
@@ -601,7 +601,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).IsEndOfMonth
                                                             _d.cell 
@@ -643,7 +643,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).IsHoliday
                                                             _d.cell 
@@ -685,7 +685,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).IsWeekend
                                                             _w.cell 
@@ -727,7 +727,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -763,7 +763,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -801,7 +801,7 @@ module TurkeyFunction =
 
             try
 
-                let _Turkey = Helper.toCell<Turkey> turkey "Turkey"  
+                let _Turkey = Helper.toModelReference<Turkey> turkey "Turkey"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TurkeyModel.Cast _Turkey.cell).RemoveHoliday
                                                             _d.cell 

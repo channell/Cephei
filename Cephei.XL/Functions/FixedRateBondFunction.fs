@@ -48,7 +48,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -483,7 +483,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -521,7 +521,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).AccruedAmount
                                                             _settlement.cell 
@@ -561,7 +561,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -597,7 +597,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -633,7 +633,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -679,7 +679,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -745,7 +745,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -801,7 +801,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -837,7 +837,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -873,7 +873,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -911,7 +911,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).IsTradable
                                                             _d.cell 
@@ -951,7 +951,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -989,7 +989,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).NextCashFlowDate
                                                             _settlement.cell 
@@ -1031,7 +1031,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).NextCouponRate
                                                             _settlement.cell 
@@ -1073,7 +1073,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).Notional
                                                             _d.cell 
@@ -1113,7 +1113,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1151,7 +1151,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
@@ -1193,7 +1193,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).PreviousCouponRate
                                                             _settlement.cell 
@@ -1233,7 +1233,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -1269,7 +1269,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -1307,7 +1307,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).SettlementDate
                                                             _date.cell 
@@ -1347,7 +1347,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1385,7 +1385,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).SettlementValue
                                                             _cleanPrice.cell 
@@ -1425,7 +1425,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1461,7 +1461,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1511,7 +1511,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1585,7 +1585,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -1641,7 +1641,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1677,7 +1677,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1713,7 +1713,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1751,7 +1751,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).Result
                                                             _tag.cell 
@@ -1793,7 +1793,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).SetPricingEngine
                                                             _e.cell 
@@ -1833,7 +1833,7 @@ module FixedRateBondFunction =
 
             try
 
-                let _FixedRateBond = Helper.toCell<FixedRateBond> fixedratebond "FixedRateBond"  
+                let _FixedRateBond = Helper.toModelReference<FixedRateBond> fixedratebond "FixedRateBond"  
                 let builder (current : ICell) = ((FixedRateBondModel.Cast _FixedRateBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

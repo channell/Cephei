@@ -50,7 +50,7 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
+                let _AverageBasketPayoff = Helper.toModelReference<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
                 let builder (current : ICell) = ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Accumulate
                                                             _a.cell 
@@ -176,7 +176,7 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
+                let _AverageBasketPayoff = Helper.toModelReference<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let builder (current : ICell) = ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).BasePayoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -212,7 +212,7 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
+                let _AverageBasketPayoff = Helper.toModelReference<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let builder (current : ICell) = ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -248,7 +248,7 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
+                let _AverageBasketPayoff = Helper.toModelReference<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let builder (current : ICell) = ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -286,7 +286,7 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
+                let _AverageBasketPayoff = Helper.toModelReference<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
                 let builder (current : ICell) = ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Value1
                                                             _a.cell 
@@ -328,7 +328,7 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
+                let _AverageBasketPayoff = Helper.toModelReference<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Value
                                                             _price.cell 
@@ -370,7 +370,7 @@ module AverageBasketPayoffFunction =
 
             try
 
-                let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
+                let _AverageBasketPayoff = Helper.toModelReference<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Accept
                                                             _v.cell 

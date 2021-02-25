@@ -215,7 +215,7 @@ module ArithmeticAPOPathPricerFunction =
 
             try
 
-                let _ArithmeticAPOPathPricer = Helper.toCell<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer"  
+                let _ArithmeticAPOPathPricer = Helper.toModelReference<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let builder (current : ICell) = ((ArithmeticAPOPathPricerModel.Cast _ArithmeticAPOPathPricer.cell).Value
                                                             _path.cell 
@@ -257,7 +257,7 @@ module ArithmeticAPOPathPricerFunction =
 
             try
 
-                let _ArithmeticAPOPathPricer = Helper.toCell<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer"  
+                let _ArithmeticAPOPathPricer = Helper.toModelReference<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer"  
                 let _path = Helper.toCell<Path> path "path" 
                 let builder (current : ICell) = ((ArithmeticAPOPathPricerModel.Cast _ArithmeticAPOPathPricer.cell).Value1
                                                             _path.cell 

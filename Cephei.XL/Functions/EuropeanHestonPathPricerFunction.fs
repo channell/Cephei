@@ -99,7 +99,7 @@ module EuropeanHestonPathPricerFunction =
 
             try
 
-                let _EuropeanHestonPathPricer = Helper.toCell<EuropeanHestonPathPricer> europeanhestonpathpricer "EuropeanHestonPathPricer"  
+                let _EuropeanHestonPathPricer = Helper.toModelReference<EuropeanHestonPathPricer> europeanhestonpathpricer "EuropeanHestonPathPricer"  
                 let _multiPath = Helper.toCell<IPath> multiPath "multiPath" 
                 let builder (current : ICell) = ((EuropeanHestonPathPricerModel.Cast _EuropeanHestonPathPricer.cell).Value
                                                             _multiPath.cell 

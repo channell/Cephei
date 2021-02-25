@@ -54,7 +54,7 @@ module FaceValueAccrualClaimFunction =
 
             try
 
-                let _FaceValueAccrualClaim = Helper.toCell<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
+                let _FaceValueAccrualClaim = Helper.toModelReference<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _notional = Helper.toCell<double> notional "notional" 
                 let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
@@ -141,7 +141,7 @@ module FaceValueAccrualClaimFunction =
 
             try
 
-                let _FaceValueAccrualClaim = Helper.toCell<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
+                let _FaceValueAccrualClaim = Helper.toModelReference<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).RegisterWith
                                                             _handler.cell 
@@ -183,7 +183,7 @@ module FaceValueAccrualClaimFunction =
 
             try
 
-                let _FaceValueAccrualClaim = Helper.toCell<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
+                let _FaceValueAccrualClaim = Helper.toModelReference<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).UnregisterWith
                                                             _handler.cell 
@@ -223,7 +223,7 @@ module FaceValueAccrualClaimFunction =
 
             try
 
-                let _FaceValueAccrualClaim = Helper.toCell<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
+                let _FaceValueAccrualClaim = Helper.toModelReference<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
                 let builder (current : ICell) = ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).Update
                                                        ) :> ICell
                 let format (o : FaceValueAccrualClaim) (l:string) = o.ToString() :> obj

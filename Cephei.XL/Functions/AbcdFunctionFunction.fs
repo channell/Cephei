@@ -111,7 +111,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let _T = Helper.toCell<double> T "T" 
@@ -169,7 +169,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _T2 = Helper.toCell<double> T2 "T2" 
                 let _S = Helper.toCell<double> S "S" 
@@ -223,7 +223,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _u = Helper.toCell<double> u "u" 
                 let _T = Helper.toCell<double> T "T" 
                 let _S = Helper.toCell<double> S "S" 
@@ -275,7 +275,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _u = Helper.toCell<double> u "u" 
                 let _T = Helper.toCell<double> T "T" 
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).InstantaneousVariance
@@ -323,7 +323,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _u = Helper.toCell<double> u "u" 
                 let _T = Helper.toCell<double> T "T" 
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).InstantaneousVolatility
@@ -367,7 +367,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).LongTermVolatility
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -403,7 +403,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).MaximumVolatility
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -445,7 +445,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _T2 = Helper.toCell<double> T2 "T2" 
                 let _S = Helper.toCell<double> S "S" 
@@ -493,7 +493,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).ShortTermVolatility
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -535,7 +535,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _tMin = Helper.toCell<double> tMin "tMin" 
                 let _tMax = Helper.toCell<double> tMax "tMax" 
                 let _T = Helper.toCell<double> T "T" 
@@ -589,7 +589,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _tMin = Helper.toCell<double> tMin "tMin" 
                 let _tMax = Helper.toCell<double> tMax "tMax" 
                 let _T = Helper.toCell<double> T "T" 
@@ -637,7 +637,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -673,7 +673,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -709,7 +709,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).C
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -745,7 +745,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).Coefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -781,7 +781,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).D
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -821,7 +821,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).DefiniteDerivativeCoefficients
@@ -869,7 +869,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).DefiniteIntegral
@@ -917,7 +917,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).DefiniteIntegralCoefficients
@@ -963,7 +963,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).Derivative
                                                             _t.cell 
@@ -1003,7 +1003,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).DerivativeCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1039,7 +1039,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).LongTermValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1075,7 +1075,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).MaximumLocation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1111,7 +1111,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).MaximumValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1149,7 +1149,7 @@ module AbcdFunctionFunction =
 
             try
 
-                let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
+                let _AbcdFunction = Helper.toModelReference<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((AbcdFunctionModel.Cast _AbcdFunction.cell).Value
                                                             _t.cell 

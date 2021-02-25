@@ -97,7 +97,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -133,7 +133,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -169,7 +169,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -209,7 +209,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Derivative
@@ -253,7 +253,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -293,7 +293,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Primitive
@@ -341,7 +341,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).SecondDerivative
@@ -385,7 +385,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Update
                                                        ) :> ICell
                 let format (o : CubicSplineOvershootingMinimization1) (l:string) = o.ToString() :> obj
@@ -425,7 +425,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Value1
@@ -471,7 +471,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Value
                                                             _x.cell 
@@ -511,7 +511,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -547,7 +547,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -583,7 +583,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -621,7 +621,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).DisableExtrapolation
                                                             _b.cell 
@@ -663,7 +663,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).EnableExtrapolation
                                                             _b.cell 
@@ -703,7 +703,7 @@ module CubicSplineOvershootingMinimization1Function =
 
             try
 
-                let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
+                let _CubicSplineOvershootingMinimization1 = Helper.toModelReference<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let builder (current : ICell) = ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

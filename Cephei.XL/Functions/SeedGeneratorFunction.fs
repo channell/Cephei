@@ -48,7 +48,7 @@ module SeedGeneratorFunction =
 
             try
 
-                let _SeedGenerator = Helper.toCell<SeedGenerator> seedgenerator "SeedGenerator"  
+                let _SeedGenerator = Helper.toModelReference<SeedGenerator> seedgenerator "SeedGenerator"  
                 let builder (current : ICell) = ((SeedGeneratorModel.Cast _SeedGenerator.cell).Get
                                                        ) :> ICell
                 let format (o : ulong) (l:string) = o.ToString() :> obj

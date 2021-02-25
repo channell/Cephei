@@ -101,7 +101,7 @@ module ProportionalNotionalRiskFunction =
 
             try
 
-                let _ProportionalNotionalRisk = Helper.toCell<ProportionalNotionalRisk> proportionalnotionalrisk "ProportionalNotionalRisk"  
+                let _ProportionalNotionalRisk = Helper.toModelReference<ProportionalNotionalRisk> proportionalnotionalrisk "ProportionalNotionalRisk"  
                 let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
                 let _path = Helper.toCell<NotionalPath> path "path" 
                 let builder (current : ICell) = ((ProportionalNotionalRiskModel.Cast _ProportionalNotionalRisk.cell).UpdatePath

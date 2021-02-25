@@ -48,7 +48,7 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
+                let _SimpleQuote = Helper.toModelReference<SimpleQuote> simplequote "SimpleQuote"  
                 let builder (current : ICell) = ((SimpleQuoteModel.Cast _SimpleQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
+                let _SimpleQuote = Helper.toModelReference<SimpleQuote> simplequote "SimpleQuote"  
                 let builder (current : ICell) = ((SimpleQuoteModel.Cast _SimpleQuote.cell).Reset
                                                        ) :> ICell
                 let format (o : SimpleQuote) (l:string) = o.ToString() :> obj
@@ -122,7 +122,7 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
+                let _SimpleQuote = Helper.toModelReference<SimpleQuote> simplequote "SimpleQuote"  
                 let _value = Helper.toNullable<double> value "value"
                 let builder (current : ICell) = ((SimpleQuoteModel.Cast _SimpleQuote.cell).SetValue
                                                             _value.cell 
@@ -230,7 +230,7 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
+                let _SimpleQuote = Helper.toModelReference<SimpleQuote> simplequote "SimpleQuote"  
                 let builder (current : ICell) = ((SimpleQuoteModel.Cast _SimpleQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -268,7 +268,7 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
+                let _SimpleQuote = Helper.toModelReference<SimpleQuote> simplequote "SimpleQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((SimpleQuoteModel.Cast _SimpleQuote.cell).RegisterWith
                                                             _handler.cell 
@@ -310,7 +310,7 @@ module SimpleQuoteFunction =
 
             try
 
-                let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
+                let _SimpleQuote = Helper.toModelReference<SimpleQuote> simplequote "SimpleQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((SimpleQuoteModel.Cast _SimpleQuote.cell).UnregisterWith
                                                             _handler.cell 

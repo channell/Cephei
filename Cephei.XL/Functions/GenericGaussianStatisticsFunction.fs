@@ -53,7 +53,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _value = Helper.toCell<double> value "value" 
                 let _weight = Helper.toCell<double> weight "weight" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Add
@@ -102,7 +102,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).AddSequence
@@ -146,7 +146,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -186,7 +186,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
                 let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).ExpectationValue
@@ -232,7 +232,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _target = Helper.toCell<double> target "target" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianAverageShortfall
                                                             _target.cell 
@@ -272,7 +272,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianDownsideDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -308,7 +308,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianDownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -346,7 +346,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianExpectedShortfall
                                                             _percentile.cell 
@@ -388,7 +388,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianPercentile
                                                             _percentile.cell 
@@ -430,7 +430,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianPotentialUpside
                                                             _percentile.cell 
@@ -472,7 +472,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _target = Helper.toCell<double> target "target" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianRegret
                                                             _target.cell 
@@ -514,7 +514,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _target = Helper.toCell<double> target "target" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianShortfall
                                                             _target.cell 
@@ -556,7 +556,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianTopPercentile
                                                             _percentile.cell 
@@ -598,7 +598,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianValueAtRisk
                                                             _percentile.cell 
@@ -706,7 +706,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -742,7 +742,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -778,7 +778,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -814,7 +814,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -852,7 +852,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percent = Helper.toCell<double> percent "percent" 
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Percentile
                                                             _percent.cell 
@@ -892,7 +892,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Reset
                                                        ) :> ICell
                 let format (o : GenericGaussianStatistics) (l:string) = o.ToString() :> obj
@@ -928,7 +928,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -964,7 +964,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1000,7 +1000,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1036,7 +1036,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1072,7 +1072,7 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
+                let _GenericGaussianStatistics = Helper.toModelReference<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let builder (current : ICell) = ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

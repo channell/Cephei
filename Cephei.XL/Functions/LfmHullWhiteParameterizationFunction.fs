@@ -50,7 +50,7 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _LfmHullWhiteParameterization = Helper.toModelReference<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Covariance1
                                                             _t.cell 
@@ -94,7 +94,7 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _LfmHullWhiteParameterization = Helper.toModelReference<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
                 let builder (current : ICell) = ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Covariance
@@ -140,7 +140,7 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _LfmHullWhiteParameterization = Helper.toModelReference<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Diffusion
                                                             _t.cell 
@@ -184,7 +184,7 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _LfmHullWhiteParameterization = Helper.toModelReference<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
                 let builder (current : ICell) = ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Diffusion1
@@ -232,7 +232,7 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _LfmHullWhiteParameterization = Helper.toModelReference<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
                 let builder (current : ICell) = ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).IntegratedCovariance
@@ -374,7 +374,7 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _LfmHullWhiteParameterization = Helper.toModelReference<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let builder (current : ICell) = ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -410,7 +410,7 @@ module LfmHullWhiteParameterizationFunction =
 
             try
 
-                let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
+                let _LfmHullWhiteParameterization = Helper.toModelReference<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let builder (current : ICell) = ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

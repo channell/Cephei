@@ -85,7 +85,7 @@ module GaussHyperbolicIntegrationFunction =
 
             try
 
-                let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
+                let _GaussHyperbolicIntegration = Helper.toModelReference<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
                 let builder (current : ICell) = ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -123,7 +123,7 @@ module GaussHyperbolicIntegrationFunction =
 
             try
 
-                let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
+                let _GaussHyperbolicIntegration = Helper.toModelReference<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder (current : ICell) = ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Value
                                                             _f.cell 
@@ -163,7 +163,7 @@ module GaussHyperbolicIntegrationFunction =
 
             try
 
-                let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
+                let _GaussHyperbolicIntegration = Helper.toModelReference<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
                 let builder (current : ICell) = ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -199,7 +199,7 @@ module GaussHyperbolicIntegrationFunction =
 
             try
 
-                let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
+                let _GaussHyperbolicIntegration = Helper.toModelReference<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
                 let builder (current : ICell) = ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

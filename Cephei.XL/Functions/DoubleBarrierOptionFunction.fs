@@ -139,7 +139,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-4
@@ -199,7 +199,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -235,7 +235,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -271,7 +271,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -307,7 +307,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -343,7 +343,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -379,7 +379,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -415,7 +415,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -451,7 +451,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -487,7 +487,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -523,7 +523,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -559,7 +559,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -595,7 +595,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -631,7 +631,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -667,7 +667,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -703,7 +703,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -739,7 +739,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -775,7 +775,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -813,7 +813,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Result
                                                             _tag.cell 
@@ -855,7 +855,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).SetPricingEngine
                                                             _e.cell 
@@ -895,7 +895,7 @@ module DoubleBarrierOptionFunction =
 
             try
 
-                let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
+                let _DoubleBarrierOption = Helper.toModelReference<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let builder (current : ICell) = ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

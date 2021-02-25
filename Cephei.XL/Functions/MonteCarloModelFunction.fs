@@ -50,7 +50,7 @@ module MonteCarloModelFunction =
 
             try
 
-                let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel"  
+                let _MonteCarloModel = Helper.toModelReference<MonteCarloModel> montecarlomodel "MonteCarloModel"  
                 let _samples = Helper.toCell<int> samples "samples" 
                 let builder (current : ICell) = ((MonteCarloModelModel.Cast _MonteCarloModel.cell).AddSamples
                                                             _samples.cell 
@@ -163,7 +163,7 @@ module MonteCarloModelFunction =
 
             try
 
-                let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel"  
+                let _MonteCarloModel = Helper.toModelReference<MonteCarloModel> montecarlomodel "MonteCarloModel"  
                 let builder (current : ICell) = ((MonteCarloModelModel.Cast _MonteCarloModel.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj

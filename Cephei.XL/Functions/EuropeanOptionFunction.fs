@@ -115,7 +115,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
@@ -175,7 +175,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -211,7 +211,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -247,7 +247,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -283,7 +283,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -319,7 +319,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -355,7 +355,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -391,7 +391,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -427,7 +427,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -463,7 +463,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -499,7 +499,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -535,7 +535,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -571,7 +571,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -607,7 +607,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -643,7 +643,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -679,7 +679,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -715,7 +715,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -751,7 +751,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -789,7 +789,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).Result
                                                             _tag.cell 
@@ -831,7 +831,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).SetPricingEngine
                                                             _e.cell 
@@ -871,7 +871,7 @@ module EuropeanOptionFunction =
 
             try
 
-                let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
+                let _EuropeanOption = Helper.toModelReference<EuropeanOption> europeanoption "EuropeanOption"  
                 let builder (current : ICell) = ((EuropeanOptionModel.Cast _EuropeanOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

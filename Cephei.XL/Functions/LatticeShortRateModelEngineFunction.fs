@@ -146,7 +146,7 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
+                let _LatticeShortRateModelEngine = Helper.toModelReference<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let builder (current : ICell) = ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).Update
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
@@ -184,7 +184,7 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
+                let _LatticeShortRateModelEngine = Helper.toModelReference<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
                 let builder (current : ICell) = ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).SetModel
                                                             _model.cell 
@@ -227,7 +227,7 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
+                let _LatticeShortRateModelEngine = Helper.toModelReference<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -267,7 +267,7 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
+                let _LatticeShortRateModelEngine = Helper.toModelReference<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let builder (current : ICell) = ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
@@ -305,7 +305,7 @@ module LatticeShortRateModelEngineFunction =
 
             try
 
-                let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
+                let _LatticeShortRateModelEngine = Helper.toModelReference<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).UnregisterWith
                                                             _handler.cell 

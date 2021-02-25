@@ -91,7 +91,7 @@ module GaussLaguerreIntegrationFunction =
 
             try
 
-                let _GaussLaguerreIntegration = Helper.toCell<GaussLaguerreIntegration> gausslaguerreintegration "GaussLaguerreIntegration"  
+                let _GaussLaguerreIntegration = Helper.toModelReference<GaussLaguerreIntegration> gausslaguerreintegration "GaussLaguerreIntegration"  
                 let builder (current : ICell) = ((GaussLaguerreIntegrationModel.Cast _GaussLaguerreIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -129,7 +129,7 @@ module GaussLaguerreIntegrationFunction =
 
             try
 
-                let _GaussLaguerreIntegration = Helper.toCell<GaussLaguerreIntegration> gausslaguerreintegration "GaussLaguerreIntegration"  
+                let _GaussLaguerreIntegration = Helper.toModelReference<GaussLaguerreIntegration> gausslaguerreintegration "GaussLaguerreIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder (current : ICell) = ((GaussLaguerreIntegrationModel.Cast _GaussLaguerreIntegration.cell).Value
                                                             _f.cell 
@@ -169,7 +169,7 @@ module GaussLaguerreIntegrationFunction =
 
             try
 
-                let _GaussLaguerreIntegration = Helper.toCell<GaussLaguerreIntegration> gausslaguerreintegration "GaussLaguerreIntegration"  
+                let _GaussLaguerreIntegration = Helper.toModelReference<GaussLaguerreIntegration> gausslaguerreintegration "GaussLaguerreIntegration"  
                 let builder (current : ICell) = ((GaussLaguerreIntegrationModel.Cast _GaussLaguerreIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -205,7 +205,7 @@ module GaussLaguerreIntegrationFunction =
 
             try
 
-                let _GaussLaguerreIntegration = Helper.toCell<GaussLaguerreIntegration> gausslaguerreintegration "GaussLaguerreIntegration"  
+                let _GaussLaguerreIntegration = Helper.toModelReference<GaussLaguerreIntegration> gausslaguerreintegration "GaussLaguerreIntegration"  
                 let builder (current : ICell) = ((GaussLaguerreIntegrationModel.Cast _GaussLaguerreIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

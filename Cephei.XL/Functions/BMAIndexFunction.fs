@@ -89,7 +89,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _start = Helper.toCell<Date> start "start" 
                 let _End = Helper.toCell<Date> End "End" 
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).FixingSchedule
@@ -135,7 +135,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).ForecastFixing
                                                             _fixingDate.cell 
@@ -175,7 +175,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -213,7 +213,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -255,7 +255,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).MaturityDate
                                                             _valueDate.cell 
@@ -295,7 +295,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -331,7 +331,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -367,7 +367,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -403,7 +403,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -443,7 +443,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).Fixing
@@ -487,7 +487,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -525,7 +525,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).FixingDate
                                                             _valueDate.cell 
@@ -565,7 +565,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -603,7 +603,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).PastFixing
                                                             _fixingDate.cell 
@@ -643,7 +643,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -679,7 +679,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).Update
                                                        ) :> ICell
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
@@ -717,7 +717,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).ValueDate
                                                             _fixingDate.cell 
@@ -763,7 +763,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -817,7 +817,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -869,7 +869,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).AddFixings1
@@ -913,7 +913,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -949,7 +949,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
@@ -987,7 +987,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).RegisterWith
                                                             _handler.cell 
@@ -1027,7 +1027,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1065,7 +1065,7 @@ module BMAIndexFunction =
 
             try
 
-                let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
+                let _BMAIndex = Helper.toModelReference<BMAIndex> bmaindex "BMAIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BMAIndexModel.Cast _BMAIndex.cell).UnregisterWith
                                                             _handler.cell 

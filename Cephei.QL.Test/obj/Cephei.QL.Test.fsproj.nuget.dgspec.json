@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj": {}
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+    "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
       "version": "1.11.4",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
         "projectName": "QLNet",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         },
         "net48": {
           "targetAlias": "net48",
@@ -86,7 +86,7 @@
               "version": "[4.7.0, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         },
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
@@ -111,18 +111,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
       "version": "3.1.4",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
         "projectName": "Cephei.Cell",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -199,7 +199,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         },
         "net48": {
           "targetAlias": "net48",
@@ -221,7 +221,7 @@
               "version": "[5.0.0, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         },
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
@@ -258,18 +258,82 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj": {
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Models\\Cephei.Model.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj",
-        "projectName": "Cephei.QL.Samples",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Models\\Cephei.Model.fsproj",
+        "projectName": "Cephei.Model",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Models\\Cephei.Model.fsproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\steve\\source\\repos\\Cephei2\\.nuget\\NuGet.Config",
+          "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net48",
+            "projectReferences": {
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              },
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+              },
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
+              },
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net48",
+          "dependencies": {
+            "ExcelDna.Integration": {
+              "target": "Package",
+              "version": "[1.1.0, )",
+              "generatePathProperty": true
+            },
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "generatePathProperty": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj",
+        "projectName": "Cephei.QL.Samples",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj",
+        "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Samples\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -291,8 +355,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
               }
             }
           }
@@ -338,18 +402,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj": {
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj",
         "projectName": "Cephei.QL.Test",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Test\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -371,17 +435,20 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Models\\Cephei.Model.fsproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Models\\Cephei.Model.fsproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+              },
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
               }
             }
           }
@@ -439,18 +506,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
         "projectName": "Cephei.QLNetHelper",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -474,16 +541,16 @@
           "net48": {
             "targetAlias": "net48",
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
               }
             }
           },
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
               }
             }
           }
@@ -497,7 +564,7 @@
       "frameworks": {
         "net48": {
           "targetAlias": "net48",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         },
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
@@ -516,18 +583,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
       "version": "3.1.2",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
         "projectName": "Cephei.QL",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -552,42 +619,42 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
               }
             }
           },
           "net48": {
             "targetAlias": "net48",
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
               }
             }
           },
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
               }
             }
           }
@@ -628,7 +695,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         },
         "net48": {
           "targetAlias": "net48",
@@ -649,7 +716,7 @@
               "generatePathProperty": true
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         },
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
@@ -685,7 +752,81 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj",
+        "projectName": "Cephei.XLM",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj",
+        "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\steve\\source\\repos\\Cephei2\\.nuget\\NuGet.Config",
+          "C:\\Users\\steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net48",
+            "projectReferences": {
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              },
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+              },
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+              },
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net48",
+          "dependencies": {
+            "ExcelDna.Integration": {
+              "target": "Package",
+              "version": "[1.1.0, )",
+              "generatePathProperty": true
+            },
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "generatePathProperty": true
+            },
+            "ILGPU": {
+              "target": "Package",
+              "version": "[0.9.1, )",
+              "generatePathProperty": true
+            },
+            "System.Collections.Immutable": {
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "generatePathProperty": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -87,7 +87,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).Clone
                                                             _h.cell 
@@ -127,7 +127,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -163,7 +163,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -205,7 +205,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
@@ -255,7 +255,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).ForecastFixing
                                                             _fixingDate.cell 
@@ -295,7 +295,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -333,7 +333,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).MaturityDate
                                                             _valueDate.cell 
@@ -373,7 +373,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -409,7 +409,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -445,7 +445,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -485,7 +485,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).Fixing
@@ -529,7 +529,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -567,7 +567,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).FixingDate
                                                             _valueDate.cell 
@@ -607,7 +607,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -645,7 +645,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -685,7 +685,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -723,7 +723,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).PastFixing
                                                             _fixingDate.cell 
@@ -763,7 +763,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -799,7 +799,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).Update
                                                        ) :> ICell
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
@@ -837,7 +837,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).ValueDate
                                                             _fixingDate.cell 
@@ -883,7 +883,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -937,7 +937,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -989,7 +989,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).AddFixings1
@@ -1033,7 +1033,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1069,7 +1069,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
@@ -1107,7 +1107,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).RegisterWith
                                                             _handler.cell 
@@ -1147,7 +1147,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1185,7 +1185,7 @@ module NzocrFunction =
 
             try
 
-                let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
+                let _Nzocr = Helper.toModelReference<Nzocr> nzocr "Nzocr"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((NzocrModel.Cast _Nzocr.cell).UnregisterWith
                                                             _handler.cell 

@@ -52,7 +52,7 @@ module FdmStepConditionCompositeFunction =
 
             try
 
-                let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
+                let _FdmStepConditionComposite = Helper.toModelReference<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).ApplyTo
@@ -96,7 +96,7 @@ module FdmStepConditionCompositeFunction =
 
             try
 
-                let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
+                let _FdmStepConditionComposite = Helper.toModelReference<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
                 let builder (current : ICell) = ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).Conditions
                                                        ) :> ICell
                 let format (i : Generic.List<IStepCondition<Vector>>) (l : string) = Helper.Range.fromList i l
@@ -206,7 +206,7 @@ module FdmStepConditionCompositeFunction =
 
             try
 
-                let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
+                let _FdmStepConditionComposite = Helper.toModelReference<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
                 let builder (current : ICell) = ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).StoppingTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

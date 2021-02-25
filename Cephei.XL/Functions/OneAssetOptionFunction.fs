@@ -48,7 +48,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -264,7 +264,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -355,7 +355,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -391,7 +391,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -427,7 +427,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -463,7 +463,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -499,7 +499,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -535,7 +535,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -571,7 +571,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -607,7 +607,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -643,7 +643,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -679,7 +679,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -717,7 +717,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).Result
                                                             _tag.cell 
@@ -759,7 +759,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).SetPricingEngine
                                                             _e.cell 
@@ -799,7 +799,7 @@ module OneAssetOptionFunction =
 
             try
 
-                let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
+                let _OneAssetOption = Helper.toModelReference<OneAssetOption> oneassetoption "OneAssetOption"  
                 let builder (current : ICell) = ((OneAssetOptionModel.Cast _OneAssetOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

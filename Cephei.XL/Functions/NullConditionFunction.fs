@@ -52,7 +52,7 @@ module NullConditionFunction =
 
             try
 
-                let _NullCondition = Helper.toCell<NullCondition> nullcondition "NullCondition"  
+                let _NullCondition = Helper.toModelReference<NullCondition> nullcondition "NullCondition"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((NullConditionModel.Cast _NullCondition.cell).ApplyTo

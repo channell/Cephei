@@ -85,7 +85,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -123,7 +123,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).Clone
                                                             _forwarding.cell 
@@ -163,7 +163,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -205,7 +205,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
@@ -255,7 +255,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).ForecastFixing
                                                             _fixingDate.cell 
@@ -295,7 +295,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -333,7 +333,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).MaturityDate
                                                             _valueDate.cell 
@@ -373,7 +373,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -409,7 +409,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -445,7 +445,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -485,7 +485,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).Fixing
@@ -529,7 +529,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -567,7 +567,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).FixingDate
                                                             _valueDate.cell 
@@ -607,7 +607,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -645,7 +645,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -685,7 +685,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -723,7 +723,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).PastFixing
                                                             _fixingDate.cell 
@@ -763,7 +763,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -799,7 +799,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).Update
                                                        ) :> ICell
                 let format (o : Bbsw4M) (l:string) = o.ToString() :> obj
@@ -837,7 +837,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).ValueDate
                                                             _fixingDate.cell 
@@ -883,7 +883,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -937,7 +937,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -989,7 +989,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).AddFixings1
@@ -1033,7 +1033,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1069,7 +1069,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Bbsw4M) (l:string) = o.ToString() :> obj
@@ -1107,7 +1107,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).RegisterWith
                                                             _handler.cell 
@@ -1147,7 +1147,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1185,7 +1185,7 @@ module Bbsw4MFunction =
 
             try
 
-                let _Bbsw4M = Helper.toCell<Bbsw4M> bbsw4m "Bbsw4M"  
+                let _Bbsw4M = Helper.toModelReference<Bbsw4M> bbsw4m "Bbsw4M"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((Bbsw4MModel.Cast _Bbsw4M.cell).UnregisterWith
                                                             _handler.cell 

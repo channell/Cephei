@@ -48,7 +48,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _PolynomialFunction = Helper.toModelReference<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let builder (current : ICell) = ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Coefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -88,7 +88,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _PolynomialFunction = Helper.toModelReference<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder (current : ICell) = ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DefiniteDerivativeCoefficients
@@ -136,7 +136,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _PolynomialFunction = Helper.toModelReference<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder (current : ICell) = ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DefiniteIntegral
@@ -184,7 +184,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _PolynomialFunction = Helper.toModelReference<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let builder (current : ICell) = ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DefiniteIntegralCoefficients
@@ -230,7 +230,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _PolynomialFunction = Helper.toModelReference<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Derivative
                                                             _t.cell 
@@ -270,7 +270,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _PolynomialFunction = Helper.toModelReference<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let builder (current : ICell) = ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DerivativeCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -306,7 +306,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _PolynomialFunction = Helper.toModelReference<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let builder (current : ICell) = ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -381,7 +381,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _PolynomialFunction = Helper.toModelReference<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Primitive
                                                             _t.cell 
@@ -421,7 +421,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _PolynomialFunction = Helper.toModelReference<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let builder (current : ICell) = ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).PrimitiveCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -459,7 +459,7 @@ module PolynomialFunctionFunction =
 
             try
 
-                let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
+                let _PolynomialFunction = Helper.toModelReference<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Value
                                                             _t.cell 

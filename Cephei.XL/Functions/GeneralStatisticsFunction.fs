@@ -53,7 +53,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _value = Helper.toCell<double> value "value" 
                 let _weight = Helper.toCell<double> weight "weight" 
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Add
@@ -101,7 +101,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _value = Helper.toCell<double> value "value" 
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Add1
                                                             _value.cell 
@@ -144,7 +144,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _list = Helper.toCell<Generic.List<double>> list "list" 
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).AddSequence
                                                             _list.cell 
@@ -188,7 +188,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).AddSequence1
@@ -232,7 +232,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<Generic.KeyValuePair<double,double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -268,7 +268,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -309,7 +309,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
                 let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).ExpectationValue
@@ -384,7 +384,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -420,7 +420,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -456,7 +456,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -492,7 +492,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -530,7 +530,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _percent = Helper.toCell<double> percent "percent" 
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Percentile
                                                             _percent.cell 
@@ -570,7 +570,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Reset
                                                        ) :> ICell
                 let format (o : GeneralStatistics) (l:string) = o.ToString() :> obj
@@ -606,7 +606,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -642,7 +642,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -678,7 +678,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Sort
                                                        ) :> ICell
                 let format (o : GeneralStatistics) (l:string) = o.ToString() :> obj
@@ -714,7 +714,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -752,7 +752,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _percent = Helper.toCell<double> percent "percent" 
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).TopPercentile
                                                             _percent.cell 
@@ -792,7 +792,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -828,7 +828,7 @@ module GeneralStatisticsFunction =
 
             try
 
-                let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
+                let _GeneralStatistics = Helper.toModelReference<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let builder (current : ICell) = ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -97,7 +97,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
+                let _CashOrNothingPayoff = Helper.toModelReference<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let builder (current : ICell) = ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).CashPayoff
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -133,7 +133,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
+                let _CashOrNothingPayoff = Helper.toModelReference<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let builder (current : ICell) = ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -169,7 +169,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
+                let _CashOrNothingPayoff = Helper.toModelReference<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let builder (current : ICell) = ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -207,7 +207,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
+                let _CashOrNothingPayoff = Helper.toModelReference<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Value
                                                             _price.cell 
@@ -247,7 +247,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
+                let _CashOrNothingPayoff = Helper.toModelReference<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let builder (current : ICell) = ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -283,7 +283,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
+                let _CashOrNothingPayoff = Helper.toModelReference<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let builder (current : ICell) = ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -321,7 +321,7 @@ module CashOrNothingPayoffFunction =
 
             try
 
-                let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
+                let _CashOrNothingPayoff = Helper.toModelReference<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Accept
                                                             _v.cell 

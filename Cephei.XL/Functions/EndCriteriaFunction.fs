@@ -52,7 +52,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _EndCriteria = Helper.toModelReference<EndCriteria> endcriteria "EndCriteria"  
                 let _iteration = Helper.toCell<int> iteration "iteration" 
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let builder (current : ICell) = ((EndCriteriaModel.Cast _EndCriteria.cell).CheckMaxIterations
@@ -102,7 +102,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _EndCriteria = Helper.toModelReference<EndCriteria> endcriteria "EndCriteria"  
                 let _f = Helper.toCell<double> f "f" 
                 let _positiveOptimization = Helper.toCell<bool> positiveOptimization "positiveOptimization" 
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
@@ -158,7 +158,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _EndCriteria = Helper.toModelReference<EndCriteria> endcriteria "EndCriteria"  
                 let _fxOld = Helper.toCell<double> fxOld "fxOld" 
                 let _fxNew = Helper.toCell<double> fxNew "fxNew" 
                 let _statStateIterations = Helper.toCell<int> statStateIterations "statStateIterations" 
@@ -218,7 +218,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _EndCriteria = Helper.toModelReference<EndCriteria> endcriteria "EndCriteria"  
                 let _xOld = Helper.toCell<double> xOld "xOld" 
                 let _xNew = Helper.toCell<double> xNew "xNew" 
                 let _statStateIterations = Helper.toCell<int> statStateIterations "statStateIterations" 
@@ -274,7 +274,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _EndCriteria = Helper.toModelReference<EndCriteria> endcriteria "EndCriteria"  
                 let _gradientNorm = Helper.toCell<double> gradientNorm "gradientNorm" 
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let builder (current : ICell) = ((EndCriteriaModel.Cast _EndCriteria.cell).CheckZeroGradientNorm
@@ -379,7 +379,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _EndCriteria = Helper.toModelReference<EndCriteria> endcriteria "EndCriteria"  
                 let builder (current : ICell) = ((EndCriteriaModel.Cast _EndCriteria.cell).FunctionEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -415,7 +415,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _EndCriteria = Helper.toModelReference<EndCriteria> endcriteria "EndCriteria"  
                 let builder (current : ICell) = ((EndCriteriaModel.Cast _EndCriteria.cell).GradientNormEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -451,7 +451,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _EndCriteria = Helper.toModelReference<EndCriteria> endcriteria "EndCriteria"  
                 let builder (current : ICell) = ((EndCriteriaModel.Cast _EndCriteria.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -487,7 +487,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _EndCriteria = Helper.toModelReference<EndCriteria> endcriteria "EndCriteria"  
                 let builder (current : ICell) = ((EndCriteriaModel.Cast _EndCriteria.cell).MaxStationaryStateIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -523,7 +523,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _EndCriteria = Helper.toModelReference<EndCriteria> endcriteria "EndCriteria"  
                 let builder (current : ICell) = ((EndCriteriaModel.Cast _EndCriteria.cell).RootEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -575,7 +575,7 @@ module EndCriteriaFunction =
 
             try
 
-                let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
+                let _EndCriteria = Helper.toModelReference<EndCriteria> endcriteria "EndCriteria"  
                 let _iteration = Helper.toCell<int> iteration "iteration" 
                 let _statStateIterations = Helper.toCell<int> statStateIterations "statStateIterations" 
                 let _positiveOptimization = Helper.toCell<bool> positiveOptimization "positiveOptimization" 

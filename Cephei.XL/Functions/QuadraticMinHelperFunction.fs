@@ -48,7 +48,7 @@ module QuadraticMinHelperFunction =
 
             try
 
-                let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
+                let _QuadraticMinHelper = Helper.toModelReference<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
                 let builder (current : ICell) = ((QuadraticMinHelperModel.Cast _QuadraticMinHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -86,7 +86,7 @@ module QuadraticMinHelperFunction =
 
             try
 
-                let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
+                let _QuadraticMinHelper = Helper.toModelReference<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((QuadraticMinHelperModel.Cast _QuadraticMinHelper.cell).Primitive
                                                             _x.cell 
@@ -195,7 +195,7 @@ module QuadraticMinHelperFunction =
 
             try
 
-                let _QuadraticMinHelper = Helper.toCell<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
+                let _QuadraticMinHelper = Helper.toModelReference<QuadraticMinHelper> quadraticminhelper "QuadraticMinHelper"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((QuadraticMinHelperModel.Cast _QuadraticMinHelper.cell).Value
                                                             _x.cell 

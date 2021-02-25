@@ -128,7 +128,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -166,7 +166,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).Clone
                                                             _forwarding.cell 
@@ -206,7 +206,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -248,7 +248,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
@@ -298,7 +298,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).ForecastFixing
                                                             _fixingDate.cell 
@@ -338,7 +338,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -376,7 +376,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).MaturityDate
                                                             _valueDate.cell 
@@ -416,7 +416,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -452,7 +452,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -488,7 +488,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -528,7 +528,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).Fixing
@@ -572,7 +572,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -610,7 +610,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).FixingDate
                                                             _valueDate.cell 
@@ -650,7 +650,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -688,7 +688,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -728,7 +728,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -766,7 +766,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).PastFixing
                                                             _fixingDate.cell 
@@ -806,7 +806,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -842,7 +842,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).Update
                                                        ) :> ICell
                 let format (o : Cdor) (l:string) = o.ToString() :> obj
@@ -880,7 +880,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).ValueDate
                                                             _fixingDate.cell 
@@ -926,7 +926,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -980,7 +980,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -1032,7 +1032,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).AddFixings1
@@ -1076,7 +1076,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1112,7 +1112,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Cdor) (l:string) = o.ToString() :> obj
@@ -1150,7 +1150,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).RegisterWith
                                                             _handler.cell 
@@ -1190,7 +1190,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1228,7 +1228,7 @@ module CdorFunction =
 
             try
 
-                let _Cdor = Helper.toCell<Cdor> cdor "Cdor"  
+                let _Cdor = Helper.toModelReference<Cdor> cdor "Cdor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CdorModel.Cast _Cdor.cell).UnregisterWith
                                                             _handler.cell 

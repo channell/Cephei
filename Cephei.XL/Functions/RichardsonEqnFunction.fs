@@ -111,7 +111,7 @@ module RichardsonEqnFunction =
 
             try
 
-                let _RichardsonEqn = Helper.toCell<RichardsonEqn> richardsoneqn "RichardsonEqn"  
+                let _RichardsonEqn = Helper.toModelReference<RichardsonEqn> richardsoneqn "RichardsonEqn"  
                 let _k = Helper.toCell<double> k "k" 
                 let builder (current : ICell) = ((RichardsonEqnModel.Cast _RichardsonEqn.cell).Value
                                                             _k.cell 
@@ -153,7 +153,7 @@ module RichardsonEqnFunction =
 
             try
 
-                let _RichardsonEqn = Helper.toCell<RichardsonEqn> richardsoneqn "RichardsonEqn"  
+                let _RichardsonEqn = Helper.toModelReference<RichardsonEqn> richardsoneqn "RichardsonEqn"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((RichardsonEqnModel.Cast _RichardsonEqn.cell).Derivative
                                                             _x.cell 

@@ -89,7 +89,7 @@ module ConjugateGradientFunction =
 
             try
 
-                let _ConjugateGradient = Helper.toCell<ConjugateGradient> conjugategradient "ConjugateGradient"  
+                let _ConjugateGradient = Helper.toModelReference<ConjugateGradient> conjugategradient "ConjugateGradient"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder (current : ICell) = ((ConjugateGradientModel.Cast _ConjugateGradient.cell).Minimize

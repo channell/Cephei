@@ -91,7 +91,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -129,7 +129,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).InArrears1
                                                             _flag.cell 
@@ -169,7 +169,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).InArrears
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
@@ -207,7 +207,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _caps = Helper.toNullabletList<double> caps "caps" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithCaps
                                                             _caps.cell 
@@ -249,7 +249,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _cap = Helper.toNullable<double> cap "cap"
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithCaps1
                                                             _cap.cell 
@@ -291,7 +291,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithFixingDays1
                                                             _fixingDays.cell 
@@ -333,7 +333,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithFixingDays
                                                             _fixingDays.cell 
@@ -375,7 +375,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _floors = Helper.toNullabletList<double> floors "floors" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithFloors1
                                                             _floors.cell 
@@ -417,7 +417,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _floor = Helper.toNullable<double> floor "floor"
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithFloors
                                                             _floor.cell 
@@ -459,7 +459,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithGearings
                                                             _gearing.cell 
@@ -501,7 +501,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithGearings1
                                                             _gearings.cell 
@@ -543,7 +543,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
@@ -585,7 +585,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithSpreads1
                                                             _spreads.cell 
@@ -627,7 +627,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithSpreads
                                                             _spread.cell 
@@ -669,7 +669,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithZeroPayments1
                                                             _flag.cell 
@@ -709,7 +709,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithZeroPayments
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
@@ -747,7 +747,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithNotionals1
                                                             _notionals.cell 
@@ -789,7 +789,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithNotionals
                                                             _notional.cell 
@@ -831,7 +831,7 @@ module CmsLegFunction =
 
             try
 
-                let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
+                let _CmsLeg = Helper.toModelReference<CmsLeg> cmsleg "CmsLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder (current : ICell) = ((CmsLegModel.Cast _CmsLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 

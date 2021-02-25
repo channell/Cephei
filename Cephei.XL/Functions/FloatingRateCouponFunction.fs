@@ -50,7 +50,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccruedAmount
                                                             _d.cell 
@@ -90,7 +90,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -126,7 +126,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -162,7 +162,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -198,7 +198,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -258,7 +258,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _nominal = Helper.toCell<double> nominal "nominal" 
                 let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
                 let _startDate = Helper.toCell<Date> startDate "startDate" 
@@ -342,7 +342,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -378,7 +378,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -548,7 +548,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -584,7 +584,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
@@ -620,7 +620,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -656,7 +656,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -694,7 +694,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Price
                                                             _yts.cell 
@@ -734,7 +734,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
@@ -770,7 +770,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -808,7 +808,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).SetPricer
                                                             _pricer.cell 
@@ -848,7 +848,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -884,7 +884,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : FloatingRateCoupon) (l:string) = o.ToString() :> obj
@@ -920,7 +920,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -956,7 +956,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -992,7 +992,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1028,7 +1028,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1066,7 +1066,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccruedDays
                                                             _d.cell 
@@ -1108,7 +1108,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccruedPeriod
                                                             _d.cell 
@@ -1148,7 +1148,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1184,7 +1184,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1220,7 +1220,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1256,7 +1256,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1292,7 +1292,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1330,7 +1330,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).CompareTo
                                                             _cf.cell 
@@ -1372,7 +1372,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Equals
                                                             _cf.cell 
@@ -1416,7 +1416,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).HasOccurred
@@ -1462,7 +1462,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -1504,7 +1504,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Accept
                                                             _v.cell 
@@ -1546,7 +1546,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).RegisterWith
                                                             _handler.cell 
@@ -1588,7 +1588,7 @@ module FloatingRateCouponFunction =
 
             try
 
-                let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
+                let _FloatingRateCoupon = Helper.toModelReference<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).UnregisterWith
                                                             _handler.cell 

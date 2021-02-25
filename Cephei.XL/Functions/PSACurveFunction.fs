@@ -50,7 +50,7 @@ module PSACurveFunction =
 
             try
 
-                let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve"  
+                let _PSACurve = Helper.toModelReference<PSACurve> psacurve "PSACurve"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
                 let builder (current : ICell) = ((PSACurveModel.Cast _PSACurve.cell).GetCPR
                                                             _valDate.cell 
@@ -92,7 +92,7 @@ module PSACurveFunction =
 
             try
 
-                let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve"  
+                let _PSACurve = Helper.toModelReference<PSACurve> psacurve "PSACurve"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
                 let builder (current : ICell) = ((PSACurveModel.Cast _PSACurve.cell).GetSMM
                                                             _valDate.cell 

@@ -62,11 +62,11 @@ type Sample () =
 
     let modelCell (m : Model) (v : unit -> 'a) s = m.Create (v, s)
 
-    let value (v : 'a) s = Cell.CreateValue (v,s)
+    let value (v : 'a) = Cell.CreateValue (v)
 
-    let cell (v : unit -> 'a) s = Cell.Create (v, s)
+    let cell (v : unit -> 'a) = Cell.Create (v)
 
-    let fast (v : unit -> 'a) s = Cell.CreateFast (v ,s)
+    let fast (v : unit -> 'a) = Cell.CreateFast (v)
 
     let watch (c : ICell<'a>) n = 
         new ConsoleSubscriber<'a> (c, n)
@@ -86,8 +86,8 @@ type Sample () =
 
     [<TestMethod>]
     member this.FastTest () =
-        let sc = value 100I "sc"
-        let tc = fast (fun () -> List.toSeq (bins (oneHundred.Value))) "tc"
+        let sc = value 100I
+        let tc = fast (fun () -> List.toSeq (bins (oneHundred.Value)))
         let obs = logWatch tc "obs"
         [1I..10000I] |> List.iter (fun i -> oneHundred.Value <- i
                                             Threading.Thread.Sleep(0))
@@ -96,8 +96,8 @@ type Sample () =
     [<TestMethod>]
     member this.CellSimple () = 
         Cell.Parellel <- true
-        let sc = value 100I "sc"
-        let tc = cell (fun () -> List.toSeq (bins (sc.Value))) "tc"
+        let sc = value 100I
+        let tc = cell (fun () -> List.toSeq (bins (sc.Value)))
         let obs = logWatch tc "obs"
         [1I..10000I] |> List.iter (fun i -> sc.Value <- i
                                             Threading.Thread.Sleep(0))
@@ -106,7 +106,7 @@ type Sample () =
 
     [<TestMethod>]
     member this.CellSimple2 () = 
-        let sc = value 1I "sc"
+        let sc = value 1I
         let tc = cell (fun () -> fac sc.Value) "tc"
         let obs = watch tc "observe "
         [1I..100I] |> List.iter (fun i -> sc.Value <- i)
@@ -114,7 +114,7 @@ type Sample () =
     [<TestMethod>]
     member this.CellSimple3 () = 
         Cell.Parellel <- true
-        let sc = value 1I "sc"
+        let sc = value 1I
         let tc = cell (fun () -> fac sc.Value) "tc"
         let obs = watch tc "observe "
         [1I..100I] |> List.iter (fun i -> sc.Value <- i)

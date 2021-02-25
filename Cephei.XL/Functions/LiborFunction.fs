@@ -50,7 +50,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).Clone
                                                             _h.cell 
@@ -165,7 +165,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).MaturityDate
                                                             _valueDate.cell 
@@ -207,7 +207,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).ValueDate
                                                             _fixingDate.cell 
@@ -247,7 +247,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -283,7 +283,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -325,7 +325,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
@@ -375,7 +375,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).ForecastFixing
                                                             _fixingDate.cell 
@@ -415,7 +415,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -451,7 +451,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -487,7 +487,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -523,7 +523,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -563,7 +563,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).Fixing
@@ -607,7 +607,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -645,7 +645,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).FixingDate
                                                             _valueDate.cell 
@@ -685,7 +685,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -723,7 +723,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -763,7 +763,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -801,7 +801,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).PastFixing
                                                             _fixingDate.cell 
@@ -841,7 +841,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -877,7 +877,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).Update
                                                        ) :> ICell
                 let format (o : Libor) (l:string) = o.ToString() :> obj
@@ -919,7 +919,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -973,7 +973,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -1025,7 +1025,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).AddFixings1
@@ -1069,7 +1069,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1105,7 +1105,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Libor) (l:string) = o.ToString() :> obj
@@ -1143,7 +1143,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).RegisterWith
                                                             _handler.cell 
@@ -1183,7 +1183,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1221,7 +1221,7 @@ module LiborFunction =
 
             try
 
-                let _Libor = Helper.toCell<Libor> libor "Libor"  
+                let _Libor = Helper.toModelReference<Libor> libor "Libor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((LiborModel.Cast _Libor.cell).UnregisterWith
                                                             _handler.cell 

@@ -136,7 +136,7 @@ module VannaVolgaBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
+                let _VannaVolgaBarrierEngine = Helper.toModelReference<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -176,7 +176,7 @@ module VannaVolgaBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
+                let _VannaVolgaBarrierEngine = Helper.toModelReference<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
                 let builder (current : ICell) = ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
@@ -214,7 +214,7 @@ module VannaVolgaBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
+                let _VannaVolgaBarrierEngine = Helper.toModelReference<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -254,7 +254,7 @@ module VannaVolgaBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
+                let _VannaVolgaBarrierEngine = Helper.toModelReference<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
                 let builder (current : ICell) = ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).Update
                                                        ) :> ICell
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj

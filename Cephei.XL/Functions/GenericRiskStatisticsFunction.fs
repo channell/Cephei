@@ -52,7 +52,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let _value = Helper.toCell<double> value "value" 
                 let _weight = Helper.toCell<double> weight "weight" 
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Add
@@ -100,7 +100,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).AddSequence
@@ -146,7 +146,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let _target = Helper.toCell<double> target "target" 
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).AverageShortfall
                                                             _target.cell 
@@ -186,7 +186,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).DownsideDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -222,7 +222,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).DownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -258,7 +258,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -298,7 +298,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
                 let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).ExpectationValue
@@ -344,7 +344,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let _centile = Helper.toCell<double> centile "centile" 
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).ExpectedShortfall
                                                             _centile.cell 
@@ -384,7 +384,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -420,7 +420,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -456,7 +456,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -492,7 +492,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -530,7 +530,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let _percent = Helper.toCell<double> percent "percent" 
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Percentile
                                                             _percent.cell 
@@ -572,7 +572,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let _centile = Helper.toCell<double> centile "centile" 
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).PotentialUpside
                                                             _centile.cell 
@@ -614,7 +614,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let _target = Helper.toCell<double> target "target" 
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Regret
                                                             _target.cell 
@@ -654,7 +654,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Reset
                                                        ) :> ICell
                 let format (o : GenericRiskStatistics) (l:string) = o.ToString() :> obj
@@ -690,7 +690,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -726,7 +726,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).SemiDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -762,7 +762,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).SemiVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -800,7 +800,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let _target = Helper.toCell<double> target "target" 
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Shortfall
                                                             _target.cell 
@@ -840,7 +840,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -876,7 +876,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -914,7 +914,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let _centile = Helper.toCell<double> centile "centile" 
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).ValueAtRisk
                                                             _centile.cell 
@@ -954,7 +954,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -990,7 +990,7 @@ module GenericRiskStatisticsFunction =
 
             try
 
-                let _GenericRiskStatistics = Helper.toCell<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
+                let _GenericRiskStatistics = Helper.toModelReference<GenericRiskStatistics> genericriskstatistics "GenericRiskStatistics"  
                 let builder (current : ICell) = ((GenericRiskStatisticsModel.Cast _GenericRiskStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

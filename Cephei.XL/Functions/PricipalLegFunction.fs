@@ -91,7 +91,7 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
+                let _PricipalLeg = Helper.toModelReference<PricipalLeg> pricipalleg "PricipalLeg"  
                 let builder (current : ICell) = ((PricipalLegModel.Cast _PricipalLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -129,7 +129,7 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
+                let _PricipalLeg = Helper.toModelReference<PricipalLeg> pricipalleg "PricipalLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder (current : ICell) = ((PricipalLegModel.Cast _PricipalLeg.cell).WithNotionals
                                                             _notionals.cell 
@@ -171,7 +171,7 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
+                let _PricipalLeg = Helper.toModelReference<PricipalLeg> pricipalleg "PricipalLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
                 let builder (current : ICell) = ((PricipalLegModel.Cast _PricipalLeg.cell).WithNotionals1
                                                             _notional.cell 
@@ -213,7 +213,7 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
+                let _PricipalLeg = Helper.toModelReference<PricipalLeg> pricipalleg "PricipalLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder (current : ICell) = ((PricipalLegModel.Cast _PricipalLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
@@ -255,7 +255,7 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
+                let _PricipalLeg = Helper.toModelReference<PricipalLeg> pricipalleg "PricipalLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder (current : ICell) = ((PricipalLegModel.Cast _PricipalLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
@@ -297,7 +297,7 @@ module PricipalLegFunction =
 
             try
 
-                let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
+                let _PricipalLeg = Helper.toModelReference<PricipalLeg> pricipalleg "PricipalLeg"  
                 let _sign = Helper.toCell<int> sign "sign" 
                 let builder (current : ICell) = ((PricipalLegModel.Cast _PricipalLeg.cell).WithSign
                                                             _sign.cell 

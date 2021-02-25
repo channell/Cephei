@@ -52,7 +52,7 @@ module PdeBSMFunction =
 
             try
 
-                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
+                let _PdeBSM = Helper.toModelReference<PdeBSM> pdebsm "PdeBSM"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((PdeBSMModel.Cast _PdeBSM.cell).Diffusion
@@ -100,7 +100,7 @@ module PdeBSMFunction =
 
             try
 
-                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
+                let _PdeBSM = Helper.toModelReference<PdeBSM> pdebsm "PdeBSM"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((PdeBSMModel.Cast _PdeBSM.cell).Discount
@@ -148,7 +148,7 @@ module PdeBSMFunction =
 
             try
 
-                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
+                let _PdeBSM = Helper.toModelReference<PdeBSM> pdebsm "PdeBSM"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((PdeBSMModel.Cast _PdeBSM.cell).Drift
@@ -194,7 +194,7 @@ module PdeBSMFunction =
 
             try
 
-                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
+                let _PdeBSM = Helper.toModelReference<PdeBSM> pdebsm "PdeBSM"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder (current : ICell) = ((PdeBSMModel.Cast _PdeBSM.cell).Factory
                                                             _Process.cell 
@@ -308,7 +308,7 @@ module PdeBSMFunction =
 
             try
 
-                let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
+                let _PdeBSM = Helper.toModelReference<PdeBSM> pdebsm "PdeBSM"  
                 let _t = Helper.toCell<double> t "t" 
                 let _tg = Helper.toCell<TransformedGrid> tg "tg" 
                 let _L = Helper.toCell<TridiagonalOperator> L "L" 

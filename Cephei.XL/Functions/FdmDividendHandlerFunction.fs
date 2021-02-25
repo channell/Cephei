@@ -52,7 +52,7 @@ module FdmDividendHandlerFunction =
 
             try
 
-                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
+                let _FdmDividendHandler = Helper.toModelReference<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).ApplyTo
@@ -96,7 +96,7 @@ module FdmDividendHandlerFunction =
 
             try
 
-                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
+                let _FdmDividendHandler = Helper.toModelReference<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
                 let builder (current : ICell) = ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).DividendDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -132,7 +132,7 @@ module FdmDividendHandlerFunction =
 
             try
 
-                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
+                let _FdmDividendHandler = Helper.toModelReference<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
                 let builder (current : ICell) = ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).Dividends
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -168,7 +168,7 @@ module FdmDividendHandlerFunction =
 
             try
 
-                let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
+                let _FdmDividendHandler = Helper.toModelReference<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
                 let builder (current : ICell) = ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).DividendTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

@@ -123,7 +123,7 @@ module BinomialDoubleBarrierEngineFunction =
 
             try
 
-                let _BinomialDoubleBarrierEngine = Helper.toCell<BinomialDoubleBarrierEngine> binomialdoublebarrierengine "BinomialDoubleBarrierEngine"  
+                let _BinomialDoubleBarrierEngine = Helper.toModelReference<BinomialDoubleBarrierEngine> binomialdoublebarrierengine "BinomialDoubleBarrierEngine"  
                 let _args = Helper.toCell<DoubleBarrierOption.Arguments> args "args" 
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
                 let _grid = Helper.toDefault<TimeGrid> grid "grid" null
@@ -181,7 +181,7 @@ module BinomialDoubleBarrierEngineFunction =
 
             try
 
-                let _BinomialDoubleBarrierEngine = Helper.toCell<BinomialDoubleBarrierEngine> binomialdoublebarrierengine "BinomialDoubleBarrierEngine"  
+                let _BinomialDoubleBarrierEngine = Helper.toModelReference<BinomialDoubleBarrierEngine> binomialdoublebarrierengine "BinomialDoubleBarrierEngine"  
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 

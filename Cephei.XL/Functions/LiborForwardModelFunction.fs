@@ -50,7 +50,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Discount
                                                             _t.cell 
@@ -96,7 +96,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _v = Helper.toCell<Vector> v "v" 
@@ -152,7 +152,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
@@ -204,7 +204,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).GetSwaptionVolatilityMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwaptionVolatilityMatrix>) l
@@ -300,7 +300,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _alpha = Helper.toCell<int> alpha "alpha" 
                 let _beta = Helper.toCell<int> beta "beta" 
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).S_0
@@ -346,7 +346,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).SetParams
                                                             _parameters.cell 
@@ -390,7 +390,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _alpha = Helper.toCell<int> alpha "alpha" 
                 let _beta = Helper.toCell<int> beta "beta" 
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).W_0
@@ -446,7 +446,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
@@ -506,7 +506,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -542,7 +542,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -578,7 +578,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : LiborForwardModel) (l:string) = o.ToString() :> obj
@@ -614,7 +614,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -652,7 +652,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).RegisterWith
                                                             _handler.cell 
@@ -694,7 +694,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).UnregisterWith
                                                             _handler.cell 
@@ -734,7 +734,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Update
                                                        ) :> ICell
                 let format (o : LiborForwardModel) (l:string) = o.ToString() :> obj
@@ -774,7 +774,7 @@ module LiborForwardModelFunction =
 
             try
 
-                let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
+                let _LiborForwardModel = Helper.toModelReference<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let builder (current : ICell) = ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Value

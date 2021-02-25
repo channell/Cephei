@@ -207,7 +207,7 @@ module BachelierCapFloorEngineFunction =
 
             try
 
-                let _BachelierCapFloorEngine = Helper.toCell<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine"  
+                let _BachelierCapFloorEngine = Helper.toModelReference<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine"  
                 let builder (current : ICell) = ((BachelierCapFloorEngineModel.Cast _BachelierCapFloorEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -243,7 +243,7 @@ module BachelierCapFloorEngineFunction =
 
             try
 
-                let _BachelierCapFloorEngine = Helper.toCell<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine"  
+                let _BachelierCapFloorEngine = Helper.toModelReference<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine"  
                 let builder (current : ICell) = ((BachelierCapFloorEngineModel.Cast _BachelierCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<OptionletVolatilityStructure>>) l

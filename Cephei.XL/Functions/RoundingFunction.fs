@@ -48,7 +48,7 @@ module RoundingFunction =
 
             try
 
-                let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
+                let _Rounding = Helper.toModelReference<Rounding> rounding "Rounding"  
                 let builder (current : ICell) = ((RoundingModel.Cast _Rounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module RoundingFunction =
 
             try
 
-                let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
+                let _Rounding = Helper.toModelReference<Rounding> rounding "Rounding"  
                 let builder (current : ICell) = ((RoundingModel.Cast _Rounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module RoundingFunction =
 
             try
 
-                let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
+                let _Rounding = Helper.toModelReference<Rounding> rounding "Rounding"  
                 let builder (current : ICell) = ((RoundingModel.Cast _Rounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -158,7 +158,7 @@ module RoundingFunction =
 
             try
 
-                let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
+                let _Rounding = Helper.toModelReference<Rounding> rounding "Rounding"  
                 let _value = Helper.toCell<double> value "value" 
                 let builder (current : ICell) = ((RoundingModel.Cast _Rounding.cell).Round
                                                             _value.cell 

@@ -52,7 +52,7 @@ module UniformGridMesherFunction =
 
             try
 
-                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
+                let _UniformGridMesher = Helper.toModelReference<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _direction = Helper.toCell<int> direction "direction" 
                 let builder (current : ICell) = ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Dminus
@@ -100,7 +100,7 @@ module UniformGridMesherFunction =
 
             try
 
-                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
+                let _UniformGridMesher = Helper.toModelReference<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _direction = Helper.toCell<int> direction "direction" 
                 let builder (current : ICell) = ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Dplus
@@ -148,7 +148,7 @@ module UniformGridMesherFunction =
 
             try
 
-                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
+                let _UniformGridMesher = Helper.toModelReference<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _direction = Helper.toCell<int> direction "direction" 
                 let builder (current : ICell) = ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Location
@@ -194,7 +194,7 @@ module UniformGridMesherFunction =
 
             try
 
-                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
+                let _UniformGridMesher = Helper.toModelReference<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
                 let _direction = Helper.toCell<int> direction "direction" 
                 let builder (current : ICell) = ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Locations
                                                             _direction.cell 
@@ -277,7 +277,7 @@ module UniformGridMesherFunction =
 
             try
 
-                let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
+                let _UniformGridMesher = Helper.toModelReference<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
                 let builder (current : ICell) = ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Layout
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpLayout>) l

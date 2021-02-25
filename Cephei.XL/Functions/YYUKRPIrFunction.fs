@@ -130,7 +130,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _h = Helper.toHandle<YoYInflationTermStructure> h "h" 
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Clone
                                                             _h.cell 
@@ -174,7 +174,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Fixing
@@ -218,7 +218,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Ratio
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -254,7 +254,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).YoyInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYInflationTermStructure>>) l
@@ -296,7 +296,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -345,7 +345,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -381,7 +381,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -417,7 +417,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -453,7 +453,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -489,7 +489,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -525,7 +525,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -563,7 +563,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -603,7 +603,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -639,7 +639,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
@@ -675,7 +675,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -711,7 +711,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Update
                                                        ) :> ICell
                 let format (o : YYUKRPIr) (l:string) = o.ToString() :> obj
@@ -753,7 +753,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -805,7 +805,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AddFixings1
@@ -849,7 +849,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -885,7 +885,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : YYUKRPIr) (l:string) = o.ToString() :> obj
@@ -923,7 +923,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).RegisterWith
                                                             _handler.cell 
@@ -963,7 +963,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1001,7 +1001,7 @@ module YYUKRPIrFunction =
 
             try
 
-                let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
+                let _YYUKRPIr = Helper.toModelReference<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((YYUKRPIrModel.Cast _YYUKRPIr.cell).UnregisterWith
                                                             _handler.cell 

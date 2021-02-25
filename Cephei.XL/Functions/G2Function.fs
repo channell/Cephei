@@ -50,7 +50,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).Discount
                                                             _t.cell 
@@ -98,7 +98,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let _t = Helper.toCell<double> t "t" 
                 let _T2 = Helper.toCell<double> T2 "T2" 
                 let _x = Helper.toCell<double> x "x" 
@@ -156,7 +156,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _factors = Helper.toCell<Vector> factors "factors" 
@@ -212,7 +212,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
@@ -264,7 +264,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).Dynamics
                                                        ) :> ICell
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
@@ -620,7 +620,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let _arguments = Helper.toCell<Swaption.Arguments> arguments "arguments" 
                 let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" 
                 let _range = Helper.toCell<double> range "range" 
@@ -672,7 +672,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -708,7 +708,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).TermStructure_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -746,7 +746,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let _grid = Helper.toCell<TimeGrid> grid "grid" 
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).Tree
                                                             _grid.cell 
@@ -798,7 +798,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
@@ -858,7 +858,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -894,7 +894,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -930,7 +930,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : G2) (l:string) = o.ToString() :> obj
@@ -966,7 +966,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -1004,7 +1004,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).RegisterWith
                                                             _handler.cell 
@@ -1046,7 +1046,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).SetParams
                                                             _parameters.cell 
@@ -1088,7 +1088,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).UnregisterWith
                                                             _handler.cell 
@@ -1128,7 +1128,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).Update
                                                        ) :> ICell
                 let format (o : G2) (l:string) = o.ToString() :> obj
@@ -1168,7 +1168,7 @@ module G2Function =
 
             try
 
-                let _G2 = Helper.toCell<G2> g2 "G2"  
+                let _G2 = Helper.toModelReference<G2> g2 "G2"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let builder (current : ICell) = ((G2Model.Cast _G2.cell).Value

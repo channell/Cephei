@@ -139,7 +139,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -177,7 +177,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).AddHoliday
                                                             _d.cell 
@@ -221,7 +221,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).Adjust
@@ -275,7 +275,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -339,7 +339,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -399,7 +399,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -451,7 +451,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -487,7 +487,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -525,7 +525,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).EndOfMonth
                                                             _d.cell 
@@ -567,7 +567,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).Equals
                                                             _o.cell 
@@ -609,7 +609,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).IsBusinessDay
                                                             _d.cell 
@@ -651,7 +651,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).IsEndOfMonth
                                                             _d.cell 
@@ -693,7 +693,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).IsHoliday
                                                             _d.cell 
@@ -735,7 +735,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).IsWeekend
                                                             _w.cell 
@@ -777,7 +777,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -813,7 +813,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -851,7 +851,7 @@ module IndonesiaFunction =
 
             try
 
-                let _Indonesia = Helper.toCell<Indonesia> indonesia "Indonesia"  
+                let _Indonesia = Helper.toModelReference<Indonesia> indonesia "Indonesia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndonesiaModel.Cast _Indonesia.cell).RemoveHoliday
                                                             _d.cell 

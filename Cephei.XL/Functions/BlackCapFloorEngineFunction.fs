@@ -226,7 +226,7 @@ module BlackCapFloorEngineFunction =
 
             try
 
-                let _BlackCapFloorEngine = Helper.toCell<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
+                let _BlackCapFloorEngine = Helper.toModelReference<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
                 let builder (current : ICell) = ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).Displacement
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -262,7 +262,7 @@ module BlackCapFloorEngineFunction =
 
             try
 
-                let _BlackCapFloorEngine = Helper.toCell<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
+                let _BlackCapFloorEngine = Helper.toModelReference<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
                 let builder (current : ICell) = ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -298,7 +298,7 @@ module BlackCapFloorEngineFunction =
 
             try
 
-                let _BlackCapFloorEngine = Helper.toCell<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
+                let _BlackCapFloorEngine = Helper.toModelReference<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
                 let builder (current : ICell) = ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<OptionletVolatilityStructure>>) l

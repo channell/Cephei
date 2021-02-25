@@ -105,7 +105,7 @@ module SVIWrapperFunction =
 
             try
 
-                let _SVIWrapper = Helper.toCell<SVIWrapper> sviwrapper "SVIWrapper"  
+                let _SVIWrapper = Helper.toModelReference<SVIWrapper> sviwrapper "SVIWrapper"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SVIWrapperModel.Cast _SVIWrapper.cell).Volatility
                                                             _x.cell 

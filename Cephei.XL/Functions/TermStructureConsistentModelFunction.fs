@@ -50,7 +50,7 @@ module TermStructureConsistentModelFunction =
 
             try
 
-                let _TermStructureConsistentModel = Helper.toCell<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
+                let _TermStructureConsistentModel = Helper.toModelReference<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).RegisterWith
                                                             _handler.cell 
@@ -90,7 +90,7 @@ module TermStructureConsistentModelFunction =
 
             try
 
-                let _TermStructureConsistentModel = Helper.toCell<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
+                let _TermStructureConsistentModel = Helper.toModelReference<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
                 let builder (current : ICell) = ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -165,7 +165,7 @@ module TermStructureConsistentModelFunction =
 
             try
 
-                let _TermStructureConsistentModel = Helper.toCell<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
+                let _TermStructureConsistentModel = Helper.toModelReference<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).UnregisterWith
                                                             _handler.cell 

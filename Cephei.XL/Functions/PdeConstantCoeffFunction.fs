@@ -52,7 +52,7 @@ module PdeConstantCoeffFunction =
 
             try
 
-                let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
+                let _PdeConstantCoeff = Helper.toModelReference<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
                 let builder (current : ICell) = ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Diffusion
@@ -100,7 +100,7 @@ module PdeConstantCoeffFunction =
 
             try
 
-                let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
+                let _PdeConstantCoeff = Helper.toModelReference<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
                 let builder (current : ICell) = ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Discount
@@ -148,7 +148,7 @@ module PdeConstantCoeffFunction =
 
             try
 
-                let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
+                let _PdeConstantCoeff = Helper.toModelReference<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
                 let builder (current : ICell) = ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Drift
@@ -194,7 +194,7 @@ module PdeConstantCoeffFunction =
 
             try
 
-                let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
+                let _PdeConstantCoeff = Helper.toModelReference<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder (current : ICell) = ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Factory
                                                             _Process.cell 
@@ -289,7 +289,7 @@ module PdeConstantCoeffFunction =
 
             try
 
-                let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
+                let _PdeConstantCoeff = Helper.toModelReference<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _t = Helper.toCell<double> t "t" 
                 let _tg = Helper.toCell<TransformedGrid> tg "tg" 
                 let _L = Helper.toCell<TridiagonalOperator> L "L" 

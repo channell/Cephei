@@ -226,7 +226,7 @@ module BachelierSwaptionEngineFunction =
 
             try
 
-                let _BachelierSwaptionEngine = Helper.toCell<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine"  
+                let _BachelierSwaptionEngine = Helper.toModelReference<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine"  
                 let builder (current : ICell) = ((BachelierSwaptionEngineModel.Cast _BachelierSwaptionEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -262,7 +262,7 @@ module BachelierSwaptionEngineFunction =
 
             try
 
-                let _BachelierSwaptionEngine = Helper.toCell<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine"  
+                let _BachelierSwaptionEngine = Helper.toModelReference<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine"  
                 let builder (current : ICell) = ((BachelierSwaptionEngineModel.Cast _BachelierSwaptionEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l

@@ -95,7 +95,7 @@ module DigitalNotionalRiskFunction =
 
             try
 
-                let _DigitalNotionalRisk = Helper.toCell<DigitalNotionalRisk> digitalnotionalrisk "DigitalNotionalRisk"  
+                let _DigitalNotionalRisk = Helper.toModelReference<DigitalNotionalRisk> digitalnotionalrisk "DigitalNotionalRisk"  
                 let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
                 let _path = Helper.toCell<NotionalPath> path "path" 
                 let builder (current : ICell) = ((DigitalNotionalRiskModel.Cast _DigitalNotionalRisk.cell).UpdatePath

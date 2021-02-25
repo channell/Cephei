@@ -50,7 +50,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).AccruedAmount
                                                             _settlement.cell 
@@ -236,7 +236,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -272,7 +272,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -308,7 +308,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -354,7 +354,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -420,7 +420,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -476,7 +476,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -512,7 +512,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -548,7 +548,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -586,7 +586,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _d = Helper.toDefault<Date> d "d" null
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).IsTradable
                                                             _d.cell 
@@ -626,7 +626,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -664,7 +664,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).NextCashFlowDate
                                                             _settlement.cell 
@@ -706,7 +706,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).NextCouponRate
                                                             _settlement.cell 
@@ -748,7 +748,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _d = Helper.toDefault<Date> d "d" null
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).Notional
                                                             _d.cell 
@@ -788,7 +788,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -826,7 +826,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
@@ -868,7 +868,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).PreviousCouponRate
                                                             _settlement.cell 
@@ -908,7 +908,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -944,7 +944,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Cephei.Cell.List<CashFlow>) (l : string) = Helper.Range.fromModelList i l
@@ -982,7 +982,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _date = Helper.toDefault<Date> date "date" null
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).SettlementDate
                                                             _date.cell 
@@ -1022,7 +1022,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1060,7 +1060,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).SettlementValue
                                                             _cleanPrice.cell 
@@ -1100,7 +1100,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1136,7 +1136,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1186,7 +1186,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1260,7 +1260,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -1316,7 +1316,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1352,7 +1352,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1388,7 +1388,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1426,7 +1426,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).Result
                                                             _tag.cell 
@@ -1468,7 +1468,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).SetPricingEngine
                                                             _e.cell 
@@ -1508,7 +1508,7 @@ module BondFunction =
 
             try
 
-                let _Bond = Helper.toCell<Bond> bond "Bond"  
+                let _Bond = Helper.toModelReference<Bond> bond "Bond"  
                 let builder (current : ICell) = ((BondModel.Cast _Bond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

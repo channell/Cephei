@@ -124,7 +124,7 @@ module ImplicitEulerFunction =
 
             try
 
-                let _ImplicitEuler = Helper.toCell<ImplicitEuler> impliciteuler "ImplicitEuler"  
+                let _ImplicitEuler = Helper.toModelReference<ImplicitEuler> impliciteuler "ImplicitEuler"  
                 let _dt = Helper.toCell<double> dt "dt" 
                 let builder (current : ICell) = ((ImplicitEulerModel.Cast _ImplicitEuler.cell).SetStep
                                                             _dt.cell 
@@ -170,7 +170,7 @@ module ImplicitEulerFunction =
 
             try
 
-                let _ImplicitEuler = Helper.toCell<ImplicitEuler> impliciteuler "ImplicitEuler"  
+                let _ImplicitEuler = Helper.toModelReference<ImplicitEuler> impliciteuler "ImplicitEuler"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toCell<double> theta "theta" 

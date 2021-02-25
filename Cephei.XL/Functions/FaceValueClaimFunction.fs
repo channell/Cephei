@@ -54,7 +54,7 @@ module FaceValueClaimFunction =
 
             try
 
-                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim"  
+                let _FaceValueClaim = Helper.toModelReference<FaceValueClaim> facevalueclaim "FaceValueClaim"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _notional = Helper.toCell<double> notional "notional" 
                 let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
@@ -104,7 +104,7 @@ module FaceValueClaimFunction =
 
             try
 
-                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim"  
+                let _FaceValueClaim = Helper.toModelReference<FaceValueClaim> facevalueclaim "FaceValueClaim"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FaceValueClaimModel.Cast _FaceValueClaim.cell).RegisterWith
                                                             _handler.cell 
@@ -146,7 +146,7 @@ module FaceValueClaimFunction =
 
             try
 
-                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim"  
+                let _FaceValueClaim = Helper.toModelReference<FaceValueClaim> facevalueclaim "FaceValueClaim"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FaceValueClaimModel.Cast _FaceValueClaim.cell).UnregisterWith
                                                             _handler.cell 
@@ -186,7 +186,7 @@ module FaceValueClaimFunction =
 
             try
 
-                let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim"  
+                let _FaceValueClaim = Helper.toModelReference<FaceValueClaim> facevalueclaim "FaceValueClaim"  
                 let builder (current : ICell) = ((FaceValueClaimModel.Cast _FaceValueClaim.cell).Update
                                                        ) :> ICell
                 let format (o : FaceValueClaim) (l:string) = o.ToString() :> obj

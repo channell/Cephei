@@ -50,7 +50,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _d = Helper.toDefault<Date> d "d" null
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).AccruedAmount
                                                             _d.cell 
@@ -163,7 +163,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -199,7 +199,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -235,7 +235,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -281,7 +281,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -347,7 +347,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -403,7 +403,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -439,7 +439,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -475,7 +475,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -513,7 +513,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _d = Helper.toDefault<Date> d "d" null
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).IsTradable
                                                             _d.cell 
@@ -553,7 +553,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -591,7 +591,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).NextCashFlowDate
                                                             _settlement.cell 
@@ -633,7 +633,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).NextCouponRate
                                                             _settlement.cell 
@@ -675,7 +675,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _d = Helper.toDefault<Date> d "d" null
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).Notional
                                                             _d.cell 
@@ -715,7 +715,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -753,7 +753,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).PreviousCashFlowDate
                                                             _settlement.cell 
@@ -795,7 +795,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).PreviousCouponRate
                                                             _settlement.cell 
@@ -835,7 +835,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -871,7 +871,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -909,7 +909,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).SettlementDate
                                                             _date.cell 
@@ -949,7 +949,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -987,7 +987,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).SettlementValue
                                                             _cleanPrice.cell 
@@ -1027,7 +1027,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1063,7 +1063,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1113,7 +1113,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1187,7 +1187,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -1243,7 +1243,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1279,7 +1279,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1315,7 +1315,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1353,7 +1353,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).Result
                                                             _tag.cell 
@@ -1395,7 +1395,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).SetPricingEngine
                                                             _e.cell 
@@ -1435,7 +1435,7 @@ module CCTEUFunction =
 
             try
 
-                let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
+                let _CCTEU = Helper.toModelReference<CCTEU> ccteu "CCTEU"  
                 let builder (current : ICell) = ((CCTEUModel.Cast _CCTEU.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

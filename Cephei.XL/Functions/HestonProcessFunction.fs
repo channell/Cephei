@@ -52,7 +52,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).Apply
@@ -100,7 +100,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).Diffusion
@@ -144,7 +144,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).DividendYield
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -184,7 +184,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).Drift
@@ -236,7 +236,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -288,7 +288,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -409,7 +409,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -445,7 +445,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).Kappa
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -481,7 +481,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -517,7 +517,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).RiskFreeRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -553,7 +553,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).S0
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -589,7 +589,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -625,7 +625,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -661,7 +661,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -699,7 +699,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).Time
                                                             _d.cell 
@@ -739,7 +739,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).V0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -781,7 +781,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -835,7 +835,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -885,7 +885,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).RegisterWith
                                                             _handler.cell 
@@ -931,7 +931,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -981,7 +981,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).UnregisterWith
                                                             _handler.cell 
@@ -1021,7 +1021,7 @@ module HestonProcessFunction =
 
             try
 
-                let _HestonProcess = Helper.toCell<HestonProcess> hestonprocess "HestonProcess"  
+                let _HestonProcess = Helper.toModelReference<HestonProcess> hestonprocess "HestonProcess"  
                 let builder (current : ICell) = ((HestonProcessModel.Cast _HestonProcess.cell).Update
                                                        ) :> ICell
                 let format (o : HestonProcess) (l:string) = o.ToString() :> obj

@@ -48,7 +48,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).CapFloorPrices
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -84,7 +84,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).CapFloorVolatilities
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -120,7 +120,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletPrices
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -241,7 +241,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).SwitchStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -277,7 +277,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).AtmOptionletRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -313,7 +313,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -349,7 +349,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -385,7 +385,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -421,7 +421,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).Displacement
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -457,7 +457,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).IborIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -493,7 +493,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletAccrualPeriods
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -529,7 +529,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletFixingDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -565,7 +565,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletFixingTenors
                                                        ) :> ICell
                 let format (i : Generic.List<Period>) (l : string) = Helper.Range.fromList i l
@@ -601,7 +601,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletFixingTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -637,7 +637,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletMaturities
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -673,7 +673,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletPaymentDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -711,7 +711,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletStrikes
                                                             _i.cell 
@@ -753,7 +753,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletVolatilities
                                                             _i.cell 
@@ -793,7 +793,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -829,7 +829,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).TermVolSurface
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolSurface>) l
@@ -865,7 +865,7 @@ module OptionletStripper1Function =
 
             try
 
-                let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
+                let _OptionletStripper1 = Helper.toModelReference<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let builder (current : ICell) = ((OptionletStripper1Model.Cast _OptionletStripper1.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj

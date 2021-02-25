@@ -128,7 +128,7 @@ module ConvexMonotoneFunction =
 
             try
 
-                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
+                let _ConvexMonotone = Helper.toModelReference<ConvexMonotone> convexmonotone "ConvexMonotone"  
                 let builder (current : ICell) = ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).DataSizeAdjustment
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module ConvexMonotoneFunction =
 
             try
 
-                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
+                let _ConvexMonotone = Helper.toModelReference<ConvexMonotone> convexmonotone "ConvexMonotone"  
                 let builder (current : ICell) = ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -206,7 +206,7 @@ module ConvexMonotoneFunction =
 
             try
 
-                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
+                let _ConvexMonotone = Helper.toModelReference<ConvexMonotone> convexmonotone "ConvexMonotone"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
@@ -266,7 +266,7 @@ module ConvexMonotoneFunction =
 
             try
 
-                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
+                let _ConvexMonotone = Helper.toModelReference<ConvexMonotone> convexmonotone "ConvexMonotone"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
@@ -326,7 +326,7 @@ module ConvexMonotoneFunction =
 
             try
 
-                let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
+                let _ConvexMonotone = Helper.toModelReference<ConvexMonotone> convexmonotone "ConvexMonotone"  
                 let builder (current : ICell) = ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

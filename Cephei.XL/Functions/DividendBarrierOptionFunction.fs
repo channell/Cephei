@@ -145,7 +145,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
@@ -205,7 +205,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -241,7 +241,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -277,7 +277,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -313,7 +313,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -349,7 +349,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -385,7 +385,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -421,7 +421,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -457,7 +457,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -493,7 +493,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -529,7 +529,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -565,7 +565,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -601,7 +601,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -637,7 +637,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -673,7 +673,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -709,7 +709,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -745,7 +745,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -781,7 +781,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -819,7 +819,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Result
                                                             _tag.cell 
@@ -861,7 +861,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).SetPricingEngine
                                                             _e.cell 
@@ -901,7 +901,7 @@ module DividendBarrierOptionFunction =
 
             try
 
-                let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
+                let _DividendBarrierOption = Helper.toModelReference<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let builder (current : ICell) = ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

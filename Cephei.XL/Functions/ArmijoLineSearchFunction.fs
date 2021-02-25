@@ -216,7 +216,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
+                let _ArmijoLineSearch = Helper.toModelReference<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
@@ -268,7 +268,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
+                let _ArmijoLineSearch = Helper.toModelReference<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder (current : ICell) = ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastFunctionValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -304,7 +304,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
+                let _ArmijoLineSearch = Helper.toModelReference<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder (current : ICell) = ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastGradient
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -340,7 +340,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
+                let _ArmijoLineSearch = Helper.toModelReference<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder (current : ICell) = ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastGradientNorm2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -376,7 +376,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
+                let _ArmijoLineSearch = Helper.toModelReference<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder (current : ICell) = ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastX
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -412,7 +412,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
+                let _ArmijoLineSearch = Helper.toModelReference<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder (current : ICell) = ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).SearchDirection
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -448,7 +448,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
+                let _ArmijoLineSearch = Helper.toModelReference<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let builder (current : ICell) = ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).Succeed
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -492,7 +492,7 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
+                let _ArmijoLineSearch = Helper.toModelReference<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
                 let _data = Helper.toCell<Vector> data "data" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 

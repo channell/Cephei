@@ -242,7 +242,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Bond
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Bond>) l
@@ -278,7 +278,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).BondLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -314,7 +314,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -350,7 +350,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FairCleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -386,7 +386,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FairNonParRepayment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -422,7 +422,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FairSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -458,7 +458,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -494,7 +494,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FloatingLegBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -530,7 +530,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).FloatingLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -566,7 +566,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).NonParRepayment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -602,7 +602,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).ParSwap
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -638,7 +638,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).PayBondCoupon
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -674,7 +674,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -712,7 +712,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).EndDiscounts
                                                             _j.cell 
@@ -753,7 +753,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Engine
                                                        ) :> ICell
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
@@ -790,7 +790,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -828,7 +828,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Leg
                                                             _j.cell 
@@ -870,7 +870,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).LegBPS
                                                             _j.cell 
@@ -912,7 +912,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).LegNPV
                                                             _j.cell 
@@ -952,7 +952,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -988,7 +988,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1026,7 +1026,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Payer
                                                             _j.cell 
@@ -1066,7 +1066,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1104,7 +1104,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).StartDiscounts
                                                             _j.cell 
@@ -1144,7 +1144,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1180,7 +1180,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1216,7 +1216,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1254,7 +1254,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).Result
                                                             _tag.cell 
@@ -1296,7 +1296,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).SetPricingEngine
                                                             _e.cell 
@@ -1336,7 +1336,7 @@ module AssetSwapFunction =
 
             try
 
-                let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
+                let _AssetSwap = Helper.toModelReference<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = ((AssetSwapModel.Cast _AssetSwap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

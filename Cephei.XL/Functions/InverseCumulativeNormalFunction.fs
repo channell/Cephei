@@ -124,7 +124,7 @@ module InverseCumulativeNormalFunction =
 
             try
 
-                let _InverseCumulativeNormal = Helper.toCell<InverseCumulativeNormal> inversecumulativenormal "InverseCumulativeNormal"  
+                let _InverseCumulativeNormal = Helper.toModelReference<InverseCumulativeNormal> inversecumulativenormal "InverseCumulativeNormal"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((InverseCumulativeNormalModel.Cast _InverseCumulativeNormal.cell).Value
                                                             _x.cell 

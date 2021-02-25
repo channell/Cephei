@@ -117,7 +117,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
             try
 
-                let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
+                let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toModelReference<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Value
                                                             _strike.cell 
@@ -159,7 +159,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
             try
 
-                let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
+                let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toModelReference<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Derivative
                                                             _x.cell 

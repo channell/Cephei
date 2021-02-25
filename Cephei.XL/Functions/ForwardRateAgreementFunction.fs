@@ -49,7 +49,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ForwardRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
@@ -170,7 +170,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -206,7 +206,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SettlementDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -244,7 +244,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let _t = Helper.toHandle<YieldTermStructure> t "t" 
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SpotIncome
                                                             _t.cell 
@@ -284,7 +284,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SpotValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -320,7 +320,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ForwardValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -366,7 +366,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let _underlyingSpotValue = Helper.toCell<double> underlyingSpotValue "underlyingSpotValue" 
                 let _forwardValue = Helper.toCell<double> forwardValue "forwardValue" 
                 let _settlementDate = Helper.toCell<Date> settlementDate "settlementDate" 
@@ -422,7 +422,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -458,7 +458,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -494,7 +494,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -532,7 +532,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).Result
                                                             _tag.cell 
@@ -574,7 +574,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SetPricingEngine
                                                             _e.cell 
@@ -614,7 +614,7 @@ module ForwardRateAgreementFunction =
 
             try
 
-                let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
+                let _ForwardRateAgreement = Helper.toModelReference<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let builder (current : ICell) = ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

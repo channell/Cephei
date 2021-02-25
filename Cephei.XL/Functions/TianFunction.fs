@@ -56,7 +56,7 @@ module TianFunction =
 
             try
 
-                let _Tian = Helper.toCell<Tian> tian "Tian"  
+                let _Tian = Helper.toModelReference<Tian> tian "Tian"  
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
@@ -114,7 +114,7 @@ module TianFunction =
 
             try
 
-                let _Tian = Helper.toCell<Tian> tian "Tian"  
+                let _Tian = Helper.toModelReference<Tian> tian "Tian"  
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -252,7 +252,7 @@ module TianFunction =
 
             try
 
-                let _Tian = Helper.toCell<Tian> tian "Tian"  
+                let _Tian = Helper.toModelReference<Tian> tian "Tian"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((TianModel.Cast _Tian.cell).Underlying
@@ -302,7 +302,7 @@ module TianFunction =
 
             try
 
-                let _Tian = Helper.toCell<Tian> tian "Tian"  
+                let _Tian = Helper.toModelReference<Tian> tian "Tian"  
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -352,7 +352,7 @@ module TianFunction =
 
             try
 
-                let _Tian = Helper.toCell<Tian> tian "Tian"  
+                let _Tian = Helper.toModelReference<Tian> tian "Tian"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((TianModel.Cast _Tian.cell).Size
                                                             _i.cell 
@@ -392,7 +392,7 @@ module TianFunction =
 
             try
 
-                let _Tian = Helper.toCell<Tian> tian "Tian"  
+                let _Tian = Helper.toModelReference<Tian> tian "Tian"  
                 let builder (current : ICell) = ((TianModel.Cast _Tian.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

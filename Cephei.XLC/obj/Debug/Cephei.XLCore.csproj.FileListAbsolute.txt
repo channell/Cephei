@@ -1,0 +1,9 @@
+C:\Users\steve\Source\Repos\Cephei2\bin\Debug\Cephei.XLCore.dna
+C:\Users\steve\Source\Repos\Cephei2\bin\Debug\Cephei.XLCore.dll.config
+C:\Users\steve\Source\Repos\Cephei2\bin\Debug\Cephei.XLCore.dll
+C:\Users\steve\Source\Repos\Cephei2\bin\Debug\Cephei.XLCore.pdb
+C:\Users\steve\Source\Repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XLCore.csprojAssemblyReference.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XLCore.csproj.CoreCompileInputs.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XLCore.csproj.CopyComplete
+C:\Users\steve\Source\Repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XLCore.dll
+C:\Users\steve\Source\Repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XLCore.pdb

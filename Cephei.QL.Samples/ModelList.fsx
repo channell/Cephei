@@ -12,21 +12,26 @@ let rec allFiles directory pattern =
 
     let filelines (s : string) = 
 
-        let mutable inRange = false
+        let mutable inFunc = false
+        let mutable notCreator = true
 
         let edit (s : string) = 
 
+            if s.Contains("_create") then
+                notCreator <- false
+
             if s.Contains("_Range") then
-                inRange <- true 
-
+                notCreator <- false
+                
             if s.Contains("<WIZ>") then
-                inRange <- false
+                notCreator <- true
 
-            if s.Contains("let format") && inRange then
-                s.Replace ("Range.fromList", "Range.fromModelList")
+            if s.Contains("if not (Model.IsInFunctionWizard()) then") && notCreator then
+                inFunc <- true 
 
-            elif s.Contains("subscriber = Helper") && inRange then 
-                s.Replace("Helper.subscriberRange", "Helper.subscriberModelRange")
+            if s.Contains("Helper.toCell") && inFunc && notCreator then
+                inFunc <- false
+                s.Replace ("Helper.toCell", "Helper.toModelReference")
 
             else 
                 s
@@ -42,3 +47,4 @@ let directories =
     [ @"C:\Users\steve\source\repos\Cephei2\Cephei.XL\Functions" 
     ]
 directories |> List.iter (fun d -> allFiles d "\.fs$")
+

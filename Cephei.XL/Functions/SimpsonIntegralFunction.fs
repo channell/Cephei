@@ -91,7 +91,7 @@ module SimpsonIntegralFunction =
 
             try
 
-                let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
+                let _SimpsonIntegral = Helper.toModelReference<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -127,7 +127,7 @@ module SimpsonIntegralFunction =
 
             try
 
-                let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
+                let _SimpsonIntegral = Helper.toModelReference<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -163,7 +163,7 @@ module SimpsonIntegralFunction =
 
             try
 
-                let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
+                let _SimpsonIntegral = Helper.toModelReference<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -199,7 +199,7 @@ module SimpsonIntegralFunction =
 
             try
 
-                let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
+                let _SimpsonIntegral = Helper.toModelReference<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -235,7 +235,7 @@ module SimpsonIntegralFunction =
 
             try
 
-                let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
+                let _SimpsonIntegral = Helper.toModelReference<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -273,7 +273,7 @@ module SimpsonIntegralFunction =
 
             try
 
-                let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
+                let _SimpsonIntegral = Helper.toModelReference<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
@@ -315,7 +315,7 @@ module SimpsonIntegralFunction =
 
             try
 
-                let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
+                let _SimpsonIntegral = Helper.toModelReference<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder (current : ICell) = ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
@@ -361,7 +361,7 @@ module SimpsonIntegralFunction =
 
             try
 
-                let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
+                let _SimpsonIntegral = Helper.toModelReference<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 

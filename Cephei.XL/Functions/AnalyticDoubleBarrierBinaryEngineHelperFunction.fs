@@ -107,7 +107,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
 
             try
 
-                let _AnalyticDoubleBarrierBinaryEngineHelper = Helper.toCell<AnalyticDoubleBarrierBinaryEngineHelper> analyticdoublebarrierbinaryenginehelper "AnalyticDoubleBarrierBinaryEngineHelper"  
+                let _AnalyticDoubleBarrierBinaryEngineHelper = Helper.toModelReference<AnalyticDoubleBarrierBinaryEngineHelper> analyticdoublebarrierbinaryenginehelper "AnalyticDoubleBarrierBinaryEngineHelper"  
                 let _spot = Helper.toCell<double> spot "spot" 
                 let _variance = Helper.toCell<double> variance "variance" 
                 let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 
@@ -173,7 +173,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
 
             try
 
-                let _AnalyticDoubleBarrierBinaryEngineHelper = Helper.toCell<AnalyticDoubleBarrierBinaryEngineHelper> analyticdoublebarrierbinaryenginehelper "AnalyticDoubleBarrierBinaryEngineHelper"  
+                let _AnalyticDoubleBarrierBinaryEngineHelper = Helper.toModelReference<AnalyticDoubleBarrierBinaryEngineHelper> analyticdoublebarrierbinaryenginehelper "AnalyticDoubleBarrierBinaryEngineHelper"  
                 let _spot = Helper.toCell<double> spot "spot" 
                 let _variance = Helper.toCell<double> variance "variance" 
                 let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 

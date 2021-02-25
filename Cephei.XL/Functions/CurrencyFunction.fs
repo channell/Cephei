@@ -48,7 +48,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -279,7 +279,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -317,7 +317,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).Equals
                                                             _o.cell 
@@ -357,7 +357,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -393,7 +393,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -429,7 +429,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -465,7 +465,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -501,7 +501,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -537,7 +537,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
@@ -573,7 +573,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -609,7 +609,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -645,7 +645,7 @@ module CurrencyFunction =
 
             try
 
-                let _Currency = Helper.toCell<Currency> currency "Currency"  
+                let _Currency = Helper.toModelReference<Currency> currency "Currency"  
                 let builder (current : ICell) = ((CurrencyModel.Cast _Currency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l

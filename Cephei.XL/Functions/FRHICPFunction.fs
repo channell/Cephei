@@ -130,7 +130,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let _h = Helper.toHandle<ZeroInflationTermStructure> h "h" 
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).Clone
                                                             _h.cell 
@@ -174,7 +174,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let _aFixingDate = Helper.toCell<Date> aFixingDate "aFixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).Fixing
@@ -218,7 +218,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).ZeroInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
@@ -260,7 +260,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -309,7 +309,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -345,7 +345,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -381,7 +381,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -417,7 +417,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -453,7 +453,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -489,7 +489,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -527,7 +527,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -567,7 +567,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -603,7 +603,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
@@ -639,7 +639,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -675,7 +675,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).Update
                                                        ) :> ICell
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
@@ -717,7 +717,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -769,7 +769,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).AddFixings1
@@ -813,7 +813,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -849,7 +849,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
@@ -887,7 +887,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).RegisterWith
                                                             _handler.cell 
@@ -927,7 +927,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -965,7 +965,7 @@ module FRHICPFunction =
 
             try
 
-                let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
+                let _FRHICP = Helper.toModelReference<FRHICP> frhicp "FRHICP"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FRHICPModel.Cast _FRHICP.cell).UnregisterWith
                                                             _handler.cell 

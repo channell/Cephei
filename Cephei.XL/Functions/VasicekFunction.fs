@@ -48,7 +48,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -128,7 +128,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
@@ -180,7 +180,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).Dynamics
                                                        ) :> ICell
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
@@ -216,7 +216,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).Lambda
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -252,7 +252,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -351,7 +351,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).Discount
                                                             _t.cell 
@@ -397,7 +397,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _rate = Helper.toCell<double> rate "rate" 
@@ -451,7 +451,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _factors = Helper.toCell<Vector> factors "factors" 
@@ -501,7 +501,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let _grid = Helper.toCell<TimeGrid> grid "grid" 
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).Tree
                                                             _grid.cell 
@@ -553,7 +553,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
@@ -613,7 +613,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -649,7 +649,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -685,7 +685,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
@@ -721,7 +721,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -759,7 +759,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).RegisterWith
                                                             _handler.cell 
@@ -801,7 +801,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).SetParams
                                                             _parameters.cell 
@@ -843,7 +843,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).UnregisterWith
                                                             _handler.cell 
@@ -883,7 +883,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).Update
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
@@ -923,7 +923,7 @@ module VasicekFunction =
 
             try
 
-                let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
+                let _Vasicek = Helper.toModelReference<Vasicek> vasicek "Vasicek"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let builder (current : ICell) = ((VasicekModel.Cast _Vasicek.cell).Value

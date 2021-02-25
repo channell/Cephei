@@ -153,7 +153,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -189,7 +189,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -225,7 +225,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -261,7 +261,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -297,7 +297,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -333,7 +333,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -369,7 +369,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -405,7 +405,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -441,7 +441,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -477,7 +477,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -515,7 +515,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).RegisterWith
                                                             _handler.cell 
@@ -557,7 +557,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let _ts = Helper.toCell<YieldTermStructure> ts "ts" 
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).SetTermStructure
                                                             _ts.cell 
@@ -599,7 +599,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).UnregisterWith
                                                             _handler.cell 
@@ -639,7 +639,7 @@ module RateHelperFunction =
 
             try
 
-                let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
+                let _RateHelper = Helper.toModelReference<RateHelper> ratehelper "RateHelper"  
                 let builder (current : ICell) = ((RateHelperModel.Cast _RateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : RateHelper) (l:string) = o.ToString() :> obj

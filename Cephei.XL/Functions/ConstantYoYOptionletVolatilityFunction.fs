@@ -139,7 +139,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -175,7 +175,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -211,7 +211,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -247,7 +247,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -283,7 +283,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).BaseLevel
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -319,7 +319,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -355,7 +355,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).IndexIsInterpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -391,7 +391,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -431,7 +431,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
                 let _obsLag = Helper.toCell<Period> obsLag "obsLag" 
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).TimeFromBase
@@ -477,7 +477,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).TimeFromBase1
                                                             _maturityDate.cell 
@@ -523,7 +523,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _obsLag = Helper.toCell<Period> obsLag "obsLag" 
@@ -579,7 +579,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _obsLag = Helper.toCell<Period> obsLag "obsLag" 
@@ -635,7 +635,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).TotalVariance5
@@ -683,7 +683,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).TotalVariance2
@@ -733,7 +733,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _obsLag = Helper.toCell<Period> obsLag "obsLag" 
@@ -789,7 +789,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _obsLag = Helper.toCell<Period> obsLag "obsLag" 
@@ -847,7 +847,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _obsLag = Helper.toCell<Period> obsLag "obsLag" 
@@ -899,7 +899,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).Volatility4
@@ -951,7 +951,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _obsLag = Helper.toCell<Period> obsLag "obsLag" 
@@ -1007,7 +1007,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).Volatility5
@@ -1057,7 +1057,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _obsLag = Helper.toCell<Period> obsLag "obsLag" 
@@ -1113,7 +1113,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _obsLag = Helper.toCell<Period> obsLag "obsLag" 
@@ -1165,7 +1165,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -1203,7 +1203,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _p = Helper.toCell<Period> p "p" 
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).OptionDateFromTenor
                                                             _p.cell 
@@ -1243,7 +1243,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -1279,7 +1279,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -1315,7 +1315,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1351,7 +1351,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1387,7 +1387,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1425,7 +1425,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).TimeFromReference
                                                             _date.cell 
@@ -1465,7 +1465,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).Update
                                                        ) :> ICell
                 let format (o : ConstantYoYOptionletVolatility) (l:string) = o.ToString() :> obj
@@ -1501,7 +1501,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1539,7 +1539,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).DisableExtrapolation
                                                             _b.cell 
@@ -1581,7 +1581,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).EnableExtrapolation
                                                             _b.cell 
@@ -1621,7 +1621,7 @@ module ConstantYoYOptionletVolatilityFunction =
 
             try
 
-                let _ConstantYoYOptionletVolatility = Helper.toCell<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
+                let _ConstantYoYOptionletVolatility = Helper.toModelReference<ConstantYoYOptionletVolatility> constantyoyoptionletvolatility "ConstantYoYOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantYoYOptionletVolatilityModel.Cast _ConstantYoYOptionletVolatility.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

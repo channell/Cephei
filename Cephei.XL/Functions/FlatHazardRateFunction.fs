@@ -256,7 +256,7 @@ module FlatHazardRateFunction =
 
             try
 
-                let _FlatHazardRate = Helper.toCell<FlatHazardRate> flathazardrate "FlatHazardRate"  
+                let _FlatHazardRate = Helper.toModelReference<FlatHazardRate> flathazardrate "FlatHazardRate"  
                 let builder (current : ICell) = ((FlatHazardRateModel.Cast _FlatHazardRate.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

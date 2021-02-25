@@ -95,7 +95,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
@@ -133,7 +133,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).AddHoliday
                                                             _d.cell 
@@ -177,7 +177,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).Adjust
@@ -231,7 +231,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -295,7 +295,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -355,7 +355,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -407,7 +407,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -443,7 +443,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -481,7 +481,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).EndOfMonth
                                                             _d.cell 
@@ -523,7 +523,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).Equals
                                                             _o.cell 
@@ -565,7 +565,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).IsBusinessDay
                                                             _d.cell 
@@ -607,7 +607,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).IsEndOfMonth
                                                             _d.cell 
@@ -649,7 +649,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).IsHoliday
                                                             _d.cell 
@@ -691,7 +691,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).IsWeekend
                                                             _w.cell 
@@ -733,7 +733,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -769,7 +769,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
@@ -807,7 +807,7 @@ module ArgentinaFunction =
 
             try
 
-                let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
+                let _Argentina = Helper.toModelReference<Argentina> argentina "Argentina"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ArgentinaModel.Cast _Argentina.cell).RemoveHoliday
                                                             _d.cell 

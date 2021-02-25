@@ -1,4 +1,19 @@
-﻿using Microsoft.FSharp.Core;
+﻿/*
+ * Copyright(C) 2020 Cepheis Ltd(steve.channell@cepheis.com)
+ * All rights reserved
+ * 
+ * This file is part of Cephei Project https://github.com/channell/Cephei
+ * 
+ * Cephei is open source software, you can redistribute it and/or modify it
+ * under the terms of the Cephei license.  You should have received a
+ * copy of the license along with this program; if not, license is
+ * available at < https://github.com/channell/Cephei/LICENSE>.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the license for more details.
+ */
+using Microsoft.FSharp.Core;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -149,6 +164,13 @@ namespace Cephei.Cell.Generic
                     Thread.Sleep(100);
                     return Calculate(epoch, recurse + 1, session);     // edge case retry lock
                 }
+            }
+            catch (LockRecursionException e)
+            {
+                Serilog.Log.Error(e, "LockRecursionException for {0} with error {1} at {2}", Mnemonic, e.Message, e.StackTrace);
+                if (!taken) _spinLock.Enter(ref taken);
+                SetState(CellState.Dirty, ref taken);
+                throw;
             }
             catch (Exception e)
             {
@@ -315,13 +337,23 @@ namespace Cephei.Cell.Generic
             if (sender == this) return;
             if (Change != null)
                 Change(eventType, root, this, epoch, session);
-            if (Parent != null)
+            if (Parent != null && sender != this && eventType != CellEvent.CyclicCheck)
                 Parent.OnChange(eventType | CellEvent.Logging, root, this, epoch, session);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private Cephei.Cell.CellState SetState(CellState value, ref bool taken)
         {
+            // prevent blocking on forground thread
+            if (value == CellState.Dirty && !Thread.CurrentThread.IsBackground)
+            {
+                Task.Run(() =>
+                {
+                    bool taken = false;
+                    SetState(CellState.Dirty, ref taken);
+                });
+                return CellState.Dirty;
+            }
         retry: // used to enable AggressiveInlining
             var was = (CellState)Interlocked.Exchange(ref _state, (int)value);
             switch (was)
@@ -471,8 +503,8 @@ namespace Cephei.Cell.Generic
                                 _pending++;
                             else if (epoch > _epoch)
                             {
-                                SetState(CellState.Dirty, ref taken);
                                 _epoch = epoch;
+                                SetState(CellState.Dirty, ref taken);
                                 OnChange(CellEvent.Invalidate, root, this, epoch, session);
                             }
                             break;
@@ -570,7 +602,14 @@ namespace Cephei.Cell.Generic
                     _func = c.Function;
                     c.Function = f;
                     Parent = c.Parent;
-                    SetState(CellState.Dirty, ref taken);
+                    if (Thread.CurrentThread.IsBackground)
+                        SetState(CellState.Dirty, ref taken);
+                    else
+                        Task.Run(() =>
+                        {
+                            bool taken = false;
+                            SetState(CellState.Dirty, ref taken);
+                        });
                 }
 
                 // handle update of current while this cell is being constructed

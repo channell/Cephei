@@ -79,7 +79,7 @@ module USRegionFunction =
 
             try
 
-                let _USRegion = Helper.toCell<USRegion> usregion "USRegion"  
+                let _USRegion = Helper.toModelReference<USRegion> usregion "USRegion"  
                 let builder (current : ICell) = ((USRegionModel.Cast _USRegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -117,7 +117,7 @@ module USRegionFunction =
 
             try
 
-                let _USRegion = Helper.toCell<USRegion> usregion "USRegion"  
+                let _USRegion = Helper.toModelReference<USRegion> usregion "USRegion"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((USRegionModel.Cast _USRegion.cell).Equals
                                                             _o.cell 
@@ -157,7 +157,7 @@ module USRegionFunction =
 
             try
 
-                let _USRegion = Helper.toCell<USRegion> usregion "USRegion"  
+                let _USRegion = Helper.toModelReference<USRegion> usregion "USRegion"  
                 let builder (current : ICell) = ((USRegionModel.Cast _USRegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj

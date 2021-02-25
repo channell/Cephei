@@ -340,7 +340,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -376,7 +376,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -412,7 +412,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxSwapTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -448,7 +448,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -484,7 +484,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -528,7 +528,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -588,7 +588,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -648,7 +648,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -708,7 +708,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -768,7 +768,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -828,7 +828,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -880,7 +880,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxSwapLength
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -922,7 +922,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -976,7 +976,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -1030,7 +1030,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -1084,7 +1084,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -1138,7 +1138,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -1192,7 +1192,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -1246,7 +1246,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
@@ -1300,7 +1300,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extr = Helper.toCell<bool> extr "extr" 
@@ -1354,7 +1354,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
@@ -1406,7 +1406,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _start = Helper.toCell<Date> start "start" 
                 let _End = Helper.toCell<Date> End "End" 
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SwapLength
@@ -1452,7 +1452,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SwapLength1
                                                             _swapTenor.cell 
@@ -1500,7 +1500,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1560,7 +1560,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1620,7 +1620,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1680,7 +1680,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1740,7 +1740,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1800,7 +1800,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1852,7 +1852,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -1890,7 +1890,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _p = Helper.toCell<Period> p "p" 
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).OptionDateFromTenor
                                                             _p.cell 
@@ -1930,7 +1930,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -1966,7 +1966,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -2002,7 +2002,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -2038,7 +2038,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -2074,7 +2074,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -2112,7 +2112,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).TimeFromReference
                                                             _date.cell 
@@ -2152,7 +2152,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Update
                                                        ) :> ICell
                 let format (o : ConstantSwaptionVolatility) (l:string) = o.ToString() :> obj
@@ -2188,7 +2188,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -2226,7 +2226,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).DisableExtrapolation
                                                             _b.cell 
@@ -2268,7 +2268,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).EnableExtrapolation
                                                             _b.cell 
@@ -2308,7 +2308,7 @@ module ConstantSwaptionVolatilityFunction =
 
             try
 
-                let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
+                let _ConstantSwaptionVolatility = Helper.toModelReference<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let builder (current : ICell) = ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

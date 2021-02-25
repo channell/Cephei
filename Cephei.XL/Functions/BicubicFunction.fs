@@ -58,7 +58,7 @@ module BicubicFunction =
 
             try
 
-                let _Bicubic = Helper.toCell<Bicubic> bicubic "Bicubic"  
+                let _Bicubic = Helper.toModelReference<Bicubic> bicubic "Bicubic"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 

@@ -48,7 +48,7 @@ module TabulatedGaussLegendreFunction =
 
             try
 
-                let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
+                let _TabulatedGaussLegendre = Helper.toModelReference<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
                 let builder (current : ICell) = ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -86,7 +86,7 @@ module TabulatedGaussLegendreFunction =
 
             try
 
-                let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
+                let _TabulatedGaussLegendre = Helper.toModelReference<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
                 let _order = Helper.toCell<int> order "order" 
                 let builder (current : ICell) = ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order1
                                                             _order.cell 
@@ -165,7 +165,7 @@ module TabulatedGaussLegendreFunction =
 
             try
 
-                let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
+                let _TabulatedGaussLegendre = Helper.toModelReference<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder (current : ICell) = ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Value
                                                             _f.cell 

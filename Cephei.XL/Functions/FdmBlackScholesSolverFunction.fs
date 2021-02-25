@@ -50,7 +50,7 @@ module FdmBlackScholesSolverFunction =
 
             try
 
-                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
+                let _FdmBlackScholesSolver = Helper.toModelReference<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).DeltaAt
                                                             _s.cell 
@@ -165,7 +165,7 @@ module FdmBlackScholesSolverFunction =
 
             try
 
-                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
+                let _FdmBlackScholesSolver = Helper.toModelReference<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).GammaAt
                                                             _s.cell 
@@ -207,7 +207,7 @@ module FdmBlackScholesSolverFunction =
 
             try
 
-                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
+                let _FdmBlackScholesSolver = Helper.toModelReference<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).ThetaAt
                                                             _s.cell 
@@ -249,7 +249,7 @@ module FdmBlackScholesSolverFunction =
 
             try
 
-                let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
+                let _FdmBlackScholesSolver = Helper.toModelReference<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).ValueAt
                                                             _s.cell 

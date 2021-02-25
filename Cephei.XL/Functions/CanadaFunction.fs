@@ -147,7 +147,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -185,7 +185,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).AddHoliday
                                                             _d.cell 
@@ -229,7 +229,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).Adjust
@@ -283,7 +283,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -347,7 +347,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -407,7 +407,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -459,7 +459,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -495,7 +495,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -533,7 +533,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).EndOfMonth
                                                             _d.cell 
@@ -575,7 +575,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).Equals
                                                             _o.cell 
@@ -617,7 +617,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).IsBusinessDay
                                                             _d.cell 
@@ -659,7 +659,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).IsEndOfMonth
                                                             _d.cell 
@@ -701,7 +701,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).IsHoliday
                                                             _d.cell 
@@ -743,7 +743,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).IsWeekend
                                                             _w.cell 
@@ -785,7 +785,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -821,7 +821,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -859,7 +859,7 @@ module CanadaFunction =
 
             try
 
-                let _Canada = Helper.toCell<Canada> canada "Canada"  
+                let _Canada = Helper.toModelReference<Canada> canada "Canada"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CanadaModel.Cast _Canada.cell).RemoveHoliday
                                                             _d.cell 

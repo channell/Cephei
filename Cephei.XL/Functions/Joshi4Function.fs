@@ -56,7 +56,7 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
+                let _Joshi4 = Helper.toModelReference<Joshi4> joshi4 "Joshi4"  
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
@@ -200,7 +200,7 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
+                let _Joshi4 = Helper.toModelReference<Joshi4> joshi4 "Joshi4"  
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -252,7 +252,7 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
+                let _Joshi4 = Helper.toModelReference<Joshi4> joshi4 "Joshi4"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((Joshi4Model.Cast _Joshi4.cell).Underlying
@@ -302,7 +302,7 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
+                let _Joshi4 = Helper.toModelReference<Joshi4> joshi4 "Joshi4"  
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -352,7 +352,7 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
+                let _Joshi4 = Helper.toModelReference<Joshi4> joshi4 "Joshi4"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((Joshi4Model.Cast _Joshi4.cell).Size
                                                             _i.cell 
@@ -392,7 +392,7 @@ module Joshi4Function =
 
             try
 
-                let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
+                let _Joshi4 = Helper.toModelReference<Joshi4> joshi4 "Joshi4"  
                 let builder (current : ICell) = ((Joshi4Model.Cast _Joshi4.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

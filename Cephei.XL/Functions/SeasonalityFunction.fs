@@ -54,7 +54,7 @@ module SeasonalityFunction =
 
             try
 
-                let _Seasonality = Helper.toCell<Seasonality> seasonality "Seasonality"  
+                let _Seasonality = Helper.toModelReference<Seasonality> seasonality "Seasonality"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
@@ -108,7 +108,7 @@ module SeasonalityFunction =
 
             try
 
-                let _Seasonality = Helper.toCell<Seasonality> seasonality "Seasonality"  
+                let _Seasonality = Helper.toModelReference<Seasonality> seasonality "Seasonality"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
@@ -158,7 +158,7 @@ module SeasonalityFunction =
 
             try
 
-                let _Seasonality = Helper.toCell<Seasonality> seasonality "Seasonality"  
+                let _Seasonality = Helper.toModelReference<Seasonality> seasonality "Seasonality"  
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
                 let builder (current : ICell) = ((SeasonalityModel.Cast _Seasonality.cell).IsConsistent
                                                             _iTS.cell 

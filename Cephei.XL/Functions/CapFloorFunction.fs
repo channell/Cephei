@@ -50,7 +50,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let _discountCurve = Helper.toCell<YieldTermStructure> discountCurve "discountCurve" 
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).AtmRate
                                                             _discountCurve.cell 
@@ -218,7 +218,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).CapRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -254,7 +254,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -290,7 +290,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).FloorRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -326,7 +326,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).GetType
                                                        ) :> ICell
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
@@ -380,7 +380,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _guess = Helper.toCell<double> guess "guess" 
@@ -462,7 +462,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _guess = Helper.toCell<double> guess "guess" 
@@ -518,7 +518,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -554,7 +554,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).LastFloatingRateCoupon
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
@@ -590,7 +590,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -628,7 +628,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).Optionlet
                                                             _i.cell 
@@ -668,7 +668,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -704,7 +704,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -740,7 +740,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -776,7 +776,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -814,7 +814,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).Result
                                                             _tag.cell 
@@ -856,7 +856,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).SetPricingEngine
                                                             _e.cell 
@@ -896,7 +896,7 @@ module CapFloorFunction =
 
             try
 
-                let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
+                let _CapFloor = Helper.toModelReference<CapFloor> capfloor "CapFloor"  
                 let builder (current : ICell) = ((CapFloorModel.Cast _CapFloor.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

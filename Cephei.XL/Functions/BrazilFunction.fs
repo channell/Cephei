@@ -151,7 +151,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -189,7 +189,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).AddHoliday
                                                             _d.cell 
@@ -233,7 +233,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).Adjust
@@ -287,7 +287,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -351,7 +351,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -411,7 +411,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -463,7 +463,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -499,7 +499,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -537,7 +537,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).EndOfMonth
                                                             _d.cell 
@@ -579,7 +579,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).Equals
                                                             _o.cell 
@@ -621,7 +621,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).IsBusinessDay
                                                             _d.cell 
@@ -663,7 +663,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).IsEndOfMonth
                                                             _d.cell 
@@ -705,7 +705,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).IsHoliday
                                                             _d.cell 
@@ -747,7 +747,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).IsWeekend
                                                             _w.cell 
@@ -789,7 +789,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -825,7 +825,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -863,7 +863,7 @@ module BrazilFunction =
 
             try
 
-                let _Brazil = Helper.toCell<Brazil> brazil "Brazil"  
+                let _Brazil = Helper.toModelReference<Brazil> brazil "Brazil"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BrazilModel.Cast _Brazil.cell).RemoveHoliday
                                                             _d.cell 

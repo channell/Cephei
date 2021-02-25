@@ -130,7 +130,7 @@ module CeilingTruncationFunction =
 
             try
 
-                let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
+                let _CeilingTruncation = Helper.toModelReference<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
                 let builder (current : ICell) = ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -166,7 +166,7 @@ module CeilingTruncationFunction =
 
             try
 
-                let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
+                let _CeilingTruncation = Helper.toModelReference<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
                 let builder (current : ICell) = ((CeilingTruncationModel.Cast _CeilingTruncation.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -202,7 +202,7 @@ module CeilingTruncationFunction =
 
             try
 
-                let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
+                let _CeilingTruncation = Helper.toModelReference<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
                 let builder (current : ICell) = ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -240,7 +240,7 @@ module CeilingTruncationFunction =
 
             try
 
-                let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
+                let _CeilingTruncation = Helper.toModelReference<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
                 let _value = Helper.toCell<double> value "value" 
                 let builder (current : ICell) = ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Round
                                                             _value.cell 

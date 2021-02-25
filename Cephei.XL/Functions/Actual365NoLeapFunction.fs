@@ -83,7 +83,7 @@ module Actual365NoLeapFunction =
 
             try
 
-                let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
+                let _Actual365NoLeap = Helper.toModelReference<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder (current : ICell) = ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).DayCount
@@ -127,7 +127,7 @@ module Actual365NoLeapFunction =
 
             try
 
-                let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
+                let _Actual365NoLeap = Helper.toModelReference<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
                 let builder (current : ICell) = ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -163,7 +163,7 @@ module Actual365NoLeapFunction =
 
             try
 
-                let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
+                let _Actual365NoLeap = Helper.toModelReference<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
                 let builder (current : ICell) = ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -201,7 +201,7 @@ module Actual365NoLeapFunction =
 
             try
 
-                let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
+                let _Actual365NoLeap = Helper.toModelReference<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).Equals
                                                             _o.cell 
@@ -241,7 +241,7 @@ module Actual365NoLeapFunction =
 
             try
 
-                let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
+                let _Actual365NoLeap = Helper.toModelReference<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
                 let builder (current : ICell) = ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -277,7 +277,7 @@ module Actual365NoLeapFunction =
 
             try
 
-                let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
+                let _Actual365NoLeap = Helper.toModelReference<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
                 let builder (current : ICell) = ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -321,7 +321,7 @@ module Actual365NoLeapFunction =
 
             try
 
-                let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
+                let _Actual365NoLeap = Helper.toModelReference<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
@@ -377,7 +377,7 @@ module Actual365NoLeapFunction =
 
             try
 
-                let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
+                let _Actual365NoLeap = Helper.toModelReference<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder (current : ICell) = ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).YearFraction1

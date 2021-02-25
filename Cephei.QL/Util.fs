@@ -39,17 +39,6 @@ type DateDependantTrivial<'T> (f : unit -> 'T, d : ICell<Date>) =
 
     interface IDateDependant with
         member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d        
-
-type DateDependantCast<'T> (c : ICell, d : ICell<Date>) =
-
-    inherit CellCast<'T> (c)
-
-    let _cast = c
-
-    let mutable _evaluationDate = d
-
-    interface IDateDependant with
-        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d  
         
 module Util = 
     // Summary: create a value that notifies other cells when the value changes
@@ -88,10 +77,7 @@ module Util =
         new DateDependantTrivial<'f> (f, d.EvaluationDate) :> ICell<'f>
 
     let cast<'t> (c : ICell) = 
-        new CellCast<'t> (c)
-
-    let castDate<'t> (c : ICell) (d : IDateDependant)  = 
-        new DateDependantCast<'t> (c, d.EvaluationDate)
+        new CellCast<'t> (c) :> ICell<'t>
 
     // Summary: variant of lazy evaluation where the value is claculated on a background thread
     let future (f : unit -> 'f) = 
@@ -105,7 +91,6 @@ module Util =
         if not (e = null) then 
             match lo with 
             | :? Instrument as i         -> i.setPricingEngine e.Value
-//                                            i.recalculate()
             | :? CalibrationHelper  as c -> c.setPricingEngine e.Value
             | _                          -> e |> ignore
         priced
@@ -135,10 +120,13 @@ module Util =
     let toCellList (l : ICell<'c> seq) =
         new Cephei.Cell.List<'c> (l)
 
-    let toHandle<'T when 'T :> IObservable> (v : 'T) =
-        let h = new RelinkableHandle<'T> (v)
-        h.linkTo (v)    
-        h :> Handle<'T>
+    let toHandle<'T when 'T :> IObservable and 'T : null and 'T : equality> (v : 'T) = 
+        if v = null then 
+            null
+        else
+            let h = new RelinkableHandle<'T> (v)
+            h.linkTo (v)    
+            h :> Handle<'T>
 
     let toNullable<'T when 'T :struct and 'T :> ValueType and 'T : (new : unit -> 'T)> (v : 'T) = 
         Nullable<'T> (v)

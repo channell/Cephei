@@ -82,7 +82,7 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _Discount = Helper.toModelReference<Discount> discount "Discount"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DiscountModel.Cast _Discount.cell).DiscountImpl
@@ -130,7 +130,7 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _Discount = Helper.toModelReference<Discount> discount "Discount"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DiscountModel.Cast _Discount.cell).ForwardImpl
@@ -182,7 +182,7 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _Discount = Helper.toModelReference<Discount> discount "Discount"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -236,7 +236,7 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _Discount = Helper.toModelReference<Discount> discount "Discount"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
                 let builder (current : ICell) = ((DiscountModel.Cast _Discount.cell).InitialDate
                                                             _c.cell 
@@ -278,7 +278,7 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _Discount = Helper.toModelReference<Discount> discount "Discount"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
                 let builder (current : ICell) = ((DiscountModel.Cast _Discount.cell).InitialValue
                                                             _c.cell 
@@ -318,7 +318,7 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _Discount = Helper.toModelReference<Discount> discount "Discount"  
                 let builder (current : ICell) = ((DiscountModel.Cast _Discount.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -362,7 +362,7 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _Discount = Helper.toModelReference<Discount> discount "Discount"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -422,7 +422,7 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _Discount = Helper.toModelReference<Discount> discount "Discount"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -480,7 +480,7 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discountMnemonic "Discount"  
+                let _Discount = Helper.toModelReference<Discount> discountMnemonic "Discount"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _i = Helper.toCell<int> i "i" 
@@ -532,7 +532,7 @@ module DiscountFunction =
 
             try
 
-                let _Discount = Helper.toCell<Discount> discount "Discount"  
+                let _Discount = Helper.toModelReference<Discount> discount "Discount"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DiscountModel.Cast _Discount.cell).ZeroYieldImpl

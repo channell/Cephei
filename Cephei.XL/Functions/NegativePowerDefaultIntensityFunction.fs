@@ -52,7 +52,7 @@ module NegativePowerDefaultIntensityFunction =
 
             try
 
-                let _NegativePowerDefaultIntensity = Helper.toCell<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity"  
+                let _NegativePowerDefaultIntensity = Helper.toModelReference<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((NegativePowerDefaultIntensityModel.Cast _NegativePowerDefaultIntensity.cell).DefaultRecovery
@@ -100,7 +100,7 @@ module NegativePowerDefaultIntensityFunction =
 
             try
 
-                let _NegativePowerDefaultIntensity = Helper.toCell<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity"  
+                let _NegativePowerDefaultIntensity = Helper.toModelReference<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((NegativePowerDefaultIntensityModel.Cast _NegativePowerDefaultIntensity.cell).HazardRate

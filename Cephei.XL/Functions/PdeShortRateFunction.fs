@@ -52,7 +52,7 @@ module PdeShortRateFunction =
 
             try
 
-                let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
+                let _PdeShortRate = Helper.toModelReference<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((PdeShortRateModel.Cast _PdeShortRate.cell).Diffusion
@@ -100,7 +100,7 @@ module PdeShortRateFunction =
 
             try
 
-                let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
+                let _PdeShortRate = Helper.toModelReference<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((PdeShortRateModel.Cast _PdeShortRate.cell).Discount
@@ -148,7 +148,7 @@ module PdeShortRateFunction =
 
             try
 
-                let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
+                let _PdeShortRate = Helper.toModelReference<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((PdeShortRateModel.Cast _PdeShortRate.cell).Drift
@@ -194,7 +194,7 @@ module PdeShortRateFunction =
 
             try
 
-                let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
+                let _PdeShortRate = Helper.toModelReference<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder (current : ICell) = ((PdeShortRateModel.Cast _PdeShortRate.cell).Factory
                                                             _Process.cell 
@@ -308,7 +308,7 @@ module PdeShortRateFunction =
 
             try
 
-                let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
+                let _PdeShortRate = Helper.toModelReference<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let _tg = Helper.toCell<TransformedGrid> tg "tg" 
                 let _L = Helper.toCell<TridiagonalOperator> L "L" 

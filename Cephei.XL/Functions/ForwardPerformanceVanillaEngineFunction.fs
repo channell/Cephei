@@ -101,7 +101,7 @@ module ForwardPerformanceVanillaEngineFunction =
 
             try
 
-                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
+                let _ForwardPerformanceVanillaEngine = Helper.toModelReference<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder (current : ICell) = ((ForwardPerformanceVanillaEngineModel.Cast _ForwardPerformanceVanillaEngine.cell).GetOriginalEngine
                                                             _Process.cell 
@@ -144,7 +144,7 @@ module ForwardPerformanceVanillaEngineFunction =
 
             try
 
-                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
+                let _ForwardPerformanceVanillaEngine = Helper.toModelReference<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((ForwardPerformanceVanillaEngineModel.Cast _ForwardPerformanceVanillaEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -184,7 +184,7 @@ module ForwardPerformanceVanillaEngineFunction =
 
             try
 
-                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
+                let _ForwardPerformanceVanillaEngine = Helper.toModelReference<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
                 let builder (current : ICell) = ((ForwardPerformanceVanillaEngineModel.Cast _ForwardPerformanceVanillaEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : ForwardPerformanceVanillaEngine) (l:string) = o.ToString() :> obj
@@ -222,7 +222,7 @@ module ForwardPerformanceVanillaEngineFunction =
 
             try
 
-                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
+                let _ForwardPerformanceVanillaEngine = Helper.toModelReference<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((ForwardPerformanceVanillaEngineModel.Cast _ForwardPerformanceVanillaEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -262,7 +262,7 @@ module ForwardPerformanceVanillaEngineFunction =
 
             try
 
-                let _ForwardPerformanceVanillaEngine = Helper.toCell<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
+                let _ForwardPerformanceVanillaEngine = Helper.toModelReference<ForwardPerformanceVanillaEngine> forwardperformancevanillaengine "ForwardPerformanceVanillaEngine"  
                 let builder (current : ICell) = ((ForwardPerformanceVanillaEngineModel.Cast _ForwardPerformanceVanillaEngine.cell).Update
                                                        ) :> ICell
                 let format (o : ForwardPerformanceVanillaEngine) (l:string) = o.ToString() :> obj

@@ -48,7 +48,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -156,7 +156,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -192,7 +192,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -228,7 +228,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Discounts
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -264,7 +264,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).HazardRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -489,7 +489,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
@@ -525,7 +525,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
@@ -561,7 +561,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -597,7 +597,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -633,7 +633,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
@@ -669,7 +669,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedHazardRateCurve) (l:string) = o.ToString() :> obj
@@ -705,7 +705,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -741,7 +741,7 @@ module InterpolatedHazardRateCurveFunction =
 
             try
 
-                let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
+                let _InterpolatedHazardRateCurve = Helper.toModelReference<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
                 let builder (current : ICell) = ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

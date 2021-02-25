@@ -140,7 +140,7 @@ module ProjectedConstraintFunction =
 
             try
 
-                let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
+                let _ProjectedConstraint = Helper.toModelReference<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
                 let builder (current : ICell) = ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -178,7 +178,7 @@ module ProjectedConstraintFunction =
 
             try
 
-                let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
+                let _ProjectedConstraint = Helper.toModelReference<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).LowerBound
                                                             _parameters.cell 
@@ -220,7 +220,7 @@ module ProjectedConstraintFunction =
 
             try
 
-                let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
+                let _ProjectedConstraint = Helper.toModelReference<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).Test
                                                             _p.cell 
@@ -266,7 +266,7 @@ module ProjectedConstraintFunction =
 
             try
 
-                let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
+                let _ProjectedConstraint = Helper.toModelReference<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
@@ -316,7 +316,7 @@ module ProjectedConstraintFunction =
 
             try
 
-                let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
+                let _ProjectedConstraint = Helper.toModelReference<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).UpperBound
                                                             _parameters.cell 

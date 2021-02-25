@@ -89,7 +89,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _Actual360 = Helper.toModelReference<Actual360> actual360 "Actual360"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder (current : ICell) = ((Actual360Model.Cast _Actual360.cell).DayCount
@@ -133,7 +133,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _Actual360 = Helper.toModelReference<Actual360> actual360 "Actual360"  
                 let builder (current : ICell) = ((Actual360Model.Cast _Actual360.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -169,7 +169,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _Actual360 = Helper.toModelReference<Actual360> actual360 "Actual360"  
                 let builder (current : ICell) = ((Actual360Model.Cast _Actual360.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -207,7 +207,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _Actual360 = Helper.toModelReference<Actual360> actual360 "Actual360"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((Actual360Model.Cast _Actual360.cell).Equals
                                                             _o.cell 
@@ -247,7 +247,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _Actual360 = Helper.toModelReference<Actual360> actual360 "Actual360"  
                 let builder (current : ICell) = ((Actual360Model.Cast _Actual360.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -283,7 +283,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _Actual360 = Helper.toModelReference<Actual360> actual360 "Actual360"  
                 let builder (current : ICell) = ((Actual360Model.Cast _Actual360.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -327,7 +327,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _Actual360 = Helper.toModelReference<Actual360> actual360 "Actual360"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
@@ -383,7 +383,7 @@ module Actual360Function =
 
             try
 
-                let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
+                let _Actual360 = Helper.toModelReference<Actual360> actual360 "Actual360"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder (current : ICell) = ((Actual360Model.Cast _Actual360.cell).YearFraction1

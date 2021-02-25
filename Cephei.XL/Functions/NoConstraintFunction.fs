@@ -79,7 +79,7 @@ module NoConstraintFunction =
 
             try
 
-                let _NoConstraint = Helper.toCell<NoConstraint> noconstraint "NoConstraint"  
+                let _NoConstraint = Helper.toModelReference<NoConstraint> noconstraint "NoConstraint"  
                 let builder (current : ICell) = ((NoConstraintModel.Cast _NoConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -117,7 +117,7 @@ module NoConstraintFunction =
 
             try
 
-                let _NoConstraint = Helper.toCell<NoConstraint> noconstraint "NoConstraint"  
+                let _NoConstraint = Helper.toModelReference<NoConstraint> noconstraint "NoConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((NoConstraintModel.Cast _NoConstraint.cell).LowerBound
                                                             _parameters.cell 
@@ -159,7 +159,7 @@ module NoConstraintFunction =
 
             try
 
-                let _NoConstraint = Helper.toCell<NoConstraint> noconstraint "NoConstraint"  
+                let _NoConstraint = Helper.toModelReference<NoConstraint> noconstraint "NoConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((NoConstraintModel.Cast _NoConstraint.cell).Test
                                                             _p.cell 
@@ -205,7 +205,7 @@ module NoConstraintFunction =
 
             try
 
-                let _NoConstraint = Helper.toCell<NoConstraint> noconstraint "NoConstraint"  
+                let _NoConstraint = Helper.toModelReference<NoConstraint> noconstraint "NoConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
@@ -255,7 +255,7 @@ module NoConstraintFunction =
 
             try
 
-                let _NoConstraint = Helper.toCell<NoConstraint> noconstraint "NoConstraint"  
+                let _NoConstraint = Helper.toModelReference<NoConstraint> noconstraint "NoConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((NoConstraintModel.Cast _NoConstraint.cell).UpperBound
                                                             _parameters.cell 

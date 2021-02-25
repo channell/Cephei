@@ -215,7 +215,7 @@ module GeometricAPOPathPricerFunction =
 
             try
 
-                let _GeometricAPOPathPricer = Helper.toCell<GeometricAPOPathPricer> geometricapopathpricer "GeometricAPOPathPricer"  
+                let _GeometricAPOPathPricer = Helper.toModelReference<GeometricAPOPathPricer> geometricapopathpricer "GeometricAPOPathPricer"  
                 let _path = Helper.toCell<Path> path "path" 
                 let builder (current : ICell) = ((GeometricAPOPathPricerModel.Cast _GeometricAPOPathPricer.cell).Value
                                                             _path.cell 

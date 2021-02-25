@@ -122,7 +122,7 @@ module TermStructureFittingParameterFunction =
 
             try
 
-                let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
+                let _TermStructureFittingParameter = Helper.toModelReference<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let builder (current : ICell) = ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -158,7 +158,7 @@ module TermStructureFittingParameterFunction =
 
             try
 
-                let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
+                let _TermStructureFittingParameter = Helper.toModelReference<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let builder (current : ICell) = ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Parameter.Impl) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module TermStructureFittingParameterFunction =
 
             try
 
-                let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
+                let _TermStructureFittingParameter = Helper.toModelReference<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let builder (current : ICell) = ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -234,7 +234,7 @@ module TermStructureFittingParameterFunction =
 
             try
 
-                let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
+                let _TermStructureFittingParameter = Helper.toModelReference<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).SetParam
@@ -278,7 +278,7 @@ module TermStructureFittingParameterFunction =
 
             try
 
-                let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
+                let _TermStructureFittingParameter = Helper.toModelReference<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let builder (current : ICell) = ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -316,7 +316,7 @@ module TermStructureFittingParameterFunction =
 
             try
 
-                let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
+                let _TermStructureFittingParameter = Helper.toModelReference<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).TestParams
                                                             _p.cell 
@@ -358,7 +358,7 @@ module TermStructureFittingParameterFunction =
 
             try
 
-                let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
+                let _TermStructureFittingParameter = Helper.toModelReference<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Value
                                                             _t.cell 

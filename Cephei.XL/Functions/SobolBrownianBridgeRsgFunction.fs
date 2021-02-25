@@ -48,7 +48,7 @@ module SobolBrownianBridgeRsgFunction =
 
             try
 
-                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
+                let _SobolBrownianBridgeRsg = Helper.toModelReference<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
                 let builder (current : ICell) = ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -88,7 +88,7 @@ module SobolBrownianBridgeRsgFunction =
 
             try
 
-                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
+                let _SobolBrownianBridgeRsg = Helper.toModelReference<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toDefault<uint64> seed "seed" 0UL
                 let builder (current : ICell) = ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).Factory
@@ -133,7 +133,7 @@ module SobolBrownianBridgeRsgFunction =
 
             try
 
-                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
+                let _SobolBrownianBridgeRsg = Helper.toModelReference<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
                 let builder (current : ICell) = ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -171,7 +171,7 @@ module SobolBrownianBridgeRsgFunction =
 
             try
 
-                let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
+                let _SobolBrownianBridgeRsg = Helper.toModelReference<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
                 let builder (current : ICell) = ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

@@ -48,7 +48,7 @@ module InverseCumulativeRsgFunction =
 
             try
 
-                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
+                let _InverseCumulativeRsg = Helper.toModelReference<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
                 let builder (current : ICell) = ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -88,7 +88,7 @@ module InverseCumulativeRsgFunction =
 
             try
 
-                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
+                let _InverseCumulativeRsg = Helper.toModelReference<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder (current : ICell) = ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).Factory
@@ -212,7 +212,7 @@ module InverseCumulativeRsgFunction =
 
             try
 
-                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
+                let _InverseCumulativeRsg = Helper.toModelReference<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
                 let builder (current : ICell) = ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -248,7 +248,7 @@ module InverseCumulativeRsgFunction =
 
             try
 
-                let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
+                let _InverseCumulativeRsg = Helper.toModelReference<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
                 let builder (current : ICell) = ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

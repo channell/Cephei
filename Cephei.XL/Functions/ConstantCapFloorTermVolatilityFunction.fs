@@ -292,7 +292,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -328,7 +328,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -364,7 +364,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -406,7 +406,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let _length = Helper.toCell<Period> length "length" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -460,7 +460,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let _t = Helper.toCell<double> t "t" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -514,7 +514,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let _End = Helper.toCell<Date> End "End" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -562,7 +562,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -600,7 +600,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let _p = Helper.toCell<Period> p "p" 
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).OptionDateFromTenor
                                                             _p.cell 
@@ -640,7 +640,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -676,7 +676,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -712,7 +712,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -748,7 +748,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -784,7 +784,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -822,7 +822,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).TimeFromReference
                                                             _date.cell 
@@ -862,7 +862,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).Update
                                                        ) :> ICell
                 let format (o : ConstantCapFloorTermVolatility) (l:string) = o.ToString() :> obj
@@ -898,7 +898,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -936,7 +936,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).DisableExtrapolation
                                                             _b.cell 
@@ -978,7 +978,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).EnableExtrapolation
                                                             _b.cell 
@@ -1018,7 +1018,7 @@ module ConstantCapFloorTermVolatilityFunction =
 
             try
 
-                let _ConstantCapFloorTermVolatility = Helper.toCell<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
+                let _ConstantCapFloorTermVolatility = Helper.toModelReference<ConstantCapFloorTermVolatility> constantcapfloortermvolatility "ConstantCapFloorTermVolatility"  
                 let builder (current : ICell) = ((ConstantCapFloorTermVolatilityModel.Cast _ConstantCapFloorTermVolatility.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

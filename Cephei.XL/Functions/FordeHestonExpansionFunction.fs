@@ -119,7 +119,7 @@ module FordeHestonExpansionFunction =
 
             try
 
-                let _FordeHestonExpansion = Helper.toCell<FordeHestonExpansion> fordehestonexpansion "FordeHestonExpansion"  
+                let _FordeHestonExpansion = Helper.toModelReference<FordeHestonExpansion> fordehestonexpansion "FordeHestonExpansion"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let builder (current : ICell) = ((FordeHestonExpansionModel.Cast _FordeHestonExpansion.cell).ImpliedVolatility

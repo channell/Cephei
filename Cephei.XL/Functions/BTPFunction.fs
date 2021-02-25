@@ -50,7 +50,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _d = Helper.toDefault<Date> d "d" null
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).AccruedAmount
                                                             _d.cell 
@@ -238,7 +238,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let _settlementDate = Helper.toDefault<Date> settlementDate "settlementDate" null
                 let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-8
@@ -290,7 +290,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -326,7 +326,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -362,7 +362,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -398,7 +398,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -434,7 +434,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -480,7 +480,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -546,7 +546,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -602,7 +602,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -638,7 +638,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -674,7 +674,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -712,7 +712,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _d = Helper.toDefault<Date> d "d" null
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).IsTradable
                                                             _d.cell 
@@ -752,7 +752,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -790,7 +790,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).NextCashFlowDate
                                                             _settlement.cell 
@@ -832,7 +832,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).NextCouponRate
                                                             _settlement.cell 
@@ -874,7 +874,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _d = Helper.toDefault<Date> d "d" null
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).Notional
                                                             _d.cell 
@@ -914,7 +914,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -952,7 +952,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).PreviousCashFlowDate
                                                             _settlement.cell 
@@ -994,7 +994,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).PreviousCouponRate
                                                             _settlement.cell 
@@ -1034,7 +1034,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -1070,7 +1070,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -1108,7 +1108,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).SettlementDate
                                                             _date.cell 
@@ -1148,7 +1148,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1186,7 +1186,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).SettlementValue
                                                             _cleanPrice.cell 
@@ -1226,7 +1226,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1262,7 +1262,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1298,7 +1298,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1334,7 +1334,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1370,7 +1370,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1408,7 +1408,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).Result
                                                             _tag.cell 
@@ -1450,7 +1450,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).SetPricingEngine
                                                             _e.cell 
@@ -1490,7 +1490,7 @@ module BTPFunction =
 
             try
 
-                let _BTP = Helper.toCell<BTP> btp "BTP"  
+                let _BTP = Helper.toModelReference<BTP> btp "BTP"  
                 let builder (current : ICell) = ((BTPModel.Cast _BTP.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

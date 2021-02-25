@@ -129,7 +129,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -167,7 +167,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).AddHoliday
                                                             _d.cell 
@@ -211,7 +211,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).Adjust
@@ -265,7 +265,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -329,7 +329,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -389,7 +389,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -441,7 +441,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -477,7 +477,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -515,7 +515,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).EndOfMonth
                                                             _d.cell 
@@ -557,7 +557,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).Equals
                                                             _o.cell 
@@ -599,7 +599,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).IsBusinessDay
                                                             _d.cell 
@@ -641,7 +641,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).IsEndOfMonth
                                                             _d.cell 
@@ -683,7 +683,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).IsHoliday
                                                             _d.cell 
@@ -725,7 +725,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).IsWeekend
                                                             _w.cell 
@@ -767,7 +767,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -803,7 +803,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -841,7 +841,7 @@ module RussiaFunction =
 
             try
 
-                let _Russia = Helper.toCell<Russia> russia "Russia"  
+                let _Russia = Helper.toModelReference<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((RussiaModel.Cast _Russia.cell).RemoveHoliday
                                                             _d.cell 

@@ -48,7 +48,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).FirstDerivativeAtCenter
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -194,7 +194,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).GridValue
                                                             _i.cell 
@@ -238,7 +238,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _new_grid = Helper.toCell<Vector> new_grid "new_grid" 
                 let _func = Helper.toCell<Func<double,double>> func "func" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).Regrid
@@ -284,7 +284,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _new_grid = Helper.toCell<Vector> new_grid "new_grid" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).Regrid1
                                                             _new_grid.cell 
@@ -328,7 +328,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _min = Helper.toCell<double> min "min" 
                 let _max = Helper.toCell<double> max "max" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).RegridLogGrid
@@ -374,7 +374,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).Sample
                                                             _f.cell 
@@ -490,7 +490,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).ScaleGrid
                                                             _s.cell 
@@ -530,7 +530,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).SecondDerivativeAtCenter
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -568,7 +568,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _g = Helper.toCell<Vector> g "g" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).SetGrid
                                                             _g.cell 
@@ -612,7 +612,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _min = Helper.toCell<double> min "min" 
                 let _max = Helper.toCell<double> max "max" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).SetLogGrid
@@ -660,7 +660,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _i = Helper.toCell<int> i "i" 
                 let _v = Helper.toCell<double> v "v" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).SetValue
@@ -706,7 +706,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _g = Helper.toCell<Vector> g "g" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).SetValues
                                                             _g.cell 
@@ -748,7 +748,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).ShiftGrid
                                                             _s.cell 
@@ -788,7 +788,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -826,7 +826,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _x = Helper.toCell<Func<double,double>> x "x" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).Transform
                                                             _x.cell 
@@ -868,7 +868,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _x = Helper.toCell<Func<double,double>> x "x" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).TransformGrid
                                                             _x.cell 
@@ -910,7 +910,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).Value
                                                             _i.cell 
@@ -950,7 +950,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).ValueAtCenter
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -986,7 +986,7 @@ module SampledCurveFunction =
 
             try
 
-                let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
+                let _SampledCurve = Helper.toModelReference<SampledCurve> sampledcurve "SampledCurve"  
                 let builder (current : ICell) = ((SampledCurveModel.Cast _SampledCurve.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

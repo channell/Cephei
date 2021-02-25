@@ -816,7 +816,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -856,7 +856,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).Discount
@@ -904,7 +904,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).Discount1
@@ -960,7 +960,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
@@ -1032,7 +1032,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
@@ -1102,7 +1102,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1158,7 +1158,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -1194,7 +1194,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1230,7 +1230,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).Update
                                                        ) :> ICell
                 let format (o : FlatForward) (l:string) = o.ToString() :> obj
@@ -1276,7 +1276,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1340,7 +1340,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let _t = Helper.toCell<double> t "t" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -1392,7 +1392,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -1428,7 +1428,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -1464,7 +1464,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1500,7 +1500,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1536,7 +1536,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1574,7 +1574,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).TimeFromReference
                                                             _date.cell 
@@ -1614,7 +1614,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1652,7 +1652,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).DisableExtrapolation
                                                             _b.cell 
@@ -1694,7 +1694,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).EnableExtrapolation
                                                             _b.cell 
@@ -1734,7 +1734,7 @@ module FlatForwardFunction =
 
             try
 
-                let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
+                let _FlatForward = Helper.toModelReference<FlatForward> flatforward "FlatForward"  
                 let builder (current : ICell) = ((FlatForwardModel.Cast _FlatForward.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

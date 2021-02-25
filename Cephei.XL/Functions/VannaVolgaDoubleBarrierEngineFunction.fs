@@ -54,7 +54,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
+                let _VannaVolgaDoubleBarrierEngine = Helper.toModelReference<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _series = Helper.toDefault<int> series "series" 5
                 let builder (current : ICell) = ((VannaVolgaDoubleBarrierEngineModel.Cast _VannaVolgaDoubleBarrierEngine.cell).GetOriginalEngine
@@ -204,7 +204,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
+                let _VannaVolgaDoubleBarrierEngine = Helper.toModelReference<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((VannaVolgaDoubleBarrierEngineModel.Cast _VannaVolgaDoubleBarrierEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -244,7 +244,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
+                let _VannaVolgaDoubleBarrierEngine = Helper.toModelReference<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
                 let builder (current : ICell) = ((VannaVolgaDoubleBarrierEngineModel.Cast _VannaVolgaDoubleBarrierEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : VannaVolgaDoubleBarrierEngine) (l:string) = o.ToString() :> obj
@@ -282,7 +282,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
+                let _VannaVolgaDoubleBarrierEngine = Helper.toModelReference<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((VannaVolgaDoubleBarrierEngineModel.Cast _VannaVolgaDoubleBarrierEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -322,7 +322,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
             try
 
-                let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
+                let _VannaVolgaDoubleBarrierEngine = Helper.toModelReference<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
                 let builder (current : ICell) = ((VannaVolgaDoubleBarrierEngineModel.Cast _VannaVolgaDoubleBarrierEngine.cell).Update
                                                        ) :> ICell
                 let format (o : VannaVolgaDoubleBarrierEngine) (l:string) = o.ToString() :> obj

@@ -50,7 +50,7 @@ module Fdm1dMesherFunction =
 
             try
 
-                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
+                let _Fdm1dMesher = Helper.toModelReference<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((Fdm1dMesherModel.Cast _Fdm1dMesher.cell).Dminus
                                                             _index.cell 
@@ -92,7 +92,7 @@ module Fdm1dMesherFunction =
 
             try
 
-                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
+                let _Fdm1dMesher = Helper.toModelReference<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((Fdm1dMesherModel.Cast _Fdm1dMesher.cell).Dplus
                                                             _index.cell 
@@ -171,7 +171,7 @@ module Fdm1dMesherFunction =
 
             try
 
-                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
+                let _Fdm1dMesher = Helper.toModelReference<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((Fdm1dMesherModel.Cast _Fdm1dMesher.cell).Location
                                                             _index.cell 
@@ -211,7 +211,7 @@ module Fdm1dMesherFunction =
 
             try
 
-                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
+                let _Fdm1dMesher = Helper.toModelReference<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
                 let builder (current : ICell) = ((Fdm1dMesherModel.Cast _Fdm1dMesher.cell).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -247,7 +247,7 @@ module Fdm1dMesherFunction =
 
             try
 
-                let _Fdm1dMesher = Helper.toCell<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
+                let _Fdm1dMesher = Helper.toModelReference<Fdm1dMesher> fdm1dmesher "Fdm1dMesher"  
                 let builder (current : ICell) = ((Fdm1dMesherModel.Cast _Fdm1dMesher.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

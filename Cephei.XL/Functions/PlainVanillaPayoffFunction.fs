@@ -48,7 +48,7 @@ module PlainVanillaPayoffFunction =
 
             try
 
-                let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
+                let _PlainVanillaPayoff = Helper.toModelReference<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
                 let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -129,7 +129,7 @@ module PlainVanillaPayoffFunction =
 
             try
 
-                let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
+                let _PlainVanillaPayoff = Helper.toModelReference<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Value
                                                             _price.cell 
@@ -169,7 +169,7 @@ module PlainVanillaPayoffFunction =
 
             try
 
-                let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
+                let _PlainVanillaPayoff = Helper.toModelReference<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
                 let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -205,7 +205,7 @@ module PlainVanillaPayoffFunction =
 
             try
 
-                let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
+                let _PlainVanillaPayoff = Helper.toModelReference<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
                 let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -241,7 +241,7 @@ module PlainVanillaPayoffFunction =
 
             try
 
-                let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
+                let _PlainVanillaPayoff = Helper.toModelReference<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
                 let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -279,7 +279,7 @@ module PlainVanillaPayoffFunction =
 
             try
 
-                let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
+                let _PlainVanillaPayoff = Helper.toModelReference<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Accept
                                                             _v.cell 

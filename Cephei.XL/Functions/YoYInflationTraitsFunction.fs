@@ -52,7 +52,7 @@ module YoYInflationTraitsFunction =
 
             try
 
-                let _YoYInflationTraits = Helper.toCell<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
+                let _YoYInflationTraits = Helper.toModelReference<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((YoYInflationTraitsModel.Cast _YoYInflationTraits.cell).DiscountImpl
@@ -100,7 +100,7 @@ module YoYInflationTraitsFunction =
 
             try
 
-                let _YoYInflationTraits = Helper.toCell<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
+                let _YoYInflationTraits = Helper.toModelReference<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((YoYInflationTraitsModel.Cast _YoYInflationTraits.cell).ForwardImpl
@@ -152,7 +152,7 @@ module YoYInflationTraitsFunction =
 
             try
 
-                let _YoYInflationTraits = Helper.toCell<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
+                let _YoYInflationTraits = Helper.toModelReference<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -206,7 +206,7 @@ module YoYInflationTraitsFunction =
 
             try
 
-                let _YoYInflationTraits = Helper.toCell<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
+                let _YoYInflationTraits = Helper.toModelReference<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
                 let _t = Helper.toCell<YoYInflationTermStructure> t "t" 
                 let builder (current : ICell) = ((YoYInflationTraitsModel.Cast _YoYInflationTraits.cell).InitialDate
                                                             _t.cell 
@@ -248,7 +248,7 @@ module YoYInflationTraitsFunction =
 
             try
 
-                let _YoYInflationTraits = Helper.toCell<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
+                let _YoYInflationTraits = Helper.toModelReference<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
                 let _t = Helper.toCell<YoYInflationTermStructure> t "t" 
                 let builder (current : ICell) = ((YoYInflationTraitsModel.Cast _YoYInflationTraits.cell).InitialValue
                                                             _t.cell 
@@ -288,7 +288,7 @@ module YoYInflationTraitsFunction =
 
             try
 
-                let _YoYInflationTraits = Helper.toCell<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
+                let _YoYInflationTraits = Helper.toModelReference<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
                 let builder (current : ICell) = ((YoYInflationTraitsModel.Cast _YoYInflationTraits.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -332,7 +332,7 @@ module YoYInflationTraitsFunction =
 
             try
 
-                let _YoYInflationTraits = Helper.toCell<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
+                let _YoYInflationTraits = Helper.toModelReference<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -392,7 +392,7 @@ module YoYInflationTraitsFunction =
 
             try
 
-                let _YoYInflationTraits = Helper.toCell<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
+                let _YoYInflationTraits = Helper.toModelReference<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -450,7 +450,7 @@ module YoYInflationTraitsFunction =
 
             try
 
-                let _YoYInflationTraits = Helper.toCell<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
+                let _YoYInflationTraits = Helper.toModelReference<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _i = Helper.toCell<int> i "i" 
@@ -502,7 +502,7 @@ module YoYInflationTraitsFunction =
 
             try
 
-                let _YoYInflationTraits = Helper.toCell<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
+                let _YoYInflationTraits = Helper.toModelReference<YoYInflationTraits> yoyinflationtraits "YoYInflationTraits"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((YoYInflationTraitsModel.Cast _YoYInflationTraits.cell).ZeroYieldImpl

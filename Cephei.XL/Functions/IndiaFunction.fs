@@ -107,7 +107,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -145,7 +145,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).AddHoliday
                                                             _d.cell 
@@ -189,7 +189,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).Adjust
@@ -243,7 +243,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -307,7 +307,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -367,7 +367,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -419,7 +419,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -455,7 +455,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -493,7 +493,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).EndOfMonth
                                                             _d.cell 
@@ -535,7 +535,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).Equals
                                                             _o.cell 
@@ -577,7 +577,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).IsBusinessDay
                                                             _d.cell 
@@ -619,7 +619,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).IsEndOfMonth
                                                             _d.cell 
@@ -661,7 +661,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).IsHoliday
                                                             _d.cell 
@@ -703,7 +703,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).IsWeekend
                                                             _w.cell 
@@ -745,7 +745,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -781,7 +781,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -819,7 +819,7 @@ module IndiaFunction =
 
             try
 
-                let _India = Helper.toCell<India> india "India"  
+                let _India = Helper.toModelReference<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IndiaModel.Cast _India.cell).RemoveHoliday
                                                             _d.cell 

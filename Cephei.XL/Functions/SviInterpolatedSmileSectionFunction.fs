@@ -48,7 +48,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -192,7 +192,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).M
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).MaxError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -264,7 +264,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -300,7 +300,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -336,7 +336,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -372,7 +372,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).RmsError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -408,7 +408,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -759,7 +759,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : SviInterpolatedSmileSection) (l:string) = o.ToString() :> obj
@@ -795,7 +795,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -837,7 +837,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
@@ -893,7 +893,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
@@ -945,7 +945,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -981,7 +981,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1023,7 +1023,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
@@ -1071,7 +1071,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1107,7 +1107,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1145,7 +1145,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).Variance
                                                             _strike.cell 
@@ -1189,7 +1189,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).Vega
@@ -1239,7 +1239,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
                 let _shift = Helper.toCell<double> shift "shift" 
@@ -1289,7 +1289,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).Volatility1
                                                             _strike.cell 
@@ -1329,7 +1329,7 @@ module SviInterpolatedSmileSectionFunction =
 
             try
 
-                let _SviInterpolatedSmileSection = Helper.toCell<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
+                let _SviInterpolatedSmileSection = Helper.toModelReference<SviInterpolatedSmileSection> sviinterpolatedsmilesection "SviInterpolatedSmileSection"  
                 let builder (current : ICell) = ((SviInterpolatedSmileSectionModel.Cast _SviInterpolatedSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj

@@ -99,7 +99,7 @@ module eqn3Function =
 
             try
 
-                let _eqn3 = Helper.toCell<eqn3> eqn3 "eqn3"  
+                let _eqn3 = Helper.toModelReference<eqn3> eqn3 "eqn3"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((eqn3Model.Cast _eqn3.cell).Value
                                                             _x.cell 

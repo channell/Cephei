@@ -48,7 +48,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -296,7 +296,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -338,7 +338,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
@@ -394,7 +394,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
@@ -446,7 +446,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -482,7 +482,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -524,7 +524,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
@@ -572,7 +572,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -608,7 +608,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -644,7 +644,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : SabrSmileSection) (l:string) = o.ToString() :> obj
@@ -682,7 +682,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).Variance
                                                             _strike.cell 
@@ -726,7 +726,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).Vega
@@ -776,7 +776,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toDefault<VolatilityType> volatilityType "volatilityType" VolatilityType.ShiftedLognormal
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
@@ -826,7 +826,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).Volatility1
                                                             _strike.cell 
@@ -866,7 +866,7 @@ module SabrSmileSectionFunction =
 
             try
 
-                let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
+                let _SabrSmileSection = Helper.toModelReference<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let builder (current : ICell) = ((SabrSmileSectionModel.Cast _SabrSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj

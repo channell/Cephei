@@ -52,7 +52,7 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _FdmDirichletBoundary = Helper.toModelReference<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _x = Helper.toCell<double> x "x" 
                 let _value = Helper.toCell<double> value "value" 
                 let builder (current : ICell) = ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyAfterApplying1
@@ -98,7 +98,7 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _FdmDirichletBoundary = Helper.toModelReference<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _v = Helper.toCell<Vector> v "v" 
                 let builder (current : ICell) = ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyAfterApplying
                                                             _v.cell 
@@ -140,7 +140,7 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _FdmDirichletBoundary = Helper.toModelReference<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _v = Helper.toCell<Vector> v "v" 
                 let builder (current : ICell) = ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyAfterSolving
                                                             _v.cell 
@@ -182,7 +182,7 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _FdmDirichletBoundary = Helper.toModelReference<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _o = Helper.toCell<IOperator> o "o" 
                 let builder (current : ICell) = ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyBeforeApplying
                                                             _o.cell 
@@ -226,7 +226,7 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _FdmDirichletBoundary = Helper.toModelReference<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _o = Helper.toCell<IOperator> o "o" 
                 let _v = Helper.toCell<Vector> v "v" 
                 let builder (current : ICell) = ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyBeforeSolving
@@ -327,7 +327,7 @@ module FdmDirichletBoundaryFunction =
 
             try
 
-                let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
+                let _FdmDirichletBoundary = Helper.toModelReference<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).SetTime
                                                             _t.cell 

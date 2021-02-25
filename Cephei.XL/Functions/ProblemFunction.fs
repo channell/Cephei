@@ -48,7 +48,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -84,7 +84,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).CostFunction
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CostFunction>) l
@@ -120,7 +120,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).CurrentValue
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -156,7 +156,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).FunctionEvaluation
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).FunctionValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -232,7 +232,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).Gradient
@@ -276,7 +276,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).GradientEvaluation
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -312,7 +312,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).GradientNormValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -397,7 +397,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).Reset
                                                        ) :> ICell
                 let format (o : Problem) (l:string) = o.ToString() :> obj
@@ -435,7 +435,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let _currentValue = Helper.toCell<Vector> currentValue "currentValue" 
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).SetCurrentValue
                                                             _currentValue.cell 
@@ -477,7 +477,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let _functionValue = Helper.toCell<double> functionValue "functionValue" 
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).SetFunctionValue
                                                             _functionValue.cell 
@@ -519,7 +519,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let _squaredNorm = Helper.toCell<double> squaredNorm "squaredNorm" 
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).SetGradientNormValue
                                                             _squaredNorm.cell 
@@ -561,7 +561,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).Value
                                                             _x.cell 
@@ -605,7 +605,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).ValueAndGradient
@@ -651,7 +651,7 @@ module ProblemFunction =
 
             try
 
-                let _Problem = Helper.toCell<Problem> problem "Problem"  
+                let _Problem = Helper.toModelReference<Problem> problem "Problem"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((ProblemModel.Cast _Problem.cell).Values
                                                             _x.cell 

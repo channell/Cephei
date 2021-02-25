@@ -133,7 +133,7 @@ module CommercialPaperFunction =
 
             try
 
-                let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
+                let _CommercialPaper = Helper.toModelReference<CommercialPaper> commercialpaper "CommercialPaper"  
                 let builder (current : ICell) = ((CommercialPaperModel.Cast _CommercialPaper.cell).FixedLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -169,7 +169,7 @@ module CommercialPaperFunction =
 
             try
 
-                let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
+                let _CommercialPaper = Helper.toModelReference<CommercialPaper> commercialpaper "CommercialPaper"  
                 let builder (current : ICell) = ((CommercialPaperModel.Cast _CommercialPaper.cell).PrincipalLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -205,7 +205,7 @@ module CommercialPaperFunction =
 
             try
 
-                let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
+                let _CommercialPaper = Helper.toModelReference<CommercialPaper> commercialpaper "CommercialPaper"  
                 let builder (current : ICell) = ((CommercialPaperModel.Cast _CommercialPaper.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -241,7 +241,7 @@ module CommercialPaperFunction =
 
             try
 
-                let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
+                let _CommercialPaper = Helper.toModelReference<CommercialPaper> commercialpaper "CommercialPaper"  
                 let builder (current : ICell) = ((CommercialPaperModel.Cast _CommercialPaper.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -277,7 +277,7 @@ module CommercialPaperFunction =
 
             try
 
-                let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
+                let _CommercialPaper = Helper.toModelReference<CommercialPaper> commercialpaper "CommercialPaper"  
                 let builder (current : ICell) = ((CommercialPaperModel.Cast _CommercialPaper.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -313,7 +313,7 @@ module CommercialPaperFunction =
 
             try
 
-                let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
+                let _CommercialPaper = Helper.toModelReference<CommercialPaper> commercialpaper "CommercialPaper"  
                 let builder (current : ICell) = ((CommercialPaperModel.Cast _CommercialPaper.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -351,7 +351,7 @@ module CommercialPaperFunction =
 
             try
 
-                let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
+                let _CommercialPaper = Helper.toModelReference<CommercialPaper> commercialpaper "CommercialPaper"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((CommercialPaperModel.Cast _CommercialPaper.cell).Result
                                                             _tag.cell 
@@ -393,7 +393,7 @@ module CommercialPaperFunction =
 
             try
 
-                let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
+                let _CommercialPaper = Helper.toModelReference<CommercialPaper> commercialpaper "CommercialPaper"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((CommercialPaperModel.Cast _CommercialPaper.cell).SetPricingEngine
                                                             _e.cell 
@@ -433,7 +433,7 @@ module CommercialPaperFunction =
 
             try
 
-                let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
+                let _CommercialPaper = Helper.toModelReference<CommercialPaper> commercialpaper "CommercialPaper"  
                 let builder (current : ICell) = ((CommercialPaperModel.Cast _CommercialPaper.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

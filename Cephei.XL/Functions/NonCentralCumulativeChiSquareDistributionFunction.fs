@@ -93,7 +93,7 @@ module NonCentralCumulativeChiSquareDistributionFunction =
 
             try
 
-                let _NonCentralCumulativeChiSquareDistribution = Helper.toCell<NonCentralCumulativeChiSquareDistribution> noncentralcumulativechisquaredistribution "NonCentralCumulativeChiSquareDistribution"  
+                let _NonCentralCumulativeChiSquareDistribution = Helper.toModelReference<NonCentralCumulativeChiSquareDistribution> noncentralcumulativechisquaredistribution "NonCentralCumulativeChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((NonCentralCumulativeChiSquareDistributionModel.Cast _NonCentralCumulativeChiSquareDistribution.cell).Value
                                                             _x.cell 

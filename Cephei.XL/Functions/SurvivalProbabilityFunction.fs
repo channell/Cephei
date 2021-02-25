@@ -52,7 +52,7 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _SurvivalProbability = Helper.toModelReference<SurvivalProbability> survivalprobability "SurvivalProbability"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((SurvivalProbabilityModel.Cast _SurvivalProbability.cell).DiscountImpl
@@ -100,7 +100,7 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _SurvivalProbability = Helper.toModelReference<SurvivalProbability> survivalprobability "SurvivalProbability"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((SurvivalProbabilityModel.Cast _SurvivalProbability.cell).ForwardImpl
@@ -152,7 +152,7 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _SurvivalProbability = Helper.toModelReference<SurvivalProbability> survivalprobability "SurvivalProbability"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -206,7 +206,7 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _SurvivalProbability = Helper.toModelReference<SurvivalProbability> survivalprobability "SurvivalProbability"  
                 let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" 
                 let builder (current : ICell) = ((SurvivalProbabilityModel.Cast _SurvivalProbability.cell).InitialDate
                                                             _c.cell 
@@ -248,7 +248,7 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _SurvivalProbability = Helper.toModelReference<SurvivalProbability> survivalprobability "SurvivalProbability"  
                 let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" 
                 let builder (current : ICell) = ((SurvivalProbabilityModel.Cast _SurvivalProbability.cell).InitialValue
                                                             _c.cell 
@@ -288,7 +288,7 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _SurvivalProbability = Helper.toModelReference<SurvivalProbability> survivalprobability "SurvivalProbability"  
                 let builder (current : ICell) = ((SurvivalProbabilityModel.Cast _SurvivalProbability.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -332,7 +332,7 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _SurvivalProbability = Helper.toModelReference<SurvivalProbability> survivalprobability "SurvivalProbability"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -392,7 +392,7 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _SurvivalProbability = Helper.toModelReference<SurvivalProbability> survivalprobability "SurvivalProbability"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -450,7 +450,7 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _SurvivalProbability = Helper.toModelReference<SurvivalProbability> survivalprobability "SurvivalProbability"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _i = Helper.toCell<int> i "i" 
@@ -502,7 +502,7 @@ module SurvivalProbabilityFunction =
 
             try
 
-                let _SurvivalProbability = Helper.toCell<SurvivalProbability> survivalprobability "SurvivalProbability"  
+                let _SurvivalProbability = Helper.toModelReference<SurvivalProbability> survivalprobability "SurvivalProbability"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((SurvivalProbabilityModel.Cast _SurvivalProbability.cell).ZeroYieldImpl

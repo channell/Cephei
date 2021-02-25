@@ -50,7 +50,7 @@ module TrBDF2SchemeFunction =
 
             try
 
-                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
+                let _TrBDF2Scheme = Helper.toModelReference<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
                 let _r = Helper.toCell<Vector> r "r" 
                 let builder (current : ICell) = ((TrBDF2SchemeModel.Cast _TrBDF2Scheme.cell).Apply
                                                             _r.cell 
@@ -96,7 +96,7 @@ module TrBDF2SchemeFunction =
 
             try
 
-                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
+                let _TrBDF2Scheme = Helper.toModelReference<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
@@ -144,7 +144,7 @@ module TrBDF2SchemeFunction =
 
             try
 
-                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
+                let _TrBDF2Scheme = Helper.toModelReference<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
                 let builder (current : ICell) = ((TrBDF2SchemeModel.Cast _TrBDF2Scheme.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -182,7 +182,7 @@ module TrBDF2SchemeFunction =
 
             try
 
-                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
+                let _TrBDF2Scheme = Helper.toModelReference<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
                 let builder (current : ICell) = ((TrBDF2SchemeModel.Cast _TrBDF2Scheme.cell).SetStep
                                                             _dt.cell 
@@ -228,7 +228,7 @@ module TrBDF2SchemeFunction =
 
             try
 
-                let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
+                let _TrBDF2Scheme = Helper.toModelReference<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0

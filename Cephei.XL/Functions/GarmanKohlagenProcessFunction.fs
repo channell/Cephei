@@ -235,7 +235,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dx = Helper.toCell<double> dx "dx" 
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Apply
@@ -279,7 +279,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).BlackVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<BlackVolTermStructure>>) l
@@ -319,7 +319,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Diffusion
@@ -363,7 +363,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).DividendYield
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -403,7 +403,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Drift
@@ -455,7 +455,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -513,7 +513,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -561,7 +561,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).LocalVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<LocalVolTermStructure>>) l
@@ -597,7 +597,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).RiskFreeRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -633,7 +633,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).StateVariable
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -675,7 +675,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -725,7 +725,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _d = Helper.toDefault<Date> d "d" null
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Time
                                                             _d.cell 
@@ -765,7 +765,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Update
                                                        ) :> ICell
                 let format (o : GarmanKohlagenProcess) (l:string) = o.ToString() :> obj
@@ -807,7 +807,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -855,7 +855,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -891,7 +891,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -927,7 +927,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -969,7 +969,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -1017,7 +1017,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1055,7 +1055,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).RegisterWith
                                                             _handler.cell 
@@ -1097,7 +1097,7 @@ module GarmanKohlagenProcessFunction =
 
             try
 
-                let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
+                let _GarmanKohlagenProcess = Helper.toModelReference<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((GarmanKohlagenProcessModel.Cast _GarmanKohlagenProcess.cell).UnregisterWith
                                                             _handler.cell 

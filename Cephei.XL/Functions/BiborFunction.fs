@@ -91,7 +91,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -129,7 +129,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).Clone
                                                             _forwarding.cell 
@@ -169,7 +169,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -211,7 +211,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
@@ -261,7 +261,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).ForecastFixing
                                                             _fixingDate.cell 
@@ -301,7 +301,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -339,7 +339,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).MaturityDate
                                                             _valueDate.cell 
@@ -379,7 +379,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -415,7 +415,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -451,7 +451,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -491,7 +491,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).Fixing
@@ -535,7 +535,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -573,7 +573,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).FixingDate
                                                             _valueDate.cell 
@@ -613,7 +613,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -651,7 +651,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -691,7 +691,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -729,7 +729,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).PastFixing
                                                             _fixingDate.cell 
@@ -769,7 +769,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -805,7 +805,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).Update
                                                        ) :> ICell
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
@@ -843,7 +843,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).ValueDate
                                                             _fixingDate.cell 
@@ -889,7 +889,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -943,7 +943,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -995,7 +995,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).AddFixings1
@@ -1039,7 +1039,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1075,7 +1075,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
@@ -1113,7 +1113,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).RegisterWith
                                                             _handler.cell 
@@ -1153,7 +1153,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1191,7 +1191,7 @@ module BiborFunction =
 
             try
 
-                let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
+                let _Bibor = Helper.toModelReference<Bibor> bibor "Bibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BiborModel.Cast _Bibor.cell).UnregisterWith
                                                             _handler.cell 

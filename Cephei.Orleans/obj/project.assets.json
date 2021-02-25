@@ -1889,6 +1889,19 @@
         "runtime": {
           "bin/placeholder/Cephei.Cell.dll": {}
         }
+      },
+      "Cephei.QLNetHelper/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "QLNet": "1.11.4"
+        },
+        "compile": {
+          "bin/placeholder/Cephei.QLNetHelper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cephei.QLNetHelper.dll": {}
+        }
       }
     }
   },
@@ -6548,11 +6561,17 @@
       "type": "project",
       "path": "../Cephei.Cell/Cephei.Cell.csproj",
       "msbuildProject": "../Cephei.Cell/Cephei.Cell.csproj"
+    },
+    "Cephei.QLNetHelper/1.0.0": {
+      "type": "project",
+      "path": "../Cephei.QLNetHelper/Cephei.QLNetHelper.csproj",
+      "msbuildProject": "../Cephei.QLNetHelper/Cephei.QLNetHelper.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
       "Cephei.Cell >= 3.1.4",
+      "Cephei.QLNetHelper >= 1.0.0",
       "Microsoft.Orleans.EventSourcing >= 3.3.0",
       "QLNet >= 1.12.0-preview.26"
     ]
@@ -6564,11 +6583,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
+      "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
       "projectName": "Cephei.Orleans",
-      "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
+      "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
       "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\obj\\",
+      "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Orleans\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -6590,8 +6609,11 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
-              "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+            },
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
             }
           }
         }
@@ -6630,7 +6652,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

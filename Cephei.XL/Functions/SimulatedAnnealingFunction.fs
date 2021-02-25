@@ -52,7 +52,7 @@ module SimulatedAnnealingFunction =
 
             try
 
-                let _SimulatedAnnealing = Helper.toCell<SimulatedAnnealing> simulatedannealing "SimulatedAnnealing"  
+                let _SimulatedAnnealing = Helper.toModelReference<SimulatedAnnealing> simulatedannealing "SimulatedAnnealing"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder (current : ICell) = ((SimulatedAnnealingModel.Cast _SimulatedAnnealing.cell).Minimize

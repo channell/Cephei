@@ -89,7 +89,7 @@ module BFGSFunction =
 
             try
 
-                let _BFGS = Helper.toCell<BFGS> bfgs "BFGS"  
+                let _BFGS = Helper.toModelReference<BFGS> bfgs "BFGS"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder (current : ICell) = ((BFGSModel.Cast _BFGS.cell).Minimize

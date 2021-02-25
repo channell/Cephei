@@ -48,7 +48,7 @@ module LinearFunction =
 
             try
 
-                let _Linear = Helper.toCell<Linear> linear "Linear"  
+                let _Linear = Helper.toModelReference<Linear> linear "Linear"  
                 let builder (current : ICell) = ((LinearModel.Cast _Linear.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -90,7 +90,7 @@ module LinearFunction =
 
             try
 
-                let _Linear = Helper.toCell<Linear> linear "Linear"  
+                let _Linear = Helper.toModelReference<Linear> linear "Linear"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
@@ -138,7 +138,7 @@ module LinearFunction =
 
             try
 
-                let _Linear = Helper.toCell<Linear> linear "Linear"  
+                let _Linear = Helper.toModelReference<Linear> linear "Linear"  
                 let builder (current : ICell) = ((LinearModel.Cast _Linear.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

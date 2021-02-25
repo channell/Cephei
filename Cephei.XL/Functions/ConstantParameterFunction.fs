@@ -128,7 +128,7 @@ module ConstantParameterFunction =
 
             try
 
-                let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
+                let _ConstantParameter = Helper.toModelReference<ConstantParameter> constantparameter "ConstantParameter"  
                 let builder (current : ICell) = ((ConstantParameterModel.Cast _ConstantParameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -165,7 +165,7 @@ module ConstantParameterFunction =
 
             try
 
-                let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
+                let _ConstantParameter = Helper.toModelReference<ConstantParameter> constantparameter "ConstantParameter"  
                 let builder (current : ICell) = ((ConstantParameterModel.Cast _ConstantParameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Impl) (l:string) = o.ToString() :> obj
@@ -202,7 +202,7 @@ module ConstantParameterFunction =
 
             try
 
-                let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
+                let _ConstantParameter = Helper.toModelReference<ConstantParameter> constantparameter "ConstantParameter"  
                 let builder (current : ICell) = ((ConstantParameterModel.Cast _ConstantParameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -242,7 +242,7 @@ module ConstantParameterFunction =
 
             try
 
-                let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
+                let _ConstantParameter = Helper.toModelReference<ConstantParameter> constantparameter "ConstantParameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((ConstantParameterModel.Cast _ConstantParameter.cell).SetParam
@@ -286,7 +286,7 @@ module ConstantParameterFunction =
 
             try
 
-                let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
+                let _ConstantParameter = Helper.toModelReference<ConstantParameter> constantparameter "ConstantParameter"  
                 let builder (current : ICell) = ((ConstantParameterModel.Cast _ConstantParameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -324,7 +324,7 @@ module ConstantParameterFunction =
 
             try
 
-                let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
+                let _ConstantParameter = Helper.toModelReference<ConstantParameter> constantparameter "ConstantParameter"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((ConstantParameterModel.Cast _ConstantParameter.cell).TestParams
                                                             _p.cell 
@@ -366,7 +366,7 @@ module ConstantParameterFunction =
 
             try
 
-                let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
+                let _ConstantParameter = Helper.toModelReference<ConstantParameter> constantparameter "ConstantParameter"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((ConstantParameterModel.Cast _ConstantParameter.cell).Value
                                                             _t.cell 

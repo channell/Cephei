@@ -53,7 +53,7 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
+                let _ExchangeRateManager = Helper.toModelReference<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
                 let _rate = Helper.toCell<ExchangeRate> rate "rate" 
                 let _startDate = Helper.toCell<Date> startDate "startDate" 
                 let builder () = ((ExchangeRateManagerModel.Cast _ExchangeRateManager.cell).Add
@@ -101,7 +101,7 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
+                let _ExchangeRateManager = Helper.toModelReference<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
                 let _rate = Helper.toCell<ExchangeRate> rate "rate" 
                 let builder () = ((ExchangeRateManagerModel.Cast _ExchangeRateManager.cell).Add
                                                             _rate.cell 
@@ -142,7 +142,7 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
+                let _ExchangeRateManager = Helper.toModelReference<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
                 let builder () = ((ExchangeRateManagerModel.Cast _ExchangeRateManager.cell).Clear
                                                        ) :> ICell
                 let format (o : ExchangeRateManager) (l:string) = o.ToString() :> obj
@@ -186,7 +186,7 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
+                let _ExchangeRateManager = Helper.toModelReference<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
                 let _source = Helper.toCell<Currency> source "source" 
                 let _target = Helper.toCell<Currency> target "target" 
                 let _date = Helper.toCell<Date> date "date" 
@@ -244,7 +244,7 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
+                let _ExchangeRateManager = Helper.toModelReference<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
                 let _source = Helper.toCell<Currency> source "source" 
                 let _target = Helper.toCell<Currency> target "target" 
                 let _date = Helper.toCell<Date> date "date" 
@@ -296,7 +296,7 @@ module ExchangeRateManagerFunction =
 
             try
 
-                let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
+                let _ExchangeRateManager = Helper.toModelReference<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
                 let _source = Helper.toCell<Currency> source "source" 
                 let _target = Helper.toCell<Currency> target "target" 
                 let builder () = ((ExchangeRateManagerModel.Cast _ExchangeRateManager.cell).Lookup2

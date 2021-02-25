@@ -1,4 +1,19 @@
-﻿using Microsoft.FSharp.Core;
+﻿/*
+ * Copyright(C) 2020 Cepheis Ltd(steve.channell@cepheis.com)
+ * All rights reserved
+ * 
+ * This file is part of Cephei Project https://github.com/channell/Cephei
+ * 
+ * Cephei is open source software, you can redistribute it and/or modify it
+ * under the terms of the Cephei license.  You should have received a
+ * copy of the license along with this program; if not, license is
+ * available at < https://github.com/channell/Cephei/LICENSE>.
+ * 
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the license for more details.
+ */
+using Microsoft.FSharp.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,7 +65,10 @@ namespace Cephei.Cell.Generic
                     }
                     var cur = _subject;
                     _subject = cell;
-                    _subject.Mnemonic = Mnemonic;
+                    if (Mnemonic == null)
+                        Mnemonic = _subject.Mnemonic;
+                    else
+                        _subject.Mnemonic = Mnemonic;
                     _subject.Parent = this;
                     _spinLock.Exit();
                     taken = false;
@@ -86,7 +104,7 @@ namespace Cephei.Cell.Generic
                 if (_subject != null)
                     return ModelDependants
                         .ToArray()
-                        .Union(_subject.Dependants.ToArray());
+                        .Union(_subject.Dependants.ToArray()).ToArray();
                 else
                     return ModelDependants;
             }
@@ -286,7 +304,7 @@ namespace Cephei.Cell.Generic
                         _notInSubject = false;
                         if (sender == _subject)
                             base.OnChange(eventType & CellEvent.NotLogging, root, this, epoch, session);
-                        else
+                        else if (eventType != CellEvent.CyclicCheck && _subject != null)
                             _subject.OnChange(eventType & CellEvent.NotLogging, root, this, epoch, session);
                     }
                     finally
@@ -298,18 +316,6 @@ namespace Cephei.Cell.Generic
                 if (Parent != null)
                     Parent.OnChange(eventType | CellEvent.Logging, root, this, epoch, session);
             }
-            /*            if (sender == Parent)
-                            return;
-
-                        if ((eventType & CellEvent.Logging) != CellEvent.Logging)
-                            base.OnChange(eventType, root, this, epoch, session);
-
-                        if (Parent != null)
-                            Parent.OnChange(eventType | CellEvent.Logging, root, this, epoch, session);
-
-                        if (root != this && sender.Parent != this || sender == _subject)
-                            _subject.OnChange((eventType | CellEvent.MoldelSubject) ^ CellEvent.Logging, root, this, epoch, session);
-            */
         }
         public override CellState State
         {

@@ -1,4 +1,19 @@
-﻿namespace Cephei.XL
+﻿(*
+Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
+
+This file is part of Cephei.QL Project https://github.com/channell/Cephei
+
+Cephei.QL is open source software based on QLNet  you can redistribute it and/or modify it
+under the terms of the Cephei.QL license.  You should have received a
+copy of the license along with this program; if not, license is
+available at <https://github.com/channell/Cephei/LICENSE>.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the license for more details.
+*)
+
+namespace Cephei.XL
 
 open System
 open Cephei.QL
@@ -72,14 +87,9 @@ module Helper =
                     ; source = "_" + s
                     }
                 elif cv.ValueIs<'T>() then 
-                    if cv :? IDateDependant then
-                        { cell = castDate<'T> cv (cv :?> IDateDependant)
-                        ; source = "_" + s
-                        }
-                    else
-                        { cell = cast<'T> cv
-                        ; source = "_" + s
-                        }
+                    { cell = cast<'T> cv
+                    ; source =  "(cast<" + (genericTypeString typeof<'T>) + "> _" + s + ")"
+                    }
                 elif typeof<'T> = typeof<Date> then 
                     if o :? ICell<double> then
                         let cd = cv :?> ICell<double>
@@ -123,7 +133,7 @@ module Helper =
                     invalidArg (o.ToString()) ("Invalid " + attribute + " ")
             elif o :? 'T then
                 { cell = triv null (fun () -> o :?> 'T)
-                ; source =  "(triv null (fun () -> _" + s + " :?> " + (genericTypeString typeof<'T>) + "))"
+                ; source =  "(triv null (fun () -> " + " _" + s + " :> " + (genericTypeString typeof<'T>) + "))"
                 }
             else
                 invalidArg (o.ToString()) ("Invalid " + attribute + " ")
@@ -146,7 +156,7 @@ module Helper =
             { cell = (value (o :?> 'T))
             ; source =  "(value " + o.ToString().ToLower() + ")"
             }
-        elif o :? 'T then 
+        elif o :? 'T && not typeof<'T>.IsValueType then 
             { cell = (value (o :?> 'T))
             ; source =  "(value (" + o.ToString() + " :?> " + (genericTypeString typeof<'T>) + "))"
             }
@@ -180,11 +190,24 @@ module Helper =
     let toDefault<'T> (o : obj) (attribute : string) (defaultValue : 'T) : CellSource<'T> = 
         if o = null || o :? ExcelDna.Integration.ExcelMissing then 
             let s = 
+
                 try
-                    if typeof<'T> = typeof<bool> then
-                        defaultValue.ToString().ToLower()
+                    if typeof<'T>.IsEnum then
+                        let ty = typeof<'T>
+                        if ty.IsNested then
+                            ty.DeclaringType.Name + "." + ty.Name + "." + defaultValue.ToString()
+                        else
+                            ty.Name + "." + defaultValue.ToString()
                     else
-                        defaultValue.ToString()
+                    let r = 
+                        if typeof<'T> = typeof<bool> then
+                            defaultValue.ToString().ToLower()
+                        else
+                            defaultValue.ToString()
+                    if r.Contains("`1[") then
+                        genericTypeString typeof<'T>
+                    else
+                        r
                 with 
                 | _ -> "(null :> " + (genericTypeString typeof<'T>) + ")"
 
@@ -195,7 +218,7 @@ module Helper =
             toCell<'T> o attribute
 
     // Summary: Convert the reference to a cell handle for QL legacy handle class
-    let toHandle<'T when 'T :> IObservable> (o : obj) (attribute : string) : CellSource<Handle<'T>> = 
+    let toHandle<'T when 'T :> IObservable and 'T : null and 'T : equality> (o : obj) (attribute : string) : CellSource<Handle<'T>> = 
         if o :? string then
             let s = o :?> string
             let c = Model.cell s
@@ -210,7 +233,7 @@ module Helper =
                     }
                 elif c.ValueIs<'T>() then 
                     { cell = withMnemonic c.Mnemonic (triv c.Mutex (fun () -> Util.toHandle<'T> (c.Box :?> 'T)))
-                    ; source = "(triv " + mut + " (fun () -> toHandle (_" + s + ".Value :> " + (genericTypeString typeof<'T>) + ")))"
+                    ; source = "(triv " + mut + " (fun () -> toHandle ((cast<" + (genericTypeString typeof<'T>) + "> _" + s + ").Value )))"
                     }
 
                 else
@@ -227,7 +250,7 @@ module Helper =
             invalidArg (o.ToString()) ("Invalid " + attribute + " ")
 
     // Summary: Convert the list to a cell handle for QL legacy handle class
-    let toHandleList<'T when 'T :> IObservable> (o : obj) (attribute : string) : CellSource<Generic.List<Handle<'T>>> = 
+    let toHandleList<'T when 'T :> IObservable and 'T : null and 'T : equality> (o : obj) (attribute : string) : CellSource<Generic.List<Handle<'T>>> = 
         if o :? string then
             let s = o :?> string
             let c = Model.cell s
@@ -254,13 +277,17 @@ module Helper =
             invalidArg (o.ToString()) ("Invalid " + attribute + " ")
 
     // Summary: convert value or use default
-    let toDefaultHandle<'T when 'T :> IObservable> (o : obj) (attribute : string) (defaultValue : Handle<'T>) : CellSource<Handle<'T>> = 
+    let toDefaultHandle<'T when 'T :> IObservable and 'T : null and 'T : equality> (o : obj) (attribute : string) (defaultValue : Handle<'T>) : CellSource<Handle<'T>> = 
         if o = null || o :? ExcelDna.Integration.ExcelMissing then 
             let s = 
                 try
-                    defaultValue.ToString()
+                    let r = defaultValue.ToString()
+                    if r.Contains("`1[") then
+                        genericTypeString typeof<'T>
+                    else
+                        r
                 with 
-                | _ -> "(null :> " + (genericTypeString typeof<'T>) + ")"
+                | _ -> "(triv null (fun () -> toHandle (null :> " + (genericTypeString typeof<'T>) + ")))"
 
             { cell = withMnemonic attribute (value defaultValue)
             ; source =  "(value " + s + ")"
@@ -269,11 +296,15 @@ module Helper =
             toHandle<'T> o attribute
 
     // Summary: convert value or use default
-    let toDefaultHandleList<'T when 'T :> IObservable> (o : obj) (attribute : string) (defaultValue : Generic.List<Handle<'T>>) : CellSource<Generic.List<Handle<'T>>> = 
+    let toDefaultHandleList<'T when 'T :> IObservable and 'T : null and 'T : equality> (o : obj) (attribute : string) (defaultValue : Generic.List<Handle<'T>>) : CellSource<Generic.List<Handle<'T>>> = 
         if o = null || o :? ExcelDna.Integration.ExcelMissing then 
             let s = 
                 try
-                    defaultValue.ToString()
+                    let r = defaultValue.ToString()
+                    if r.Contains("`1[") then
+                        genericTypeString typeof<'T>
+                    else
+                        r
                 with 
                 | _ -> "(null :> " + (genericTypeString typeof<'T>) + ")"
 
@@ -285,10 +316,14 @@ module Helper =
 
     // Summary: Convert the reference to a cell handle for QL legacy handle class
     let toNullable<'T when 'T :struct and 'T :> ValueType and 'T : (new : unit -> 'T)> (o : obj) (attribute : string) : CellSource<Nullable<'T>> = 
-        if o :? string then
+        if o = null || o :? ExcelDna.Integration.ExcelMissing then 
+            { cell = triv null (fun () -> new Nullable<'T>())
+            ; source =  "(triv null (fun () -> new Nullable<" + (genericTypeString typeof<'T>) + ">()))"
+            }
+        elif o :? string then
             let s = o :?> string
             let c = Model.cell s
-            let mut = if c.Value.Mutex = null || c.Value.Mutex.Mnemonic = null then "null" else c.Value.Mutex.Mnemonic 
+            let mut = if c.IsNone || c.Value.Mutex = null || c.Value.Mutex.Mnemonic = null then "null" else c.Value.Mutex.Mnemonic 
             if  c.IsSome then
                 let c = c.Value :?> ICell<'T>
                 { cell = triv c.Mutex (fun () -> Util.toNullable (c.Value))
@@ -298,14 +333,12 @@ module Helper =
                 { cell = triv null (fun () -> Util.nullableNull<'T> ())
                 ; source =  "(triv null (fun () -> nullableNull<" + (genericTypeString typeof<'T>) + "> ()))"
                 }
-
         elif o :? 'T then 
             { cell = triv null (fun () -> Util.toNullable (o :?> 'T))
             ; source =  "(triv null (fun () -> toNullable (" + o.ToString() + ")))"
             }
         else 
             invalidArg (o.ToString()) ("Invalid " + attribute + " ")
-
 
     // Summary: Convert the list to a cell handle for QL legacy handle class
     let toNullabletList<'T when 'T : (new : unit -> 'T) and 'T : struct and 'T :> ValueType> (o : obj) (attribute : string) : CellSource<Generic.List<Nullable<'T>>> = 
@@ -351,6 +384,25 @@ module Helper =
                 invalidArg (o.ToString()) ("Invalid " + attribute + " " )
         else
             invalidArg (o.ToString()) ("Invalid " + attribute + " " )
+
+    let toModelReference<'T> (o : obj) (attribute : string)  =
+        if o :? string then 
+            let s =  o :?> string
+            let c = Model.cell s
+            if c.IsSome then
+                let cv = c.Value
+                if cv :? ICell<'T> then
+                    { cell = cv :?> ICell<'T>
+                    ; source = "_" + s
+                    }
+                else
+                    { cell = cast<'T> cv
+                    ; source = "_" + s
+                    }
+            else
+                invalidArg (o.ToString()) ("Invalid " + attribute + " " )
+        else
+            invalidArg (o.ToString()) ("Invalid " + attribute + " " )
                 
 
     let isNumeric (o : obj) : bool = 
@@ -361,7 +413,7 @@ module Helper =
     let sourceFold (s : string) (cs : string array) = 
         let s = if s.StartsWith("+") || s.StartsWith("-") then s.Substring(1) else s
         match cs with 
-        | [||]  -> s + "()"
+        | [||]  -> s
         | _     -> cs |> Array.fold (fun a y -> a + " " + if y.StartsWith("(") then y elif y.StartsWith("+") then (y.Substring(1)) elif y.StartsWith("-") then (y.Substring(1)) else y) s
 
     let sourceFoldArray (cs : string array) = 

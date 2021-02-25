@@ -89,7 +89,7 @@ module SteepestDescentFunction =
 
             try
 
-                let _SteepestDescent = Helper.toCell<SteepestDescent> steepestdescent "SteepestDescent"  
+                let _SteepestDescent = Helper.toModelReference<SteepestDescent> steepestdescent "SteepestDescent"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder (current : ICell) = ((SteepestDescentModel.Cast _SteepestDescent.cell).Minimize

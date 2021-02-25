@@ -58,7 +58,7 @@ module BackwardflatLinearFunction =
 
             try
 
-                let _BackwardflatLinear = Helper.toCell<BackwardflatLinear> backwardflatlinear "BackwardflatLinear"  
+                let _BackwardflatLinear = Helper.toModelReference<BackwardflatLinear> backwardflatlinear "BackwardflatLinear"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _xEnd = Helper.toCell<int> xEnd "xEnd" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 

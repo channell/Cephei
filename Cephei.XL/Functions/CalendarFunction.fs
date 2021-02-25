@@ -48,7 +48,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -86,7 +86,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).AddHoliday
                                                             _d.cell 
@@ -130,7 +130,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toDefault<BusinessDayConvention> c "c" BusinessDayConvention.Following
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).Adjust
@@ -184,7 +184,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -248,7 +248,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toDefault<BusinessDayConvention> c "c" BusinessDayConvention.Following
@@ -308,7 +308,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toDefault<bool> includeFirst "includeFirst" true
@@ -360,7 +360,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -464,7 +464,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -502,7 +502,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).EndOfMonth
                                                             _d.cell 
@@ -544,7 +544,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).Equals
                                                             _o.cell 
@@ -586,7 +586,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).IsBusinessDay
                                                             _d.cell 
@@ -628,7 +628,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).IsEndOfMonth
                                                             _d.cell 
@@ -670,7 +670,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).IsHoliday
                                                             _d.cell 
@@ -712,7 +712,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).IsWeekend
                                                             _w.cell 
@@ -754,7 +754,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -790,7 +790,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -828,7 +828,7 @@ module CalendarFunction =
 
             try
 
-                let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
+                let _Calendar = Helper.toModelReference<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CalendarModel.Cast _Calendar.cell).RemoveHoliday
                                                             _d.cell 

@@ -111,7 +111,7 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _PenaltyFunction = Helper.toModelReference<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Value
                                                             _x.cell 
@@ -153,7 +153,7 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _PenaltyFunction = Helper.toModelReference<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Values
                                                             _x.cell 
@@ -193,7 +193,7 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _PenaltyFunction = Helper.toModelReference<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let builder (current : ICell) = ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).FiniteDifferenceEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -233,7 +233,7 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _PenaltyFunction = Helper.toModelReference<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _grad = Helper.toCell<Vector> grad "grad" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Gradient
@@ -281,7 +281,7 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _PenaltyFunction = Helper.toModelReference<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Jacobian
@@ -329,7 +329,7 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _PenaltyFunction = Helper.toModelReference<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _grad = Helper.toCell<Vector> grad "grad" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).ValueAndGradient
@@ -377,7 +377,7 @@ module PenaltyFunctionFunction =
 
             try
 
-                let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
+                let _PenaltyFunction = Helper.toModelReference<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).ValuesAndJacobian

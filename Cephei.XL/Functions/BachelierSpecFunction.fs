@@ -79,7 +79,7 @@ module BachelierSpecFunction =
 
             try
 
-                let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec"  
+                let _BachelierSpec = Helper.toModelReference<BachelierSpec> bachelierspec "BachelierSpec"  
                 let builder (current : ICell) = ((BachelierSpecModel.Cast _BachelierSpec.cell).Type
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -127,7 +127,7 @@ module BachelierSpecFunction =
 
             try
 
-                let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec"  
+                let _BachelierSpec = Helper.toModelReference<BachelierSpec> bachelierspec "BachelierSpec"  
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _atmForward = Helper.toCell<double> atmForward "atmForward" 
@@ -199,7 +199,7 @@ module BachelierSpecFunction =
 
             try
 
-                let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec"  
+                let _BachelierSpec = Helper.toModelReference<BachelierSpec> bachelierspec "BachelierSpec"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _atmForward = Helper.toCell<double> atmForward "atmForward" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 

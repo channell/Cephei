@@ -135,7 +135,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).AccruedAmount
                                                             _settlement.cell 
@@ -175,7 +175,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -211,7 +211,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -247,7 +247,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -293,7 +293,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -359,7 +359,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -415,7 +415,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -451,7 +451,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -487,7 +487,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -525,7 +525,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).IsTradable
                                                             _d.cell 
@@ -565,7 +565,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -603,7 +603,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).NextCashFlowDate
                                                             _settlement.cell 
@@ -645,7 +645,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).NextCouponRate
                                                             _settlement.cell 
@@ -687,7 +687,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).Notional
                                                             _d.cell 
@@ -727,7 +727,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -765,7 +765,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
@@ -807,7 +807,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).PreviousCouponRate
                                                             _settlement.cell 
@@ -847,7 +847,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -883,7 +883,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -921,7 +921,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).SettlementDate
                                                             _date.cell 
@@ -961,7 +961,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -999,7 +999,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).SettlementValue
                                                             _cleanPrice.cell 
@@ -1039,7 +1039,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1075,7 +1075,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1125,7 +1125,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1199,7 +1199,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -1255,7 +1255,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1291,7 +1291,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1327,7 +1327,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1365,7 +1365,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).Result
                                                             _tag.cell 
@@ -1407,7 +1407,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).SetPricingEngine
                                                             _e.cell 
@@ -1447,7 +1447,7 @@ module ZeroCouponBondFunction =
 
             try
 
-                let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
+                let _ZeroCouponBond = Helper.toModelReference<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

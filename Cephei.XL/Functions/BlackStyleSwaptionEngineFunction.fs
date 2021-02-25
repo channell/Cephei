@@ -244,7 +244,7 @@ module BlackStyleSwaptionEngineFunction =
 
             try
 
-                let _BlackStyleSwaptionEngine = Helper.toCell<BlackStyleSwaptionEngine> blackstyleswaptionengine "BlackStyleSwaptionEngine"  
+                let _BlackStyleSwaptionEngine = Helper.toModelReference<BlackStyleSwaptionEngine> blackstyleswaptionengine "BlackStyleSwaptionEngine"  
                 let builder (current : ICell) = ((BlackStyleSwaptionEngineModel.Cast _BlackStyleSwaptionEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -280,7 +280,7 @@ module BlackStyleSwaptionEngineFunction =
 
             try
 
-                let _BlackStyleSwaptionEngine = Helper.toCell<BlackStyleSwaptionEngine> blackstyleswaptionengine "BlackStyleSwaptionEngine"  
+                let _BlackStyleSwaptionEngine = Helper.toModelReference<BlackStyleSwaptionEngine> blackstyleswaptionengine "BlackStyleSwaptionEngine"  
                 let builder (current : ICell) = ((BlackStyleSwaptionEngineModel.Cast _BlackStyleSwaptionEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l

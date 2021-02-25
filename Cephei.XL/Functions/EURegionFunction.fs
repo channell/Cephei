@@ -79,7 +79,7 @@ module EURegionFunction =
 
             try
 
-                let _EURegion = Helper.toCell<EURegion> euregion "EURegion"  
+                let _EURegion = Helper.toModelReference<EURegion> euregion "EURegion"  
                 let builder (current : ICell) = ((EURegionModel.Cast _EURegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -117,7 +117,7 @@ module EURegionFunction =
 
             try
 
-                let _EURegion = Helper.toCell<EURegion> euregion "EURegion"  
+                let _EURegion = Helper.toModelReference<EURegion> euregion "EURegion"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((EURegionModel.Cast _EURegion.cell).Equals
                                                             _o.cell 
@@ -157,7 +157,7 @@ module EURegionFunction =
 
             try
 
-                let _EURegion = Helper.toCell<EURegion> euregion "EURegion"  
+                let _EURegion = Helper.toModelReference<EURegion> euregion "EURegion"  
                 let builder (current : ICell) = ((EURegionModel.Cast _EURegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj

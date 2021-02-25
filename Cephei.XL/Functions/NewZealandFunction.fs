@@ -94,7 +94,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -132,7 +132,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).AddHoliday
                                                             _d.cell 
@@ -176,7 +176,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Adjust
@@ -230,7 +230,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -294,7 +294,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -354,7 +354,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -406,7 +406,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -442,7 +442,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -480,7 +480,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).EndOfMonth
                                                             _d.cell 
@@ -522,7 +522,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Equals
                                                             _o.cell 
@@ -564,7 +564,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).IsBusinessDay
                                                             _d.cell 
@@ -606,7 +606,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).IsEndOfMonth
                                                             _d.cell 
@@ -648,7 +648,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).IsHoliday
                                                             _d.cell 
@@ -690,7 +690,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).IsWeekend
                                                             _w.cell 
@@ -732,7 +732,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -768,7 +768,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -806,7 +806,7 @@ module NewZealandFunction =
 
             try
 
-                let _NewZealand = Helper.toCell<NewZealand> newzealand "NewZealand"  
+                let _NewZealand = Helper.toModelReference<NewZealand> newzealand "NewZealand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((NewZealandModel.Cast _NewZealand.cell).RemoveHoliday
                                                             _d.cell 

@@ -79,7 +79,7 @@ module AustraliaRegionFunction =
 
             try
 
-                let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
+                let _AustraliaRegion = Helper.toModelReference<AustraliaRegion> australiaregion "AustraliaRegion"  
                 let builder (current : ICell) = ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -117,7 +117,7 @@ module AustraliaRegionFunction =
 
             try
 
-                let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
+                let _AustraliaRegion = Helper.toModelReference<AustraliaRegion> australiaregion "AustraliaRegion"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Equals
                                                             _o.cell 
@@ -157,7 +157,7 @@ module AustraliaRegionFunction =
 
             try
 
-                let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
+                let _AustraliaRegion = Helper.toModelReference<AustraliaRegion> australiaregion "AustraliaRegion"  
                 let builder (current : ICell) = ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj

@@ -48,7 +48,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let builder (current : ICell) = ((SparseMatrixModel.Cast _SparseMatrix.cell).Clear
                                                        ) :> ICell
                 let format (o : SparseMatrix) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let builder (current : ICell) = ((SparseMatrixModel.Cast _SparseMatrix.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -124,7 +124,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
                 let builder (current : ICell) = ((SparseMatrixModel.Cast _SparseMatrix.cell).GetAt
@@ -170,7 +170,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _col = Helper.toCell<int> col "col" 
                 let builder (current : ICell) = ((SparseMatrixModel.Cast _SparseMatrix.cell).GetColumnData
                                                             _col.cell 
@@ -212,7 +212,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _col = Helper.toCell<int> col "col" 
                 let builder (current : ICell) = ((SparseMatrixModel.Cast _SparseMatrix.cell).GetColumnDataCount
                                                             _col.cell 
@@ -254,7 +254,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let builder (current : ICell) = ((SparseMatrixModel.Cast _SparseMatrix.cell).GetRowData
                                                             _row.cell 
@@ -296,7 +296,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let builder (current : ICell) = ((SparseMatrixModel.Cast _SparseMatrix.cell).GetRowDataCount
                                                             _row.cell 
@@ -340,7 +340,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
                 let builder (current : ICell) = ((SparseMatrixModel.Cast _SparseMatrix.cell).RemoveAt
@@ -384,7 +384,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let builder (current : ICell) = ((SparseMatrixModel.Cast _SparseMatrix.cell).Rows
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -426,7 +426,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
                 let _value = Helper.toCell<double> value "value" 
@@ -589,7 +589,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
                 let builder (current : ICell) = ((SparseMatrixModel.Cast _SparseMatrix.cell).This
@@ -633,7 +633,7 @@ module SparseMatrixFunction =
 
             try
 
-                let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
+                let _SparseMatrix = Helper.toModelReference<SparseMatrix> sparsematrix "SparseMatrix"  
                 let builder (current : ICell) = ((SparseMatrixModel.Cast _SparseMatrix.cell).Values
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

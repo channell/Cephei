@@ -97,7 +97,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -135,7 +135,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let _size = Helper.toCell<int> size "size" 
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).Reset
                                                             _size.cell 
@@ -175,7 +175,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedOption) (l:string) = o.ToString() :> obj
@@ -215,7 +215,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).Initialize
@@ -259,7 +259,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
@@ -297,7 +297,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).PartialRollback
                                                             _To.cell 
@@ -337,7 +337,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedOption) (l:string) = o.ToString() :> obj
@@ -373,7 +373,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedOption) (l:string) = o.ToString() :> obj
@@ -409,7 +409,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -447,7 +447,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).Rollback
                                                             _To.cell 
@@ -489,7 +489,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).SetTime
                                                             _t.cell 
@@ -531,7 +531,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let _v = Helper.toCell<Vector> v "v" 
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).SetValues
                                                             _v.cell 
@@ -571,7 +571,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -607,7 +607,7 @@ module DiscretizedOptionFunction =
 
             try
 
-                let _DiscretizedOption = Helper.toCell<DiscretizedOption> discretizedoption "DiscretizedOption"  
+                let _DiscretizedOption = Helper.toModelReference<DiscretizedOption> discretizedoption "DiscretizedOption"  
                 let builder (current : ICell) = ((DiscretizedOptionModel.Cast _DiscretizedOption.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

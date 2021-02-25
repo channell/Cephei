@@ -128,7 +128,7 @@ module UpRoundingFunction =
 
             try
 
-                let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
+                let _UpRounding = Helper.toModelReference<UpRounding> uprounding "UpRounding"  
                 let builder (current : ICell) = ((UpRoundingModel.Cast _UpRounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module UpRoundingFunction =
 
             try
 
-                let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
+                let _UpRounding = Helper.toModelReference<UpRounding> uprounding "UpRounding"  
                 let builder (current : ICell) = ((UpRoundingModel.Cast _UpRounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -200,7 +200,7 @@ module UpRoundingFunction =
 
             try
 
-                let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
+                let _UpRounding = Helper.toModelReference<UpRounding> uprounding "UpRounding"  
                 let builder (current : ICell) = ((UpRoundingModel.Cast _UpRounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -238,7 +238,7 @@ module UpRoundingFunction =
 
             try
 
-                let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
+                let _UpRounding = Helper.toModelReference<UpRounding> uprounding "UpRounding"  
                 let _value = Helper.toCell<double> value "value" 
                 let builder (current : ICell) = ((UpRoundingModel.Cast _UpRounding.cell).Round
                                                             _value.cell 

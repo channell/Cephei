@@ -17,6 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Swap.fs" />
     <Compile Include="Globals.fs" />
     <Compile Include="BondPricer.fs" />
     <Compile Include="FixedRateBond.fs" />

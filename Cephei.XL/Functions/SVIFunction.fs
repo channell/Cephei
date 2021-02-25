@@ -54,7 +54,7 @@ module SVIFunction =
 
             try
 
-                let _SVI = Helper.toCell<SVI> svi "SVI"  
+                let _SVI = Helper.toModelReference<SVI> svi "SVI"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _xEnd = Helper.toCell<int> xEnd "xEnd" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 

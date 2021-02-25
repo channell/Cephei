@@ -142,7 +142,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _MCDiscreteAveragingAsianEngine = Helper.toModelReference<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -182,7 +182,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _MCDiscreteAveragingAsianEngine = Helper.toModelReference<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let builder (current : ICell) = ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
@@ -220,7 +220,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _MCDiscreteAveragingAsianEngine = Helper.toModelReference<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -260,7 +260,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _MCDiscreteAveragingAsianEngine = Helper.toModelReference<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let builder (current : ICell) = ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).Update
                                                        ) :> ICell
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
@@ -296,7 +296,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _MCDiscreteAveragingAsianEngine = Helper.toModelReference<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let builder (current : ICell) = ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -332,7 +332,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _MCDiscreteAveragingAsianEngine = Helper.toModelReference<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let builder (current : ICell) = ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
@@ -374,7 +374,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _MCDiscreteAveragingAsianEngine = Helper.toModelReference<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let _tolerance = Helper.toCell<double> tolerance "tolerance" 
                 let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
                 let _minSamples = Helper.toCell<int> minSamples "minSamples" 
@@ -424,7 +424,7 @@ module MCDiscreteAveragingAsianEngineFunction =
 
             try
 
-                let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
+                let _MCDiscreteAveragingAsianEngine = Helper.toModelReference<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let _samples = Helper.toCell<int> samples "samples" 
                 let builder (current : ICell) = ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).ValueWithSamples
                                                             _samples.cell 

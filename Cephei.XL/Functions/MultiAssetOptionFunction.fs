@@ -48,7 +48,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -247,7 +247,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -283,7 +283,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -319,7 +319,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -355,7 +355,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -391,7 +391,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -427,7 +427,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -463,7 +463,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -499,7 +499,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -537,7 +537,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Result
                                                             _tag.cell 
@@ -579,7 +579,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).SetPricingEngine
                                                             _e.cell 
@@ -619,7 +619,7 @@ module MultiAssetOptionFunction =
 
             try
 
-                let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
+                let _MultiAssetOption = Helper.toModelReference<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let builder (current : ICell) = ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

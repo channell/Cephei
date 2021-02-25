@@ -91,7 +91,7 @@ module GaussianQuadratureFunction =
 
             try
 
-                let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
+                let _GaussianQuadrature = Helper.toModelReference<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
                 let builder (current : ICell) = ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -129,7 +129,7 @@ module GaussianQuadratureFunction =
 
             try
 
-                let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
+                let _GaussianQuadrature = Helper.toModelReference<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder (current : ICell) = ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Value
                                                             _f.cell 
@@ -169,7 +169,7 @@ module GaussianQuadratureFunction =
 
             try
 
-                let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
+                let _GaussianQuadrature = Helper.toModelReference<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
                 let builder (current : ICell) = ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -205,7 +205,7 @@ module GaussianQuadratureFunction =
 
             try
 
-                let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
+                let _GaussianQuadrature = Helper.toModelReference<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
                 let builder (current : ICell) = ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

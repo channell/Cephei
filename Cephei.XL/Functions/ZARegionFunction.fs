@@ -79,7 +79,7 @@ module ZARegionFunction =
 
             try
 
-                let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
+                let _ZARegion = Helper.toModelReference<ZARegion> zaregion "ZARegion"  
                 let builder (current : ICell) = ((ZARegionModel.Cast _ZARegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -117,7 +117,7 @@ module ZARegionFunction =
 
             try
 
-                let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
+                let _ZARegion = Helper.toModelReference<ZARegion> zaregion "ZARegion"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((ZARegionModel.Cast _ZARegion.cell).Equals
                                                             _o.cell 
@@ -157,7 +157,7 @@ module ZARegionFunction =
 
             try
 
-                let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
+                let _ZARegion = Helper.toModelReference<ZARegion> zaregion "ZARegion"  
                 let builder (current : ICell) = ((ZARegionModel.Cast _ZARegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj

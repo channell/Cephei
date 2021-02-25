@@ -91,7 +91,7 @@ module PiecewiseConstantParameterFunction =
 
             try
 
-                let _PiecewiseConstantParameter = Helper.toCell<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
+                let _PiecewiseConstantParameter = Helper.toModelReference<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
                 let builder (current : ICell) = ((PiecewiseConstantParameterModel.Cast _PiecewiseConstantParameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -128,7 +128,7 @@ module PiecewiseConstantParameterFunction =
 
             try
 
-                let _PiecewiseConstantParameter = Helper.toCell<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
+                let _PiecewiseConstantParameter = Helper.toModelReference<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
                 let builder (current : ICell) = ((PiecewiseConstantParameterModel.Cast _PiecewiseConstantParameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Parameter.Impl) (l:string) = o.ToString() :> obj
@@ -165,7 +165,7 @@ module PiecewiseConstantParameterFunction =
 
             try
 
-                let _PiecewiseConstantParameter = Helper.toCell<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
+                let _PiecewiseConstantParameter = Helper.toModelReference<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
                 let builder (current : ICell) = ((PiecewiseConstantParameterModel.Cast _PiecewiseConstantParameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -205,7 +205,7 @@ module PiecewiseConstantParameterFunction =
 
             try
 
-                let _PiecewiseConstantParameter = Helper.toCell<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
+                let _PiecewiseConstantParameter = Helper.toModelReference<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((PiecewiseConstantParameterModel.Cast _PiecewiseConstantParameter.cell).SetParam
@@ -249,7 +249,7 @@ module PiecewiseConstantParameterFunction =
 
             try
 
-                let _PiecewiseConstantParameter = Helper.toCell<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
+                let _PiecewiseConstantParameter = Helper.toModelReference<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
                 let builder (current : ICell) = ((PiecewiseConstantParameterModel.Cast _PiecewiseConstantParameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -287,7 +287,7 @@ module PiecewiseConstantParameterFunction =
 
             try
 
-                let _PiecewiseConstantParameter = Helper.toCell<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
+                let _PiecewiseConstantParameter = Helper.toModelReference<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((PiecewiseConstantParameterModel.Cast _PiecewiseConstantParameter.cell).TestParams
                                                             _p.cell 
@@ -329,7 +329,7 @@ module PiecewiseConstantParameterFunction =
 
             try
 
-                let _PiecewiseConstantParameter = Helper.toCell<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
+                let _PiecewiseConstantParameter = Helper.toModelReference<PiecewiseConstantParameter> piecewiseconstantparameter "PiecewiseConstantParameter"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((PiecewiseConstantParameterModel.Cast _PiecewiseConstantParameter.cell).Value
                                                             _t.cell 

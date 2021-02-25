@@ -48,7 +48,7 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
+                let _Parameter = Helper.toModelReference<Parameter> parameter "Parameter"  
                 let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -84,7 +84,7 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
+                let _Parameter = Helper.toModelReference<Parameter> parameter "Parameter"  
                 let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Parameter.Impl) (l:string) = o.ToString() :> obj
@@ -151,7 +151,7 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
+                let _Parameter = Helper.toModelReference<Parameter> parameter "Parameter"  
                 let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -191,7 +191,7 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
+                let _Parameter = Helper.toModelReference<Parameter> parameter "Parameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).SetParam
@@ -235,7 +235,7 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
+                let _Parameter = Helper.toModelReference<Parameter> parameter "Parameter"  
                 let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -273,7 +273,7 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
+                let _Parameter = Helper.toModelReference<Parameter> parameter "Parameter"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).TestParams
                                                             _p.cell 
@@ -315,7 +315,7 @@ module ParameterFunction =
 
             try
 
-                let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
+                let _Parameter = Helper.toModelReference<Parameter> parameter "Parameter"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((ParameterModel.Cast _Parameter.cell).Value
                                                             _t.cell 

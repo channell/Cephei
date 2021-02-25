@@ -52,7 +52,7 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _LeastSquareFunction = Helper.toModelReference<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Gradient
@@ -135,7 +135,7 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _LeastSquareFunction = Helper.toModelReference<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Value
                                                             _x.cell 
@@ -179,7 +179,7 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _LeastSquareFunction = Helper.toModelReference<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).ValueAndGradient
@@ -225,7 +225,7 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _LeastSquareFunction = Helper.toModelReference<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Values
                                                             _x.cell 
@@ -265,7 +265,7 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _LeastSquareFunction = Helper.toModelReference<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let builder (current : ICell) = ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).FiniteDifferenceEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -305,7 +305,7 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _LeastSquareFunction = Helper.toModelReference<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Jacobian
@@ -353,7 +353,7 @@ module LeastSquareFunctionFunction =
 
             try
 
-                let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
+                let _LeastSquareFunction = Helper.toModelReference<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).ValuesAndJacobian

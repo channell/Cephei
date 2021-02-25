@@ -105,7 +105,7 @@ module IntegrandFunction =
 
             try
 
-                let _Integrand = Helper.toCell<Integrand> integrand "Integrand"  
+                let _Integrand = Helper.toModelReference<Integrand> integrand "Integrand"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((IntegrandModel.Cast _Integrand.cell).Value
                                                             _x.cell 

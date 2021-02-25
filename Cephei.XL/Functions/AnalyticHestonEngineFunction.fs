@@ -207,7 +207,7 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
+                let _AnalyticHestonEngine = Helper.toModelReference<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -246,7 +246,7 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
+                let _AnalyticHestonEngine = Helper.toModelReference<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).SetModel
                                                             _model.cell 
@@ -289,7 +289,7 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
+                let _AnalyticHestonEngine = Helper.toModelReference<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -329,7 +329,7 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
+                let _AnalyticHestonEngine = Helper.toModelReference<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticHestonEngine) (l:string) = o.ToString() :> obj
@@ -367,7 +367,7 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
+                let _AnalyticHestonEngine = Helper.toModelReference<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -407,7 +407,7 @@ module AnalyticHestonEngineFunction =
 
             try
 
-                let _AnalyticHestonEngine = Helper.toCell<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
+                let _AnalyticHestonEngine = Helper.toModelReference<AnalyticHestonEngine> analytichestonengine "AnalyticHestonEngine"  
                 let builder (current : ICell) = ((AnalyticHestonEngineModel.Cast _AnalyticHestonEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticHestonEngine) (l:string) = o.ToString() :> obj

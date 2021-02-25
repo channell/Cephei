@@ -48,7 +48,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan"  
+                let _Loan = Helper.toModelReference<Loan> loan "Loan"  
                 let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -133,7 +133,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan"  
+                let _Loan = Helper.toModelReference<Loan> loan "Loan"  
                 let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -169,7 +169,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan"  
+                let _Loan = Helper.toModelReference<Loan> loan "Loan"  
                 let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -205,7 +205,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan"  
+                let _Loan = Helper.toModelReference<Loan> loan "Loan"  
                 let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -243,7 +243,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan"  
+                let _Loan = Helper.toModelReference<Loan> loan "Loan"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).Result
                                                             _tag.cell 
@@ -285,7 +285,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan"  
+                let _Loan = Helper.toModelReference<Loan> loan "Loan"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).SetPricingEngine
                                                             _e.cell 
@@ -325,7 +325,7 @@ module LoanFunction =
 
             try
 
-                let _Loan = Helper.toCell<Loan> loan "Loan"  
+                let _Loan = Helper.toModelReference<Loan> loan "Loan"  
                 let builder (current : ICell) = ((LoanModel.Cast _Loan.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

@@ -50,7 +50,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).EndDiscounts
                                                             _j.cell 
@@ -90,7 +90,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).Engine
                                                        ) :> ICell
                 let format (o : Swap.SwapEngine) (l:string) = o.ToString() :> obj
@@ -126,7 +126,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -164,7 +164,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).Leg
                                                             _j.cell 
@@ -206,7 +206,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).LegBPS
                                                             _j.cell 
@@ -248,7 +248,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).LegNPV
                                                             _j.cell 
@@ -288,7 +288,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -324,7 +324,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -362,7 +362,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).Payer
                                                             _j.cell 
@@ -402,7 +402,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -440,7 +440,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).StartDiscounts
                                                             _j.cell 
@@ -590,7 +590,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -626,7 +626,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -662,7 +662,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -700,7 +700,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).Result
                                                             _tag.cell 
@@ -742,7 +742,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).SetPricingEngine
                                                             _e.cell 
@@ -782,7 +782,7 @@ module SwapFunction =
 
             try
 
-                let _Swap = Helper.toCell<Swap> swap "Swap"  
+                let _Swap = Helper.toModelReference<Swap> swap "Swap"  
                 let builder (current : ICell) = ((SwapModel.Cast _Swap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

@@ -109,7 +109,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
 
             try
 
-                let _AnalyticBinaryBarrierEngine_helper = Helper.toCell<AnalyticBinaryBarrierEngine_helper> analyticbinarybarrierengine_helper "AnalyticBinaryBarrierEngine_helper"  
+                let _AnalyticBinaryBarrierEngine_helper = Helper.toModelReference<AnalyticBinaryBarrierEngine_helper> analyticbinarybarrierengine_helper "AnalyticBinaryBarrierEngine_helper"  
                 let _spot = Helper.toCell<double> spot "spot" 
                 let _variance = Helper.toCell<double> variance "variance" 
                 let _discount = Helper.toCell<double> discount "discount" 

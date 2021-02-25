@@ -152,7 +152,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _MCBarrierEngine = Helper.toModelReference<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -192,7 +192,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _MCBarrierEngine = Helper.toModelReference<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let builder (current : ICell) = ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
@@ -230,7 +230,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _MCBarrierEngine = Helper.toModelReference<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -270,7 +270,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _MCBarrierEngine = Helper.toModelReference<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let builder (current : ICell) = ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).Update
                                                        ) :> ICell
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
@@ -306,7 +306,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _MCBarrierEngine = Helper.toModelReference<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let builder (current : ICell) = ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -342,7 +342,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _MCBarrierEngine = Helper.toModelReference<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let builder (current : ICell) = ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
@@ -384,7 +384,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _MCBarrierEngine = Helper.toModelReference<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let _tolerance = Helper.toCell<double> tolerance "tolerance" 
                 let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
                 let _minSamples = Helper.toCell<int> minSamples "minSamples" 
@@ -434,7 +434,7 @@ module MCBarrierEngineFunction =
 
             try
 
-                let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
+                let _MCBarrierEngine = Helper.toModelReference<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let _samples = Helper.toCell<int> samples "samples" 
                 let builder (current : ICell) = ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).ValueWithSamples
                                                             _samples.cell 

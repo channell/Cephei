@@ -48,7 +48,7 @@ module SuperFundPayoffFunction =
 
             try
 
-                let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
+                let _SuperFundPayoff = Helper.toModelReference<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
                 let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module SuperFundPayoffFunction =
 
             try
 
-                let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
+                let _SuperFundPayoff = Helper.toModelReference<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
                 let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).SecondStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -165,7 +165,7 @@ module SuperFundPayoffFunction =
 
             try
 
-                let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
+                let _SuperFundPayoff = Helper.toModelReference<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Value
                                                             _price.cell 
@@ -205,7 +205,7 @@ module SuperFundPayoffFunction =
 
             try
 
-                let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
+                let _SuperFundPayoff = Helper.toModelReference<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
                 let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -241,7 +241,7 @@ module SuperFundPayoffFunction =
 
             try
 
-                let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
+                let _SuperFundPayoff = Helper.toModelReference<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
                 let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -277,7 +277,7 @@ module SuperFundPayoffFunction =
 
             try
 
-                let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
+                let _SuperFundPayoff = Helper.toModelReference<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
                 let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -315,7 +315,7 @@ module SuperFundPayoffFunction =
 
             try
 
-                let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
+                let _SuperFundPayoff = Helper.toModelReference<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Accept
                                                             _v.cell 

@@ -105,7 +105,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let _discountCurve = Helper.toCell<YieldTermStructure> discountCurve "discountCurve" 
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).AtmRate
                                                             _discountCurve.cell 
@@ -145,7 +145,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).CapRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -181,7 +181,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -217,7 +217,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).FloorRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -253,7 +253,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).GetType
                                                        ) :> ICell
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
@@ -307,7 +307,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _guess = Helper.toCell<double> guess "guess" 
@@ -389,7 +389,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _guess = Helper.toCell<double> guess "guess" 
@@ -445,7 +445,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -481,7 +481,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).LastFloatingRateCoupon
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
@@ -517,7 +517,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -555,7 +555,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).Optionlet
                                                             _i.cell 
@@ -595,7 +595,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -631,7 +631,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -667,7 +667,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -703,7 +703,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -741,7 +741,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).Result
                                                             _tag.cell 
@@ -783,7 +783,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).SetPricingEngine
                                                             _e.cell 
@@ -823,7 +823,7 @@ module FloorFunction =
 
             try
 
-                let _Floor = Helper.toCell<Floor> floor "Floor"  
+                let _Floor = Helper.toModelReference<Floor> floor "Floor"  
                 let builder (current : ICell) = ((FloorModel.Cast _Floor.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

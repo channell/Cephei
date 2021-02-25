@@ -50,7 +50,7 @@ module ImpliedVolTermStructureFunction =
 
             try
 
-                let _ImpliedVolTermStructure = Helper.toCell<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
+                let _ImpliedVolTermStructure = Helper.toModelReference<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((ImpliedVolTermStructureModel.Cast _ImpliedVolTermStructure.cell).Accept
                                                             _v.cell 
@@ -90,7 +90,7 @@ module ImpliedVolTermStructureFunction =
 
             try
 
-                let _ImpliedVolTermStructure = Helper.toCell<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
+                let _ImpliedVolTermStructure = Helper.toModelReference<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
                 let builder (current : ICell) = ((ImpliedVolTermStructureModel.Cast _ImpliedVolTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -175,7 +175,7 @@ module ImpliedVolTermStructureFunction =
 
             try
 
-                let _ImpliedVolTermStructure = Helper.toCell<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
+                let _ImpliedVolTermStructure = Helper.toModelReference<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
                 let builder (current : ICell) = ((ImpliedVolTermStructureModel.Cast _ImpliedVolTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -211,7 +211,7 @@ module ImpliedVolTermStructureFunction =
 
             try
 
-                let _ImpliedVolTermStructure = Helper.toCell<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
+                let _ImpliedVolTermStructure = Helper.toModelReference<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
                 let builder (current : ICell) = ((ImpliedVolTermStructureModel.Cast _ImpliedVolTermStructure.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -247,7 +247,7 @@ module ImpliedVolTermStructureFunction =
 
             try
 
-                let _ImpliedVolTermStructure = Helper.toCell<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
+                let _ImpliedVolTermStructure = Helper.toModelReference<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
                 let builder (current : ICell) = ((ImpliedVolTermStructureModel.Cast _ImpliedVolTermStructure.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

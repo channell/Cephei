@@ -99,7 +99,7 @@ module EuropeanPathPricerFunction =
 
             try
 
-                let _EuropeanPathPricer = Helper.toCell<EuropeanPathPricer> europeanpathpricer "EuropeanPathPricer"  
+                let _EuropeanPathPricer = Helper.toModelReference<EuropeanPathPricer> europeanpathpricer "EuropeanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let builder (current : ICell) = ((EuropeanPathPricerModel.Cast _EuropeanPathPricer.cell).Value
                                                             _path.cell 

@@ -124,7 +124,7 @@ module CumulativeNormalDistributionFunction =
 
             try
 
-                let _CumulativeNormalDistribution = Helper.toCell<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution"  
+                let _CumulativeNormalDistribution = Helper.toModelReference<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((CumulativeNormalDistributionModel.Cast _CumulativeNormalDistribution.cell).Derivative
                                                             _x.cell 
@@ -166,7 +166,7 @@ module CumulativeNormalDistributionFunction =
 
             try
 
-                let _CumulativeNormalDistribution = Helper.toCell<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution"  
+                let _CumulativeNormalDistribution = Helper.toModelReference<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution"  
                 let _z = Helper.toCell<double> z "z" 
                 let builder (current : ICell) = ((CumulativeNormalDistributionModel.Cast _CumulativeNormalDistribution.cell).Value
                                                             _z.cell 

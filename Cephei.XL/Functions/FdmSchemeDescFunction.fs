@@ -48,7 +48,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).CraigSneyd
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -84,7 +84,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).CrankNicolson
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -120,7 +120,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Douglas
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -156,7 +156,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ExplicitEuler
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -272,7 +272,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Hundsdorfer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -308,7 +308,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ImplicitEuler
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -348,7 +348,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let _eps = Helper.toDefault<double> eps "eps" 0.001
                 let _relInitStepSize = Helper.toDefault<double> relInitStepSize "relInitStepSize" 0.01
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).MethodOfLines
@@ -392,7 +392,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ModifiedCraigSneyd
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -428,7 +428,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ModifiedHundsdorfer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -464,7 +464,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Mu
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -500,7 +500,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -536,7 +536,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).TrBDF2
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
@@ -572,7 +572,7 @@ module FdmSchemeDescFunction =
 
             try
 
-                let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
+                let _FdmSchemeDesc = Helper.toModelReference<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let builder (current : ICell) = ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Type
                                                        ) :> ICell
                 let format (o : FdmSchemeDesc.FdmSchemeType) (l:string) = o.ToString() :> obj

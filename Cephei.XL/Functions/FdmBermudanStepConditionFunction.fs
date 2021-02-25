@@ -52,7 +52,7 @@ module FdmBermudanStepConditionFunction =
 
             try
 
-                let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
+                let _FdmBermudanStepCondition = Helper.toModelReference<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ApplyTo
@@ -96,7 +96,7 @@ module FdmBermudanStepConditionFunction =
 
             try
 
-                let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
+                let _FdmBermudanStepCondition = Helper.toModelReference<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
                 let builder (current : ICell) = ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ExerciseTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

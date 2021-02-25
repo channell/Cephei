@@ -97,7 +97,7 @@ module EverywhereConstantHelperFunction =
 
             try
 
-                let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
+                let _EverywhereConstantHelper = Helper.toModelReference<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
                 let builder (current : ICell) = ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -135,7 +135,7 @@ module EverywhereConstantHelperFunction =
 
             try
 
-                let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
+                let _EverywhereConstantHelper = Helper.toModelReference<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).Primitive
                                                             _x.cell 
@@ -177,7 +177,7 @@ module EverywhereConstantHelperFunction =
 
             try
 
-                let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
+                let _EverywhereConstantHelper = Helper.toModelReference<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).Value
                                                             _x.cell 

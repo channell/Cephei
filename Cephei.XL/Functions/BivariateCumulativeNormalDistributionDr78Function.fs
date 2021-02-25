@@ -89,7 +89,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
 
             try
 
-                let _BivariateCumulativeNormalDistributionDr78 = Helper.toCell<BivariateCumulativeNormalDistributionDr78> bivariatecumulativenormaldistributiondr78 "BivariateCumulativeNormalDistributionDr78"  
+                let _BivariateCumulativeNormalDistributionDr78 = Helper.toModelReference<BivariateCumulativeNormalDistributionDr78> bivariatecumulativenormaldistributiondr78 "BivariateCumulativeNormalDistributionDr78"  
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
                 let builder (current : ICell) = ((BivariateCumulativeNormalDistributionDr78Model.Cast _BivariateCumulativeNormalDistributionDr78.cell).Value

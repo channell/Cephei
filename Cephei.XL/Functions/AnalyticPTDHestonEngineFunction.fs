@@ -156,7 +156,7 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
+                let _AnalyticPTDHestonEngine = Helper.toModelReference<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let builder (current : ICell) = ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).SetModel
                                                             _model.cell 
@@ -198,7 +198,7 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
+                let _AnalyticPTDHestonEngine = Helper.toModelReference<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -238,7 +238,7 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
+                let _AnalyticPTDHestonEngine = Helper.toModelReference<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let builder (current : ICell) = ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
@@ -276,7 +276,7 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
+                let _AnalyticPTDHestonEngine = Helper.toModelReference<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -316,7 +316,7 @@ module AnalyticPTDHestonEngineFunction =
 
             try
 
-                let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
+                let _AnalyticPTDHestonEngine = Helper.toModelReference<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let builder (current : ICell) = ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj

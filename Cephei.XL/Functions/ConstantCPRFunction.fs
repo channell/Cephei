@@ -87,7 +87,7 @@ module ConstantCPRFunction =
 
             try
 
-                let _ConstantCPR = Helper.toCell<ConstantCPR> constantcpr "ConstantCPR"  
+                let _ConstantCPR = Helper.toModelReference<ConstantCPR> constantcpr "ConstantCPR"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
                 let builder (current : ICell) = ((ConstantCPRModel.Cast _ConstantCPR.cell).GetCPR
                                                             _valDate.cell 
@@ -129,7 +129,7 @@ module ConstantCPRFunction =
 
             try
 
-                let _ConstantCPR = Helper.toCell<ConstantCPR> constantcpr "ConstantCPR"  
+                let _ConstantCPR = Helper.toModelReference<ConstantCPR> constantcpr "ConstantCPR"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
                 let builder (current : ICell) = ((ConstantCPRModel.Cast _ConstantCPR.cell).GetSMM
                                                             _valDate.cell 

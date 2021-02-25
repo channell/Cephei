@@ -292,7 +292,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -328,7 +328,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -364,7 +364,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -406,7 +406,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -460,7 +460,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -514,7 +514,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -562,7 +562,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).Displacement
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -602,7 +602,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _extr = Helper.toCell<bool> extr "extr" 
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).SmileSection
@@ -650,7 +650,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _extr = Helper.toCell<bool> extr "extr" 
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).SmileSection2
@@ -698,7 +698,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).SmileSection1
@@ -748,7 +748,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -802,7 +802,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -856,7 +856,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -904,7 +904,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -940,7 +940,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -978,7 +978,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _p = Helper.toCell<Period> p "p" 
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).OptionDateFromTenor
                                                             _p.cell 
@@ -1018,7 +1018,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -1054,7 +1054,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -1090,7 +1090,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1126,7 +1126,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1162,7 +1162,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1200,7 +1200,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).TimeFromReference
                                                             _date.cell 
@@ -1240,7 +1240,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).Update
                                                        ) :> ICell
                 let format (o : ConstantOptionletVolatility) (l:string) = o.ToString() :> obj
@@ -1276,7 +1276,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1314,7 +1314,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).DisableExtrapolation
                                                             _b.cell 
@@ -1356,7 +1356,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).EnableExtrapolation
                                                             _b.cell 
@@ -1396,7 +1396,7 @@ module ConstantOptionletVolatilityFunction =
 
             try
 
-                let _ConstantOptionletVolatility = Helper.toCell<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
+                let _ConstantOptionletVolatility = Helper.toModelReference<ConstantOptionletVolatility> constantoptionletvolatility "ConstantOptionletVolatility"  
                 let builder (current : ICell) = ((ConstantOptionletVolatilityModel.Cast _ConstantOptionletVolatility.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

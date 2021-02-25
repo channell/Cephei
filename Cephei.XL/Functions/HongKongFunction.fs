@@ -100,7 +100,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -138,7 +138,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).AddHoliday
                                                             _d.cell 
@@ -182,7 +182,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).Adjust
@@ -236,7 +236,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -300,7 +300,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -360,7 +360,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -412,7 +412,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -448,7 +448,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -486,7 +486,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).EndOfMonth
                                                             _d.cell 
@@ -528,7 +528,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).Equals
                                                             _o.cell 
@@ -570,7 +570,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).IsBusinessDay
                                                             _d.cell 
@@ -612,7 +612,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).IsEndOfMonth
                                                             _d.cell 
@@ -654,7 +654,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).IsHoliday
                                                             _d.cell 
@@ -696,7 +696,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).IsWeekend
                                                             _w.cell 
@@ -738,7 +738,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -774,7 +774,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -812,7 +812,7 @@ module HongKongFunction =
 
             try
 
-                let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
+                let _HongKong = Helper.toModelReference<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((HongKongModel.Cast _HongKong.cell).RemoveHoliday
                                                             _d.cell 

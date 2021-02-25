@@ -145,7 +145,7 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
+                let _AnalyticCapFloorEngine = Helper.toModelReference<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
                 let _model = Helper.toHandle<IAffineModel> model "model" 
                 let builder (current : ICell) = ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).SetModel
                                                             _model.cell 
@@ -187,7 +187,7 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
+                let _AnalyticCapFloorEngine = Helper.toModelReference<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -227,7 +227,7 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
+                let _AnalyticCapFloorEngine = Helper.toModelReference<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
                 let builder (current : ICell) = ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
@@ -265,7 +265,7 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
+                let _AnalyticCapFloorEngine = Helper.toModelReference<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -305,7 +305,7 @@ module AnalyticCapFloorEngineFunction =
 
             try
 
-                let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
+                let _AnalyticCapFloorEngine = Helper.toModelReference<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
                 let builder (current : ICell) = ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj

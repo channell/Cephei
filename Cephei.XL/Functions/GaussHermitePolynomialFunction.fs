@@ -50,7 +50,7 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
+                let _GaussHermitePolynomial = Helper.toModelReference<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Alpha
                                                             _i.cell 
@@ -92,7 +92,7 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
+                let _GaussHermitePolynomial = Helper.toModelReference<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Beta
                                                             _i.cell 
@@ -200,7 +200,7 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
+                let _GaussHermitePolynomial = Helper.toModelReference<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let builder (current : ICell) = ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -238,7 +238,7 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
+                let _GaussHermitePolynomial = Helper.toModelReference<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).W
                                                             _x.cell 
@@ -282,7 +282,7 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
+                let _GaussHermitePolynomial = Helper.toModelReference<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Value
@@ -330,7 +330,7 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
+                let _GaussHermitePolynomial = Helper.toModelReference<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).WeightedValue

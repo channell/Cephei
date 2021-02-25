@@ -111,7 +111,7 @@ module EventSetSimulationFunction =
 
             try
 
-                let _EventSetSimulation = Helper.toCell<EventSetSimulation> eventsetsimulation "EventSetSimulation"  
+                let _EventSetSimulation = Helper.toModelReference<EventSetSimulation> eventsetsimulation "EventSetSimulation"  
                 let _path = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> path "path" 
                 let builder (current : ICell) = ((EventSetSimulationModel.Cast _EventSetSimulation.cell).NextPath
                                                             _path.cell 

@@ -48,7 +48,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
+                let _RendistatoBasket = Helper.toModelReference<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Btps
                                                        ) :> ICell
                 let format (i : Generic.List<BTP>) (l : string) = Helper.Range.fromList i l
@@ -84,7 +84,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
+                let _RendistatoBasket = Helper.toModelReference<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).CleanPriceQuotes
                                                        ) :> ICell
                 let format (i : Generic.List<Handle<Quote>>) (l : string) = Helper.Range.fromList i l
@@ -120,7 +120,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
+                let _RendistatoBasket = Helper.toModelReference<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Outstanding
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
+                let _RendistatoBasket = Helper.toModelReference<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Outstandings
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -194,7 +194,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
+                let _RendistatoBasket = Helper.toModelReference<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).RegisterWith
                                                             _handler.cell 
@@ -283,7 +283,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
+                let _RendistatoBasket = Helper.toModelReference<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -321,7 +321,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
+                let _RendistatoBasket = Helper.toModelReference<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).UnregisterWith
                                                             _handler.cell 
@@ -361,7 +361,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
+                let _RendistatoBasket = Helper.toModelReference<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Update
                                                        ) :> ICell
                 let format (o : RendistatoBasket) (l:string) = o.ToString() :> obj
@@ -397,7 +397,7 @@ module RendistatoBasketFunction =
 
             try
 
-                let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
+                let _RendistatoBasket = Helper.toModelReference<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let builder (current : ICell) = ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Weights
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

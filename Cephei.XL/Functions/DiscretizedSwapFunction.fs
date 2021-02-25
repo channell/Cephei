@@ -103,7 +103,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -141,7 +141,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let _size = Helper.toCell<int> size "size" 
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).Reset
                                                             _size.cell 
@@ -181,7 +181,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedSwap) (l:string) = o.ToString() :> obj
@@ -221,7 +221,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).Initialize
@@ -265,7 +265,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
@@ -303,7 +303,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).PartialRollback
                                                             _To.cell 
@@ -343,7 +343,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedSwap) (l:string) = o.ToString() :> obj
@@ -379,7 +379,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedSwap) (l:string) = o.ToString() :> obj
@@ -415,7 +415,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -453,7 +453,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).Rollback
                                                             _To.cell 
@@ -495,7 +495,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).SetTime
                                                             _t.cell 
@@ -537,7 +537,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let _v = Helper.toCell<Vector> v "v" 
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).SetValues
                                                             _v.cell 
@@ -577,7 +577,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -613,7 +613,7 @@ module DiscretizedSwapFunction =
 
             try
 
-                let _DiscretizedSwap = Helper.toCell<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
+                let _DiscretizedSwap = Helper.toModelReference<DiscretizedSwap> discretizedswap "DiscretizedSwap"  
                 let builder (current : ICell) = ((DiscretizedSwapModel.Cast _DiscretizedSwap.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

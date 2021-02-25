@@ -57,7 +57,7 @@ module LevenbergMarquardtFunction =
 
             try
 
-                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
+                let _LevenbergMarquardt = Helper.toModelReference<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
                 let _m = Helper.toCell<int> m "m" 
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<Vector> x "x" 
@@ -109,7 +109,7 @@ module LevenbergMarquardtFunction =
 
             try
 
-                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
+                let _LevenbergMarquardt = Helper.toModelReference<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
                 let builder (current : ICell) = ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).GetInfo
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -153,7 +153,7 @@ module LevenbergMarquardtFunction =
 
             try
 
-                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
+                let _LevenbergMarquardt = Helper.toModelReference<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
                 let _m = Helper.toCell<int> m "m" 
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<Vector> x "x" 
@@ -295,7 +295,7 @@ module LevenbergMarquardtFunction =
 
             try
 
-                let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
+                let _LevenbergMarquardt = Helper.toModelReference<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder (current : ICell) = ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).Minimize

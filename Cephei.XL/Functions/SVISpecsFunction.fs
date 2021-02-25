@@ -58,7 +58,7 @@ module SVISpecsFunction =
 
             try
 
-                let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
+                let _SVISpecs = Helper.toModelReference<SVISpecs> svispecs "SVISpecs"  
                 let _param = Helper.toNullabletList<double> param "param" 
                 let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" 
                 let _forward = Helper.toCell<double> forward "forward" 
@@ -114,7 +114,7 @@ module SVISpecsFunction =
 
             try
 
-                let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
+                let _SVISpecs = Helper.toModelReference<SVISpecs> svispecs "SVISpecs"  
                 let builder (current : ICell) = ((SVISpecsModel.Cast _SVISpecs.cell).DilationFactor
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -150,7 +150,7 @@ module SVISpecsFunction =
 
             try
 
-                let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
+                let _SVISpecs = Helper.toModelReference<SVISpecs> svispecs "SVISpecs"  
                 let builder (current : ICell) = ((SVISpecsModel.Cast _SVISpecs.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -194,7 +194,7 @@ module SVISpecsFunction =
 
             try
 
-                let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
+                let _SVISpecs = Helper.toModelReference<SVISpecs> svispecs "SVISpecs"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" 
                 let _param = Helper.toNullabletList<double> param "param" 
@@ -246,7 +246,7 @@ module SVISpecsFunction =
 
             try
 
-                let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
+                let _SVISpecs = Helper.toModelReference<SVISpecs> svispecs "SVISpecs"  
                 let builder (current : ICell) = ((SVISpecsModel.Cast _SVISpecs.cell).Eps1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -282,7 +282,7 @@ module SVISpecsFunction =
 
             try
 
-                let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
+                let _SVISpecs = Helper.toModelReference<SVISpecs> svispecs "SVISpecs"  
                 let builder (current : ICell) = ((SVISpecsModel.Cast _SVISpecs.cell).Eps2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -330,7 +330,7 @@ module SVISpecsFunction =
 
             try
 
-                let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
+                let _SVISpecs = Helper.toModelReference<SVISpecs> svispecs "SVISpecs"  
                 let _values = Helper.toCell<Vector> values "values" 
                 let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" 
                 let _forward = Helper.toCell<double> forward "forward" 
@@ -398,7 +398,7 @@ module SVISpecsFunction =
 
             try
 
-                let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
+                let _SVISpecs = Helper.toModelReference<SVISpecs> svispecs "SVISpecs"  
                 let _t = Helper.toCell<double> t "t" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _param = Helper.toNullabletList<double> param "param" 
@@ -458,7 +458,7 @@ module SVISpecsFunction =
 
             try
 
-                let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
+                let _SVISpecs = Helper.toModelReference<SVISpecs> svispecs "SVISpecs"  
                 let _y = Helper.toCell<Vector> y "y" 
                 let _b = Helper.toCell<Generic.List<bool>> b "b" 
                 let _c = Helper.toNullabletList<double> c "c" 
@@ -510,7 +510,7 @@ module SVISpecsFunction =
 
             try
 
-                let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
+                let _SVISpecs = Helper.toModelReference<SVISpecs> svispecs "SVISpecs"  
                 let builder (current : ICell) = ((SVISpecsModel.Cast _SVISpecs.cell).ModelInstance_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SVIWrapper>) l
@@ -554,7 +554,7 @@ module SVISpecsFunction =
 
             try
 
-                let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
+                let _SVISpecs = Helper.toModelReference<SVISpecs> svispecs "SVISpecs"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 

@@ -48,7 +48,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
 
             try
 
-                let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
+                let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toModelReference<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
                 let builder (current : ICell) = ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -84,7 +84,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
 
             try
 
-                let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
+                let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toModelReference<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
                 let builder (current : ICell) = ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -199,7 +199,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
 
             try
 
-                let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
+                let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toModelReference<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
                 let builder (current : ICell) = ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -235,7 +235,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
 
             try
 
-                let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
+                let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toModelReference<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
                 let builder (current : ICell) = ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -271,7 +271,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
 
             try
 
-                let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
+                let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toModelReference<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
                 let builder (current : ICell) = ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

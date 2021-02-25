@@ -128,7 +128,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -166,7 +166,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).Clone
                                                             _forwarding.cell 
@@ -206,7 +206,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -248,7 +248,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
@@ -298,7 +298,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).ForecastFixing
                                                             _fixingDate.cell 
@@ -338,7 +338,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -376,7 +376,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).MaturityDate
                                                             _valueDate.cell 
@@ -416,7 +416,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -452,7 +452,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -488,7 +488,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -528,7 +528,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).Fixing
@@ -572,7 +572,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -610,7 +610,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).FixingDate
                                                             _valueDate.cell 
@@ -650,7 +650,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -688,7 +688,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -728,7 +728,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -766,7 +766,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).PastFixing
                                                             _fixingDate.cell 
@@ -806,7 +806,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -842,7 +842,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).Update
                                                        ) :> ICell
                 let format (o : Tibor) (l:string) = o.ToString() :> obj
@@ -880,7 +880,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).ValueDate
                                                             _fixingDate.cell 
@@ -926,7 +926,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -980,7 +980,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -1032,7 +1032,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).AddFixings1
@@ -1076,7 +1076,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1112,7 +1112,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Tibor) (l:string) = o.ToString() :> obj
@@ -1150,7 +1150,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).RegisterWith
                                                             _handler.cell 
@@ -1190,7 +1190,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1228,7 +1228,7 @@ module TiborFunction =
 
             try
 
-                let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
+                let _Tibor = Helper.toModelReference<Tibor> tibor "Tibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((TiborModel.Cast _Tibor.cell).UnregisterWith
                                                             _handler.cell 

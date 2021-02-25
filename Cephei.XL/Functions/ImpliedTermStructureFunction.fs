@@ -48,7 +48,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -84,7 +84,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -169,7 +169,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -205,7 +205,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -245,7 +245,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Discount
@@ -293,7 +293,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Discount1
@@ -349,7 +349,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
@@ -421,7 +421,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
@@ -491,7 +491,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -547,7 +547,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -583,7 +583,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -619,7 +619,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Update
                                                        ) :> ICell
                 let format (o : ImpliedTermStructure) (l:string) = o.ToString() :> obj
@@ -665,7 +665,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -729,7 +729,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _t = Helper.toCell<double> t "t" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -781,7 +781,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -817,7 +817,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -855,7 +855,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).TimeFromReference
                                                             _date.cell 
@@ -895,7 +895,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -933,7 +933,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).DisableExtrapolation
                                                             _b.cell 
@@ -975,7 +975,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).EnableExtrapolation
                                                             _b.cell 
@@ -1015,7 +1015,7 @@ module ImpliedTermStructureFunction =
 
             try
 
-                let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
+                let _ImpliedTermStructure = Helper.toModelReference<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

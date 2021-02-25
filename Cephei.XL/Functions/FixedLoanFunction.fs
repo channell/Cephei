@@ -48,7 +48,7 @@ module FixedLoanFunction =
 
             try
 
-                let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
+                let _FixedLoan = Helper.toModelReference<FixedLoan> fixedloan "FixedLoan"  
                 let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).FixedLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -169,7 +169,7 @@ module FixedLoanFunction =
 
             try
 
-                let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
+                let _FixedLoan = Helper.toModelReference<FixedLoan> fixedloan "FixedLoan"  
                 let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).PrincipalLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -205,7 +205,7 @@ module FixedLoanFunction =
 
             try
 
-                let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
+                let _FixedLoan = Helper.toModelReference<FixedLoan> fixedloan "FixedLoan"  
                 let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -241,7 +241,7 @@ module FixedLoanFunction =
 
             try
 
-                let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
+                let _FixedLoan = Helper.toModelReference<FixedLoan> fixedloan "FixedLoan"  
                 let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -277,7 +277,7 @@ module FixedLoanFunction =
 
             try
 
-                let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
+                let _FixedLoan = Helper.toModelReference<FixedLoan> fixedloan "FixedLoan"  
                 let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -313,7 +313,7 @@ module FixedLoanFunction =
 
             try
 
-                let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
+                let _FixedLoan = Helper.toModelReference<FixedLoan> fixedloan "FixedLoan"  
                 let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -351,7 +351,7 @@ module FixedLoanFunction =
 
             try
 
-                let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
+                let _FixedLoan = Helper.toModelReference<FixedLoan> fixedloan "FixedLoan"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).Result
                                                             _tag.cell 
@@ -393,7 +393,7 @@ module FixedLoanFunction =
 
             try
 
-                let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
+                let _FixedLoan = Helper.toModelReference<FixedLoan> fixedloan "FixedLoan"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).SetPricingEngine
                                                             _e.cell 
@@ -433,7 +433,7 @@ module FixedLoanFunction =
 
             try
 
-                let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
+                let _FixedLoan = Helper.toModelReference<FixedLoan> fixedloan "FixedLoan"  
                 let builder (current : ICell) = ((FixedLoanModel.Cast _FixedLoan.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

@@ -48,7 +48,7 @@ module VarProxy_HelperFunction =
 
             try
 
-                let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
+                let _VarProxy_Helper = Helper.toModelReference<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
                 let builder (current : ICell) = ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).CorrModel_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmCorrelationModel>) l
@@ -86,7 +86,7 @@ module VarProxy_HelperFunction =
 
             try
 
-                let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
+                let _VarProxy_Helper = Helper.toModelReference<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).Value
                                                             _t.cell 
@@ -175,7 +175,7 @@ module VarProxy_HelperFunction =
 
             try
 
-                let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
+                let _VarProxy_Helper = Helper.toModelReference<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
                 let builder (current : ICell) = ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).VolaModel_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmVolatilityModel>) l

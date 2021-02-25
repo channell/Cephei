@@ -96,7 +96,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -134,7 +134,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).AddHoliday
                                                             _d.cell 
@@ -178,7 +178,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).Adjust
@@ -232,7 +232,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -296,7 +296,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -356,7 +356,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -408,7 +408,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -444,7 +444,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -482,7 +482,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).EndOfMonth
                                                             _d.cell 
@@ -524,7 +524,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).Equals
                                                             _o.cell 
@@ -566,7 +566,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).IsBusinessDay
                                                             _d.cell 
@@ -608,7 +608,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).IsEndOfMonth
                                                             _d.cell 
@@ -650,7 +650,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).IsHoliday
                                                             _d.cell 
@@ -692,7 +692,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).IsWeekend
                                                             _w.cell 
@@ -734,7 +734,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -770,7 +770,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -808,7 +808,7 @@ module SwedenFunction =
 
             try
 
-                let _Sweden = Helper.toCell<Sweden> sweden "Sweden"  
+                let _Sweden = Helper.toModelReference<Sweden> sweden "Sweden"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SwedenModel.Cast _Sweden.cell).RemoveHoliday
                                                             _d.cell 

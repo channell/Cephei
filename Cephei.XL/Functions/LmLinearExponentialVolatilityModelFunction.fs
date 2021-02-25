@@ -56,7 +56,7 @@ module LmLinearExponentialVolatilityModelFunction =
 
             try
 
-                let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
+                let _LmLinearExponentialVolatilityModel = Helper.toModelReference<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
@@ -175,7 +175,7 @@ module LmLinearExponentialVolatilityModelFunction =
 
             try
 
-                let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
+                let _LmLinearExponentialVolatilityModel = Helper.toModelReference<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
@@ -227,7 +227,7 @@ module LmLinearExponentialVolatilityModelFunction =
 
             try
 
-                let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
+                let _LmLinearExponentialVolatilityModel = Helper.toModelReference<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
                 let builder (current : ICell) = ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Volatility1
@@ -271,7 +271,7 @@ module LmLinearExponentialVolatilityModelFunction =
 
             try
 
-                let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
+                let _LmLinearExponentialVolatilityModel = Helper.toModelReference<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let builder (current : ICell) = ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<Parameter>) (l : string) = Helper.Range.fromList i l
@@ -309,7 +309,7 @@ module LmLinearExponentialVolatilityModelFunction =
 
             try
 
-                let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
+                let _LmLinearExponentialVolatilityModel = Helper.toModelReference<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
                 let builder (current : ICell) = ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).SetParams
                                                             _arguments.cell 
@@ -349,7 +349,7 @@ module LmLinearExponentialVolatilityModelFunction =
 
             try
 
-                let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
+                let _LmLinearExponentialVolatilityModel = Helper.toModelReference<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let builder (current : ICell) = ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

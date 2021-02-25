@@ -61,7 +61,7 @@ module TARGETFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TARGET>) l
 
-                let source () = Helper.sourceFold "Fun.TARGET" 
+                let source () = Helper.sourceFold "Fun.TARGET ()" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
@@ -90,7 +90,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -128,7 +128,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).AddHoliday
                                                             _d.cell 
@@ -172,7 +172,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).Adjust
@@ -226,7 +226,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -290,7 +290,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -350,7 +350,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -402,7 +402,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -438,7 +438,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -476,7 +476,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).EndOfMonth
                                                             _d.cell 
@@ -518,7 +518,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).Equals
                                                             _o.cell 
@@ -560,7 +560,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).IsBusinessDay
                                                             _d.cell 
@@ -602,7 +602,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).IsEndOfMonth
                                                             _d.cell 
@@ -644,7 +644,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).IsHoliday
                                                             _d.cell 
@@ -686,7 +686,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).IsWeekend
                                                             _w.cell 
@@ -728,7 +728,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -764,7 +764,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -802,7 +802,7 @@ module TARGETFunction =
 
             try
 
-                let _TARGET = Helper.toCell<TARGET> target "TARGET"  
+                let _TARGET = Helper.toModelReference<TARGET> target "TARGET"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((TARGETModel.Cast _TARGET.cell).RemoveHoliday
                                                             _d.cell 

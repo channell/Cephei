@@ -48,7 +48,7 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
+                let _StrikedTypePayoff = Helper.toModelReference<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let builder (current : ICell) = ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
+                let _StrikedTypePayoff = Helper.toModelReference<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let builder (current : ICell) = ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -200,7 +200,7 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
+                let _StrikedTypePayoff = Helper.toModelReference<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let builder (current : ICell) = ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -238,7 +238,7 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
+                let _StrikedTypePayoff = Helper.toModelReference<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Accept
                                                             _v.cell 
@@ -278,7 +278,7 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
+                let _StrikedTypePayoff = Helper.toModelReference<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let builder (current : ICell) = ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -316,7 +316,7 @@ module StrikedTypePayoffFunction =
 
             try
 
-                let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
+                let _StrikedTypePayoff = Helper.toModelReference<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Value
                                                             _price.cell 

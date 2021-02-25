@@ -85,7 +85,7 @@ module FloatingTypePayoffFunction =
 
             try
 
-                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
+                let _FloatingTypePayoff = Helper.toModelReference<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
                 let builder (current : ICell) = ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -123,7 +123,7 @@ module FloatingTypePayoffFunction =
 
             try
 
-                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
+                let _FloatingTypePayoff = Helper.toModelReference<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
                 let _k = Helper.toCell<double> k "k" 
                 let builder (current : ICell) = ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Value
                                                             _k.cell 
@@ -163,7 +163,7 @@ module FloatingTypePayoffFunction =
 
             try
 
-                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
+                let _FloatingTypePayoff = Helper.toModelReference<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
                 let builder (current : ICell) = ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -199,7 +199,7 @@ module FloatingTypePayoffFunction =
 
             try
 
-                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
+                let _FloatingTypePayoff = Helper.toModelReference<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
                 let builder (current : ICell) = ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -237,7 +237,7 @@ module FloatingTypePayoffFunction =
 
             try
 
-                let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
+                let _FloatingTypePayoff = Helper.toModelReference<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Accept
                                                             _v.cell 

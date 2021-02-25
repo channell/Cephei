@@ -48,7 +48,7 @@ module NelsonSiegelFittingFunction =
 
             try
 
-                let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
+                let _NelsonSiegelFitting = Helper.toModelReference<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
                 let builder (current : ICell) = ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
@@ -127,7 +127,7 @@ module NelsonSiegelFittingFunction =
 
             try
 
-                let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
+                let _NelsonSiegelFitting = Helper.toModelReference<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
                 let builder (current : ICell) = ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -163,7 +163,7 @@ module NelsonSiegelFittingFunction =
 
             try
 
-                let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
+                let _NelsonSiegelFitting = Helper.toModelReference<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
                 let builder (current : ICell) = ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -203,7 +203,7 @@ module NelsonSiegelFittingFunction =
 
             try
 
-                let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
+                let _NelsonSiegelFitting = Helper.toModelReference<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Discount
@@ -247,7 +247,7 @@ module NelsonSiegelFittingFunction =
 
             try
 
-                let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
+                let _NelsonSiegelFitting = Helper.toModelReference<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
                 let builder (current : ICell) = ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -283,7 +283,7 @@ module NelsonSiegelFittingFunction =
 
             try
 
-                let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
+                let _NelsonSiegelFitting = Helper.toModelReference<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
                 let builder (current : ICell) = ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -319,7 +319,7 @@ module NelsonSiegelFittingFunction =
 
             try
 
-                let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
+                let _NelsonSiegelFitting = Helper.toModelReference<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
                 let builder (current : ICell) = ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
@@ -355,7 +355,7 @@ module NelsonSiegelFittingFunction =
 
             try
 
-                let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
+                let _NelsonSiegelFitting = Helper.toModelReference<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
                 let builder (current : ICell) = ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -391,7 +391,7 @@ module NelsonSiegelFittingFunction =
 
             try
 
-                let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
+                let _NelsonSiegelFitting = Helper.toModelReference<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
                 let builder (current : ICell) = ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

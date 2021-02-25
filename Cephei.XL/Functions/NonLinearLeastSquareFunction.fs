@@ -48,7 +48,7 @@ module NonLinearLeastSquareFunction =
 
             try
 
-                let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
+                let _NonLinearLeastSquare = Helper.toModelReference<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
                 let builder (current : ICell) = ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).ExitFlag
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module NonLinearLeastSquareFunction =
 
             try
 
-                let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
+                let _NonLinearLeastSquare = Helper.toModelReference<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
                 let builder (current : ICell) = ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).LastValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -306,7 +306,7 @@ module NonLinearLeastSquareFunction =
 
             try
 
-                let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
+                let _NonLinearLeastSquare = Helper.toModelReference<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
                 let _lsProblem = Helper.toCell<LeastSquareProblem> lsProblem "lsProblem" 
                 let builder (current : ICell) = ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).Perform
                                                             _lsProblem.cell 
@@ -346,7 +346,7 @@ module NonLinearLeastSquareFunction =
 
             try
 
-                let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
+                let _NonLinearLeastSquare = Helper.toModelReference<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
                 let builder (current : ICell) = ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).ResidualNorm
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -384,7 +384,7 @@ module NonLinearLeastSquareFunction =
 
             try
 
-                let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
+                let _NonLinearLeastSquare = Helper.toModelReference<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
                 let _initialValue = Helper.toCell<Vector> initialValue "initialValue" 
                 let builder (current : ICell) = ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).SetInitialValue
                                                             _initialValue.cell 

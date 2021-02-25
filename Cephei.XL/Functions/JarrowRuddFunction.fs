@@ -56,7 +56,7 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
+                let _JarrowRudd = Helper.toModelReference<JarrowRudd> jarrowrudd "JarrowRudd"  
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
@@ -200,7 +200,7 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
+                let _JarrowRudd = Helper.toModelReference<JarrowRudd> jarrowrudd "JarrowRudd"  
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _z = Helper.toCell<int> z "z" 
@@ -252,7 +252,7 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
+                let _JarrowRudd = Helper.toModelReference<JarrowRudd> jarrowrudd "JarrowRudd"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((JarrowRuddModel.Cast _JarrowRudd.cell).Underlying
@@ -302,7 +302,7 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
+                let _JarrowRudd = Helper.toModelReference<JarrowRudd> jarrowrudd "JarrowRudd"  
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -352,7 +352,7 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
+                let _JarrowRudd = Helper.toModelReference<JarrowRudd> jarrowrudd "JarrowRudd"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((JarrowRuddModel.Cast _JarrowRudd.cell).Size
                                                             _i.cell 
@@ -392,7 +392,7 @@ module JarrowRuddFunction =
 
             try
 
-                let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
+                let _JarrowRudd = Helper.toModelReference<JarrowRudd> jarrowrudd "JarrowRudd"  
                 let builder (current : ICell) = ((JarrowRuddModel.Cast _JarrowRudd.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

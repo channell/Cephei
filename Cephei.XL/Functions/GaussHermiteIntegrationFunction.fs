@@ -91,7 +91,7 @@ module GaussHermiteIntegrationFunction =
 
             try
 
-                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
+                let _GaussHermiteIntegration = Helper.toModelReference<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
                 let builder (current : ICell) = ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -129,7 +129,7 @@ module GaussHermiteIntegrationFunction =
 
             try
 
-                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
+                let _GaussHermiteIntegration = Helper.toModelReference<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder (current : ICell) = ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Value
                                                             _f.cell 
@@ -169,7 +169,7 @@ module GaussHermiteIntegrationFunction =
 
             try
 
-                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
+                let _GaussHermiteIntegration = Helper.toModelReference<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
                 let builder (current : ICell) = ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -205,7 +205,7 @@ module GaussHermiteIntegrationFunction =
 
             try
 
-                let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
+                let _GaussHermiteIntegration = Helper.toModelReference<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
                 let builder (current : ICell) = ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

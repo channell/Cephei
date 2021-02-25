@@ -225,7 +225,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -261,7 +261,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).NumberOfBonds
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -301,7 +301,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Discount
@@ -349,7 +349,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Discount1
@@ -405,7 +405,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
@@ -477,7 +477,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
@@ -547,7 +547,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -603,7 +603,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -639,7 +639,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -675,7 +675,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Update
                                                        ) :> ICell
                 let format (o : FittedBondDiscountCurve) (l:string) = o.ToString() :> obj
@@ -721,7 +721,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -785,7 +785,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _t = Helper.toCell<double> t "t" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -837,7 +837,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -873,7 +873,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -909,7 +909,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -945,7 +945,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -981,7 +981,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1019,7 +1019,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).TimeFromReference
                                                             _date.cell 
@@ -1059,7 +1059,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1097,7 +1097,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).DisableExtrapolation
                                                             _b.cell 
@@ -1139,7 +1139,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).EnableExtrapolation
                                                             _b.cell 
@@ -1179,7 +1179,7 @@ module FittedBondDiscountCurveFunction =
 
             try
 
-                let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
+                let _FittedBondDiscountCurve = Helper.toModelReference<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

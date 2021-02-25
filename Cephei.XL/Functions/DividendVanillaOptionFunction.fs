@@ -127,7 +127,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-4
@@ -187,7 +187,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -223,7 +223,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -259,7 +259,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -295,7 +295,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -331,7 +331,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -367,7 +367,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -403,7 +403,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -439,7 +439,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -475,7 +475,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -511,7 +511,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -547,7 +547,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -583,7 +583,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -619,7 +619,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -655,7 +655,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -691,7 +691,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -727,7 +727,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -763,7 +763,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -801,7 +801,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Result
                                                             _tag.cell 
@@ -843,7 +843,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).SetPricingEngine
                                                             _e.cell 
@@ -883,7 +883,7 @@ module DividendVanillaOptionFunction =
 
             try
 
-                let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
+                let _DividendVanillaOption = Helper.toModelReference<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let builder (current : ICell) = ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

@@ -99,7 +99,7 @@ module BootstrapErrorFunction =
 
             try
 
-                let _BootstrapError = Helper.toCell<BootstrapError> bootstraperror "BootstrapError"  
+                let _BootstrapError = Helper.toModelReference<BootstrapError> bootstraperror "BootstrapError"  
                 let _guess = Helper.toCell<double> guess "guess" 
                 let builder (current : ICell) = ((BootstrapErrorModel.Cast _BootstrapError.cell).Value
                                                             _guess.cell 
@@ -141,7 +141,7 @@ module BootstrapErrorFunction =
 
             try
 
-                let _BootstrapError = Helper.toCell<BootstrapError> bootstraperror "BootstrapError"  
+                let _BootstrapError = Helper.toModelReference<BootstrapError> bootstraperror "BootstrapError"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((BootstrapErrorModel.Cast _BootstrapError.cell).Derivative
                                                             _x.cell 

@@ -128,7 +128,7 @@ module FloorTruncationFunction =
 
             try
 
-                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
+                let _FloorTruncation = Helper.toModelReference<FloorTruncation> floortruncation "FloorTruncation"  
                 let builder (current : ICell) = ((FloorTruncationModel.Cast _FloorTruncation.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module FloorTruncationFunction =
 
             try
 
-                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
+                let _FloorTruncation = Helper.toModelReference<FloorTruncation> floortruncation "FloorTruncation"  
                 let builder (current : ICell) = ((FloorTruncationModel.Cast _FloorTruncation.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -200,7 +200,7 @@ module FloorTruncationFunction =
 
             try
 
-                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
+                let _FloorTruncation = Helper.toModelReference<FloorTruncation> floortruncation "FloorTruncation"  
                 let builder (current : ICell) = ((FloorTruncationModel.Cast _FloorTruncation.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -238,7 +238,7 @@ module FloorTruncationFunction =
 
             try
 
-                let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
+                let _FloorTruncation = Helper.toModelReference<FloorTruncation> floortruncation "FloorTruncation"  
                 let _value = Helper.toCell<double> value "value" 
                 let builder (current : ICell) = ((FloorTruncationModel.Cast _FloorTruncation.cell).Round
                                                             _value.cell 

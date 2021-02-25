@@ -87,7 +87,7 @@ module MonomialFctFunction =
 
             try
 
-                let _MonomialFct = Helper.toCell<MonomialFct> monomialfct "MonomialFct"  
+                let _MonomialFct = Helper.toModelReference<MonomialFct> monomialfct "MonomialFct"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((MonomialFctModel.Cast _MonomialFct.cell).Value
                                                             _x.cell 

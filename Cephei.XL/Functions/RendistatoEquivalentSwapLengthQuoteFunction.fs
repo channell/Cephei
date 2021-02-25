@@ -48,7 +48,7 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
 
             try
 
-                let _RendistatoEquivalentSwapLengthQuote = Helper.toCell<RendistatoEquivalentSwapLengthQuote> rendistatoequivalentswaplengthquote "RendistatoEquivalentSwapLengthQuote"  
+                let _RendistatoEquivalentSwapLengthQuote = Helper.toModelReference<RendistatoEquivalentSwapLengthQuote> rendistatoequivalentswaplengthquote "RendistatoEquivalentSwapLengthQuote"  
                 let builder (current : ICell) = ((RendistatoEquivalentSwapLengthQuoteModel.Cast _RendistatoEquivalentSwapLengthQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -121,7 +121,7 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
 
             try
 
-                let _RendistatoEquivalentSwapLengthQuote = Helper.toCell<RendistatoEquivalentSwapLengthQuote> rendistatoequivalentswaplengthquote "RendistatoEquivalentSwapLengthQuote"  
+                let _RendistatoEquivalentSwapLengthQuote = Helper.toModelReference<RendistatoEquivalentSwapLengthQuote> rendistatoequivalentswaplengthquote "RendistatoEquivalentSwapLengthQuote"  
                 let builder (current : ICell) = ((RendistatoEquivalentSwapLengthQuoteModel.Cast _RendistatoEquivalentSwapLengthQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -159,7 +159,7 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
 
             try
 
-                let _RendistatoEquivalentSwapLengthQuote = Helper.toCell<RendistatoEquivalentSwapLengthQuote> rendistatoequivalentswaplengthquote "RendistatoEquivalentSwapLengthQuote"  
+                let _RendistatoEquivalentSwapLengthQuote = Helper.toModelReference<RendistatoEquivalentSwapLengthQuote> rendistatoequivalentswaplengthquote "RendistatoEquivalentSwapLengthQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((RendistatoEquivalentSwapLengthQuoteModel.Cast _RendistatoEquivalentSwapLengthQuote.cell).RegisterWith
                                                             _handler.cell 
@@ -201,7 +201,7 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
 
             try
 
-                let _RendistatoEquivalentSwapLengthQuote = Helper.toCell<RendistatoEquivalentSwapLengthQuote> rendistatoequivalentswaplengthquote "RendistatoEquivalentSwapLengthQuote"  
+                let _RendistatoEquivalentSwapLengthQuote = Helper.toModelReference<RendistatoEquivalentSwapLengthQuote> rendistatoequivalentswaplengthquote "RendistatoEquivalentSwapLengthQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((RendistatoEquivalentSwapLengthQuoteModel.Cast _RendistatoEquivalentSwapLengthQuote.cell).UnregisterWith
                                                             _handler.cell 

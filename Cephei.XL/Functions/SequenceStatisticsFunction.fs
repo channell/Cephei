@@ -88,7 +88,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Add
                                                             _Begin.cell 
@@ -134,7 +134,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
                 let _weight = Helper.toCell<double> weight "weight" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Add1
@@ -181,7 +181,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).AverageShortfall
                                                             _x.cell 
@@ -221,7 +221,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Correlation
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -257,7 +257,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Covariance
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -293,7 +293,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).DownsideDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -329,7 +329,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).DownsideVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -365,7 +365,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -403,7 +403,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).ExpectedShortfall
                                                             _x.cell 
@@ -445,7 +445,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).GaussianAverageShortfall
                                                             _x.cell 
@@ -487,7 +487,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).GaussianExpectedShortfall
                                                             _x.cell 
@@ -529,7 +529,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).GaussianPercentile
                                                             _x.cell 
@@ -571,7 +571,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).GaussianPotentialUpside
                                                             _x.cell 
@@ -613,7 +613,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).GaussianShortfall
                                                             _x.cell 
@@ -655,7 +655,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).GaussianValueAtRisk
                                                             _x.cell 
@@ -695,7 +695,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -731,7 +731,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Max
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -767,7 +767,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Mean
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -803,7 +803,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Min
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -841,7 +841,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Percentile
                                                             _x.cell 
@@ -883,7 +883,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).PotentialUpside
                                                             _x.cell 
@@ -925,7 +925,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Regret
                                                             _x.cell 
@@ -967,7 +967,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _dimension = Helper.toCell<int> dimension "dimension" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Reset
                                                             _dimension.cell 
@@ -1007,7 +1007,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1043,7 +1043,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).SemiDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1079,7 +1079,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).SemiVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1117,7 +1117,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Shortfall
                                                             _x.cell 
@@ -1157,7 +1157,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1193,7 +1193,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1229,7 +1229,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1267,7 +1267,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).ValueAtRisk
                                                             _x.cell 
@@ -1307,7 +1307,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).Variance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1343,7 +1343,7 @@ module SequenceStatisticsFunction =
 
             try
 
-                let _SequenceStatistics = Helper.toCell<SequenceStatistics> sequencestatistics "SequenceStatistics"  
+                let _SequenceStatistics = Helper.toModelReference<SequenceStatistics> sequencestatistics "SequenceStatistics"  
                 let builder (current : ICell) = ((SequenceStatisticsModel.Cast _SequenceStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

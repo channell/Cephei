@@ -85,7 +85,7 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
+                let _BulletPricipalLeg = Helper.toModelReference<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -123,7 +123,7 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
+                let _BulletPricipalLeg = Helper.toModelReference<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithNotionals
                                                             _notionals.cell 
@@ -165,7 +165,7 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
+                let _BulletPricipalLeg = Helper.toModelReference<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
                 let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithNotionals1
                                                             _notional.cell 
@@ -207,7 +207,7 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
+                let _BulletPricipalLeg = Helper.toModelReference<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
@@ -249,7 +249,7 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
+                let _BulletPricipalLeg = Helper.toModelReference<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
@@ -291,7 +291,7 @@ module BulletPricipalLegFunction =
 
             try
 
-                let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
+                let _BulletPricipalLeg = Helper.toModelReference<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _sign = Helper.toCell<int> sign "sign" 
                 let builder (current : ICell) = ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithSign
                                                             _sign.cell 

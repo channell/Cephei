@@ -53,7 +53,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _value = Helper.toCell<double> value "value" 
                 let _weight = Helper.toCell<double> weight "weight" 
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Add
@@ -100,7 +100,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _value = Helper.toCell<double> value "value" 
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Add1
                                                             _value.cell 
@@ -142,7 +142,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _list = Helper.toCell<Generic.List<double>> list "list" 
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).AddSequence
                                                             _list.cell 
@@ -186,7 +186,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).AddSequence1
@@ -230,7 +230,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).DownsideDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -266,7 +266,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).DownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -302,7 +302,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -342,7 +342,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
                 let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).ExpectationValue
@@ -417,7 +417,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -453,7 +453,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -489,7 +489,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -525,7 +525,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -563,7 +563,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _percent = Helper.toCell<double> percent "percent" 
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Percentile
                                                             _percent.cell 
@@ -603,7 +603,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Reset
                                                        ) :> ICell
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
@@ -639,7 +639,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -675,7 +675,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -711,7 +711,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -747,7 +747,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -783,7 +783,7 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
+                let _IncrementalStatistics = Helper.toModelReference<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let builder (current : ICell) = ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -103,7 +103,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -141,7 +141,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _cap = Helper.toNullabletList<double> cap "cap" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithCaps1
                                                             _cap.cell 
@@ -183,7 +183,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _cap = Helper.toCell<double> cap "cap" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithCaps
                                                             _cap.cell 
@@ -231,7 +231,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _period = Helper.toCell<Period> period "period" 
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
@@ -285,7 +285,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _fixedRates = Helper.toCell<Generic.List<double>> fixedRates "fixedRates" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFixedRates1
                                                             _fixedRates.cell 
@@ -327,7 +327,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFixedRates
                                                             _fixedRate.cell 
@@ -369,7 +369,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFixingDays
                                                             _fixingDays.cell 
@@ -411,7 +411,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFixingDays1
                                                             _fixingDays.cell 
@@ -453,7 +453,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _floors = Helper.toNullabletList<double> floors "floors" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFloors
                                                             _floors.cell 
@@ -495,7 +495,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _floors = Helper.toCell<double> floors "floors" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithFloors1
                                                             _floors.cell 
@@ -537,7 +537,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _interp = Helper.toCell<InterpolationType> interp "interp" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithObservationInterpolation
                                                             _interp.cell 
@@ -579,7 +579,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithPaymentCalendar
                                                             _cal.cell 
@@ -621,7 +621,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
@@ -663,7 +663,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithSpreads
                                                             _spreads.cell 
@@ -705,7 +705,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithSpreads1
                                                             _spread.cell 
@@ -747,7 +747,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithSubtractInflationNominal
                                                             _growthOnly.cell 
@@ -789,7 +789,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithNotionals1
                                                             _notionals.cell 
@@ -831,7 +831,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithNotionals
                                                             _notional.cell 
@@ -873,7 +873,7 @@ module CPILegFunction =
 
             try
 
-                let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
+                let _CPILeg = Helper.toModelReference<CPILeg> cpileg "CPILeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder (current : ICell) = ((CPILegModel.Cast _CPILeg.cell).WithPaymentAdjustment
                                                             _convention.cell 

@@ -48,7 +48,7 @@ module GapPayoffFunction =
 
             try
 
-                let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
+                let _GapPayoff = Helper.toModelReference<GapPayoff> gappayoff "GapPayoff"  
                 let builder (current : ICell) = ((GapPayoffModel.Cast _GapPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -133,7 +133,7 @@ module GapPayoffFunction =
 
             try
 
-                let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
+                let _GapPayoff = Helper.toModelReference<GapPayoff> gappayoff "GapPayoff"  
                 let builder (current : ICell) = ((GapPayoffModel.Cast _GapPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -169,7 +169,7 @@ module GapPayoffFunction =
 
             try
 
-                let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
+                let _GapPayoff = Helper.toModelReference<GapPayoff> gappayoff "GapPayoff"  
                 let builder (current : ICell) = ((GapPayoffModel.Cast _GapPayoff.cell).SecondStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -207,7 +207,7 @@ module GapPayoffFunction =
 
             try
 
-                let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
+                let _GapPayoff = Helper.toModelReference<GapPayoff> gappayoff "GapPayoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((GapPayoffModel.Cast _GapPayoff.cell).Value
                                                             _price.cell 
@@ -247,7 +247,7 @@ module GapPayoffFunction =
 
             try
 
-                let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
+                let _GapPayoff = Helper.toModelReference<GapPayoff> gappayoff "GapPayoff"  
                 let builder (current : ICell) = ((GapPayoffModel.Cast _GapPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -283,7 +283,7 @@ module GapPayoffFunction =
 
             try
 
-                let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
+                let _GapPayoff = Helper.toModelReference<GapPayoff> gappayoff "GapPayoff"  
                 let builder (current : ICell) = ((GapPayoffModel.Cast _GapPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -321,7 +321,7 @@ module GapPayoffFunction =
 
             try
 
-                let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
+                let _GapPayoff = Helper.toModelReference<GapPayoff> gappayoff "GapPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((GapPayoffModel.Cast _GapPayoff.cell).Accept
                                                             _v.cell 

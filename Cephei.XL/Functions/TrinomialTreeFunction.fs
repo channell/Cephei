@@ -54,7 +54,7 @@ module TrinomialTreeFunction =
 
             try
 
-                let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
+                let _TrinomialTree = Helper.toModelReference<TrinomialTree> trinomialtree "TrinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -104,7 +104,7 @@ module TrinomialTreeFunction =
 
             try
 
-                let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
+                let _TrinomialTree = Helper.toModelReference<TrinomialTree> trinomialtree "TrinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((TrinomialTreeModel.Cast _TrinomialTree.cell).Dx
                                                             _i.cell 
@@ -150,7 +150,7 @@ module TrinomialTreeFunction =
 
             try
 
-                let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
+                let _TrinomialTree = Helper.toModelReference<TrinomialTree> trinomialtree "TrinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -200,7 +200,7 @@ module TrinomialTreeFunction =
 
             try
 
-                let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
+                let _TrinomialTree = Helper.toModelReference<TrinomialTree> trinomialtree "TrinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((TrinomialTreeModel.Cast _TrinomialTree.cell).Size
                                                             _i.cell 
@@ -240,7 +240,7 @@ module TrinomialTreeFunction =
 
             try
 
-                let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
+                let _TrinomialTree = Helper.toModelReference<TrinomialTree> trinomialtree "TrinomialTree"  
                 let builder (current : ICell) = ((TrinomialTreeModel.Cast _TrinomialTree.cell).TimeGrid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
@@ -372,7 +372,7 @@ module TrinomialTreeFunction =
 
             try
 
-                let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
+                let _TrinomialTree = Helper.toModelReference<TrinomialTree> trinomialtree "TrinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((TrinomialTreeModel.Cast _TrinomialTree.cell).Underlying
@@ -416,7 +416,7 @@ module TrinomialTreeFunction =
 
             try
 
-                let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
+                let _TrinomialTree = Helper.toModelReference<TrinomialTree> trinomialtree "TrinomialTree"  
                 let builder (current : ICell) = ((TrinomialTreeModel.Cast _TrinomialTree.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

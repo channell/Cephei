@@ -48,7 +48,7 @@ module RandomSequenceGeneratorFunction =
 
             try
 
-                let _RandomSequenceGenerator = Helper.toCell<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
+                let _RandomSequenceGenerator = Helper.toModelReference<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
                 let builder (current : ICell) = ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -88,7 +88,7 @@ module RandomSequenceGeneratorFunction =
 
             try
 
-                let _RandomSequenceGenerator = Helper.toCell<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
+                let _RandomSequenceGenerator = Helper.toModelReference<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
                 let builder (current : ICell) = ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).Factory
@@ -132,7 +132,7 @@ module RandomSequenceGeneratorFunction =
 
             try
 
-                let _RandomSequenceGenerator = Helper.toCell<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
+                let _RandomSequenceGenerator = Helper.toModelReference<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
                 let builder (current : ICell) = ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -168,7 +168,7 @@ module RandomSequenceGeneratorFunction =
 
             try
 
-                let _RandomSequenceGenerator = Helper.toCell<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
+                let _RandomSequenceGenerator = Helper.toModelReference<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
                 let builder (current : ICell) = ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).NextInt32Sequence
                                                        ) :> ICell
                 let format (i : Generic.List<ulong>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -204,7 +204,7 @@ module RandomSequenceGeneratorFunction =
 
             try
 
-                let _RandomSequenceGenerator = Helper.toCell<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
+                let _RandomSequenceGenerator = Helper.toModelReference<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
                 let builder (current : ICell) = ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

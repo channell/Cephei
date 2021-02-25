@@ -111,7 +111,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
@@ -163,7 +163,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Dynamics
                                                        ) :> ICell
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
@@ -201,7 +201,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _grid = Helper.toCell<TimeGrid> grid "grid" 
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Tree
                                                             _grid.cell 
@@ -243,7 +243,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Discount
                                                             _t.cell 
@@ -289,7 +289,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _rate = Helper.toCell<double> rate "rate" 
@@ -343,7 +343,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _factors = Helper.toCell<Vector> factors "factors" 
@@ -403,7 +403,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
@@ -463,7 +463,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -499,7 +499,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -535,7 +535,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
@@ -571,7 +571,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -609,7 +609,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).RegisterWith
                                                             _handler.cell 
@@ -651,7 +651,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).SetParams
                                                             _parameters.cell 
@@ -693,7 +693,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).UnregisterWith
                                                             _handler.cell 
@@ -733,7 +733,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Update
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
@@ -773,7 +773,7 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
+                let _CoxIngersollRoss = Helper.toModelReference<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let builder (current : ICell) = ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Value

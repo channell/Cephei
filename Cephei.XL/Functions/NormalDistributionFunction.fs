@@ -50,7 +50,7 @@ module NormalDistributionFunction =
 
             try
 
-                let _NormalDistribution = Helper.toCell<NormalDistribution> normaldistribution "NormalDistribution"  
+                let _NormalDistribution = Helper.toModelReference<NormalDistribution> normaldistribution "NormalDistribution"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((NormalDistributionModel.Cast _NormalDistribution.cell).Derivative
                                                             _x.cell 
@@ -166,7 +166,7 @@ module NormalDistributionFunction =
 
             try
 
-                let _NormalDistribution = Helper.toCell<NormalDistribution> normaldistribution "NormalDistribution"  
+                let _NormalDistribution = Helper.toModelReference<NormalDistribution> normaldistribution "NormalDistribution"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((NormalDistributionModel.Cast _NormalDistribution.cell).Value
                                                             _x.cell 

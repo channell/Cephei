@@ -50,7 +50,7 @@ module NeumannBCFunction =
 
             try
 
-                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
+                let _NeumannBC = Helper.toModelReference<NeumannBC> neumannbc "NeumannBC"  
                 let _u = Helper.toCell<Vector> u "u" 
                 let builder (current : ICell) = ((NeumannBCModel.Cast _NeumannBC.cell).ApplyAfterApplying
                                                             _u.cell 
@@ -92,7 +92,7 @@ module NeumannBCFunction =
 
             try
 
-                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
+                let _NeumannBC = Helper.toModelReference<NeumannBC> neumannbc "NeumannBC"  
                 let _v = Helper.toCell<Vector> v "v" 
                 let builder (current : ICell) = ((NeumannBCModel.Cast _NeumannBC.cell).ApplyAfterSolving
                                                             _v.cell 
@@ -134,7 +134,7 @@ module NeumannBCFunction =
 
             try
 
-                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
+                let _NeumannBC = Helper.toModelReference<NeumannBC> neumannbc "NeumannBC"  
                 let _o = Helper.toCell<IOperator> o "o" 
                 let builder (current : ICell) = ((NeumannBCModel.Cast _NeumannBC.cell).ApplyBeforeApplying
                                                             _o.cell 
@@ -178,7 +178,7 @@ module NeumannBCFunction =
 
             try
 
-                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
+                let _NeumannBC = Helper.toModelReference<NeumannBC> neumannbc "NeumannBC"  
                 let _o = Helper.toCell<IOperator> o "o" 
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder (current : ICell) = ((NeumannBCModel.Cast _NeumannBC.cell).ApplyBeforeSolving
@@ -267,7 +267,7 @@ module NeumannBCFunction =
 
             try
 
-                let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
+                let _NeumannBC = Helper.toModelReference<NeumannBC> neumannbc "NeumannBC"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((NeumannBCModel.Cast _NeumannBC.cell).SetTime
                                                             _t.cell 

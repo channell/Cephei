@@ -125,7 +125,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
             try
 
-                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
+                let _FdHullWhiteSwaptionEngine = Helper.toModelReference<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let builder (current : ICell) = ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).SetModel
                                                             _model.cell 
@@ -167,7 +167,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
             try
 
-                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
+                let _FdHullWhiteSwaptionEngine = Helper.toModelReference<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -207,7 +207,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
             try
 
-                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
+                let _FdHullWhiteSwaptionEngine = Helper.toModelReference<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let builder (current : ICell) = ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -245,7 +245,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
             try
 
-                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
+                let _FdHullWhiteSwaptionEngine = Helper.toModelReference<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -285,7 +285,7 @@ module FdHullWhiteSwaptionEngineFunction =
 
             try
 
-                let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
+                let _FdHullWhiteSwaptionEngine = Helper.toModelReference<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let builder (current : ICell) = ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj

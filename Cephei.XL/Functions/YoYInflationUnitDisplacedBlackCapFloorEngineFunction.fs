@@ -98,7 +98,7 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationUnitDisplacedBlackCapFloorEngine = Helper.toCell<YoYInflationUnitDisplacedBlackCapFloorEngine> yoyinflationunitdisplacedblackcapfloorengine "YoYInflationUnitDisplacedBlackCapFloorEngine"  
+                let _YoYInflationUnitDisplacedBlackCapFloorEngine = Helper.toModelReference<YoYInflationUnitDisplacedBlackCapFloorEngine> yoyinflationunitdisplacedblackcapfloorengine "YoYInflationUnitDisplacedBlackCapFloorEngine"  
                 let builder (current : ICell) = ((YoYInflationUnitDisplacedBlackCapFloorEngineModel.Cast _YoYInflationUnitDisplacedBlackCapFloorEngine.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
@@ -136,7 +136,7 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationUnitDisplacedBlackCapFloorEngine = Helper.toCell<YoYInflationUnitDisplacedBlackCapFloorEngine> yoyinflationunitdisplacedblackcapfloorengine "YoYInflationUnitDisplacedBlackCapFloorEngine"  
+                let _YoYInflationUnitDisplacedBlackCapFloorEngine = Helper.toModelReference<YoYInflationUnitDisplacedBlackCapFloorEngine> yoyinflationunitdisplacedblackcapfloorengine "YoYInflationUnitDisplacedBlackCapFloorEngine"  
                 let _vol = Helper.toHandle<YoYOptionletVolatilitySurface> vol "vol" 
                 let builder (current : ICell) = ((YoYInflationUnitDisplacedBlackCapFloorEngineModel.Cast _YoYInflationUnitDisplacedBlackCapFloorEngine.cell).SetVolatility
                                                             _vol.cell 
@@ -176,7 +176,7 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationUnitDisplacedBlackCapFloorEngine = Helper.toCell<YoYInflationUnitDisplacedBlackCapFloorEngine> yoyinflationunitdisplacedblackcapfloorengine "YoYInflationUnitDisplacedBlackCapFloorEngine"  
+                let _YoYInflationUnitDisplacedBlackCapFloorEngine = Helper.toModelReference<YoYInflationUnitDisplacedBlackCapFloorEngine> yoyinflationunitdisplacedblackcapfloorengine "YoYInflationUnitDisplacedBlackCapFloorEngine"  
                 let builder (current : ICell) = ((YoYInflationUnitDisplacedBlackCapFloorEngineModel.Cast _YoYInflationUnitDisplacedBlackCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l

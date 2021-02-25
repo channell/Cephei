@@ -52,7 +52,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Diffusion
@@ -100,7 +100,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Drift
@@ -309,7 +309,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -349,7 +349,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Apply1
@@ -397,7 +397,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dx = Helper.toCell<double> dx "dx" 
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Apply
@@ -449,7 +449,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -509,7 +509,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -567,7 +567,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -621,7 +621,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -669,7 +669,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -705,7 +705,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -747,7 +747,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -801,7 +801,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -855,7 +855,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -909,7 +909,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -963,7 +963,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -1011,7 +1011,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1049,7 +1049,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).RegisterWith
                                                             _handler.cell 
@@ -1091,7 +1091,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Time
                                                             _d.cell 
@@ -1133,7 +1133,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).UnregisterWith
                                                             _handler.cell 
@@ -1173,7 +1173,7 @@ module SquareRootProcessFunction =
 
             try
 
-                let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
+                let _SquareRootProcess = Helper.toModelReference<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let builder (current : ICell) = ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Update
                                                        ) :> ICell
                 let format (o : SquareRootProcess) (l:string) = o.ToString() :> obj

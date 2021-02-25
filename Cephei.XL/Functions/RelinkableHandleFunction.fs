@@ -50,7 +50,7 @@ module RelinkableHandleFunction =
 
             try
 
-                let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
+                let _RelinkableHandle = Helper.toModelReference<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _h = Helper.toCell<'T> h "h" 
                 let builder (current : ICell) = ((RelinkableHandleModel.Cast _RelinkableHandle.cell).LinkTo
                                                             _h.cell 
@@ -94,7 +94,7 @@ module RelinkableHandleFunction =
 
             try
 
-                let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
+                let _RelinkableHandle = Helper.toModelReference<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _h = Helper.toCell<'T> h "h" 
                 let _registerAsObserver = Helper.toCell<bool> registerAsObserver "registerAsObserver" 
                 let builder (current : ICell) = ((RelinkableHandleModel.Cast _RelinkableHandle.cell).LinkTo1
@@ -249,7 +249,7 @@ module RelinkableHandleFunction =
 
             try
 
-                let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
+                let _RelinkableHandle = Helper.toModelReference<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let builder (current : ICell) = ((RelinkableHandleModel.Cast _RelinkableHandle.cell).CurrentLink
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
@@ -285,7 +285,7 @@ module RelinkableHandleFunction =
 
             try
 
-                let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
+                let _RelinkableHandle = Helper.toModelReference<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let builder (current : ICell) = ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -323,7 +323,7 @@ module RelinkableHandleFunction =
 
             try
 
-                let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
+                let _RelinkableHandle = Helper.toModelReference<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Equals
                                                             _o.cell 
@@ -363,7 +363,7 @@ module RelinkableHandleFunction =
 
             try
 
-                let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
+                let _RelinkableHandle = Helper.toModelReference<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let builder (current : ICell) = ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Link
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
@@ -401,7 +401,7 @@ module RelinkableHandleFunction =
 
             try
 
-                let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
+                let _RelinkableHandle = Helper.toModelReference<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((RelinkableHandleModel.Cast _RelinkableHandle.cell).RegisterWith
                                                             _handler.cell 
@@ -443,7 +443,7 @@ module RelinkableHandleFunction =
 
             try
 
-                let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
+                let _RelinkableHandle = Helper.toModelReference<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((RelinkableHandleModel.Cast _RelinkableHandle.cell).UnregisterWith
                                                             _handler.cell 

@@ -128,7 +128,7 @@ module IsdaCdsEngineFunction =
 
             try
 
-                let _IsdaCdsEngine = Helper.toCell<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine"  
+                let _IsdaCdsEngine = Helper.toModelReference<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine"  
                 let builder (current : ICell) = ((IsdaCdsEngineModel.Cast _IsdaCdsEngine.cell).IsdaCreditCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<DefaultProbabilityTermStructure>>) l
@@ -164,7 +164,7 @@ module IsdaCdsEngineFunction =
 
             try
 
-                let _IsdaCdsEngine = Helper.toCell<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine"  
+                let _IsdaCdsEngine = Helper.toModelReference<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine"  
                 let builder (current : ICell) = ((IsdaCdsEngineModel.Cast _IsdaCdsEngine.cell).IsdaRateCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l

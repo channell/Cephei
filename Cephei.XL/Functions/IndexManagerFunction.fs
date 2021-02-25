@@ -48,7 +48,7 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _IndexManager = Helper.toModelReference<IndexManager> indexmanager "IndexManager"  
                 let builder (current : ICell) = ((IndexManagerModel.Cast _IndexManager.cell).ClearHistories
                                                        ) :> ICell
                 let format (o : IndexManager) (l:string) = o.ToString() :> obj
@@ -86,7 +86,7 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _IndexManager = Helper.toModelReference<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
                 let builder (current : ICell) = ((IndexManagerModel.Cast _IndexManager.cell).ClearHistory
                                                             _name.cell 
@@ -128,7 +128,7 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _IndexManager = Helper.toModelReference<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
                 let builder (current : ICell) = ((IndexManagerModel.Cast _IndexManager.cell).GetHistory
                                                             _name.cell 
@@ -170,7 +170,7 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _IndexManager = Helper.toModelReference<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
                 let builder (current : ICell) = ((IndexManagerModel.Cast _IndexManager.cell).HasHistory
                                                             _name.cell 
@@ -210,7 +210,7 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _IndexManager = Helper.toModelReference<IndexManager> indexmanager "IndexManager"  
                 let builder (current : ICell) = ((IndexManagerModel.Cast _IndexManager.cell).Histories
                                                        ) :> ICell
                 let format (i : Generic.List<string>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -248,7 +248,7 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _IndexManager = Helper.toModelReference<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
                 let builder (current : ICell) = ((IndexManagerModel.Cast _IndexManager.cell).Notifier
                                                             _name.cell 
@@ -292,7 +292,7 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _IndexManager = Helper.toModelReference<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
                 let _history = Helper.toCell<TimeSeries<Nullable<double>>> history "history" 
                 let builder (current : ICell) = ((IndexManagerModel.Cast _IndexManager.cell).SetHistory
@@ -340,7 +340,7 @@ module IndexManagerFunction =
 
             try
 
-                let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
+                let _IndexManager = Helper.toModelReference<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
                 let _history = Helper.toCell<TimeSeries<Nullable<double>>> history "history" 
                 let builder (current : ICell) = ((IndexManagerModel.Cast _IndexManager.cell).TryGetHistory

@@ -106,7 +106,7 @@ module BiCGStabFunction =
 
             try
 
-                let _BiCGStab = Helper.toCell<BiCGStab> bicgstab "BiCGStab"  
+                let _BiCGStab = Helper.toModelReference<BiCGStab> bicgstab "BiCGStab"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((BiCGStabModel.Cast _BiCGStab.cell).MatrixMult
                                                             _x.cell 
@@ -151,7 +151,7 @@ module BiCGStabFunction =
 
             try
 
-                let _BiCGStab = Helper.toCell<BiCGStab> bicgstab "BiCGStab"  
+                let _BiCGStab = Helper.toModelReference<BiCGStab> bicgstab "BiCGStab"  
                 let _b = Helper.toCell<Vector> b "b" 
                 let _x0 = Helper.toDefault<Vector> x0 "x0" null
                 let builder (current : ICell) = ((BiCGStabModel.Cast _BiCGStab.cell).Solve

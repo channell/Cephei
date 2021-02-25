@@ -97,7 +97,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
+                let _CompositeQuote = Helper.toModelReference<CompositeQuote> compositequote "CompositeQuote"  
                 let builder (current : ICell) = ((CompositeQuoteModel.Cast _CompositeQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -133,7 +133,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
+                let _CompositeQuote = Helper.toModelReference<CompositeQuote> compositequote "CompositeQuote"  
                 let builder (current : ICell) = ((CompositeQuoteModel.Cast _CompositeQuote.cell).Update
                                                        ) :> ICell
                 let format (o : CompositeQuote) (l:string) = o.ToString() :> obj
@@ -169,7 +169,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
+                let _CompositeQuote = Helper.toModelReference<CompositeQuote> compositequote "CompositeQuote"  
                 let builder (current : ICell) = ((CompositeQuoteModel.Cast _CompositeQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -205,7 +205,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
+                let _CompositeQuote = Helper.toModelReference<CompositeQuote> compositequote "CompositeQuote"  
                 let builder (current : ICell) = ((CompositeQuoteModel.Cast _CompositeQuote.cell).Value1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -241,7 +241,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
+                let _CompositeQuote = Helper.toModelReference<CompositeQuote> compositequote "CompositeQuote"  
                 let builder (current : ICell) = ((CompositeQuoteModel.Cast _CompositeQuote.cell).Value2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -279,7 +279,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
+                let _CompositeQuote = Helper.toModelReference<CompositeQuote> compositequote "CompositeQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CompositeQuoteModel.Cast _CompositeQuote.cell).RegisterWith
                                                             _handler.cell 
@@ -321,7 +321,7 @@ module CompositeQuoteFunction =
 
             try
 
-                let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
+                let _CompositeQuote = Helper.toModelReference<CompositeQuote> compositequote "CompositeQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CompositeQuoteModel.Cast _CompositeQuote.cell).UnregisterWith
                                                             _handler.cell 

@@ -137,7 +137,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).Derivative
@@ -181,7 +181,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -221,7 +221,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).Primitive
@@ -269,7 +269,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).SecondDerivative
@@ -313,7 +313,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : LogCubicInterpolation) (l:string) = o.ToString() :> obj
@@ -353,7 +353,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).Value1
@@ -399,7 +399,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).Value
                                                             _x.cell 
@@ -439,7 +439,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -475,7 +475,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -511,7 +511,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -549,7 +549,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
@@ -591,7 +591,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
@@ -631,7 +631,7 @@ module LogCubicInterpolationFunction =
 
             try
 
-                let _LogCubicInterpolation = Helper.toCell<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
+                let _LogCubicInterpolation = Helper.toModelReference<LogCubicInterpolation> logcubicinterpolation "LogCubicInterpolation"  
                 let builder (current : ICell) = ((LogCubicInterpolationModel.Cast _LogCubicInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

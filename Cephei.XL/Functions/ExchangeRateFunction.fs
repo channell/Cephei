@@ -50,7 +50,7 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
+                let _ExchangeRate = Helper.toModelReference<ExchangeRate> exchangerate "ExchangeRate"  
                 let _amount = Helper.toCell<Money> amount "amount" 
                 let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).Exchange
                                                             _amount.cell 
@@ -170,7 +170,7 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
+                let _ExchangeRate = Helper.toModelReference<ExchangeRate> exchangerate "ExchangeRate"  
                 let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).HasValue
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -206,7 +206,7 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
+                let _ExchangeRate = Helper.toModelReference<ExchangeRate> exchangerate "ExchangeRate"  
                 let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -242,7 +242,7 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
+                let _ExchangeRate = Helper.toModelReference<ExchangeRate> exchangerate "ExchangeRate"  
                 let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).Source
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -278,7 +278,7 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
+                let _ExchangeRate = Helper.toModelReference<ExchangeRate> exchangerate "ExchangeRate"  
                 let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).Target
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -314,7 +314,7 @@ module ExchangeRateFunction =
 
             try
 
-                let _ExchangeRate = Helper.toCell<ExchangeRate> exchangerate "ExchangeRate"  
+                let _ExchangeRate = Helper.toModelReference<ExchangeRate> exchangerate "ExchangeRate"  
                 let builder (current : ICell) = ((ExchangeRateModel.Cast _ExchangeRate.cell).Type
                                                        ) :> ICell
                 let format (o : ExchangeRate.Type) (l:string) = o.ToString() :> obj

@@ -52,7 +52,7 @@ module FdmLogBasketInnerValueFunction =
 
             try
 
-                let _FdmLogBasketInnerValue = Helper.toCell<FdmLogBasketInnerValue> fdmlogbasketinnervalue "FdmLogBasketInnerValue"  
+                let _FdmLogBasketInnerValue = Helper.toModelReference<FdmLogBasketInnerValue> fdmlogbasketinnervalue "FdmLogBasketInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((FdmLogBasketInnerValueModel.Cast _FdmLogBasketInnerValue.cell).AvgInnerValue
@@ -143,7 +143,7 @@ module FdmLogBasketInnerValueFunction =
 
             try
 
-                let _FdmLogBasketInnerValue = Helper.toCell<FdmLogBasketInnerValue> fdmlogbasketinnervalue "FdmLogBasketInnerValue"  
+                let _FdmLogBasketInnerValue = Helper.toModelReference<FdmLogBasketInnerValue> fdmlogbasketinnervalue "FdmLogBasketInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((FdmLogBasketInnerValueModel.Cast _FdmLogBasketInnerValue.cell).InnerValue

@@ -97,7 +97,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -133,7 +133,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -169,7 +169,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -209,7 +209,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).Derivative
@@ -253,7 +253,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -293,7 +293,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).Primitive
@@ -341,7 +341,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).SecondDerivative
@@ -385,7 +385,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : AkimaCubicInterpolation) (l:string) = o.ToString() :> obj
@@ -425,7 +425,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).Value1
@@ -471,7 +471,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).Value
                                                             _x.cell 
@@ -511,7 +511,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -547,7 +547,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -583,7 +583,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -621,7 +621,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
@@ -663,7 +663,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
@@ -703,7 +703,7 @@ module AkimaCubicInterpolationFunction =
 
             try
 
-                let _AkimaCubicInterpolation = Helper.toCell<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
+                let _AkimaCubicInterpolation = Helper.toModelReference<AkimaCubicInterpolation> akimacubicinterpolation "AkimaCubicInterpolation"  
                 let builder (current : ICell) = ((AkimaCubicInterpolationModel.Cast _AkimaCubicInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

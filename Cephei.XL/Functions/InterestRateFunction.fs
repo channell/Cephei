@@ -50,7 +50,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((InterestRateModel.Cast _InterestRate.cell).CompoundFactor
                                                             _t.cell 
@@ -98,7 +98,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refStart = Helper.toDefault<Date> refStart "refStart" null
@@ -150,7 +150,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let builder (current : ICell) = ((InterestRateModel.Cast _InterestRate.cell).Compounding
                                                        ) :> ICell
                 let format (o : Compounding) (l:string) = o.ToString() :> obj
@@ -186,7 +186,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let builder (current : ICell) = ((InterestRateModel.Cast _InterestRate.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -230,7 +230,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refStart = Helper.toDefault<Date> refStart "refStart" null
@@ -284,7 +284,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((InterestRateModel.Cast _InterestRate.cell).DiscountFactor1
                                                             _t.cell 
@@ -338,7 +338,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let _resultDC = Helper.toCell<DayCounter> resultDC "resultDC" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -408,7 +408,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _t = Helper.toCell<double> t "t" 
@@ -456,7 +456,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let builder (current : ICell) = ((InterestRateModel.Cast _InterestRate.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -578,7 +578,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let builder (current : ICell) = ((InterestRateModel.Cast _InterestRate.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -614,7 +614,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let builder (current : ICell) = ((InterestRateModel.Cast _InterestRate.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -650,7 +650,7 @@ module InterestRateFunction =
 
             try
 
-                let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
+                let _InterestRate = Helper.toModelReference<InterestRate> interestrate "InterestRate"  
                 let builder (current : ICell) = ((InterestRateModel.Cast _InterestRate.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

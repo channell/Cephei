@@ -52,7 +52,7 @@ module FdmAmericanStepConditionFunction =
 
             try
 
-                let _FdmAmericanStepCondition = Helper.toCell<FdmAmericanStepCondition> fdmamericanstepcondition "FdmAmericanStepCondition"  
+                let _FdmAmericanStepCondition = Helper.toModelReference<FdmAmericanStepCondition> fdmamericanstepcondition "FdmAmericanStepCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((FdmAmericanStepConditionModel.Cast _FdmAmericanStepCondition.cell).ApplyTo

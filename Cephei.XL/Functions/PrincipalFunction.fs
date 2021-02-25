@@ -48,7 +48,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -84,7 +84,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -120,7 +120,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -192,7 +192,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -228,7 +228,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -374,7 +374,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).RefPeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -410,7 +410,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).RefPeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -448,7 +448,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let _amount = Helper.toCell<double> amount "amount" 
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).SetAmount
                                                             _amount.cell 
@@ -490,7 +490,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).CompareTo
                                                             _cf.cell 
@@ -532,7 +532,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).Equals
                                                             _cf.cell 
@@ -572,7 +572,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -612,7 +612,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).HasOccurred
@@ -658,7 +658,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -700,7 +700,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).Accept
                                                             _v.cell 
@@ -742,7 +742,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).RegisterWith
                                                             _handler.cell 
@@ -784,7 +784,7 @@ module PrincipalFunction =
 
             try
 
-                let _Principal = Helper.toCell<Principal> principal "Principal"  
+                let _Principal = Helper.toModelReference<Principal> principal "Principal"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((PrincipalModel.Cast _Principal.cell).UnregisterWith
                                                             _handler.cell 

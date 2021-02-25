@@ -89,7 +89,7 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
+                let _Business252 = Helper.toModelReference<Business252> business252 "Business252"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder (current : ICell) = ((Business252Model.Cast _Business252.cell).DayCount
@@ -133,7 +133,7 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
+                let _Business252 = Helper.toModelReference<Business252> business252 "Business252"  
                 let builder (current : ICell) = ((Business252Model.Cast _Business252.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -177,7 +177,7 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
+                let _Business252 = Helper.toModelReference<Business252> business252 "Business252"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _d3 = Helper.toCell<Date> d3 "d3" 
@@ -229,7 +229,7 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
+                let _Business252 = Helper.toModelReference<Business252> business252 "Business252"  
                 let builder (current : ICell) = ((Business252Model.Cast _Business252.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -265,7 +265,7 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
+                let _Business252 = Helper.toModelReference<Business252> business252 "Business252"  
                 let builder (current : ICell) = ((Business252Model.Cast _Business252.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -303,7 +303,7 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
+                let _Business252 = Helper.toModelReference<Business252> business252 "Business252"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((Business252Model.Cast _Business252.cell).Equals
                                                             _o.cell 
@@ -343,7 +343,7 @@ module Business252Function =
 
             try
 
-                let _Business252 = Helper.toCell<Business252> business252 "Business252"  
+                let _Business252 = Helper.toModelReference<Business252> business252 "Business252"  
                 let builder (current : ICell) = ((Business252Model.Cast _Business252.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj

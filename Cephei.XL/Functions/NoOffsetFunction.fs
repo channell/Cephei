@@ -50,7 +50,7 @@ module NoOffsetFunction =
 
             try
 
-                let _NoOffset = Helper.toCell<NoOffset> nooffset "NoOffset"  
+                let _NoOffset = Helper.toModelReference<NoOffset> nooffset "NoOffset"  
                 let _eventDate = Helper.toCell<Date> eventDate "eventDate" 
                 let builder (current : ICell) = ((NoOffsetModel.Cast _NoOffset.cell).PaymentDate
                                                             _eventDate.cell 

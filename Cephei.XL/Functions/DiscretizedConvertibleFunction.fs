@@ -50,7 +50,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).AddCoupon
                                                             _i.cell 
@@ -90,7 +90,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).AdjustedGrid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -130,7 +130,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _i = Helper.toCell<int> i "i" 
                 let _convertible = Helper.toCell<bool> convertible "convertible" 
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).ApplyCallability
@@ -174,7 +174,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).ApplyConvertibility
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
@@ -210,7 +210,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).ConversionProbability
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -295,7 +295,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).DividendValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -331,7 +331,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -367,7 +367,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Process
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GeneralizedBlackScholesProcess>) l
@@ -405,7 +405,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _size = Helper.toCell<int> size "size" 
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Reset
                                                             _size.cell 
@@ -445,7 +445,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).SpreadAdjustedRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -481,7 +481,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
@@ -521,7 +521,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Initialize
@@ -565,7 +565,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
@@ -603,7 +603,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PartialRollback
                                                             _To.cell 
@@ -643,7 +643,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
@@ -679,7 +679,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
@@ -715,7 +715,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -753,7 +753,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Rollback
                                                             _To.cell 
@@ -795,7 +795,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).SetTime
                                                             _t.cell 
@@ -837,7 +837,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _v = Helper.toCell<Vector> v "v" 
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).SetValues
                                                             _v.cell 
@@ -877,7 +877,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -913,7 +913,7 @@ module DiscretizedConvertibleFunction =
 
             try
 
-                let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
+                let _DiscretizedConvertible = Helper.toModelReference<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let builder (current : ICell) = ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

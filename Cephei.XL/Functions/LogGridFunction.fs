@@ -50,7 +50,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).LogGrid
                                                             _i.cell 
@@ -127,7 +127,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).LogGridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -165,7 +165,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).Dx
                                                             _i.cell 
@@ -205,7 +205,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).DxArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -243,7 +243,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).Dxm
                                                             _i.cell 
@@ -283,7 +283,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).DxmArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -321,7 +321,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).Dxp
                                                             _i.cell 
@@ -361,7 +361,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).DxpArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -399,7 +399,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).Grid
                                                             _i.cell 
@@ -439,7 +439,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).GridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -475,7 +475,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -513,7 +513,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).TransformedGrid
                                                             _i.cell 
@@ -553,7 +553,7 @@ module LogGridFunction =
 
             try
 
-                let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
+                let _LogGrid = Helper.toModelReference<LogGrid> loggrid "LogGrid"  
                 let builder (current : ICell) = ((LogGridModel.Cast _LogGrid.cell).TransformedGridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

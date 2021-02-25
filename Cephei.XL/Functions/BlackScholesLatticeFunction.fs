@@ -109,7 +109,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -161,7 +161,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).Discount
@@ -205,7 +205,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).Dt
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -247,7 +247,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -295,7 +295,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).RiskFreeRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -333,7 +333,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).Size
                                                             _i.cell 
@@ -379,7 +379,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _i = Helper.toCell<int> i "i" 
                 let _values = Helper.toCell<Vector> values "values" 
                 let _newValues = Helper.toCell<Vector> newValues "newValues" 
@@ -431,7 +431,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).Underlying
@@ -477,7 +477,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).Grid
                                                             _t.cell 
@@ -521,7 +521,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).Initialize
@@ -569,7 +569,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).PartialRollback
@@ -615,7 +615,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).PresentValue
                                                             _asset.cell 
@@ -659,7 +659,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).Rollback
@@ -705,7 +705,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).StatePrices
                                                             _i.cell 
@@ -745,7 +745,7 @@ module BlackScholesLatticeFunction =
 
             try
 
-                let _BlackScholesLattice = Helper.toCell<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
+                let _BlackScholesLattice = Helper.toModelReference<BlackScholesLattice> blackscholeslattice "BlackScholesLattice"  
                 let builder (current : ICell) = ((BlackScholesLatticeModel.Cast _BlackScholesLattice.cell).TimeGrid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l

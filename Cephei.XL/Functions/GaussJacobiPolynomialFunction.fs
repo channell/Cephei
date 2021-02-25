@@ -50,7 +50,7 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
+                let _GaussJacobiPolynomial = Helper.toModelReference<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Alpha
                                                             _i.cell 
@@ -92,7 +92,7 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
+                let _GaussJacobiPolynomial = Helper.toModelReference<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Beta
                                                             _i.cell 
@@ -175,7 +175,7 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
+                let _GaussJacobiPolynomial = Helper.toModelReference<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let builder (current : ICell) = ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -213,7 +213,7 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
+                let _GaussJacobiPolynomial = Helper.toModelReference<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).W
                                                             _x.cell 
@@ -257,7 +257,7 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
+                let _GaussJacobiPolynomial = Helper.toModelReference<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Value
@@ -305,7 +305,7 @@ module GaussJacobiPolynomialFunction =
 
             try
 
-                let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
+                let _GaussJacobiPolynomial = Helper.toModelReference<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).WeightedValue

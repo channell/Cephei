@@ -268,7 +268,7 @@ module BlackConstantVolFunction =
 
             try
 
-                let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
+                let _BlackConstantVol = Helper.toModelReference<BlackConstantVol> blackconstantvol "BlackConstantVol"  
                 let builder (current : ICell) = ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -304,7 +304,7 @@ module BlackConstantVolFunction =
 
             try
 
-                let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
+                let _BlackConstantVol = Helper.toModelReference<BlackConstantVol> blackconstantvol "BlackConstantVol"  
                 let builder (current : ICell) = ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -340,7 +340,7 @@ module BlackConstantVolFunction =
 
             try
 
-                let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
+                let _BlackConstantVol = Helper.toModelReference<BlackConstantVol> blackconstantvol "BlackConstantVol"  
                 let builder (current : ICell) = ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

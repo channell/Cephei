@@ -107,7 +107,7 @@ module ForwardVanillaEngineFunction =
 
             try
 
-                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
+                let _ForwardVanillaEngine = Helper.toModelReference<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder (current : ICell) = ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).GetOriginalEngine
                                                             _Process.cell 
@@ -150,7 +150,7 @@ module ForwardVanillaEngineFunction =
 
             try
 
-                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
+                let _ForwardVanillaEngine = Helper.toModelReference<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -190,7 +190,7 @@ module ForwardVanillaEngineFunction =
 
             try
 
-                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
+                let _ForwardVanillaEngine = Helper.toModelReference<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
                 let builder (current : ICell) = ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : ForwardVanillaEngine) (l:string) = o.ToString() :> obj
@@ -228,7 +228,7 @@ module ForwardVanillaEngineFunction =
 
             try
 
-                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
+                let _ForwardVanillaEngine = Helper.toModelReference<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -268,7 +268,7 @@ module ForwardVanillaEngineFunction =
 
             try
 
-                let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
+                let _ForwardVanillaEngine = Helper.toModelReference<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
                 let builder (current : ICell) = ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).Update
                                                        ) :> ICell
                 let format (o : ForwardVanillaEngine) (l:string) = o.ToString() :> obj

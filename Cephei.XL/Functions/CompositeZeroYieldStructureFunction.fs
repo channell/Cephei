@@ -48,7 +48,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
+                let _CompositeZeroYieldStructure = Helper.toModelReference<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -145,7 +145,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
+                let _CompositeZeroYieldStructure = Helper.toModelReference<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -181,7 +181,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
+                let _CompositeZeroYieldStructure = Helper.toModelReference<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -217,7 +217,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
+                let _CompositeZeroYieldStructure = Helper.toModelReference<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -253,7 +253,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
+                let _CompositeZeroYieldStructure = Helper.toModelReference<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -289,7 +289,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
+                let _CompositeZeroYieldStructure = Helper.toModelReference<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -325,7 +325,7 @@ module CompositeZeroYieldStructureFunction =
 
             try
 
-                let _CompositeZeroYieldStructure = Helper.toCell<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
+                let _CompositeZeroYieldStructure = Helper.toModelReference<CompositeZeroYieldStructure> compositezeroyieldstructure "CompositeZeroYieldStructure"  
                 let builder (current : ICell) = ((CompositeZeroYieldStructureModel.Cast _CompositeZeroYieldStructure.cell).Update
                                                        ) :> ICell
                 let format (o : CompositeZeroYieldStructure) (l:string) = o.ToString() :> obj

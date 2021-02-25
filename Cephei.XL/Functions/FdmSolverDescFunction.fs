@@ -48,7 +48,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
+                let _FdmSolverDesc = Helper.toModelReference<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder (current : ICell) = ((FdmSolverDescModel.Cast _FdmSolverDesc.cell).BcSet
                                                        ) :> ICell
                 let format (o : FdmBoundaryConditionSet) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
+                let _FdmSolverDesc = Helper.toModelReference<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder (current : ICell) = ((FdmSolverDescModel.Cast _FdmSolverDesc.cell).Calculator
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmInnerValueCalculator>) l
@@ -120,7 +120,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
+                let _FdmSolverDesc = Helper.toModelReference<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder (current : ICell) = ((FdmSolverDescModel.Cast _FdmSolverDesc.cell).Condition
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmStepConditionComposite>) l
@@ -156,7 +156,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
+                let _FdmSolverDesc = Helper.toModelReference<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder (current : ICell) = ((FdmSolverDescModel.Cast _FdmSolverDesc.cell).DampingSteps
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
+                let _FdmSolverDesc = Helper.toModelReference<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder (current : ICell) = ((FdmSolverDescModel.Cast _FdmSolverDesc.cell).Maturity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
+                let _FdmSolverDesc = Helper.toModelReference<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder (current : ICell) = ((FdmSolverDescModel.Cast _FdmSolverDesc.cell).Mesher
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmMesher>) l
@@ -264,7 +264,7 @@ module FdmSolverDescFunction =
 
             try
 
-                let _FdmSolverDesc = Helper.toCell<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
+                let _FdmSolverDesc = Helper.toModelReference<FdmSolverDesc> fdmsolverdesc "FdmSolverDesc"  
                 let builder (current : ICell) = ((FdmSolverDescModel.Cast _FdmSolverDesc.cell).TimeSteps
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

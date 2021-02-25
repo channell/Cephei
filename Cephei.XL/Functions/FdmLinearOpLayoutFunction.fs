@@ -48,7 +48,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _FdmLinearOpLayout = Helper.toModelReference<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let builder (current : ICell) = ((FdmLinearOpLayoutModel.Cast _FdmLinearOpLayout.cell).Begin
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpIterator>) l
@@ -84,7 +84,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _FdmLinearOpLayout = Helper.toModelReference<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let builder (current : ICell) = ((FdmLinearOpLayoutModel.Cast _FdmLinearOpLayout.cell).Dim
                                                        ) :> ICell
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _FdmLinearOpLayout = Helper.toModelReference<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let builder (current : ICell) = ((FdmLinearOpLayoutModel.Cast _FdmLinearOpLayout.cell).End
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpIterator>) l
@@ -195,7 +195,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _FdmLinearOpLayout = Helper.toModelReference<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let _coordinates = Helper.toCell<Generic.List<int>> coordinates "coordinates" 
                 let builder (current : ICell) = ((FdmLinearOpLayoutModel.Cast _FdmLinearOpLayout.cell).Index
                                                             _coordinates.cell 
@@ -241,7 +241,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _FdmLinearOpLayout = Helper.toModelReference<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let _iterator = Helper.toCell<FdmLinearOpIterator> iterator "iterator" 
                 let _i = Helper.toCell<int> i "i" 
                 let _offset = Helper.toCell<int> offset "offset" 
@@ -299,7 +299,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _FdmLinearOpLayout = Helper.toModelReference<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let _iterator = Helper.toCell<FdmLinearOpIterator> iterator "iterator" 
                 let _i1 = Helper.toCell<int> i1 "i1" 
                 let _offset1 = Helper.toCell<int> offset1 "offset1" 
@@ -361,7 +361,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _FdmLinearOpLayout = Helper.toModelReference<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let _iterator = Helper.toCell<FdmLinearOpIterator> iterator "iterator" 
                 let _i = Helper.toCell<int> i "i" 
                 let _offset = Helper.toCell<int> offset "offset" 
@@ -409,7 +409,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _FdmLinearOpLayout = Helper.toModelReference<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let builder (current : ICell) = ((FdmLinearOpLayoutModel.Cast _FdmLinearOpLayout.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -445,7 +445,7 @@ module FdmLinearOpLayoutFunction =
 
             try
 
-                let _FdmLinearOpLayout = Helper.toCell<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
+                let _FdmLinearOpLayout = Helper.toModelReference<FdmLinearOpLayout> fdmlinearoplayout "FdmLinearOpLayout"  
                 let builder (current : ICell) = ((FdmLinearOpLayoutModel.Cast _FdmLinearOpLayout.cell).Spacing
                                                        ) :> ICell
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

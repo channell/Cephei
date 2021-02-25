@@ -93,7 +93,7 @@ module FastFourierTransformFunction =
 
             try
 
-                let _FastFourierTransform = Helper.toCell<FastFourierTransform> fastfouriertransform "FastFourierTransform"  
+                let _FastFourierTransform = Helper.toModelReference<FastFourierTransform> fastfouriertransform "FastFourierTransform"  
                 let _input = Helper.toCell<Generic.List<System.Numerics.Complex>> input "input" 
                 let _inputBeg = Helper.toCell<int> inputBeg "inputBeg" 
                 let _inputEnd = Helper.toCell<int> inputEnd "inputEnd" 
@@ -145,7 +145,7 @@ module FastFourierTransformFunction =
 
             try
 
-                let _FastFourierTransform = Helper.toCell<FastFourierTransform> fastfouriertransform "FastFourierTransform"  
+                let _FastFourierTransform = Helper.toModelReference<FastFourierTransform> fastfouriertransform "FastFourierTransform"  
                 let builder (current : ICell) = ((FastFourierTransformModel.Cast _FastFourierTransform.cell).Output_size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -189,7 +189,7 @@ module FastFourierTransformFunction =
 
             try
 
-                let _FastFourierTransform = Helper.toCell<FastFourierTransform> fastfouriertransform "FastFourierTransform"  
+                let _FastFourierTransform = Helper.toModelReference<FastFourierTransform> fastfouriertransform "FastFourierTransform"  
                 let _input = Helper.toCell<Generic.List<System.Numerics.Complex>> input "input" 
                 let _inputBeg = Helper.toCell<int> inputBeg "inputBeg" 
                 let _inputEnd = Helper.toCell<int> inputEnd "inputEnd" 

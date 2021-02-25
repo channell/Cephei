@@ -83,7 +83,7 @@ module OneDayCounterFunction =
 
             try
 
-                let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
+                let _OneDayCounter = Helper.toModelReference<OneDayCounter> onedaycounter "OneDayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).DayCount
@@ -127,7 +127,7 @@ module OneDayCounterFunction =
 
             try
 
-                let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
+                let _OneDayCounter = Helper.toModelReference<OneDayCounter> onedaycounter "OneDayCounter"  
                 let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -163,7 +163,7 @@ module OneDayCounterFunction =
 
             try
 
-                let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
+                let _OneDayCounter = Helper.toModelReference<OneDayCounter> onedaycounter "OneDayCounter"  
                 let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -201,7 +201,7 @@ module OneDayCounterFunction =
 
             try
 
-                let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
+                let _OneDayCounter = Helper.toModelReference<OneDayCounter> onedaycounter "OneDayCounter"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).Equals
                                                             _o.cell 
@@ -241,7 +241,7 @@ module OneDayCounterFunction =
 
             try
 
-                let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
+                let _OneDayCounter = Helper.toModelReference<OneDayCounter> onedaycounter "OneDayCounter"  
                 let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -277,7 +277,7 @@ module OneDayCounterFunction =
 
             try
 
-                let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
+                let _OneDayCounter = Helper.toModelReference<OneDayCounter> onedaycounter "OneDayCounter"  
                 let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -321,7 +321,7 @@ module OneDayCounterFunction =
 
             try
 
-                let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
+                let _OneDayCounter = Helper.toModelReference<OneDayCounter> onedaycounter "OneDayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
@@ -377,7 +377,7 @@ module OneDayCounterFunction =
 
             try
 
-                let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
+                let _OneDayCounter = Helper.toModelReference<OneDayCounter> onedaycounter "OneDayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder (current : ICell) = ((OneDayCounterModel.Cast _OneDayCounter.cell).YearFraction1

@@ -50,7 +50,7 @@ module GaussianKernelFunction =
 
             try
 
-                let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
+                let _GaussianKernel = Helper.toModelReference<GaussianKernel> gaussiankernel "GaussianKernel"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussianKernelModel.Cast _GaussianKernel.cell).Derivative
                                                             _x.cell 
@@ -135,7 +135,7 @@ module GaussianKernelFunction =
 
             try
 
-                let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
+                let _GaussianKernel = Helper.toModelReference<GaussianKernel> gaussiankernel "GaussianKernel"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussianKernelModel.Cast _GaussianKernel.cell).Primitive
                                                             _x.cell 
@@ -177,7 +177,7 @@ module GaussianKernelFunction =
 
             try
 
-                let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
+                let _GaussianKernel = Helper.toModelReference<GaussianKernel> gaussiankernel "GaussianKernel"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussianKernelModel.Cast _GaussianKernel.cell).Value
                                                             _x.cell 

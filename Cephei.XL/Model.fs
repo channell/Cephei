@@ -1,4 +1,19 @@
-﻿namespace Cephei.XL
+﻿(*
+Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
+
+This file is part of Cephei.QL Project https://github.com/channell/Cephei
+
+Cephei.QL is open source software based on QLNet  you can redistribute it and/or modify it
+under the terms of the Cephei.QL license.  You should have received a
+copy of the license along with this program; if not, license is
+available at <https://github.com/channell/Cephei/LICENSE>.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the license for more details.
+*)
+
+namespace Cephei.XL
 
 //open ExcelDna.Integration
 //open ExcelDna.Integration.Rtd
@@ -239,30 +254,35 @@ module public  Model =
         let modelName = if name.ToLower().EndsWith("model") then name else name + "Model"
         let tieredCells (model : Model) =
 
+            let mem = new Dictionary<string, int>()
 
-            let rec depth (cell : ICell) = 
-                let rec modelDepth (model : Model) =
-                    model.ModelDependants
-                    |> Seq.filter (fun i -> i :? Model) 
-                    |> Seq.map (fun i -> i :?> Model) 
-                    |> Seq.filter (fun i -> not (i.Mnemonic = null))
-                    |> Seq.filter (fun i -> _state.Value.Source.ContainsKey i.Mnemonic)
-                    |> Seq.fold (fun a y -> a + 1 + modelDepth y) 0
-                let isSubject = 
-                    not (cell.Parent = null) &&
-                    cell.Parent :? ICellModel &&
-                    (cell.Parent :?> ICellModel).Subject = cell
-                cell.Dependants 
-                |> Seq.filter (fun i -> i :? ICell) 
-                |> Seq.map (fun i -> i :?> ICell) 
-                |> Seq.filter (fun i -> not (i = cell.Parent || i.Mnemonic = null))
-                |> Seq.filter (fun i -> _state.Value.Source.ContainsKey i.Mnemonic)
-                |> Seq.fold (fun a y -> a + 1 + depth y) 0
-                |> (fun t ->  if isSubject then (modelDepth (cell.Parent :?> Model)) + t else t) 
+            let uppack (c : ICell) = 
+                c.Dependants
+                |> Seq.filter (fun i -> i :? ICell)
+                |> Seq.map (fun i -> i :?> ICell)
+                |> Seq.filter (fun i -> not (i.Mnemonic = null || i.Mnemonic = c.Mnemonic))
+                |> Seq.map (fun i -> i.Mnemonic)
+                |> Seq.filter (fun i -> _state.Value.Source.ContainsKey(i))
+                |> Seq.toArray
 
+            let mapper = 
+                model
+                |> Seq.map (fun i -> (i.Key,uppack i.Value))
+                |> Map.ofSeq
+
+            let memorise f s (sl : string array) =
+                match (mem.ContainsKey(s)) with
+                | true  -> mem.[s]
+                | _     -> let r = f s sl
+                           mem.[s] <- r
+                           r
+
+            let rec depth (s : string) (sl : string array) =
+                sl 
+                |> Array.fold (fun a y -> a + 1 + memorise depth y mapper.[y]) 0
+                
             model 
-            |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Subject) else i) 
-            |> Seq.map (fun i -> (i.Value, depth i.Value)) 
+            |> Seq.map (fun i -> (i.Value, memorise depth i.Key mapper.[i.Key]))
             |> Seq.toArray 
             |> Array.sortBy (fun (c,d) -> (d,c.Mnemonic))
             |> Array.rev

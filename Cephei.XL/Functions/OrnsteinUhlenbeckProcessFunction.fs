@@ -52,7 +52,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _UnnamedParameter2 = Helper.toCell<double> UnnamedParameter2 "UnnamedParameter2" 
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Diffusion
@@ -100,7 +100,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Drift
@@ -150,7 +150,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -198,7 +198,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Level
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -289,7 +289,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Speed
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -331,7 +331,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -385,7 +385,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _UnnamedParameter2 = Helper.toCell<double> UnnamedParameter2 "UnnamedParameter2" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -433,7 +433,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Volatility
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -469,7 +469,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -509,7 +509,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Apply1
@@ -557,7 +557,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dx = Helper.toCell<double> dx "dx" 
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Apply
@@ -609,7 +609,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0"
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -669,7 +669,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -721,7 +721,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -757,7 +757,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -799,7 +799,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -847,7 +847,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -885,7 +885,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).RegisterWith
                                                             _handler.cell 
@@ -927,7 +927,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Time
                                                             _d.cell 
@@ -969,7 +969,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).UnregisterWith
                                                             _handler.cell 
@@ -1009,7 +1009,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
             try
 
-                let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
+                let _OrnsteinUhlenbeckProcess = Helper.toModelReference<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let builder (current : ICell) = ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Update
                                                        ) :> ICell
                 let format (o : OrnsteinUhlenbeckProcess) (l:string) = o.ToString() :> obj

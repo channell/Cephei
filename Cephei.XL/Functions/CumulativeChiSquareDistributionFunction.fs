@@ -87,7 +87,7 @@ module CumulativeChiSquareDistributionFunction =
 
             try
 
-                let _CumulativeChiSquareDistribution = Helper.toCell<CumulativeChiSquareDistribution> cumulativechisquaredistribution "CumulativeChiSquareDistribution"  
+                let _CumulativeChiSquareDistribution = Helper.toModelReference<CumulativeChiSquareDistribution> cumulativechisquaredistribution "CumulativeChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((CumulativeChiSquareDistributionModel.Cast _CumulativeChiSquareDistribution.cell).Value
                                                             _x.cell 

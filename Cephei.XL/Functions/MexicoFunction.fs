@@ -93,7 +93,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -131,7 +131,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).AddHoliday
                                                             _d.cell 
@@ -175,7 +175,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).Adjust
@@ -229,7 +229,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -293,7 +293,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -353,7 +353,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -405,7 +405,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -441,7 +441,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -479,7 +479,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).EndOfMonth
                                                             _d.cell 
@@ -521,7 +521,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).Equals
                                                             _o.cell 
@@ -563,7 +563,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).IsBusinessDay
                                                             _d.cell 
@@ -605,7 +605,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).IsEndOfMonth
                                                             _d.cell 
@@ -647,7 +647,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).IsHoliday
                                                             _d.cell 
@@ -689,7 +689,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).IsWeekend
                                                             _w.cell 
@@ -731,7 +731,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -767,7 +767,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -805,7 +805,7 @@ module MexicoFunction =
 
             try
 
-                let _Mexico = Helper.toCell<Mexico> mexico "Mexico"  
+                let _Mexico = Helper.toModelReference<Mexico> mexico "Mexico"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((MexicoModel.Cast _Mexico.cell).RemoveHoliday
                                                             _d.cell 

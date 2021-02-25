@@ -97,7 +97,7 @@ module BiCGStabResultFunction =
 
             try
 
-                let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
+                let _BiCGStabResult = Helper.toModelReference<BiCGStabResult> bicgstabresult "BiCGStabResult"  
                 let builder (current : ICell) = ((BiCGStabResultModel.Cast _BiCGStabResult.cell).Error
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -133,7 +133,7 @@ module BiCGStabResultFunction =
 
             try
 
-                let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
+                let _BiCGStabResult = Helper.toModelReference<BiCGStabResult> bicgstabresult "BiCGStabResult"  
                 let builder (current : ICell) = ((BiCGStabResultModel.Cast _BiCGStabResult.cell).Iterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -169,7 +169,7 @@ module BiCGStabResultFunction =
 
             try
 
-                let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
+                let _BiCGStabResult = Helper.toModelReference<BiCGStabResult> bicgstabresult "BiCGStabResult"  
                 let builder (current : ICell) = ((BiCGStabResultModel.Cast _BiCGStabResult.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

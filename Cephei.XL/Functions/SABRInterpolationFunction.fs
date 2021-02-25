@@ -48,7 +48,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Alpha
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Beta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
@@ -156,7 +156,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Expiry
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Forward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).InterpolationWeights
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -264,7 +264,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).MaxError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -300,7 +300,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Nu
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -336,7 +336,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -372,7 +372,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).RmsError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -575,7 +575,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Derivative
@@ -619,7 +619,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -659,7 +659,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Primitive
@@ -707,7 +707,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).SecondDerivative
@@ -751,7 +751,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : SABRInterpolation) (l:string) = o.ToString() :> obj
@@ -791,7 +791,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Value1
@@ -837,7 +837,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Value
                                                             _x.cell 
@@ -877,7 +877,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -913,7 +913,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -949,7 +949,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -987,7 +987,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
@@ -1029,7 +1029,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
@@ -1069,7 +1069,7 @@ module SABRInterpolationFunction =
 
             try
 
-                let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
+                let _SABRInterpolation = Helper.toModelReference<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let builder (current : ICell) = ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

@@ -50,7 +50,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Add
                                                             _Begin.cell 
@@ -94,7 +94,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
                 let _weight = Helper.toCell<double> weight "weight" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Add1
@@ -140,7 +140,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).AverageShortfall
                                                             _x.cell 
@@ -180,7 +180,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Correlation
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -216,7 +216,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Covariance
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -252,7 +252,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).DownsideDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -288,7 +288,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).DownsideVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -324,7 +324,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -362,7 +362,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).ExpectedShortfall
                                                             _x.cell 
@@ -404,7 +404,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianAverageShortfall
                                                             _x.cell 
@@ -446,7 +446,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianExpectedShortfall
                                                             _x.cell 
@@ -488,7 +488,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianPercentile
                                                             _x.cell 
@@ -530,7 +530,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianPotentialUpside
                                                             _x.cell 
@@ -572,7 +572,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianShortfall
                                                             _x.cell 
@@ -614,7 +614,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianValueAtRisk
                                                             _x.cell 
@@ -691,7 +691,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -727,7 +727,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Max
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -763,7 +763,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Mean
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -799,7 +799,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Min
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -837,7 +837,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Percentile
                                                             _x.cell 
@@ -879,7 +879,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).PotentialUpside
                                                             _x.cell 
@@ -921,7 +921,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Regret
                                                             _x.cell 
@@ -963,7 +963,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _dimension = Helper.toCell<int> dimension "dimension" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Reset
                                                             _dimension.cell 
@@ -1003,7 +1003,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1039,7 +1039,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).SemiDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1075,7 +1075,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).SemiVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1113,7 +1113,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Shortfall
                                                             _x.cell 
@@ -1153,7 +1153,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1189,7 +1189,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1225,7 +1225,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1263,7 +1263,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).ValueAtRisk
                                                             _x.cell 
@@ -1303,7 +1303,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Variance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1339,7 +1339,7 @@ module GenericSequenceStatisticsFunction =
 
             try
 
-                let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
+                let _GenericSequenceStatistics = Helper.toModelReference<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let builder (current : ICell) = ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

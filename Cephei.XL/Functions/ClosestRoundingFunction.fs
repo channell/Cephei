@@ -128,7 +128,7 @@ module ClosestRoundingFunction =
 
             try
 
-                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
+                let _ClosestRounding = Helper.toModelReference<ClosestRounding> closestrounding "ClosestRounding"  
                 let builder (current : ICell) = ((ClosestRoundingModel.Cast _ClosestRounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module ClosestRoundingFunction =
 
             try
 
-                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
+                let _ClosestRounding = Helper.toModelReference<ClosestRounding> closestrounding "ClosestRounding"  
                 let builder (current : ICell) = ((ClosestRoundingModel.Cast _ClosestRounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -200,7 +200,7 @@ module ClosestRoundingFunction =
 
             try
 
-                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
+                let _ClosestRounding = Helper.toModelReference<ClosestRounding> closestrounding "ClosestRounding"  
                 let builder (current : ICell) = ((ClosestRoundingModel.Cast _ClosestRounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -238,7 +238,7 @@ module ClosestRoundingFunction =
 
             try
 
-                let _ClosestRounding = Helper.toCell<ClosestRounding> closestrounding "ClosestRounding"  
+                let _ClosestRounding = Helper.toModelReference<ClosestRounding> closestrounding "ClosestRounding"  
                 let _value = Helper.toCell<double> value "value" 
                 let builder (current : ICell) = ((ClosestRoundingModel.Cast _ClosestRounding.cell).Round
                                                             _value.cell 

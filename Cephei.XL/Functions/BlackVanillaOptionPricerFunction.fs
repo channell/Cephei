@@ -115,7 +115,7 @@ module BlackVanillaOptionPricerFunction =
 
             try
 
-                let _BlackVanillaOptionPricer = Helper.toCell<BlackVanillaOptionPricer> blackvanillaoptionpricer "BlackVanillaOptionPricer"  
+                let _BlackVanillaOptionPricer = Helper.toModelReference<BlackVanillaOptionPricer> blackvanillaoptionpricer "BlackVanillaOptionPricer"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _optionType = Helper.toCell<Option.Type> optionType "optionType" 
                 let _deflator = Helper.toCell<double> deflator "deflator" 

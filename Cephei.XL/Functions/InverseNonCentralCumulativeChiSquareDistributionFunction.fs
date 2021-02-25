@@ -105,7 +105,7 @@ module InverseNonCentralCumulativeChiSquareDistributionFunction =
 
             try
 
-                let _InverseNonCentralCumulativeChiSquareDistribution = Helper.toCell<InverseNonCentralCumulativeChiSquareDistribution> inversenoncentralcumulativechisquaredistribution "InverseNonCentralCumulativeChiSquareDistribution"  
+                let _InverseNonCentralCumulativeChiSquareDistribution = Helper.toModelReference<InverseNonCentralCumulativeChiSquareDistribution> inversenoncentralcumulativechisquaredistribution "InverseNonCentralCumulativeChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((InverseNonCentralCumulativeChiSquareDistributionModel.Cast _InverseNonCentralCumulativeChiSquareDistribution.cell).Value
                                                             _x.cell 

@@ -48,7 +48,7 @@ module simple_eventFunction =
 
             try
 
-                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
+                let _simple_event = Helper.toModelReference<simple_event> simple_event "simple_event"  
                 let builder (current : ICell) = ((simple_eventModel.Cast _simple_event.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -129,7 +129,7 @@ module simple_eventFunction =
 
             try
 
-                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
+                let _simple_event = Helper.toModelReference<simple_event> simple_event "simple_event"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((simple_eventModel.Cast _simple_event.cell).Accept
                                                             _v.cell 
@@ -173,7 +173,7 @@ module simple_eventFunction =
 
             try
 
-                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
+                let _simple_event = Helper.toModelReference<simple_event> simple_event "simple_event"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((simple_eventModel.Cast _simple_event.cell).HasOccurred
@@ -219,7 +219,7 @@ module simple_eventFunction =
 
             try
 
-                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
+                let _simple_event = Helper.toModelReference<simple_event> simple_event "simple_event"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((simple_eventModel.Cast _simple_event.cell).RegisterWith
                                                             _handler.cell 
@@ -261,7 +261,7 @@ module simple_eventFunction =
 
             try
 
-                let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
+                let _simple_event = Helper.toModelReference<simple_event> simple_event "simple_event"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((simple_eventModel.Cast _simple_event.cell).UnregisterWith
                                                             _handler.cell 

@@ -93,7 +93,7 @@ module MoroInverseCumulativeNormalFunction =
 
             try
 
-                let _MoroInverseCumulativeNormal = Helper.toCell<MoroInverseCumulativeNormal> moroinversecumulativenormal "MoroInverseCumulativeNormal"  
+                let _MoroInverseCumulativeNormal = Helper.toModelReference<MoroInverseCumulativeNormal> moroinversecumulativenormal "MoroInverseCumulativeNormal"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((MoroInverseCumulativeNormalModel.Cast _MoroInverseCumulativeNormal.cell).Value
                                                             _x.cell 

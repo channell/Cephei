@@ -118,7 +118,7 @@ module InverseCumulativePoissonFunction =
 
             try
 
-                let _InverseCumulativePoisson = Helper.toCell<InverseCumulativePoisson> inversecumulativepoisson "InverseCumulativePoisson"  
+                let _InverseCumulativePoisson = Helper.toModelReference<InverseCumulativePoisson> inversecumulativepoisson "InverseCumulativePoisson"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((InverseCumulativePoissonModel.Cast _InverseCumulativePoisson.cell).Value
                                                             _x.cell 

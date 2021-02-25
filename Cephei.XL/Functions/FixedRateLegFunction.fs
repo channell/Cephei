@@ -85,7 +85,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let builder (current : ICell) = ((FixedRateLegModel.Cast _FixedRateLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -129,7 +129,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -185,7 +185,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRate = Helper.toCell<double> couponRate "couponRate" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let builder (current : ICell) = ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates6
@@ -235,7 +235,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRate = Helper.toCell<double> couponRate "couponRate" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -291,7 +291,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRate = Helper.toCell<double> couponRate "couponRate" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -349,7 +349,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -399,7 +399,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRate = Helper.toCell<InterestRate> couponRate "couponRate" 
                 let builder (current : ICell) = ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates5
                                                             _couponRate.cell 
@@ -441,7 +441,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRates = Helper.toCell<Generic.List<InterestRate>> couponRates "couponRates" 
                 let builder (current : ICell) = ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates4
                                                             _couponRates.cell 
@@ -485,7 +485,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let builder (current : ICell) = ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates2
@@ -537,7 +537,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _period = Helper.toCell<Period> period "period" 
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
@@ -591,7 +591,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder (current : ICell) = ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithFirstPeriodDayCounter
                                                             _dayCounter.cell 
@@ -633,7 +633,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder (current : ICell) = ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithLastPeriodDayCounter
                                                             _dayCounter.cell 
@@ -675,7 +675,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let builder (current : ICell) = ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithPaymentCalendar
                                                             _cal.cell 
@@ -717,7 +717,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder (current : ICell) = ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithNotionals1
                                                             _notionals.cell 
@@ -759,7 +759,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
                 let builder (current : ICell) = ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithNotionals
                                                             _notional.cell 
@@ -801,7 +801,7 @@ module FixedRateLegFunction =
 
             try
 
-                let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
+                let _FixedRateLeg = Helper.toModelReference<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder (current : ICell) = ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 

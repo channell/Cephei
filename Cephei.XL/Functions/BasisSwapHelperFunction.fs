@@ -140,7 +140,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -178,7 +178,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).SetTermStructure
                                                             _t.cell 
@@ -219,7 +219,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).Swap
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BasisSwap>) l
@@ -255,7 +255,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).Update
                                                        ) :> ICell
                 let format (o : BasisSwapHelper) (l:string) = o.ToString() :> obj
@@ -291,7 +291,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -327,7 +327,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -363,7 +363,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -399,7 +399,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -435,7 +435,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -471,7 +471,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -507,7 +507,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -543,7 +543,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -579,7 +579,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -617,7 +617,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).RegisterWith
                                                             _handler.cell 
@@ -659,7 +659,7 @@ module BasisSwapHelperFunction =
 
             try
 
-                let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
+                let _BasisSwapHelper = Helper.toModelReference<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).UnregisterWith
                                                             _handler.cell 

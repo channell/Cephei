@@ -91,7 +91,7 @@ module CouponConversionFunction =
 
             try
 
-                let _CouponConversion = Helper.toCell<CouponConversion> couponconversion "CouponConversion"  
+                let _CouponConversion = Helper.toModelReference<CouponConversion> couponconversion "CouponConversion"  
                 let builder (current : ICell) = ((CouponConversionModel.Cast _CouponConversion.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -127,7 +127,7 @@ module CouponConversionFunction =
 
             try
 
-                let _CouponConversion = Helper.toCell<CouponConversion> couponconversion "CouponConversion"  
+                let _CouponConversion = Helper.toModelReference<CouponConversion> couponconversion "CouponConversion"  
                 let builder (current : ICell) = ((CouponConversionModel.Cast _CouponConversion.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -163,7 +163,7 @@ module CouponConversionFunction =
 
             try
 
-                let _CouponConversion = Helper.toCell<CouponConversion> couponconversion "CouponConversion"  
+                let _CouponConversion = Helper.toModelReference<CouponConversion> couponconversion "CouponConversion"  
                 let builder (current : ICell) = ((CouponConversionModel.Cast _CouponConversion.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj

@@ -79,7 +79,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -117,7 +117,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).AddHoliday
                                                             _d.cell 
@@ -161,7 +161,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Adjust
@@ -215,7 +215,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -279,7 +279,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -339,7 +339,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -391,7 +391,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -427,7 +427,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -465,7 +465,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).EndOfMonth
                                                             _d.cell 
@@ -507,7 +507,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Equals
                                                             _o.cell 
@@ -549,7 +549,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).IsBusinessDay
                                                             _d.cell 
@@ -591,7 +591,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).IsEndOfMonth
                                                             _d.cell 
@@ -633,7 +633,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).IsHoliday
                                                             _d.cell 
@@ -675,7 +675,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).IsWeekend
                                                             _w.cell 
@@ -717,7 +717,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -753,7 +753,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -791,7 +791,7 @@ module WeekendsOnlyFunction =
 
             try
 
-                let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
+                let _WeekendsOnly = Helper.toModelReference<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).RemoveHoliday
                                                             _d.cell 

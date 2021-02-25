@@ -111,7 +111,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let _discountCurve = Helper.toCell<YieldTermStructure> discountCurve "discountCurve" 
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).AtmRate
                                                             _discountCurve.cell 
@@ -151,7 +151,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).CapRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -187,7 +187,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -223,7 +223,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).FloorRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -259,7 +259,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).GetType
                                                        ) :> ICell
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
@@ -313,7 +313,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _guess = Helper.toCell<double> guess "guess" 
@@ -395,7 +395,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _guess = Helper.toCell<double> guess "guess" 
@@ -451,7 +451,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -487,7 +487,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).LastFloatingRateCoupon
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
@@ -523,7 +523,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -561,7 +561,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).Optionlet
                                                             _i.cell 
@@ -601,7 +601,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -637,7 +637,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -673,7 +673,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -709,7 +709,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -747,7 +747,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).Result
                                                             _tag.cell 
@@ -789,7 +789,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).SetPricingEngine
                                                             _e.cell 
@@ -829,7 +829,7 @@ module CollarFunction =
 
             try
 
-                let _Collar = Helper.toCell<Collar> collar "Collar"  
+                let _Collar = Helper.toModelReference<Collar> collar "Collar"  
                 let builder (current : ICell) = ((CollarModel.Cast _Collar.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

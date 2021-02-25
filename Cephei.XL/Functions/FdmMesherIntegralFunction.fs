@@ -93,7 +93,7 @@ module FdmMesherIntegralFunction =
 
             try
 
-                let _FdmMesherIntegral = Helper.toCell<FdmMesherIntegral> fdmmesherintegral "FdmMesherIntegral"  
+                let _FdmMesherIntegral = Helper.toModelReference<FdmMesherIntegral> fdmmesherintegral "FdmMesherIntegral"  
                 let _f = Helper.toCell<Vector> f "f" 
                 let builder (current : ICell) = ((FdmMesherIntegralModel.Cast _FdmMesherIntegral.cell).Integrate
                                                             _f.cell 

@@ -87,7 +87,7 @@ module ChiSquareDistributionFunction =
 
             try
 
-                let _ChiSquareDistribution = Helper.toCell<ChiSquareDistribution> chisquaredistribution "ChiSquareDistribution"  
+                let _ChiSquareDistribution = Helper.toModelReference<ChiSquareDistribution> chisquaredistribution "ChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((ChiSquareDistributionModel.Cast _ChiSquareDistribution.cell).Value
                                                             _x.cell 

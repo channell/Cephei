@@ -91,7 +91,7 @@ module GaussGegenbauerIntegrationFunction =
 
             try
 
-                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
+                let _GaussGegenbauerIntegration = Helper.toModelReference<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
                 let builder (current : ICell) = ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -129,7 +129,7 @@ module GaussGegenbauerIntegrationFunction =
 
             try
 
-                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
+                let _GaussGegenbauerIntegration = Helper.toModelReference<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let builder (current : ICell) = ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).Value
                                                             _f.cell 
@@ -169,7 +169,7 @@ module GaussGegenbauerIntegrationFunction =
 
             try
 
-                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
+                let _GaussGegenbauerIntegration = Helper.toModelReference<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
                 let builder (current : ICell) = ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -205,7 +205,7 @@ module GaussGegenbauerIntegrationFunction =
 
             try
 
-                let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
+                let _GaussGegenbauerIntegration = Helper.toModelReference<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
                 let builder (current : ICell) = ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

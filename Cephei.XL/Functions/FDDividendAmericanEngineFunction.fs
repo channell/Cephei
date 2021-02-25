@@ -54,7 +54,7 @@ module FDDividendAmericanEngineFunction =
 
             try
 
-                let _FDDividendAmericanEngine = Helper.toCell<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
+                let _FDDividendAmericanEngine = Helper.toModelReference<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
@@ -203,7 +203,7 @@ module FDDividendAmericanEngineFunction =
 
             try
 
-                let _FDDividendAmericanEngine = Helper.toCell<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
+                let _FDDividendAmericanEngine = Helper.toModelReference<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FDDividendAmericanEngineModel.Cast _FDDividendAmericanEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -243,7 +243,7 @@ module FDDividendAmericanEngineFunction =
 
             try
 
-                let _FDDividendAmericanEngine = Helper.toCell<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
+                let _FDDividendAmericanEngine = Helper.toModelReference<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
                 let builder (current : ICell) = ((FDDividendAmericanEngineModel.Cast _FDDividendAmericanEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : FDDividendAmericanEngine) (l:string) = o.ToString() :> obj
@@ -281,7 +281,7 @@ module FDDividendAmericanEngineFunction =
 
             try
 
-                let _FDDividendAmericanEngine = Helper.toCell<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
+                let _FDDividendAmericanEngine = Helper.toModelReference<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FDDividendAmericanEngineModel.Cast _FDDividendAmericanEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -321,7 +321,7 @@ module FDDividendAmericanEngineFunction =
 
             try
 
-                let _FDDividendAmericanEngine = Helper.toCell<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
+                let _FDDividendAmericanEngine = Helper.toModelReference<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
                 let builder (current : ICell) = ((FDDividendAmericanEngineModel.Cast _FDDividendAmericanEngine.cell).Update
                                                        ) :> ICell
                 let format (o : FDDividendAmericanEngine) (l:string) = o.ToString() :> obj
@@ -357,7 +357,7 @@ module FDDividendAmericanEngineFunction =
 
             try
 
-                let _FDDividendAmericanEngine = Helper.toCell<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
+                let _FDDividendAmericanEngine = Helper.toModelReference<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
                 let builder (current : ICell) = ((FDDividendAmericanEngineModel.Cast _FDDividendAmericanEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDDividendAmericanEngine) (l:string) = o.ToString() :> obj
@@ -393,7 +393,7 @@ module FDDividendAmericanEngineFunction =
 
             try
 
-                let _FDDividendAmericanEngine = Helper.toCell<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
+                let _FDDividendAmericanEngine = Helper.toModelReference<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
                 let builder (current : ICell) = ((FDDividendAmericanEngineModel.Cast _FDDividendAmericanEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -429,7 +429,7 @@ module FDDividendAmericanEngineFunction =
 
             try
 
-                let _FDDividendAmericanEngine = Helper.toCell<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
+                let _FDDividendAmericanEngine = Helper.toModelReference<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
                 let builder (current : ICell) = ((FDDividendAmericanEngineModel.Cast _FDDividendAmericanEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -465,7 +465,7 @@ module FDDividendAmericanEngineFunction =
 
             try
 
-                let _FDDividendAmericanEngine = Helper.toCell<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
+                let _FDDividendAmericanEngine = Helper.toModelReference<FDDividendAmericanEngine> fddividendamericanengine "FDDividendAmericanEngine"  
                 let builder (current : ICell) = ((FDDividendAmericanEngineModel.Cast _FDDividendAmericanEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l

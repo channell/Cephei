@@ -132,7 +132,7 @@ module AmericanConditionFunction =
 
             try
 
-                let _AmericanCondition = Helper.toCell<AmericanCondition> americancondition "AmericanCondition"  
+                let _AmericanCondition = Helper.toModelReference<AmericanCondition> americancondition "AmericanCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((AmericanConditionModel.Cast _AmericanCondition.cell).ApplyTo

@@ -58,7 +58,7 @@ module BilinearFunction =
 
             try
 
-                let _Bilinear = Helper.toCell<Bilinear> bilinear "Bilinear"  
+                let _Bilinear = Helper.toModelReference<Bilinear> bilinear "Bilinear"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _xSize = Helper.toCell<int> xSize "xSize" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 

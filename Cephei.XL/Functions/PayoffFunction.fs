@@ -50,7 +50,7 @@ module PayoffFunction =
 
             try
 
-                let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
+                let _Payoff = Helper.toModelReference<Payoff> payoff "Payoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((PayoffModel.Cast _Payoff.cell).Accept
                                                             _v.cell 
@@ -90,7 +90,7 @@ module PayoffFunction =
 
             try
 
-                let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
+                let _Payoff = Helper.toModelReference<Payoff> payoff "Payoff"  
                 let builder (current : ICell) = ((PayoffModel.Cast _Payoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -126,7 +126,7 @@ module PayoffFunction =
 
             try
 
-                let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
+                let _Payoff = Helper.toModelReference<Payoff> payoff "Payoff"  
                 let builder (current : ICell) = ((PayoffModel.Cast _Payoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -164,7 +164,7 @@ module PayoffFunction =
 
             try
 
-                let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
+                let _Payoff = Helper.toModelReference<Payoff> payoff "Payoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((PayoffModel.Cast _Payoff.cell).Value
                                                             _price.cell 

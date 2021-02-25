@@ -88,7 +88,7 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
+                let _FDMultiPeriodEngine = Helper.toModelReference<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
                 let builder (current : ICell) = ((FDMultiPeriodEngineModel.Cast _FDMultiPeriodEngine.cell).SetStepCondition
                                                             _impl.cell 
@@ -128,7 +128,7 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
+                let _FDMultiPeriodEngine = Helper.toModelReference<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
                 let builder (current : ICell) = ((FDMultiPeriodEngineModel.Cast _FDMultiPeriodEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDMultiPeriodEngine) (l:string) = o.ToString() :> obj
@@ -172,7 +172,7 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
+                let _FDMultiPeriodEngine = Helper.toModelReference<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
@@ -224,7 +224,7 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
+                let _FDMultiPeriodEngine = Helper.toModelReference<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
                 let builder (current : ICell) = ((FDMultiPeriodEngineModel.Cast _FDMultiPeriodEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -260,7 +260,7 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
+                let _FDMultiPeriodEngine = Helper.toModelReference<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
                 let builder (current : ICell) = ((FDMultiPeriodEngineModel.Cast _FDMultiPeriodEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -296,7 +296,7 @@ module FDMultiPeriodEngineFunction =
 
             try
 
-                let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
+                let _FDMultiPeriodEngine = Helper.toModelReference<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
                 let builder (current : ICell) = ((FDMultiPeriodEngineModel.Cast _FDMultiPeriodEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l

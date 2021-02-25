@@ -142,7 +142,7 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
+                let _AdditiveEQPBinomialTree = Helper.toModelReference<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
@@ -200,7 +200,7 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
+                let _AdditiveEQPBinomialTree = Helper.toModelReference<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _z = Helper.toCell<int> z "z" 
@@ -252,7 +252,7 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
+                let _AdditiveEQPBinomialTree = Helper.toModelReference<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((AdditiveEQPBinomialTreeModel.Cast _AdditiveEQPBinomialTree.cell).Underlying
@@ -302,7 +302,7 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
+                let _AdditiveEQPBinomialTree = Helper.toModelReference<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -352,7 +352,7 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
+                let _AdditiveEQPBinomialTree = Helper.toModelReference<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((AdditiveEQPBinomialTreeModel.Cast _AdditiveEQPBinomialTree.cell).Size
                                                             _i.cell 
@@ -392,7 +392,7 @@ module AdditiveEQPBinomialTreeFunction =
 
             try
 
-                let _AdditiveEQPBinomialTree = Helper.toCell<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
+                let _AdditiveEQPBinomialTree = Helper.toModelReference<AdditiveEQPBinomialTree> additiveeqpbinomialtree "AdditiveEQPBinomialTree"  
                 let builder (current : ICell) = ((AdditiveEQPBinomialTreeModel.Cast _AdditiveEQPBinomialTree.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

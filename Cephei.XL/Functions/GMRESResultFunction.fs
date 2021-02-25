@@ -48,7 +48,7 @@ module GMRESResultFunction =
 
             try
 
-                let _GMRESResult = Helper.toCell<GMRESResult> gmresresult "GMRESResult"  
+                let _GMRESResult = Helper.toModelReference<GMRESResult> gmresresult "GMRESResult"  
                 let builder (current : ICell) = ((GMRESResultModel.Cast _GMRESResult.cell).Errors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -127,7 +127,7 @@ module GMRESResultFunction =
 
             try
 
-                let _GMRESResult = Helper.toCell<GMRESResult> gmresresult "GMRESResult"  
+                let _GMRESResult = Helper.toModelReference<GMRESResult> gmresresult "GMRESResult"  
                 let builder (current : ICell) = ((GMRESResultModel.Cast _GMRESResult.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

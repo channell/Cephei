@@ -48,7 +48,7 @@ module DoublingConvergenceStepsFunction =
 
             try
 
-                let _DoublingConvergenceSteps = Helper.toCell<DoublingConvergenceSteps> doublingconvergencesteps "DoublingConvergenceSteps"  
+                let _DoublingConvergenceSteps = Helper.toModelReference<DoublingConvergenceSteps> doublingconvergencesteps "DoublingConvergenceSteps"  
                 let builder (current : ICell) = ((DoublingConvergenceStepsModel.Cast _DoublingConvergenceSteps.cell).InitialSamples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -86,7 +86,7 @@ module DoublingConvergenceStepsFunction =
 
             try
 
-                let _DoublingConvergenceSteps = Helper.toCell<DoublingConvergenceSteps> doublingconvergencesteps "DoublingConvergenceSteps"  
+                let _DoublingConvergenceSteps = Helper.toModelReference<DoublingConvergenceSteps> doublingconvergencesteps "DoublingConvergenceSteps"  
                 let _current = Helper.toCell<int> current "current" 
                 let builder (current : ICell) = ((DoublingConvergenceStepsModel.Cast _DoublingConvergenceSteps.cell).NextSamples
                                                             _current.cell 

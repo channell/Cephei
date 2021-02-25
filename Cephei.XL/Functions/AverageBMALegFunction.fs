@@ -91,7 +91,7 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _AverageBMALeg = Helper.toModelReference<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let builder (current : ICell) = ((AverageBMALegModel.Cast _AverageBMALeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -129,7 +129,7 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _AverageBMALeg = Helper.toModelReference<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
                 let builder (current : ICell) = ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithGearings
                                                             _gearings.cell 
@@ -171,7 +171,7 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _AverageBMALeg = Helper.toModelReference<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
                 let builder (current : ICell) = ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithGearings1
                                                             _gearing.cell 
@@ -213,7 +213,7 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _AverageBMALeg = Helper.toModelReference<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder (current : ICell) = ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
@@ -255,7 +255,7 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _AverageBMALeg = Helper.toModelReference<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
                 let builder (current : ICell) = ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithSpreads1
                                                             _spreads.cell 
@@ -297,7 +297,7 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _AverageBMALeg = Helper.toModelReference<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
                 let builder (current : ICell) = ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithSpreads
                                                             _spread.cell 
@@ -339,7 +339,7 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _AverageBMALeg = Helper.toModelReference<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder (current : ICell) = ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithNotionals1
                                                             _notionals.cell 
@@ -381,7 +381,7 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _AverageBMALeg = Helper.toModelReference<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
                 let builder (current : ICell) = ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithNotionals
                                                             _notional.cell 
@@ -423,7 +423,7 @@ module AverageBMALegFunction =
 
             try
 
-                let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
+                let _AverageBMALeg = Helper.toModelReference<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder (current : ICell) = ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithPaymentAdjustment
                                                             _convention.cell 

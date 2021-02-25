@@ -48,7 +48,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).DenseSabrParameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -86,7 +86,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).GetInterpolation
                                                             _Process.cell 
@@ -126,7 +126,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).MarketVolCube
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -164,7 +164,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).MarketVolCube1
                                                             _i.cell 
@@ -208,7 +208,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _beta = Helper.toCell<double> beta "beta" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).Recalibration
@@ -258,7 +258,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _swapLengths = Helper.toCell<Generic.List<Period>> swapLengths "swapLengths" 
                 let _beta = Helper.toCell<Generic.List<double>> beta "beta" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
@@ -310,7 +310,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _beta = Helper.toCell<Generic.List<double>> beta "beta" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).Recalibration2
@@ -360,7 +360,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _marketVolCube = Helper.toCell<Cube.Cube> marketVolCube "marketVolCube" 
                 let _parametersCube = Helper.toCell<Cube.Cube> parametersCube "parametersCube" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
@@ -408,7 +408,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).SparseSabrParameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -589,7 +589,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).UpdateAfterRecalibration
                                                        ) :> ICell
                 let format (o : SwaptionVolCube1x) (l:string) = o.ToString() :> obj
@@ -625,7 +625,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).VolCubeAtmCalibrated
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -665,7 +665,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).AtmStrike
@@ -713,7 +713,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).AtmStrike1
@@ -757,7 +757,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).AtmVol
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
@@ -793,7 +793,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -829,7 +829,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -865,7 +865,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -901,7 +901,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -937,7 +937,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).MaxSwapTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -973,7 +973,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1009,7 +1009,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1045,7 +1045,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1081,7 +1081,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1117,7 +1117,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).ShortSwapIndexBase
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
@@ -1153,7 +1153,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).StrikeSpreads
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1189,7 +1189,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).SwapIndexBase
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
@@ -1225,7 +1225,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).VegaWeightedSmileFit
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1261,7 +1261,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -1297,7 +1297,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).VolSpreads
                                                        ) :> ICell
                 let format (i : Generic.List<Generic.List<ICell<Handle<Quote>>>) (l : string) = Helper.Range.fromList i l
@@ -1335,7 +1335,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).OptionDateFromTime
                                                             _optionTime.cell 
@@ -1375,7 +1375,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).OptionDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -1411,7 +1411,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).OptionTenors
                                                        ) :> ICell
                 let format (i : Generic.List<Period>) (l : string) = Helper.Range.fromList i l
@@ -1447,7 +1447,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).OptionTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1483,7 +1483,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).SwapLengths
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1519,7 +1519,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).SwapTenors
                                                        ) :> ICell
                 let format (i : Generic.List<Period>) (l : string) = Helper.Range.fromList i l
@@ -1555,7 +1555,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).Update
                                                        ) :> ICell
                 let format (o : SwaptionVolCube1x) (l:string) = o.ToString() :> obj
@@ -1599,7 +1599,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1659,7 +1659,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1719,7 +1719,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1779,7 +1779,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1839,7 +1839,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1899,7 +1899,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1951,7 +1951,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).MaxSwapLength
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1993,7 +1993,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -2047,7 +2047,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -2101,7 +2101,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -2155,7 +2155,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -2209,7 +2209,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -2263,7 +2263,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -2317,7 +2317,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
@@ -2371,7 +2371,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extr = Helper.toCell<bool> extr "extr" 
@@ -2425,7 +2425,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
@@ -2477,7 +2477,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _start = Helper.toCell<Date> start "start" 
                 let _End = Helper.toCell<Date> End "End" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).SwapLength
@@ -2523,7 +2523,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).SwapLength1
                                                             _swapTenor.cell 
@@ -2571,7 +2571,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -2631,7 +2631,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -2691,7 +2691,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -2751,7 +2751,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -2811,7 +2811,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -2871,7 +2871,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -2923,7 +2923,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -2961,7 +2961,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _p = Helper.toCell<Period> p "p" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).OptionDateFromTenor
                                                             _p.cell 
@@ -3003,7 +3003,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).TimeFromReference
                                                             _date.cell 
@@ -3043,7 +3043,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -3081,7 +3081,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).DisableExtrapolation
                                                             _b.cell 
@@ -3123,7 +3123,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).EnableExtrapolation
                                                             _b.cell 
@@ -3163,7 +3163,7 @@ module SwaptionVolCube1xFunction =
 
             try
 
-                let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
+                let _SwaptionVolCube1x = Helper.toModelReference<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

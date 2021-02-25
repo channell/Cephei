@@ -86,7 +86,7 @@ module NoXABRConstraintFunction =
 
             try
 
-                let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
+                let _NoXABRConstraint = Helper.toModelReference<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let _costFunction = Helper.toCell<ProjectedCostFunction> costFunction "costFunction" 
                 let _coeff = Helper.toCell<XABRCoeffHolder<Model>> coeff "coeff" 
                 let _forward = Helper.toCell<double> forward "forward" 
@@ -135,7 +135,7 @@ module NoXABRConstraintFunction =
 
             try
 
-                let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
+                let _NoXABRConstraint = Helper.toModelReference<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let builder (current : ICell) = ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -173,7 +173,7 @@ module NoXABRConstraintFunction =
 
             try
 
-                let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
+                let _NoXABRConstraint = Helper.toModelReference<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).LowerBound
                                                             _parameters.cell 
@@ -215,7 +215,7 @@ module NoXABRConstraintFunction =
 
             try
 
-                let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
+                let _NoXABRConstraint = Helper.toModelReference<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Test
                                                             _p.cell 
@@ -261,7 +261,7 @@ module NoXABRConstraintFunction =
 
             try
 
-                let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
+                let _NoXABRConstraint = Helper.toModelReference<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
@@ -311,7 +311,7 @@ module NoXABRConstraintFunction =
 
             try
 
-                let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
+                let _NoXABRConstraint = Helper.toModelReference<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).UpperBound
                                                             _parameters.cell 

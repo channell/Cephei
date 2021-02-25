@@ -125,7 +125,7 @@ module LocalBootstrapFunction =
 
             try
 
-                let _LocalBootstrap = Helper.toCell<LocalBootstrap> localbootstrap "LocalBootstrap"  
+                let _LocalBootstrap = Helper.toModelReference<LocalBootstrap> localbootstrap "LocalBootstrap"  
                 let _ts = Helper.toCell<'T> ts "ts" 
                 let builder (current : ICell) = ((LocalBootstrapModel.Cast _LocalBootstrap.cell).Setup
                                                             _ts.cell 

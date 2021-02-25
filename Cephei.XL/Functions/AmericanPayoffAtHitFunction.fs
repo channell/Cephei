@@ -109,7 +109,7 @@ module AmericanPayoffAtHitFunction =
 
             try
 
-                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
+                let _AmericanPayoffAtHit = Helper.toModelReference<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
                 let builder (current : ICell) = ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -145,7 +145,7 @@ module AmericanPayoffAtHitFunction =
 
             try
 
-                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
+                let _AmericanPayoffAtHit = Helper.toModelReference<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
                 let builder (current : ICell) = ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -183,7 +183,7 @@ module AmericanPayoffAtHitFunction =
 
             try
 
-                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
+                let _AmericanPayoffAtHit = Helper.toModelReference<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let builder (current : ICell) = ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Rho
                                                             _maturity.cell 
@@ -223,7 +223,7 @@ module AmericanPayoffAtHitFunction =
 
             try
 
-                let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
+                let _AmericanPayoffAtHit = Helper.toModelReference<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
                 let builder (current : ICell) = ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

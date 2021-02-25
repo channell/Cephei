@@ -50,7 +50,7 @@ module pair_doubleFunction =
 
             try
 
-                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
+                let _pair_double = Helper.toModelReference<pair_double> pair_double "pair_double"  
                 let _other = Helper.toCell<Pair<double,double>> other "other" 
                 let builder (current : ICell) = ((pair_doubleModel.Cast _pair_double.cell).CompareTo
                                                             _other.cell 
@@ -133,7 +133,7 @@ module pair_doubleFunction =
 
             try
 
-                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
+                let _pair_double = Helper.toModelReference<pair_double> pair_double "pair_double"  
                 let builder (current : ICell) = ((pair_doubleModel.Cast _pair_double.cell).First
                                                        ) :> ICell
                 let format (o : double) (l:string) = o.ToString() :> obj
@@ -169,7 +169,7 @@ module pair_doubleFunction =
 
             try
 
-                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
+                let _pair_double = Helper.toModelReference<pair_double> pair_double "pair_double"  
                 let builder (current : ICell) = ((pair_doubleModel.Cast _pair_double.cell).Second
                                                        ) :> ICell
                 let format (o : double) (l:string) = o.ToString() :> obj
@@ -209,7 +209,7 @@ module pair_doubleFunction =
 
             try
 
-                let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
+                let _pair_double = Helper.toModelReference<pair_double> pair_double "pair_double"  
                 let _first = Helper.toCell<double> first "first" 
                 let _second = Helper.toCell<double> second "second" 
                 let builder (current : ICell) = ((pair_doubleModel.Cast _pair_double.cell).Set

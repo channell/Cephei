@@ -105,7 +105,7 @@ module SABRWrapperFunction =
 
             try
 
-                let _SABRWrapper = Helper.toCell<SABRWrapper> sabrwrapper "SABRWrapper"  
+                let _SABRWrapper = Helper.toModelReference<SABRWrapper> sabrwrapper "SABRWrapper"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((SABRWrapperModel.Cast _SABRWrapper.cell).Volatility
                                                             _x.cell 

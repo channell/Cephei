@@ -50,7 +50,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccruedAmount
                                                             _d.cell 
@@ -90,7 +90,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -126,7 +126,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -332,7 +332,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).InterestRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
@@ -368,7 +368,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -404,7 +404,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -440,7 +440,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -476,7 +476,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -512,7 +512,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -550,7 +550,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccruedDays
                                                             _d.cell 
@@ -592,7 +592,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccruedPeriod
                                                             _d.cell 
@@ -632,7 +632,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -668,7 +668,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -704,7 +704,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -740,7 +740,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -776,7 +776,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -814,7 +814,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).CompareTo
                                                             _cf.cell 
@@ -856,7 +856,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Equals
                                                             _cf.cell 
@@ -900,7 +900,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).HasOccurred
@@ -946,7 +946,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -988,7 +988,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Accept
                                                             _v.cell 
@@ -1030,7 +1030,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).RegisterWith
                                                             _handler.cell 
@@ -1072,7 +1072,7 @@ module FixedRateCouponFunction =
 
             try
 
-                let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
+                let _FixedRateCoupon = Helper.toModelReference<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).UnregisterWith
                                                             _handler.cell 

@@ -103,7 +103,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -141,7 +141,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).AddHoliday
                                                             _d.cell 
@@ -185,7 +185,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).Adjust
@@ -239,7 +239,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -303,7 +303,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -363,7 +363,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -415,7 +415,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -451,7 +451,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -489,7 +489,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).EndOfMonth
                                                             _d.cell 
@@ -531,7 +531,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).Equals
                                                             _o.cell 
@@ -573,7 +573,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).IsBusinessDay
                                                             _d.cell 
@@ -615,7 +615,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).IsEndOfMonth
                                                             _d.cell 
@@ -657,7 +657,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).IsHoliday
                                                             _d.cell 
@@ -699,7 +699,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).IsWeekend
                                                             _w.cell 
@@ -741,7 +741,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -777,7 +777,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -815,7 +815,7 @@ module JapanFunction =
 
             try
 
-                let _Japan = Helper.toCell<Japan> japan "Japan"  
+                let _Japan = Helper.toModelReference<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((JapanModel.Cast _Japan.cell).RemoveHoliday
                                                             _d.cell 

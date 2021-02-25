@@ -54,7 +54,7 @@ module VannaVolgaFunction =
 
             try
 
-                let _VannaVolga = Helper.toCell<VannaVolga> vannavolga "VannaVolga"  
+                let _VannaVolga = Helper.toModelReference<VannaVolga> vannavolga "VannaVolga"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 

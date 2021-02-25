@@ -49,7 +49,7 @@ module DiscountingLoanEngineFunction =
 
             try
 
-                let _DiscountingLoanEngine = Helper.toCell<DiscountingLoanEngine> discountingloanengine "DiscountingLoanEngine"  
+                let _DiscountingLoanEngine = Helper.toModelReference<DiscountingLoanEngine> discountingloanengine "DiscountingLoanEngine"  
                 let builder (current : ICell) = ((DiscountingLoanEngineModel.Cast _DiscountingLoanEngine.cell).DiscountCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l

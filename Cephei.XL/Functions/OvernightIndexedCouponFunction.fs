@@ -48,7 +48,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Dt
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -84,7 +84,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).FixingDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -120,7 +120,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).IndexFixings
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -253,7 +253,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).ValueDates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -291,7 +291,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).AccruedAmount
                                                             _d.cell 
@@ -331,7 +331,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -367,7 +367,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -403,7 +403,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -439,7 +439,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -499,7 +499,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _nominal = Helper.toCell<double> nominal "nominal" 
                 let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
                 let _startDate = Helper.toCell<Date> startDate "startDate" 
@@ -583,7 +583,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -619,7 +619,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -655,7 +655,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -691,7 +691,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
@@ -727,7 +727,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -763,7 +763,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -801,7 +801,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Price
                                                             _yts.cell 
@@ -841,7 +841,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
@@ -877,7 +877,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -915,7 +915,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).SetPricer
                                                             _pricer.cell 
@@ -955,7 +955,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -991,7 +991,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : OvernightIndexedCoupon) (l:string) = o.ToString() :> obj
@@ -1027,7 +1027,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1063,7 +1063,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1099,7 +1099,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1135,7 +1135,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1173,7 +1173,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).AccruedDays
                                                             _d.cell 
@@ -1215,7 +1215,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).AccruedPeriod
                                                             _d.cell 
@@ -1255,7 +1255,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1291,7 +1291,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1327,7 +1327,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1363,7 +1363,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1399,7 +1399,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1437,7 +1437,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).CompareTo
                                                             _cf.cell 
@@ -1479,7 +1479,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Equals
                                                             _cf.cell 
@@ -1523,7 +1523,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).HasOccurred
@@ -1569,7 +1569,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -1611,7 +1611,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).Accept
                                                             _v.cell 
@@ -1653,7 +1653,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).RegisterWith
                                                             _handler.cell 
@@ -1695,7 +1695,7 @@ module OvernightIndexedCouponFunction =
 
             try
 
-                let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
+                let _OvernightIndexedCoupon = Helper.toModelReference<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).UnregisterWith
                                                             _handler.cell 

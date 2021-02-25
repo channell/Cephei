@@ -99,7 +99,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -137,7 +137,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).AddHoliday
                                                             _d.cell 
@@ -181,7 +181,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).Adjust
@@ -235,7 +235,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -299,7 +299,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -359,7 +359,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -411,7 +411,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -447,7 +447,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -485,7 +485,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).EndOfMonth
                                                             _d.cell 
@@ -527,7 +527,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).Equals
                                                             _o.cell 
@@ -569,7 +569,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).IsBusinessDay
                                                             _d.cell 
@@ -611,7 +611,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).IsEndOfMonth
                                                             _d.cell 
@@ -653,7 +653,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).IsHoliday
                                                             _d.cell 
@@ -695,7 +695,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).IsWeekend
                                                             _w.cell 
@@ -737,7 +737,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -773,7 +773,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -811,7 +811,7 @@ module ChinaFunction =
 
             try
 
-                let _China = Helper.toCell<China> china "China"  
+                let _China = Helper.toModelReference<China> china "China"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((ChinaModel.Cast _China.cell).RemoveHoliday
                                                             _d.cell 

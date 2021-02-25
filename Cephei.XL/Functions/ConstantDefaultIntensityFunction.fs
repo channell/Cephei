@@ -132,7 +132,7 @@ module ConstantDefaultIntensityFunction =
 
             try
 
-                let _ConstantDefaultIntensity = Helper.toCell<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity"  
+                let _ConstantDefaultIntensity = Helper.toModelReference<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((ConstantDefaultIntensityModel.Cast _ConstantDefaultIntensity.cell).DefaultRecovery
@@ -180,7 +180,7 @@ module ConstantDefaultIntensityFunction =
 
             try
 
-                let _ConstantDefaultIntensity = Helper.toCell<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity"  
+                let _ConstantDefaultIntensity = Helper.toModelReference<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((ConstantDefaultIntensityModel.Cast _ConstantDefaultIntensity.cell).HazardRate

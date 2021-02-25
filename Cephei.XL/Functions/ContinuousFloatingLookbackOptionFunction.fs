@@ -109,7 +109,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -145,7 +145,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -181,7 +181,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -217,7 +217,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -253,7 +253,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -289,7 +289,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -325,7 +325,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -361,7 +361,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -397,7 +397,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -433,7 +433,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -469,7 +469,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -505,7 +505,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -541,7 +541,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -577,7 +577,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -613,7 +613,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -649,7 +649,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -685,7 +685,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -723,7 +723,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Result
                                                             _tag.cell 
@@ -765,7 +765,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).SetPricingEngine
                                                             _e.cell 
@@ -805,7 +805,7 @@ module ContinuousFloatingLookbackOptionFunction =
 
             try
 
-                let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
+                let _ContinuousFloatingLookbackOption = Helper.toModelReference<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let builder (current : ICell) = ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

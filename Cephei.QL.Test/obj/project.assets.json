@@ -1755,6 +1755,16 @@
           "bin/placeholder/Cephei.Cell.dll": {}
         }
       },
+      "Cephei.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "compile": {
+          "bin/placeholder/Cephei.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cephei.Model.dll": {}
+        }
+      },
       "Cephei.QL/3.1.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -6077,6 +6087,11 @@
       "path": "../Cephei.Cell/Cephei.Cell.csproj",
       "msbuildProject": "../Cephei.Cell/Cephei.Cell.csproj"
     },
+    "Cephei.Model/1.0.0": {
+      "type": "project",
+      "path": "../Cephei.Models/Cephei.Model.fsproj",
+      "msbuildProject": "../Cephei.Models/Cephei.Model.fsproj"
+    },
     "Cephei.QL/3.1.2": {
       "type": "project",
       "path": "../Cephei.QL/Cephei.QL.fsproj",
@@ -6100,6 +6115,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Cephei.Model >= 1.0.0",
       "Cephei.QL >= 3.1.2",
       "Cephei.QL.Samples >= 1.0.0",
       "Cephei.QLNetHelper >= 1.0.0",
@@ -6119,11 +6135,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj",
+      "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj",
       "projectName": "Cephei.QL.Test",
-      "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj",
+      "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj",
       "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Test\\obj\\",
+      "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -6145,17 +6161,20 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-              "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+            "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
             },
-            "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj": {
-              "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj"
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Models\\Cephei.Model.fsproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Models\\Cephei.Model.fsproj"
             },
-            "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
-              "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj"
             },
-            "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
-              "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+            },
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
             }
           }
         }
@@ -6213,7 +6232,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

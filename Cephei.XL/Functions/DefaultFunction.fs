@@ -58,7 +58,7 @@ module DefaultFunction =
 
             try
 
-                let _Default = Helper.toCell<Default> defaulT "Default"  
+                let _Default = Helper.toModelReference<Default> defaulT "Default"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
@@ -114,7 +114,7 @@ module DefaultFunction =
 
             try
 
-                let _Default = Helper.toCell<Default> defaulT "Default"  
+                let _Default = Helper.toModelReference<Default> defaulT "Default"  
                 let builder (current : ICell) = ((DefaultModel.Cast _Default.cell).NbEvalutions
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

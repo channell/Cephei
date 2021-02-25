@@ -93,7 +93,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).CapletPrice
                                                             _effectiveCap.cell 
@@ -135,7 +135,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).CapletRate
                                                             _effectiveCap.cell 
@@ -175,7 +175,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).CapletVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l
@@ -213,7 +213,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).FloorletPrice
                                                             _effectiveFloor.cell 
@@ -255,7 +255,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).FloorletRate
                                                             _effectiveFloor.cell 
@@ -297,7 +297,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let _coupon = Helper.toCell<InflationCoupon> coupon "coupon" 
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).Initialize
                                                             _coupon.cell 
@@ -339,7 +339,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let _capletVol = Helper.toHandle<YoYOptionletVolatilitySurface> capletVol "capletVol" 
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).SetCapletVolatility
                                                             _capletVol.cell 
@@ -379,7 +379,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -415,7 +415,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -453,7 +453,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).RegisterWith
                                                             _handler.cell 
@@ -495,7 +495,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).UnregisterWith
                                                             _handler.cell 
@@ -535,7 +535,7 @@ module BachelierYoYInflationCouponPricerFunction =
 
             try
 
-                let _BachelierYoYInflationCouponPricer = Helper.toCell<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
+                let _BachelierYoYInflationCouponPricer = Helper.toModelReference<BachelierYoYInflationCouponPricer> bachelieryoyinflationcouponpricer "BachelierYoYInflationCouponPricer"  
                 let builder (current : ICell) = ((BachelierYoYInflationCouponPricerModel.Cast _BachelierYoYInflationCouponPricer.cell).Update
                                                        ) :> ICell
                 let format (o : BachelierYoYInflationCouponPricer) (l:string) = o.ToString() :> obj

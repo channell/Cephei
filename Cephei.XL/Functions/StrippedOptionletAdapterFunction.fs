@@ -48,7 +48,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).Displacement
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -120,7 +120,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -156,7 +156,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -229,7 +229,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).Update
                                                        ) :> ICell
                 let format (o : StrippedOptionletAdapter) (l:string) = o.ToString() :> obj
@@ -265,7 +265,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -307,7 +307,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -361,7 +361,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -415,7 +415,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -467,7 +467,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _extr = Helper.toCell<bool> extr "extr" 
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).SmileSection
@@ -515,7 +515,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _extr = Helper.toCell<bool> extr "extr" 
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).SmileSection2
@@ -563,7 +563,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).SmileSection1
@@ -613,7 +613,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -667,7 +667,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -721,7 +721,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -769,7 +769,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -807,7 +807,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _p = Helper.toCell<Period> p "p" 
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).OptionDateFromTenor
                                                             _p.cell 
@@ -847,7 +847,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -883,7 +883,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -919,7 +919,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -955,7 +955,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -991,7 +991,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1029,7 +1029,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).TimeFromReference
                                                             _date.cell 
@@ -1069,7 +1069,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1107,7 +1107,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).DisableExtrapolation
                                                             _b.cell 
@@ -1149,7 +1149,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).EnableExtrapolation
                                                             _b.cell 
@@ -1189,7 +1189,7 @@ module StrippedOptionletAdapterFunction =
 
             try
 
-                let _StrippedOptionletAdapter = Helper.toCell<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
+                let _StrippedOptionletAdapter = Helper.toModelReference<StrippedOptionletAdapter> strippedoptionletadapter "StrippedOptionletAdapter"  
                 let builder (current : ICell) = ((StrippedOptionletAdapterModel.Cast _StrippedOptionletAdapter.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

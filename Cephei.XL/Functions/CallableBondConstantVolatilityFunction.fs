@@ -256,7 +256,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -292,7 +292,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).MaxBondLength
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -328,7 +328,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).MaxBondTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -364,7 +364,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -400,7 +400,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -436,7 +436,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -480,7 +480,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _bondTenor = Helper.toCell<Period> bondTenor "bondTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -540,7 +540,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _bondLength = Helper.toCell<double> bondLength "bondLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -600,7 +600,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _bondTenor = Helper.toCell<Period> bondTenor "bondTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -652,7 +652,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -692,7 +692,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _bondTenor = Helper.toCell<Period> bondTenor "bondTenor" 
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).ConvertDates
@@ -738,7 +738,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).OptionDateFromTenor
                                                             _optionTenor.cell 
@@ -782,7 +782,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _bondTenor = Helper.toCell<Period> bondTenor "bondTenor" 
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).SmileSection1
@@ -830,7 +830,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _bondTenor = Helper.toCell<Period> bondTenor "bondTenor" 
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).SmileSection
@@ -882,7 +882,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _bondTenor = Helper.toCell<Period> bondTenor "bondTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -942,7 +942,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _bondTenor = Helper.toCell<Period> bondTenor "bondTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1002,7 +1002,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _optionTenor = Helper.toCell<double> optionTenor "optionTenor" 
                 let _bondTenor = Helper.toCell<double> bondTenor "bondTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -1054,7 +1054,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -1090,7 +1090,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1126,7 +1126,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1162,7 +1162,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1200,7 +1200,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).TimeFromReference
                                                             _date.cell 
@@ -1240,7 +1240,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).Update
                                                        ) :> ICell
                 let format (o : CallableBondConstantVolatility) (l:string) = o.ToString() :> obj
@@ -1276,7 +1276,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1314,7 +1314,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).DisableExtrapolation
                                                             _b.cell 
@@ -1356,7 +1356,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).EnableExtrapolation
                                                             _b.cell 
@@ -1396,7 +1396,7 @@ module CallableBondConstantVolatilityFunction =
 
             try
 
-                let _CallableBondConstantVolatility = Helper.toCell<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
+                let _CallableBondConstantVolatility = Helper.toModelReference<CallableBondConstantVolatility> callablebondconstantvolatility "CallableBondConstantVolatility"  
                 let builder (current : ICell) = ((CallableBondConstantVolatilityModel.Cast _CallableBondConstantVolatility.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

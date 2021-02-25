@@ -91,7 +91,7 @@ module EarlyExerciseFunction =
 
             try
 
-                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
+                let _EarlyExercise = Helper.toModelReference<EarlyExercise> earlyexercise "EarlyExercise"  
                 let builder (current : ICell) = ((EarlyExerciseModel.Cast _EarlyExercise.cell).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -129,7 +129,7 @@ module EarlyExerciseFunction =
 
             try
 
-                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
+                let _EarlyExercise = Helper.toModelReference<EarlyExercise> earlyexercise "EarlyExercise"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((EarlyExerciseModel.Cast _EarlyExercise.cell).Date
                                                             _index.cell 
@@ -169,7 +169,7 @@ module EarlyExerciseFunction =
 
             try
 
-                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
+                let _EarlyExercise = Helper.toModelReference<EarlyExercise> earlyexercise "EarlyExercise"  
                 let builder (current : ICell) = ((EarlyExerciseModel.Cast _EarlyExercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -205,7 +205,7 @@ module EarlyExerciseFunction =
 
             try
 
-                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
+                let _EarlyExercise = Helper.toModelReference<EarlyExercise> earlyexercise "EarlyExercise"  
                 let builder (current : ICell) = ((EarlyExerciseModel.Cast _EarlyExercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -241,7 +241,7 @@ module EarlyExerciseFunction =
 
             try
 
-                let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
+                let _EarlyExercise = Helper.toModelReference<EarlyExercise> earlyexercise "EarlyExercise"  
                 let builder (current : ICell) = ((EarlyExerciseModel.Cast _EarlyExercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj

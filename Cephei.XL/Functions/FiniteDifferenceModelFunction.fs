@@ -48,7 +48,7 @@ module FiniteDifferenceModelFunction =
 
             try
 
-                let _FiniteDifferenceModel = Helper.toCell<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel"  
+                let _FiniteDifferenceModel = Helper.toModelReference<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel"  
                 let builder (current : ICell) = ((FiniteDifferenceModelModel.Cast _FiniteDifferenceModel.cell).Evolver
                                                        ) :> ICell
                 let format (o : Evolver) (l:string) = o.ToString() :> obj
@@ -229,7 +229,7 @@ module FiniteDifferenceModelFunction =
 
             try
 
-                let _FiniteDifferenceModel = Helper.toCell<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel"  
+                let _FiniteDifferenceModel = Helper.toModelReference<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _from = Helper.toCell<double> from "from" 
                 let _To = Helper.toCell<double> To "To" 
@@ -293,7 +293,7 @@ module FiniteDifferenceModelFunction =
 
             try
 
-                let _FiniteDifferenceModel = Helper.toCell<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel"  
+                let _FiniteDifferenceModel = Helper.toModelReference<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _from = Helper.toCell<double> from "from" 
                 let _To = Helper.toCell<double> To "To" 

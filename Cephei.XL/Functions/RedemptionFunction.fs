@@ -91,7 +91,7 @@ module RedemptionFunction =
 
             try
 
-                let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
+                let _Redemption = Helper.toModelReference<Redemption> redemption "Redemption"  
                 let builder (current : ICell) = ((RedemptionModel.Cast _Redemption.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -127,7 +127,7 @@ module RedemptionFunction =
 
             try
 
-                let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
+                let _Redemption = Helper.toModelReference<Redemption> redemption "Redemption"  
                 let builder (current : ICell) = ((RedemptionModel.Cast _Redemption.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -165,7 +165,7 @@ module RedemptionFunction =
 
             try
 
-                let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
+                let _Redemption = Helper.toModelReference<Redemption> redemption "Redemption"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((RedemptionModel.Cast _Redemption.cell).CompareTo
                                                             _cf.cell 
@@ -207,7 +207,7 @@ module RedemptionFunction =
 
             try
 
-                let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
+                let _Redemption = Helper.toModelReference<Redemption> redemption "Redemption"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((RedemptionModel.Cast _Redemption.cell).Equals
                                                             _cf.cell 
@@ -247,7 +247,7 @@ module RedemptionFunction =
 
             try
 
-                let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
+                let _Redemption = Helper.toModelReference<Redemption> redemption "Redemption"  
                 let builder (current : ICell) = ((RedemptionModel.Cast _Redemption.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -287,7 +287,7 @@ module RedemptionFunction =
 
             try
 
-                let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
+                let _Redemption = Helper.toModelReference<Redemption> redemption "Redemption"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((RedemptionModel.Cast _Redemption.cell).HasOccurred
@@ -333,7 +333,7 @@ module RedemptionFunction =
 
             try
 
-                let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
+                let _Redemption = Helper.toModelReference<Redemption> redemption "Redemption"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((RedemptionModel.Cast _Redemption.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -375,7 +375,7 @@ module RedemptionFunction =
 
             try
 
-                let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
+                let _Redemption = Helper.toModelReference<Redemption> redemption "Redemption"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((RedemptionModel.Cast _Redemption.cell).Accept
                                                             _v.cell 
@@ -417,7 +417,7 @@ module RedemptionFunction =
 
             try
 
-                let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
+                let _Redemption = Helper.toModelReference<Redemption> redemption "Redemption"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((RedemptionModel.Cast _Redemption.cell).RegisterWith
                                                             _handler.cell 
@@ -459,7 +459,7 @@ module RedemptionFunction =
 
             try
 
-                let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
+                let _Redemption = Helper.toModelReference<Redemption> redemption "Redemption"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((RedemptionModel.Cast _Redemption.cell).UnregisterWith
                                                             _handler.cell 

@@ -56,7 +56,7 @@ module LmConstWrapperVolatilityModelFunction =
 
             try
 
-                let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
+                let _LmConstWrapperVolatilityModel = Helper.toModelReference<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
@@ -151,7 +151,7 @@ module LmConstWrapperVolatilityModelFunction =
 
             try
 
-                let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
+                let _LmConstWrapperVolatilityModel = Helper.toModelReference<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
@@ -203,7 +203,7 @@ module LmConstWrapperVolatilityModelFunction =
 
             try
 
-                let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
+                let _LmConstWrapperVolatilityModel = Helper.toModelReference<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
                 let builder (current : ICell) = ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Volatility1
@@ -247,7 +247,7 @@ module LmConstWrapperVolatilityModelFunction =
 
             try
 
-                let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
+                let _LmConstWrapperVolatilityModel = Helper.toModelReference<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
                 let builder (current : ICell) = ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<Parameter>) (l : string) = Helper.Range.fromList i l
@@ -285,7 +285,7 @@ module LmConstWrapperVolatilityModelFunction =
 
             try
 
-                let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
+                let _LmConstWrapperVolatilityModel = Helper.toModelReference<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
                 let builder (current : ICell) = ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).SetParams
                                                             _arguments.cell 
@@ -325,7 +325,7 @@ module LmConstWrapperVolatilityModelFunction =
 
             try
 
-                let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
+                let _LmConstWrapperVolatilityModel = Helper.toModelReference<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
                 let builder (current : ICell) = ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

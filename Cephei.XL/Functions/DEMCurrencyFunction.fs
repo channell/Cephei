@@ -79,7 +79,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -115,7 +115,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -153,7 +153,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).Equals
                                                             _o.cell 
@@ -193,7 +193,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -229,7 +229,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -265,7 +265,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -301,7 +301,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -337,7 +337,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -373,7 +373,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
@@ -409,7 +409,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -445,7 +445,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -481,7 +481,7 @@ module DEMCurrencyFunction =
 
             try
 
-                let _DEMCurrency = Helper.toCell<DEMCurrency> demcurrency "DEMCurrency"  
+                let _DEMCurrency = Helper.toModelReference<DEMCurrency> demcurrency "DEMCurrency"  
                 let builder (current : ICell) = ((DEMCurrencyModel.Cast _DEMCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l

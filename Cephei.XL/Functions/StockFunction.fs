@@ -48,7 +48,7 @@ module StockFunction =
 
             try
 
-                let _Stock = Helper.toCell<Stock> stock "Stock"  
+                let _Stock = Helper.toModelReference<Stock> stock "Stock"  
                 let builder (current : ICell) = ((StockModel.Cast _Stock.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -133,7 +133,7 @@ module StockFunction =
 
             try
 
-                let _Stock = Helper.toCell<Stock> stock "Stock"  
+                let _Stock = Helper.toModelReference<Stock> stock "Stock"  
                 let builder (current : ICell) = ((StockModel.Cast _Stock.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -169,7 +169,7 @@ module StockFunction =
 
             try
 
-                let _Stock = Helper.toCell<Stock> stock "Stock"  
+                let _Stock = Helper.toModelReference<Stock> stock "Stock"  
                 let builder (current : ICell) = ((StockModel.Cast _Stock.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -205,7 +205,7 @@ module StockFunction =
 
             try
 
-                let _Stock = Helper.toCell<Stock> stock "Stock"  
+                let _Stock = Helper.toModelReference<Stock> stock "Stock"  
                 let builder (current : ICell) = ((StockModel.Cast _Stock.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -243,7 +243,7 @@ module StockFunction =
 
             try
 
-                let _Stock = Helper.toCell<Stock> stock "Stock"  
+                let _Stock = Helper.toModelReference<Stock> stock "Stock"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((StockModel.Cast _Stock.cell).Result
                                                             _tag.cell 
@@ -285,7 +285,7 @@ module StockFunction =
 
             try
 
-                let _Stock = Helper.toCell<Stock> stock "Stock"  
+                let _Stock = Helper.toModelReference<Stock> stock "Stock"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((StockModel.Cast _Stock.cell).SetPricingEngine
                                                             _e.cell 
@@ -325,7 +325,7 @@ module StockFunction =
 
             try
 
-                let _Stock = Helper.toCell<Stock> stock "Stock"  
+                let _Stock = Helper.toModelReference<Stock> stock "Stock"  
                 let builder (current : ICell) = ((StockModel.Cast _Stock.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

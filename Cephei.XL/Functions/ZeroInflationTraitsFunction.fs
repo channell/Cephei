@@ -52,7 +52,7 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _ZeroInflationTraits = Helper.toModelReference<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).DiscountImpl
@@ -100,7 +100,7 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _ZeroInflationTraits = Helper.toModelReference<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).ForwardImpl
@@ -152,7 +152,7 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _ZeroInflationTraits = Helper.toModelReference<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -206,7 +206,7 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _ZeroInflationTraits = Helper.toModelReference<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _t = Helper.toCell<ZeroInflationTermStructure> t "t" 
                 let builder (current : ICell) = ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).InitialDate
                                                             _t.cell 
@@ -248,7 +248,7 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _ZeroInflationTraits = Helper.toModelReference<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _t = Helper.toCell<ZeroInflationTermStructure> t "t" 
                 let builder (current : ICell) = ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).InitialValue
                                                             _t.cell 
@@ -288,7 +288,7 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _ZeroInflationTraits = Helper.toModelReference<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let builder (current : ICell) = ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -332,7 +332,7 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _ZeroInflationTraits = Helper.toModelReference<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -392,7 +392,7 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _ZeroInflationTraits = Helper.toModelReference<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -450,7 +450,7 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _ZeroInflationTraits = Helper.toModelReference<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _i = Helper.toCell<int> i "i" 
@@ -502,7 +502,7 @@ module ZeroInflationTraitsFunction =
 
             try
 
-                let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
+                let _ZeroInflationTraits = Helper.toModelReference<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).ZeroYieldImpl

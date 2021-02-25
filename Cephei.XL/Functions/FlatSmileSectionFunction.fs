@@ -48,7 +48,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -236,7 +236,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -272,7 +272,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -308,7 +308,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -350,7 +350,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
@@ -406,7 +406,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
@@ -458,7 +458,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -494,7 +494,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -536,7 +536,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
@@ -584,7 +584,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -620,7 +620,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -656,7 +656,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : FlatSmileSection) (l:string) = o.ToString() :> obj
@@ -694,7 +694,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Variance
                                                             _strike.cell 
@@ -738,7 +738,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Vega
@@ -788,7 +788,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
@@ -838,7 +838,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Volatility1
                                                             _strike.cell 
@@ -878,7 +878,7 @@ module FlatSmileSectionFunction =
 
             try
 
-                let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
+                let _FlatSmileSection = Helper.toModelReference<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let builder (current : ICell) = ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj

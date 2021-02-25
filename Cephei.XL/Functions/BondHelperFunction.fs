@@ -48,7 +48,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).Bond
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Bond>) l
@@ -133,7 +133,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -171,7 +171,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).SetTermStructure
                                                             _t.cell 
@@ -211,7 +211,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).UseCleanPrice
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -247,7 +247,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -283,7 +283,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -319,7 +319,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -355,7 +355,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -391,7 +391,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -427,7 +427,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -463,7 +463,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -499,7 +499,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -535,7 +535,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -573,7 +573,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).RegisterWith
                                                             _handler.cell 
@@ -615,7 +615,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).UnregisterWith
                                                             _handler.cell 
@@ -655,7 +655,7 @@ module BondHelperFunction =
 
             try
 
-                let _BondHelper = Helper.toCell<BondHelper> bondhelper "BondHelper"  
+                let _BondHelper = Helper.toModelReference<BondHelper> bondhelper "BondHelper"  
                 let builder (current : ICell) = ((BondHelperModel.Cast _BondHelper.cell).Update
                                                        ) :> ICell
                 let format (o : BondHelper) (l:string) = o.ToString() :> obj

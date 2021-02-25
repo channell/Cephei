@@ -50,7 +50,7 @@ module ExerciseFunction =
 
             try
 
-                let _Exercise = Helper.toCell<Exercise> exercise "Exercise"  
+                let _Exercise = Helper.toModelReference<Exercise> exercise "Exercise"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((ExerciseModel.Cast _Exercise.cell).Date
                                                             _index.cell 
@@ -90,7 +90,7 @@ module ExerciseFunction =
 
             try
 
-                let _Exercise = Helper.toCell<Exercise> exercise "Exercise"  
+                let _Exercise = Helper.toModelReference<Exercise> exercise "Exercise"  
                 let builder (current : ICell) = ((ExerciseModel.Cast _Exercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -163,7 +163,7 @@ module ExerciseFunction =
 
             try
 
-                let _Exercise = Helper.toCell<Exercise> exercise "Exercise"  
+                let _Exercise = Helper.toModelReference<Exercise> exercise "Exercise"  
                 let builder (current : ICell) = ((ExerciseModel.Cast _Exercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -199,7 +199,7 @@ module ExerciseFunction =
 
             try
 
-                let _Exercise = Helper.toCell<Exercise> exercise "Exercise"  
+                let _Exercise = Helper.toModelReference<Exercise> exercise "Exercise"  
                 let builder (current : ICell) = ((ExerciseModel.Cast _Exercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj

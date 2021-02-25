@@ -50,7 +50,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletPrice
                                                             _effectiveCap.cell 
@@ -92,7 +92,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletRate
                                                             _effectiveCap.cell 
@@ -132,7 +132,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<CPIVolatilitySurface>>) l
@@ -213,7 +213,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).FloorletPrice
                                                             _effectiveFloor.cell 
@@ -255,7 +255,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).FloorletRate
                                                             _effectiveFloor.cell 
@@ -297,7 +297,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _coupon = Helper.toCell<InflationCoupon> coupon "coupon" 
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).Initialize
                                                             _coupon.cell 
@@ -339,7 +339,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _capletVol = Helper.toHandle<CPIVolatilitySurface> capletVol "capletVol" 
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SetCapletVolatility
                                                             _capletVol.cell 
@@ -379,7 +379,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -415,7 +415,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -453,7 +453,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).RegisterWith
                                                             _handler.cell 
@@ -495,7 +495,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).UnregisterWith
                                                             _handler.cell 
@@ -535,7 +535,7 @@ module CPICouponPricerFunction =
 
             try
 
-                let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
+                let _CPICouponPricer = Helper.toModelReference<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let builder (current : ICell) = ((CPICouponPricerModel.Cast _CPICouponPricer.cell).Update
                                                        ) :> ICell
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj

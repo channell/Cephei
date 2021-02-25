@@ -356,7 +356,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).ExhaustionProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -392,7 +392,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).ExpectedLoss
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -428,7 +428,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).LossProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -466,7 +466,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).AccruedAmount
                                                             _settlement.cell 
@@ -506,7 +506,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -542,7 +542,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -578,7 +578,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -624,7 +624,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -690,7 +690,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -746,7 +746,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -782,7 +782,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -818,7 +818,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -856,7 +856,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).IsTradable
                                                             _d.cell 
@@ -896,7 +896,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -934,7 +934,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).NextCashFlowDate
                                                             _settlement.cell 
@@ -976,7 +976,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).NextCouponRate
                                                             _settlement.cell 
@@ -1018,7 +1018,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).Notional
                                                             _d.cell 
@@ -1058,7 +1058,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1096,7 +1096,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
@@ -1138,7 +1138,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).PreviousCouponRate
                                                             _settlement.cell 
@@ -1178,7 +1178,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -1214,7 +1214,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -1252,7 +1252,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).SettlementDate
                                                             _date.cell 
@@ -1292,7 +1292,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1330,7 +1330,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).SettlementValue
                                                             _cleanPrice.cell 
@@ -1370,7 +1370,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1406,7 +1406,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1456,7 +1456,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1530,7 +1530,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -1586,7 +1586,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1622,7 +1622,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1658,7 +1658,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1696,7 +1696,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).Result
                                                             _tag.cell 
@@ -1738,7 +1738,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).SetPricingEngine
                                                             _e.cell 
@@ -1778,7 +1778,7 @@ module FloatingCatBondFunction =
 
             try
 
-                let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
+                let _FloatingCatBond = Helper.toModelReference<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = ((FloatingCatBondModel.Cast _FloatingCatBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

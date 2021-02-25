@@ -50,7 +50,7 @@ module SpreadBasketPayoffFunction =
 
             try
 
-                let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
+                let _SpreadBasketPayoff = Helper.toModelReference<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
                 let builder (current : ICell) = ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Accumulate
                                                             _a.cell 
@@ -127,7 +127,7 @@ module SpreadBasketPayoffFunction =
 
             try
 
-                let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
+                let _SpreadBasketPayoff = Helper.toModelReference<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
                 let builder (current : ICell) = ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).BasePayoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -163,7 +163,7 @@ module SpreadBasketPayoffFunction =
 
             try
 
-                let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
+                let _SpreadBasketPayoff = Helper.toModelReference<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
                 let builder (current : ICell) = ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -199,7 +199,7 @@ module SpreadBasketPayoffFunction =
 
             try
 
-                let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
+                let _SpreadBasketPayoff = Helper.toModelReference<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
                 let builder (current : ICell) = ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -237,7 +237,7 @@ module SpreadBasketPayoffFunction =
 
             try
 
-                let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
+                let _SpreadBasketPayoff = Helper.toModelReference<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
                 let builder (current : ICell) = ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Value1
                                                             _a.cell 
@@ -279,7 +279,7 @@ module SpreadBasketPayoffFunction =
 
             try
 
-                let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
+                let _SpreadBasketPayoff = Helper.toModelReference<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Value
                                                             _price.cell 
@@ -321,7 +321,7 @@ module SpreadBasketPayoffFunction =
 
             try
 
-                let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
+                let _SpreadBasketPayoff = Helper.toModelReference<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Accept
                                                             _v.cell 

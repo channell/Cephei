@@ -50,7 +50,7 @@ module FdmHullWhiteSolverFunction =
 
             try
 
-                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
+                let _FdmHullWhiteSolver = Helper.toModelReference<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).DeltaAt
                                                             _s.cell 
@@ -141,7 +141,7 @@ module FdmHullWhiteSolverFunction =
 
             try
 
-                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
+                let _FdmHullWhiteSolver = Helper.toModelReference<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).GammaAt
                                                             _s.cell 
@@ -183,7 +183,7 @@ module FdmHullWhiteSolverFunction =
 
             try
 
-                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
+                let _FdmHullWhiteSolver = Helper.toModelReference<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).ThetaAt
                                                             _s.cell 
@@ -225,7 +225,7 @@ module FdmHullWhiteSolverFunction =
 
             try
 
-                let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
+                let _FdmHullWhiteSolver = Helper.toModelReference<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
                 let builder (current : ICell) = ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).ValueAt
                                                             _s.cell 

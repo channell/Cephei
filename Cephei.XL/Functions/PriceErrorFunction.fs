@@ -99,7 +99,7 @@ module PriceErrorFunction =
 
             try
 
-                let _PriceError = Helper.toCell<PriceError> priceerror "PriceError"  
+                let _PriceError = Helper.toModelReference<PriceError> priceerror "PriceError"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((PriceErrorModel.Cast _PriceError.cell).Value
                                                             _x.cell 
@@ -141,7 +141,7 @@ module PriceErrorFunction =
 
             try
 
-                let _PriceError = Helper.toCell<PriceError> priceerror "PriceError"  
+                let _PriceError = Helper.toModelReference<PriceError> priceerror "PriceError"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((PriceErrorModel.Cast _PriceError.cell).Derivative
                                                             _x.cell 

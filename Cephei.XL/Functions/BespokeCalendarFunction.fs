@@ -50,7 +50,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).AddWeekend
                                                             _w.cell 
@@ -158,7 +158,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -232,7 +232,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).AddHoliday
                                                             _d.cell 
@@ -276,7 +276,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).Adjust
@@ -330,7 +330,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -394,7 +394,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -454,7 +454,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -506,7 +506,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -542,7 +542,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -580,7 +580,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).EndOfMonth
                                                             _d.cell 
@@ -622,7 +622,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).Equals
                                                             _o.cell 
@@ -664,7 +664,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).IsBusinessDay
                                                             _d.cell 
@@ -706,7 +706,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).IsEndOfMonth
                                                             _d.cell 
@@ -748,7 +748,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).IsHoliday
                                                             _d.cell 
@@ -790,7 +790,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).IsWeekend
                                                             _w.cell 
@@ -830,7 +830,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -868,7 +868,7 @@ module BespokeCalendarFunction =
 
             try
 
-                let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
+                let _BespokeCalendar = Helper.toModelReference<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BespokeCalendarModel.Cast _BespokeCalendar.cell).RemoveHoliday
                                                             _d.cell 

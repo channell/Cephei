@@ -58,7 +58,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _SABRSpecs = Helper.toModelReference<SABRSpecs> sabrspecs "SABRSpecs"  
                 let _param = Helper.toNullabletList<double> param "param" 
                 let _b = Helper.toCell<Generic.List<bool>> b "b" 
                 let _forward = Helper.toCell<double> forward "forward" 
@@ -114,7 +114,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _SABRSpecs = Helper.toModelReference<SABRSpecs> sabrspecs "SABRSpecs"  
                 let builder (current : ICell) = ((SABRSpecsModel.Cast _SABRSpecs.cell).DilationFactor
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -150,7 +150,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _SABRSpecs = Helper.toModelReference<SABRSpecs> sabrspecs "SABRSpecs"  
                 let builder (current : ICell) = ((SABRSpecsModel.Cast _SABRSpecs.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -194,7 +194,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _SABRSpecs = Helper.toModelReference<SABRSpecs> sabrspecs "SABRSpecs"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _b = Helper.toCell<Generic.List<bool>> b "b" 
                 let _c = Helper.toNullabletList<double> c "c" 
@@ -246,7 +246,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _SABRSpecs = Helper.toModelReference<SABRSpecs> sabrspecs "SABRSpecs"  
                 let builder (current : ICell) = ((SABRSpecsModel.Cast _SABRSpecs.cell).Eps1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -282,7 +282,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _SABRSpecs = Helper.toModelReference<SABRSpecs> sabrspecs "SABRSpecs"  
                 let builder (current : ICell) = ((SABRSpecsModel.Cast _SABRSpecs.cell).Eps2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -330,7 +330,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _SABRSpecs = Helper.toModelReference<SABRSpecs> sabrspecs "SABRSpecs"  
                 let _values = Helper.toCell<Vector> values "values" 
                 let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" 
                 let _forward = Helper.toCell<double> forward "forward" 
@@ -398,7 +398,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _SABRSpecs = Helper.toModelReference<SABRSpecs> sabrspecs "SABRSpecs"  
                 let _t = Helper.toCell<double> t "t" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _param = Helper.toNullabletList<double> param "param" 
@@ -458,7 +458,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _SABRSpecs = Helper.toModelReference<SABRSpecs> sabrspecs "SABRSpecs"  
                 let _y = Helper.toCell<Vector> y "y" 
                 let _b = Helper.toCell<Generic.List<bool>> b "b" 
                 let _c = Helper.toNullabletList<double> c "c" 
@@ -518,7 +518,7 @@ module SABRSpecsFunction =
 
             try
 
-                let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
+                let _SABRSpecs = Helper.toModelReference<SABRSpecs> sabrspecs "SABRSpecs"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 

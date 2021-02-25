@@ -89,7 +89,7 @@ module LineSearchBasedMethodFunction =
 
             try
 
-                let _LineSearchBasedMethod = Helper.toCell<LineSearchBasedMethod> linesearchbasedmethod "LineSearchBasedMethod"  
+                let _LineSearchBasedMethod = Helper.toModelReference<LineSearchBasedMethod> linesearchbasedmethod "LineSearchBasedMethod"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let builder (current : ICell) = ((LineSearchBasedMethodModel.Cast _LineSearchBasedMethod.cell).Minimize

@@ -113,7 +113,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Derivative
@@ -157,7 +157,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -197,7 +197,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Primitive
@@ -245,7 +245,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).SecondDerivative
@@ -289,7 +289,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Update
                                                        ) :> ICell
                 let format (o : MixedLinearMonotonicParabolic) (l:string) = o.ToString() :> obj
@@ -329,7 +329,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Value1
@@ -375,7 +375,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Value
                                                             _x.cell 
@@ -415,7 +415,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -451,7 +451,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -487,7 +487,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -525,7 +525,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).DisableExtrapolation
                                                             _b.cell 
@@ -567,7 +567,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).EnableExtrapolation
                                                             _b.cell 
@@ -607,7 +607,7 @@ module MixedLinearMonotonicParabolicFunction =
 
             try
 
-                let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
+                let _MixedLinearMonotonicParabolic = Helper.toModelReference<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let builder (current : ICell) = ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

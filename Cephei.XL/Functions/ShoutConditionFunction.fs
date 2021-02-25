@@ -52,7 +52,7 @@ module ShoutConditionFunction =
 
             try
 
-                let _ShoutCondition = Helper.toCell<ShoutCondition> shoutcondition "ShoutCondition"  
+                let _ShoutCondition = Helper.toModelReference<ShoutCondition> shoutcondition "ShoutCondition"  
                 let _a = Helper.toCell<Vector> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((ShoutConditionModel.Cast _ShoutCondition.cell).ApplyTo

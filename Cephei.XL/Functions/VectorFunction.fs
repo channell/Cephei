@@ -48,7 +48,7 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector"  
+                let _Vector = Helper.toModelReference<Vector> vector "Vector"  
                 let builder (current : ICell) = ((VectorModel.Cast _Vector.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -84,7 +84,7 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector"  
+                let _Vector = Helper.toModelReference<Vector> vector "Vector"  
                 let builder (current : ICell) = ((VectorModel.Cast _Vector.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -122,7 +122,7 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector"  
+                let _Vector = Helper.toModelReference<Vector> vector "Vector"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((VectorModel.Cast _Vector.cell).Equals
                                                             _o.cell 
@@ -164,7 +164,7 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector"  
+                let _Vector = Helper.toModelReference<Vector> vector "Vector"  
                 let _other = Helper.toCell<Vector> other "other" 
                 let builder (current : ICell) = ((VectorModel.Cast _Vector.cell).Equals1
                                                             _other.cell 
@@ -204,7 +204,7 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector"  
+                let _Vector = Helper.toModelReference<Vector> vector "Vector"  
                 let builder (current : ICell) = ((VectorModel.Cast _Vector.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -244,7 +244,7 @@ module VectorFunction =
 
             try
 
-                let _Vector = Helper.toCell<Vector> vector "Vector"  
+                let _Vector = Helper.toModelReference<Vector> vector "Vector"  
                 let _i1 = Helper.toCell<int> i1 "i1" 
                 let _i2 = Helper.toCell<int> i2 "i2" 
                 let builder (current : ICell) = ((VectorModel.Cast _Vector.cell).Swap

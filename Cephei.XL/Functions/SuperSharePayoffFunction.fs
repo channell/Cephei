@@ -48,7 +48,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
+                let _SuperSharePayoff = Helper.toModelReference<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).CashPayoff
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
+                let _SuperSharePayoff = Helper.toModelReference<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
+                let _SuperSharePayoff = Helper.toModelReference<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -156,7 +156,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
+                let _SuperSharePayoff = Helper.toModelReference<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).SecondStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -243,7 +243,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
+                let _SuperSharePayoff = Helper.toModelReference<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Value
                                                             _price.cell 
@@ -283,7 +283,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
+                let _SuperSharePayoff = Helper.toModelReference<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -319,7 +319,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
+                let _SuperSharePayoff = Helper.toModelReference<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -357,7 +357,7 @@ module SuperSharePayoffFunction =
 
             try
 
-                let _SuperSharePayoff = Helper.toCell<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
+                let _SuperSharePayoff = Helper.toModelReference<SuperSharePayoff> supersharepayoff "SuperSharePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((SuperSharePayoffModel.Cast _SuperSharePayoff.cell).Accept
                                                             _v.cell 

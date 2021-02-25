@@ -128,7 +128,7 @@ module DownRoundingFunction =
 
             try
 
-                let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
+                let _DownRounding = Helper.toModelReference<DownRounding> downrounding "DownRounding"  
                 let builder (current : ICell) = ((DownRoundingModel.Cast _DownRounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module DownRoundingFunction =
 
             try
 
-                let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
+                let _DownRounding = Helper.toModelReference<DownRounding> downrounding "DownRounding"  
                 let builder (current : ICell) = ((DownRoundingModel.Cast _DownRounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -200,7 +200,7 @@ module DownRoundingFunction =
 
             try
 
-                let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
+                let _DownRounding = Helper.toModelReference<DownRounding> downrounding "DownRounding"  
                 let builder (current : ICell) = ((DownRoundingModel.Cast _DownRounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -238,7 +238,7 @@ module DownRoundingFunction =
 
             try
 
-                let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
+                let _DownRounding = Helper.toModelReference<DownRounding> downrounding "DownRounding"  
                 let _value = Helper.toCell<double> value "value" 
                 let builder (current : ICell) = ((DownRoundingModel.Cast _DownRounding.cell).Round
                                                             _value.cell 

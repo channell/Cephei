@@ -50,7 +50,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).AmortizationValue
                                                             _d.cell 
@@ -199,7 +199,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).IsPremium
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -235,7 +235,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).Yield
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -273,7 +273,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).AccruedAmount
                                                             _settlement.cell 
@@ -313,7 +313,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -349,7 +349,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -385,7 +385,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -431,7 +431,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -497,7 +497,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -553,7 +553,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -589,7 +589,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -625,7 +625,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -663,7 +663,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).IsTradable
                                                             _d.cell 
@@ -703,7 +703,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -741,7 +741,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).NextCashFlowDate
                                                             _settlement.cell 
@@ -783,7 +783,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).NextCouponRate
                                                             _settlement.cell 
@@ -825,7 +825,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).Notional
                                                             _d.cell 
@@ -865,7 +865,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -903,7 +903,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
@@ -945,7 +945,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).PreviousCouponRate
                                                             _settlement.cell 
@@ -985,7 +985,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -1021,7 +1021,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -1059,7 +1059,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).SettlementDate
                                                             _date.cell 
@@ -1099,7 +1099,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1137,7 +1137,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).SettlementValue
                                                             _cleanPrice.cell 
@@ -1177,7 +1177,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1213,7 +1213,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1263,7 +1263,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1337,7 +1337,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -1393,7 +1393,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1429,7 +1429,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1465,7 +1465,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1503,7 +1503,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).Result
                                                             _tag.cell 
@@ -1545,7 +1545,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).SetPricingEngine
                                                             _e.cell 
@@ -1585,7 +1585,7 @@ module AmortizingBondFunction =
 
             try
 
-                let _AmortizingBond = Helper.toCell<AmortizingBond> amortizingbond "AmortizingBond"  
+                let _AmortizingBond = Helper.toModelReference<AmortizingBond> amortizingbond "AmortizingBond"  
                 let builder (current : ICell) = ((AmortizingBondModel.Cast _AmortizingBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

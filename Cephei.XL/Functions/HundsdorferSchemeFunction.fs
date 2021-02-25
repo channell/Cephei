@@ -54,7 +54,7 @@ module HundsdorferSchemeFunction =
 
             try
 
-                let _HundsdorferScheme = Helper.toCell<HundsdorferScheme> hundsdorferscheme "HundsdorferScheme"  
+                let _HundsdorferScheme = Helper.toModelReference<HundsdorferScheme> hundsdorferscheme "HundsdorferScheme"  
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
@@ -190,7 +190,7 @@ module HundsdorferSchemeFunction =
 
             try
 
-                let _HundsdorferScheme = Helper.toCell<HundsdorferScheme> hundsdorferscheme "HundsdorferScheme"  
+                let _HundsdorferScheme = Helper.toModelReference<HundsdorferScheme> hundsdorferscheme "HundsdorferScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
                 let builder (current : ICell) = ((HundsdorferSchemeModel.Cast _HundsdorferScheme.cell).SetStep
                                                             _dt.cell 
@@ -236,7 +236,7 @@ module HundsdorferSchemeFunction =
 
             try
 
-                let _HundsdorferScheme = Helper.toCell<HundsdorferScheme> hundsdorferscheme "HundsdorferScheme"  
+                let _HundsdorferScheme = Helper.toModelReference<HundsdorferScheme> hundsdorferscheme "HundsdorferScheme"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0

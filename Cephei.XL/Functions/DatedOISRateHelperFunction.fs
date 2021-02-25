@@ -103,7 +103,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -141,7 +141,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).SetTermStructure
                                                             _t.cell 
@@ -181,7 +181,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -217,7 +217,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -253,7 +253,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -289,7 +289,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -325,7 +325,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -361,7 +361,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -397,7 +397,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -433,7 +433,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -469,7 +469,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -507,7 +507,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).RegisterWith
                                                             _handler.cell 
@@ -549,7 +549,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).UnregisterWith
                                                             _handler.cell 
@@ -589,7 +589,7 @@ module DatedOISRateHelperFunction =
 
             try
 
-                let _DatedOISRateHelper = Helper.toCell<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
+                let _DatedOISRateHelper = Helper.toModelReference<DatedOISRateHelper> datedoisratehelper "DatedOISRateHelper"  
                 let builder (current : ICell) = ((DatedOISRateHelperModel.Cast _DatedOISRateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : DatedOISRateHelper) (l:string) = o.ToString() :> obj

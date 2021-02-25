@@ -53,7 +53,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let _value = Helper.toCell<double> value "value" 
                 let _weight = Helper.toCell<double> weight "weight" 
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).Add
@@ -102,7 +102,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).AddSequence
@@ -146,7 +146,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -186,7 +186,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
                 let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).ExpectationValue
@@ -230,7 +230,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -266,7 +266,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -302,7 +302,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -338,7 +338,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -376,7 +376,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let _percent = Helper.toCell<double> percent "percent" 
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).Percentile
                                                             _percent.cell 
@@ -416,7 +416,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).Reset
                                                        ) :> ICell
                 let format (o : StatsHolder) (l:string) = o.ToString() :> obj
@@ -452,7 +452,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -488,7 +488,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -524,7 +524,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -634,7 +634,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -670,7 +670,7 @@ module StatsHolderFunction =
 
             try
 
-                let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
+                let _StatsHolder = Helper.toModelReference<StatsHolder> statsholder "StatsHolder"  
                 let builder (current : ICell) = ((StatsHolderModel.Cast _StatsHolder.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

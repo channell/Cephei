@@ -50,7 +50,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _underlying = Helper.toCell<double> underlying "underlying" 
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).Amount1
                                                             _underlying.cell 
@@ -90,7 +90,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -218,7 +218,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).Nominal
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -254,7 +254,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -290,7 +290,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -328,7 +328,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).CompareTo
                                                             _cf.cell 
@@ -370,7 +370,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).Equals
                                                             _cf.cell 
@@ -410,7 +410,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -450,7 +450,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).HasOccurred
@@ -496,7 +496,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -538,7 +538,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).Accept
                                                             _v.cell 
@@ -580,7 +580,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).RegisterWith
                                                             _handler.cell 
@@ -622,7 +622,7 @@ module FractionalDividendFunction =
 
             try
 
-                let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
+                let _FractionalDividend = Helper.toModelReference<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FractionalDividendModel.Cast _FractionalDividend.cell).UnregisterWith
                                                             _handler.cell 

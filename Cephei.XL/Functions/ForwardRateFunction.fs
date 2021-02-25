@@ -52,7 +52,7 @@ module ForwardRateFunction =
 
             try
 
-                let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
+                let _ForwardRate = Helper.toModelReference<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).DiscountImpl
@@ -100,7 +100,7 @@ module ForwardRateFunction =
 
             try
 
-                let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
+                let _ForwardRate = Helper.toModelReference<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).ForwardImpl
@@ -152,7 +152,7 @@ module ForwardRateFunction =
 
             try
 
-                let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
+                let _ForwardRate = Helper.toModelReference<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -206,7 +206,7 @@ module ForwardRateFunction =
 
             try
 
-                let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
+                let _ForwardRate = Helper.toModelReference<ForwardRate> forwardrate "ForwardRate"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
                 let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).InitialDate
                                                             _c.cell 
@@ -248,7 +248,7 @@ module ForwardRateFunction =
 
             try
 
-                let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
+                let _ForwardRate = Helper.toModelReference<ForwardRate> forwardrate "ForwardRate"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
                 let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).InitialValue
                                                             _c.cell 
@@ -288,7 +288,7 @@ module ForwardRateFunction =
 
             try
 
-                let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
+                let _ForwardRate = Helper.toModelReference<ForwardRate> forwardrate "ForwardRate"  
                 let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -332,7 +332,7 @@ module ForwardRateFunction =
 
             try
 
-                let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
+                let _ForwardRate = Helper.toModelReference<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -392,7 +392,7 @@ module ForwardRateFunction =
 
             try
 
-                let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
+                let _ForwardRate = Helper.toModelReference<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<int> i "i" 
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
@@ -450,7 +450,7 @@ module ForwardRateFunction =
 
             try
 
-                let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
+                let _ForwardRate = Helper.toModelReference<ForwardRate> forwardrate "ForwardRate"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _i = Helper.toCell<int> i "i" 
@@ -502,7 +502,7 @@ module ForwardRateFunction =
 
             try
 
-                let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
+                let _ForwardRate = Helper.toModelReference<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((ForwardRateModel.Cast _ForwardRate.cell).ZeroYieldImpl

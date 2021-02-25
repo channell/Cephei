@@ -48,7 +48,7 @@ module TreeFunction =
 
             try
 
-                let _Tree = Helper.toCell<Tree> tree "Tree"  
+                let _Tree = Helper.toModelReference<Tree> tree "Tree"  
                 let builder (current : ICell) = ((TreeModel.Cast _Tree.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

@@ -50,7 +50,7 @@ module ProjectedCostFunctionFunction =
 
             try
 
-                let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
+                let _ProjectedCostFunction = Helper.toModelReference<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _projectedParameters = Helper.toCell<Vector> projectedParameters "projectedParameters" 
                 let builder (current : ICell) = ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Include
                                                             _projectedParameters.cell 
@@ -92,7 +92,7 @@ module ProjectedCostFunctionFunction =
 
             try
 
-                let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
+                let _ProjectedCostFunction = Helper.toModelReference<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Project
                                                             _parameters.cell 
@@ -183,7 +183,7 @@ module ProjectedCostFunctionFunction =
 
             try
 
-                let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
+                let _ProjectedCostFunction = Helper.toModelReference<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _freeParameters = Helper.toCell<Vector> freeParameters "freeParameters" 
                 let builder (current : ICell) = ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Value
                                                             _freeParameters.cell 
@@ -225,7 +225,7 @@ module ProjectedCostFunctionFunction =
 
             try
 
-                let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
+                let _ProjectedCostFunction = Helper.toModelReference<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _freeParameters = Helper.toCell<Vector> freeParameters "freeParameters" 
                 let builder (current : ICell) = ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Values
                                                             _freeParameters.cell 
@@ -265,7 +265,7 @@ module ProjectedCostFunctionFunction =
 
             try
 
-                let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
+                let _ProjectedCostFunction = Helper.toModelReference<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let builder (current : ICell) = ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).FiniteDifferenceEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -305,7 +305,7 @@ module ProjectedCostFunctionFunction =
 
             try
 
-                let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
+                let _ProjectedCostFunction = Helper.toModelReference<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _grad = Helper.toCell<Vector> grad "grad" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Gradient
@@ -353,7 +353,7 @@ module ProjectedCostFunctionFunction =
 
             try
 
-                let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
+                let _ProjectedCostFunction = Helper.toModelReference<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Jacobian
@@ -401,7 +401,7 @@ module ProjectedCostFunctionFunction =
 
             try
 
-                let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
+                let _ProjectedCostFunction = Helper.toModelReference<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _grad = Helper.toCell<Vector> grad "grad" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).ValueAndGradient
@@ -449,7 +449,7 @@ module ProjectedCostFunctionFunction =
 
             try
 
-                let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
+                let _ProjectedCostFunction = Helper.toModelReference<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let builder (current : ICell) = ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).ValuesAndJacobian

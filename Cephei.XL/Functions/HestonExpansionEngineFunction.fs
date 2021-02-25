@@ -101,7 +101,7 @@ module HestonExpansionEngineFunction =
 
             try
 
-                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
+                let _HestonExpansionEngine = Helper.toModelReference<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
                 let builder (current : ICell) = ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).SetModel
                                                             _model.cell 
@@ -143,7 +143,7 @@ module HestonExpansionEngineFunction =
 
             try
 
-                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
+                let _HestonExpansionEngine = Helper.toModelReference<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -183,7 +183,7 @@ module HestonExpansionEngineFunction =
 
             try
 
-                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
+                let _HestonExpansionEngine = Helper.toModelReference<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let builder (current : ICell) = ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
@@ -221,7 +221,7 @@ module HestonExpansionEngineFunction =
 
             try
 
-                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
+                let _HestonExpansionEngine = Helper.toModelReference<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -261,7 +261,7 @@ module HestonExpansionEngineFunction =
 
             try
 
-                let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
+                let _HestonExpansionEngine = Helper.toModelReference<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let builder (current : ICell) = ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj

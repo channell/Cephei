@@ -48,7 +48,7 @@ module SimplePolynomialFittingFunction =
 
             try
 
-                let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
+                let _SimplePolynomialFitting = Helper.toModelReference<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
                 let builder (current : ICell) = ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
@@ -139,7 +139,7 @@ module SimplePolynomialFittingFunction =
 
             try
 
-                let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
+                let _SimplePolynomialFitting = Helper.toModelReference<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
                 let builder (current : ICell) = ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -175,7 +175,7 @@ module SimplePolynomialFittingFunction =
 
             try
 
-                let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
+                let _SimplePolynomialFitting = Helper.toModelReference<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
                 let builder (current : ICell) = ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -215,7 +215,7 @@ module SimplePolynomialFittingFunction =
 
             try
 
-                let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
+                let _SimplePolynomialFitting = Helper.toModelReference<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Discount
@@ -259,7 +259,7 @@ module SimplePolynomialFittingFunction =
 
             try
 
-                let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
+                let _SimplePolynomialFitting = Helper.toModelReference<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
                 let builder (current : ICell) = ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -295,7 +295,7 @@ module SimplePolynomialFittingFunction =
 
             try
 
-                let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
+                let _SimplePolynomialFitting = Helper.toModelReference<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
                 let builder (current : ICell) = ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -331,7 +331,7 @@ module SimplePolynomialFittingFunction =
 
             try
 
-                let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
+                let _SimplePolynomialFitting = Helper.toModelReference<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
                 let builder (current : ICell) = ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
@@ -367,7 +367,7 @@ module SimplePolynomialFittingFunction =
 
             try
 
-                let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
+                let _SimplePolynomialFitting = Helper.toModelReference<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
                 let builder (current : ICell) = ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -403,7 +403,7 @@ module SimplePolynomialFittingFunction =
 
             try
 
-                let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
+                let _SimplePolynomialFitting = Helper.toModelReference<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
                 let builder (current : ICell) = ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

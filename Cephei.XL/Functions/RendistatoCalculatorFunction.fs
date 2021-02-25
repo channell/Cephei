@@ -48,7 +48,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Duration
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Durations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -120,7 +120,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwap
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
@@ -156,7 +156,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapDuration
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -192,7 +192,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapLength
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -228,7 +228,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -264,7 +264,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -300,7 +300,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapYield
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -385,7 +385,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapDurations
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -421,7 +421,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapLengths
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -457,7 +457,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapRates
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -493,7 +493,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapYields
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -529,7 +529,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Yield
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -565,7 +565,7 @@ module RendistatoCalculatorFunction =
 
             try
 
-                let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
+                let _RendistatoCalculator = Helper.toModelReference<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
                 let builder (current : ICell) = ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Yields
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

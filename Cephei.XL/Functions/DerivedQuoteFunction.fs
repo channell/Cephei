@@ -91,7 +91,7 @@ module DerivedQuoteFunction =
 
             try
 
-                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
+                let _DerivedQuote = Helper.toModelReference<DerivedQuote> derivedquote "DerivedQuote"  
                 let builder (current : ICell) = ((DerivedQuoteModel.Cast _DerivedQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -127,7 +127,7 @@ module DerivedQuoteFunction =
 
             try
 
-                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
+                let _DerivedQuote = Helper.toModelReference<DerivedQuote> derivedquote "DerivedQuote"  
                 let builder (current : ICell) = ((DerivedQuoteModel.Cast _DerivedQuote.cell).Update
                                                        ) :> ICell
                 let format (o : DerivedQuote) (l:string) = o.ToString() :> obj
@@ -163,7 +163,7 @@ module DerivedQuoteFunction =
 
             try
 
-                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
+                let _DerivedQuote = Helper.toModelReference<DerivedQuote> derivedquote "DerivedQuote"  
                 let builder (current : ICell) = ((DerivedQuoteModel.Cast _DerivedQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -201,7 +201,7 @@ module DerivedQuoteFunction =
 
             try
 
-                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
+                let _DerivedQuote = Helper.toModelReference<DerivedQuote> derivedquote "DerivedQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((DerivedQuoteModel.Cast _DerivedQuote.cell).RegisterWith
                                                             _handler.cell 
@@ -243,7 +243,7 @@ module DerivedQuoteFunction =
 
             try
 
-                let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
+                let _DerivedQuote = Helper.toModelReference<DerivedQuote> derivedquote "DerivedQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((DerivedQuoteModel.Cast _DerivedQuote.cell).UnregisterWith
                                                             _handler.cell 

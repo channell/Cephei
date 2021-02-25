@@ -102,7 +102,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -140,7 +140,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).AddHoliday
                                                             _d.cell 
@@ -184,7 +184,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).Adjust
@@ -238,7 +238,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
@@ -302,7 +302,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
@@ -362,7 +362,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
@@ -414,7 +414,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -450,7 +450,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -488,7 +488,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).EndOfMonth
                                                             _d.cell 
@@ -530,7 +530,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).Equals
                                                             _o.cell 
@@ -572,7 +572,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).IsBusinessDay
                                                             _d.cell 
@@ -614,7 +614,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).IsEndOfMonth
                                                             _d.cell 
@@ -656,7 +656,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).IsHoliday
                                                             _d.cell 
@@ -698,7 +698,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).IsWeekend
                                                             _w.cell 
@@ -740,7 +740,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -776,7 +776,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -814,7 +814,7 @@ module IsraelFunction =
 
             try
 
-                let _Israel = Helper.toCell<Israel> israel "Israel"  
+                let _Israel = Helper.toModelReference<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((IsraelModel.Cast _Israel.cell).RemoveHoliday
                                                             _d.cell 

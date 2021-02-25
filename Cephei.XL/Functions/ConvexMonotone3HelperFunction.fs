@@ -121,7 +121,7 @@ module ConvexMonotone3HelperFunction =
 
             try
 
-                let _ConvexMonotone3Helper = Helper.toCell<ConvexMonotone3Helper> convexmonotone3helper "ConvexMonotone3Helper"  
+                let _ConvexMonotone3Helper = Helper.toModelReference<ConvexMonotone3Helper> convexmonotone3helper "ConvexMonotone3Helper"  
                 let builder (current : ICell) = ((ConvexMonotone3HelperModel.Cast _ConvexMonotone3Helper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -159,7 +159,7 @@ module ConvexMonotone3HelperFunction =
 
             try
 
-                let _ConvexMonotone3Helper = Helper.toCell<ConvexMonotone3Helper> convexmonotone3helper "ConvexMonotone3Helper"  
+                let _ConvexMonotone3Helper = Helper.toModelReference<ConvexMonotone3Helper> convexmonotone3helper "ConvexMonotone3Helper"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((ConvexMonotone3HelperModel.Cast _ConvexMonotone3Helper.cell).Primitive
                                                             _x.cell 
@@ -201,7 +201,7 @@ module ConvexMonotone3HelperFunction =
 
             try
 
-                let _ConvexMonotone3Helper = Helper.toCell<ConvexMonotone3Helper> convexmonotone3helper "ConvexMonotone3Helper"  
+                let _ConvexMonotone3Helper = Helper.toModelReference<ConvexMonotone3Helper> convexmonotone3helper "ConvexMonotone3Helper"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((ConvexMonotone3HelperModel.Cast _ConvexMonotone3Helper.cell).Value
                                                             _x.cell 

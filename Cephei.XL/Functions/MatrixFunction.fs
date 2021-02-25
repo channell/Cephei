@@ -50,7 +50,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let _c = Helper.toCell<int> c "c" 
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).Column
                                                             _c.cell 
@@ -90,7 +90,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -126,7 +126,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -162,7 +162,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -200,7 +200,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let _value = Helper.toCell<double> value "value" 
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).Fill
                                                             _value.cell 
@@ -244,7 +244,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let _start = Helper.toCell<int> start "start" 
                 let _length = Helper.toCell<int> length "length" 
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).GetRange
@@ -450,7 +450,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let _r = Helper.toCell<int> r "r" 
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).Row
                                                             _r.cell 
@@ -490,7 +490,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).Rows
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -534,7 +534,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let _i1 = Helper.toCell<int> i1 "i1" 
                 let _j1 = Helper.toCell<int> j1 "j1" 
                 let _i2 = Helper.toCell<int> i2 "i2" 
@@ -590,7 +590,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let _r1 = Helper.toCell<int> r1 "r1" 
                 let _r2 = Helper.toCell<int> r2 "r2" 
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).SwapRow
@@ -636,7 +636,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).This
                                                             _i.cell 
@@ -680,7 +680,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).This1
@@ -724,7 +724,7 @@ module MatrixFunction =
 
             try
 
-                let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
+                let _Matrix = Helper.toModelReference<Matrix> matrix "Matrix"  
                 let builder (current : ICell) = ((MatrixModel.Cast _Matrix.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj

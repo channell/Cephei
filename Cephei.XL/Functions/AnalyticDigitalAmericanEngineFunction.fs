@@ -92,7 +92,7 @@ module AnalyticDigitalAmericanEngineFunction =
 
             try
 
-                let _AnalyticDigitalAmericanEngine = Helper.toCell<AnalyticDigitalAmericanEngine> analyticdigitalamericanengine "AnalyticDigitalAmericanEngine"  
+                let _AnalyticDigitalAmericanEngine = Helper.toModelReference<AnalyticDigitalAmericanEngine> analyticdigitalamericanengine "AnalyticDigitalAmericanEngine"  
                 let builder (current : ICell) = ((AnalyticDigitalAmericanEngineModel.Cast _AnalyticDigitalAmericanEngine.cell).Knock_in
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

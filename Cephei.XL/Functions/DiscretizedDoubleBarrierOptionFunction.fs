@@ -52,7 +52,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _optvalues = Helper.toCell<Vector> optvalues "optvalues" 
                 let _grid = Helper.toDefault<Vector> grid "grid" null
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).CheckBarrier
@@ -145,7 +145,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -183,7 +183,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _size = Helper.toCell<int> size "size" 
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Reset
                                                             _size.cell 
@@ -223,7 +223,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Vanilla
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -259,7 +259,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
@@ -299,7 +299,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Initialize
@@ -343,7 +343,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
@@ -381,7 +381,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PartialRollback
                                                             _To.cell 
@@ -421,7 +421,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
@@ -457,7 +457,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
@@ -493,7 +493,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -531,7 +531,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _To = Helper.toCell<double> To "To" 
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Rollback
                                                             _To.cell 
@@ -573,7 +573,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).SetTime
                                                             _t.cell 
@@ -615,7 +615,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _v = Helper.toCell<Vector> v "v" 
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).SetValues
                                                             _v.cell 
@@ -655,7 +655,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -691,7 +691,7 @@ module DiscretizedDoubleBarrierOptionFunction =
 
             try
 
-                let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
+                let _DiscretizedDoubleBarrierOption = Helper.toModelReference<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let builder (current : ICell) = ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

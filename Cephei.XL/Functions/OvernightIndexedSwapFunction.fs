@@ -48,7 +48,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).FairRate
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).FairSpread
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).FixedDayCount
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -156,7 +156,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).FixedLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -192,7 +192,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).FixedLegBPS
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -228,7 +228,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).FixedLegNPV
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -264,7 +264,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).FixedNominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -300,7 +300,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).FixedPaymentFrequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -336,7 +336,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).FixedRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -554,7 +554,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).OvernightLeg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -590,7 +590,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).OvernightLegBPS
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -626,7 +626,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).OvernightLegNPV
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -662,7 +662,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).OvernightNominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -698,7 +698,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).OvernightPaymentFrequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -734,7 +734,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -770,7 +770,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -808,7 +808,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).EndDiscounts
                                                             _j.cell 
@@ -849,7 +849,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).Engine
                                                        ) :> ICell
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
@@ -886,7 +886,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -924,7 +924,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).Leg
                                                             _j.cell 
@@ -966,7 +966,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).LegBPS
                                                             _j.cell 
@@ -1008,7 +1008,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).LegNPV
                                                             _j.cell 
@@ -1048,7 +1048,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1084,7 +1084,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1122,7 +1122,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).Payer
                                                             _j.cell 
@@ -1162,7 +1162,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1200,7 +1200,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).StartDiscounts
                                                             _j.cell 
@@ -1240,7 +1240,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1276,7 +1276,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1312,7 +1312,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1350,7 +1350,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).Result
                                                             _tag.cell 
@@ -1392,7 +1392,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).SetPricingEngine
                                                             _e.cell 
@@ -1432,7 +1432,7 @@ module OvernightIndexedSwapFunction =
 
             try
 
-                let _OvernightIndexedSwap = Helper.toCell<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
+                let _OvernightIndexedSwap = Helper.toModelReference<OvernightIndexedSwap> overnightindexedswap "OvernightIndexedSwap"  
                 let builder (current : ICell) = ((OvernightIndexedSwapModel.Cast _OvernightIndexedSwap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

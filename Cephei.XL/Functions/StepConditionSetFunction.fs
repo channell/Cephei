@@ -52,7 +52,7 @@ module StepConditionSetFunction =
 
             try
 
-                let _StepConditionSet = Helper.toCell<StepConditionSet> stepconditionset "StepConditionSet"  
+                let _StepConditionSet = Helper.toModelReference<StepConditionSet> stepconditionset "StepConditionSet"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((StepConditionSetModel.Cast _StepConditionSet.cell).ApplyTo

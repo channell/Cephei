@@ -48,7 +48,7 @@ module WeakEventSourceFunction =
 
             try
 
-                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
+                let _WeakEventSource = Helper.toModelReference<WeakEventSource> weakeventsource "WeakEventSource"  
                 let builder (current : ICell) = ((WeakEventSourceModel.Cast _WeakEventSource.cell).Clear
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
@@ -84,7 +84,7 @@ module WeakEventSourceFunction =
 
             try
 
-                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
+                let _WeakEventSource = Helper.toModelReference<WeakEventSource> weakeventsource "WeakEventSource"  
                 let builder (current : ICell) = ((WeakEventSourceModel.Cast _WeakEventSource.cell).Raise
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
@@ -122,7 +122,7 @@ module WeakEventSourceFunction =
 
             try
 
-                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
+                let _WeakEventSource = Helper.toModelReference<WeakEventSource> weakeventsource "WeakEventSource"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((WeakEventSourceModel.Cast _WeakEventSource.cell).Subscribe
                                                             _handler.cell 
@@ -164,7 +164,7 @@ module WeakEventSourceFunction =
 
             try
 
-                let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
+                let _WeakEventSource = Helper.toModelReference<WeakEventSource> weakeventsource "WeakEventSource"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((WeakEventSourceModel.Cast _WeakEventSource.cell).Unsubscribe
                                                             _handler.cell 

@@ -97,7 +97,7 @@ module GaussKronrodNonAdaptiveFunction =
 
             try
 
-                let _GaussKronrodNonAdaptive = Helper.toCell<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
+                let _GaussKronrodNonAdaptive = Helper.toModelReference<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
                 let builder (current : ICell) = ((GaussKronrodNonAdaptiveModel.Cast _GaussKronrodNonAdaptive.cell).RelativeAccuracy
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -133,7 +133,7 @@ module GaussKronrodNonAdaptiveFunction =
 
             try
 
-                let _GaussKronrodNonAdaptive = Helper.toCell<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
+                let _GaussKronrodNonAdaptive = Helper.toModelReference<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
                 let builder (current : ICell) = ((GaussKronrodNonAdaptiveModel.Cast _GaussKronrodNonAdaptive.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -169,7 +169,7 @@ module GaussKronrodNonAdaptiveFunction =
 
             try
 
-                let _GaussKronrodNonAdaptive = Helper.toCell<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
+                let _GaussKronrodNonAdaptive = Helper.toModelReference<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
                 let builder (current : ICell) = ((GaussKronrodNonAdaptiveModel.Cast _GaussKronrodNonAdaptive.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -205,7 +205,7 @@ module GaussKronrodNonAdaptiveFunction =
 
             try
 
-                let _GaussKronrodNonAdaptive = Helper.toCell<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
+                let _GaussKronrodNonAdaptive = Helper.toModelReference<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
                 let builder (current : ICell) = ((GaussKronrodNonAdaptiveModel.Cast _GaussKronrodNonAdaptive.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -241,7 +241,7 @@ module GaussKronrodNonAdaptiveFunction =
 
             try
 
-                let _GaussKronrodNonAdaptive = Helper.toCell<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
+                let _GaussKronrodNonAdaptive = Helper.toModelReference<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
                 let builder (current : ICell) = ((GaussKronrodNonAdaptiveModel.Cast _GaussKronrodNonAdaptive.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -277,7 +277,7 @@ module GaussKronrodNonAdaptiveFunction =
 
             try
 
-                let _GaussKronrodNonAdaptive = Helper.toCell<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
+                let _GaussKronrodNonAdaptive = Helper.toModelReference<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
                 let builder (current : ICell) = ((GaussKronrodNonAdaptiveModel.Cast _GaussKronrodNonAdaptive.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -315,7 +315,7 @@ module GaussKronrodNonAdaptiveFunction =
 
             try
 
-                let _GaussKronrodNonAdaptive = Helper.toCell<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
+                let _GaussKronrodNonAdaptive = Helper.toModelReference<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let builder (current : ICell) = ((GaussKronrodNonAdaptiveModel.Cast _GaussKronrodNonAdaptive.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
@@ -357,7 +357,7 @@ module GaussKronrodNonAdaptiveFunction =
 
             try
 
-                let _GaussKronrodNonAdaptive = Helper.toCell<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
+                let _GaussKronrodNonAdaptive = Helper.toModelReference<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let builder (current : ICell) = ((GaussKronrodNonAdaptiveModel.Cast _GaussKronrodNonAdaptive.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
@@ -403,7 +403,7 @@ module GaussKronrodNonAdaptiveFunction =
 
             try
 
-                let _GaussKronrodNonAdaptive = Helper.toCell<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
+                let _GaussKronrodNonAdaptive = Helper.toModelReference<GaussKronrodNonAdaptive> gausskronrodnonadaptive "GaussKronrodNonAdaptive"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 

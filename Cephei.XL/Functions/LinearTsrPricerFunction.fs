@@ -50,7 +50,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).CapletPrice
                                                             _effectiveCap.cell 
@@ -92,7 +92,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).CapletRate
                                                             _effectiveCap.cell 
@@ -134,7 +134,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).FloorletPrice
                                                             _effectiveFloor.cell 
@@ -176,7 +176,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).FloorletRate
                                                             _effectiveFloor.cell 
@@ -218,7 +218,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).Initialize
                                                             _coupon.cell 
@@ -325,7 +325,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).MeanReversion
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -363,7 +363,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _meanReversion = Helper.toHandle<Quote> meanReversion "meanReversion" 
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).SetMeanReversion
                                                             _meanReversion.cell 
@@ -403,7 +403,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -439,7 +439,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -477,7 +477,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _v = Helper.toHandle<SwaptionVolatilityStructure> v "v" 
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).SetSwaptionVolatility
                                                             _v.cell 
@@ -517,7 +517,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).SwaptionVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
@@ -555,7 +555,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).RegisterWith
                                                             _handler.cell 
@@ -597,7 +597,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).UnregisterWith
                                                             _handler.cell 
@@ -637,7 +637,7 @@ module LinearTsrPricerFunction =
 
             try
 
-                let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
+                let _LinearTsrPricer = Helper.toModelReference<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let builder (current : ICell) = ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).Update
                                                        ) :> ICell
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj

@@ -52,7 +52,7 @@ module CompositeInstrumentFunction =
 
             try
 
-                let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
+                let _CompositeInstrument = Helper.toModelReference<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _instrument = Helper.toCell<Instrument> instrument "instrument" 
                 let _multiplier = Helper.toDefault<double> multiplier "multiplier" 1.0
                 let builder (current : ICell) = ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Add
@@ -97,7 +97,7 @@ module CompositeInstrumentFunction =
 
             try
 
-                let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
+                let _CompositeInstrument = Helper.toModelReference<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let builder (current : ICell) = ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -137,7 +137,7 @@ module CompositeInstrumentFunction =
 
             try
 
-                let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
+                let _CompositeInstrument = Helper.toModelReference<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _instrument = Helper.toCell<Instrument> instrument "instrument" 
                 let _multiplier = Helper.toDefault<double> multiplier "multiplier" 1.0
                 let builder (current : ICell) = ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Subtract
@@ -181,7 +181,7 @@ module CompositeInstrumentFunction =
 
             try
 
-                let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
+                let _CompositeInstrument = Helper.toModelReference<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let builder (current : ICell) = ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -217,7 +217,7 @@ module CompositeInstrumentFunction =
 
             try
 
-                let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
+                let _CompositeInstrument = Helper.toModelReference<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let builder (current : ICell) = ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -253,7 +253,7 @@ module CompositeInstrumentFunction =
 
             try
 
-                let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
+                let _CompositeInstrument = Helper.toModelReference<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let builder (current : ICell) = ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -291,7 +291,7 @@ module CompositeInstrumentFunction =
 
             try
 
-                let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
+                let _CompositeInstrument = Helper.toModelReference<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Result
                                                             _tag.cell 
@@ -333,7 +333,7 @@ module CompositeInstrumentFunction =
 
             try
 
-                let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
+                let _CompositeInstrument = Helper.toModelReference<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).SetPricingEngine
                                                             _e.cell 
@@ -373,7 +373,7 @@ module CompositeInstrumentFunction =
 
             try
 
-                let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
+                let _CompositeInstrument = Helper.toModelReference<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let builder (current : ICell) = ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

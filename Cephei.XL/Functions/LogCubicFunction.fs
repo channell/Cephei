@@ -48,7 +48,7 @@ module LogCubicFunction =
 
             try
 
-                let _LogCubic = Helper.toCell<LogCubic> logcubic "LogCubic"  
+                let _LogCubic = Helper.toModelReference<LogCubic> logcubic "LogCubic"  
                 let builder (current : ICell) = ((LogCubicModel.Cast _LogCubic.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -90,7 +90,7 @@ module LogCubicFunction =
 
             try
 
-                let _LogCubic = Helper.toCell<LogCubic> logcubic "LogCubic"  
+                let _LogCubic = Helper.toModelReference<LogCubic> logcubic "LogCubic"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
@@ -236,7 +236,7 @@ module LogCubicFunction =
 
             try
 
-                let _LogCubic = Helper.toCell<LogCubic> logcubic "LogCubic"  
+                let _LogCubic = Helper.toModelReference<LogCubic> logcubic "LogCubic"  
                 let builder (current : ICell) = ((LogCubicModel.Cast _LogCubic.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

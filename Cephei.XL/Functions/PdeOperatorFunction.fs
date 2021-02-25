@@ -144,7 +144,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).Add
@@ -190,7 +190,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _v = Helper.toCell<Vector> v "v" 
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).ApplyTo
                                                             _v.cell 
@@ -230,7 +230,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -266,7 +266,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -304,7 +304,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _size = Helper.toCell<int> size "size" 
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).Identity
                                                             _size.cell 
@@ -344,7 +344,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -380,7 +380,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -420,7 +420,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _a = Helper.toCell<double> a "a" 
                 let _o = Helper.toCell<IOperator> o "o" 
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).Multiply
@@ -468,7 +468,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).SetFirstRow
@@ -516,7 +516,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).SetLastRow
@@ -568,7 +568,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _i = Helper.toCell<int> i "i" 
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
@@ -626,7 +626,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
@@ -676,7 +676,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).SetTime
                                                             _t.cell 
@@ -716,7 +716,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -754,7 +754,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).SolveFor
                                                             _rhs.cell 
@@ -798,7 +798,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let _tol = Helper.toCell<double> tol "tol" 
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).SOR
@@ -846,7 +846,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).Subtract
@@ -890,7 +890,7 @@ module PdeOperatorFunction =
 
             try
 
-                let _PdeOperator = Helper.toCell<PdeOperator> pdeoperator "PdeOperator"  
+                let _PdeOperator = Helper.toModelReference<PdeOperator> pdeoperator "PdeOperator"  
                 let builder (current : ICell) = ((PdeOperatorModel.Cast _PdeOperator.cell).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

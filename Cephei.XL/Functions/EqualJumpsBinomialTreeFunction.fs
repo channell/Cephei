@@ -134,7 +134,7 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
+                let _EqualJumpsBinomialTree = Helper.toModelReference<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -186,7 +186,7 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
+                let _EqualJumpsBinomialTree = Helper.toModelReference<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Underlying
@@ -236,7 +236,7 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
+                let _EqualJumpsBinomialTree = Helper.toModelReference<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
@@ -286,7 +286,7 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
+                let _EqualJumpsBinomialTree = Helper.toModelReference<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Size
                                                             _i.cell 
@@ -326,7 +326,7 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
+                let _EqualJumpsBinomialTree = Helper.toModelReference<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
                 let builder (current : ICell) = ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

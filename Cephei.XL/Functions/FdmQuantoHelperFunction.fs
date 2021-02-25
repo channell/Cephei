@@ -48,7 +48,7 @@ module FdmQuantoHelperFunction =
 
             try
 
-                let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
+                let _FdmQuantoHelper = Helper.toModelReference<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let builder (current : ICell) = ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).EquityFxCorrelation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module FdmQuantoHelperFunction =
 
             try
 
-                let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
+                let _FdmQuantoHelper = Helper.toModelReference<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let builder (current : ICell) = ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).ExchRateATMlevel
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -181,7 +181,7 @@ module FdmQuantoHelperFunction =
 
             try
 
-                let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
+                let _FdmQuantoHelper = Helper.toModelReference<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let builder (current : ICell) = ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).ForeignTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YieldTermStructure>) l
@@ -217,7 +217,7 @@ module FdmQuantoHelperFunction =
 
             try
 
-                let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
+                let _FdmQuantoHelper = Helper.toModelReference<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let builder (current : ICell) = ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).FxVolatilityTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackVolTermStructure>) l
@@ -259,7 +259,7 @@ module FdmQuantoHelperFunction =
 
             try
 
-                let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
+                let _FdmQuantoHelper = Helper.toModelReference<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let _equityVol = Helper.toCell<Vector> equityVol "equityVol" 
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
@@ -313,7 +313,7 @@ module FdmQuantoHelperFunction =
 
             try
 
-                let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
+                let _FdmQuantoHelper = Helper.toModelReference<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let _equityVol = Helper.toCell<double> equityVol "equityVol" 
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
@@ -363,7 +363,7 @@ module FdmQuantoHelperFunction =
 
             try
 
-                let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
+                let _FdmQuantoHelper = Helper.toModelReference<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).RegisterWith
                                                             _handler.cell 
@@ -403,7 +403,7 @@ module FdmQuantoHelperFunction =
 
             try
 
-                let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
+                let _FdmQuantoHelper = Helper.toModelReference<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let builder (current : ICell) = ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).RiskFreeTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YieldTermStructure>) l
@@ -441,7 +441,7 @@ module FdmQuantoHelperFunction =
 
             try
 
-                let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
+                let _FdmQuantoHelper = Helper.toModelReference<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).UnregisterWith
                                                             _handler.cell 
@@ -481,7 +481,7 @@ module FdmQuantoHelperFunction =
 
             try
 
-                let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
+                let _FdmQuantoHelper = Helper.toModelReference<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let builder (current : ICell) = ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).Update
                                                        ) :> ICell
                 let format (o : FdmQuantoHelper) (l:string) = o.ToString() :> obj

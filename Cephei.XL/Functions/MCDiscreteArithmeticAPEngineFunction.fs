@@ -142,7 +142,7 @@ module MCDiscreteArithmeticAPEngineFunction =
 
             try
 
-                let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
+                let _MCDiscreteArithmeticAPEngine = Helper.toModelReference<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -182,7 +182,7 @@ module MCDiscreteArithmeticAPEngineFunction =
 
             try
 
-                let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
+                let _MCDiscreteArithmeticAPEngine = Helper.toModelReference<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
                 let builder (current : ICell) = ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : MCDiscreteArithmeticAPEngine) (l:string) = o.ToString() :> obj
@@ -220,7 +220,7 @@ module MCDiscreteArithmeticAPEngineFunction =
 
             try
 
-                let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
+                let _MCDiscreteArithmeticAPEngine = Helper.toModelReference<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).UnregisterWith
                                                             _handler.cell 
@@ -260,7 +260,7 @@ module MCDiscreteArithmeticAPEngineFunction =
 
             try
 
-                let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
+                let _MCDiscreteArithmeticAPEngine = Helper.toModelReference<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
                 let builder (current : ICell) = ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).Update
                                                        ) :> ICell
                 let format (o : MCDiscreteArithmeticAPEngine) (l:string) = o.ToString() :> obj
@@ -296,7 +296,7 @@ module MCDiscreteArithmeticAPEngineFunction =
 
             try
 
-                let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
+                let _MCDiscreteArithmeticAPEngine = Helper.toModelReference<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
                 let builder (current : ICell) = ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -332,7 +332,7 @@ module MCDiscreteArithmeticAPEngineFunction =
 
             try
 
-                let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
+                let _MCDiscreteArithmeticAPEngine = Helper.toModelReference<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
                 let builder (current : ICell) = ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
@@ -374,7 +374,7 @@ module MCDiscreteArithmeticAPEngineFunction =
 
             try
 
-                let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
+                let _MCDiscreteArithmeticAPEngine = Helper.toModelReference<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
                 let _tolerance = Helper.toCell<double> tolerance "tolerance" 
                 let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
                 let _minSamples = Helper.toCell<int> minSamples "minSamples" 
@@ -424,7 +424,7 @@ module MCDiscreteArithmeticAPEngineFunction =
 
             try
 
-                let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
+                let _MCDiscreteArithmeticAPEngine = Helper.toModelReference<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
                 let _samples = Helper.toCell<int> samples "samples" 
                 let builder (current : ICell) = ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).ValueWithSamples
                                                             _samples.cell 

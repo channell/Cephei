@@ -87,7 +87,7 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
+                let _GaussGegenbauerPolynomial = Helper.toModelReference<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Alpha
                                                             _i.cell 
@@ -129,7 +129,7 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
+                let _GaussGegenbauerPolynomial = Helper.toModelReference<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
                 let builder (current : ICell) = ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Beta
                                                             _i.cell 
@@ -169,7 +169,7 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
+                let _GaussGegenbauerPolynomial = Helper.toModelReference<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let builder (current : ICell) = ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -207,7 +207,7 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
+                let _GaussGegenbauerPolynomial = Helper.toModelReference<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).W
                                                             _x.cell 
@@ -251,7 +251,7 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
+                let _GaussGegenbauerPolynomial = Helper.toModelReference<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Value
@@ -299,7 +299,7 @@ module GaussGegenbauerPolynomialFunction =
 
             try
 
-                let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
+                let _GaussGegenbauerPolynomial = Helper.toModelReference<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).WeightedValue

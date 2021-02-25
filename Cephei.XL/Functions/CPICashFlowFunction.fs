@@ -48,7 +48,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -120,7 +120,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).BaseFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -247,7 +247,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -283,7 +283,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).Interpolation
                                                        ) :> ICell
                 let format (o : InterpolationType) (l:string) = o.ToString() :> obj
@@ -319,7 +319,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -355,7 +355,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -391,7 +391,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).GrowthOnly
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -427,7 +427,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Index>) l
@@ -463,7 +463,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).Notional
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -501,7 +501,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).CompareTo
                                                             _cf.cell 
@@ -543,7 +543,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).Equals
                                                             _cf.cell 
@@ -583,7 +583,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -623,7 +623,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).HasOccurred
@@ -669,7 +669,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -711,7 +711,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).Accept
                                                             _v.cell 
@@ -753,7 +753,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).RegisterWith
                                                             _handler.cell 
@@ -795,7 +795,7 @@ module CPICashFlowFunction =
 
             try
 
-                let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
+                let _CPICashFlow = Helper.toModelReference<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CPICashFlowModel.Cast _CPICashFlow.cell).UnregisterWith
                                                             _handler.cell 

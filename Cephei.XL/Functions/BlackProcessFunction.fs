@@ -156,7 +156,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dx = Helper.toCell<double> dx "dx" 
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).Apply
@@ -200,7 +200,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).BlackVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<BlackVolTermStructure>>) l
@@ -240,7 +240,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).Diffusion
@@ -284,7 +284,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).DividendYield
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -324,7 +324,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).Drift
@@ -376,7 +376,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -434,7 +434,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -482,7 +482,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).LocalVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<LocalVolTermStructure>>) l
@@ -518,7 +518,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).RiskFreeRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -554,7 +554,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).StateVariable
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -596,7 +596,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -646,7 +646,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).Time
                                                             _d.cell 
@@ -686,7 +686,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).Update
                                                        ) :> ICell
                 let format (o : BlackProcess) (l:string) = o.ToString() :> obj
@@ -728,7 +728,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -776,7 +776,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -812,7 +812,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -848,7 +848,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -890,7 +890,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
@@ -938,7 +938,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -976,7 +976,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).RegisterWith
                                                             _handler.cell 
@@ -1018,7 +1018,7 @@ module BlackProcessFunction =
 
             try
 
-                let _BlackProcess = Helper.toCell<BlackProcess> blackprocess "BlackProcess"  
+                let _BlackProcess = Helper.toModelReference<BlackProcess> blackprocess "BlackProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((BlackProcessModel.Cast _BlackProcess.cell).UnregisterWith
                                                             _handler.cell 

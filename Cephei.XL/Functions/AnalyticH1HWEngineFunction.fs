@@ -177,7 +177,7 @@ module AnalyticH1HWEngineFunction =
 
             try
 
-                let _AnalyticH1HWEngine = Helper.toCell<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
+                let _AnalyticH1HWEngine = Helper.toModelReference<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
                 let builder (current : ICell) = ((AnalyticH1HWEngineModel.Cast _AnalyticH1HWEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticH1HWEngine) (l:string) = o.ToString() :> obj
@@ -213,7 +213,7 @@ module AnalyticH1HWEngineFunction =
 
             try
 
-                let _AnalyticH1HWEngine = Helper.toCell<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
+                let _AnalyticH1HWEngine = Helper.toModelReference<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
                 let builder (current : ICell) = ((AnalyticH1HWEngineModel.Cast _AnalyticH1HWEngine.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -251,7 +251,7 @@ module AnalyticH1HWEngineFunction =
 
             try
 
-                let _AnalyticH1HWEngine = Helper.toCell<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
+                let _AnalyticH1HWEngine = Helper.toModelReference<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
                 let _model = Helper.toHandle<HestonModel> model "model" 
                 let builder (current : ICell) = ((AnalyticH1HWEngineModel.Cast _AnalyticH1HWEngine.cell).SetModel
                                                             _model.cell 
@@ -293,7 +293,7 @@ module AnalyticH1HWEngineFunction =
 
             try
 
-                let _AnalyticH1HWEngine = Helper.toCell<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
+                let _AnalyticH1HWEngine = Helper.toModelReference<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AnalyticH1HWEngineModel.Cast _AnalyticH1HWEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -333,7 +333,7 @@ module AnalyticH1HWEngineFunction =
 
             try
 
-                let _AnalyticH1HWEngine = Helper.toCell<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
+                let _AnalyticH1HWEngine = Helper.toModelReference<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
                 let builder (current : ICell) = ((AnalyticH1HWEngineModel.Cast _AnalyticH1HWEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticH1HWEngine) (l:string) = o.ToString() :> obj
@@ -371,7 +371,7 @@ module AnalyticH1HWEngineFunction =
 
             try
 
-                let _AnalyticH1HWEngine = Helper.toCell<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
+                let _AnalyticH1HWEngine = Helper.toModelReference<AnalyticH1HWEngine> analytich1hwengine "AnalyticH1HWEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((AnalyticH1HWEngineModel.Cast _AnalyticH1HWEngine.cell).UnregisterWith
                                                             _handler.cell 

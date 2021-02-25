@@ -81,7 +81,7 @@ module IterativeBootstrapFunction =
 
             try
 
-                let _IterativeBootstrap = Helper.toCell<IterativeBootstrap> iterativebootstrap "IterativeBootstrap"  
+                let _IterativeBootstrap = Helper.toModelReference<IterativeBootstrap> iterativebootstrap "IterativeBootstrap"  
                 let _ts = Helper.toCell<'T> ts "ts" 
                 let builder (current : ICell) = ((IterativeBootstrapModel.Cast _IterativeBootstrap.cell).Setup
                                                             _ts.cell 

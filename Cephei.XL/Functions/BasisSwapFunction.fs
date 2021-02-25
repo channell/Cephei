@@ -260,7 +260,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).FairLongSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -296,7 +296,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).FairShortSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -332,7 +332,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Floating1Leg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -368,7 +368,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Floating1LegBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -404,7 +404,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Floating1LegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -440,7 +440,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Floating1Schedule
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
@@ -476,7 +476,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Floating2Leg
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -512,7 +512,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Floating2LegBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -548,7 +548,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Floating2LegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -584,7 +584,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Floating2Schedule
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
@@ -620,7 +620,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).IborIndex1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -656,7 +656,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).IborIndex2
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -692,7 +692,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -728,7 +728,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Spread1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -764,7 +764,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Spread2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -800,7 +800,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).SwapType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
@@ -838,7 +838,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).EndDiscounts
                                                             _j.cell 
@@ -879,7 +879,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Engine
                                                        ) :> ICell
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
@@ -916,7 +916,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -954,7 +954,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Leg
                                                             _j.cell 
@@ -996,7 +996,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).LegBPS
                                                             _j.cell 
@@ -1038,7 +1038,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).LegNPV
                                                             _j.cell 
@@ -1078,7 +1078,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1114,7 +1114,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1152,7 +1152,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Payer
                                                             _j.cell 
@@ -1192,7 +1192,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1230,7 +1230,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).StartDiscounts
                                                             _j.cell 
@@ -1270,7 +1270,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1306,7 +1306,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1342,7 +1342,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1380,7 +1380,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).Result
                                                             _tag.cell 
@@ -1422,7 +1422,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).SetPricingEngine
                                                             _e.cell 
@@ -1462,7 +1462,7 @@ module BasisSwapFunction =
 
             try
 
-                let _BasisSwap = Helper.toCell<BasisSwap> basisswap "BasisSwap"  
+                let _BasisSwap = Helper.toModelReference<BasisSwap> basisswap "BasisSwap"  
                 let builder (current : ICell) = ((BasisSwapModel.Cast _BasisSwap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

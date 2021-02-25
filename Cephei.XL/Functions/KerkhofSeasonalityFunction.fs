@@ -93,7 +93,7 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _KerkhofSeasonality = Helper.toModelReference<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let _To = Helper.toCell<Date> To "To" 
                 let builder (current : ICell) = ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).SeasonalityFactor
                                                             _To.cell 
@@ -139,7 +139,7 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _KerkhofSeasonality = Helper.toModelReference<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
@@ -193,7 +193,7 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _KerkhofSeasonality = Helper.toModelReference<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
@@ -241,7 +241,7 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _KerkhofSeasonality = Helper.toModelReference<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let builder (current : ICell) = ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -279,7 +279,7 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _KerkhofSeasonality = Helper.toModelReference<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
                 let builder (current : ICell) = ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).IsConsistent
                                                             _iTS.cell 
@@ -319,7 +319,7 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _KerkhofSeasonality = Helper.toModelReference<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let builder (current : ICell) = ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).SeasonalityBaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -355,7 +355,7 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _KerkhofSeasonality = Helper.toModelReference<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let builder (current : ICell) = ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).SeasonalityFactors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -397,7 +397,7 @@ module KerkhofSeasonalityFunction =
 
             try
 
-                let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
+                let _KerkhofSeasonality = Helper.toModelReference<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let _seasonalityBaseDate = Helper.toCell<Date> seasonalityBaseDate "seasonalityBaseDate" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _seasonalityFactors = Helper.toCell<Generic.List<double>> seasonalityFactors "seasonalityFactors" 

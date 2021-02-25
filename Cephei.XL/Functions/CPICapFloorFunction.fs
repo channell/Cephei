@@ -169,7 +169,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -205,7 +205,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).InflationIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationIndex>>) l
@@ -241,7 +241,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -277,7 +277,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -313,7 +313,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -349,7 +349,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).PayDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -385,7 +385,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -421,7 +421,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).Type
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -457,7 +457,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -493,7 +493,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -529,7 +529,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -567,7 +567,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).Result
                                                             _tag.cell 
@@ -609,7 +609,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).SetPricingEngine
                                                             _e.cell 
@@ -649,7 +649,7 @@ module CPICapFloorFunction =
 
             try
 
-                let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
+                let _CPICapFloor = Helper.toModelReference<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let builder (current : ICell) = ((CPICapFloorModel.Cast _CPICapFloor.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

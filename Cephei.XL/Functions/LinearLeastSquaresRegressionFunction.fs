@@ -49,7 +49,7 @@ module LinearLeastSquaresRegressionFunction =
 
             try
 
-                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
+                let _LinearLeastSquaresRegression = Helper.toModelReference<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
                 let builder (current : ICell) = ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Coefficients
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -87,7 +87,7 @@ module LinearLeastSquaresRegressionFunction =
 
             try
 
-                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
+                let _LinearLeastSquaresRegression = Helper.toModelReference<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
                 let builder (current : ICell) = ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Error
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -174,7 +174,7 @@ module LinearLeastSquaresRegressionFunction =
 
             try
 
-                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
+                let _LinearLeastSquaresRegression = Helper.toModelReference<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
                 let builder (current : ICell) = ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Residuals
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -212,7 +212,7 @@ module LinearLeastSquaresRegressionFunction =
 
             try
 
-                let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
+                let _LinearLeastSquaresRegression = Helper.toModelReference<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
                 let builder (current : ICell) = ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).StandardErrors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

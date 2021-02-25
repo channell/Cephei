@@ -48,7 +48,7 @@ module MultiPathFunction =
 
             try
 
-                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
+                let _MultiPath = Helper.toModelReference<MultiPath> multipath "MultiPath"  
                 let builder (current : ICell) = ((MultiPathModel.Cast _MultiPath.cell).AssetNumber
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -84,7 +84,7 @@ module MultiPathFunction =
 
             try
 
-                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
+                let _MultiPath = Helper.toModelReference<MultiPath> multipath "MultiPath"  
                 let builder (current : ICell) = ((MultiPathModel.Cast _MultiPath.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -120,7 +120,7 @@ module MultiPathFunction =
 
             try
 
-                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
+                let _MultiPath = Helper.toModelReference<MultiPath> multipath "MultiPath"  
                 let builder (current : ICell) = ((MultiPathModel.Cast _MultiPath.cell).Length
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -267,7 +267,7 @@ module MultiPathFunction =
 
             try
 
-                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
+                let _MultiPath = Helper.toModelReference<MultiPath> multipath "MultiPath"  
                 let builder (current : ICell) = ((MultiPathModel.Cast _MultiPath.cell).PathSize
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -305,7 +305,7 @@ module MultiPathFunction =
 
             try
 
-                let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
+                let _MultiPath = Helper.toModelReference<MultiPath> multipath "MultiPath"  
                 let _j = Helper.toCell<int> j "j" 
                 let builder (current : ICell) = ((MultiPathModel.Cast _MultiPath.cell).This
                                                             _j.cell 

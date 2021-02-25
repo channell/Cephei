@@ -48,7 +48,7 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
+                let _FdmLinearOpIterator = Helper.toModelReference<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
                 let builder (current : ICell) = ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Coordinates
                                                        ) :> ICell
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -86,7 +86,7 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
+                let _FdmLinearOpIterator = Helper.toModelReference<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
                 let _obj = Helper.toCell<Object> obj "obj" 
                 let builder (current : ICell) = ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Equals
                                                             _obj.cell 
@@ -286,7 +286,7 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
+                let _FdmLinearOpIterator = Helper.toModelReference<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
                 let builder (current : ICell) = ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Index
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -324,7 +324,7 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
+                let _FdmLinearOpIterator = Helper.toModelReference<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let builder (current : ICell) = ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Swap
                                                             _iter.cell 

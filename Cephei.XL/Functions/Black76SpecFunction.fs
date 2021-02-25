@@ -79,7 +79,7 @@ module Black76SpecFunction =
 
             try
 
-                let _Black76Spec = Helper.toCell<Black76Spec> black76spec "Black76Spec"  
+                let _Black76Spec = Helper.toModelReference<Black76Spec> black76spec "Black76Spec"  
                 let builder (current : ICell) = ((Black76SpecModel.Cast _Black76Spec.cell).Type
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -127,7 +127,7 @@ module Black76SpecFunction =
 
             try
 
-                let _Black76Spec = Helper.toCell<Black76Spec> black76spec "Black76Spec"  
+                let _Black76Spec = Helper.toModelReference<Black76Spec> black76spec "Black76Spec"  
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _atmForward = Helper.toCell<double> atmForward "atmForward" 
@@ -199,7 +199,7 @@ module Black76SpecFunction =
 
             try
 
-                let _Black76Spec = Helper.toCell<Black76Spec> black76spec "Black76Spec"  
+                let _Black76Spec = Helper.toModelReference<Black76Spec> black76spec "Black76Spec"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _atmForward = Helper.toCell<double> atmForward "atmForward" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 

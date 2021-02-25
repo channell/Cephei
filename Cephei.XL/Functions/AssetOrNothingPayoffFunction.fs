@@ -91,7 +91,7 @@ module AssetOrNothingPayoffFunction =
 
             try
 
-                let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
+                let _AssetOrNothingPayoff = Helper.toModelReference<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
                 let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -129,7 +129,7 @@ module AssetOrNothingPayoffFunction =
 
             try
 
-                let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
+                let _AssetOrNothingPayoff = Helper.toModelReference<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
                 let _price = Helper.toCell<double> price "price" 
                 let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Value
                                                             _price.cell 
@@ -169,7 +169,7 @@ module AssetOrNothingPayoffFunction =
 
             try
 
-                let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
+                let _AssetOrNothingPayoff = Helper.toModelReference<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
                 let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -205,7 +205,7 @@ module AssetOrNothingPayoffFunction =
 
             try
 
-                let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
+                let _AssetOrNothingPayoff = Helper.toModelReference<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
                 let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -241,7 +241,7 @@ module AssetOrNothingPayoffFunction =
 
             try
 
-                let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
+                let _AssetOrNothingPayoff = Helper.toModelReference<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
                 let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
@@ -279,7 +279,7 @@ module AssetOrNothingPayoffFunction =
 
             try
 
-                let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
+                let _AssetOrNothingPayoff = Helper.toModelReference<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Accept
                                                             _v.cell 

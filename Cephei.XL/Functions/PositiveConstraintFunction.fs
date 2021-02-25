@@ -79,7 +79,7 @@ module PositiveConstraintFunction =
 
             try
 
-                let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
+                let _PositiveConstraint = Helper.toModelReference<PositiveConstraint> positiveconstraint "PositiveConstraint"  
                 let builder (current : ICell) = ((PositiveConstraintModel.Cast _PositiveConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -117,7 +117,7 @@ module PositiveConstraintFunction =
 
             try
 
-                let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
+                let _PositiveConstraint = Helper.toModelReference<PositiveConstraint> positiveconstraint "PositiveConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((PositiveConstraintModel.Cast _PositiveConstraint.cell).LowerBound
                                                             _parameters.cell 
@@ -159,7 +159,7 @@ module PositiveConstraintFunction =
 
             try
 
-                let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
+                let _PositiveConstraint = Helper.toModelReference<PositiveConstraint> positiveconstraint "PositiveConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((PositiveConstraintModel.Cast _PositiveConstraint.cell).Test
                                                             _p.cell 
@@ -205,7 +205,7 @@ module PositiveConstraintFunction =
 
             try
 
-                let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
+                let _PositiveConstraint = Helper.toModelReference<PositiveConstraint> positiveconstraint "PositiveConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
@@ -255,7 +255,7 @@ module PositiveConstraintFunction =
 
             try
 
-                let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
+                let _PositiveConstraint = Helper.toModelReference<PositiveConstraint> positiveconstraint "PositiveConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((PositiveConstraintModel.Cast _PositiveConstraint.cell).UpperBound
                                                             _parameters.cell 

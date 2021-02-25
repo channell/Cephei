@@ -52,7 +52,7 @@ module DayCounterFunction =
 
             try
 
-                let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
+                let _DayCounter = Helper.toModelReference<DayCounter> daycounter "DayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder (current : ICell) = ((DayCounterModel.Cast _DayCounter.cell).DayCount
@@ -96,7 +96,7 @@ module DayCounterFunction =
 
             try
 
-                let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
+                let _DayCounter = Helper.toModelReference<DayCounter> daycounter "DayCounter"  
                 let builder (current : ICell) = ((DayCounterModel.Cast _DayCounter.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -200,7 +200,7 @@ module DayCounterFunction =
 
             try
 
-                let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
+                let _DayCounter = Helper.toModelReference<DayCounter> daycounter "DayCounter"  
                 let builder (current : ICell) = ((DayCounterModel.Cast _DayCounter.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -238,7 +238,7 @@ module DayCounterFunction =
 
             try
 
-                let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
+                let _DayCounter = Helper.toModelReference<DayCounter> daycounter "DayCounter"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((DayCounterModel.Cast _DayCounter.cell).Equals
                                                             _o.cell 
@@ -278,7 +278,7 @@ module DayCounterFunction =
 
             try
 
-                let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
+                let _DayCounter = Helper.toModelReference<DayCounter> daycounter "DayCounter"  
                 let builder (current : ICell) = ((DayCounterModel.Cast _DayCounter.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -314,7 +314,7 @@ module DayCounterFunction =
 
             try
 
-                let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
+                let _DayCounter = Helper.toModelReference<DayCounter> daycounter "DayCounter"  
                 let builder (current : ICell) = ((DayCounterModel.Cast _DayCounter.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -358,7 +358,7 @@ module DayCounterFunction =
 
             try
 
-                let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
+                let _DayCounter = Helper.toModelReference<DayCounter> daycounter "DayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
@@ -414,7 +414,7 @@ module DayCounterFunction =
 
             try
 
-                let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
+                let _DayCounter = Helper.toModelReference<DayCounter> daycounter "DayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let builder (current : ICell) = ((DayCounterModel.Cast _DayCounter.cell).YearFraction1

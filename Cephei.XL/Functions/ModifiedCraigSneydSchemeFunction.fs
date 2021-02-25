@@ -54,7 +54,7 @@ module ModifiedCraigSneydSchemeFunction =
 
             try
 
-                let _ModifiedCraigSneydScheme = Helper.toCell<ModifiedCraigSneydScheme> modifiedcraigsneydscheme "ModifiedCraigSneydScheme"  
+                let _ModifiedCraigSneydScheme = Helper.toModelReference<ModifiedCraigSneydScheme> modifiedcraigsneydscheme "ModifiedCraigSneydScheme"  
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
@@ -190,7 +190,7 @@ module ModifiedCraigSneydSchemeFunction =
 
             try
 
-                let _ModifiedCraigSneydScheme = Helper.toCell<ModifiedCraigSneydScheme> modifiedcraigsneydscheme "ModifiedCraigSneydScheme"  
+                let _ModifiedCraigSneydScheme = Helper.toModelReference<ModifiedCraigSneydScheme> modifiedcraigsneydscheme "ModifiedCraigSneydScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
                 let builder (current : ICell) = ((ModifiedCraigSneydSchemeModel.Cast _ModifiedCraigSneydScheme.cell).SetStep
                                                             _dt.cell 
@@ -236,7 +236,7 @@ module ModifiedCraigSneydSchemeFunction =
 
             try
 
-                let _ModifiedCraigSneydScheme = Helper.toCell<ModifiedCraigSneydScheme> modifiedcraigsneydscheme "ModifiedCraigSneydScheme"  
+                let _ModifiedCraigSneydScheme = Helper.toModelReference<ModifiedCraigSneydScheme> modifiedcraigsneydscheme "ModifiedCraigSneydScheme"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0

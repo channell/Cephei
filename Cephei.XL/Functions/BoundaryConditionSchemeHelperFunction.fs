@@ -50,7 +50,7 @@ module BoundaryConditionSchemeHelperFunction =
 
             try
 
-                let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
+                let _BoundaryConditionSchemeHelper = Helper.toModelReference<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _a = Helper.toCell<Vector> a "a" 
                 let builder (current : ICell) = ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyAfterApplying
                                                             _a.cell 
@@ -92,7 +92,7 @@ module BoundaryConditionSchemeHelperFunction =
 
             try
 
-                let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
+                let _BoundaryConditionSchemeHelper = Helper.toModelReference<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _a = Helper.toCell<Vector> a "a" 
                 let builder (current : ICell) = ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyAfterSolving
                                                             _a.cell 
@@ -134,7 +134,7 @@ module BoundaryConditionSchemeHelperFunction =
 
             try
 
-                let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
+                let _BoundaryConditionSchemeHelper = Helper.toModelReference<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _op = Helper.toCell<IOperator> op "op" 
                 let builder (current : ICell) = ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyBeforeApplying
                                                             _op.cell 
@@ -178,7 +178,7 @@ module BoundaryConditionSchemeHelperFunction =
 
             try
 
-                let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
+                let _BoundaryConditionSchemeHelper = Helper.toModelReference<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _op = Helper.toCell<IOperator> op "op" 
                 let _a = Helper.toCell<Vector> a "a" 
                 let builder (current : ICell) = ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyBeforeSolving
@@ -261,7 +261,7 @@ module BoundaryConditionSchemeHelperFunction =
 
             try
 
-                let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
+                let _BoundaryConditionSchemeHelper = Helper.toModelReference<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).SetTime
                                                             _t.cell 

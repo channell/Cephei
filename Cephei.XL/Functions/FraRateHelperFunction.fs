@@ -704,7 +704,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -742,7 +742,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).SetTermStructure
                                                             _t.cell 
@@ -782,7 +782,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : FraRateHelper) (l:string) = o.ToString() :> obj
@@ -818,7 +818,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -854,7 +854,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -890,7 +890,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -926,7 +926,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -962,7 +962,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -998,7 +998,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -1034,7 +1034,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1070,7 +1070,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1106,7 +1106,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1144,7 +1144,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).RegisterWith
                                                             _handler.cell 
@@ -1186,7 +1186,7 @@ module FraRateHelperFunction =
 
             try
 
-                let _FraRateHelper = Helper.toCell<FraRateHelper> fraratehelper "FraRateHelper"  
+                let _FraRateHelper = Helper.toModelReference<FraRateHelper> fraratehelper "FraRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((FraRateHelperModel.Cast _FraRateHelper.cell).UnregisterWith
                                                             _handler.cell 

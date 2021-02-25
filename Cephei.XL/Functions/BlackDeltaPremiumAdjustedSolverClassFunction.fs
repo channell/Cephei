@@ -123,7 +123,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
 
             try
 
-                let _BlackDeltaPremiumAdjustedSolverClass = Helper.toCell<BlackDeltaPremiumAdjustedSolverClass> blackdeltapremiumadjustedsolverclass "BlackDeltaPremiumAdjustedSolverClass"  
+                let _BlackDeltaPremiumAdjustedSolverClass = Helper.toModelReference<BlackDeltaPremiumAdjustedSolverClass> blackdeltapremiumadjustedsolverclass "BlackDeltaPremiumAdjustedSolverClass"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Value
                                                             _strike.cell 
@@ -165,7 +165,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
 
             try
 
-                let _BlackDeltaPremiumAdjustedSolverClass = Helper.toCell<BlackDeltaPremiumAdjustedSolverClass> blackdeltapremiumadjustedsolverclass "BlackDeltaPremiumAdjustedSolverClass"  
+                let _BlackDeltaPremiumAdjustedSolverClass = Helper.toModelReference<BlackDeltaPremiumAdjustedSolverClass> blackdeltapremiumadjustedsolverclass "BlackDeltaPremiumAdjustedSolverClass"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Derivative
                                                             _x.cell 

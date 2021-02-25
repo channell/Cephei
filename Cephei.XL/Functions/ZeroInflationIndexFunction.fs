@@ -50,7 +50,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let _h = Helper.toHandle<ZeroInflationTermStructure> h "h" 
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).Clone
                                                             _h.cell 
@@ -94,7 +94,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let _aFixingDate = Helper.toCell<Date> aFixingDate "aFixingDate" 
                 let _forecastTodaysFixing = Helper.toDefault<bool> forecastTodaysFixing "forecastTodaysFixing" false
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).Fixing
@@ -223,7 +223,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).ZeroInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
@@ -265,7 +265,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -314,7 +314,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -350,7 +350,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -386,7 +386,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -422,7 +422,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -458,7 +458,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -494,7 +494,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -532,7 +532,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -572,7 +572,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -608,7 +608,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
@@ -644,7 +644,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -680,7 +680,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).Update
                                                        ) :> ICell
                 let format (o : ZeroInflationIndex) (l:string) = o.ToString() :> obj
@@ -722,7 +722,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -774,7 +774,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).AddFixings1
@@ -818,7 +818,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -854,7 +854,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : ZeroInflationIndex) (l:string) = o.ToString() :> obj
@@ -892,7 +892,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).RegisterWith
                                                             _handler.cell 
@@ -932,7 +932,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -970,7 +970,7 @@ module ZeroInflationIndexFunction =
 
             try
 
-                let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
+                let _ZeroInflationIndex = Helper.toModelReference<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((ZeroInflationIndexModel.Cast _ZeroInflationIndex.cell).UnregisterWith
                                                             _handler.cell 

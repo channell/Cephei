@@ -50,7 +50,7 @@ module ProjectionFunction =
 
             try
 
-                let _Projection = Helper.toCell<Projection> projection "Projection"  
+                let _Projection = Helper.toModelReference<Projection> projection "Projection"  
                 let _projectedParameters = Helper.toCell<Vector> projectedParameters "projectedParameters" 
                 let builder (current : ICell) = ((ProjectionModel.Cast _Projection.cell).Include
                                                             _projectedParameters.cell 
@@ -92,7 +92,7 @@ module ProjectionFunction =
 
             try
 
-                let _Projection = Helper.toCell<Projection> projection "Projection"  
+                let _Projection = Helper.toModelReference<Projection> projection "Projection"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let builder (current : ICell) = ((ProjectionModel.Cast _Projection.cell).Project
                                                             _parameters.cell 

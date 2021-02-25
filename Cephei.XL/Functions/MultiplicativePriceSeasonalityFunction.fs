@@ -54,7 +54,7 @@ module MultiplicativePriceSeasonalityFunction =
 
             try
 
-                let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
+                let _MultiplicativePriceSeasonality = Helper.toModelReference<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
@@ -108,7 +108,7 @@ module MultiplicativePriceSeasonalityFunction =
 
             try
 
-                let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
+                let _MultiplicativePriceSeasonality = Helper.toModelReference<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
@@ -156,7 +156,7 @@ module MultiplicativePriceSeasonalityFunction =
 
             try
 
-                let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
+                let _MultiplicativePriceSeasonality = Helper.toModelReference<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let builder (current : ICell) = ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module MultiplicativePriceSeasonalityFunction =
 
             try
 
-                let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
+                let _MultiplicativePriceSeasonality = Helper.toModelReference<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
                 let builder (current : ICell) = ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).IsConsistent
                                                             _iTS.cell 
@@ -314,7 +314,7 @@ module MultiplicativePriceSeasonalityFunction =
 
             try
 
-                let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
+                let _MultiplicativePriceSeasonality = Helper.toModelReference<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let builder (current : ICell) = ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityBaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -352,7 +352,7 @@ module MultiplicativePriceSeasonalityFunction =
 
             try
 
-                let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
+                let _MultiplicativePriceSeasonality = Helper.toModelReference<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let _To = Helper.toCell<Date> To "To" 
                 let builder (current : ICell) = ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityFactor
                                                             _To.cell 
@@ -392,7 +392,7 @@ module MultiplicativePriceSeasonalityFunction =
 
             try
 
-                let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
+                let _MultiplicativePriceSeasonality = Helper.toModelReference<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let builder (current : ICell) = ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityFactors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -434,7 +434,7 @@ module MultiplicativePriceSeasonalityFunction =
 
             try
 
-                let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
+                let _MultiplicativePriceSeasonality = Helper.toModelReference<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let _seasonalityBaseDate = Helper.toCell<Date> seasonalityBaseDate "seasonalityBaseDate" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _seasonalityFactors = Helper.toCell<Generic.List<double>> seasonalityFactors "seasonalityFactors" 

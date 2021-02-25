@@ -111,7 +111,7 @@ module GoldsteinLineSearchFunction =
 
             try
 
-                let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
+                let _GoldsteinLineSearch = Helper.toModelReference<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
@@ -163,7 +163,7 @@ module GoldsteinLineSearchFunction =
 
             try
 
-                let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
+                let _GoldsteinLineSearch = Helper.toModelReference<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
                 let builder (current : ICell) = ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastFunctionValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -199,7 +199,7 @@ module GoldsteinLineSearchFunction =
 
             try
 
-                let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
+                let _GoldsteinLineSearch = Helper.toModelReference<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
                 let builder (current : ICell) = ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastGradient
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -235,7 +235,7 @@ module GoldsteinLineSearchFunction =
 
             try
 
-                let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
+                let _GoldsteinLineSearch = Helper.toModelReference<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
                 let builder (current : ICell) = ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastGradientNorm2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -271,7 +271,7 @@ module GoldsteinLineSearchFunction =
 
             try
 
-                let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
+                let _GoldsteinLineSearch = Helper.toModelReference<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
                 let builder (current : ICell) = ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastX
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -307,7 +307,7 @@ module GoldsteinLineSearchFunction =
 
             try
 
-                let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
+                let _GoldsteinLineSearch = Helper.toModelReference<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
                 let builder (current : ICell) = ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).SearchDirection
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -343,7 +343,7 @@ module GoldsteinLineSearchFunction =
 
             try
 
-                let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
+                let _GoldsteinLineSearch = Helper.toModelReference<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
                 let builder (current : ICell) = ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).Succeed
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -387,7 +387,7 @@ module GoldsteinLineSearchFunction =
 
             try
 
-                let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
+                let _GoldsteinLineSearch = Helper.toModelReference<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
                 let _data = Helper.toCell<Vector> data "data" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toDefault<double> beta "beta" 0.65

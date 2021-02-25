@@ -49,7 +49,7 @@ module MonteCarloCatBondEngineFunction =
 
             try
 
-                let _MonteCarloCatBondEngine = Helper.toCell<MonteCarloCatBondEngine> montecarlocatbondengine "MonteCarloCatBondEngine"  
+                let _MonteCarloCatBondEngine = Helper.toModelReference<MonteCarloCatBondEngine> montecarlocatbondengine "MonteCarloCatBondEngine"  
                 let builder (current : ICell) = ((MonteCarloCatBondEngineModel.Cast _MonteCarloCatBondEngine.cell).DiscountCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l

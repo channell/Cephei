@@ -48,7 +48,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).ForwardStart
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -84,7 +84,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -122,7 +122,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).SetTermStructure
                                                             _t.cell 
@@ -162,7 +162,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -198,7 +198,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Swap
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
@@ -622,7 +622,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : SwapRateHelper) (l:string) = o.ToString() :> obj
@@ -658,7 +658,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -694,7 +694,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -730,7 +730,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -766,7 +766,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -802,7 +802,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -838,7 +838,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
@@ -874,7 +874,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -910,7 +910,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -946,7 +946,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -984,7 +984,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).RegisterWith
                                                             _handler.cell 
@@ -1026,7 +1026,7 @@ module SwapRateHelperFunction =
 
             try
 
-                let _SwapRateHelper = Helper.toCell<SwapRateHelper> swapratehelper "SwapRateHelper"  
+                let _SwapRateHelper = Helper.toModelReference<SwapRateHelper> swapratehelper "SwapRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((SwapRateHelperModel.Cast _SwapRateHelper.cell).UnregisterWith
                                                             _handler.cell 

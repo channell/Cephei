@@ -48,7 +48,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -292,7 +292,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -328,7 +328,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -364,7 +364,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -406,7 +406,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _t = Helper.toCell<double> t "t" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -460,7 +460,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -508,7 +508,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -546,7 +546,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _p = Helper.toCell<Period> p "p" 
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).OptionDateFromTenor
                                                             _p.cell 
@@ -586,7 +586,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -622,7 +622,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -658,7 +658,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -694,7 +694,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -732,7 +732,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).TimeFromReference
                                                             _date.cell 
@@ -772,7 +772,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Update
                                                        ) :> ICell
                 let format (o : LocalConstantVol) (l:string) = o.ToString() :> obj
@@ -808,7 +808,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -846,7 +846,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).DisableExtrapolation
                                                             _b.cell 
@@ -888,7 +888,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).EnableExtrapolation
                                                             _b.cell 
@@ -928,7 +928,7 @@ module LocalConstantVolFunction =
 
             try
 
-                let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
+                let _LocalConstantVol = Helper.toModelReference<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let builder (current : ICell) = ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

@@ -101,7 +101,7 @@ module BSplineFunction =
 
             try
 
-                let _BSpline = Helper.toCell<BSpline> bspline "BSpline"  
+                let _BSpline = Helper.toModelReference<BSpline> bspline "BSpline"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((BSplineModel.Cast _BSpline.cell).Value

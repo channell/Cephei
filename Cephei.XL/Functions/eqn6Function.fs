@@ -111,7 +111,7 @@ module eqn6Function =
 
             try
 
-                let _eqn6 = Helper.toCell<eqn6> eqn6 "eqn6"  
+                let _eqn6 = Helper.toModelReference<eqn6> eqn6 "eqn6"  
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((eqn6Model.Cast _eqn6.cell).Value
                                                             _x.cell 

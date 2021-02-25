@@ -48,7 +48,7 @@ module BackwardFlatFunction =
 
             try
 
-                let _BackwardFlat = Helper.toCell<BackwardFlat> backwardflat "BackwardFlat"  
+                let _BackwardFlat = Helper.toModelReference<BackwardFlat> backwardflat "BackwardFlat"  
                 let builder (current : ICell) = ((BackwardFlatModel.Cast _BackwardFlat.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -90,7 +90,7 @@ module BackwardFlatFunction =
 
             try
 
-                let _BackwardFlat = Helper.toCell<BackwardFlat> backwardflat "BackwardFlat"  
+                let _BackwardFlat = Helper.toModelReference<BackwardFlat> backwardflat "BackwardFlat"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
@@ -138,7 +138,7 @@ module BackwardFlatFunction =
 
             try
 
-                let _BackwardFlat = Helper.toCell<BackwardFlat> backwardflat "BackwardFlat"  
+                let _BackwardFlat = Helper.toModelReference<BackwardFlat> backwardflat "BackwardFlat"  
                 let builder (current : ICell) = ((BackwardFlatModel.Cast _BackwardFlat.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

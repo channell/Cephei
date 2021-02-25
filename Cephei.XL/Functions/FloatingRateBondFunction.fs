@@ -540,7 +540,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).AccruedAmount
                                                             _settlement.cell 
@@ -580,7 +580,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -616,7 +616,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Cephei.Cell.List<CashFlow>) (l : string) = Helper.Range.fromModelList i l
@@ -652,7 +652,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -698,7 +698,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -764,7 +764,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -820,7 +820,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -856,7 +856,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -892,7 +892,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -930,7 +930,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).IsTradable
                                                             _d.cell 
@@ -970,7 +970,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1008,7 +1008,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).NextCashFlowDate
                                                             _settlement.cell 
@@ -1050,7 +1050,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).NextCouponRate
                                                             _settlement.cell 
@@ -1092,7 +1092,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).Notional
                                                             _d.cell 
@@ -1132,7 +1132,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -1170,7 +1170,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
@@ -1212,7 +1212,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).PreviousCouponRate
                                                             _settlement.cell 
@@ -1252,7 +1252,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
@@ -1288,7 +1288,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Cephei.Cell.List<CashFlow>) (l : string) = Helper.Range.fromModelList i l
@@ -1326,7 +1326,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).SettlementDate
                                                             _date.cell 
@@ -1366,7 +1366,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1404,7 +1404,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).SettlementValue
                                                             _cleanPrice.cell 
@@ -1444,7 +1444,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1480,7 +1480,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1530,7 +1530,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
@@ -1604,7 +1604,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
@@ -1660,7 +1660,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1696,7 +1696,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1732,7 +1732,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1770,7 +1770,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).Result
                                                             _tag.cell 
@@ -1812,7 +1812,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).SetPricingEngine
                                                             _e.cell 
@@ -1852,7 +1852,7 @@ module FloatingRateBondFunction =
 
             try
 
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _FloatingRateBond = Helper.toModelReference<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = ((FloatingRateBondModel.Cast _FloatingRateBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

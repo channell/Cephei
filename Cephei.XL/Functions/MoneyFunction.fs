@@ -48,7 +48,7 @@ module MoneyFunction =
 
             try
 
-                let _Money = Helper.toCell<Money> money "Money"  
+                let _Money = Helper.toModelReference<Money> money "Money"  
                 let builder (current : ICell) = ((MoneyModel.Cast _Money.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -86,7 +86,7 @@ module MoneyFunction =
 
             try
 
-                let _Money = Helper.toCell<Money> money "Money"  
+                let _Money = Helper.toModelReference<Money> money "Money"  
                 let _o = Helper.toCell<Object> o "o" 
                 let builder (current : ICell) = ((MoneyModel.Cast _Money.cell).Equals
                                                             _o.cell 
@@ -243,7 +243,7 @@ module MoneyFunction =
 
             try
 
-                let _Money = Helper.toCell<Money> money "Money"  
+                let _Money = Helper.toModelReference<Money> money "Money"  
                 let builder (current : ICell) = ((MoneyModel.Cast _Money.cell).Rounded
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Money>) l
@@ -279,7 +279,7 @@ module MoneyFunction =
 
             try
 
-                let _Money = Helper.toCell<Money> money "Money"  
+                let _Money = Helper.toModelReference<Money> money "Money"  
                 let builder (current : ICell) = ((MoneyModel.Cast _Money.cell).ToString
                                                        ) :> ICell
                 let format (o : String) (l:string) = o.ToString() :> obj
@@ -315,7 +315,7 @@ module MoneyFunction =
 
             try
 
-                let _Money = Helper.toCell<Money> money "Money"  
+                let _Money = Helper.toModelReference<Money> money "Money"  
                 let builder (current : ICell) = ((MoneyModel.Cast _Money.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

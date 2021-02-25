@@ -146,7 +146,7 @@ module CubicFunction =
 
             try
 
-                let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
+                let _Cubic = Helper.toModelReference<Cubic> cubic "Cubic"  
                 let builder (current : ICell) = ((CubicModel.Cast _Cubic.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -188,7 +188,7 @@ module CubicFunction =
 
             try
 
-                let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
+                let _Cubic = Helper.toModelReference<Cubic> cubic "Cubic"  
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
@@ -236,7 +236,7 @@ module CubicFunction =
 
             try
 
-                let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
+                let _Cubic = Helper.toModelReference<Cubic> cubic "Cubic"  
                 let builder (current : ICell) = ((CubicModel.Cast _Cubic.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

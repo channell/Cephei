@@ -194,7 +194,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Cap
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -230,7 +230,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -266,7 +266,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).EffectiveCap
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -302,7 +302,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).EffectiveFloor
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -366,7 +366,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _nominal = Helper.toCell<double> nominal "nominal" 
                 let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
                 let _startDate = Helper.toCell<Date> startDate "startDate" 
@@ -458,7 +458,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Floor
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -494,7 +494,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IsCapped
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -530,7 +530,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IsFloored
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -566,7 +566,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -604,7 +604,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).SetPricer
                                                             _pricer.cell 
@@ -646,7 +646,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccruedAmount
                                                             _d.cell 
@@ -686,7 +686,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -722,7 +722,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -758,7 +758,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -794,7 +794,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -830,7 +830,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -866,7 +866,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -902,7 +902,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
@@ -938,7 +938,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -974,7 +974,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1012,7 +1012,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Price
                                                             _yts.cell 
@@ -1052,7 +1052,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
@@ -1088,7 +1088,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1124,7 +1124,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : CappedFlooredCmsSpreadCoupon) (l:string) = o.ToString() :> obj
@@ -1160,7 +1160,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1196,7 +1196,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1232,7 +1232,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1268,7 +1268,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1306,7 +1306,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccruedDays
                                                             _d.cell 
@@ -1348,7 +1348,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccruedPeriod
                                                             _d.cell 
@@ -1388,7 +1388,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1424,7 +1424,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1460,7 +1460,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1496,7 +1496,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1532,7 +1532,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1570,7 +1570,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).CompareTo
                                                             _cf.cell 
@@ -1612,7 +1612,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Equals
                                                             _cf.cell 
@@ -1656,7 +1656,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).HasOccurred
@@ -1702,7 +1702,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
@@ -1744,7 +1744,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Accept
                                                             _v.cell 
@@ -1786,7 +1786,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).RegisterWith
                                                             _handler.cell 
@@ -1828,7 +1828,7 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
+                let _CappedFlooredCmsSpreadCoupon = Helper.toModelReference<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).UnregisterWith
                                                             _handler.cell 

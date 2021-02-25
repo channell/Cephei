@@ -54,7 +54,7 @@ module ImplicitEulerSchemeFunction =
 
             try
 
-                let _ImplicitEulerScheme = Helper.toCell<ImplicitEulerScheme> impliciteulerscheme "ImplicitEulerScheme"  
+                let _ImplicitEulerScheme = Helper.toModelReference<ImplicitEulerScheme> impliciteulerscheme "ImplicitEulerScheme"  
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalFields = Helper.toDefault<Object[]> additionalFields "additionalFields" null
@@ -188,7 +188,7 @@ module ImplicitEulerSchemeFunction =
 
             try
 
-                let _ImplicitEulerScheme = Helper.toCell<ImplicitEulerScheme> impliciteulerscheme "ImplicitEulerScheme"  
+                let _ImplicitEulerScheme = Helper.toModelReference<ImplicitEulerScheme> impliciteulerscheme "ImplicitEulerScheme"  
                 let builder (current : ICell) = ((ImplicitEulerSchemeModel.Cast _ImplicitEulerScheme.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -226,7 +226,7 @@ module ImplicitEulerSchemeFunction =
 
             try
 
-                let _ImplicitEulerScheme = Helper.toCell<ImplicitEulerScheme> impliciteulerscheme "ImplicitEulerScheme"  
+                let _ImplicitEulerScheme = Helper.toModelReference<ImplicitEulerScheme> impliciteulerscheme "ImplicitEulerScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
                 let builder (current : ICell) = ((ImplicitEulerSchemeModel.Cast _ImplicitEulerScheme.cell).SetStep
                                                             _dt.cell 
@@ -272,7 +272,7 @@ module ImplicitEulerSchemeFunction =
 
             try
 
-                let _ImplicitEulerScheme = Helper.toCell<ImplicitEulerScheme> impliciteulerscheme "ImplicitEulerScheme"  
+                let _ImplicitEulerScheme = Helper.toModelReference<ImplicitEulerScheme> impliciteulerscheme "ImplicitEulerScheme"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0

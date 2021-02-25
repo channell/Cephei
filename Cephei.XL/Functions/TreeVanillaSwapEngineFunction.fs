@@ -159,7 +159,7 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
+                let _TreeVanillaSwapEngine = Helper.toModelReference<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
                 let builder (current : ICell) = ((TreeVanillaSwapEngineModel.Cast _TreeVanillaSwapEngine.cell).Update
                                                        ) :> ICell
                 let format (o : TreeVanillaSwapEngine) (l:string) = o.ToString() :> obj
@@ -198,7 +198,7 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
+                let _TreeVanillaSwapEngine = Helper.toModelReference<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
                 let builder (current : ICell) = ((TreeVanillaSwapEngineModel.Cast _TreeVanillaSwapEngine.cell).SetModel
                                                             _model.cell 
@@ -241,7 +241,7 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
+                let _TreeVanillaSwapEngine = Helper.toModelReference<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((TreeVanillaSwapEngineModel.Cast _TreeVanillaSwapEngine.cell).RegisterWith
                                                             _handler.cell 
@@ -281,7 +281,7 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
+                let _TreeVanillaSwapEngine = Helper.toModelReference<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
                 let builder (current : ICell) = ((TreeVanillaSwapEngineModel.Cast _TreeVanillaSwapEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : TreeVanillaSwapEngine) (l:string) = o.ToString() :> obj
@@ -319,7 +319,7 @@ module TreeVanillaSwapEngineFunction =
 
             try
 
-                let _TreeVanillaSwapEngine = Helper.toCell<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
+                let _TreeVanillaSwapEngine = Helper.toModelReference<TreeVanillaSwapEngine> treevanillaswapengine "TreeVanillaSwapEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((TreeVanillaSwapEngineModel.Cast _TreeVanillaSwapEngine.cell).UnregisterWith
                                                             _handler.cell 

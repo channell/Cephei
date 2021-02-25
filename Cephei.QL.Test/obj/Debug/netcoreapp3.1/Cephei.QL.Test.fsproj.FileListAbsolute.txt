@@ -120,3 +120,8 @@ C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephe
 C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\QLNet.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\QLNet.pdb
 C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.Cell.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.Model.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.XLM.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\ExcelDna.Integration.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.Model.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.XLM.pdb

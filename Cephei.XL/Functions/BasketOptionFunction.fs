@@ -103,7 +103,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -139,7 +139,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -175,7 +175,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -211,7 +211,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -247,7 +247,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -283,7 +283,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -319,7 +319,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -355,7 +355,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
@@ -391,7 +391,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
@@ -427,7 +427,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -463,7 +463,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -499,7 +499,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -537,7 +537,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).Result
                                                             _tag.cell 
@@ -579,7 +579,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).SetPricingEngine
                                                             _e.cell 
@@ -619,7 +619,7 @@ module BasketOptionFunction =
 
             try
 
-                let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
+                let _BasketOption = Helper.toModelReference<BasketOption> basketoption "BasketOption"  
                 let builder (current : ICell) = ((BasketOptionModel.Cast _BasketOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

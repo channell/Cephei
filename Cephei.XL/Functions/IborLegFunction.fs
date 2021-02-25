@@ -97,7 +97,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
@@ -135,7 +135,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).InArrears1
                                                             _flag.cell 
@@ -175,7 +175,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).InArrears
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
@@ -213,7 +213,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _caps = Helper.toNullabletList<double> caps "caps" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithCaps
                                                             _caps.cell 
@@ -255,7 +255,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _cap = Helper.toNullable<double> cap "cap"
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithCaps1
                                                             _cap.cell 
@@ -297,7 +297,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithFixingDays1
                                                             _fixingDays.cell 
@@ -339,7 +339,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithFixingDays
                                                             _fixingDays.cell 
@@ -381,7 +381,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _floors = Helper.toNullabletList<double> floors "floors" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithFloors1
                                                             _floors.cell 
@@ -423,7 +423,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _floor = Helper.toNullable<double> floor "floor"
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithFloors
                                                             _floor.cell 
@@ -465,7 +465,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithGearings
                                                             _gearing.cell 
@@ -507,7 +507,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithGearings1
                                                             _gearings.cell 
@@ -549,7 +549,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
@@ -591,7 +591,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithSpreads1
                                                             _spreads.cell 
@@ -633,7 +633,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithSpreads
                                                             _spread.cell 
@@ -675,7 +675,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithZeroPayments1
                                                             _flag.cell 
@@ -715,7 +715,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithZeroPayments
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
@@ -753,7 +753,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithNotionals1
                                                             _notionals.cell 
@@ -795,7 +795,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithNotionals
                                                             _notional.cell 
@@ -837,7 +837,7 @@ module IborLegFunction =
 
             try
 
-                let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
+                let _IborLeg = Helper.toModelReference<IborLeg> iborleg "IborLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let builder (current : ICell) = ((IborLegModel.Cast _IborLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 

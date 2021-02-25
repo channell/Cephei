@@ -50,7 +50,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).Clone
                                                             _h.cell 
@@ -157,7 +157,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -193,7 +193,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -235,7 +235,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
@@ -285,7 +285,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).ForecastFixing
                                                             _fixingDate.cell 
@@ -325,7 +325,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -363,7 +363,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).MaturityDate
                                                             _valueDate.cell 
@@ -403,7 +403,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -439,7 +439,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -475,7 +475,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -515,7 +515,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).Fixing
@@ -559,7 +559,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -597,7 +597,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).FixingDate
                                                             _valueDate.cell 
@@ -637,7 +637,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -675,7 +675,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -715,7 +715,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -753,7 +753,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).PastFixing
                                                             _fixingDate.cell 
@@ -793,7 +793,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -829,7 +829,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).Update
                                                        ) :> ICell
                 let format (o : OvernightIndex) (l:string) = o.ToString() :> obj
@@ -867,7 +867,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).ValueDate
                                                             _fixingDate.cell 
@@ -913,7 +913,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -967,7 +967,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -1019,7 +1019,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).AddFixings1
@@ -1063,7 +1063,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1099,7 +1099,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : OvernightIndex) (l:string) = o.ToString() :> obj
@@ -1137,7 +1137,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).RegisterWith
                                                             _handler.cell 
@@ -1177,7 +1177,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1215,7 +1215,7 @@ module OvernightIndexFunction =
 
             try
 
-                let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
+                let _OvernightIndex = Helper.toModelReference<OvernightIndex> overnightindex "OvernightIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((OvernightIndexModel.Cast _OvernightIndex.cell).UnregisterWith
                                                             _handler.cell 

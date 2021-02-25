@@ -92,7 +92,7 @@ module InterpolatingCPICapFloorEngineFunction =
 
             try
 
-                let _InterpolatingCPICapFloorEngine = Helper.toCell<InterpolatingCPICapFloorEngine> interpolatingcpicapfloorengine "InterpolatingCPICapFloorEngine"  
+                let _InterpolatingCPICapFloorEngine = Helper.toModelReference<InterpolatingCPICapFloorEngine> interpolatingcpicapfloorengine "InterpolatingCPICapFloorEngine"  
                 let builder (current : ICell) = ((InterpolatingCPICapFloorEngineModel.Cast _InterpolatingCPICapFloorEngine.cell).Name
                                                        ) :> ICell
                 let format (o : String) (l:string) = o.ToString() :> obj

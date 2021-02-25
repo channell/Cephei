@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="SwapTest.fs" />
     <Compile Include="Zero.fs" />
     <Compile Include="TestBond.fs" />
     <Compile Include="Program.fs" />
@@ -26,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj" />
+    <ProjectReference Include="..\Cephei.Models\Cephei.Model.fsproj" />
     <ProjectReference Include="..\Cephei.QL.Samples\Cephei.QL.Samples.fsproj" />
     <ProjectReference Include="..\Cephei.QLNetHelper\Cephei.QLNetHelper.csproj" />
     <ProjectReference Include="..\Cephei.QL\Cephei.QL.fsproj" />

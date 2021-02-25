@@ -79,7 +79,7 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
+                let _NullParameter = Helper.toModelReference<NullParameter> nullparameter "NullParameter"  
                 let builder (current : ICell) = ((NullParameterModel.Cast _NullParameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
@@ -115,7 +115,7 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
+                let _NullParameter = Helper.toModelReference<NullParameter> nullparameter "NullParameter"  
                 let builder (current : ICell) = ((NullParameterModel.Cast _NullParameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Impl) (l:string) = o.ToString() :> obj
@@ -151,7 +151,7 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
+                let _NullParameter = Helper.toModelReference<NullParameter> nullparameter "NullParameter"  
                 let builder (current : ICell) = ((NullParameterModel.Cast _NullParameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -191,7 +191,7 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
+                let _NullParameter = Helper.toModelReference<NullParameter> nullparameter "NullParameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
                 let builder (current : ICell) = ((NullParameterModel.Cast _NullParameter.cell).SetParam
@@ -235,7 +235,7 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
+                let _NullParameter = Helper.toModelReference<NullParameter> nullparameter "NullParameter"  
                 let builder (current : ICell) = ((NullParameterModel.Cast _NullParameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -273,7 +273,7 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
+                let _NullParameter = Helper.toModelReference<NullParameter> nullparameter "NullParameter"  
                 let _p = Helper.toCell<Vector> p "p" 
                 let builder (current : ICell) = ((NullParameterModel.Cast _NullParameter.cell).TestParams
                                                             _p.cell 
@@ -315,7 +315,7 @@ module NullParameterFunction =
 
             try
 
-                let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
+                let _NullParameter = Helper.toModelReference<NullParameter> nullparameter "NullParameter"  
                 let _t = Helper.toCell<double> t "t" 
                 let builder (current : ICell) = ((NullParameterModel.Cast _NullParameter.cell).Value
                                                             _t.cell 

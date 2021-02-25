@@ -48,7 +48,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -84,7 +84,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -120,7 +120,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -213,7 +213,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _time1 = Helper.toCell<double> time1 "time1" 
                 let _time2 = Helper.toCell<double> time2 "time2" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -273,7 +273,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _date1 = Helper.toCell<Date> date1 "date1" 
                 let _date2 = Helper.toCell<Date> date2 "date2" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -333,7 +333,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _date1 = Helper.toCell<Date> date1 "date1" 
                 let _date2 = Helper.toCell<Date> date2 "date2" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -393,7 +393,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _time1 = Helper.toCell<double> time1 "time1" 
                 let _time2 = Helper.toCell<double> time2 "time2" 
                 let _strike = Helper.toCell<double> strike "strike" 
@@ -451,7 +451,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -505,7 +505,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _maturity = Helper.toCell<Date> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -559,7 +559,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _maturity = Helper.toCell<Date> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -613,7 +613,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
@@ -661,7 +661,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -699,7 +699,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _p = Helper.toCell<Period> p "p" 
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).OptionDateFromTenor
                                                             _p.cell 
@@ -739,7 +739,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -775,7 +775,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -811,7 +811,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -847,7 +847,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -883,7 +883,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -921,7 +921,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _date = Helper.toCell<Date> date "date" 
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).TimeFromReference
                                                             _date.cell 
@@ -961,7 +961,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).Update
                                                        ) :> ICell
                 let format (o : ShiftedBlackVolTermStructure) (l:string) = o.ToString() :> obj
@@ -997,7 +997,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1035,7 +1035,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).DisableExtrapolation
                                                             _b.cell 
@@ -1077,7 +1077,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let _b = Helper.toCell<bool> b "b" 
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).EnableExtrapolation
                                                             _b.cell 
@@ -1117,7 +1117,7 @@ module ShiftedBlackVolTermStructureFunction =
 
             try
 
-                let _ShiftedBlackVolTermStructure = Helper.toCell<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
+                let _ShiftedBlackVolTermStructure = Helper.toModelReference<ShiftedBlackVolTermStructure> shiftedblackvoltermstructure "ShiftedBlackVolTermStructure"  
                 let builder (current : ICell) = ((ShiftedBlackVolTermStructureModel.Cast _ShiftedBlackVolTermStructure.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

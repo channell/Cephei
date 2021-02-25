@@ -49,7 +49,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -85,7 +85,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -121,7 +121,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -157,7 +157,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -193,7 +193,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
@@ -229,7 +229,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Forwards
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -704,7 +704,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
@@ -740,7 +740,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
@@ -776,7 +776,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -812,7 +812,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -848,7 +848,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
@@ -884,7 +884,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedForwardCurve) (l:string) = o.ToString() :> obj
@@ -920,7 +920,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -956,7 +956,7 @@ module InterpolatedForwardCurveFunction =
 
             try
 
-                let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
+                let _InterpolatedForwardCurve = Helper.toModelReference<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
                 let builder (current : ICell) = ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

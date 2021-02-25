@@ -130,7 +130,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).Clone
                                                             _tenor.cell 
@@ -174,7 +174,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let _discounting = Helper.toHandle<YieldTermStructure> discounting "discounting" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).Clone1
@@ -220,7 +220,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).Clone2
                                                             _forwarding.cell 
@@ -260,7 +260,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).DiscountingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -296,7 +296,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).ExogenousDiscount
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -332,7 +332,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).FixedLegConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
@@ -368,7 +368,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).FixedLegTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -406,7 +406,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).ForecastFixing
                                                             _fixingDate.cell 
@@ -446,7 +446,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
@@ -482,7 +482,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).IborIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -520,7 +520,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).MaturityDate
                                                             _valueDate.cell 
@@ -562,7 +562,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).UnderlyingSwap
                                                             _fixingDate.cell 
@@ -602,7 +602,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
@@ -638,7 +638,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -674,7 +674,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -714,7 +714,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).Fixing
@@ -758,7 +758,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
@@ -796,7 +796,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).FixingDate
                                                             _valueDate.cell 
@@ -836,7 +836,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -874,7 +874,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).IsValidFixingDate
                                                             _fixingDate.cell 
@@ -914,7 +914,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -952,7 +952,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).PastFixing
                                                             _fixingDate.cell 
@@ -992,7 +992,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
@@ -1028,7 +1028,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).Update
                                                        ) :> ICell
                 let format (o : GbpLiborSwapIsdaFix) (l:string) = o.ToString() :> obj
@@ -1066,7 +1066,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).ValueDate
                                                             _fixingDate.cell 
@@ -1112,7 +1112,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -1166,7 +1166,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
@@ -1218,7 +1218,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).AddFixings1
@@ -1262,7 +1262,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1298,7 +1298,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : GbpLiborSwapIsdaFix) (l:string) = o.ToString() :> obj
@@ -1336,7 +1336,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).RegisterWith
                                                             _handler.cell 
@@ -1376,7 +1376,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
@@ -1414,7 +1414,7 @@ module GbpLiborSwapIsdaFixFunction =
 
             try
 
-                let _GbpLiborSwapIsdaFix = Helper.toCell<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
+                let _GbpLiborSwapIsdaFix = Helper.toModelReference<GbpLiborSwapIsdaFix> gbpliborswapisdafix "GbpLiborSwapIsdaFix"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
                 let builder (current : ICell) = ((GbpLiborSwapIsdaFixModel.Cast _GbpLiborSwapIsdaFix.cell).UnregisterWith
                                                             _handler.cell 

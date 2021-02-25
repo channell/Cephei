@@ -48,7 +48,7 @@ module SavedSettingsFunction =
 
             try
 
-                let _SavedSettings = Helper.toCell<SavedSettings> savedsettings "SavedSettings"  
+                let _SavedSettings = Helper.toModelReference<SavedSettings> savedsettings "SavedSettings"  
                 let builder (current : ICell) = ((SavedSettingsModel.Cast _SavedSettings.cell).Dispose
                                                        ) :> ICell
                 let format (o : SavedSettings) (l:string) = o.ToString() :> obj

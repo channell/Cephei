@@ -57,7 +57,7 @@ module FDStepConditionEngineFunction =
 
             try
 
-                let _FDStepConditionEngine = Helper.toCell<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
+                let _FDStepConditionEngine = Helper.toModelReference<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
@@ -209,7 +209,7 @@ module FDStepConditionEngineFunction =
 
             try
 
-                let _FDStepConditionEngine = Helper.toCell<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
+                let _FDStepConditionEngine = Helper.toModelReference<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
                 let builder (current : ICell) = ((FDStepConditionEngineModel.Cast _FDStepConditionEngine.cell).SetStepCondition
                                                             _impl.cell 
@@ -249,7 +249,7 @@ module FDStepConditionEngineFunction =
 
             try
 
-                let _FDStepConditionEngine = Helper.toCell<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
+                let _FDStepConditionEngine = Helper.toModelReference<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
                 let builder (current : ICell) = ((FDStepConditionEngineModel.Cast _FDStepConditionEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDStepConditionEngine) (l:string) = o.ToString() :> obj
@@ -285,7 +285,7 @@ module FDStepConditionEngineFunction =
 
             try
 
-                let _FDStepConditionEngine = Helper.toCell<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
+                let _FDStepConditionEngine = Helper.toModelReference<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
                 let builder (current : ICell) = ((FDStepConditionEngineModel.Cast _FDStepConditionEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -321,7 +321,7 @@ module FDStepConditionEngineFunction =
 
             try
 
-                let _FDStepConditionEngine = Helper.toCell<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
+                let _FDStepConditionEngine = Helper.toModelReference<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
                 let builder (current : ICell) = ((FDStepConditionEngineModel.Cast _FDStepConditionEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -357,7 +357,7 @@ module FDStepConditionEngineFunction =
 
             try
 
-                let _FDStepConditionEngine = Helper.toCell<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
+                let _FDStepConditionEngine = Helper.toModelReference<FDStepConditionEngine> fdstepconditionengine "FDStepConditionEngine"  
                 let builder (current : ICell) = ((FDStepConditionEngineModel.Cast _FDStepConditionEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l

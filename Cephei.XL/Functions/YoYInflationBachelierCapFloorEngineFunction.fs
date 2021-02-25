@@ -98,7 +98,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
+                let _YoYInflationBachelierCapFloorEngine = Helper.toModelReference<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
                 let builder (current : ICell) = ((YoYInflationBachelierCapFloorEngineModel.Cast _YoYInflationBachelierCapFloorEngine.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
@@ -136,7 +136,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
+                let _YoYInflationBachelierCapFloorEngine = Helper.toModelReference<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
                 let _vol = Helper.toHandle<YoYOptionletVolatilitySurface> vol "vol" 
                 let builder (current : ICell) = ((YoYInflationBachelierCapFloorEngineModel.Cast _YoYInflationBachelierCapFloorEngine.cell).SetVolatility
                                                             _vol.cell 
@@ -176,7 +176,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
 
             try
 
-                let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
+                let _YoYInflationBachelierCapFloorEngine = Helper.toModelReference<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
                 let builder (current : ICell) = ((YoYInflationBachelierCapFloorEngineModel.Cast _YoYInflationBachelierCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l

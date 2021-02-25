@@ -91,7 +91,7 @@ module SampleFunction =
 
             try
 
-                let _Sample = Helper.toCell<Sample> sample "Sample"  
+                let _Sample = Helper.toModelReference<Sample> sample "Sample"  
                 let builder (current : ICell) = ((SampleModel.Cast _Sample.cell).Value
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
@@ -127,7 +127,7 @@ module SampleFunction =
 
             try
 
-                let _Sample = Helper.toCell<Sample> sample "Sample"  
+                let _Sample = Helper.toModelReference<Sample> sample "Sample"  
                 let builder (current : ICell) = ((SampleModel.Cast _Sample.cell).Weight
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

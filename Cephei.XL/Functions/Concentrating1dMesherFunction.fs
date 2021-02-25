@@ -172,7 +172,7 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
+                let _Concentrating1dMesher = Helper.toModelReference<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Dminus
                                                             _index.cell 
@@ -214,7 +214,7 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
+                let _Concentrating1dMesher = Helper.toModelReference<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Dplus
                                                             _index.cell 
@@ -256,7 +256,7 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
+                let _Concentrating1dMesher = Helper.toModelReference<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
                 let builder (current : ICell) = ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Location
                                                             _index.cell 
@@ -296,7 +296,7 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
+                let _Concentrating1dMesher = Helper.toModelReference<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let builder (current : ICell) = ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -332,7 +332,7 @@ module Concentrating1dMesherFunction =
 
             try
 
-                let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
+                let _Concentrating1dMesher = Helper.toModelReference<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let builder (current : ICell) = ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

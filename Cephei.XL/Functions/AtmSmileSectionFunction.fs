@@ -48,7 +48,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -133,7 +133,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
@@ -169,7 +169,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -205,7 +205,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -241,7 +241,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -277,7 +277,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -313,7 +313,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -349,7 +349,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -385,7 +385,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
@@ -427,7 +427,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
@@ -483,7 +483,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
@@ -541,7 +541,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
@@ -589,7 +589,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : AtmSmileSection) (l:string) = o.ToString() :> obj
@@ -627,7 +627,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Variance
                                                             _strike.cell 
@@ -671,7 +671,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Vega
@@ -721,7 +721,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
                 let _shift = Helper.toCell<double> shift "shift" 
@@ -771,7 +771,7 @@ module AtmSmileSectionFunction =
 
             try
 
-                let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
+                let _AtmSmileSection = Helper.toModelReference<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let builder (current : ICell) = ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Volatility1
                                                             _strike.cell 
